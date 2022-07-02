@@ -5,7 +5,7 @@ using UnityEngine;
 public class Auto_Object_1 : MonoBehaviour
 {
     public int Auto1_iMoney = 0;
-    public float wait_time = 2.0f;
+    public float wait_time = 1.0f;
     private int check = 0;
     // Start is called before the first frame update
     void Start()
