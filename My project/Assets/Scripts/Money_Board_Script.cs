@@ -16,7 +16,7 @@ public class Money_Board_Script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
         Total_Money.text = "Current Money : " + Click_Money;
     }
 

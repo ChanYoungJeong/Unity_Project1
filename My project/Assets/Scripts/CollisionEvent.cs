@@ -7,9 +7,8 @@ public class CollisionEvent : MonoBehaviour
     private Color color;
     private SpriteRenderer spriteRenderer;
     private float starTime;
-    private int HP = 5;
+    private int HP = 100;
     public int check = 0;
-    public float wait_time = 2.0f;
 
     private void Start()
     {
@@ -45,12 +44,12 @@ public class CollisionEvent : MonoBehaviour
     IEnumerator WaitForIt()
     {
         
+        yield return new WaitForSeconds(1);
         if (HP >= 0)
         {
-            HP -= 1;
+            HP -= 10;
             Debug.Log(HP);
         }
-        yield return new WaitForSeconds(wait_time);
         check = 0;
     }
 }
