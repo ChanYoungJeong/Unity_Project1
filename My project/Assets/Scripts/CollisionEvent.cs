@@ -21,28 +21,27 @@ public class CollisionEvent : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) // 오브젝트가 닿였을 시
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         spriteRenderer.color = Color.red;
-        
     }
 
-    private void OnCollisionStay2D(Collision2D collision) // 닿이고 있을 시
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if(check == 0){
+        if (check == 0)
+        {
             check = 1;
             StartCoroutine(WaitForIt());
         }
     }
-
-    private void OnCollisionExit2D(Collision2D collision) // 떨어졌을 시
+    private void OnTriggerExit2D(Collider2D collision)
     {
         spriteRenderer.color = Color.white;
     }
 
-    
     IEnumerator WaitForIt()
-    {        
+    {
+        
         yield return new WaitForSeconds(1);
         if (HP >= 0)
         {
