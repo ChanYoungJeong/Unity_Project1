@@ -1,33 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class UI : MonoBehaviour
 {
-    [SerializeField]
-    private Slider HP_bar;
+    public Slider HP_bar;
 
-    private float maxHp = 100;
-    private float curHp = 100;
-    float imsi;
-    // Start is called before the first frame update
-    void Start()
+    public float maxHp = 100;        // 몬스터 총 HP
+    public float curHp = 100;         // 몬스터 현제 HP
+
+    private void Awake()
     {
-        HP_bar.value = (float)curHp / (float)maxHp;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            curHp -= 10;
-        }
-
-    }
-
-    private void HandleHp()
-    {
-        HP_bar.value = Mathf.Lerp(HP_bar.value, (float)curHp / (float)maxHp, Time.deltaTime * 10);
+        HP_bar = GetComponent<Slider>();
     }
 }
