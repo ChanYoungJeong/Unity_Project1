@@ -33,7 +33,6 @@ public class CollisionEvent : MonoBehaviour
             check = 1;
             StartCoroutine(WaitForIt());
         }
-
     }
 
     private void OnCollisionExit2D(Collision2D collision) // ¶³¾îÁ³À» ½Ã
@@ -41,9 +40,9 @@ public class CollisionEvent : MonoBehaviour
         spriteRenderer.color = Color.white;
     }
 
+    
     IEnumerator WaitForIt()
-    {
-        
+    {        
         yield return new WaitForSeconds(1);
         if (HP >= 0)
         {
