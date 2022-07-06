@@ -5,12 +5,10 @@ public class UI : MonoBehaviour
 {
     public Slider HP_bar;
 
-<<<<<<< Updated upstream
+
     public float maxHp = 100;        // 몬스터 총 HP
     public float curHp = 100;         // 몬스터 현제 HP
-=======
-    private float maxHp = 100;
-    private float curHp = 100;
+
 
     public GameObject healthBar;
 
@@ -29,7 +27,7 @@ public class UI : MonoBehaviour
         }
 
     }
->>>>>>> Stashed changes
+
 
     private void Awake()
     {
