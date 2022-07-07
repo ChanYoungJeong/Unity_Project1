@@ -434,8 +434,7 @@ MonoBehaviour:
   HP_bar: {fileID: 7211454526983126674}
   maxHp: 0
   curHp: 100
-  Monster_HP: 0
-  Player_offensive_Power: 0
+  healthBar: {fileID: 0}
 --- !u!1 &7211454527863328728
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,7 +523,7 @@ GameObject:
   - component: {fileID: 7211454528034584558}
   - component: {fileID: 7211454528034584559}
   - component: {fileID: -139333814929916755}
-  - component: {fileID: 593591492787033738}
+  - component: {fileID: -7345171432459640254}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Untagged
@@ -588,7 +587,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -647,7 +646,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &593591492787033738
+--- !u!114 &-7345171432459640254
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -656,7 +655,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7211454528034584557}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85ed79b6beb500447b68854cc906989f, type: 3}
+  m_Script: {fileID: 11500000, guid: b3c10662715624a48ba91781000245f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
