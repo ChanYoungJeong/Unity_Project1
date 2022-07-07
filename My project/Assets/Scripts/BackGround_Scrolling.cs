@@ -38,7 +38,6 @@ public class BackGround_Scrolling : MonoBehaviour
         for (int i = 0; i < backgrounds.Length; i++)
         {
             backgrounds[i].position += new Vector3(-speed, 0, 0) * Time.deltaTime;
-
             if (backgrounds[i].position.x < leftPosX)
             {
                 Vector3 nextPos = backgrounds[i].position;
