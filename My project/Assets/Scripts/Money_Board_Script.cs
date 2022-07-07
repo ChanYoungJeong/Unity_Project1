@@ -12,17 +12,21 @@ public class Money_Board_Script : MonoBehaviour
     int Click_Money;
     int Auto1_Money;
 
+
+
+
     int All_Money;
     // Start is called before the first frame update
     void Start()
     {
-
+        
         Total_Money.text = "Current Money : " + Click_Money;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         Add_Money();
         Total_Money.text = "Current Money : " + All_Money;
     }
