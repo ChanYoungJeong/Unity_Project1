@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BackGround_Scrolling : MonoBehaviour
 {
-
+    GameObject Monster;
     public float speed;
     public Transform[] backgrounds;
 
@@ -26,7 +26,11 @@ public class BackGround_Scrolling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Scroll_BackGrounds();
+        Monster = GameObject.FindWithTag("Monster");
+        if (Monster.GetComponent<Stop_Monster>().Monster_Stop == false)
+        {
+            Scroll_BackGrounds();
+        }
     }
 
     private void Scroll_BackGrounds()
