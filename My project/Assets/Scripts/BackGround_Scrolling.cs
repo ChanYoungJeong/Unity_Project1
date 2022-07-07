@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BackGround_Scrolling : MonoBehaviour
 {
+
     public float speed;
     public Transform[] backgrounds;
 
@@ -18,12 +19,17 @@ public class BackGround_Scrolling : MonoBehaviour
         yScreenHalfSize = Camera.main.orthographicSize;
         xScreenHalfSize = yScreenHalfSize * Camera.main.aspect;
 
-        leftPosX = -(xScreenHalfSize);
-        rightPosX = xScreenHalfSize * backgrounds.Length;
+        leftPosX = -(xScreenHalfSize * 2);
+        rightPosX = xScreenHalfSize * 2 * backgrounds.Length;
     }
 
     // Update is called once per frame
     void Update()
+    {
+        Scroll_BackGrounds();
+    }
+
+    private void Scroll_BackGrounds()
     {
         for (int i = 0; i < backgrounds.Length; i++)
         {
@@ -37,5 +43,6 @@ public class BackGround_Scrolling : MonoBehaviour
             }
         }
     }
+
 }
 
