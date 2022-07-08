@@ -27,10 +27,11 @@ public class BackGround_Scrolling : MonoBehaviour
     void Update()
     {
         Monster = GameObject.FindWithTag("Monster");
-        if (Monster.GetComponent<Stop_Monster>().Monster_Stop == false)
+        if (Monster != null && Monster.GetComponent<Stop_Monster>().Monster_Stop == false)
         {
             Scroll_BackGrounds();
         }
+
     }
 
     private void Scroll_BackGrounds()
