@@ -26,7 +26,7 @@ public class monster : MonoBehaviour
         hpBar = Instantiate(prfHpbar, canvas.transform).GetComponent<RectTransform>();       // instantiate(게임오브젝트, 부모의trnsform)게임 오브젝트를 생성하는 함수
         if (name.Equals("Monster1"))
         {
-            SetEnemyStatus("Monster1", 100, 10, 1);
+            SetMonsterStatus("Monster1", 100, 10, 1);
         }
         nowHpbar = hpBar.transform.GetChild(0).GetComponent<Image>();
     }
@@ -39,7 +39,7 @@ public class monster : MonoBehaviour
         nowHpbar.fillAmount = (float)nowHp / (float)maxHp;
     }
 
-    private void SetEnemyStatus(string _Monster_Name, int _maxHp, int _atkDmg, int _atkSpeed)
+    private void SetMonsterStatus(string _Monster_Name, int _maxHp, int _atkDmg, int _atkSpeed)
     {
         Monster_Name = _Monster_Name;
         maxHp = _maxHp;
@@ -51,7 +51,7 @@ public class monster : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("충돌함1");
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player"))              //추 후 무기 오브젝트로 바꿔야함
         {
             player.attacked = true;
 
@@ -70,6 +70,11 @@ public class monster : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("충돌함1-1");
     }
 
 }
