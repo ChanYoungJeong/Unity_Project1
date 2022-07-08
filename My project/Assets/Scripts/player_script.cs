@@ -29,7 +29,7 @@ public class player_script : MonoBehaviour
 
     private void Update()
     {
-        nowHpbar.fillAmount = (float)nowHp / (float)maxHp;
+    // nowHpbar.fillAmount = (float)nowHp / (float)maxHp;
     }
 
 
