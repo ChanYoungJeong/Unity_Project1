@@ -5,7 +5,6 @@ using System;
 
 public class player_script : MonoBehaviour
 {
-
     public int maxHp;
     public int nowHp;
     public int atkDmg;
@@ -29,7 +28,7 @@ public class player_script : MonoBehaviour
 
     private void Update()
     {
-    // nowHpbar.fillAmount = (float)nowHp / (float)maxHp;
+        // nowHpbar.fillAmount = (float)nowHp / (float)maxHp;
     }
 
 
