@@ -34,7 +34,7 @@ public class monster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 _hpBarPos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y + height, 0)); //Camera.main.WorldToScreenPoint(월드 좌표 값) 월드 좌표를 스크린 좌표 즉, UI좌표로 바꿔주는 함수
+        Vector3 _hpBarPos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x-1, transform.position.y + height, 0)); //Camera.main.WorldToScreenPoint(월드 좌표 값) 월드 좌표를 스크린 좌표 즉, UI좌표로 바꿔주는 함수
         hpBar.position = _hpBarPos; // 생성된 체력바를 이동
         nowHpbar.fillAmount = (float)nowHp / (float)maxHp;
     }

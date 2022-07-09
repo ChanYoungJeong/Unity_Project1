@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Create_Monster : MonoBehaviour
 {
@@ -11,10 +12,13 @@ public class Create_Monster : MonoBehaviour
     bool Monster1_Created = false;
     private Rigidbody2D Monster1_Rigid;
 
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-
+       
     }
 
     // Update is called once per frame
@@ -40,4 +44,6 @@ public class Create_Monster : MonoBehaviour
             StartCoroutine(Create_Monster1());
         }
     }
+
+    
 }
