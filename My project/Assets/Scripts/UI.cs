@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 public class UI : MonoBehaviour
 {
+    [SerializeField]
     public Slider HP_bar;
 
 
