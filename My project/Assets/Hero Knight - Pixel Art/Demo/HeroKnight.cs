@@ -32,11 +32,7 @@ public class HeroKnight : MonoBehaviour {
     {
         m_animator = GetComponent<Animator>();
         m_body2d = GetComponent<Rigidbody2D>();
-        m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_HeroKnight>();
-        m_wallSensorR1 = transform.Find("WallSensor_R1").GetComponent<Sensor_HeroKnight>();
-        m_wallSensorR2 = transform.Find("WallSensor_R2").GetComponent<Sensor_HeroKnight>();
-        m_wallSensorL1 = transform.Find("WallSensor_L1").GetComponent<Sensor_HeroKnight>();
-        m_wallSensorL2 = transform.Find("WallSensor_L2").GetComponent<Sensor_HeroKnight>();
+        
     }
 
     // Update is called once per frame
@@ -54,18 +50,10 @@ public class HeroKnight : MonoBehaviour {
             m_rolling = false;
 
         //Check if character just landed on the ground
-        if (!m_grounded && m_groundSensor.State())
-        {
-            m_grounded = true;
-            m_animator.SetBool("Grounded", m_grounded);
-        }
+
 
         //Check if character just started falling
-        if (m_grounded && !m_groundSensor.State())
-        {
-            m_grounded = false;
-            m_animator.SetBool("Grounded", m_grounded);
-        }
+
 
         // -- Handle input and movement --
         float inputX = Input.GetAxis("Horizontal");
@@ -92,7 +80,6 @@ public class HeroKnight : MonoBehaviour {
 
         // -- Handle Animations --
         //Wall Slide
-        m_isWallSliding = (m_wallSensorR1.State() && m_wallSensorR2.State()) || (m_wallSensorL1.State() && m_wallSensorL2.State());
         m_animator.SetBool("WallSlide", m_isWallSliding);
 
         //Death

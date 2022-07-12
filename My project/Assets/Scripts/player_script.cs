@@ -5,24 +5,22 @@ using System;
 
 public class player_script : MonoBehaviour
 {
+    [Header ("player stats")]
     public int maxHp;
     public int nowHp;
     public int atkDmg;
-    public bool attacked = false;
+    public bool attacked;
+
+    [Header ("commons")]
     public Image nowHpbar;
 
-    void AttackTrue()
-    {
-        attacked = true;
-    }
-    void AttackFalse()
-    {
-        attacked = false;
-    }
 
     private void Start()
     {
         atkDmg = 10;
+        attacked = false;
+        maxHp = 100;
+        nowHp = 100;
 
     }
 
