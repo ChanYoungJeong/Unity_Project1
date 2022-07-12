@@ -5,6 +5,7 @@ using UnityEngine;
 public class BackGround_Scrolling : MonoBehaviour
 {
     GameObject Monster;
+    bool Monster_Stop_Check;
     public float speed;
     public Transform[] backgrounds;
 
@@ -27,9 +28,16 @@ public class BackGround_Scrolling : MonoBehaviour
     void Update()
     {
         Monster = GameObject.FindWithTag("Monster");
-        if (Monster != null && Monster.GetComponent<Stop_Monster>().Monster_Stop == false)
+        if (Monster != null)
         {
-            Scroll_BackGrounds();
+            if(Monster.GetComponent<Stop_Monster>().Monster_Stop == false)
+            {
+                Scroll_BackGrounds();
+            }
+            else
+            {
+                return;
+            }
         }
 
     }

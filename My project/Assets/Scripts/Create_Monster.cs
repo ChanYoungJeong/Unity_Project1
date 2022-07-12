@@ -24,11 +24,14 @@ public class Create_Monster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!Monster1_Created && Monster1_Prefab != null)
+        if (Monster1_Prefab != null)
         {
-            StartCoroutine(Create_Monster1());
-            Monster1_Created = true;
-        }      
+            if (!Monster1_Created)
+            {
+                StartCoroutine(Create_Monster1());
+                Monster1_Created = true;
+            }
+        }
     }
 
     IEnumerator Create_Monster1()
