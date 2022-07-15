@@ -8,7 +8,7 @@ public class Create_Monster : MonoBehaviour
     public float speed = 3.0f;
     //Monster1
     public GameObject Monster1_Prefab;
-    int Monster1_count = 3;
+    int Monster1_count = 1;
     bool Monster1_Created = false;
     private Rigidbody2D Monster1_Rigid;
 
