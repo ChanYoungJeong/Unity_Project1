@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class player_script : MonoBehaviour
+public class PlayerScript : MonoBehaviour
 {
     [Header ("player stats")]
     public int maxHp;
@@ -14,6 +14,8 @@ public class player_script : MonoBehaviour
     [Header ("commons")]
     public Image nowHpbar;
 
+
+    public GameObject attackRange;              //플레이어가 죽으면 setactive(false); 한다 
 
     private void Start()
     {
@@ -29,5 +31,8 @@ public class player_script : MonoBehaviour
         // nowHpbar.fillAmount = (float)nowHp / (float)maxHp;
     }
 
-
+    private void SetAttack()
+    {
+        attacked = true;
+    }
 }
