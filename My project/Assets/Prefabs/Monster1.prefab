@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3598142541808288362}
   - component: {fileID: 1862337734495421122}
-  - component: {fileID: 5015916022260295457}
   - component: {fileID: 4634787288023101056}
-  - component: {fileID: 6104981649049953104}
-  - component: {fileID: 6244767250873311112}
+  - component: {fileID: 3563215329902805444}
+  - component: {fileID: 8974356669154376614}
   m_Layer: 0
   m_Name: Monster1
   m_TagString: Monster
@@ -77,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -89,27 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &5015916022260295457
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5916514963484549460}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &4634787288023101056
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -136,29 +114,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6104981649049953104
-MonoBehaviour:
+--- !u!50 &3563215329902805444
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5916514963484549460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79f00e2d8c58b234daf09f274a59480c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Monster_Name: 
-  maxHp: 100
-  nowHp: 100
-  atkDmg: 0
-  atkSpeed: 0
-  player: {fileID: 2948288446988658631, guid: 129f1b5fe10ef424da0ff2abc5981855, type: 3}
-  prfHpbar: {fileID: 6947789645641870305}
-  canvas: {fileID: 6947789645709266291}
-  hpBar: {fileID: 7833774379465769611, guid: 22cc3c27d120b9c4baf58ddf1bb796ac, type: 3}
-  height: 1
---- !u!114 &6244767250873311112
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &8974356669154376614
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -272,16 +249,6 @@ PrefabInstance:
       objectReference: {fileID: 7558211624009668522, guid: 8baf5c78646e46f4b830fc8e0faeccf8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9c868a4b4147d94b83c205fac232c13, type: 3}
---- !u!1 &6947789645641870305 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3089798413719720240, guid: d9c868a4b4147d94b83c205fac232c13, type: 3}
-  m_PrefabInstance: {fileID: 5371293068019022545}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6947789645709266291 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3089798413654030242, guid: d9c868a4b4147d94b83c205fac232c13, type: 3}
-  m_PrefabInstance: {fileID: 5371293068019022545}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &6947789645709266303 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3089798413654030254, guid: d9c868a4b4147d94b83c205fac232c13, type: 3}

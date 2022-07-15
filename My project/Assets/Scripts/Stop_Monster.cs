@@ -23,6 +23,7 @@ public class Stop_Monster : MonoBehaviour
         //Debug.Log(collision.tag);
         if (collision.CompareTag("Player"))
         {
+            Debug.Log(name);
             Rigid.velocity = Vector2.zero;
             Monster_Stop = true;
         }
