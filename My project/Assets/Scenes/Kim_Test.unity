@@ -185,6 +185,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69ee51c36f135b549ada05bb9e55f926, type: 3}
+--- !u!114 &570985073 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2948288446988658631, guid: 129f1b5fe10ef424da0ff2abc5981855, type: 3}
+  m_PrefabInstance: {fileID: 1535305987}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67088ae5c4c63c34089f8c00780ac8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &821531228
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,6 +311,10 @@ PrefabInstance:
       propertyPath: nowHpbar
       value: 
       objectReference: {fileID: 7833774379465769610, guid: 22cc3c27d120b9c4baf58ddf1bb796ac, type: 3}
+    - target: {fileID: 2948288446988658631, guid: 129f1b5fe10ef424da0ff2abc5981855, type: 3}
+      propertyPath: attackRange
+      value: 
+      objectReference: {fileID: 1937256897}
     - target: {fileID: 3843598568811622196, guid: 129f1b5fe10ef424da0ff2abc5981855, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -378,7 +393,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937256897}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.63, y: 0.64, z: 0}
+  m_LocalPosition: {x: -0.08, y: 0.64, z: 0}
   m_LocalScale: {x: 2.2, y: 2.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -395,7 +410,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.000000059604645, y: 0}
@@ -486,5 +501,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf55056ae5504b944b3bf8af305680bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2948288446988658631, guid: 129f1b5fe10ef424da0ff2abc5981855, type: 3}
-  _monster: {fileID: 6104981649049953104, guid: 6922e1e6b040a7d4cbd4ea8685f8483b, type: 3}
+  playerScript: {fileID: 570985073}
