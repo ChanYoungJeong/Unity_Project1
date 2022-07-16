@@ -7,6 +7,12 @@ public class AttackRange : MonoBehaviour
     public PlayerScript playerScript;
 
 
+    private void Update()
+    {
+       
+    }
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -34,6 +40,7 @@ public class AttackRange : MonoBehaviour
             if (monster.nowHp > 0)
             {
                 monster.nowHp -= playerScript.atkDmg;
+                EventManager.SendEvent("Sound :: Create 2D", "Click", 1f);
                 Debug.Log(monster.nowHp);
 
             }
