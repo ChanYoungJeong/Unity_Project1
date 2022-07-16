@@ -51,6 +51,7 @@ public class Create_Monster : MonoBehaviour
             yield return new WaitForSeconds(1.0f);
             Monster1_count--;
             StartCoroutine(Create_Monster1());
+
         }
     }
 
