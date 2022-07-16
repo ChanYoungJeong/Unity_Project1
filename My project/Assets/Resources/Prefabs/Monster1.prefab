@@ -11,13 +11,8 @@ GameObject:
   - component: {fileID: 3598142541808288362}
   - component: {fileID: 1862337734495421122}
   - component: {fileID: 4634787288023101056}
-<<<<<<< Updated upstream:My project/Assets/Prefabs/Monster1.prefab
   - component: {fileID: 3563215329902805444}
   - component: {fileID: 8974356669154376614}
-=======
-  - component: {fileID: 6244767250873311112}
-  - component: {fileID: -3647021146094280142}
->>>>>>> Stashed changes:My project/Assets/Resources/Prefabs/Monster1.prefab
   m_Layer: 0
   m_Name: Monster1
   m_TagString: Monster
@@ -119,20 +114,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
-<<<<<<< Updated upstream:My project/Assets/Prefabs/Monster1.prefab
 --- !u!50 &3563215329902805444
 Rigidbody2D:
   serializedVersion: 4
-=======
---- !u!114 &6244767250873311112
-MonoBehaviour:
->>>>>>> Stashed changes:My project/Assets/Resources/Prefabs/Monster1.prefab
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5916514963484549460}
-<<<<<<< Updated upstream:My project/Assets/Prefabs/Monster1.prefab
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -147,15 +136,6 @@ MonoBehaviour:
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!114 &8974356669154376614
-=======
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3c10662715624a48ba91781000245f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Monster_Stop: 0
---- !u!114 &-3647021146094280142
->>>>>>> Stashed changes:My project/Assets/Resources/Prefabs/Monster1.prefab
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,19 +144,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5916514963484549460}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79f00e2d8c58b234daf09f274a59480c, type: 3}
+  m_Script: {fileID: 11500000, guid: b3c10662715624a48ba91781000245f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterName: 
-  maxHp: 0
-  nowHp: 0
-  atkDmg: 0
-  atkSpeed: 0
-  player: {fileID: 2948288446988658631, guid: 129f1b5fe10ef424da0ff2abc5981855, type: 3}
-  prfHpbar: {fileID: 6947789645641870305}
-  canvas: {fileID: 6947789645709266291}
-  hpBar: {fileID: 6947789645641870318}
-  height: 1
+  Monster_Stop: 0
 --- !u!1001 &5371293068019022545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -278,24 +249,6 @@ PrefabInstance:
       objectReference: {fileID: 7558211624009668522, guid: 8baf5c78646e46f4b830fc8e0faeccf8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9c868a4b4147d94b83c205fac232c13, type: 3}
-<<<<<<< Updated upstream:My project/Assets/Prefabs/Monster1.prefab
-=======
---- !u!1 &6947789645641870305 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3089798413719720240, guid: d9c868a4b4147d94b83c205fac232c13, type: 3}
-  m_PrefabInstance: {fileID: 5371293068019022545}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &6947789645641870318 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3089798413719720255, guid: d9c868a4b4147d94b83c205fac232c13, type: 3}
-  m_PrefabInstance: {fileID: 5371293068019022545}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6947789645709266291 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3089798413654030242, guid: d9c868a4b4147d94b83c205fac232c13, type: 3}
-  m_PrefabInstance: {fileID: 5371293068019022545}
-  m_PrefabAsset: {fileID: 0}
->>>>>>> Stashed changes:My project/Assets/Resources/Prefabs/Monster1.prefab
 --- !u!224 &6947789645709266303 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3089798413654030254, guid: d9c868a4b4147d94b83c205fac232c13, type: 3}
