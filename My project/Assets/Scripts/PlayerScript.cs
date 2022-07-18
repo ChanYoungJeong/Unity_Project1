@@ -20,7 +20,7 @@ public class PlayerScript : MonoBehaviour
     private void Start()
     {
         atkDmg = 10;
-        attacked = false;
+        attacked = true;
         maxHp = 100;
         nowHp = 100;
 
