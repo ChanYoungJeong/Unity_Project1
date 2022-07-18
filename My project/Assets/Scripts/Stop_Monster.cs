@@ -20,12 +20,14 @@ public class Stop_Monster : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.tag);
+        //Debug.Log(collision.tag);
         if (collision.CompareTag("Player"))
         {
+            Debug.Log(name);
             Rigid.velocity = Vector2.zero;
             Monster_Stop = true;
         }
+ 
     }
 
     private void OnTriggerExit2D(Collider2D collision)
