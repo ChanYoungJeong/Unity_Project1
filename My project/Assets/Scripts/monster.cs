@@ -29,7 +29,7 @@ public class Monster : MonoBehaviour
         maxHp = 100;
         nowHp = 100;
         
-        hpBar = Instantiate(prfHpbar, canvas.transform).GetComponent<RectTransform>();                                          // instantiate(게임오브젝트, 부모의trnsform)게임 오브젝트를 생성하는 함수
+        hpBar = Instantiate(prfHpbar, canvas.transform).GetComponent<RectTransform>();             
         if (name.Equals("Monster1(Clone)"))
         {
             SetMonsterStatus("Monster1(Clone)", 100, 10, 1);
@@ -41,8 +41,8 @@ public class Monster : MonoBehaviour
     void Update()
     {
         
-        Vector3 _hpBarPos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y+height, 0));  //Camera.main.WorldToScreenPoint(월드 좌표 값) 월드 좌표를 스크린 좌표 즉, UI좌표로 바꿔주는 함수
-        hpBar.position = _hpBarPos;                                                                                             // 생성된 체력바를 이동
+        Vector3 _hpBarPos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y+height, 0));  
+        hpBar.position = _hpBarPos;                                                                                           
         nowHpbar.fillAmount = (float)nowHp / (float)maxHp;
     }
     

@@ -45,7 +45,7 @@ public class BackGround_Scrolling : MonoBehaviour
         Monster = GameObject.FindWithTag("Monster");
         if (Monster != null)
         {
-            if(Monster.GetComponent<Stop_Monster>().Monster_Stop == false)
+            if(!Battle_Situation_Trigger.On_Battle)
             {
                 Scroll_BackGrounds();
             }

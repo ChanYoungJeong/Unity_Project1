@@ -21,9 +21,12 @@ public class Create_Monster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Group = Instantiate(Monster_Group, transform.position, transform.rotation);
-        Group_Rigid = Group.GetComponent<Rigidbody2D>();
-        Monster1_Rigid.velocity = transform.right * -1 * speed;
+        if (Monster_Group != null)
+        {
+            Group = Instantiate(Monster_Group, transform.position, transform.rotation);
+            Group_Rigid = Group.GetComponent<Rigidbody2D>();
+            Monster1_Rigid.velocity = transform.right * -1 * speed;
+        }
     }
 
     // Update is called once per frame
