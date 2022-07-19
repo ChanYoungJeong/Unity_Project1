@@ -6,7 +6,9 @@ public class Stop_Monster : MonoBehaviour
 {
     private Rigidbody2D Rigid;
     public bool Monster_Stop = false;
-    // Start is called before the first frame update
+    
+    //Battle_Situation_Trigger
+
     void Start()
     {
         Rigid = GetComponent<Rigidbody2D>();
@@ -15,23 +17,16 @@ public class Stop_Monster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //Debug.Log(collision.tag);
-        if (collision.CompareTag("Player"))
+        if (Battle_Situation_Trigger.On_Battle)
         {
             Debug.Log(name);
             Rigid.velocity = Vector2.zero;
             Monster_Stop = true;
         }
- 
+        else
+        {
+            Monster_Stop = false;
+        }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        Monster_Stop = false;
-    }
 }
