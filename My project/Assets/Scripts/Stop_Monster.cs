@@ -22,11 +22,14 @@ public class Stop_Monster : MonoBehaviour
             Debug.Log("current Monster " + Battle_Situation_Trigger.Monster.name);
             Rigid.velocity = Vector2.zero;
             Monster_Stop = true;
+
+
         }
         else
         {
             Monster_Stop = false;
         }
     }
+
 
 }
