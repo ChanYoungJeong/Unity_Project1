@@ -6,6 +6,7 @@ public class Battle_Situation_Trigger : MonoBehaviour
 {
     bool log_check = false;
     public static bool On_Battle = false;
+    public static GameObject Monster;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,7 @@ public class Battle_Situation_Trigger : MonoBehaviour
         
     }
 
+    
 
 
 
@@ -25,6 +27,7 @@ public class Battle_Situation_Trigger : MonoBehaviour
     {
         if(collision.CompareTag("Monster"))
         {
+            Monster = collision.gameObject;
             On_Battle = true;
         }
     }

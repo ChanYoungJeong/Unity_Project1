@@ -19,7 +19,7 @@ public class Stop_Monster : MonoBehaviour
     {
         if (Battle_Situation_Trigger.On_Battle)
         {
-            Debug.Log(name);
+            Debug.Log("current Monster " + Battle_Situation_Trigger.Monster.name);
             Rigid.velocity = Vector2.zero;
             Monster_Stop = true;
         }
