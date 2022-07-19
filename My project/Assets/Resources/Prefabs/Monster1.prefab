@@ -13,6 +13,11 @@ GameObject:
   - component: {fileID: 4634787288023101056}
   - component: {fileID: 3563215329902805444}
   - component: {fileID: 8974356669154376614}
+<<<<<<< Updated upstream
+  - component: {fileID: -8838263305366127097}
+=======
+  - component: {fileID: -3345424215522677671}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Monster1
   m_TagString: Monster
@@ -148,6 +153,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Monster_Stop: 0
+<<<<<<< Updated upstream
+--- !u!114 &-8838263305366127097
+=======
+--- !u!114 &-3345424215522677671
+>>>>>>> Stashed changes
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5916514963484549460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f00e2d8c58b234daf09f274a59480c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterName: 
+<<<<<<< Updated upstream
+  maxHp: 100
+  nowHp: 100
+  atkDmg: 10
+  atkSpeed: 4
+=======
+  maxHp: 0
+  nowHp: 0
+  atkDmg: 0
+  atkSpeed: 0
+>>>>>>> Stashed changes
+  player: {fileID: 2948288446988658631, guid: 129f1b5fe10ef424da0ff2abc5981855, type: 3}
+  prfHpbar: {fileID: 7833774379465769604, guid: 22cc3c27d120b9c4baf58ddf1bb796ac, type: 3}
+  canvas: {fileID: 3089798413654030242, guid: d9c868a4b4147d94b83c205fac232c13, type: 3}
+  hpBar: {fileID: 7833774379465769611, guid: 22cc3c27d120b9c4baf58ddf1bb796ac, type: 3}
+  height: 1
 --- !u!1001 &5371293068019022545
 PrefabInstance:
   m_ObjectHideFlags: 0
