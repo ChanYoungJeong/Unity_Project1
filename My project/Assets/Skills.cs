@@ -4,25 +4,23 @@ using UnityEngine;
 
 public class Skills : MonoBehaviour
 {
+    public int id;
     public string Name;
     public float Damage;
     public float Duration;
     public float Cooldown;
-    public float Number_of_Attack;
+    public int Number_of_Attack;
+    public int Skill_Level;
 
-    public Skills()
+    public Skills(int _id, string _Name, float _Damage, float _Duration, float _Cooldown, int _Number_of_Attack, int _Skill_Level)
     {
-        
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+        id = _id;
+        Name = _Name;
+        Damage = _Damage;
+        Duration = _Duration;
+        Cooldown = _Cooldown;
+        Number_of_Attack = _Number_of_Attack;
+        Skill_Level = _Skill_Level;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
