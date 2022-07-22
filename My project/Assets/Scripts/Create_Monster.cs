@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Create_Monster : MonoBehaviour
 {
-    public float speed = 3.0f;
+
     
     //Monster Group
     public GameObject monster_Group;
@@ -16,7 +16,7 @@ public class Create_Monster : MonoBehaviour
     public GameObject monster1_Prefab;
     public int monster1_count = 3;
     bool monster1_Created = false;
-    private Rigidbody2D monster1_Rigid;
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,6 @@ public class Create_Monster : MonoBehaviour
         {
             group = Instantiate(monster_Group, transform.position, transform.rotation);
             group_Rigid = group.GetComponent<Rigidbody2D>();
-            monster1_Rigid.velocity = transform.right * -1 * speed;
         }
     }
 
@@ -48,8 +47,7 @@ public class Create_Monster : MonoBehaviour
         {
             GameObject Monster1 = Instantiate(monster1_Prefab, transform.position, transform.rotation);
             Monster1.transform.SetParent(group.transform, true);
-            monster1_Rigid = Monster1.GetComponent<Rigidbody2D>();
-            monster1_Rigid.velocity = transform.right * -1 * speed;
+
 
             yield return new WaitForSeconds(1.0f);
             monster1_count--;

@@ -51,8 +51,6 @@ public class AttackRange : MonoBehaviour
                 Destroy(monster.gameObject);
                 Destroy(monster.hpBar.gameObject);
                 count++;
-                gameSystem.Gold += 100 * count;
-                Debug.Log(gameSystem.Gold);
                 break;
             }
             yield return new WaitForSeconds(attckSpeed);

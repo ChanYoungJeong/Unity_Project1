@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -148,9 +148,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster_Stop: 0
+  speed: 3
   playerScript: {fileID: 0}
   monster: {fileID: 0}
-  gameSystem: {fileID: 0}
 --- !u!114 &4159662366409559941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,8 +168,10 @@ MonoBehaviour:
   nowHp: 0
   atkDmg: 0
   atkSpeed: 0
-  player: {fileID: 0}
-  prfHpbar: {fileID: 0}
-  canvas: {fileID: 0}
-  hpBar: {fileID: 0}
+  Golds: 0
+  player: {fileID: 2948288446988658631, guid: 129f1b5fe10ef424da0ff2abc5981855, type: 3}
+  prfHpbar: {fileID: 7833774379465769604, guid: 22cc3c27d120b9c4baf58ddf1bb796ac, type: 3}
+  canvas: {fileID: 3089798413654030242, guid: d9c868a4b4147d94b83c205fac232c13, type: 3}
+  hpBar: {fileID: 7833774379465769611, guid: 22cc3c27d120b9c4baf58ddf1bb796ac, type: 3}
   height: 1
+  Game_System: {fileID: 5413824350994690674, guid: 68eb6eed643c70b45bab097681af14d3, type: 3}
