@@ -16,8 +16,6 @@ public class PlayerScript : MonoBehaviour
     public Image nowHpbar;
 
 
-    public GameObject attackRange;              //플레이어가 죽으면 setactive(false); 한다 
-
     private void Start()
     {
         atkDmg = 10;
