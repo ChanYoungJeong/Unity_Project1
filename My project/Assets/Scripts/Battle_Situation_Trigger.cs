@@ -19,16 +19,12 @@ public class Battle_Situation_Trigger : MonoBehaviour
         
     }
 
-    
-
-
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.CompareTag("Monster"))
         {
             monster = collision.gameObject;
-            Debug.Log(monster);
             on_Battle = true;
         }
     }
@@ -37,8 +33,8 @@ public class Battle_Situation_Trigger : MonoBehaviour
     {
         if(collision.CompareTag("Monster"))
         {
+            Debug.Log("Out?");
             on_Battle = false;
-            Debug.Log(on_Battle);
         }
     }
 }

@@ -10,6 +10,7 @@ public class PlayerScript : MonoBehaviour
     public int nowHp;
     public int atkDmg;
     public bool attacked;
+    public float atkSpeed;
 
     [Header ("commons")]
     public Image nowHpbar;
@@ -23,6 +24,7 @@ public class PlayerScript : MonoBehaviour
         attacked = true;
         maxHp = 100;
         nowHp = 100;
+        atkSpeed = 0.5f;
 
     }
 
