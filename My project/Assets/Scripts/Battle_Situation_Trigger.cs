@@ -5,8 +5,8 @@ using UnityEngine;
 public class Battle_Situation_Trigger : MonoBehaviour
 {
     bool log_check = false;
-    public static bool On_Battle = false;
-    public static GameObject Monster;
+    public static bool on_Battle = false;
+    public static GameObject monster;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +27,9 @@ public class Battle_Situation_Trigger : MonoBehaviour
     {
         if(collision.CompareTag("Monster"))
         {
-            Monster = collision.gameObject;
-            On_Battle = true;
+            monster = collision.gameObject;
+            Debug.Log(monster);
+            on_Battle = true;
         }
     }
 
@@ -36,8 +37,8 @@ public class Battle_Situation_Trigger : MonoBehaviour
     {
         if(collision.CompareTag("Monster"))
         {
-            On_Battle = false;
-            Debug.Log(On_Battle);
+            on_Battle = false;
+            Debug.Log(on_Battle);
         }
     }
 }
