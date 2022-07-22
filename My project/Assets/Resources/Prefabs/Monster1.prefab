@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7067386363084560320}
   - component: {fileID: 3837286492852299128}
   - component: {fileID: 4808573978052494670}
-  - component: {fileID: 7089861380746040754}
+  - component: {fileID: 4159662366409559941}
   m_Layer: 0
   m_Name: Monster1
   m_TagString: Monster
@@ -147,8 +147,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3c10662715624a48ba91781000245f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster_Stop: 0
---- !u!114 &7089861380746040754
+  monster_Stop: 0
+  playerScript: {fileID: 0}
+  monster: {fileID: 0}
+  gameSystem: {fileID: 0}
+--- !u!114 &4159662366409559941
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,7 +160,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1969604836136404861}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79f00e2d8c58b234daf09f274a59480c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f099e21d1b98994cba5ad7b08e33b09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   monsterName: 
@@ -165,8 +168,8 @@ MonoBehaviour:
   nowHp: 0
   atkDmg: 0
   atkSpeed: 0
-  player: {fileID: 2948288446988658631, guid: 129f1b5fe10ef424da0ff2abc5981855, type: 3}
-  prfHpbar: {fileID: 7833774379465769604, guid: 22cc3c27d120b9c4baf58ddf1bb796ac, type: 3}
-  canvas: {fileID: 3089798413654030242, guid: d9c868a4b4147d94b83c205fac232c13, type: 3}
-  hpBar: {fileID: 7833774379465769611, guid: 22cc3c27d120b9c4baf58ddf1bb796ac, type: 3}
+  player: {fileID: 0}
+  prfHpbar: {fileID: 0}
+  canvas: {fileID: 0}
+  hpBar: {fileID: 0}
   height: 1
