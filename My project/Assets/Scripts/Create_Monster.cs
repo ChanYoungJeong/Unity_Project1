@@ -8,51 +8,51 @@ public class Create_Monster : MonoBehaviour
     public float speed = 3.0f;
     
     //Monster Group
-    public GameObject Monster_Group;
-    GameObject Group;
-    private Rigidbody2D Group_Rigid;
+    public GameObject monster_Group;
+    GameObject group;
+    private Rigidbody2D group_Rigid;
 
     //Monster1
-    public GameObject Monster1_Prefab;
-    public int Monster1_count = 3;
-    bool Monster1_Created = false;
-    private Rigidbody2D Monster1_Rigid;
+    public GameObject monster1_Prefab;
+    public int monster1_count = 3;
+    bool monster1_Created = false;
+    private Rigidbody2D monster1_Rigid;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (Monster_Group != null)
+        if (monster_Group != null)
         {
-            Group = Instantiate(Monster_Group, transform.position, transform.rotation);
-            Group_Rigid = Group.GetComponent<Rigidbody2D>();
-            Monster1_Rigid.velocity = transform.right * -1 * speed;
+            group = Instantiate(monster_Group, transform.position, transform.rotation);
+            group_Rigid = group.GetComponent<Rigidbody2D>();
+            monster1_Rigid.velocity = transform.right * -1 * speed;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Monster1_Prefab != null)
+        if (monster1_Prefab != null)
         {
-            if (!Monster1_Created)
+            if (!monster1_Created)
             {
                 StartCoroutine(Create_Monster1());
-                Monster1_Created = true;
+                monster1_Created = true;
             }
         }
     }
 
     IEnumerator Create_Monster1()
     {
-        if (Monster1_count > 0)
+        if (monster1_count > 0)
         {
-            GameObject Monster1 = Instantiate(Monster1_Prefab, transform.position, transform.rotation);
-            Monster1.transform.SetParent(Group.transform, true);
-            Monster1_Rigid = Monster1.GetComponent<Rigidbody2D>();
-            Monster1_Rigid.velocity = transform.right * -1 * speed;
+            GameObject Monster1 = Instantiate(monster1_Prefab, transform.position, transform.rotation);
+            Monster1.transform.SetParent(group.transform, true);
+            monster1_Rigid = Monster1.GetComponent<Rigidbody2D>();
+            monster1_Rigid.velocity = transform.right * -1 * speed;
 
             yield return new WaitForSeconds(1.0f);
-            Monster1_count--;
+            monster1_count--;
             StartCoroutine(Create_Monster1());
 
         }
