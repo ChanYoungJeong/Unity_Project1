@@ -23,6 +23,7 @@ public class Combat_Manager : MonoBehaviour
             while (Combat_Counter != 0)
             {
                 Combat_Counter = 0;
+                
                 Active_Attack(Battle_Situation_Trigger.monster);
             }
         }
