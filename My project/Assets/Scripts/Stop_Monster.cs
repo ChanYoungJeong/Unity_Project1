@@ -8,7 +8,7 @@ public class Stop_Monster : MonoBehaviour
     public bool monster_Stop = false;
 
     public PlayerScript playerScript;
-    public Monster monster;
+    public Monster_Script monster;
     public Game_System gameSystem;
     int count;
     private float attckSpeed = 1.0f;
@@ -18,7 +18,7 @@ public class Stop_Monster : MonoBehaviour
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
-        monster = Battle_Situation_Trigger.monster.GetComponent<Monster>();
+        monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
     }
 
     // Update is called once per frame
