@@ -28,14 +28,14 @@ public class AttackRange : MonoBehaviour
 
             if (playerScript.attacked)                                     // 플레이어 공격 활성화(Enable Player Attacks)
             {
-                StartCoroutine(PlayerAttack(collision.GetComponent<Monster>()));                           // 몬스터 현재 체력 감소
+                StartCoroutine(PlayerAttack(collision.GetComponent<Monster_Script>()));                           // 몬스터 현재 체력 감소
                         
                 playerScript.attacked = false;                                                         // 플레이어 공격 비활성화 (Disable Player Attacks)
             }
         }
     }
 
-    IEnumerator PlayerAttack(Monster monster)
+    IEnumerator PlayerAttack(Monster_Script monster)
     {
         while (true)
         {
@@ -51,8 +51,6 @@ public class AttackRange : MonoBehaviour
                 Destroy(monster.gameObject);
                 Destroy(monster.hpBar.gameObject);
                 count++;
-                gameSystem.Gold += 100 * count;
-                Debug.Log(gameSystem.Gold);
                 break;
             }
             yield return new WaitForSeconds(attckSpeed);

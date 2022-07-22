@@ -4,32 +4,47 @@ using UnityEngine;
 
 public class Stop_Monster : MonoBehaviour
 {
-    private Rigidbody2D Rigid;
-    public bool Monster_Stop = false;
-    
+    private Rigidbody2D rigid;
+    public bool monster_Stop = false;
+    public float speed = 3.0f;
+    private Rigidbody2D monster1_Rigid;
+
+
+    public PlayerScript playerScript;
+    public Monster_Script monster;
+    int count;
+    private float attckSpeed = 1.0f;
+
     //Battle_Situation_Trigger
 
     void Start()
     {
-        Rigid = GetComponent<Rigidbody2D>();
+        rigid = GetComponent<Rigidbody2D>();
+        if (monster != null)
+        {
+            monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Battle_Situation_Trigger.On_Battle)
+        if (Battle_Situation_Trigger.on_Battle)
         {
-            Debug.Log("current Monster " + Battle_Situation_Trigger.Monster.name);
-            Rigid.velocity = Vector2.zero;
-            Monster_Stop = true;
-
-
+            rigid.velocity = Vector2.zero;
+            monster_Stop = true;
         }
         else
         {
-            Monster_Stop = false;
+            Move_Left();
+            monster_Stop = false;
         }
     }
 
+    private void Move_Left()
+    {
+        monster1_Rigid = GetComponent<Rigidbody2D>();
+        monster1_Rigid.velocity = transform.right * -1 * speed;
+    }
 
 }
