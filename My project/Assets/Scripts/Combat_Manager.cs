@@ -20,7 +20,7 @@ public class Combat_Manager : MonoBehaviour
     {
         if(Battle_Situation_Trigger.on_Battle)
         {
-            while (Combat_Counter != 0)
+            while (!Skills.Active_Skill_Start)
             {
                 Combat_Counter = 0;
                 
@@ -31,19 +31,21 @@ public class Combat_Manager : MonoBehaviour
 
     private void Active_Attack(GameObject Monster)
     {
+        Skills.Active_Skill_Start = true;
         if (Skills.Skill_Lists.Count != 0)
         {
-            for (int i = 0; i < Skills.Skill_Lists.Count; i++)
-            {
-                Skills.StartCoroutine(Skills.Start_Timer(Skills.Skill_Lists[0]));
-                Skills.StartCoroutine(Skills.Active_Skill(Skills.Skill_Lists[0], Monster));
-            }
+            Skills.StartCoroutine(Skills.Start_Timer(Skills.Skill_Lists[0]));
+            Skills.StartCoroutine(Skills.Active_Skill(Skills.Skill_Lists[0], Monster));
             Combat_Counter = 1;
+            //Debug.Log("Number of Skills" + Skills.Skill_Lists.Count);
+            //Debug.Log(Skills.Active_Skill_Start);
+            //Debug.Log(Combat_Counter);
         }
         else
         {
+            //Debug.Log("Number of Skills" + Skills.Skill_Lists.Count);
             StartCoroutine(Basic_Attack(Monster));
-        }
+        }        
     }
 
     IEnumerator Basic_Attack(GameObject Monster)
@@ -52,8 +54,7 @@ public class Combat_Manager : MonoBehaviour
         Monster_Status.nowHp -= Player_Status.atkDmg;
         Debug.Log(Monster_Status.nowHp);
         yield return new WaitForSeconds(Player_Status.atkSpeed);
-        Combat_Counter = 1;
-        
+        Skills.Active_Skill_Start = false;
     }
 
     IEnumerator Attack_Duration()
