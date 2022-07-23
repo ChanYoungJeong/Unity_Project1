@@ -24,7 +24,7 @@ public class PlayerScript : MonoBehaviour
         attacked = true;
         maxHp = 100;
         nowHp = 100;
-        atkSpeed = 0.5f;
+        atkSpeed = 1.0f;
 
     }
 
