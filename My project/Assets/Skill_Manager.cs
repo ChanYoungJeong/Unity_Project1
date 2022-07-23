@@ -18,7 +18,7 @@ public class Skill_Manager : MonoBehaviour
     void Generate()
     {
         Skills skill_0 = new Skills(0, "Double Slash", 0.7f, 0.25f, 3.0f, 2, 1);
-        Skills skill_1 = new Skills(0, "Fire Slash", 0.5f, 0.1f, 5.0f, 7, 1);
+        Skills skill_1 = new Skills(1, "Fire Slash", 0.5f, 0.1f, 5.0f, 7, 1);
 
 
         //Add Skills to the list
@@ -28,7 +28,6 @@ public class Skill_Manager : MonoBehaviour
 
     public IEnumerator Active_Skill(Skills skill_, GameObject Monster)
     {
-        Active_Skill_Start = true;
         Monster_Script Monster_Status = Monster.GetComponent<Monster_Script>();
         Debug.Log("Active " + skill_.Name);
         Skill_Lists.Remove(skill_);
