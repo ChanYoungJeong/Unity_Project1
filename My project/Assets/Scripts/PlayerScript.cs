@@ -35,4 +35,5 @@ public class PlayerScript : MonoBehaviour
     {
         attacked = true;
     }
+
 }

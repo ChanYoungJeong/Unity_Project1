@@ -24,8 +24,7 @@ public class Battle_Situation_Trigger : MonoBehaviour
     {
         if(collision.CompareTag("Monster"))
         {
-            monster = collision.gameObject;
-            Debug.Log("collision.gameObject : " + monster);
+            monster = collision.gameObject;       
             on_Battle = true;
         }
     }
@@ -34,7 +33,6 @@ public class Battle_Situation_Trigger : MonoBehaviour
     {
         if(collision.CompareTag("Monster"))
         {
-            Debug.Log("Out?");
             on_Battle = false;
         }
     }

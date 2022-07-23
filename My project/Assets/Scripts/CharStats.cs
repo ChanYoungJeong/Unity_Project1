@@ -9,7 +9,6 @@ public class CharStats : MonoBehaviour
     public float maxMP = 50; //max MP
     public float curMP { get; private set; }
     float attack = 10; // damage
-
     public Stat damage;
 
 
