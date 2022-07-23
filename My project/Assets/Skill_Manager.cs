@@ -6,6 +6,8 @@ public class Skill_Manager : MonoBehaviour
 {
     PlayerScript Player_Status;
     public List<Skills> Skill_Lists = new List<Skills>();
+
+    public bool Active_Skill_Start = false;
     private void Awake()
     {
         Player_Status = transform.GetComponentInParent<PlayerScript>();
@@ -26,16 +28,20 @@ public class Skill_Manager : MonoBehaviour
 
     public IEnumerator Active_Skill(Skills skill_, GameObject Monster)
     {
+        Active_Skill_Start = true;
         Monster_Script Monster_Status = Monster.GetComponent<Monster_Script>();
         Debug.Log("Active " + skill_.Name);
         Skill_Lists.Remove(skill_);
         for (int i = 0; i < skill_.Number_of_Attack; i++)
         {             
             Monster_Status.nowHp -= (int)(Player_Status.atkDmg * skill_.Damage);
+
             Debug.Log("Apply " + skill_.Name + " Damage "+ (int)(Player_Status.atkDmg * skill_.Damage) + " Monster Hp :" + Monster_Status.nowHp);
             yield return new WaitForSeconds(skill_.Duration);
         }
         //StartCoroutine(Start_Timer(skill_));
+       
+        Active_Skill_Start = false;
     }
 
     public IEnumerator Start_Timer(Skills skill_)

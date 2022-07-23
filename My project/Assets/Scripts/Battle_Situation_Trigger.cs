@@ -25,6 +25,7 @@ public class Battle_Situation_Trigger : MonoBehaviour
         if(collision.CompareTag("Monster"))
         {
             monster = collision.gameObject;
+            Debug.Log("collision.gameObject : " + monster);
             on_Battle = true;
         }
     }
