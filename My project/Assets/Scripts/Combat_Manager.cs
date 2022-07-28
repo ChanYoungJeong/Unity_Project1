@@ -23,7 +23,7 @@ public class Combat_Manager : MonoBehaviour
             while (!Skills.Active_Skill_Start)
             {
                 Combat_Counter = 0;
-                
+
                 Active_Attack(Battle_Situation_Trigger.monster);
             }
         }
@@ -52,6 +52,11 @@ public class Combat_Manager : MonoBehaviour
     {
         Monster_Status = Monster.GetComponent<Monster_Script>();
         Monster_Status.nowHp -= Player_Status.atkDmg;
+        if(Monster_Status.nowHp <= 0)
+        {
+            Monster_Status.nowHp = 0;
+            Destroy(Monster);
+        }
         Debug.Log(Monster_Status.nowHp);
         yield return new WaitForSeconds(Player_Status.atkSpeed);
         Skills.Active_Skill_Start = false;
