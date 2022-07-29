@@ -14,31 +14,45 @@ public class Create_Monster : MonoBehaviour
 
     //Monster1
     public GameObject monster1_Prefab;
-    public int monster1_count = 3;
-    bool monster1_Created = false;
+    int monster1_count;
+    public bool monster1_Created = false;
 
+    //Stage Information
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        if (monster_Group != null)
-        {
-            group = Instantiate(monster_Group, transform.position, transform.rotation);
-            group_Rigid = group.GetComponent<Rigidbody2D>();
-        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(!group)
+        {
+            monster1_Created = false;
+        }
+
         if (monster1_Prefab != null)
         {
             if (!monster1_Created)
             {
-                StartCoroutine(Create_Monster1());
                 monster1_Created = true;
+                Summon_Monster();
             }
+
         }
+    }
+
+    void Summon_Monster()
+    {
+        if (monster_Group != null && monster1_count == 0)
+        {
+            group = Instantiate(monster_Group, transform.position, transform.rotation);
+            monster1_count = group.GetComponent<Monster_Group_Manager>().Number_of_Monster;
+        }
+        StartCoroutine(Create_Monster1());
     }
 
     IEnumerator Create_Monster1()
@@ -47,14 +61,13 @@ public class Create_Monster : MonoBehaviour
         {
             GameObject Monster1 = Instantiate(monster1_Prefab, transform.position, transform.rotation);
             Monster1.transform.SetParent(group.transform, true);
-
+            group.GetComponent<Monster_Group_Manager>().check_coroutine = false;
 
             yield return new WaitForSeconds(1.0f);
             monster1_count--;
             StartCoroutine(Create_Monster1());
-
         }
-    }
 
+    }
     
 }
