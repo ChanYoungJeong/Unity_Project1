@@ -28,7 +28,8 @@ Transform:
   m_LocalPosition: {x: 12.38, y: -3.1, z: 52.979164}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7410440713986742281}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -44,7 +45,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22c1d78a90fb74549a21ad624e2ee4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
   monster_Group: {fileID: 8323481700098097601, guid: cf6e8d4644fb414469c2c419e2432032, type: 3}
   monster1_Prefab: {fileID: 1969604836136404861, guid: 6e8f14adf1888ff4e9e7108b920b0c22, type: 3}
-  monster1_count: 3
+  monster1_Created: 0
+--- !u!1001 &3287335579504689882
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 733390301504948927}
+    m_Modifications:
+    - target: {fileID: 5425107863827962579, guid: cf6e8d4644fb414469c2c419e2432032, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425107863827962579, guid: cf6e8d4644fb414469c2c419e2432032, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425107863827962579, guid: cf6e8d4644fb414469c2c419e2432032, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425107863827962579, guid: cf6e8d4644fb414469c2c419e2432032, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 26.936636
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425107863827962579, guid: cf6e8d4644fb414469c2c419e2432032, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425107863827962579, guid: cf6e8d4644fb414469c2c419e2432032, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425107863827962579, guid: cf6e8d4644fb414469c2c419e2432032, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425107863827962579, guid: cf6e8d4644fb414469c2c419e2432032, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425107863827962579, guid: cf6e8d4644fb414469c2c419e2432032, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425107863827962579, guid: cf6e8d4644fb414469c2c419e2432032, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425107863827962579, guid: cf6e8d4644fb414469c2c419e2432032, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8323481700098097601, guid: cf6e8d4644fb414469c2c419e2432032, type: 3}
+      propertyPath: m_Name
+      value: Monster_Group
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cf6e8d4644fb414469c2c419e2432032, type: 3}
+--- !u!4 &7410440713986742281 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5425107863827962579, guid: cf6e8d4644fb414469c2c419e2432032, type: 3}
+  m_PrefabInstance: {fileID: 3287335579504689882}
+  m_PrefabAsset: {fileID: 0}
