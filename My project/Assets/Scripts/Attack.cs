@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // 충돌하면 표시한다 
-public class Attack : MonoBehaviour
+public class AttackMotion : MonoBehaviour
 {
 	Animator animator;
 	Rigidbody2D myrigidbody;
@@ -22,7 +22,7 @@ public class Attack : MonoBehaviour
 	{
 		if (Input.GetKey(KeyCode.Z))//(Input.GetMouseButtonDown(0))
 		{
-			animator.SetTrigger("Attack");
+			animator.SetTrigger("AttackMotion");
 		}
 
 	}
