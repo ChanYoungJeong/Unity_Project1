@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class CharStats : MonoBehaviour
 {
-    public float maxHealth = 100;   // max HP
-    public float curHealth { get; private set; } 
-    public float maxMP = 50; //max MP
-    public float curMP { get; private set; }
-    float attack = 10; // damage
-    public Stat damage;
+    public float maxHealth;   // 최대 체력
+    public float curHealth;
+    public float maxMP; //최대 마나
+    public float curMP;
+    public float attack;
+    public string this_name;
+    
 
-
-    private void Awake()
+    public CharStats(string _name, float _maxHealth, float _maxMP, float _attack)
     {
-        curHealth = maxHealth;
-        curMP = maxMP;
-    }
-
-    public void TakeDamage(int damage) // HP - monster damage
-    {
-        curHealth -= damage;
+        this_name = _name;
+        maxHealth = _maxHealth;
+        curHealth = _maxHealth;
+        maxMP = _maxMP;
+        curMP = _maxMP;
+        attack = _attack;
     }
 }
+
