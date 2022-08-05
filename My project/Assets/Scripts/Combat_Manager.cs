@@ -7,10 +7,11 @@ public class Combat_Manager : MonoBehaviour
     PlayerScript Player_Status;
     Monster_Script Monster_Status;
     Skill_Manager Skills;
-    int Combat_Counter = 1;
+    int Combat_Counter;
     // Start is called before the first frame update
     void Start()
     {
+        Combat_Counter = 1;
         Player_Status = transform.GetComponentInParent<PlayerScript>();
         Skills = transform.parent.GetComponentInChildren<Skill_Manager>();
     }

@@ -166,17 +166,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f099e21d1b98994cba5ad7b08e33b09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterName: 
+  monsterType: 
   maxHp: 0
   nowHp: 0
   atkDmg: 0
   atkSpeed: 0
   Golds: 0
-  player: {fileID: 0}
-  prfHpbar: {fileID: 0}
-  canvas: {fileID: 0}
-  hpBar: {fileID: 0}
-  height: 1
 --- !u!114 &9091718101220298701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,3 +196,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e53bf1413eb9cd5419fad2238c9175ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player_Stat: {fileID: 2948288446988658631, guid: 129f1b5fe10ef424da0ff2abc5981855, type: 3}

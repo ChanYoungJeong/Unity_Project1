@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Battle_Situation_Trigger : MonoBehaviour
 {
-    bool log_check = false;
     public static bool on_Battle = false;
     public static GameObject monster;
     // Start is called before the first frame update

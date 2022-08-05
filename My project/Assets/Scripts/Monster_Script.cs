@@ -13,22 +13,7 @@ public class Monster_Script : MonoBehaviour
     public int atkDmg;
     public int atkSpeed;
     public int Golds;
-
-
-    //Outside Scripts
-
-    void Start()
-    {
-    }
-    private
-    void Update()
-    {
-
-        
-    }
-
-
-
+    public int Exp;
 
 
 }
