@@ -7,8 +7,8 @@ public class Scale_Controller : MonoBehaviour
 {
     public GameObject Image;
 
-    float leftPosX = 0f;
-    float rightPosX = 0f;
+    float leftPosX;
+    float rightPosX;
     float xScreenHalfSize;
     float yScreenHalfSize;
 

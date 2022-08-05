@@ -9,7 +9,7 @@ public class Monster_Manager : MonoBehaviour
     void Awake()
     {
         Monster_Stat = GetComponent<Monster_Script>();
-        SetMonsterStatus();
+        Get_Monster_Stat(Stage_Manager.Stage);
     }
 
     // Update is called once per frame
@@ -28,47 +28,65 @@ public class Monster_Manager : MonoBehaviour
         Game_System.Gold += Monster_Stat.Golds;
     }
 
-    public void SetMonsterStatus()
+    void SetMonsterStatus()
     {
-        Monster_Stat.monsterType = Get_Monster_Type(Stage_Manager.Stage);
         Monster_Stat.maxHp = Get_Monster_HP(Stage_Manager.Stage);
-        Monster_Stat.nowHp = Get_Monster_HP(Stage_Manager.Stage); ;
-        Monster_Stat.atkDmg = Get_Monster_ATK(Stage_Manager.Stage); ;
+        Monster_Stat.nowHp = Get_Monster_HP(Stage_Manager.Stage);
+        Monster_Stat.atkDmg = Get_Monster_ATK(Stage_Manager.Stage);
         Monster_Stat.atkSpeed = 7;
         Monster_Stat.Golds = Get_Monster_Gold(Stage_Manager.Stage);
+        Monster_Stat.Exp = Get_Monster_Exp(Stage_Manager.Stage);
     }
 
-    public string Get_Monster_Type(int Stage)
+    void SetBossMonsterStatus()
     {
-        int Boss_Stage = Stage % 10;
+        Monster_Stat.maxHp = (int)(Get_Monster_HP(Stage_Manager.Stage - 1) * 2.2);
+        Monster_Stat.nowHp = (int)(Get_Monster_HP(Stage_Manager.Stage - 1) * 2.2);
+        Monster_Stat.atkDmg = (int)(Get_Monster_ATK(Stage_Manager.Stage - 1) * 2.2);
+        Monster_Stat.atkSpeed = 2;
+        Monster_Stat.Golds = (int)(Get_Monster_Gold(Stage_Manager.Stage - 1) * 2.2);
+        Monster_Stat.Exp = (int)(Get_Monster_Exp(Stage_Manager.Stage - 1) * 2.2);
+    }
 
-        if (Boss_Stage == 0)
+    void Get_Monster_Stat(int Stage)
+    {
+        int Boss_Stage = Stage % Stage_Manager.Boss_Stage;
+
+        if (Boss_Stage > 0)
         {
-            return "Boss";
+            Monster_Stat.monsterType = "Normal";
+            SetMonsterStatus();
         }
         else {
-            return "Normal";
+            Monster_Stat.monsterType = "Boss";
+            SpriteRenderer color = GetComponent<SpriteRenderer>();
+            color.color = Color.blue;
+            SetBossMonsterStatus();
         } 
     }
 
     public int Get_Monster_HP(int Stage)
     {
-        int HP = 100 * ((Stage / 10) + 1);
+        int HP = 100 * ((Stage / Stage_Manager.Boss_Stage) + 1);
         return HP;
     }
 
     public int Get_Monster_ATK(int Stage)
     {
-        int ATK = 2 * ((Stage / 10) + 1);
+        int ATK = 2 * ((Stage / Stage_Manager.Boss_Stage) + 1);
         return ATK;
     }
     
     public int Get_Monster_Gold(int Stage)
     {
-        int Gold = 10 * ((Stage / 10) + 1);
+        int Gold = 10 * ((Stage / Stage_Manager.Boss_Stage) + 1);
         return Gold;
     }
     
-
+    public int Get_Monster_Exp(int Stage)
+    {
+        int Exp = 5 * ((Stage / Stage_Manager.Boss_Stage) + 1);
+        return Exp;
+    }
 
 }

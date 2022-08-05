@@ -67,7 +67,6 @@ public class Create_Monster : MonoBehaviour
             monster1_count--;
             StartCoroutine(Create_Monster1());
         }
-
     }
     
 }

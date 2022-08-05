@@ -12,25 +12,40 @@ public class Monster_Group_Manager : MonoBehaviour
 
     void Awake()
     {
-        Number_of_Monster = 3;  //Set Number of Monster
+        Number_of_Monster = set_Number_of_Monster(Stage_Manager.Stage);  //Set Number of Monster
         Creater = GetComponent<Create_Monster>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(transform.childCount == 0 && !check_coroutine)
+        if(transform.childCount == 0 && !check_coroutine) //When there is no moster in group
         {
-            StartCoroutine(Go_To_Next_State());    
+            StartCoroutine(Go_To_Next_State());         //go to next stage
         }
     }
 
-    IEnumerator Go_To_Next_State()
+    IEnumerator Go_To_Next_State()             
     {
         yield return new WaitForSeconds(2.0f);
-        Number_of_Monster = 3;
-        Stage_Manager.Stage++;
-        Debug.Log("Here ?");
-        Destroy(gameObject);
+        Number_of_Monster = set_Number_of_Monster(Stage_Manager.Stage + 1);
+        Stage_Manager.Stage++;                  //Go to next stage
+        Destroy(gameObject);                    //Destory object
+    }
+
+    int set_Number_of_Monster(int stage)
+    {
+        int number;
+
+        if((stage % Stage_Manager.Boss_Stage) > 0)
+        {
+            number = 3;             //Set the number of Normal Monster
+        }
+        else
+        {
+            number = 1;             //Set the number of Boss Monster
+        }
+
+        return number;
     }
 }
