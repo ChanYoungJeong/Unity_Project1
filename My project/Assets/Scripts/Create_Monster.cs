@@ -50,7 +50,7 @@ public class Create_Monster : MonoBehaviour
         if (monster_Group != null && monster1_count == 0)
         {
             group = Instantiate(monster_Group, transform.position, transform.rotation);
-            monster1_count = group.GetComponent<Monster_Group_Manager>().Number_of_Monster;
+            monster1_count = group.GetComponent<Monster_Group_Manager>().numberOfMonster;
         }
         StartCoroutine(Create_Monster1());
     }
@@ -61,7 +61,7 @@ public class Create_Monster : MonoBehaviour
         {
             GameObject Monster1 = Instantiate(monster1_Prefab, transform.position, transform.rotation);
             Monster1.transform.SetParent(group.transform, true);
-            group.GetComponent<Monster_Group_Manager>().check_coroutine = false;
+            group.GetComponent<Monster_Group_Manager>().checkCoroutine = false;
 
             yield return new WaitForSeconds(1.0f);
             monster1_count--;

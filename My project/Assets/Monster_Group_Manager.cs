@@ -5,35 +5,35 @@ using UnityEngine;
 public class Monster_Group_Manager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int Number_of_Monster;
-    public bool check_coroutine = true;
+    public int numberOfMonster;
+    public bool checkCoroutine = true;
 
-    public Create_Monster Creater;
+    public Create_Monster CreaterMonster;
 
     void Awake()
     {
-        Number_of_Monster = set_Number_of_Monster(Stage_Manager.Stage);  //Set Number of Monster
-        Creater = GetComponent<Create_Monster>();
+        numberOfMonster = SetNumberOfMonster(Stage_Manager.Stage);  //Set Number of Monster
+        CreaterMonster = GetComponent<Create_Monster>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(transform.childCount == 0 && !check_coroutine) //When there is no moster in group
+        if(transform.childCount == 0 && !checkCoroutine) //When there is no moster in group
         {
-            StartCoroutine(Go_To_Next_State());         //go to next stage
+            StartCoroutine(GoToNextState());         //go to next stage
         }
     }
 
-    IEnumerator Go_To_Next_State()             
+    IEnumerator GoToNextState()             
     {
         yield return new WaitForSeconds(2.0f);
-        Number_of_Monster = set_Number_of_Monster(Stage_Manager.Stage + 1);
+        numberOfMonster = SetNumberOfMonster(Stage_Manager.Stage + 1);
         Stage_Manager.Stage++;                  //Go to next stage
         Destroy(gameObject);                    //Destory object
     }
 
-    int set_Number_of_Monster(int stage)
+    int SetNumberOfMonster(int stage)
     {
         int number;
 
