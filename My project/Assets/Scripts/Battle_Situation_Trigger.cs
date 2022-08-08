@@ -6,24 +6,17 @@ public class Battle_Situation_Trigger : MonoBehaviour
 {
     public static bool on_Battle = false;
     public static GameObject monster;
+    public static GameObject monster_group;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Monster"))
         {
-            monster = collision.gameObject;       
+            monster = collision.gameObject;
+            monster_group = collision.gameObject.transform.parent.gameObject;
+            Debug.Log(monster_group.transform.childCount);
             on_Battle = true;
         }
     }
