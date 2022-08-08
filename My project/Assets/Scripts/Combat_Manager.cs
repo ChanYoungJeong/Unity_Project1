@@ -35,8 +35,8 @@ public class Combat_Manager : MonoBehaviour
         Skills.activeSkillStart = true;
         if (Skills.skillLists.Count != 0)
         {
-            Skills.StartCoroutine(Skills.Start_Timer(Skills.skillLists[0]));
-            Skills.StartCoroutine(Skills.Active_Skill(Skills.skillLists[0], Monster));
+            Skills.StartCoroutine(Skills.StartTimer(Skills.skillLists[0]));
+            Skills.StartCoroutine(Skills.ActiveSkill(Skills.skillLists[0], Monster));
             Combat_Counter = 1;
             //Debug.Log("Number of Skills" + Skills.Skill_Lists.Count);
             //Debug.Log(Skills.Active_Skill_Start);

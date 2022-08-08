@@ -30,7 +30,7 @@ public class Skill_Manager : MonoBehaviour
         skillLists.Add(skill_3);
     }
 
-    public IEnumerator Active_Skill(Skills skill_, GameObject Monster)
+    public IEnumerator ActiveSkill(Skills skill_, GameObject Monster)
     {
         Monster_Script monsterStatus = Monster.GetComponent<Monster_Script>();
         Debug.Log("Active " + skill_.name);
@@ -52,7 +52,7 @@ public class Skill_Manager : MonoBehaviour
         activeSkillStart = false;
     }
 
-    public IEnumerator Start_Timer(Skills skill_)
+    public IEnumerator StartTimer(Skills skill_)
     {
         Debug.Log(skill_.name + " Cool Down Starts ");
         yield return new WaitForSeconds(skill_.cooldown);
