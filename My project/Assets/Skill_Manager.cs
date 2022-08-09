@@ -6,6 +6,7 @@ public class Skill_Manager : MonoBehaviour
 {
     PlayerScript playerStatus;
     public List<Skills> skillLists = new List<Skills>();
+	
 
     public bool activeSkillStart = false;
     private void Awake()
