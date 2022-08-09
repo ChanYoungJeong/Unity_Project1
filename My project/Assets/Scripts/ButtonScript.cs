@@ -86,8 +86,8 @@ public class ButtonScript : MonoBehaviour
                 //up_hp += 5;
                 up_hp = up_hp1 + up_hp2;
                 player_hp += up_hp;
-                up_hp1 += up_hp2;
-                up_hp2 += up_hp;
+                up_hp1 = up_hp2;
+                up_hp2 = up_hp;
 
                 hp_scoreButton += 1;
                 Debug.Log("hp_upcount:" + hp_scoreButton);
@@ -96,8 +96,9 @@ public class ButtonScript : MonoBehaviour
                 //up_gold += 5000;
                 
                 my_gold -= up_hpgold;
-                up_hpgold1 += up_hpgold2;
-                up_hpgold2 += up_hpgold;
+                up_hpgold1 = up_hpgold2;
+                up_hpgold2 = up_hpgold;
+
                 up_hpgold = up_hpgold1 + up_hpgold2;
 
 
@@ -125,8 +126,8 @@ public class ButtonScript : MonoBehaviour
 
                 up_atk = up_atk1 + up_atk2;
                 player_atk += up_atk;
-                up_atk1 += up_atk2;
-                up_atk2 += up_atk;
+                up_atk1 = up_atk2;
+                up_atk2 = up_atk;
 
                 atk_scoreButton += 1;
                 Debug.Log("atk_scorebutton:" + atk_scoreButton);
@@ -134,8 +135,8 @@ public class ButtonScript : MonoBehaviour
                 
                 //up_gold = up_gold1 + up_gold2;
                 my_gold -= up_atkgold;
-                up_atkgold1 += up_atkgold2;
-                up_atkgold2 += up_atkgold;
+                up_atkgold1 = up_atkgold2;
+                up_atkgold2 = up_atkgold;
                 up_atkgold = up_atkgold1 + up_atkgold2;
 
 
