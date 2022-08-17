@@ -23,6 +23,8 @@ public class Skill_Manager : MonoBehaviour
         Skills skill_2 = new Skills(2, "fountain of blood", 0.3f, 0.2f, 24.0f, 10, 1);
         Skills skill_3 = new Skills(3, "Darkness", 3.0f, 1.0f, 30.0f, 1, 1);
 
+        Skills s = gameObject.AddComponent<Skills>();
+
 
         //Add Skills to the list
         skillLists.Add(skill_0);
