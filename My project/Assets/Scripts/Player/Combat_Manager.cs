@@ -7,11 +7,11 @@ public class Combat_Manager : MonoBehaviour
     PlayerScript Player_Status;
     Monster_Script Monster_Status;
     Skill_Manager Skills;
-    int Combat_Counter;
+    //int Combat_Counter;
     // Start is called before the first frame update
     void Start()
     {
-        Combat_Counter = 1;
+        //Combat_Counter = 1;
         Player_Status = transform.GetComponentInParent<PlayerScript>();
         Skills = transform.parent.GetComponentInChildren<Skill_Manager>();
     }
@@ -23,7 +23,7 @@ public class Combat_Manager : MonoBehaviour
         {
             while (!Skills.activeSkillStart)
             {
-                Combat_Counter = 0;
+                //Combat_Counter = 0;
 
                 Active_Attack(Battle_Situation_Trigger.monster);
             }
@@ -37,7 +37,7 @@ public class Combat_Manager : MonoBehaviour
         {
             Skills.StartCoroutine(Skills.StartTimer(Skills.skillLists[0]));
             Skills.StartCoroutine(Skills.ActiveSkill(Skills.skillLists[0], Monster));
-            Combat_Counter = 1;
+            //Combat_Counter = 1;
             //Debug.Log("Number of Skills" + Skills.Skill_Lists.Count);
             //Debug.Log(Skills.Active_Skill_Start);
             //Debug.Log(Combat_Counter);

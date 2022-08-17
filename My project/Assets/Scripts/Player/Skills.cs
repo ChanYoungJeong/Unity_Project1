@@ -5,7 +5,7 @@ using UnityEngine;
 public class Skills : MonoBehaviour
 {
     public int id;
-    public string name;
+    public string _name;
     public float damage;
     public float duration;
     public float cooldown;
@@ -15,7 +15,7 @@ public class Skills : MonoBehaviour
     public Skills(int id, string name, float damage, float duration, float cooldown, int numberOfAttack, int skillLevel)
     {
         this.id = id;
-        this.name = name;
+        _name = name;
         this.damage = damage;
         this.duration = duration;
         this.cooldown = cooldown;
