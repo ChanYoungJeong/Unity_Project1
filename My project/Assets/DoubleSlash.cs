@@ -5,45 +5,42 @@ using UnityEngine;
 public class DoubleSlash : MonoBehaviour
 {
     public GameObject doubleSlashPrefaps;
-    public GameObject GameSytstem;
-    GameObject doubleSlash;
-    public GameObject Monster;
 
     float x;
     float y;
 
+    int count;
+
+    Skills skill_0;
+    private void Start()
+    {
+        skill_0 = new Skills(0, "Double Slash", 2.0f, 0.25f, 27.0f, 2, 1);
+    }
+
 
     public void SkillAtack()
     {
-        StartCoroutine(Attack());
-    }
-
-    IEnumerator Attack()
-    {
-        yield return new WaitForSeconds(0.25f);
-        CreatedSkill();
-        CreatedSkill();
-
+        count = 0;
+        while(count < 2)
+        {
+            if(doubleSlashPrefaps != null)
+            {
+                InvokeRepeating("CreatedSkill", 0f, skill_0.duration);
+                count++;
+            }
+        }
     }
 
     public void CreatedSkill()
     {
-        x = GameSytstem.GetComponent<GameObject>().transform.position.x + 0.6f;
-        y = GameSytstem.GetComponent<GameObject>().transform.position.y;
+        x = Battle_Situation_Trigger.monster_group.transform.GetChild(0).GetComponent<GameObject>().transform.position.x;
+        x = Battle_Situation_Trigger.monster_group.transform.GetChild(0).GetComponent<GameObject>().transform.position.y;
 
-        doubleSlash = Instantiate(doubleSlash, new Vector3(x, y, 0), Quaternion.identity);
+        doubleSlashPrefaps = Instantiate(doubleSlashPrefaps, new Vector3(x, y, 0), Quaternion.identity);
+        doubleSlashPrefaps.SetActive(true);
+        Battle_Situation_Trigger.monster_group.transform.GetChild(0).GetComponent<Monster_Script>().nowHp -= (int)skill_0.damage;
 
-
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Monster_Script monsterStatus = Monster.GetComponent<Monster_Script>();
-        Skills doubleSlash = new Skills(0, "Double Slash", 2.0f, 0.25f, 27.0f, 2, 1);
-
-        if (CompareTag("skill"))
-        {
-            monsterStatus.nowHp -= (int)doubleSlash.damage;
-        }
+        Debug.Log("몬스터 체력 : " + Battle_Situation_Trigger.monster_group.transform.GetChild(0).GetComponent<Monster_Script>().nowHp);
+        Destroy(doubleSlashPrefaps, 0.1f);
     }
 }
