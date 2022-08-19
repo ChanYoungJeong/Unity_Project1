@@ -19,7 +19,7 @@ public class Combat_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Battle_Situation_Trigger.on_Battle)
+        if (Battle_Situation_Trigger.on_Battle)
         {
             while (!Skills.activeSkillStart)
             {
@@ -46,7 +46,7 @@ public class Combat_Manager : MonoBehaviour
         {
             //Debug.Log("Number of Skills" + Skills.Skill_Lists.Count);
             StartCoroutine(Basic_Attack(Monster));
-        }        
+        }
     }
 
     IEnumerator Basic_Attack(GameObject Monster)
