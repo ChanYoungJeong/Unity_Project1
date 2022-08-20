@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 733390301504948927}
-  - component: {fileID: 733390301504948926}
+  - component: {fileID: 141854802083770041}
   m_Layer: 0
   m_Name: Create_Monster
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &733390301504948926
+--- !u!114 &141854802083770041
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,10 +42,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 733390301504948925}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22c1d78a90fb74549a21ad624e2ee4ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 70f946f3daf540e4ebcbfffa4818452f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monster_Group: {fileID: 8323481700098097601, guid: cf6e8d4644fb414469c2c419e2432032, type: 3}
+  monster_Group: {fileID: 6781300410132890395}
   monster1_Prefab: {fileID: 1969604836136404861, guid: 6e8f14adf1888ff4e9e7108b920b0c22, type: 3}
   monster1_Created: 0
 --- !u!1001 &3287335579504689882
@@ -105,6 +105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf6e8d4644fb414469c2c419e2432032, type: 3}
+--- !u!1 &6781300410132890395 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8323481700098097601, guid: cf6e8d4644fb414469c2c419e2432032, type: 3}
+  m_PrefabInstance: {fileID: 3287335579504689882}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7410440713986742281 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5425107863827962579, guid: cf6e8d4644fb414469c2c419e2432032, type: 3}
