@@ -18,7 +18,7 @@ public class Sub_CharStats : MonoBehaviour
     void Generate()
     {
         SubChar = new Dictionary<string, CharStats>();
-        CharStats SubChar_A = new CharStats("SubChar_A", 1000f, 50f, 10f);
+        CharStats SubChar_A = new CharStats("SubChar_A", 1000f, 50f, 10f, 5f);
         SubChar.Add("SubChar_A", SubChar_A);
     }
 
@@ -30,5 +30,6 @@ public class Sub_CharStats : MonoBehaviour
         SC.curMP = Stat.maxMP;
         SC.attack = Stat.attack;
         SC.this_name = Stat.this_name;
+        SC.atkSpeed = Stat.atkSpeed;
     }
 }
