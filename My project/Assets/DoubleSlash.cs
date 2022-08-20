@@ -24,7 +24,7 @@ public class DoubleSlash : MonoBehaviour
         while(count < 2)
         {
             if(doubleSlashPrefaps != null)
-            {
+            {              
                 InvokeRepeating("CreatedSkill", 0f, skill_0.duration);
                 count++;
             }
