@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 using System.Data;
 using Mono.Data.Sqlite;
 
-public class Data_Base_Manager : MonoBehaviour
+public class Data_Base_Manager
 {
     void DBCreate()
     {
@@ -44,11 +44,11 @@ public class Data_Base_Manager : MonoBehaviour
         string str = string.Empty;
         if (Application.platform == RuntimePlatform.Android)
         {
-            str = "URI=file" + Application.persistentDataPath + "/test.db";
+            str = "URI=file" + Application.persistentDataPath + "/Equipment Data.db";
         }
         else
         {
-            str = "URI=file" + Application.dataPath + "/test.db";
+            str = "URI=file" + Application.dataPath + "/Equipment Data.db";
         }        
         return str;
     }
@@ -77,9 +77,8 @@ public class Data_Base_Manager : MonoBehaviour
     public void DatabaseInsert(string query) //Useage : Modify, Insert, Delete
     {
         IDbConnection dbConnection = new SqliteConnection(GetDBFilePath());
-        dbConnection.Open();
+        dbConnection.Open();                        //Open DB
         IDbCommand dbCommand = dbConnection.CreateCommand();
-
         dbCommand.CommandText = query;              //Write Query
         dbCommand.ExecuteNonQuery();                //Execute Query
 

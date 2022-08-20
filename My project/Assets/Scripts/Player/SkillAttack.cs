@@ -22,12 +22,12 @@ public class SkillAttack : MonoBehaviour
 
 	}
 
-	public void Attack(Skills skills, GameObject monster)
-	{
-		Monster_Script mon = monster.GetComponent<Monster_Script>();
-		mon.nowHp -= (int)skiliManager.skillLists[0].damage;
-		Debug.Log(mon.nowHp);
-	}
+    public void Attack(Skills skills, GameObject monster)
+    {
+        Monster_Script mon = monster.GetComponent<Monster_Script>();
+        mon.nowHp -= (int)skiliManager.skillLists[0].damage;
+        Debug.Log(mon.nowHp);
+    }
 
 
 
