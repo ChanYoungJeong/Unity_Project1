@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SubChar_Combat_manager : MonoBehaviour
 {
-   /*
+   
     Sub_CharStats Sub_Char_Status;
     Monster_Script Monster_Status;
 
@@ -35,5 +35,5 @@ public class SubChar_Combat_manager : MonoBehaviour
     {
         yield return new WaitForSeconds(Sub_Char_Status.atkSpeed);
     }
- */
+
 }
