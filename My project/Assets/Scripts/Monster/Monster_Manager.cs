@@ -6,6 +6,8 @@ public class Monster_Manager : MonoBehaviour
 {
     Monster_Script Monster_Stat;
     Animator anim;
+    PlayerScript playerScript;
+
     bool check_animation = false;
     // Start is called before the first frame update
     void Awake()
@@ -14,6 +16,7 @@ public class Monster_Manager : MonoBehaviour
         Get_Monster_Stat(Stage_Manager.Stage);
         anim = GetComponentInChildren<Animator>();
         anim.SetBool("is_Dead", false);
+        
     }
 
     // Update is called once per frame
@@ -27,10 +30,12 @@ public class Monster_Manager : MonoBehaviour
     }
 
 
-    void Monster_Die()
+    public void Monster_Die()
     {
         Destroy(this.gameObject);
         Game_System.Gold += Monster_Stat.Golds;
+        playerScript.GetExp();
+
     }
 
     void SetMonsterStatus()

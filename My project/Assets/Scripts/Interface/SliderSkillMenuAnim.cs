@@ -8,6 +8,7 @@ public class SliderSkillMenuAnim : MonoBehaviour
 
 	public void ShowHideMenu()
 	{
+		Debug.Log("스킬메뉴 버튼 클릭 됨");
 		if(PanelMune != null) {
 			Animator animator = PanelMune.GetComponent<Animator>();
 			if(animator != null) {
