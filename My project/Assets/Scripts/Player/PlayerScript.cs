@@ -5,35 +5,89 @@ using System;
 
 public class PlayerScript : MonoBehaviour
 {
-    [Header ("player stats")]
-    public int maxHp;
-    public int nowHp;
-    public int atkDmg;
+    public GameObject playerIdleMotion;
+    public GameObject playerAttackMotion;
+    public Monster_Script monster;
+    Monster_Manager monster_Manager;
+
+    public float maxHp;
+    public float nowHp;
     public bool attacked;
+    public float atkDmg;
     public float atkSpeed;
 
-    [Header ("commons")]
-    public Image nowHpbar;
-
+    public int lv;
+    public int playerMaxExp;
+    public int playerNowExp;
+    public int critical;
 
     private void Start()
     {
-        atkDmg = 10;
-        attacked = true;
-        maxHp = 100;
-        nowHp = 100;
-        atkSpeed = 1.0f;
+        
+    }
+    public void PlayerIdleMotion()
+    {
+        playerIdleMotion.SetActive(true);
+        playerAttackMotion.SetActive(false);
 
+        StopCoroutine(PlayerBasicAttack());
     }
 
-    private void Update()
+    public void PlayerAttackMotion()
     {
-        // nowHpbar.fillAmount = (float)nowHp / (float)maxHp;
+        playerIdleMotion.SetActive(false);
+        playerAttackMotion.SetActive(true);
+
+        StartCoroutine(PlayerBasicAttack());
     }
 
-    private void SetAttack()
+    IEnumerator PlayerBasicAttack()
     {
-        attacked = true;
+        while (Battle_Situation_Trigger.on_Battle)
+        {
+            yield return new WaitForSeconds(atkSpeed);
+        
+            _PlayerAttack();
+        }
+    }
+
+    public void _PlayerAttack()
+    {
+        monster = Battle_Situation_Trigger.monster_group.transform.GetChild(0).GetComponent<Monster_Script>();
+
+        monster.nowHp -= atkDmg * critical;
+        if (monster.nowHp <= 0)
+        {
+            monster_Manager.Monster_Die();
+            GetExp();
+            SetExp();
+
+            StopCoroutine(PlayerBasicAttack());
+        }
+    }
+
+    
+
+    public void GetExp()
+    {
+        playerNowExp += monster.Exp;
+
+        if(playerMaxExp <= playerNowExp)
+        {
+            LvUp();
+            playerNowExp -= playerMaxExp;
+        }
+    }
+
+    public void LvUp()
+    {
+        lv++;
+        Debug.Log("Player LV : " + lv);
+    }
+
+    public void SetExp()
+    {
+        playerMaxExp = playerMaxExp + lv * lv * 5;
     }
 
 }

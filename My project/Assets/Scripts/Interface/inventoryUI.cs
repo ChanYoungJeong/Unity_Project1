@@ -16,7 +16,7 @@ public class inventoryUI : MonoBehaviour
         slots = slotHolder.GetComponentsInChildren<Slot>();
         inventoryPanel.SetActive(activeInventory);
         numSlots = slots.Length;
-        Debug.Log(numSlots);
+        //Debug.Log(numSlots);
     }
     
     private void Update()

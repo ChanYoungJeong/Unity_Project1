@@ -34,8 +34,8 @@ public class ButtonScript : MonoBehaviour
     bool click = false;
 
     int my_gold;
-    int player_hp;
-    int player_atk;
+    float player_hp;
+    float player_atk;
 
 
     private void Awake()
