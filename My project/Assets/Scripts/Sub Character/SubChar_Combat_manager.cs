@@ -22,7 +22,12 @@ public class SubChar_Combat_manager : MonoBehaviour
     IEnumerator Basic_Attack(GameObject Monster)
     {
         Monster_Status = Monster.GetComponent<Monster_Script>();
+<<<<<<< Updated upstream
         Monster_Status.nowHp -= Sub_Char_Status.attack; //error
+=======
+        Monster_Status.nowHp -= Sub_Char_Status.attack;
+        
+>>>>>>> Stashed changes
         if (Monster_Status.nowHp <= 0)
         {
             Monster_Status.nowHp = 0;
