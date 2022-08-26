@@ -54,16 +54,16 @@ public class PlayerScript : MonoBehaviour
     public void _PlayerAttack()
     {
         monster = Battle_Situation_Trigger.monster_group.transform.GetChild(0).GetComponent<Monster_Script>();
-
-        monster.nowHp -= atkDmg * critical;
-        if (monster.nowHp <= 0)
+        if( monster != null)
         {
-            monster_Manager.Monster_Die();
-            GetExp();
-            SetExp();
-
-            StopCoroutine(PlayerBasicAttack());
+            monster.nowHp -= atkDmg * critical;
+            Debug.Log(monster.nowHp);
+            if (monster.nowHp <= 0)
+            {
+                StopCoroutine(PlayerBasicAttack());
+            }
         }
+
     }
 
     
@@ -76,6 +76,8 @@ public class PlayerScript : MonoBehaviour
         {
             LvUp();
             playerNowExp -= playerMaxExp;
+
+            SetExp();
         }
     }
 

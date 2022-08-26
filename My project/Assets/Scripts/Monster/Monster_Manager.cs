@@ -12,6 +12,7 @@ public class Monster_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        playerScript = GameObject.Find("Player").GetComponent<PlayerScript>();
         Monster_Stat = GetComponent<Monster_Script>();
         Get_Monster_Stat(Stage_Manager.Stage);
         anim = GetComponentInChildren<Animator>();
@@ -32,10 +33,11 @@ public class Monster_Manager : MonoBehaviour
 
     public void Monster_Die()
     {
+        Debug.Log("MonsterDie() ½ÇÇà");
+        playerScript.GetExp();
         Destroy(this.gameObject);
         Game_System.Gold += Monster_Stat.Golds;
-        playerScript.GetExp();
-
+        ShowPlayerStat(); 
     }
 
     void SetMonsterStatus()
@@ -106,5 +108,12 @@ public class Monster_Manager : MonoBehaviour
         anim.SetBool("is_Dead", true);
         Debug.Log("Hello");
         yield return new WaitForSeconds(1.0f);
+    }
+
+
+    void ShowPlayerStat()
+    {
+        Debug.Log(playerScript.playerNowExp);
+        Debug.Log(playerScript.lv);
     }
 }
