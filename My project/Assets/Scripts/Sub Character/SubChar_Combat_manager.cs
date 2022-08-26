@@ -18,22 +18,23 @@ public class SubChar_Combat_manager : MonoBehaviour
         
     }
 
+    /*
     IEnumerator Basic_Attack(GameObject Monster)
     {
         Monster_Status = Monster.GetComponent<Monster_Script>();
-        Monster_Status.nowHp -= Sub_Char_Status.attack;
+        Monster_Status.nowHp -= Sub_Char_Status.attack; //error
         if (Monster_Status.nowHp <= 0)
         {
             Monster_Status.nowHp = 0;
             Destroy(Monster);
         }
         Debug.Log(Monster_Status.nowHp);
-        yield return new WaitForSeconds(Sub_Char_Status.atkSpeed);
+        yield return new WaitForSeconds(Sub_Char_Status.atkSpeed); //error
     }
 
     IEnumerator Attack_Duration()
     {
-        yield return new WaitForSeconds(Sub_Char_Status.atkSpeed);
+       yield return new WaitForSeconds(Sub_Char_Status.atkSpeed); //error
     }
-
+    */
 }

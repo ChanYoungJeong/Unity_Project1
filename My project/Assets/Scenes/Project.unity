@@ -187,6 +187,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 268565179423158469, guid: 2c732959258494c019ad1083d12d7be5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 578676651}
+    - target: {fileID: 268565179423158469, guid: 2c732959258494c019ad1083d12d7be5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Weapon_Gacha
+      objectReference: {fileID: 0}
     - target: {fileID: 268565181131086203, guid: 2c732959258494c019ad1083d12d7be5, type: 3}
       propertyPath: m_Name
       value: randomCanvas
@@ -457,6 +465,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6087f0c6bdb540ecba0ca96bab02f44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &578676651 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4152775647591889506, guid: a27c95e78f3097647bffd0ed194d7879, type: 3}
+  m_PrefabInstance: {fileID: 1083172819}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c0fee6e6dc60a54fadb2ec1c3965e26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &581868209
