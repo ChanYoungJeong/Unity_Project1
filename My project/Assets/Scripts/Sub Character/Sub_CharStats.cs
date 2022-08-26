@@ -7,6 +7,7 @@ public class Sub_CharStats : MonoBehaviour
     Dictionary<string, CharStats> SubChar;
     CharStats SC;
 
+
     void Awake()
     {
         SC = GetComponentInChildren<CharStats>();
