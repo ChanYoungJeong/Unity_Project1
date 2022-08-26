@@ -8,12 +8,13 @@ public class Monster_Script : MonoBehaviour
     // Start is called before the first frame update
 
     public string monsterType;
-    public int maxHp;
-    public int nowHp;
-    public int atkDmg;
-    public int atkSpeed;
+    public float maxHp;
+    public float nowHp;
+    public float atkDmg;
+    public float atkSpeed;
     public int Golds;
     public int Exp;
 
 
+    
 }
