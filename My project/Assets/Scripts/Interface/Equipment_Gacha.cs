@@ -17,10 +17,11 @@ public class Equipment_Gacha : MonoBehaviour
 
     public void Weapon_Gacha()
     {
-
+        float rand = Random.Range(0, 100);
         if (Inventory_Manager.Inventory.Count < 18)
         {
-            Get_Equipment("SELECT * FROM Weapon ORDER BY RANDOM() LIMIT 1");
+            Debug.Log(Inventory_Manager.Inventory.Count);
+            Get_Equipment("SELECT * FROM Weapon WHERE GRADE = \"" + GetByProbability(rand) + "\" ORDER BY RANDOM() LIMIT 1");
             Debug.Log(Inventory_Manager.Inventory[Inventory_Manager.Inventory.Count - 1].name);
             invenUI.SetItem(Inventory_Manager.Inventory[Inventory_Manager.Inventory.Count - 1].name);
         }
@@ -98,7 +99,6 @@ public class Equipment_Gacha : MonoBehaviour
             keyValue = dataReader.GetInt32(0);
 
             Inventory_Manager.Inventory.Add(Item);      //Insert into Inventory
-            
         }
         
 
@@ -122,6 +122,26 @@ public class Equipment_Gacha : MonoBehaviour
         dbCommand = null;
         dbConnection.Close();
         dbConnection = null;
+    }
+
+    string GetByProbability(float value)
+    {
+        if (value <= 70)
+        {
+            return "Normal";
+        }
+        else if (value > 70 && value <= 90)
+        {
+            return "Rare";
+        }
+        else if (value > 90)
+        {
+            return "Epic";
+        }
+        else
+        {
+            return null;
+        }
     }
 }
 
