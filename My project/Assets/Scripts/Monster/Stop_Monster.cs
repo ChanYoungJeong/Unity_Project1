@@ -25,7 +25,7 @@ public class Stop_Monster : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         if (monster_Script != null)
         {
-           // monster_Script = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
+           monster_Script = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
             
         }
     }
