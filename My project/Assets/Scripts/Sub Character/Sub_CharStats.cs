@@ -4,26 +4,29 @@ using UnityEngine;
 
 public class Sub_CharStats : MonoBehaviour
 {
-    Dictionary<string, CharStats> SubChar;
-    CharStats SC;
+    public Dictionary<string, CharStats> SubChar = new Dictionary<string, CharStats>();
+
 
 
     void Awake()
     {
-        SC = GetComponentInChildren<CharStats>();
         Generate();
-        Sub_BaseStats(SubChar[gameObject.name]);
+        //Sub_BaseStats(SubChar[gameObject.name]);
     }
 
 
     void Generate()
     {
-        SubChar = new Dictionary<string, CharStats>();
-        CharStats SubChar_A = new CharStats("SubChar_A", 1000f, 50f, 10f, 5f);
-        SubChar.Add("SubChar_A", SubChar_A);
+        string name;
+
+        name = "Sub 1";
+        SubChar.Add(name, new CharStats(name, 100, 100, 10, 1));
+
+        name = "Sub 2";
+        SubChar.Add(name, new CharStats(name, 300, 100, 20, 2));
     }
 
-    void Sub_BaseStats(CharStats Stat)
+    /*void Sub_BaseStats(CharStats Stat)
     {
         SC.maxHealth = Stat.maxHealth;
         SC.curHealth = Stat.curHealth;
@@ -32,5 +35,5 @@ public class Sub_CharStats : MonoBehaviour
         SC.attack = Stat.attack;
         SC.this_name = Stat.this_name;
         SC.atkSpeed = Stat.atkSpeed;
-    }
+    }*/
 }
