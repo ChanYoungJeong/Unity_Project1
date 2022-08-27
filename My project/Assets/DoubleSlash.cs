@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoubleSlash : MonoBehaviour
+/*public class DoubleSlash : MonoBehaviour
 {
     Monster_Script monster;
     SkilList skliiList;
@@ -28,3 +28,4 @@ public class DoubleSlash : MonoBehaviour
 
     }
 }
+*/

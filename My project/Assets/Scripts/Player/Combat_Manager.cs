@@ -6,17 +6,17 @@ public class Combat_Manager : MonoBehaviour
 {
     PlayerScript Player_Status;
     Monster_Script Monster_Status;
-    Skill_Manager Skills;
+    //Skill_Manager Skills;
     //int Combat_Counter;
     // Start is called before the first frame update
     void Start()
     {
         //Combat_Counter = 1;
         Player_Status = transform.GetComponentInParent<PlayerScript>();
-        Skills = transform.parent.GetComponentInChildren<Skill_Manager>();
+        //Skills = transform.parent.GetComponentInChildren<Skill_Manager>();
     }
 
-    // Update is called once per frame
+/*    // Update is called once per frame
     void Update()
     {
         if (Battle_Situation_Trigger.on_Battle)
@@ -28,9 +28,9 @@ public class Combat_Manager : MonoBehaviour
                 Active_Attack(Battle_Situation_Trigger.monster);
             }
         }
-    }
+    }*/
 
-    private void Active_Attack(GameObject Monster)
+/*    private void Active_Attack(GameObject Monster)
     {
         Skills.activeSkillStart = true;
         if (Skills.skillLists.Count != 0)
@@ -47,13 +47,13 @@ public class Combat_Manager : MonoBehaviour
             //Debug.Log("Number of Skills" + Skills.Skill_Lists.Count);
             StartCoroutine(Basic_Attack(Monster));
         }
-    }
+    }*/
 
-    IEnumerator Basic_Attack(GameObject Monster)
+/*    IEnumerator Basic_Attack(GameObject Monster)
     {
         Monster_Status = Monster.GetComponent<Monster_Script>();
         Monster_Status.nowHp -= Player_Status.atkDmg;
-        if(Monster_Status.nowHp <= 0)
+        if (Monster_Status.nowHp <= 0)
         {
             Monster_Status.nowHp = 0;
             Destroy(Monster);
@@ -62,7 +62,7 @@ public class Combat_Manager : MonoBehaviour
         yield return new WaitForSeconds(Player_Status.atkSpeed);
         Skills.activeSkillStart = false;
     }
-
+*/
     IEnumerator Attack_Duration()
     {
         yield return new WaitForSeconds(Player_Status.atkSpeed);
