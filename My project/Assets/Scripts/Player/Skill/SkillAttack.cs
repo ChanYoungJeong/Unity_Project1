@@ -27,23 +27,18 @@ public class SkillAttack : MonoBehaviour
         if (isFind)
         {
             skill = skilList.skilList[this.name];
-
-            //timer += Time.deltaTime;
-            //if(timer >= skill.cooldown)
-            //{
-                for (int i = 0; i < skill.numberOfAttack; i++)
+            for (int i = 0; i < skill.numberOfAttack; i++)
+            {
+                if (monster.nowHp > 0)
                 {
-                    if (monster.nowHp > 0)
-                    {
-                        monster.nowHp -= skill.damage;
-                        Debug.Log(monster.nowHp);
-                    }
-                    else
-                    {
-                        monsterManager.Monster_Die();
-                    }
+                    monster.nowHp -= skill.damage;
+                    Debug.Log(monster.nowHp);
                 }
-            //}
+                else
+                {
+                    monsterManager.Monster_Die();
+                }
+            }
         }
     }
 }
