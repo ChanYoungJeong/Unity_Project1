@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &145652552 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 538154444, guid: 129f1b5fe10ef424da0ff2abc5981855, type: 3}
+  m_PrefabInstance: {fileID: 2314681825904525823}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &214604647 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 214604647, guid: 129f1b5fe10ef424da0ff2abc5981855, type: 3}
@@ -226,7 +231,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 538154446, guid: 129f1b5fe10ef424da0ff2abc5981855, type: 3}
   m_PrefabInstance: {fileID: 2314681825904525823}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 145652552}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b38058b8b3a22940a7fc146e4808246, type: 3}
@@ -1113,6 +1118,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 538154446, guid: 129f1b5fe10ef424da0ff2abc5981855, type: 3}
+      propertyPath: skillPrefab
+      value: 
+      objectReference: {fileID: 145652552}
     - target: {fileID: 2314681825701584321, guid: 129f1b5fe10ef424da0ff2abc5981855, type: 3}
       propertyPath: m_RootOrder
       value: 2

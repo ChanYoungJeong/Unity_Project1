@@ -19,22 +19,21 @@ public class SkilList : MonoBehaviour
         string name;
 
 
-        float doubleSlashDamage = playerScript.atkDmg * playerScript.critical;
+        float playerAttackDamage = playerScript.atkDmg * playerScript.critical;
         name = "Double Slash";
-        skilList.Add(name, new Skills(0, name, doubleSlashDamage, 0.25f, 5.0f, 2, 1));
+        skilList.Add(name, new Skills(0, name, playerAttackDamage, 0.25f, 27.0f, 2, 1));
 
 
         name = "Fire Slash";
-        skilList.Add(name, new Skills(1, name, 0.5f, 0.15f, 24.0f, 7, 1));
+        skilList.Add(name, new Skills(1, name, 5.0f, 0.15f, 24.0f, 7, 1));
 
 
         name = "Fountain Of Blood";
-        skilList.Add(name, new Skills(2, name, 0.3f, 0.2f, 24.0f, 10, 1));
+        skilList.Add(name, new Skills(2, name, 2.0f, 0.2f, 24.0f, 10, 1)); //cooltime : 24.0f
 
 
         name = "Darkness";
-        skilList.Add(name, new Skills(3, name, 3.0f, 1.0f, 30.0f, 1, 1));
-
+        skilList.Add(name, new Skills(3, name, 50.0f, 1.0f, 30.0f, 1, 1));
 
     }
 }
