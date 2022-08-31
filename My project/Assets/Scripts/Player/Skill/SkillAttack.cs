@@ -56,26 +56,38 @@ public class SkillAttack : MonoBehaviour
 
     public void SkillMotion(int i)
     {
-        if(skillPrefab.name == "Double Slash")
+        if(skillPrefab.name == "DoubleSlash")
         {
             GameObject doubleSlash = Instantiate(skillPrefab, monster.transform.position, Quaternion.identity);
 
             doubleSlash.SetActive(true);
 
-            Debug.Log(doubleSlash.transform.GetChild(0).name);
-
             doubleSlash.transform.GetChild(0).gameObject.SetActive(false);
             doubleSlash.transform.GetChild(1).gameObject.SetActive(false);
 
-            Debug.Log("더블 슬랙쉬 모션 생성");
             if (i == 0)
             {
                 doubleSlash.transform.GetChild(0).gameObject.SetActive(true);
+                Destroy(doubleSlash, 0.3f);
             }
             else
             {
                 doubleSlash.transform.GetChild(1).gameObject.SetActive(true);
-                Destroy(doubleSlash, 0.2f);
+                Destroy(doubleSlash, 0.4f);
+            }
+        }
+        else if(skillPrefab.name == "FireSlash")
+        {
+            GameObject FireSlash = Instantiate(skillPrefab, monster.transform.position, Quaternion.identity);
+
+            FireSlash.SetActive(true);
+
+
+            if (i == 0)
+            {
+            }
+            else
+            {
             }
         }
     }

@@ -25,11 +25,11 @@ public class SkilList : MonoBehaviour
 
 
         name = "Fire Slash";
-        skilList.Add(name, new Skills(1, name, 5.0f, 0.15f, 24.0f, 7, 1));
+        skilList.Add(name, new Skills(1, name, 20.0f, 0.15f, 24.0f, 3, 1));
 
 
         name = "Fountain Of Blood";
-        skilList.Add(name, new Skills(2, name, 2.0f, 0.2f, 24.0f, 10, 1)); //cooltime : 24.0f
+        skilList.Add(name, new Skills(2, name, 2.0f, 0.2f, 24.0f, 10, 1));
 
 
         name = "Darkness";
