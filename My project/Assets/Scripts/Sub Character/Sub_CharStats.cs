@@ -6,8 +6,6 @@ public class Sub_CharStats : MonoBehaviour
 {
     public Dictionary<string, CharStats> SubChar = new Dictionary<string, CharStats>();
 
-
-
     void Awake()
     {
         Generate();
@@ -24,6 +22,8 @@ public class Sub_CharStats : MonoBehaviour
 
         name = "Sub 2";
         SubChar.Add(name, new CharStats(name, 300, 100, 20, 2));
+
+
     }
 
     /*void Sub_BaseStats(CharStats Stat)

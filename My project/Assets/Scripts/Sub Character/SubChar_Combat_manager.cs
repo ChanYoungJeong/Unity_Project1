@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,12 +7,12 @@ public class SubChar_Combat_manager : MonoBehaviour
     CharStats charStat;
     Sub_CharStats subCharStatus;
     Monster_Script monsterStatus;
-    
 
+    bool isAttack = false;      //Basic Attack Trigger
 
-    public float maxHealth;   // ÃÖ´ë Ã¼·Â
+    public float maxHealth;   // ÃƒÃ–Â´Ã« ÃƒÂ¼Â·Ã‚
     public float curHealth;
-    public float maxMP; //ÃÖ´ë ¸¶³ª
+    public float maxMP; //ÃƒÃ–Â´Ã« Â¸Â¶Â³Âª
     public float curMP;
     public float attack;
     public string this_name;
@@ -25,14 +25,16 @@ public class SubChar_Combat_manager : MonoBehaviour
     {
         subCharStatus = gameObject.GetComponentInParent<Sub_CharStats>();
         SetSubChar();
+    }
 
-        time += Time.deltaTime;
-        if(timer > time)
+    private void Update()
+    {
+        if (Battle_Situation_Trigger.on_Battle && isAttack == false)
         {
-            monsterStatus = Battle_Situation_Trigger.monster_group.transform.GetChild(0).GetComponent<Monster_Script>(); // ¹Þ¾Æ¿À´Â ¹æ¹ý¸¸ Ã£À¸¸é µÊ
+            isAttack = true;
+            monsterStatus = Battle_Situation_Trigger.monster_group.transform.GetChild(0).GetComponent<Monster_Script>(); // Â¹ÃžÂ¾Ã†Â¿Ã€Â´Ã‚ Â¹Ã¦Â¹Ã½Â¸Â¸ ÃƒÂ£Ã€Â¸Â¸Ã© ÂµÃŠ
+            StartCoroutine(Basic_Attack());
         }
-
-
     }
 
     public void SetSubChar()
@@ -54,17 +56,18 @@ public class SubChar_Combat_manager : MonoBehaviour
         }
     }
 
-    IEnumerator Basic_Attack(GameObject Monster)
+    IEnumerator Basic_Attack()
     {
-
         monsterStatus.nowHp -= attack;
         
         if (monsterStatus.nowHp <= 0)
         {
             monsterStatus.nowHp = 0;
         }
-        Debug.Log(monsterStatus.nowHp);
+        Debug.Log("Sub Attack : " + monsterStatus.nowHp);
         yield return new WaitForSeconds(atkSpeed); //error
+        isAttack = false;
+        StopCoroutine(Basic_Attack());
     }
 
     IEnumerator Attack_Duration()
