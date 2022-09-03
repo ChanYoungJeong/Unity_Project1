@@ -12,20 +12,18 @@ public class Stop_Monster : MonoBehaviour
 
     public PlayerScript playerScript;
     public Monster_Script monster_Script;
-    public Combat_Manager combat_Manager;
 
     //Battle_Situation_Trigger
 
     private void Awake()
     {
-        combat_Manager = GetComponent<Combat_Manager>();
     }
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         if (monster_Script != null)
         {
-           // monster_Script = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
+           monster_Script = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
             
         }
     }

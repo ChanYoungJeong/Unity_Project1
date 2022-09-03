@@ -19,6 +19,8 @@ public class Battle_Situation_Trigger : MonoBehaviour
     {
         if(collision.CompareTag("Monster"))
         {
+
+
             monster = collision.gameObject;
             monster_group = collision.gameObject.transform.parent.gameObject;
             //Debug.Log(monster_group.transform.childCount);
