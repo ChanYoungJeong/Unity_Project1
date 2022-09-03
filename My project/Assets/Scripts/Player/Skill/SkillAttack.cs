@@ -10,6 +10,7 @@ public class SkillAttack : MonoBehaviour
     Skills skill;
 
     private float timer;
+    public bool isCoolTime = true;
 
     private void Start()
     {
@@ -21,10 +22,9 @@ public class SkillAttack : MonoBehaviour
     {
         monster = Battle_Situation_Trigger.monster_group.transform.GetChild(0).GetComponent<Monster_Script>();
 
-        timer += Time.deltaTime;
-
         bool isFind = skilList.skilList.ContainsKey(this.name);
-        if (isFind)
+
+        if (isFind && isCoolTime)
         {
             skill = skilList.skilList[this.name];
             for (int i = 0; i < skill.numberOfAttack; i++)
@@ -40,5 +40,8 @@ public class SkillAttack : MonoBehaviour
                 }
             }
         }
+        
     }
+
+    
 }

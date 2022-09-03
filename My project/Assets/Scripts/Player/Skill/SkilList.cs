@@ -21,7 +21,7 @@ public class SkilList : MonoBehaviour
 
         float doubleSlashDamage = playerScript.atkDmg * playerScript.critical;
         name = "Double Slash";
-        skilList.Add(name, new Skills(0, name, doubleSlashDamage, 0.25f, 5.0f, 2, 1));
+        skilList.Add(name, new Skills(0, name, doubleSlashDamage, 0.25f, 27.0f, 2, 1));
 
 
         name = "Fire Slash";
@@ -29,7 +29,7 @@ public class SkilList : MonoBehaviour
 
 
         name = "Fountain Of Blood";
-        skilList.Add(name, new Skills(2, name, 0.3f, 0.2f, 24.0f, 10, 1));
+        skilList.Add(name, new Skills(2, name, 0.3f, 0.2f, 5.0f, 10, 1));
 
 
         name = "Darkness";
