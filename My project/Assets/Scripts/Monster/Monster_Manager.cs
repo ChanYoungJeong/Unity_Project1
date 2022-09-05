@@ -103,10 +103,8 @@ public class Monster_Manager : MonoBehaviour
 
     IEnumerator Dead_Animation()
     {
-        Debug.Log("Hello");
         check_animation = true;
         anim.SetBool("is_Dead", true);
-        Debug.Log("Hello");
         yield return new WaitForSeconds(1.0f);
     }
 
