@@ -82,16 +82,16 @@ public class SkillAttack : MonoBehaviour
 
             FireSlash.SetActive(true);
 
+            Destroy(FireSlash, 0.6f);
 
-            if (i == 0)
-            {
-            }
-            else
-            {
-            }
         }
-        
-    }
+        else if(skillPrefab.name == "FountainOfBlood")
+        {
+            GameObject FountainOfBlood = Instantiate(skillPrefab, new Vector3(monster.transform.position.x, monster.transform.position.y-0.3f), Quaternion.identity);
 
-    
+            FountainOfBlood.SetActive(true);
+
+            Destroy(FountainOfBlood, 1f);
+        }
+    }
 }
