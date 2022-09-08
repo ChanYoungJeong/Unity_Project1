@@ -24,6 +24,8 @@ public class SkillAttack : MonoBehaviour
 
         bool isFind = skilList.skilList.ContainsKey(this.name);
 
+
+
         if (isFind && isCoolTime)
         {
             skill = skilList.skilList[this.name];
@@ -92,6 +94,14 @@ public class SkillAttack : MonoBehaviour
             FountainOfBlood.SetActive(true);
 
             Destroy(FountainOfBlood, 1f);
+        }
+        else if(skillPrefab.name == "MegaSlash")
+        {
+
+            GameObject MegaSlash = Instantiate(skillPrefab, monster.transform.position, Quaternion.identity);
+            MegaSlash.SetActive(true);
+
+            Destroy(MegaSlash, 1f);
         }
     }
 }
