@@ -30,7 +30,7 @@ public class SkilList : MonoBehaviour
         name = "Fountain Of Blood";
         skilList.Add(name, new Skills(2, name, 3.0f, 0.2f, 24.0f, 10, 1));
 
-        name = "MegaSlash";
+        name = "Mega Slash";
         skilList.Add(name, new Skills(3, name, 100.0f, 1.0f, 30.0f, 1, 1));
 
     }
