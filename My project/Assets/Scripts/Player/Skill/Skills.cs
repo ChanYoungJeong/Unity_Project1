@@ -22,5 +22,4 @@ public class Skills
         this.numberOfAttack = numberOfAttack;
         this.skillLevel = skillLevel;
     }
-
 }
