@@ -1479,6 +1479,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 728551078, guid: 6c16f040e6afc48cea05ea85ee5a173a, type: 3}
+      propertyPath: EM
+      value: 
+      objectReference: {fileID: 465511931}
+    - target: {fileID: 728551078, guid: 6c16f040e6afc48cea05ea85ee5a173a, type: 3}
+      propertyPath: slotHolder
+      value: 
+      objectReference: {fileID: 1267490660}
     - target: {fileID: 298366679579500694, guid: 6c16f040e6afc48cea05ea85ee5a173a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2089,6 +2097,7 @@ GameObject:
   - component: {fileID: 465511929}
   - component: {fileID: 465511928}
   - component: {fileID: 465511927}
+  - component: {fileID: 465511931}
   m_Layer: 5
   m_Name: equipment
   m_TagString: Untagged
@@ -2178,6 +2187,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &465511931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465511926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 904b2461169a3c34eae1217c3b563749, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &500179743
 GameObject:
   m_ObjectHideFlags: 0
@@ -2792,7 +2813,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -2.4000015, y: -22.505}
+  m_AnchoredPosition: {x: -2.4000015, y: -22.504997}
   m_SizeDelta: {x: 66, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &886186388
@@ -3665,6 +3686,11 @@ RectTransform:
   m_AnchoredPosition: {x: 6.120117, y: 4.46875}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &1267490660 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 298366680521203854, guid: 6c16f040e6afc48cea05ea85ee5a173a, type: 3}
+  m_PrefabInstance: {fileID: 457090896}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1275356871
 GameObject:
   m_ObjectHideFlags: 0
@@ -3958,7 +3984,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1314304296}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 762932256}
+        m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
+        m_MethodName: EquipItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1314304296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5693,7 +5731,7 @@ GameObject:
   - component: {fileID: 2145065298}
   - component: {fileID: 2145065297}
   m_Layer: 5
-  m_Name: weapon
+  m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5766,11 +5804,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 268565179423158468, guid: 2c732959258494c019ad1083d12d7be5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 341
+      value: -165
       objectReference: {fileID: 0}
     - target: {fileID: 268565179423158468, guid: 2c732959258494c019ad1083d12d7be5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -166
+      value: 77
       objectReference: {fileID: 0}
     - target: {fileID: 268565181131086203, guid: 2c732959258494c019ad1083d12d7be5, type: 3}
       propertyPath: m_Name
