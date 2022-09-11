@@ -10,6 +10,7 @@ public class Inventory_Manager : MonoBehaviour
     public Slot[] slots;
     int numSlots;
     public Transform slotHolder;
+    public EquipmentManager EM;
 
     private void Awake()
     {
@@ -39,9 +40,10 @@ public class Inventory_Manager : MonoBehaviour
 
     public void EquipItem()
     {
-        if(Inventory_Manager.selectedItem != null)
+        if(selectedItem != null)
         {
-
+           EM.Equipments.Add(selectedItem.type, selectedItem);
+           EM.transform.Find(selectedItem.type).GetComponent<Image>().sprite = GetImage(selectedItem.name);
         }
     }
 }
