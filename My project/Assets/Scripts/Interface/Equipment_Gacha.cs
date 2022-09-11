@@ -95,7 +95,8 @@ public class Equipment_Gacha : MonoBehaviour
                                  dataReader.GetString(1),
                                  dataReader.GetString(2),
                                  dataReader.GetInt32(3),
-                                 dataReader.GetInt32(4));
+                                 dataReader.GetInt32(4),
+                                 dataReader.GetString(5));
 
             Inventory_Manager.Inventory.Add(Item);      //Insert into Inventory
             invenManager.slots[Inventory_Manager.Inventory.Count - 1].curItem = Item;
