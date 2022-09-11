@@ -45,5 +45,9 @@ public class Inventory_Manager : MonoBehaviour
            EM.Equipments.Add(selectedItem.type, selectedItem);
            EM.transform.Find(selectedItem.type).GetComponent<Image>().sprite = GetImage(selectedItem.name);
         }
+        else
+        {
+            Debug.Log("There is no item selected");
+        }
     }
 }
