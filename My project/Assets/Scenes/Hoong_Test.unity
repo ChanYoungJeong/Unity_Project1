@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 69199993}
   - component: {fileID: 69199992}
   m_Layer: 5
-  m_Name: Image (11)
+  m_Name: ring2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1185,7 +1185,7 @@ GameObject:
   - component: {fileID: 365431266}
   - component: {fileID: 365431265}
   m_Layer: 5
-  m_Name: Image
+  m_Name: cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1341,7 +1341,7 @@ GameObject:
   - component: {fileID: 449387742}
   - component: {fileID: 449387741}
   m_Layer: 5
-  m_Name: Image (7)
+  m_Name: shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1867,6 +1867,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 298366680886656215, guid: 6c16f040e6afc48cea05ea85ee5a173a, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1519380467}
     - target: {fileID: 298366680896192941, guid: 6c16f040e6afc48cea05ea85ee5a173a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2142,7 +2146,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1519380467}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -2199,8 +2203,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500179743}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -399.61, y: -208.36, z: 0}
-  m_LocalScale: {x: 2.4, y: 2.4, z: 1}
+  m_LocalPosition: {x: -66.9, y: 3.7, z: 0}
+  m_LocalScale: {x: 100, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1851590155}
@@ -2327,8 +2331,8 @@ Canvas:
   m_GameObject: {fileID: 531166950}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1519380467}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -2452,7 +2456,7 @@ GameObject:
   - component: {fileID: 680984122}
   - component: {fileID: 680984121}
   m_Layer: 5
-  m_Name: Image (5)
+  m_Name: clothes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2550,7 +2554,7 @@ GameObject:
   - component: {fileID: 838504895}
   - component: {fileID: 838504894}
   m_Layer: 5
-  m_Name: Image (10)
+  m_Name: ring1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2788,7 +2792,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -2.4, y: -22.505}
+  m_AnchoredPosition: {x: -2.4000015, y: -22.505}
   m_SizeDelta: {x: 66, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &886186388
@@ -2910,7 +2914,7 @@ GameObject:
   - component: {fileID: 944634612}
   - component: {fileID: 944634611}
   m_Layer: 5
-  m_Name: Image (9)
+  m_Name: pants
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3036,7 +3040,7 @@ GameObject:
   - component: {fileID: 969930684}
   - component: {fileID: 969930683}
   m_Layer: 5
-  m_Name: Image (4)
+  m_Name: mantle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3673,7 +3677,7 @@ GameObject:
   - component: {fileID: 1275356874}
   - component: {fileID: 1275356873}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: eyeacc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4005,7 +4009,7 @@ GameObject:
   - component: {fileID: 1400655417}
   - component: {fileID: 1400655416}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: face acc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4310,7 +4314,7 @@ GameObject:
   - component: {fileID: 1638341558}
   - component: {fileID: 1638341557}
   m_Layer: 5
-  m_Name: Image (12)
+  m_Name: shoes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4386,7 +4390,7 @@ GameObject:
   - component: {fileID: 1642992843}
   - component: {fileID: 1642992842}
   m_Layer: 5
-  m_Name: Image (8)
+  m_Name: gloves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4878,7 +4882,7 @@ GameObject:
   - component: {fileID: 1806830498}
   - component: {fileID: 1806830497}
   m_Layer: 5
-  m_Name: Image (3)
+  m_Name: earacc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5689,7 +5693,7 @@ GameObject:
   - component: {fileID: 2145065298}
   - component: {fileID: 2145065297}
   m_Layer: 5
-  m_Name: Image (6)
+  m_Name: weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5772,6 +5776,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: randomCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 268565181131086206, guid: 2c732959258494c019ad1083d12d7be5, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1519380467}
     - target: {fileID: 268565181131086207, guid: 2c732959258494c019ad1083d12d7be5, type: 3}
       propertyPath: m_Pivot.x
       value: 0
