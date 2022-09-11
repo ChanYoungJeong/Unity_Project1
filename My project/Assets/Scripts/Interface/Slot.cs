@@ -9,4 +9,16 @@ public class Slot : MonoBehaviour
     public Sprite itemImage;
     public Equipment curItem;
 
+    public void SelectItem()
+    {
+        if(hasItem && curItem != null)
+        {
+            Inventory_Manager.selectedItem = curItem;
+            Debug.Log(Inventory_Manager.selectedItem.name + " is Selected");
+        }
+        else
+        {
+
+        }
+    }
 }

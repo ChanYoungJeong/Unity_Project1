@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Inventory_Manager : MonoBehaviour
 {
     public static List<Equipment> Inventory = new List<Equipment>();
+    public static Equipment selectedItem;
     public Slot[] slots;
     int numSlots;
     public Transform slotHolder;
@@ -36,4 +37,11 @@ public class Inventory_Manager : MonoBehaviour
         return image;
     }
 
+    public void EquipItem()
+    {
+        if(Inventory_Manager.selectedItem != null)
+        {
+
+        }
+    }
 }
