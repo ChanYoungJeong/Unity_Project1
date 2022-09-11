@@ -9,22 +9,18 @@ using Mono.Data.Sqlite;
 public class Equipment_Gacha : MonoBehaviour
 {
     public Inventory_Manager invenManager;
-    bool checkDB;
     private void Awake()
     {
-        checkDB = false;
         DBCreate();
     }
 
     public void Weapon_Gacha()
     {
-
         float rand = Random.Range(0, 100);
         if (Inventory_Manager.Inventory.Count < 18)
         {
             Debug.Log(Inventory_Manager.Inventory.Count);
             Get_Equipment("SELECT * FROM Weapon WHERE GRADE = \"" + GetByProbability(rand) + "\" ORDER BY RANDOM() LIMIT 1");
-            Debug.Log(Inventory_Manager.Inventory[Inventory_Manager.Inventory.Count - 1].name);
         }
         else
         {
@@ -91,12 +87,13 @@ public class Equipment_Gacha : MonoBehaviour
 
         if(dataReader.Read())                    //Read Records and Insert into structure
         {
-            Item = new Equipment(dataReader.GetInt32(0),  //Read field 0....
-                                 dataReader.GetString(1),
+            Item = new Equipment(dataReader.GetInt32(0),   //Read field 0....                               
+                                 dataReader.GetString(1),  
                                  dataReader.GetString(2),
-                                 dataReader.GetInt32(3),
+                                 dataReader.GetInt32(3),                                 
                                  dataReader.GetInt32(4),
-                                 dataReader.GetString(5));
+                                 dataReader.GetString(5)
+                                 );
 
             Inventory_Manager.Inventory.Add(Item);      //Insert into Inventory
             invenManager.slots[Inventory_Manager.Inventory.Count - 1].curItem = Item;
@@ -110,7 +107,6 @@ public class Equipment_Gacha : MonoBehaviour
         dbCommand = null;
         dbConnection.Close();
         dbConnection = null;
-        checkDB = false;
     }
 
     public void DatabaseInsert(string query) //Useage : Modify, Insert, Delete

@@ -7,7 +7,7 @@ public class Sub_Char_SkillList : MonoBehaviour
     Sub_CharStats sub_charstats;
     public Dictionary<string, Sub_Char_Skill> Sub_Char_SkilList = new Dictionary<string, Sub_Char_Skill>();
 
-
+    /*
     private void Start()
     {
         sub_charstats = gameObject.GetComponentInParent<Sub_CharStats>();
@@ -23,4 +23,5 @@ public class Sub_Char_SkillList : MonoBehaviour
         Sub_Char_skilList.Add(name, new Skills(0, name, SubAttackDamege, 0.25f, 27.0f, 1));
 
     }
+    */
 }
