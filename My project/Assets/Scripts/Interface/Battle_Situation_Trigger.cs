@@ -9,33 +9,53 @@ public class Battle_Situation_Trigger : MonoBehaviour
     public GameObject player;
 
     public static bool on_Battle = false;
+    public static bool atSpot = false;
+    bool coroutineCheck = false;
 
     private void Start()
     {
         player = GameObject.Find("Player");
         
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void Update()
     {
-        if(collision.CompareTag("Monster"))
+        if (GameObject.Find("Monster_Group(Clone)"))
         {
-
-            monster = collision.gameObject;
-            monster_group = collision.gameObject.transform.parent.gameObject;
-            //Debug.Log(monster_group.transform.childCount);
-
-            on_Battle = true;
-            player.GetComponent<PlayerScript>().PlayerAttackMotion();
+            monster_group = GameObject.Find("Monster_Group(Clone)");
+            if (monster_group.transform.childCount != 0)
+            {
+                monster = monster_group.transform.GetChild(0).gameObject;
+                on_Battle = true;
+                if (coroutineCheck == false)
+                {
+                    coroutineCheck = true;
+                    player.GetComponent<PlayerScript>().PlayerAttackMotion();
+                }
+            }
+            else
+            {
+                player.GetComponent<PlayerScript>().PlayerIdleMotion();
+                coroutineCheck = false;
+                on_Battle = false;
+            }
         }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.transform.tag == "Monster")
+        {
+            atSpot = true;
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.CompareTag("Monster"))
+        if (collision.transform.tag == "Monster")
         {
-            player.GetComponent<PlayerScript>().PlayerIdleMotion();
-
-            on_Battle = false;
+            atSpot = false;
         }
-        //Monster_Script monster_stat = Battle_Situation_Trigger.monster_group.transform.GetChild(0).GetComponent<Monster_Script>();
     }
+
 }

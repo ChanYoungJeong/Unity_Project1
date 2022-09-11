@@ -180,6 +180,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69ee51c36f135b549ada05bb9e55f926, type: 3}
+--- !u!224 &232020472 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 298366680521203854, guid: 6c16f040e6afc48cea05ea85ee5a173a, type: 3}
+  m_PrefabInstance: {fileID: 1329144298}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &240993132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1060,6 +1065,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 460519064}
     m_Modifications:
+    - target: {fileID: 728551078, guid: 6c16f040e6afc48cea05ea85ee5a173a, type: 3}
+      propertyPath: slotHolder
+      value: 
+      objectReference: {fileID: 232020472}
     - target: {fileID: 298366679579500694, guid: 6c16f040e6afc48cea05ea85ee5a173a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
