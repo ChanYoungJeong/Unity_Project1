@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Sub_Char_SkillList : MonoBehaviour
 {
-    Sub_CharStats sub_charstats;
+    SubChar_Combat_manager subChar_Combat_Manager;
     public Dictionary<string, Sub_Char_Skill> Sub_Char_SkilList = new Dictionary<string, Sub_Char_Skill>();
 
-    /*
+    
     private void Start()
     {
-        sub_charstats = gameObject.GetComponentInParent<Sub_CharStats>();
+        subChar_Combat_Manager = gameObject.GetComponentInParent<SubChar_Combat_manager>();
         create();
     }
 
@@ -18,10 +18,10 @@ public class Sub_Char_SkillList : MonoBehaviour
     {
         string name;
 
-        float SubAttackDamege = sub_charstats.attack * 1.5;
+        float SubAttackDamege = subChar_Combat_Manager.attack * 1.5f;
         name = "Sharpness";
-        Sub_Char_skilList.Add(name, new Skills(0, name, SubAttackDamege, 0.25f, 27.0f, 1));
+        Sub_Char_SkilList.Add(name, new Sub_Char_Skill(0, name, SubAttackDamege, 0.25f, 27.0f, 1));
 
     }
-    */
+  
 }
