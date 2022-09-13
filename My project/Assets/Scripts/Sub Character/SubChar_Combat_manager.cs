@@ -8,23 +8,27 @@ public class SubChar_Combat_manager : MonoBehaviour
     Sub_CharStats subCharStatus;
     Monster_Script monsterStatus;
 
+    Sub_Char_SkillList SubCharSkillList;
+    Sub_Char_Skill SubCharSkill;
+
+
+    bool isCoolTime = true;
     bool isAttack = false;      //Basic Attack Trigger
 
     public float maxHealth;   // ÃÖ´ë Ã¼·Â
     public float curHealth;
-    public float maxMP; //ÃÖ´ë ¸¶³ª
-    public float curMP;
-    public float attack;
+    public float attackDmg;
+    public float healing;
+    public float defense;
     public string this_name;
     public float atkSpeed;
 
-    float timer = 1f;
-    float time;
 
     void Start()
     {
         subCharStatus = gameObject.GetComponentInParent<Sub_CharStats>();
         SetSubChar();
+        SetSubSkill();
     }
 
     private void Update()
@@ -33,7 +37,22 @@ public class SubChar_Combat_manager : MonoBehaviour
         {
             isAttack = true;
             monsterStatus = Battle_Situation_Trigger.monster_group.transform.GetChild(0).GetComponent<Monster_Script>(); // ¹Þ¾Æ¿À´Â ¹æ¹ý¸¸ Ã£À¸¸é µÊ
+            
+
             StartCoroutine(Basic_Attack());
+            if (isCoolTime)
+            {
+                StartCoroutine(SkillAttack());
+                StopCoroutine(SkillAttack());
+            }
+        }
+    }
+    public void SetSubSkill()
+    {
+        bool isFind = SubCharSkillList.Sub_Char_SkilList.ContainsKey(this.name);
+        if (isFind)
+        {
+            SubCharSkill = SubCharSkillList.Sub_Char_SkilList[this.name];
         }
     }
 
@@ -47,9 +66,7 @@ public class SubChar_Combat_manager : MonoBehaviour
 
             maxHealth = charStat.maxHealth;
             curHealth = charStat.curHealth;
-            maxMP = charStat.maxMP;
-            curMP = charStat.curMP;
-            attack = charStat.attack;
+            attackDmg = charStat.attack;
             this_name = charStat.this_name;
             atkSpeed = charStat.atkSpeed;
 
@@ -58,7 +75,7 @@ public class SubChar_Combat_manager : MonoBehaviour
 
     IEnumerator Basic_Attack()
     {
-        monsterStatus.nowHp -= attack;
+        monsterStatus.nowHp -= attackDmg;
         
         if (monsterStatus.nowHp <= 0)
         {
@@ -75,4 +92,14 @@ public class SubChar_Combat_manager : MonoBehaviour
         yield return new WaitForSeconds(atkSpeed); //error
     }
 
+    IEnumerator SkillAttack()
+    {
+        isCoolTime = false;
+
+        monsterStatus.nowHp -= SubCharSkill.damage;
+
+        Debug.Log(this.name + "가 " + SubCharSkill.damage + "만큼 공격함");
+        yield return new WaitForSeconds(SubCharSkill.cooldown);
+        isCoolTime = true;
+    }
 }

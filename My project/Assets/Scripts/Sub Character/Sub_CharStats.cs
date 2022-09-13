@@ -12,7 +12,6 @@ public class Sub_CharStats : MonoBehaviour
         //Sub_BaseStats(SubChar[gameObject.name]);
     }
 
-
     void Generate()
     {
         string name;
