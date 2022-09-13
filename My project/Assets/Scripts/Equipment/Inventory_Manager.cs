@@ -42,8 +42,29 @@ public class Inventory_Manager : MonoBehaviour
     {
         if(selectedItem != null)
         {
-           EM.Equipments.Add(selectedItem.type, selectedItem);
-           EM.transform.Find(selectedItem.type).GetComponent<Image>().sprite = GetImage(selectedItem.name);
+            if (!EM.Equipments.ContainsKey(selectedItem.type))
+            {
+                EM.Equipments.Add(selectedItem.type, selectedItem);
+                changeEquipImage();
+            }
+            else
+            {
+                EM.Equipments[selectedItem.type] = selectedItem;
+                changeEquipImage();
+            }    
+        }
+        else
+        {
+            Debug.Log("There is no item selected");
+        }
+    }
+
+    private void changeEquipImage()
+    {
+        for (int i = 0; i < EM.eSlots.Length; i++)
+        {
+            if (EM.eSlots[i].name == selectedItem.type)
+                EM.eSlots[i].sprite = GetImage(selectedItem.name);
         }
     }
 }
