@@ -31,11 +31,10 @@ public class Stop_Monster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Battle_Situation_Trigger.on_Battle)
+        if (Battle_Situation_Trigger.atSpot)
         {
             rigid.velocity = Vector2.zero;
             monster_Stop = true;
-
         }
         else
         {

@@ -7,10 +7,18 @@ public class Slot : MonoBehaviour
 {
     public bool hasItem = false;
     public Sprite itemImage;
+    public Equipment curItem;
 
-    private void Start()
+    public void SelectItem()
     {
-       
-    }
+        if(hasItem && curItem != null)
+        {
+            Inventory_Manager.selectedItem = curItem;
+            Debug.Log(Inventory_Manager.selectedItem.name + " is Selected");
+        }
+        else
+        {
 
+        }
+    }
 }
