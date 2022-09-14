@@ -8,8 +8,6 @@ public class SubChar_Combat_manager : MonoBehaviour
     Sub_CharStats subCharStatus;
     Monster_Script monsterStatus;
 
-    Sub_Char_SkillList SubCharSkillList;
-    Sub_Char_Skill SubCharSkill;
 
 
     bool isCoolTime = true;
@@ -28,7 +26,6 @@ public class SubChar_Combat_manager : MonoBehaviour
     {
         subCharStatus = gameObject.GetComponentInParent<Sub_CharStats>();
         SetSubChar();
-        SetSubSkill();
     }
 
     private void Update()
@@ -40,21 +37,10 @@ public class SubChar_Combat_manager : MonoBehaviour
             
 
             StartCoroutine(Basic_Attack());
-            if (isCoolTime)
-            {
-                StartCoroutine(SkillAttack());
-                StopCoroutine(SkillAttack());
-            }
+            
         }
     }
-    public void SetSubSkill()
-    {
-        bool isFind = SubCharSkillList.Sub_Char_SkilList.ContainsKey(this.name);
-        if (isFind)
-        {
-            SubCharSkill = SubCharSkillList.Sub_Char_SkilList[this.name];
-        }
-    }
+    
 
     public void SetSubChar()
     {
@@ -92,14 +78,5 @@ public class SubChar_Combat_manager : MonoBehaviour
         yield return new WaitForSeconds(atkSpeed); //error
     }
 
-    IEnumerator SkillAttack()
-    {
-        isCoolTime = false;
-
-        monsterStatus.nowHp -= SubCharSkill.damage;
-
-        Debug.Log(this.name + "가 " + SubCharSkill.damage + "만큼 공격함");
-        yield return new WaitForSeconds(SubCharSkill.cooldown);
-        isCoolTime = true;
-    }
+    
 }
