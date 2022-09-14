@@ -22,8 +22,8 @@ public class Sub_Char_SkillList : MonoBehaviour
         string name;
 
         float subAttackDamege = subChar_Combat_Manager.attackDmg * 1.5f;
-        name = "Sharpness";
-        Sub_Char_SkilList.Add(name, new Sub_Char_Skill(0, name, subAttackDamege, 0, 0, 15, 1)); //Sub1 Attacker //도적
+        name = "dagger"; //도적 스킬
+        Sub_Char_SkilList.Add(name, new Sub_Char_Skill(0, name, subAttackDamege, 0, 0, 15, 1)); //Sub1 Attacker //도적스킬
         
     }
   
