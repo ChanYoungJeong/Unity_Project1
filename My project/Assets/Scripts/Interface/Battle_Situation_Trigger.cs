@@ -23,7 +23,7 @@ public class Battle_Situation_Trigger : MonoBehaviour
         if (GameObject.Find("Monster_Group(Clone)"))
         {
             monster_group = GameObject.Find("Monster_Group(Clone)");
-            if (monster_group.transform.childCount != 0)
+            if (atSpot)
             {
                 monster = monster_group.transform.GetChild(0).gameObject;
                 on_Battle = true;
@@ -35,6 +35,7 @@ public class Battle_Situation_Trigger : MonoBehaviour
             }
             else
             {
+                Debug.Log("플레이어 Idle 실행");
                 player.GetComponent<PlayerScript>().PlayerIdleMotion();
                 coroutineCheck = false;
                 on_Battle = false;

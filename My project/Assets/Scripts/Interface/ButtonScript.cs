@@ -33,7 +33,6 @@ public class ButtonScript : MonoBehaviour
 
     bool click = false;
 
-    int my_gold;
     float player_hp;
     float player_atk;
 
@@ -58,7 +57,6 @@ public class ButtonScript : MonoBehaviour
         up_hpgold = up_hpgold1 + up_hpgold2;
 
 
-        //my_gold = Game_System.Gold;
     }
 
     // Update is called once per frame
@@ -71,17 +69,10 @@ public class ButtonScript : MonoBehaviour
 
     public void hp_upgradeButton()
     {
-        if (atk_scoreButton == 0)
-        {
-            my_gold = Game_System.Gold;
-        }
-        Debug.Log("now_gold : " + my_gold);
-        Debug.Log("up_gold : " + up_hpgold);
-        click = true;
-        if (click)
-        {
-            if (my_gold > up_hpgold)
+            if (Game_System.Gold > up_hpgold)
             {
+            Debug.Log("체력 강화 시작");
+
                 //player_hp += up_hp;
                 //up_hp += 5;
                 up_hp = up_hp1 + up_hp2;
@@ -92,36 +83,27 @@ public class ButtonScript : MonoBehaviour
                 hp_scoreButton += 1;
                 Debug.Log("hp_upcount:" + hp_scoreButton);
 
-                //my_gold -= up_gold;
-                //up_gold += 5000;
-                
-                my_gold -= up_hpgold;
+            //my_gold -= up_gold;
+            //up_gold += 5000;
+
+                Game_System.Gold -= up_hpgold;
                 up_hpgold1 = up_hpgold2;
                 up_hpgold2 = up_hpgold;
 
                 up_hpgold = up_hpgold1 + up_hpgold2;
 
 
-                Debug.Log("my_gold : " + my_gold);
+                Debug.Log("my_gold : " + Game_System.Gold);
                 Debug.Log("player_hp : " + player_hp);
                 Debug.Log("next up_gold : " + up_hpgold);
-                click = false;
             }
-        }
-
     }
     public void atk_upgradeButton()
     {
-        if (hp_scoreButton == 0)
-        {
-            my_gold = Game_System.Gold;
-        }
-        Debug.Log("now_gold : " + my_gold);
+        
+        Debug.Log("now_gold : " + Game_System.Gold);
         Debug.Log("up_gold : " + up_atkgold);
-        click = true;
-        if (click)
-        {
-            if (my_gold > up_atkgold)
+            if (Game_System.Gold > up_atkgold)
             {
 
                 up_atk = up_atk1 + up_atk2;
@@ -132,21 +114,19 @@ public class ButtonScript : MonoBehaviour
                 atk_scoreButton += 1;
                 Debug.Log("atk_scorebutton:" + atk_scoreButton);
 
-                
+
                 //up_gold = up_gold1 + up_gold2;
-                my_gold -= up_atkgold;
+                Game_System.Gold -= up_atkgold;
                 up_atkgold1 = up_atkgold2;
                 up_atkgold2 = up_atkgold;
                 up_atkgold = up_atkgold1 + up_atkgold2;
 
 
 
-                Debug.Log("my_gold : " + my_gold);
+                Debug.Log("my_gold : " + Game_System.Gold);
                 Debug.Log("player_atk : " + player_atk);
                 Debug.Log("next up_gold : " + up_atkgold);
-                click = false;
             }
-        }
 
     }
 }

@@ -63,6 +63,8 @@ public class SubChar_Combat_manager : MonoBehaviour
         }
     }
 
+
+
     IEnumerator Basic_Attack()
     {
         if(this.name == "Rouge")
