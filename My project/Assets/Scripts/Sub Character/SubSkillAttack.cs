@@ -16,13 +16,11 @@ public class SubSkillAttack : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("SubSkillAttack");
 
         SubCharSkillList = transform.parent.GetComponentInParent<Sub_Char_SkillList>();
 
         SetSubSkill();
 
-        Debug.Log("SetSubSkill() 실행 완료");
     }
 
     private void Update()
@@ -49,14 +47,12 @@ public class SubSkillAttack : MonoBehaviour
 
     IEnumerator SkillAttack()
     {
-        Debug.Log("SkillAttack() 코루틴 실행");
 
         isCoolTime = false;
 
         Debug.Log("monsterScript.nowHp : " + monsterScript.nowHp);
         Debug.Log("SubCharSkill.damage : " + SubCharSkill.damage);
 
-        Debug.Log("asdkjflasdfhlasdf");
         monsterScript.nowHp -= SubCharSkill.damage;
 
         //Debug.Log(this.name + "가 " + SubCharSkill.damage + "만큼 공격함");

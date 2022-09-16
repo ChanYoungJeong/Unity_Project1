@@ -20,16 +20,14 @@ public class SubChar_Combat_manager : MonoBehaviour
     public float healing;
     public float defense;
     string this_name;
-    float atkSpeed;
+    public float atkSpeed;
 
 
     void Start()
     {
-        Debug.Log("SubChar_Combat_manager 스크립트 실행");
 
         subCharStatus = transform.GetComponentInParent<Sub_CharStats>();
         SetSubChar();
-        Debug.Log("attackDmg :" + attackDmg);
 
     }
 
@@ -40,7 +38,7 @@ public class SubChar_Combat_manager : MonoBehaviour
             isAttack = false;
             monsterStatus = Battle_Situation_Trigger.monster_group.transform.GetChild(0).GetComponent<Monster_Script>(); // ¹Þ¾Æ¿À´Â ¹æ¹ý¸¸ Ã£À¸¸é µÊ
 
-            StartCoroutine(Basic_Attack());
+           // StartCoroutine(Basic_Attack());
             
         }
     }
@@ -65,6 +63,7 @@ public class SubChar_Combat_manager : MonoBehaviour
 
 
 
+
     IEnumerator Basic_Attack()
     {
         if(this.name == "Rouge")
@@ -72,13 +71,14 @@ public class SubChar_Combat_manager : MonoBehaviour
             RogueBasicAttack();
         }
         monsterStatus.nowHp -= attackDmg;
+
+        Debug.Log(monsterStatus.nowHp);
         
         
         if (monsterStatus.nowHp <= 0)
         {
             monsterStatus.nowHp = 0;
         }
-        //Debug.Log("Sub Attack : " + monsterStatus.nowHp);
         yield return new WaitForSeconds(atkSpeed); //error
         isAttack = true;
         StopCoroutine(Basic_Attack());
