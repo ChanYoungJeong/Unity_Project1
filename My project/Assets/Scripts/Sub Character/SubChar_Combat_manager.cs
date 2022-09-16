@@ -9,7 +9,6 @@ public class SubChar_Combat_manager : MonoBehaviour
     Monster_Script monsterStatus;
 
     public GameObject basicAttackPrefab;
-    GameObject gameObject;
     Rigidbody2D rid;
 
     bool isAttack = true;      //Basic Attack Trigger
@@ -19,7 +18,7 @@ public class SubChar_Combat_manager : MonoBehaviour
     public float attackDmg;
     public float healing;
     public float defense;
-    string this_name;
+    public string this_name;
     public float atkSpeed;
 
 
@@ -61,37 +60,4 @@ public class SubChar_Combat_manager : MonoBehaviour
         }
     }
 
-
-
-
-    IEnumerator Basic_Attack()
-    {
-        if(this.name == "Rouge")
-        {
-            RogueBasicAttack();
-        }
-        monsterStatus.nowHp -= attackDmg;
-
-        Debug.Log(monsterStatus.nowHp);
-        
-        
-        if (monsterStatus.nowHp <= 0)
-        {
-            monsterStatus.nowHp = 0;
-        }
-        yield return new WaitForSeconds(atkSpeed); //error
-        isAttack = true;
-        StopCoroutine(Basic_Attack());
-    }
-
-    public void RogueBasicAttack()
-    {
-        gameObject = Instantiate(basicAttackPrefab, this.transform.position, Quaternion.identity);
-        rid = gameObject.GetComponent<Rigidbody2D>();
-        rid.velocity = transform.forward * 20;
-        //몬스터를 향해 날라는거 구현하기
-
-    }
-
-    
 }
