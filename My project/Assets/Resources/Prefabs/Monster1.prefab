@@ -216,7 +216,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!61 &3837286492852299128
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -259,7 +259,6 @@ MonoBehaviour:
   speed: 3
   playerScript: {fileID: 2948288446988658631, guid: 129f1b5fe10ef424da0ff2abc5981855, type: 3}
   monster_Script: {fileID: 0}
-  combat_Manager: {fileID: 0}
 --- !u!114 &3648560239560735670
 MonoBehaviour:
   m_ObjectHideFlags: 0

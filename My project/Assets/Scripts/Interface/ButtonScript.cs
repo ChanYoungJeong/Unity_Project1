@@ -31,7 +31,6 @@ public class ButtonScript : MonoBehaviour
     int up_atk1;
     int up_atk2;
 
-    bool click = false;
 
     float player_hp;
     float player_atk;

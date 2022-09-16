@@ -6,7 +6,7 @@ public class Battle_Situation_Trigger : MonoBehaviour
 {
     public static GameObject monster;
     public static GameObject monster_group;
-    public GameObject player;
+    GameObject player;
 
     public static bool on_Battle = false;
     public static bool atSpot = false;
@@ -42,7 +42,8 @@ public class Battle_Situation_Trigger : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.transform.tag == "Monster")
         {
