@@ -9,9 +9,7 @@ public class Sub_CharStats : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Sub_CharStats 스크립트 실행");
         Generate();
-        Debug.Log("Sub_CharStats 스크립트 종료");
     }
 
     void Generate()
@@ -19,7 +17,7 @@ public class Sub_CharStats : MonoBehaviour
         string name;
 
         name = "Rogue";
-        SubChar.Add(name, new CharStats(name, 100, 100, 10, 1));
+        SubChar.Add(name, new CharStats(name, 100, 100, 5, 3));
         
 
         /*name = "Sub 2";

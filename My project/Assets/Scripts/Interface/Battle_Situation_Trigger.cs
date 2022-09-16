@@ -35,7 +35,6 @@ public class Battle_Situation_Trigger : MonoBehaviour
             }
             else
             {
-                Debug.Log("플레이어 Idle 실행");
                 player.GetComponent<PlayerScript>().PlayerIdleMotion();
                 coroutineCheck = false;
                 on_Battle = false;
