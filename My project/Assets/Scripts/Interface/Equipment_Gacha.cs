@@ -14,6 +14,11 @@ public class Equipment_Gacha : MonoBehaviour
         DBCreate();
     }
 
+    private void OnApplicationQuit()
+    {
+        DatabaseInsert("DELETE FROM Inventory");
+    }
+
     public void Weapon_Gacha()
     {
         float rand = Random.Range(0, 100);
@@ -21,6 +26,12 @@ public class Equipment_Gacha : MonoBehaviour
         {
             Debug.Log(Inventory_Manager.Inventory.Count);
             Get_Equipment("SELECT * FROM Weapon WHERE GRADE = \"" + GetByProbability(rand) + "\" ORDER BY RANDOM() LIMIT 1");
+
+            DatabaseInsert("INSERT INTO Inventory VALUES(\'"
+                            + Inventory_Manager.Inventory[Inventory_Manager.Inventory.Count - 1].name + "\',\'"
+                            + Inventory_Manager.Inventory[Inventory_Manager.Inventory.Count - 1].type + "\',"
+                            + (Inventory_Manager.Inventory.Count - 1) + ","
+                            + "\'UNEQUIPED\')");
         }
         else
         {
@@ -97,7 +108,7 @@ public class Equipment_Gacha : MonoBehaviour
 
             Inventory_Manager.Inventory.Add(Item);      //Insert into Inventory
             invenManager.slots[Inventory_Manager.Inventory.Count - 1].curItem = Item;
-            invenManager.SetItem(Inventory_Manager.Inventory[Inventory_Manager.Inventory.Count - 1].name);
+            invenManager.SetItem(Inventory_Manager.Inventory[Inventory_Manager.Inventory.Count - 1].name);           
         }
         
 

@@ -11,6 +11,7 @@ public class Inventory_Manager : MonoBehaviour
     int numSlots;
     public Transform slotHolder;
     public EquipmentManager EM;
+    public Equipment_Gacha DBManager;
 
     private void Awake()
     {
@@ -44,8 +45,12 @@ public class Inventory_Manager : MonoBehaviour
         {
             if (!EM.Equipments.ContainsKey(selectedItem.type))
             {
-                EM.Equipments.Add(selectedItem.type, selectedItem);
                 changeEquipImage();
+                Debug.Log(selectedItem.code);
+                DBManager.DatabaseInsert("UPDATE Inventory \n" +
+                                         "SET Equiped = \'EQUIPED\'\n" +
+                                         "WHERE Code = " + selectedItem.code);
+                
             }
             else
             {
@@ -57,6 +62,11 @@ public class Inventory_Manager : MonoBehaviour
         {
             Debug.Log("There is no item selected");
         }
+    }
+
+    public void UnequipItem()
+    {
+        
     }
 
     private void changeEquipImage()
