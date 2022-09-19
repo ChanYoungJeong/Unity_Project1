@@ -46,17 +46,4 @@ public class SubBasicAttack : MonoBehaviour
         //몬스터 중심 향해 날라는거 구현하기
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("OnTriggerEnter2D");
-        
-        Debug.Log(collision.tag);
-
-        if (collision.tag == "Monster")
-        {
-            monsterStatus.nowHp -= rogueStat.attackDmg;
-            Debug.Log("서브 캐릭터 공격 결과 : " + monsterStatus.nowHp);
-            Destroy(gameObject);
-        }
-    }
 }
