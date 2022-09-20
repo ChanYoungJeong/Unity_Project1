@@ -8,7 +8,6 @@ public class PlayerScript : MonoBehaviour
     public GameObject playerIdleMotion;
     public GameObject playerAttackMotion;
     public Monster_Script monster;
-    Monster_Manager monster_Manager;
 
     public float maxHp;
     public float nowHp;
