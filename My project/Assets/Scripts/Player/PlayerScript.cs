@@ -56,10 +56,16 @@ public class PlayerScript : MonoBehaviour
         if( monster != null)
         {
             monster.nowHp -= atkDmg * critical;
-            Debug.Log(monster.nowHp);
+            
             if (monster.nowHp <= 0)
             {
+                monster.nowHp = 0;
+                Debug.Log(monster.nowHp);
                 StopCoroutine(PlayerBasicAttack());
+            }
+            else
+            {
+                Debug.Log(monster.nowHp);
             }
         }
 

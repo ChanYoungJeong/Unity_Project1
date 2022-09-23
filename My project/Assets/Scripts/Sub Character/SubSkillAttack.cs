@@ -7,12 +7,10 @@ public class SubSkillAttack : MonoBehaviour
     Sub_Char_Skill SubCharSkill;
     Sub_Char_SkillList SubCharSkillList;
    
-    Monster_Script monsterScript;
     bool isCoolTime = true;
 
     public GameObject subSkillPrefab;
-    GameObject gameObject;
-    Rigidbody2D rid;
+    public static GameObject kunai;
 
     private void Start()
     {
@@ -27,7 +25,7 @@ public class SubSkillAttack : MonoBehaviour
     {
         if (isCoolTime)
         {
-            //StartCoroutine(SkillAttack());
+            StartCoroutine(SkillAttack());
             StopCoroutine(SkillAttack());
         }
     }
@@ -47,24 +45,16 @@ public class SubSkillAttack : MonoBehaviour
 
     IEnumerator SkillAttack()
     {
-
         isCoolTime = false;
-
-        Debug.Log("monsterScript.nowHp : " + monsterScript.nowHp);
-        Debug.Log("SubCharSkill.damage : " + SubCharSkill.damage);
-
-        monsterScript.nowHp -= SubCharSkill.damage;
-
-        //Debug.Log(this.name + "가 " + SubCharSkill.damage + "만큼 공격함");
         yield return new WaitForSeconds(SubCharSkill.cooldown);
+        RogueKunai();
         isCoolTime = true;
     }
 
     public void RogueKunai()
     {
-        gameObject = Instantiate(subSkillPrefab,this.transform.position, Quaternion.identity);
-        rid = gameObject.GetComponent<Rigidbody2D>();
-        rid.velocity = transform.forward * 20;
+        kunai = Instantiate(subSkillPrefab,this.transform.position, Quaternion.identity);
+        kunai.GetComponent<Rigidbody2D>().AddForce(Vector3.right * 20, ForceMode2D.Impulse);
 
     }
 }

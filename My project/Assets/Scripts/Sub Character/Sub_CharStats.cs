@@ -17,7 +17,7 @@ public class Sub_CharStats : MonoBehaviour
         string name;
 
         name = "Rogue";
-        SubChar.Add(name, new CharStats(name, 100, 100, 5, 3));
+        SubChar.Add(name, new CharStats(name, 100, 100, 5, 2));
         
 
         /*name = "Sub 2";
