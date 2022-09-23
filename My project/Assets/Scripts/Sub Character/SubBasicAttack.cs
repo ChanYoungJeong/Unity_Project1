@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class SubBasicAttack : MonoBehaviour
 {
-    Monster_Script monsterStatus;
-
     public GameObject basicAttackPrefab;
     public static GameObject dager;
 
@@ -23,8 +21,6 @@ public class SubBasicAttack : MonoBehaviour
     {
         if (Battle_Situation_Trigger.on_Battle)
         {
-            monsterStatus = Battle_Situation_Trigger.monster_group.transform.GetChild(0).GetComponent<Monster_Script>(); // 易身取芋０?╞? 易屆易?╱╱ ???╱╱? ??
-
             if (isAttack)
             {
                 StartCoroutine(Attack());

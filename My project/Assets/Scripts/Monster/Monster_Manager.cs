@@ -111,7 +111,7 @@ public class Monster_Manager : MonoBehaviour
 
     void ShowPlayerStat()
     {
-        Debug.Log(playerScript.playerNowExp);
-        Debug.Log(playerScript.lv);
+        Debug.Log("EXP: "+playerScript.playerNowExp);
+        Debug.Log("Lv: "+playerScript.lv);
     }
 }
