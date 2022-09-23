@@ -15,7 +15,7 @@ public class SubAttackManager : MonoBehaviour
     {
         rogueStat = GameObject.Find("Rogue");
         rogueDmg = rogueStat.GetComponent<SubChar_Combat_manager>().attackDmg;
-        //sS
+        //sSasd
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
