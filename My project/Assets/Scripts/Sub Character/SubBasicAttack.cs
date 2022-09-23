@@ -7,12 +7,17 @@ public class SubBasicAttack : MonoBehaviour
     Monster_Script monsterStatus;
 
     public GameObject basicAttackPrefab;
-    GameObject dager;
+    public static GameObject dager;
 
     SubChar_Combat_manager rogueStat;
 
     bool isAttack = true;
     public float speed;
+
+    private void Start()
+    {
+        rogueStat = this.transform.parent.GetComponent<SubChar_Combat_manager>();
+    }
 
     private void Update()
     {
@@ -22,7 +27,7 @@ public class SubBasicAttack : MonoBehaviour
 
             if (isAttack)
             {
-                //StartCoroutine(Attack());
+                StartCoroutine(Attack());
             }
         }
     }
@@ -32,10 +37,8 @@ public class SubBasicAttack : MonoBehaviour
         {
             isAttack = false;
             RogueBasicAttack();
-            Debug.Log(rogueStat.atkSpeed);
             yield return new WaitForSeconds(rogueStat.atkSpeed);
             isAttack = true;
-            Debug.Log(isAttack);
         }
     }
 
