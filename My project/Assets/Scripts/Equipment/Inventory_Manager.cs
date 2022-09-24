@@ -35,7 +35,7 @@ public class Inventory_Manager : MonoBehaviour
     private Sprite GetImage(string itemName)
     {
         Sprite image = Resources.Load<Sprite>("Image/Equipment/" + itemName);
-
+       
         return image;
     }
 
@@ -45,12 +45,12 @@ public class Inventory_Manager : MonoBehaviour
         {
             if (!EM.Equipments.ContainsKey(selectedItem.type))
             {
+                EM.Equipments.Add(selectedItem.type, selectedItem);
                 changeEquipImage();
-                Debug.Log(selectedItem.code);
-                DBManager.DatabaseInsert("UPDATE Inventory \n" +
-                                         "SET Equiped = \'EQUIPED\'\n" +
-                                         "WHERE Code = " + selectedItem.code);
-                
+            }
+            else if(EM.Equipments[selectedItem.type].code == selectedItem.code)
+            {
+                UnequipItem(selectedItem);
             }
             else
             {
@@ -64,9 +64,24 @@ public class Inventory_Manager : MonoBehaviour
         }
     }
 
-    public void UnequipItem()
+    public void DeleteItem()
     {
-        
+        Inventory.Remove(selectedItem);
+        ResetImage(selectedItem);
+        //DBManager.DatabaseInsert("DELETE * FROM INVENTORY WHERE CODE = " + selectedItem.code);
+    }
+
+    public void UnequipItem(Equipment item)
+    {
+        EM.Equipments.Remove(item.type);                        //Remove item from Dictionary
+        Debug.Log("Here");
+        for (int i = 0; i < EM.eSlots.Length; i++)              //Change image of Equpiment to default
+        {
+            if (EM.eSlots[i].name == selectedItem.type)
+            {
+                EM.eSlots[i].sprite = null;
+            }
+        }
     }
 
     private void changeEquipImage()
@@ -77,4 +92,13 @@ public class Inventory_Manager : MonoBehaviour
                 EM.eSlots[i].sprite = GetImage(selectedItem.name);
         }
     }
+
+    private void ResetImage(Equipment item)
+    {
+        Debug.Log(slots[0].selectedSlot.name);
+        Debug.Log(slots[0].selectedSlot.GetComponentInChildren<Image>().sprite);
+        slots[0].selectedSlot.transform.GetChild(0).GetComponent<Image>().sprite = slots[0].defaultImage;
+    }
+
+
 }
