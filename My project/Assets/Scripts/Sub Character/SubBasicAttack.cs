@@ -32,8 +32,15 @@ public class SubBasicAttack : MonoBehaviour
         while(isAttack)
         {
             isAttack = false;
-            RogueBasicAttack();
-            yield return new WaitForSeconds(rogueStat.atkSpeed);
+            if (this.name == "Dager")
+            {
+
+
+                RogueBasicAttack();
+                yield return new WaitForSeconds(rogueStat.atkSpeed);
+            }
+            //else if(this.name == "신관 기본공격"){}
+
             isAttack = true;
         }
     }
