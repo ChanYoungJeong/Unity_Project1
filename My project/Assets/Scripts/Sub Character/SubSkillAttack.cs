@@ -14,9 +14,7 @@ public class SubSkillAttack : MonoBehaviour
 
     private void Start()
     {
-
         SubCharSkillList = transform.parent.GetComponentInParent<Sub_Char_SkillList>();
-
         SetSubSkill();
 
     }
@@ -46,8 +44,13 @@ public class SubSkillAttack : MonoBehaviour
     IEnumerator SkillAttack()
     {
         isCoolTime = false;
-        yield return new WaitForSeconds(SubCharSkill.cooldown);
-        RogueKunai();
+        if (this.name == "Kunai")
+        {
+            yield return new WaitForSeconds(SubCharSkill.cooldown);
+            RogueKunai();
+        }
+        //else if(this.name == "신관 스킬"){}
+
         isCoolTime = true;
     }
 
@@ -57,4 +60,6 @@ public class SubSkillAttack : MonoBehaviour
         kunai.GetComponent<Rigidbody2D>().AddForce(Vector3.right * 20, ForceMode2D.Impulse);
 
     }
+
+
 }
