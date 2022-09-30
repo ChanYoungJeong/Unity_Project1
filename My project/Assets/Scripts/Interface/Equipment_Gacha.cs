@@ -114,6 +114,7 @@ public class Equipment_Gacha : MonoBehaviour
                 invenManager.slots[Inventory_Manager.Inventory.Count - 1].curItem = Item;
                 invenManager.slots[Inventory_Manager.Inventory.Count - 1].SetItem(Item.name);
             }
+
         
         //여기까
 
