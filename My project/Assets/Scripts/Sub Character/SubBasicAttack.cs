@@ -9,7 +9,7 @@ public class SubBasicAttack : MonoBehaviour
 
     SubChar_Combat_manager rogueStat;
 
-    bool isAttack = true;
+    bool isCoolTime = true;
     public float speed;
 
     private void Start()
@@ -19,37 +19,37 @@ public class SubBasicAttack : MonoBehaviour
 
     private void Update()
     {
-        if (Battle_Situation_Trigger.on_Battle)
+        if (Battle_Situation_Trigger.monster != null)
         {
-            if (isAttack)
+            if (isCoolTime)
             {
                 StartCoroutine(Attack());
+                StopCoroutine(Attack());
+
             }
         }
+
     }
     public IEnumerator Attack()
     {
-        while(isAttack)
+        isCoolTime = false;
+        if (this.name == "Dager")
         {
-            isAttack = false;
-            if (this.name == "Dager")
-            {
+            yield return new WaitForSeconds(rogueStat.atkSpeed);
+            RogueBasicAttack();
+            isCoolTime = true;
 
-
-                RogueBasicAttack();
-                yield return new WaitForSeconds(rogueStat.atkSpeed);
-            }
-            //else if(this.name == "신관 기본공격"){}
-
-            isAttack = true;
         }
+         //else if(this.name == "신관 기본공격"){}
     }
 
     public void RogueBasicAttack()
     {
-        dager = Instantiate(basicAttackPrefab, this.transform.position, Quaternion.identity);
-        dager.GetComponent<Rigidbody2D>().AddForce(Vector3.right * speed, ForceMode2D.Impulse);
-        //몬스터 중심 향해 날라는거 구현하기
+        if (Battle_Situation_Trigger.monster != null)
+        {
+            dager = Instantiate(basicAttackPrefab, this.transform.position, Quaternion.identity);
+            dager.GetComponent<Rigidbody2D>().AddForce(Vector3.right * speed, ForceMode2D.Impulse);
+            //몬스터 중심 향해 날라는거 구현하기
+        }
     }
-
 }

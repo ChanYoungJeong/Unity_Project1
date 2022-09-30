@@ -29,17 +29,17 @@ public class Battle_Situation_Trigger : MonoBehaviour
             {
                 monster = monster_group.transform.GetChild(0).gameObject;
                 on_Battle = true;
-                if (coroutineCheck == false)
+                if (coroutineCheck== false)
                 {
                     coroutineCheck = true;
-                    player.GetComponent<PlayerScript>().PlayerAttackMotion();
+                    //player.GetComponent<PlayerScript>().PlayerAttackMotion();
                 }
             }
             else
             {
                 on_Battle = false;
                 monster = null;
-                player.GetComponent<PlayerScript>().PlayerIdleMotion();
+                //player.GetComponent<PlayerScript>().PlayerIdleMotion();
                 coroutineCheck = false;
             }
         }
@@ -51,6 +51,7 @@ public class Battle_Situation_Trigger : MonoBehaviour
         if(collision.transform.tag == "Monster")
         {
             atSpot = true;
+            player.GetComponent<PlayerScript>().PlayerAttackMotion();
         }
     }
 
@@ -59,6 +60,7 @@ public class Battle_Situation_Trigger : MonoBehaviour
         if (collision.transform.tag == "Monster")
         {
             atSpot = false;
+            player.GetComponent<PlayerScript>().PlayerIdleMotion();
         }
     }
 
