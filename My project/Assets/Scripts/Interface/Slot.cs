@@ -8,14 +8,13 @@ public class Slot : MonoBehaviour
     public bool hasItem = false;
     public Sprite itemImage;
     public Equipment curItem;
-    public bool isEqupied;
     public Sprite defaultImage;
-    public GameObject selectedSlot;
+    public int slotNumber;
 
 
     private void Awake()
     {
-        defaultImage = GetComponentInChildren<Image>().sprite;
+        defaultImage = transform.GetChild(0).GetComponent<Image>().sprite;
     }
 
     public void SelectItem()
@@ -23,13 +22,35 @@ public class Slot : MonoBehaviour
         if(hasItem && curItem != null)
         {
             Inventory_Manager.selectedItem = curItem;
+            Inventory_Manager.selectedSlot = slotNumber;
             Debug.Log(Inventory_Manager.selectedItem.name + " is Selected");
-            selectedSlot = this.gameObject;
-           // Debug.Log(selectedSlot.name);
         }
         else
         {
 
         }
     }
+
+    public void SetItem(string itemName)
+    {
+        if (!hasItem)
+        {
+            transform.GetChild(0).GetComponentInChildren<Image>().sprite = GetImage(itemName);
+            hasItem = true;
+        }
+    }
+
+    private Sprite GetImage(string itemName)
+    {
+        Sprite image = Resources.Load<Sprite>("Image/Equipment/" + itemName);
+        return image;
+    }
+
+    public void ResetSlot()
+    {
+        transform.GetChild(0).GetComponent<Image>().sprite = defaultImage;
+        curItem = null;
+        hasItem = false;
+    }
+
 }

@@ -10,6 +10,7 @@ public class Battle_Situation_Trigger : MonoBehaviour
 
     public static bool on_Battle = false;
     public static bool atSpot = false;
+    public bool Battle;
     bool coroutineCheck = false;
 
     private void Start()
@@ -20,10 +21,11 @@ public class Battle_Situation_Trigger : MonoBehaviour
 
     private void Update()
     {
+        Battle = on_Battle;
         if (GameObject.Find("Monster_Group(Clone)"))
         {
             monster_group = GameObject.Find("Monster_Group(Clone)");
-            if (atSpot)
+            if (monster_group.transform.childCount != 0)
             {
                 monster = monster_group.transform.GetChild(0).gameObject;
                 on_Battle = true;
@@ -35,9 +37,10 @@ public class Battle_Situation_Trigger : MonoBehaviour
             }
             else
             {
+                on_Battle = false;
+                monster = null;
                 player.GetComponent<PlayerScript>().PlayerIdleMotion();
                 coroutineCheck = false;
-                on_Battle = false;
             }
         }
     }

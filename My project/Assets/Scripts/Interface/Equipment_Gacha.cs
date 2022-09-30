@@ -108,7 +108,7 @@ public class Equipment_Gacha : MonoBehaviour
 
             Inventory_Manager.Inventory.Add(Item);      //Insert into Inventory
             invenManager.slots[Inventory_Manager.Inventory.Count - 1].curItem = Item;
-            invenManager.SetItem(Inventory_Manager.Inventory[Inventory_Manager.Inventory.Count - 1].name);           
+            invenManager.slots[Inventory_Manager.Inventory.Count - 1].SetItem(Item.name);           
         }
         
 
