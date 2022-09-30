@@ -136,7 +136,7 @@ public class Equipment_Gacha : MonoBehaviour
         dbConnection.Close();
         dbConnection = null;
     }
-
+    //홍정훈
     string GetByProbability(float value)
     {
         if (value <= 70)
