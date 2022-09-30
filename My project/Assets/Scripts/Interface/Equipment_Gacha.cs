@@ -5,15 +5,20 @@ using System.IO;
 using UnityEngine.Networking;
 using System.Data;
 using Mono.Data.Sqlite;
+using UnityEngine.UI;
 
 public class Equipment_Gacha : MonoBehaviour
 {
-    public GameObject randomCanvas; 
+    public GameObject randomCanvas;
     public Inventory_Manager invenManager;
+    bool isBBOKI = true;
+    public Button confbtn;
+    public Button rebtn;
+
     private void Awake()
     {
         DBCreate();
-        
+
     }
 
     private void OnApplicationQuit()
@@ -91,7 +96,7 @@ public class Equipment_Gacha : MonoBehaviour
     public void Get_Equipment(string query)
     {
         Equipment Item;
-        bool isBBOKI = true;
+        
 
         IDbConnection dbConnection = new SqliteConnection(GetDBFilePath());
         dbConnection.Open();                                        //Open DB
@@ -99,10 +104,11 @@ public class Equipment_Gacha : MonoBehaviour
         dbCommand.CommandText = query;                              //Write Query
         IDataReader dataReader = dbCommand.ExecuteReader();
         //여기서부/
-        
+        while (isBBOKI)
+        {
             if (dataReader.Read())
             {
-                Item = new Equipment(dataReader.GetInt32(0),                                  
+                Item = new Equipment(dataReader.GetInt32(0),
                                  dataReader.GetString(1),
                                  dataReader.GetString(2),
                                  dataReader.GetInt32(3),
@@ -113,24 +119,25 @@ public class Equipment_Gacha : MonoBehaviour
                 Inventory_Manager.Inventory.Add(Item);      //Insert into Inventory
                 invenManager.slots[Inventory_Manager.Inventory.Count - 1].curItem = Item;
                 invenManager.slots[Inventory_Manager.Inventory.Count - 1].SetItem(Item.name);
-            }
+            }            
+        }
 
-        
-        //여기까
 
-        if(dataReader.Read())                    //Read Records and Insert into structure
+        //여기까지
+
+        if (dataReader.Read())                    //Read Records and Insert into structure
         {
             Item = new Equipment(dataReader.GetInt32(0),   //Read field 0....                               
-                                 dataReader.GetString(1),  
+                                 dataReader.GetString(1),
                                  dataReader.GetString(2),
-                                 dataReader.GetInt32(3),                                 
+                                 dataReader.GetInt32(3),
                                  dataReader.GetInt32(4),
                                  dataReader.GetString(5)
                                  );
 
             Inventory_Manager.Inventory.Add(Item);      //Insert into Inventory
             invenManager.slots[Inventory_Manager.Inventory.Count - 1].curItem = Item;
-            invenManager.slots[Inventory_Manager.Inventory.Count - 1].SetItem(Item.name);           
+            invenManager.slots[Inventory_Manager.Inventory.Count - 1].SetItem(Item.name);
         }
 
         dataReader.Dispose();           //Close DB opposite order
@@ -179,11 +186,13 @@ public class Equipment_Gacha : MonoBehaviour
 
     public void ColseEquipmentCanbus()
     {
+        isBBOKI = false;
         randomCanvas.SetActive(false);
     }
 
     public void OpenEquipmentCanbus()
     {
+        isBBOKI = true;
         randomCanvas.SetActive(true);
     }
 }
