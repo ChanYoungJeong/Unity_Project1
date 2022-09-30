@@ -22,7 +22,8 @@ public class Sub_Char_SkillList : MonoBehaviour
         name = "Kunai"; //도적 스킬
         Sub_Char_SkilList.Add(name, new Sub_Char_Skill(0, name, 15, 0, 0, 15, 1)); //Sub1 Attacker //도적스킬
 
-
+        /* name = "Shield"; // Priest Skill
+         * Sub_Char_SkillList.Add(namem new Sub_Char_Skill*/
     }
   
 }

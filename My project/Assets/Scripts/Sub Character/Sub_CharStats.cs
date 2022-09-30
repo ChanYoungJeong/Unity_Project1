@@ -18,11 +18,13 @@ public class Sub_CharStats : MonoBehaviour
 
         name = "Rogue";
         SubChar.Add(name, new CharStats(name, 100, 100, 5, 3));
-        
+
 
         /*name = "Sub 2";
         SubChar.Add(name, new CharStats(name, 300, 100, 20, 2));
 */
+        name = "Priest";
+        SubChar.Add(name, new CharStats(name, 80, 150, 3, 1));
 
     }
 

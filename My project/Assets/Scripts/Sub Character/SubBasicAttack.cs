@@ -6,8 +6,11 @@ public class SubBasicAttack : MonoBehaviour
 {
     Monster_Script monsterStatus;
 
+    PlayerScript playerstatHP;
+
     public GameObject basicAttackPrefab;
     GameObject dager;
+    GameObject Heal;
 
     SubChar_Combat_manager rogueStat;
 
@@ -44,6 +47,9 @@ public class SubBasicAttack : MonoBehaviour
         dager = Instantiate(basicAttackPrefab, this.transform.position, Quaternion.identity);
         dager.GetComponent<Rigidbody2D>().AddForce(Vector3.right * speed, ForceMode2D.Impulse);
         //몬스터 중심 향해 날라는거 구현하기
+
+        Heal = Instantiate(basicAttackPrefab, this.transform.position, Quaternion.identity);
+
     }
 
 }
