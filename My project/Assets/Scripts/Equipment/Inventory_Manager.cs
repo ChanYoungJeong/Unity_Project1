@@ -7,6 +7,7 @@ public class Inventory_Manager : MonoBehaviour
 {
     public static List<Equipment> Inventory = new List<Equipment>();
     public static Equipment selectedItem;
+    public static int selectedSlot;
     public Slot[] slots;
     int numSlots;
     public Transform slotHolder;
@@ -17,20 +18,17 @@ public class Inventory_Manager : MonoBehaviour
     {
         slots = slotHolder.GetComponentsInChildren<Slot>();
         numSlots = slots.Length;
+        GenerateSlot();
     }
 
-    public void SetItem(string itemName)
+    private void GenerateSlot()
     {
-        for (int i = 0; i < numSlots; i++)
+        for(int i = 0; i < slots.Length; i++)
         {
-            if (!slots[i].hasItem)
-            {
-                slots[i].transform.GetChild(0).GetComponentInChildren<Image>().sprite = GetImage(itemName);
-                slots[i].hasItem = true;
-                break;
-            }
+            slots[i].slotNumber = i;
         }
     }
+
 
     private Sprite GetImage(string itemName)
     {
@@ -66,15 +64,16 @@ public class Inventory_Manager : MonoBehaviour
 
     public void DeleteItem()
     {
-        Inventory.Remove(selectedItem);
-        ResetImage(selectedItem);
+        Debug.Log(Inventory[selectedSlot].name + "has removed");
+        Inventory.RemoveAt(selectedSlot);
+        slots[selectedSlot].ResetSlot();
+        AlignSlot(selectedSlot);
         //DBManager.DatabaseInsert("DELETE * FROM INVENTORY WHERE CODE = " + selectedItem.code);
     }
 
     public void UnequipItem(Equipment item)
     {
         EM.Equipments.Remove(item.type);                        //Remove item from Dictionary
-        Debug.Log("Here");
         for (int i = 0; i < EM.eSlots.Length; i++)              //Change image of Equpiment to default
         {
             if (EM.eSlots[i].name == selectedItem.type)
@@ -93,11 +92,17 @@ public class Inventory_Manager : MonoBehaviour
         }
     }
 
-    private void ResetImage(Equipment item)
+    private void AlignSlot(int deletedSlot)
     {
-        Debug.Log(slots[0].selectedSlot.name);
-        Debug.Log(slots[0].selectedSlot.GetComponentInChildren<Image>().sprite);
-        slots[0].selectedSlot.transform.GetChild(0).GetComponent<Image>().sprite = slots[0].defaultImage;
+        Equipment temp = null;
+        while(deletedSlot + 1 < numSlots && slots[deletedSlot + 1] != null && slots[deletedSlot + 1].hasItem)
+        {
+            temp = slots[deletedSlot + 1].curItem;
+            slots[deletedSlot].curItem = temp;
+            slots[deletedSlot].SetItem(temp.name);
+            slots[deletedSlot + 1].ResetSlot();
+            deletedSlot++;
+        }
     }
 
 

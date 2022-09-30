@@ -51,10 +51,10 @@ public class PlayerScript : MonoBehaviour
     }
 
     public void _PlayerAttack()
-    {
-        monster = Battle_Situation_Trigger.monster_group.transform.GetChild(0).GetComponent<Monster_Script>();
-        if( monster != null)
+    {      
+        if(Battle_Situation_Trigger.monster != null)
         {
+            monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
             monster.nowHp -= atkDmg * critical;
             
             if (monster.nowHp <= 0)
