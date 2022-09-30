@@ -12,10 +12,19 @@ public class SubAttackManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        if (this.name == "dager")
+
+        if (this.name == "dager(Clone)")
         {
             rogueStat = GameObject.Find("Rogue");
             rogueDmg = rogueStat.GetComponent<SubChar_Combat_manager>().attackDmg;
+        }
+    }
+
+    public void Update()
+    {
+        if(Battle_Situation_Trigger.monster == null)
+        {
+            Destroy(this);
         }
     }
 
@@ -24,13 +33,28 @@ public class SubAttackManager : MonoBehaviour
         monster = Battle_Situation_Trigger.monster_group.transform.GetChild(0).GetComponent<Monster_Script>();
         if (collision.tag == "Monster")
         {
-            if (this.name == "dager")
+            
+            if (this.name == "dager(Clone)")
             {
                 monster.nowHp -= rogueDmg;
-                Debug.Log("서브 캐릭터 공격 결과 : " + monster.nowHp);
+                Debug.Log("Sub character basic attack result : " + monster.nowHp);
                 Destroy(SubBasicAttack.dager);
             }
         }
 
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        monster = null;
+
+        if (collision.tag == "Monster")
+        {
+
+            if (this.name == "dager(Clone)")
+            {
+                Destroy(SubBasicAttack.dager);
+            }
+        }
     }
 }

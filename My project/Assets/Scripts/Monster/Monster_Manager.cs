@@ -33,7 +33,6 @@ public class Monster_Manager : MonoBehaviour
 
     public void Monster_Die()
     {
-        Debug.Log("MonsterDie() ½ÇÇà");
         playerScript.GetExp();
         Destroy(this.gameObject);
         Game_System.Gold += Monster_Stat.Golds;

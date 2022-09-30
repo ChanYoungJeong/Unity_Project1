@@ -60,12 +60,12 @@ public class PlayerScript : MonoBehaviour
             if (monster.nowHp <= 0)
             {
                 monster.nowHp = 0;
-                Debug.Log(monster.nowHp);
+                Debug.Log("Main character basic attack result : " + monster.nowHp);
                 StopCoroutine(PlayerBasicAttack());
             }
             else
             {
-                Debug.Log(monster.nowHp);
+                Debug.Log("Main character basic attack resul : "+ monster.nowHp);
             }
         }
 

@@ -21,10 +21,13 @@ public class SubSkillAttack : MonoBehaviour
 
     private void Update()
     {
-        if (isCoolTime)
+        if (Battle_Situation_Trigger.monster != null)
         {
-            StartCoroutine(SkillAttack());
-            StopCoroutine(SkillAttack());
+            if (isCoolTime)
+            {
+                StartCoroutine(SkillAttack());
+                StopCoroutine(SkillAttack());
+            }
         }
     }
 
@@ -56,9 +59,11 @@ public class SubSkillAttack : MonoBehaviour
 
     public void RogueKunai()
     {
-        kunai = Instantiate(subSkillPrefab,this.transform.position, Quaternion.identity);
-        kunai.GetComponent<Rigidbody2D>().AddForce(Vector3.right * 20, ForceMode2D.Impulse);
-
+        if (Battle_Situation_Trigger.monster != null)
+        {
+            kunai = Instantiate(subSkillPrefab, this.transform.position, Quaternion.identity);
+            kunai.GetComponent<Rigidbody2D>().AddForce(Vector3.right * 20, ForceMode2D.Impulse);
+        }
     }
 
 
