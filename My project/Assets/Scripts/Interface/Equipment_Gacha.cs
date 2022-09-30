@@ -8,10 +8,12 @@ using Mono.Data.Sqlite;
 
 public class Equipment_Gacha : MonoBehaviour
 {
+    public GameObject randomCanvas; 
     public Inventory_Manager invenManager;
     private void Awake()
     {
         DBCreate();
+        
     }
 
     private void OnApplicationQuit()
@@ -89,12 +91,35 @@ public class Equipment_Gacha : MonoBehaviour
     public void Get_Equipment(string query)
     {
         Equipment Item;
+        
 
         IDbConnection dbConnection = new SqliteConnection(GetDBFilePath());
         dbConnection.Open();                                        //Open DB
         IDbCommand dbCommand = dbConnection.CreateCommand();
         dbCommand.CommandText = query;                              //Write Query
         IDataReader dataReader = dbCommand.ExecuteReader();
+        //여기서부/
+        while(bool isBBOKI){
+            if (dataReader.Read())
+            {
+                Item = new Equipment(dataReader.GetInt32(0),                                  
+                                 dataReader.GetString(1),
+                                 dataReader.GetString(2),
+                                 dataReader.GetInt32(3),
+                                 dataReader.GetInt32(4),
+                                 dataReader.GetString(5)
+                                 );
+
+                Inventory_Manager.Inventory.Add(Item);      //Insert into Inventory
+                invenManager.slots[Inventory_Manager.Inventory.Count - 1].curItem = Item;
+                invenManager.slots[Inventory_Manager.Inventory.Count - 1].SetItem(Item.name);
+            }
+            randomCanvas.SetActive(true){
+
+            }
+            
+        }
+        //여기까
 
         if(dataReader.Read())                    //Read Records and Insert into structure
         {
