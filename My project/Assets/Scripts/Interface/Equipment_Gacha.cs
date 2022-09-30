@@ -8,12 +8,12 @@ using Mono.Data.Sqlite;
 
 public class Equipment_Gacha : MonoBehaviour
 {
-    public GameObject randomCanvas; 
+    public GameObject randomCanvas;
     public Inventory_Manager invenManager;
     private void Awake()
     {
         DBCreate();
-        
+
     }
 
     private void OnApplicationQuit()
@@ -90,8 +90,8 @@ public class Equipment_Gacha : MonoBehaviour
 
     public void Get_Equipment(string query)
     {
+        bool isBOKKI = true;
         Equipment Item;
-        bool isBBOKI = true;
 
         IDbConnection dbConnection = new SqliteConnection(GetDBFilePath());
         dbConnection.Open();                                        //Open DB
@@ -99,10 +99,11 @@ public class Equipment_Gacha : MonoBehaviour
         dbCommand.CommandText = query;                              //Write Query
         IDataReader dataReader = dbCommand.ExecuteReader();
         //여기서부/
-        
+        while (isBOKKI)
+        {
             if (dataReader.Read())
             {
-                Item = new Equipment(dataReader.GetInt32(0),                                  
+                Item = new Equipment(dataReader.GetInt32(0),
                                  dataReader.GetString(1),
                                  dataReader.GetString(2),
                                  dataReader.GetInt32(3),
@@ -114,22 +115,27 @@ public class Equipment_Gacha : MonoBehaviour
                 invenManager.slots[Inventory_Manager.Inventory.Count - 1].curItem = Item;
                 invenManager.slots[Inventory_Manager.Inventory.Count - 1].SetItem(Item.name);
             }
-        
+
+
+            
+        }
+
+
         //여기까
 
-        if(dataReader.Read())                    //Read Records and Insert into structure
+        if (dataReader.Read())                    //Read Records and Insert into structure
         {
             Item = new Equipment(dataReader.GetInt32(0),   //Read field 0....                               
-                                 dataReader.GetString(1),  
+                                 dataReader.GetString(1),
                                  dataReader.GetString(2),
-                                 dataReader.GetInt32(3),                                 
+                                 dataReader.GetInt32(3),
                                  dataReader.GetInt32(4),
                                  dataReader.GetString(5)
                                  );
 
             Inventory_Manager.Inventory.Add(Item);      //Insert into Inventory
             invenManager.slots[Inventory_Manager.Inventory.Count - 1].curItem = Item;
-            invenManager.slots[Inventory_Manager.Inventory.Count - 1].SetItem(Item.name);           
+            invenManager.slots[Inventory_Manager.Inventory.Count - 1].SetItem(Item.name);
         }
 
         dataReader.Dispose();           //Close DB opposite order
@@ -185,5 +191,11 @@ public class Equipment_Gacha : MonoBehaviour
     {
         randomCanvas.SetActive(true);
     }
+    //public void retrybutton()
+    //{
+        //float rand = Random.Range(0, 100);
+        //Get_Equipment("SELECT * FROM Weapon WHERE GRADE = \"" + GetByProbability(rand) + "\" ORDER BY RANDOM() LIMIT 1");
+    //}
 }
+
 
