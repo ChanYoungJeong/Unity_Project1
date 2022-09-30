@@ -221,8 +221,8 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1282736755}
         m_TargetAssemblyTypeName: Equipment_Gacha, Assembly-CSharp
-        m_MethodName: Get_Equipment
-        m_Mode: 5
+        m_MethodName: ColseEquipmentCanbus
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1750,17 +1750,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1242047072}
   m_CullTransparentMesh: 1
---- !u!114 &1243460956 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7088563174652956111, guid: 3e6bb959d42b14b52b13a7b473573952, type: 3}
-  m_PrefabInstance: {fileID: 7488025292135613844}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c47683b9fae5f47a3a57e10726c2a04e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1282736755 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4152775647591889506, guid: a27c95e78f3097647bffd0ed194d7879, type: 3}
@@ -1951,6 +1940,10 @@ PrefabInstance:
       propertyPath: invenManager
       value: 
       objectReference: {fileID: 436655001421728763}
+    - target: {fileID: 4152775647591889506, guid: a27c95e78f3097647bffd0ed194d7879, type: 3}
+      propertyPath: randomCanvas
+      value: 
+      objectReference: {fileID: 2055575574}
     - target: {fileID: 8250695546877854789, guid: a27c95e78f3097647bffd0ed194d7879, type: 3}
       propertyPath: m_Name
       value: Game_System
@@ -2987,24 +2980,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1877874677527665442, guid: 3e6bb959d42b14b52b13a7b473573952, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1877874677527665442, guid: 3e6bb959d42b14b52b13a7b473573952, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1877874677527665442, guid: 3e6bb959d42b14b52b13a7b473573952, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1877874677527665442, guid: 3e6bb959d42b14b52b13a7b473573952, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2055575574}
+      objectReference: {fileID: 1282736755}
     - target: {fileID: 1877874677527665442, guid: 3e6bb959d42b14b52b13a7b473573952, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1243460956}
+      objectReference: {fileID: 1282736755}
     - target: {fileID: 1877874677527665442, guid: 3e6bb959d42b14b52b13a7b473573952, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -3015,19 +3008,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1877874677527665442, guid: 3e6bb959d42b14b52b13a7b473573952, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
+      value: OpenEquipmentCanbus
       objectReference: {fileID: 0}
     - target: {fileID: 1877874677527665442, guid: 3e6bb959d42b14b52b13a7b473573952, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ramdom_chooseButton
+      value: Get_Equipment
       objectReference: {fileID: 0}
     - target: {fileID: 1877874677527665442, guid: 3e6bb959d42b14b52b13a7b473573952, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: Equipment_Gacha, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1877874677527665442, guid: 3e6bb959d42b14b52b13a7b473573952, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: randombutton, Assembly-CSharp
+      value: Equipment_Gacha, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1877874677527665442, guid: 3e6bb959d42b14b52b13a7b473573952, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -3121,6 +3114,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1519380467}
+    - target: {fileID: 7088563174555210378, guid: 3e6bb959d42b14b52b13a7b473573952, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1282736755}
+    - target: {fileID: 7088563174555210378, guid: 3e6bb959d42b14b52b13a7b473573952, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OpenEquipmentCanbus
+      objectReference: {fileID: 0}
     - target: {fileID: 7088563176271412017, guid: 3e6bb959d42b14b52b13a7b473573952, type: 3}
       propertyPath: m_Camera
       value: 

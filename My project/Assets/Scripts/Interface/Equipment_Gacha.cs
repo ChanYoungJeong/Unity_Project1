@@ -91,7 +91,7 @@ public class Equipment_Gacha : MonoBehaviour
     public void Get_Equipment(string query)
     {
         Equipment Item;
-        
+        bool isBBOKI = true;
 
         IDbConnection dbConnection = new SqliteConnection(GetDBFilePath());
         dbConnection.Open();                                        //Open DB
@@ -99,7 +99,7 @@ public class Equipment_Gacha : MonoBehaviour
         dbCommand.CommandText = query;                              //Write Query
         IDataReader dataReader = dbCommand.ExecuteReader();
         //여기서부/
-        while(bool isBBOKI){
+        
             if (dataReader.Read())
             {
                 Item = new Equipment(dataReader.GetInt32(0),                                  
@@ -114,11 +114,7 @@ public class Equipment_Gacha : MonoBehaviour
                 invenManager.slots[Inventory_Manager.Inventory.Count - 1].curItem = Item;
                 invenManager.slots[Inventory_Manager.Inventory.Count - 1].SetItem(Item.name);
             }
-            randomCanvas.SetActive(true){
-
-            }
-            
-        }
+        
         //여기까
 
         if(dataReader.Read())                    //Read Records and Insert into structure
@@ -177,6 +173,17 @@ public class Equipment_Gacha : MonoBehaviour
             Debug.Log("Something Wrong");
             return null;
         }
+    }
+
+
+    public void ColseEquipmentCanbus()
+    {
+        randomCanvas.SetActive(false);
+    }
+
+    public void OpenEquipmentCanbus()
+    {
+        randomCanvas.SetActive(true);
     }
 }
 
