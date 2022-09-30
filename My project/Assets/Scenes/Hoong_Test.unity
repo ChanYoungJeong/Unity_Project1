@@ -993,11 +993,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 532156464}
   m_CullTransparentMesh: 1
---- !u!1 &688827675 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3390393433907421256, guid: 3e6bb959d42b14b52b13a7b473573952, type: 3}
-  m_PrefabInstance: {fileID: 7488025292135613844}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &859208163
 GameObject:
   m_ObjectHideFlags: 0
@@ -2162,13 +2157,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 688827675}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1282736755}
+        m_TargetAssemblyTypeName: Equipment_Gacha, Assembly-CSharp
+        m_MethodName: retrybutton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1282736755}
+        m_TargetAssemblyTypeName: Equipment_Gacha, Assembly-CSharp
+        m_MethodName: Get_Equipment
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2719,7 +2726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2055575575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3114,6 +3121,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1519380467}
+    - target: {fileID: 7054185392970501743, guid: 3e6bb959d42b14b52b13a7b473573952, type: 3}
+      propertyPath: DBManager
+      value: 
+      objectReference: {fileID: 1282736755}
     - target: {fileID: 7088563174555210378, guid: 3e6bb959d42b14b52b13a7b473573952, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
