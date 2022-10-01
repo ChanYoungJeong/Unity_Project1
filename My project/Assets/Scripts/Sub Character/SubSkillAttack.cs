@@ -7,28 +7,27 @@ public class SubSkillAttack : MonoBehaviour
     Sub_Char_Skill SubCharSkill;
     Sub_Char_SkillList SubCharSkillList;
    
-    Monster_Script monsterScript;
     bool isCoolTime = true;
 
     public GameObject subSkillPrefab;
-    GameObject gameObject;
-    Rigidbody2D rid;
+    public static GameObject kunai;
 
     private void Start()
     {
-
         SubCharSkillList = transform.parent.GetComponentInParent<Sub_Char_SkillList>();
-
         SetSubSkill();
 
     }
 
     private void Update()
     {
-        if (isCoolTime)
+        if (Battle_Situation_Trigger.monster != null)
         {
-            //StartCoroutine(SkillAttack());
-            StopCoroutine(SkillAttack());
+            if (isCoolTime)
+            {
+                StartCoroutine(SkillAttack());
+                StopCoroutine(SkillAttack());
+            }
         }
     }
 
@@ -47,24 +46,25 @@ public class SubSkillAttack : MonoBehaviour
 
     IEnumerator SkillAttack()
     {
-
         isCoolTime = false;
+        if (this.name == "Kunai")
+        {
+            yield return new WaitForSeconds(SubCharSkill.cooldown);
+            RogueKunai();
+        }
+        //else if(this.name == "신관 스킬"){}
 
-        Debug.Log("monsterScript.nowHp : " + monsterScript.nowHp);
-        Debug.Log("SubCharSkill.damage : " + SubCharSkill.damage);
-
-        monsterScript.nowHp -= SubCharSkill.damage;
-
-        //Debug.Log(this.name + "가 " + SubCharSkill.damage + "만큼 공격함");
-        yield return new WaitForSeconds(SubCharSkill.cooldown);
         isCoolTime = true;
     }
 
     public void RogueKunai()
     {
-        gameObject = Instantiate(subSkillPrefab,this.transform.position, Quaternion.identity);
-        rid = gameObject.GetComponent<Rigidbody2D>();
-        rid.velocity = transform.forward * 20;
-
+        if (Battle_Situation_Trigger.monster != null)
+        {
+            kunai = Instantiate(subSkillPrefab, this.transform.position, Quaternion.identity);
+            kunai.GetComponent<Rigidbody2D>().AddForce(Vector3.right * 20, ForceMode2D.Impulse);
+        }
     }
+
+
 }
