@@ -103,7 +103,9 @@ public class Equipment_Gacha : MonoBehaviour
         IDbCommand dbCommand = dbConnection.CreateCommand();
         dbCommand.CommandText = query;                              //Write Query
         IDataReader dataReader = dbCommand.ExecuteReader();
-        //여기서부/
+        //여기서부
+        
+        /*
         while (isBBOKI)
         {
             if (dataReader.Read())
@@ -122,7 +124,7 @@ public class Equipment_Gacha : MonoBehaviour
             }            
         }
 
-
+        */
         //여기까지
 
         if (dataReader.Read())                    //Read Records and Insert into structure

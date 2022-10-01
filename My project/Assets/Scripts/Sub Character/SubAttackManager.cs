@@ -12,7 +12,6 @@ public class SubAttackManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-
         if (this.name == "dager(Clone)")
         {
             rogueStat = GameObject.Find("Rogue");
@@ -24,7 +23,7 @@ public class SubAttackManager : MonoBehaviour
     {
         if(Battle_Situation_Trigger.monster == null)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 
