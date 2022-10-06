@@ -272,6 +272,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a27c95e78f3097647bffd0ed194d7879, type: 3}
+--- !u!1 &1040882787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1040882788}
+  - component: {fileID: 1040882789}
+  m_Layer: 0
+  m_Name: FireBall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1040882788
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040882787}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1715554526}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1040882789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040882787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade6dd9b3bd508e4a97f103073487961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basicAttackPrefab: {fileID: 738715645996028120, guid: b2fbe57c9ed62384a9c6507acd090fe7, type: 3}
+  speed: 20
 --- !u!1001 &1070741765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -476,6 +522,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1715554525 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1957655764248074729, guid: fd66c381b649a2542bd0d36c60501b4f, type: 3}
+  m_PrefabInstance: {fileID: 1957655765215695117}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1715554526 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1957655764248074728, guid: fd66c381b649a2542bd0d36c60501b4f, type: 3}
+  m_PrefabInstance: {fileID: 1957655765215695117}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1715554528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715554525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a4f85de866eb847b8bdbb5abb8f5c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  curHealth: 0
+  maxMP: 0
+  curMP: 0
+  attackDmg: 0
+  healing: 0
+  this_name: 
+  atkSpeed: 0
+  skillDamage: 0
+  skillhealing: 0
+  skilldefense: 0
+  skillLv: 0
+  skillcooldown: 0
 --- !u!1 &1859014899 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2314681825701584322, guid: 129f1b5fe10ef424da0ff2abc5981855, type: 3}
@@ -572,6 +653,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1957655764248074729, guid: fd66c381b649a2542bd0d36c60501b4f, type: 3}
+      propertyPath: m_Name
+      value: MagicCaster
+      objectReference: {fileID: 0}
     - target: {fileID: 1957655765026450081, guid: fd66c381b649a2542bd0d36c60501b4f, type: 3}
       propertyPath: m_RootOrder
       value: 5

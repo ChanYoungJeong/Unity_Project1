@@ -17,12 +17,12 @@ public class Sub_CharStats : MonoBehaviour
         string name;
 
         name = "Rogue";
-        SubChar.Add(name, new CharStats(name, 100, 100, 5, 2));
-        
+        SubChar.Add(name, new CharStats(name, 200, 100, 5, 2));
 
-        /*name = "Sub 2";
-        SubChar.Add(name, new CharStats(name, 300, 100, 20, 2));
-*/
+
+        name = "MagicCaster";
+        SubChar.Add(name, new CharStats(name, 100, 500, 10, 3));
+
 
     }
 
