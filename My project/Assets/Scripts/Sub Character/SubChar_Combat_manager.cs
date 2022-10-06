@@ -14,13 +14,19 @@ public class SubChar_Combat_manager : MonoBehaviour
 
     public float maxHealth;   
     public float curHealth;
+    public float maxMP; //최대 마나
+    public float curMP;
     public float attackDmg;
     public float healing;
-    public float defense;
     public string this_name;
     public float atkSpeed;
 
+
+
+
     public float skillDamage;
+    public float skillhealing;
+    public float skilldefense;
     public float skillLv;
     public float skillcooldown;
 
@@ -52,6 +58,8 @@ public class SubChar_Combat_manager : MonoBehaviour
 
             maxHealth = charStat.maxHealth;
             curHealth = charStat.curHealth;
+            maxMP = charStat.maxMP;
+            curMP = charStat.maxMP;
             attackDmg = charStat.attack;
             this_name = charStat.this_name;
             atkSpeed = charStat.atkSpeed;
@@ -61,13 +69,26 @@ public class SubChar_Combat_manager : MonoBehaviour
 
     public  void SetSkillStat()
     {
-        bool isFind = subCharSkillList.Sub_Char_SkilList.ContainsKey("Kunai");
+        bool isFind = false;
+        string key ="";
+
+        if (this.name == "Rogue") { 
+            isFind = subCharSkillList.Sub_Char_SkilList.ContainsKey("Kunai");
+            key = "Kunai";
+        }
+        else if(this.name == "MagicCaster")
+        {
+            isFind = subCharSkillList.Sub_Char_SkilList.ContainsKey("SuperFireBall");
+            key = "SuperFireBall";
+        }
 
         if (isFind)
         {
-            subSkillStat = subCharSkillList.Sub_Char_SkilList["Kunai"];
+            subSkillStat = subCharSkillList.Sub_Char_SkilList[key];
 
             skillDamage = subSkillStat.damage;
+            skilldefense = subSkillStat.defense;
+            skillhealing = subSkillStat.healing;
             skillcooldown = subSkillStat.cooldown;
             skillLv = subSkillStat.SubSkillLevel;
 

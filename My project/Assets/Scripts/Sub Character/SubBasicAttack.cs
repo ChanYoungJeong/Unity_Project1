@@ -5,16 +5,16 @@ using UnityEngine;
 public class SubBasicAttack : MonoBehaviour
 {
     public GameObject basicAttackPrefab;
-    public static GameObject dager;
+    public static GameObject basicAttack;
 
-    SubChar_Combat_manager rogueStat;
+    SubChar_Combat_manager SubStat;
 
     bool isCoolTime = true;
     public float speed;
 
     private void Start()
     {
-        rogueStat = this.transform.parent.GetComponent<SubChar_Combat_manager>();
+        SubStat = this.transform.parent.GetComponent<SubChar_Combat_manager>();
     }
 
     private void Update()
@@ -35,20 +35,24 @@ public class SubBasicAttack : MonoBehaviour
         isCoolTime = false;
         if (this.name == "Dager")
         {
-            yield return new WaitForSeconds(rogueStat.atkSpeed);
-            RogueBasicAttack();
+            yield return new WaitForSeconds(SubStat.atkSpeed);
+            BasicAttack();
             isCoolTime = true;
 
         }
-         //else if(this.name == "신관 기본공격"){}
+         else if(this.name == "FireBall") {
+            yield return new WaitForSeconds(SubStat.atkSpeed);
+            BasicAttack();
+            isCoolTime = true;
+        }
     }
 
-    public void RogueBasicAttack()
+    public void BasicAttack()
     {
         if (Battle_Situation_Trigger.monster != null)
         {
-            dager = Instantiate(basicAttackPrefab, this.transform.position, Quaternion.identity);
-            dager.GetComponent<Rigidbody2D>().AddForce(Vector3.right * speed, ForceMode2D.Impulse);
+            basicAttack = Instantiate(basicAttackPrefab, this.transform.position, Quaternion.identity);
+            basicAttack.GetComponent<Rigidbody2D>().AddForce(Vector3.right * speed, ForceMode2D.Impulse);
             //몬스터 중심 향해 날라는거 구현하기
         }
     }
