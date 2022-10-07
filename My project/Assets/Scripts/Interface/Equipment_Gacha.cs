@@ -105,7 +105,7 @@ public class Equipment_Gacha : MonoBehaviour
         IDataReader dataReader = dbCommand.ExecuteReader();
         //여기서부
         
-        /*
+        
         while (isBBOKI)
         {
             if (dataReader.Read())
@@ -121,10 +121,12 @@ public class Equipment_Gacha : MonoBehaviour
                 Inventory_Manager.Inventory.Add(Item);      //Insert into Inventory
                 invenManager.slots[Inventory_Manager.Inventory.Count - 1].curItem = Item;
                 invenManager.slots[Inventory_Manager.Inventory.Count - 1].SetItem(Item.name);
+                isBBOKI = false;
+                
             }            
         }
 
-        */
+        
         //여기까지
 
         if (dataReader.Read())                    //Read Records and Insert into structure
