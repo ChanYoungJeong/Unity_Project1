@@ -82,6 +82,12 @@ public class SubChar_Combat_manager : MonoBehaviour
             key = "SuperFireBall";
         }
 
+         else if (this.this_name == "Priest")
+        {
+            isFind = subCharSkillList.Sub_Char_SkilList.ContainsKey("Shield");
+            key = "Shield";
+        }
+       
         if (isFind)
         {
             subSkillStat = subCharSkillList.Sub_Char_SkilList[key];

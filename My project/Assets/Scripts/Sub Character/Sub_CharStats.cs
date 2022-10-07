@@ -23,8 +23,9 @@ public class Sub_CharStats : MonoBehaviour
         name = "MagicCaster";
         SubChar.Add(name, new CharStats(name, 100, 500, 10, 3));
 
-
+        name = "Priest";
+        SubChar.Add(name, new CharStats(name, 100, 300, 10, 2));
     }
 
-
+    
 }
