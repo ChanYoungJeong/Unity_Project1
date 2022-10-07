@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SubAttackManager : MonoBehaviour
 {
+    PlayerScript playerStat;
     public Monster_Script monster;
     GameObject subStat;
 
@@ -19,6 +20,11 @@ public class SubAttackManager : MonoBehaviour
         else if(this.name == "FireBall(Clone)")
         {
             subStat = GameObject.Find("MagicCaster");
+        }
+        else if(this.name == "Heal(Clone)")
+        {
+            subStat = GameObject.Find("Priest");
+            playerStat = GameObject.Find("Player").GetComponent<PlayerScript>();
         }
 
         subDmg = subStat.GetComponent<SubChar_Combat_manager>().attackDmg;
@@ -42,14 +48,27 @@ public class SubAttackManager : MonoBehaviour
             {
                 Debug.Log("´êÀÓ");
             }
-
+            
 
             monster.nowHp -= subDmg;
             Debug.Log("Sub character basic attack result : " + monster.nowHp);
             Destroy(SubBasicAttack.basicAttack);
             
         }
+        else if (collision.tag == "Player")
+        {
+            if (this.name == "Heal")
+            {
+                Debug.Log("healing");
 
+                playerStat.nowHp += subDmg * 0.7f;
+                if(playerStat.nowHp>=playerStat.maxHp)
+                {
+                    playerStat.nowHp = playerStat.maxHp;
+                }
+                Destroy(SubBasicAttack.basicAttack);
+            }       
+        }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
