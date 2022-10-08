@@ -29,11 +29,9 @@ public class Inventory_Manager : MonoBehaviour
         }
     }
 
-
     private Sprite GetImage(string itemName)
     {
-        Sprite image = Resources.Load<Sprite>("Image/Equipment/" + itemName);
-       
+        Sprite image = Resources.Load<Sprite>("Image/Equipment/" + itemName);      
         return image;
     }
 
@@ -41,18 +39,22 @@ public class Inventory_Manager : MonoBehaviour
     {
         if(selectedItem != null)
         {
-            if (!EM.Equipments.ContainsKey(selectedItem.type))
+            if (!EM.Equipments.ContainsKey(selectedItem.type))  //If item is not equiped;
             {
                 EM.Equipments.Add(selectedItem.type, selectedItem);
+                slots[selectedSlot].ChangeToEquiped();
                 changeEquipImage();
             }
-            else if(EM.Equipments[selectedItem.type].code == selectedItem.code)
+            else if(slots[selectedSlot].isEquiped)              //Unequip item
             {
                 UnequipItem(selectedItem);
+                slots[selectedSlot].ChangeToUnequiped();
             }
-            else
+            else                                               //Change Item
             {
-                EM.Equipments[selectedItem.type] = selectedItem;
+                ResetEquipedSlot(selectedItem.type);
+                slots[selectedSlot].ChangeToEquiped();
+                EM.Equipments[selectedItem.type] = selectedItem;    
                 changeEquipImage();
             }    
         }
@@ -60,15 +62,6 @@ public class Inventory_Manager : MonoBehaviour
         {
             Debug.Log("There is no item selected");
         }
-    }
-
-    public void DeleteItem()
-    {
-        Debug.Log(Inventory[selectedSlot].name + "has removed");
-        Inventory.RemoveAt(selectedSlot);
-        slots[selectedSlot].ResetSlot();
-        AlignSlot(selectedSlot);
-        //DBManager.DatabaseInsert("DELETE * FROM INVENTORY WHERE CODE = " + selectedItem.code);
     }
 
     public void UnequipItem(Equipment item)
@@ -80,6 +73,22 @@ public class Inventory_Manager : MonoBehaviour
             {
                 EM.eSlots[i].sprite = null;
             }
+        }
+    }
+
+    public void DeleteItem()
+    {
+        if (!slots[selectedSlot].isEquiped)
+        {
+            Debug.Log(Inventory[selectedSlot].name + "has removed");
+            Inventory.RemoveAt(selectedSlot);
+            slots[selectedSlot].ResetSlot();
+            AlignSlot(selectedSlot);
+            //DBManager.DatabaseInsert("DELETE * FROM INVENTORY WHERE CODE = " + selectedItem.code);
+        }
+        else
+        {
+            Debug.Log("This item is Equpiped");
         }
     }
 
@@ -102,6 +111,18 @@ public class Inventory_Manager : MonoBehaviour
             slots[deletedSlot].SetItem(temp.name);
             slots[deletedSlot + 1].ResetSlot();
             deletedSlot++;
+        }
+    }
+
+    private void ResetEquipedSlot(string type)
+    {
+        for(int i = 0; i < slots.Length; i++)
+        {
+            if(slots[i].curItem.type == type && slots[i].isEquiped)
+            {
+                slots[i].ChangeToUnequiped();
+                return;
+            }
         }
     }
 

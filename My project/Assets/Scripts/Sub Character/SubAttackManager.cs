@@ -33,28 +33,27 @@ public class SubAttackManager : MonoBehaviour
 
     public void Update()
     {
-        if(Battle_Situation_Trigger.monster == null)
+        if(Battle_Situation_Trigger.monster_group == null)
         {
             Destroy(this.gameObject);
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        monster = Battle_Situation_Trigger.monster_group.transform.GetChild(0).GetComponent<Monster_Script>();
-        if (collision.tag == "Monster")
+    public void OnTriggerStay2D(Collider2D collision)
+    {       
+        if (collision.gameObject == Battle_Situation_Trigger.monster)
         {
             if(this.name == "FireBall(Clone)")
             {
                 Debug.Log("¥Í¿”");
             }
-            
-
+            monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
             monster.nowHp -= subDmg;
             Debug.Log("Sub character basic attack result : " + monster.nowHp);
-            Destroy(SubBasicAttack.basicAttack);
-            
+            //Destroy(SubBasicAttack.basicAttack);
+            Destroy(this.gameObject);
         }
+
         else if (collision.tag == "Player")
         {
             if (this.name == "Heal")
@@ -74,10 +73,12 @@ public class SubAttackManager : MonoBehaviour
     public void OnTriggerExit2D(Collider2D collision)
     {
         monster = null;
-
+        /*
         if (collision.tag == "Monster")
         {
+             Debug.Log("Destroy");
              Destroy(SubBasicAttack.basicAttack);
         }
+        */
     }
 }

@@ -26,7 +26,6 @@ public class SubBasicAttack : MonoBehaviour
             if (isCoolTime)
             {
                 StartCoroutine(Attack());
-                StopCoroutine(Attack());
 
             }
         }
@@ -35,6 +34,7 @@ public class SubBasicAttack : MonoBehaviour
     public IEnumerator Attack()
     {
         isCoolTime = false;
+        StopCoroutine(Attack());
         if (this.name == "Dager")
         {
             yield return new WaitForSeconds(SubStat.atkSpeed);
