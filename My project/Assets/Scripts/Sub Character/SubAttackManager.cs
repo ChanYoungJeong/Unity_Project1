@@ -4,27 +4,39 @@ using UnityEngine;
 
 public class SubAttackManager : MonoBehaviour
 {
-    //PlayerScript PlayerHP;
-
+    PlayerScript playerStat;
     public Monster_Script monster;
-    GameObject rogueStat;
+    GameObject subStat;
 
-    //GameObject priestStat;
-
-    float monsterHp;
-    float rogueDmg;
-
-   // float priestHp;
-    //float priestDmg;
+    float subDmg;
 
     // Start is called before the first frame update
     private void Start()
     {
-        rogueStat = GameObject.Find("Rogue");
-        rogueDmg = rogueStat.GetComponent<SubChar_Combat_manager>().attackDmg;
+        if (this.name == "dager(Clone)")
+        {
+            subStat = GameObject.Find("Rogue");
+        }
+        else if (this.name == "FireBall(Clone)")
+        {
+            subStat = GameObject.Find("MagicCaster");
+        }
+        else if (this.name == "Heal(Clone)")
+        {
+            subStat = GameObject.Find("Priest");
+            playerStat = GameObject.Find("Player").GetComponent<PlayerScript>();
+        }
 
-       // priestStat = GameObject.Find("Priest");
-       // priestDmg = priestStat.GetComponent<SubChar_Combat_manager>().attackDmg;
+        subDmg = subStat.GetComponent<SubChar_Combat_manager>().attackDmg;
+
+    }
+
+    public void Update()
+    {
+        if (Battle_Situation_Trigger.monster == null)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -32,14 +44,38 @@ public class SubAttackManager : MonoBehaviour
         monster = Battle_Situation_Trigger.monster_group.transform.GetChild(0).GetComponent<Monster_Script>();
         if (collision.tag == "Monster")
         {
+            if (this.name == "FireBall(Clone)")
+            {
+                Debug.Log("닿임");
+            }
 
-            monster.nowHp -= rogueDmg;
-            Debug.Log("서브 캐릭터 공격 결과 : " + monster.nowHp);
-            Destroy(this);
 
-           // PlayerHP.nowHp += priestDmg * 0.7f;
-           // Debug.Log("힐링 결과 : " + PlayerHP.nowHp);
+            monster.nowHp -= subDmg;
+            Debug.Log("Sub character basic attack result : " + monster.nowHp);
+            Destroy(SubBasicAttack.basicAttack);
+        }
+        else if (collision.tag == "Player")
+        {
+            if (this.name == "Heal")
+            {
+                Debug.Log("healing");
 
+                playerStat.nowHp += subDmg * 0.7f;
+                if (playerStat.nowHp >= playerStat.maxHp)
+                {
+                    playerStat.nowHp = playerStat.maxHp;
+                }
+                Destroy(SubBasicAttack.basicAttack);
+            }
+        }
+    }
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        monster = null;
+
+        if (collision.tag == "Monster")
+        {
+            Destroy(SubBasicAttack.basicAttack);
         }
     }
 }

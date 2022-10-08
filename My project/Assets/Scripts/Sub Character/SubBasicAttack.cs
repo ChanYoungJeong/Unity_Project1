@@ -4,52 +4,67 @@ using UnityEngine;
 
 public class SubBasicAttack : MonoBehaviour
 {
-    Monster_Script monsterStatus;
-
-    PlayerScript playerstatHP;
-
     public GameObject basicAttackPrefab;
-    GameObject dager;
-    GameObject Heal;
+    public static GameObject basicAttack;
 
-    SubChar_Combat_manager rogueStat;
+    Transform playerTrans;
+    SubChar_Combat_manager SubStat;
 
-    bool isAttack = true;
+    bool isCoolTime = true;
     public float speed;
+
+    private void Start()
+    {
+        playerTrans = GameObject.Find("Player").GetComponent<Transform>();
+        SubStat = this.transform.parent.GetComponent<SubChar_Combat_manager>();
+    }
 
     private void Update()
     {
-        if (Battle_Situation_Trigger.on_Battle)
+        if (Battle_Situation_Trigger.monster != null)
         {
-            monsterStatus = Battle_Situation_Trigger.monster_group.transform.GetChild(0).GetComponent<Monster_Script>(); // ¹Þ¾Æ¿?´? ¹æ¹?¸¸ ???¸¸? ??
-
-            if (isAttack)
+            if (isCoolTime)
             {
-                //StartCoroutine(Attack());
+                StartCoroutine(Attack());
+                StopCoroutine(Attack());
             }
         }
     }
     public IEnumerator Attack()
     {
-        while(isAttack)
+        isCoolTime = false;
+        if (this.name == "Dager")
         {
-            isAttack = false;
-            RogueBasicAttack();
-            Debug.Log(rogueStat.atkSpeed);
-            yield return new WaitForSeconds(rogueStat.atkSpeed);
-            isAttack = true;
-            Debug.Log(isAttack);
+            yield return new WaitForSeconds(SubStat.atkSpeed);
+            BasicAttack();
+            isCoolTime = true;
+        }
+
+        else if (this.name == "FireBall")
+        {
+            yield return new WaitForSeconds(SubStat.atkSpeed);
+            BasicAttack();
+            isCoolTime = true;
+        }
+
+        else if (this.name == "Heal")
+        {
+            yield return new WaitForSeconds(SubStat.atkSpeed);
+            PriestHeal();
+            isCoolTime = true;
         }
     }
-
-    public void RogueBasicAttack()
+    public void BasicAttack()
     {
-        dager = Instantiate(basicAttackPrefab, this.transform.position, Quaternion.identity);
-        dager.GetComponent<Rigidbody2D>().AddForce(Vector3.right * speed, ForceMode2D.Impulse);
-        //몬스터 중심 향해 날라는거 구현하기
-
-        Heal = Instantiate(basicAttackPrefab, this.transform.position, Quaternion.identity);
-
+        if (Battle_Situation_Trigger.monster != null)
+        {
+            basicAttack = Instantiate(basicAttackPrefab, this.transform.position, Quaternion.identity);
+            basicAttack.GetComponent<Rigidbody2D>().AddForce(Vector3.right * speed, ForceMode2D.Impulse);
+            //몬스터 중심 향해 날라는거 구현하기
+        }
     }
-
+    public void PriestHeal()
+    {
+        basicAttack = Instantiate(basicAttackPrefab, playerTrans.transform.position, Quaternion.identity);
+    }
 }
