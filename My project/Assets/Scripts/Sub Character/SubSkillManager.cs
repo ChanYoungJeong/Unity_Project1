@@ -38,13 +38,4 @@ public class SubSkillManager : MonoBehaviour
         }
     }
 
-    public void OnTriggerExit2D(Collider2D collision)
-    {
-        monster = null;
-
-        if (collision.tag == "Monster")
-        {
-            Destroy(SubSkillAttack.kunai);
-        }
-    }
 }

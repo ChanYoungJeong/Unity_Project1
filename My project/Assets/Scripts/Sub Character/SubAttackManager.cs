@@ -70,15 +70,4 @@ public class SubAttackManager : MonoBehaviour
         }
     }
 
-    public void OnTriggerExit2D(Collider2D collision)
-    {
-        monster = null;
-        /*
-        if (collision.tag == "Monster")
-        {
-             Debug.Log("Destroy");
-             Destroy(SubBasicAttack.basicAttack);
-        }
-        */
-    }
 }
