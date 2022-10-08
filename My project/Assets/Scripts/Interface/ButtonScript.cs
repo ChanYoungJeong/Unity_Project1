@@ -75,7 +75,8 @@ public class ButtonScript : MonoBehaviour
                 //player_hp += up_hp;
                 //up_hp += 5;
                 up_hp = up_hp1 + up_hp2;
-                player_hp += up_hp;
+                playerScript.maxHp += up_hp;
+                playerScript.nowHp += up_hp;
                 up_hp1 = up_hp2;
                 up_hp2 = up_hp;
 
@@ -106,7 +107,7 @@ public class ButtonScript : MonoBehaviour
             {
 
                 up_atk = up_atk1 + up_atk2;
-                player_atk += up_atk;
+                playerScript.atkDmg += up_atk;
                 up_atk1 = up_atk2;
                 up_atk2 = up_atk;
 
