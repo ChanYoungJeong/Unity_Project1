@@ -56,14 +56,14 @@ public class SubAttackManager : MonoBehaviour
 
         else if (collision.tag == "Player")
         {
-            if (this.name == "Heal")
+            if (this.name == "Heal(Clone)")
             {
                 Debug.Log("healing");
 
                 playerStat.nowHp += subDmg * 0.7f;
                 if(playerStat.nowHp>=playerStat.maxHp)
                 {
-                    playerStat.nowHp = playerStat.maxHp;
+                    playerStat.nowHp = playerStat.maxHp;  // 옵션 추가 가능하게 % 사용.
                 }
                 Destroy(SubBasicAttack.basicAttack);
             }       
