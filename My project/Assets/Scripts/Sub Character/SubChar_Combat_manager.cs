@@ -9,9 +9,10 @@ public class SubChar_Combat_manager : MonoBehaviour
     Sub_CharStats subCharStatus;
     Sub_Char_SkillList subCharSkillList;
 
+
     bool isAttack = true;      //Basic Attack Trigger
 
-    public float maxHealth;
+    public float maxHealth;   
     public float curHealth;
     public float maxMP; //최대 마나
     public float curMP;
@@ -20,11 +21,16 @@ public class SubChar_Combat_manager : MonoBehaviour
     public string this_name;
     public float atkSpeed;
 
+
+
+
     public float skillDamage;
     public float skillhealing;
     public float skilldefense;
     public float skillLv;
     public float skillcooldown;
+
+
 
     void Start()
     {
@@ -38,7 +44,9 @@ public class SubChar_Combat_manager : MonoBehaviour
 
     private void Update()
     {
+
     }
+    
 
     public void SetSubCharStat()
     {
@@ -55,31 +63,31 @@ public class SubChar_Combat_manager : MonoBehaviour
             attackDmg = charStat.attack;
             this_name = charStat.this_name;
             atkSpeed = charStat.atkSpeed;
+
         }
     }
-    public void SetSkillStat()
+
+    public  void SetSkillStat()
     {
         bool isFind = false;
-        string key = "";
+        string key ="";
 
-        if (this.name == "Rogue")
-        {
+        if (this.name == "Rogue") { 
             isFind = subCharSkillList.Sub_Char_SkilList.ContainsKey("Kunai");
             key = "Kunai";
         }
-        else if (this.name == "MagicCaster")
+        else if(this.name == "MagicCaster")
         {
-            isFind =
-subCharSkillList.Sub_Char_SkilList.ContainsKey("SuperFireBall");
+            isFind = subCharSkillList.Sub_Char_SkilList.ContainsKey("SuperFireBall");
             key = "SuperFireBall";
         }
 
-        else if (this.this_name == "Priest")
+         else if (this.this_name == "Priest")
         {
             isFind = subCharSkillList.Sub_Char_SkilList.ContainsKey("Shield");
             key = "Shield";
         }
-
+       
         if (isFind)
         {
             subSkillStat = subCharSkillList.Sub_Char_SkilList[key];
@@ -89,6 +97,8 @@ subCharSkillList.Sub_Char_SkilList.ContainsKey("SuperFireBall");
             skillhealing = subSkillStat.healing;
             skillcooldown = subSkillStat.cooldown;
             skillLv = subSkillStat.SubSkillLevel;
+
         }
     }
+
 }
