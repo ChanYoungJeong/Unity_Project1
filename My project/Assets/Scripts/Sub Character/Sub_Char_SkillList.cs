@@ -11,8 +11,10 @@ public class Sub_Char_SkillList : MonoBehaviour
         create();
     }
 
+
     public void create()
     {
+
         string name;
 
         name = "Kunai"; //도적 스킬
@@ -25,4 +27,5 @@ public class Sub_Char_SkillList : MonoBehaviour
         Sub_Char_SkilList.Add(name, new Sub_Char_Skill(0, name, 20, 0, 0, 5, 1));
         //쉴드 미구현s
     }
+
 }
