@@ -16,7 +16,7 @@ public class SubBasicAttack : MonoBehaviour
     private void Start()
     {
         playerTrans = GameObject.Find("Player").GetComponent<Transform>();
-        SubStat = this.transform.parent.GetComponent<SubChar_Combat_manager>(); 
+        SubStat = this.transform.parent.GetComponent<SubChar_Combat_manager>();
     }
 
     private void Update()
@@ -26,24 +26,21 @@ public class SubBasicAttack : MonoBehaviour
             if (isCoolTime)
             {
                 StartCoroutine(Attack());
-
+                StopCoroutine(Attack());
             }
         }
-
     }
     public IEnumerator Attack()
     {
         isCoolTime = false;
-        StopCoroutine(Attack());
         if (this.name == "Dager")
         {
             yield return new WaitForSeconds(SubStat.atkSpeed);
             BasicAttack();
             isCoolTime = true;
-
         }
-        
-        else if(this.name == "FireBall") 
+
+        else if (this.name == "FireBall")
         {
             yield return new WaitForSeconds(SubStat.atkSpeed);
             BasicAttack();
@@ -52,13 +49,11 @@ public class SubBasicAttack : MonoBehaviour
 
         else if (this.name == "Heal")
         {
-            
             yield return new WaitForSeconds(SubStat.atkSpeed);
             PriestHeal();
             isCoolTime = true;
         }
     }
-
     public void BasicAttack()
     {
         if (Battle_Situation_Trigger.monster != null)
@@ -70,7 +65,6 @@ public class SubBasicAttack : MonoBehaviour
     }
     public void PriestHeal()
     {
-        transform.position = new Vector3(-3.78f, 0, 0);
         basicAttack = Instantiate(basicAttackPrefab, playerTrans.transform.position, Quaternion.identity);
     }
 }

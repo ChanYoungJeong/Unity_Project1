@@ -21,21 +21,30 @@ public class SubSkillManager : MonoBehaviour
     {
         if (Battle_Situation_Trigger.monster == null)
         {
-            Destroy(this.gameObject);
+            Destroy(this);
         }
     }
 
-    public void OnTriggerStay2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        //monster = Battle_Situation_Trigger.monster_group.transform.GetChild(0).GetComponent<Monster_Script>();
+        monster = Battle_Situation_Trigger.monster_group.transform.GetChild(0).GetComponent<Monster_Script>();
 
-        if (collision.gameObject == Battle_Situation_Trigger.monster)
+        if (collision.tag == "Monster")
         {
-            monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
+
             monster.nowHp -= kunaiDmg;
             Debug.Log("Sub character skill attack result : " + monster.nowHp);
             Destroy(SubSkillAttack.kunai);
         }
     }
 
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        monster = null;
+
+        if (collision.tag == "Monster")
+        {
+            Destroy(SubSkillAttack.kunai);
+        }
+    }
 }

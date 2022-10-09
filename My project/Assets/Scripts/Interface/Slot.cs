@@ -9,15 +9,12 @@ public class Slot : MonoBehaviour
     public Sprite itemImage;
     public Equipment curItem;
     public Sprite defaultImage;
-    public Color defaultColor;
     public int slotNumber;
-    public bool isEquiped;
 
 
     private void Awake()
     {
         defaultImage = transform.GetChild(0).GetComponent<Image>().sprite;
-        defaultColor = GetComponent<Image>().color;
     }
 
     public void SelectItem()
@@ -56,15 +53,4 @@ public class Slot : MonoBehaviour
         hasItem = false;
     }
 
-    public void ChangeToEquiped()
-    {
-        GetComponent<Image>().color = Color.green;
-        isEquiped = true;
-    }
-
-    public void ChangeToUnequiped()
-    {
-        GetComponent<Image>().color = defaultColor;
-        isEquiped = false;
-    }
 }
