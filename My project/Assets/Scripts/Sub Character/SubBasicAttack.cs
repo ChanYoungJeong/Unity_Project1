@@ -71,7 +71,6 @@ public class SubBasicAttack : MonoBehaviour
     }
     public void PriestHeal()
     {
-        transform.position = new Vector3(-3.78f, 0, 0);
         basicAttack = Instantiate(basicAttackPrefab, playerTrans.transform.position, Quaternion.identity);
     }
 }
