@@ -54,14 +54,11 @@ public class SubAttackManager : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        else if (collision.tag == "Player")
+        else if (collision.tag == "Player")                        
         {
-            if (this.name == "Heal")
-            {
-                Debug.Log("healing");
-
-                playerStat.nowHp += subDmg * 0.7f;
-                if(playerStat.nowHp>=playerStat.maxHp)
+            if (this.name == "Heal(Clone)")                        
+                playerStat.nowHp += subDmg * 0.7f;            
+                if(playerStat.nowHp >= playerStat.maxHp)
                 {
                     playerStat.nowHp = playerStat.maxHp;
                 }
@@ -70,4 +67,3 @@ public class SubAttackManager : MonoBehaviour
         }
     }
 
-}

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Game_System : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Game_System : MonoBehaviour
     //Player Moner
     public static int Gold;
     public int _Gold;   //To Visualize Gold Amount
+    public Text displyGold;
 
     void Start()
     {
@@ -19,5 +21,6 @@ public class Game_System : MonoBehaviour
     void Update()
     {
         _Gold = Gold;
+        displyGold.text = "Gold : " + _Gold;
     }
 }

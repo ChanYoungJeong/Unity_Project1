@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class Stage_Manager : MonoBehaviour
 {
     public static int Stage = 1;
     public static int Boss_Stage = 5;
-    TextMeshProUGUI Stage_Text;
+    public Text Stage_Text;
     private void Start()
     {
-        Stage_Text = GetComponentInChildren<TextMeshProUGUI>();
+
     }
     private void Update()
     {
