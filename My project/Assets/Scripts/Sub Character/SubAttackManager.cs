@@ -45,7 +45,7 @@ public class SubAttackManager : MonoBehaviour
         {
             if(this.name == "FireBall(Clone)")
             {
-                Debug.Log("´êÀÓ");
+                Debug.Log("ë‹¿ìž„");
             }
             monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
             monster.nowHp -= subDmg;
@@ -54,7 +54,7 @@ public class SubAttackManager : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        else if (collision.tag == "Player")
+        else if (collision.tag == "Player")                        
         {
             if (this.name == "Heal(Clone)")
             {
@@ -63,11 +63,10 @@ public class SubAttackManager : MonoBehaviour
                 playerStat.nowHp += subDmg * 0.7f;
                 if(playerStat.nowHp>=playerStat.maxHp)
                 {
-                    playerStat.nowHp = playerStat.maxHp;  // ¿É¼Ç Ãß°¡ °¡´ÉÇÏ°Ô % »ç¿ë.
+                    playerStat.nowHp = playerStat.maxHp;  // ì˜µì…˜ ì¶”ê°€ ê°€ëŠ¥í•˜ê²Œ % ì‚¬ìš©.
                 }
                 Destroy(SubBasicAttack.basicAttack);
             }       
         }
     }
 
-}

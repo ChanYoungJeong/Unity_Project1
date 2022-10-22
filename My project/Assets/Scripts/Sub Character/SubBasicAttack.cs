@@ -7,6 +7,8 @@ public class SubBasicAttack : MonoBehaviour
     public GameObject basicAttackPrefab;
     public static GameObject basicAttack;
 
+    GameObject Player;
+
     Transform playerTrans;
     SubChar_Combat_manager SubStat;
 
@@ -51,8 +53,7 @@ public class SubBasicAttack : MonoBehaviour
         }
 
         else if (this.name == "Heal")
-        {
-            
+        {       
             yield return new WaitForSeconds(SubStat.atkSpeed);
             PriestHeal();
             isCoolTime = true;
