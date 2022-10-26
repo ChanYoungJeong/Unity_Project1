@@ -12,6 +12,7 @@ public class Game_System : MonoBehaviour
     public int _Gold;   //To Visualize Gold Amount
     public Text displyGold;
 
+
     void Start()
     {
         Gold = 100000;
@@ -22,5 +23,6 @@ public class Game_System : MonoBehaviour
     {
         _Gold = Gold;
         displyGold.text = "Gold : " + _Gold;
+        displyGold.text = Gold.ToString() + "G";
     }
 }
