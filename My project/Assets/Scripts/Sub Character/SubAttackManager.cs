@@ -17,11 +17,11 @@ public class SubAttackManager : MonoBehaviour
         {
             subStat = GameObject.Find("Rogue");
         }
-        else if(this.name == "FireBall(Clone)")
+        else if (this.name == "FireBall(Clone)")
         {
             subStat = GameObject.Find("MagicCaster");
         }
-        else if(this.name == "Heal(Clone)")
+        else if (this.name == "Heal(Clone)")
         {
             subStat = GameObject.Find("Priest");
             playerStat = GameObject.Find("Player").GetComponent<PlayerScript>();
@@ -33,20 +33,17 @@ public class SubAttackManager : MonoBehaviour
 
     public void Update()
     {
-        if(Battle_Situation_Trigger.monster_group == null)
+        if (Battle_Situation_Trigger.monster_group == null)
         {
             Destroy(this.gameObject);
         }
     }
 
     public void OnTriggerStay2D(Collider2D collision)
-    {       
+    {
         if (collision.gameObject == Battle_Situation_Trigger.monster)
         {
-            if(this.name == "FireBall(Clone)")
-            {
-                Debug.Log("닿임");
-            }
+            
             monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
             monster.nowHp -= subDmg;
             Debug.Log("Sub character basic attack result : " + monster.nowHp);
@@ -54,19 +51,20 @@ public class SubAttackManager : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        else if (collision.tag == "Player")                        
+        else if (collision.tag == "Player")
         {
             if (this.name == "Heal(Clone)")
             {
                 Debug.Log("healing");
 
                 playerStat.nowHp += subDmg * 0.7f;
-                if(playerStat.nowHp>=playerStat.maxHp)
+                if (playerStat.nowHp >= playerStat.maxHp)
                 {
                     playerStat.nowHp = playerStat.maxHp;  // 옵션 추가 가능하게 % 사용.
                 }
                 Destroy(SubBasicAttack.basicAttack);
-            }       
+            }
         }
     }
+}
 
