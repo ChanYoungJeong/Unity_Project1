@@ -31,7 +31,6 @@ public class SubBasicAttack : MonoBehaviour
 
             }
         }
-
     }
     public IEnumerator Attack()
     {

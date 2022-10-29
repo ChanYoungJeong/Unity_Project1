@@ -16,6 +16,7 @@ public class SubCharSetting : MonoBehaviour
     {
         if(panel.activeSelf == false)
         {
+            Debug.Log("hello");
             panel.SetActive(true);
         }
         else

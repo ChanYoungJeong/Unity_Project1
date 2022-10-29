@@ -40,26 +40,26 @@ public class Inventory_Manager : MonoBehaviour
 
     public void EquipItem()
     {
-        if(selectedItem != null)
+        if (selectedItem != null)
         {
             if (!EM.Equipments.ContainsKey(selectedItem.type))  //If item is not equiped;
             {
                 EM.Equipments.Add(selectedItem.type, selectedItem);
-                slots[selectedSlot].ChangeToEquiped();
-                changeEquipImage();
+                curSlot.ChangeToEquiped();
+                EM.changeEquipImage(GetImage(selectedItem.name));
             }
-            else if(slots[selectedSlot].isEquiped)              //Unequip item
+            else if (slots[selectedSlot].isEquiped)              //Unequip item
             {
                 UnequipItem(selectedItem);
-                slots[selectedSlot].ChangeToUnequiped();
+                curSlot.ChangeToUnequiped();
             }
             else                                               //Change Item
             {
                 ResetEquipedSlot(selectedItem.type);
-                slots[selectedSlot].ChangeToEquiped();
-                EM.Equipments[selectedItem.type] = selectedItem;    
-                changeEquipImage();
-            }    
+                curSlot.ChangeToEquiped();
+                EM.Equipments[selectedItem.type] = selectedItem;
+                EM.changeEquipImage(GetImage(selectedItem.name));
+            }
         }
         else
         {
@@ -81,12 +81,13 @@ public class Inventory_Manager : MonoBehaviour
 
     public void selectItem()
     {
-        curSlot = EventSystem.current.currentSelectedGameObject.GetComponent<Slot>();
-        selectedItem = curSlot.curItem;
-        Debug.Log(selectedItem.type);
+        GameObject _slot = EventSystem.current.currentSelectedGameObject;
+        curSlot = _slot.GetComponent<Slot>();
 
-        if(selectedItem != null)
+        if(curSlot.curItem != null)
         {
+            selectedItem = curSlot.curItem;
+            Debug.Log(selectedItem.type);
             equipInfoUI.gameObject.SetActive(true);
             if (selectedItem.type == "Weapon")
             {
@@ -96,7 +97,10 @@ public class Inventory_Manager : MonoBehaviour
         }
         else
         {
-            equipInfoUI.gameObject.SetActive(false);
+            if (equipInfoUI.gameObject.activeSelf)
+            {
+                equipInfoUI.gameObject.SetActive(false);
+            }
         }
     }
 
@@ -116,14 +120,7 @@ public class Inventory_Manager : MonoBehaviour
         }
     }
 
-    private void changeEquipImage()
-    {
-        for (int i = 0; i < EM.eSlots.Length; i++)
-        {
-            if (EM.eSlots[i].name == selectedItem.type)
-                EM.eSlots[i].sprite = GetImage(selectedItem.name);
-        }
-    }
+
 
     private void AlignSlot(int deletedSlot)
     {

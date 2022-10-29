@@ -18,7 +18,9 @@ public class PlayerScript : MonoBehaviour
     public int lv;
     public int playerMaxExp;
     public int playerNowExp;
-    public int critical;
+    public int criticalRate;
+    public int criticalDamage;
+    
 
     private void Start()
     {
@@ -55,7 +57,7 @@ public class PlayerScript : MonoBehaviour
         if(Battle_Situation_Trigger.monster != null)
         {
             monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
-            monster.nowHp -= atkDmg * critical;
+            monster.nowHp -= atkDmg * criticalRate;
             
             if (monster.nowHp <= 0)
             {
