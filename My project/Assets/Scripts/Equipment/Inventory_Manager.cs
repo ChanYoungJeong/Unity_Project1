@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Inventory_Manager : MonoBehaviour
 {
@@ -9,10 +10,12 @@ public class Inventory_Manager : MonoBehaviour
     public static Equipment selectedItem;
     public static int selectedSlot;
     public Slot[] slots;
+    public Slot curSlot;
     int numSlots;
     public Transform slotHolder;
     public EquipmentManager EM;
     public Equipment_Gacha DBManager;
+    public EquipInfo equipInfoUI;
 
     private void Awake()
     {
@@ -73,6 +76,27 @@ public class Inventory_Manager : MonoBehaviour
             {
                 EM.eSlots[i].sprite = null;
             }
+        }
+    }
+
+    public void selectItem()
+    {
+        curSlot = EventSystem.current.currentSelectedGameObject.GetComponent<Slot>();
+        selectedItem = curSlot.curItem;
+        Debug.Log(selectedItem.type);
+
+        if(selectedItem != null)
+        {
+            equipInfoUI.gameObject.SetActive(true);
+            if (selectedItem.type == "Weapon")
+            {
+                equipInfoUI.ViewItem(GetImage(selectedItem.name), selectedItem.name, selectedItem.grade, curSlot.itemStatus(),
+                                     "Attack", "Critical Rate", selectedItem.stat1.ToString(), selectedItem.stat2.ToString());
+            }
+        }
+        else
+        {
+            equipInfoUI.gameObject.SetActive(false);
         }
     }
 

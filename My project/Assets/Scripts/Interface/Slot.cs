@@ -20,17 +20,16 @@ public class Slot : MonoBehaviour
         defaultColor = GetComponent<Image>().color;
     }
 
-    public void SelectItem()
+    public Equipment ChcekItem()
     {
         if(hasItem && curItem != null)
         {
-            Inventory_Manager.selectedItem = curItem;
-            Inventory_Manager.selectedSlot = slotNumber;
-            Debug.Log(Inventory_Manager.selectedItem.name + " is Selected");
+            return curItem;
         }
         else
         {
-
+            return null;
+            //Do nothing;
         }
     }
 
@@ -66,5 +65,17 @@ public class Slot : MonoBehaviour
     {
         GetComponent<Image>().color = defaultColor;
         isEquiped = false;
+    }
+
+    public string itemStatus()
+    {
+        if(isEquiped)
+        {
+            return "Equiped";
+        }
+        else
+        {
+            return "UnEquiped";
+        }
     }
 }
