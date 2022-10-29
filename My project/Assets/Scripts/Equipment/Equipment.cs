@@ -10,6 +10,7 @@ public class Equipment
     public int stat1;
     public int stat2;
     public string type;
+    public int upgrade;
 
     public Equipment(int _code, string _name, string _grade, int _stat1, int _stat2, string _type)
     {
@@ -19,5 +20,6 @@ public class Equipment
         stat1 = _stat1;
         stat2 = _stat2;
         type = _type;
+        upgrade = 0;
     }
 }
