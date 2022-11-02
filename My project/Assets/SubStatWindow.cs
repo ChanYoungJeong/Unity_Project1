@@ -37,6 +37,7 @@ public class SubStatWindow : MonoBehaviour
             attack.text = "Attack " + subStat.attackDmg.ToString();
             atkSpeed.text = "AtkSpeed " + subStat.atkSpeed.ToString();
         }
+
         else if (this.name.Contains("MagicCaster"))
         {
             subStat = GameObject.Find("MagicCaster").GetComponent<SubChar_Combat_manager>();
@@ -46,6 +47,7 @@ public class SubStatWindow : MonoBehaviour
             attack.text = "Attack " + subStat.attackDmg.ToString();
             atkSpeed.text = "AtkSpeed " + subStat.atkSpeed.ToString();
         }
+
         else if (this.name.Contains("Priest"))
         {
             subStat = GameObject.Find("Priest").GetComponent<SubChar_Combat_manager>();
@@ -84,6 +86,7 @@ public class SubStatWindow : MonoBehaviour
 
     public void MagicCasterAttackUpgrade()
     {
+
         if (Game_System.Gold >= MagicCasterAttackGold)
         {
             Game_System.Gold -= MagicCasterAttackGold;
