@@ -11,9 +11,10 @@ public class CharStats : MonoBehaviour
     public float attack;
     public string this_name;
     public float atkSpeed;
+    public int lv;
     
 
-    public CharStats(string _name, float _maxHealth, float _maxMP, float _attack, float _atkSpped)
+    public CharStats(string _name, float _maxHealth, float _maxMP, float _attack, float _atkSpped, int _lv)
     {
         this_name = _name;
         maxHealth = _maxHealth;
@@ -22,6 +23,7 @@ public class CharStats : MonoBehaviour
         curMP = _maxMP;
         attack = _attack;
         atkSpeed = _atkSpped;
+        lv = _lv;
     }
 }
 
