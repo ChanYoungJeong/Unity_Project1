@@ -7,7 +7,6 @@ public class SubBasicAttack : MonoBehaviour
     public GameObject basicAttackPrefab;
     public static GameObject basicAttack;
 
-    GameObject Player;
 
     Transform playerTrans;
     SubChar_Combat_manager SubStat;
@@ -23,19 +22,22 @@ public class SubBasicAttack : MonoBehaviour
 
     private void Update()
     {
+
         if (Battle_Situation_Trigger.monster != null)
         {
             if (isCoolTime)
             {
                 StartCoroutine(Attack());
-
             }
         }
     }
+
+
     public IEnumerator Attack()
     {
         isCoolTime = false;
         StopCoroutine(Attack());
+
         if (this.name == "Dager")
         {
             yield return new WaitForSeconds(SubStat.atkSpeed);
@@ -43,20 +45,23 @@ public class SubBasicAttack : MonoBehaviour
             isCoolTime = true;
 
         }
-        
+
         else if(this.name == "FireBall") 
         {
             yield return new WaitForSeconds(SubStat.atkSpeed);
             BasicAttack();
             isCoolTime = true;
+
         }
 
         else if (this.name == "Heal")
-        {       
+        {
             yield return new WaitForSeconds(SubStat.atkSpeed);
             PriestHeal();
             isCoolTime = true;
+
         }
+
     }
 
     public void BasicAttack()

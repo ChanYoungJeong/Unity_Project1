@@ -20,7 +20,7 @@ public class SubChar_Combat_manager : MonoBehaviour
     public float healing;
     public string this_name;
     public float atkSpeed;
-
+    public int lv;
 
 
 
@@ -63,7 +63,7 @@ public class SubChar_Combat_manager : MonoBehaviour
             attackDmg = charStat.attack;
             this_name = charStat.this_name;
             atkSpeed = charStat.atkSpeed;
-
+            lv = charStat.lv;
         }
     }
 
