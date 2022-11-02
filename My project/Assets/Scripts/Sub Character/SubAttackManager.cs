@@ -43,7 +43,8 @@ public class SubAttackManager : MonoBehaviour
     {
         if (collision.gameObject == Battle_Situation_Trigger.monster)
         {
-            
+            subDmg = subStat.GetComponent<SubChar_Combat_manager>().attackDmg;
+
             monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
             monster.nowHp -= subDmg;
             Debug.Log("Sub character basic attack result : " + monster.nowHp);
