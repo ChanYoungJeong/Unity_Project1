@@ -55,15 +55,14 @@ public class ButtonScript : MonoBehaviour
         up_atkgold = up_atkgold1 + up_atkgold2;
         up_hpgold = up_hpgold1 + up_hpgold2;
 
-
+       
+        
     }
 
     // Update is called once per frame
     private void Update()
     {
 
-        buttonText.text = hp_scoreButton.ToString();
-        atkbutton.text = atk_scoreButton.ToString();
     }
 
     public void hp_upgradeButton()
@@ -96,7 +95,8 @@ public class ButtonScript : MonoBehaviour
                 Debug.Log("my_gold : " + Game_System.Gold);
                 Debug.Log("player_hp : " + player_hp);
                 Debug.Log("next up_gold : " + up_hpgold);
-            }
+                buttonText.text = hp_scoreButton.ToString();
+        }
     }
     public void atk_upgradeButton()
     {
@@ -126,7 +126,8 @@ public class ButtonScript : MonoBehaviour
                 Debug.Log("my_gold : " + Game_System.Gold);
                 Debug.Log("player_atk : " + player_atk);
                 Debug.Log("next up_gold : " + up_atkgold);
-            }
+                atkbutton.text = atk_scoreButton.ToString();
+        }
 
     }
 }
