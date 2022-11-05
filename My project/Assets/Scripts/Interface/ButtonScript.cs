@@ -8,8 +8,8 @@ public class ButtonScript : MonoBehaviour
     PlayerScript playerScript;
 
     public GameObject Player_Object;
-    public Text buttonText;
-    public Text atkbutton;
+    //public Text buttonText;
+    //public Text atkbutton;
 
 
     // Start is called before the first frame update
@@ -95,7 +95,7 @@ public class ButtonScript : MonoBehaviour
                 Debug.Log("my_gold : " + Game_System.Gold);
                 Debug.Log("player_hp : " + player_hp);
                 Debug.Log("next up_gold : " + up_hpgold);
-                buttonText.text = hp_scoreButton.ToString();
+                //buttonText.text = hp_scoreButton.ToString();
         }
     }
     public void atk_upgradeButton()
@@ -126,7 +126,7 @@ public class ButtonScript : MonoBehaviour
                 Debug.Log("my_gold : " + Game_System.Gold);
                 Debug.Log("player_atk : " + player_atk);
                 Debug.Log("next up_gold : " + up_atkgold);
-                atkbutton.text = atk_scoreButton.ToString();
+                //atkbutton.text = atk_scoreButton.ToString();
         }
 
     }
