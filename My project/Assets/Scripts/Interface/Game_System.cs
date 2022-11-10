@@ -25,4 +25,5 @@ public class Game_System : MonoBehaviour
         displyGold.text = "Gold : " + _Gold;
         displyGold.text = Gold.ToString() + "G";
     }
+
 }

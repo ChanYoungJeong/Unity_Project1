@@ -47,14 +47,18 @@ public class Inventory_Manager : MonoBehaviour
                 EM.Equipments.Add(selectedItem.type, selectedItem);
                 curSlot.ChangeToEquiped();
                 EM.changeEquipImage(GetImage(selectedItem.name));
+                EM.setPlayerStat(selectedItem);
             }
             else if (slots[selectedSlot].isEquiped)              //Unequip item
             {
+                EM.resetPlayerStat(EM.Equipments[selectedItem.type]);
                 UnequipItem(selectedItem);
-                curSlot.ChangeToUnequiped();
+                curSlot.ChangeToUnequiped();         
             }
             else                                               //Change Item
             {
+                EM.resetPlayerStat(EM.Equipments[selectedItem.type]);
+                EM.setPlayerStat(selectedItem);
                 ResetEquipedSlot(selectedItem.type);
                 curSlot.ChangeToEquiped();
                 EM.Equipments[selectedItem.type] = selectedItem;

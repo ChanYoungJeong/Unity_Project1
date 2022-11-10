@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EquipmentManager : MonoBehaviour
 {
-    public Dictionary<string, Equipment> Equipments;
+    public Dictionary<string, Equipment> Equipments; //<type, Equipment>
     public Image[] eSlots;
     int numSlots;
     public Transform eSlotHolder;
