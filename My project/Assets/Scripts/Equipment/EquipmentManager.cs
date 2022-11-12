@@ -22,8 +22,6 @@ public class EquipmentManager : MonoBehaviour
 
     }
 
-
-
     public void changeEquipImage(Sprite itemImage)
     {
         for (int i = 0; i < eSlots.Length; i++)

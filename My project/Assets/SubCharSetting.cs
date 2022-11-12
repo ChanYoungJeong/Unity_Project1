@@ -54,6 +54,8 @@ public class SubCharSetting : MonoBehaviour
         if(Rogue.activeSelf == false)
         {
             Rogue.SetActive(true);
+            Rogue.GetComponentInChildren<SubBasicAttack>().isCoolTime = true;
+            Rogue.GetComponentInChildren<SubSkillAttack>().isCoolTime = true;
         }
         else
         {

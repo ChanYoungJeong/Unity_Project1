@@ -42,27 +42,34 @@ public class Inventory_Manager : MonoBehaviour
     {
         if (selectedItem != null)
         {
-            if (!EM.Equipments.ContainsKey(selectedItem.type))  //If item is not equiped;
+            if (!EM.Equipments.ContainsKey(selectedItem.type) && !curSlot.isEquiped)  //If item is not equiped;
             {
                 EM.Equipments.Add(selectedItem.type, selectedItem);
                 curSlot.ChangeToEquiped();
                 EM.changeEquipImage(GetImage(selectedItem.name));
                 EM.setPlayerStat(selectedItem);
+                Debug.Log("is Equiped");
+                Debug.Log(EM.Equipments[selectedItem.type].name);
             }
-            else if (slots[selectedSlot].isEquiped)              //Unequip item
+            else if (EM.Equipments.ContainsKey(selectedItem.type) && curSlot.isEquiped)        //Unequip item
             {
                 EM.resetPlayerStat(EM.Equipments[selectedItem.type]);
                 UnequipItem(selectedItem);
-                curSlot.ChangeToUnequiped();         
+                curSlot.ChangeToUnequiped();
+                Debug.Log("is UnEquiped");
+                Debug.Log(EM.Equipments[selectedItem.type].name);
             }
-            else                                               //Change Item
+            else if(EM.Equipments.ContainsKey(selectedItem.type) && !curSlot.isEquiped)       //Change Item
             {
                 EM.resetPlayerStat(EM.Equipments[selectedItem.type]);
                 EM.setPlayerStat(selectedItem);
+
                 ResetEquipedSlot(selectedItem.type);
                 curSlot.ChangeToEquiped();
                 EM.Equipments[selectedItem.type] = selectedItem;
                 EM.changeEquipImage(GetImage(selectedItem.name));
+                Debug.Log("is Change Equipped");
+                Debug.Log(EM.Equipments[selectedItem.type].name);
             }
         }
         else
@@ -87,6 +94,7 @@ public class Inventory_Manager : MonoBehaviour
     {
         GameObject _slot = EventSystem.current.currentSelectedGameObject;
         curSlot = _slot.GetComponent<Slot>();
+        Debug.Log("Slot" + curSlot.name + "is selected");
 
         if(curSlot.curItem != null)
         {
