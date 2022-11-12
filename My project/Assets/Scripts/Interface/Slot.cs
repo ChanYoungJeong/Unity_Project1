@@ -48,14 +48,14 @@ public class Slot : MonoBehaviour
         return image;
     }
 
-    public void ResetSlot()
+    public void ResetSlot()                
     {
-        transform.GetChild(0).GetComponent<Image>().sprite = defaultImage;
-        curItem = null;
+        transform.GetChild(0).GetComponent<Image>().sprite = defaultImage;   //Change Slot effect to un equiped
+        curItem = null;                                                      //Reset Slot
         hasItem = false;
     }
 
-    public void ChangeToEquiped()
+    public void ChangeToEquiped()                   //Change Slot effect to Equiped
     {
         GetComponent<Image>().color = Color.green;
         isEquiped = true;

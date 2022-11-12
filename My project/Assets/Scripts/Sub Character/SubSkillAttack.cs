@@ -7,7 +7,7 @@ public class SubSkillAttack : MonoBehaviour
     Sub_Char_Skill SubCharSkill;
     Sub_Char_SkillList SubCharSkillList;
    
-    bool isCoolTime = true;
+    public bool isCoolTime = true;
 
     public GameObject subSkillPrefab;
     public static GameObject kunai;

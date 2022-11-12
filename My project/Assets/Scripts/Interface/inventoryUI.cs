@@ -20,6 +20,11 @@ public class inventoryUI : MonoBehaviour
         {
             activeInventory = !activeInventory;
             inventoryPanel.SetActive(activeInventory);
+            if(!activeInventory)
+            {
+                ItemInfoUI.SetActive(false);
+            }
+            
         }
     }
 

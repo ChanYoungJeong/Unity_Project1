@@ -7,11 +7,11 @@ public class SubBasicAttack : MonoBehaviour
     public GameObject basicAttackPrefab;
     public static GameObject basicAttack;
 
-
+    int x;
     Transform playerTrans;
     SubChar_Combat_manager SubStat;
 
-    bool isCoolTime = true;
+    public bool isCoolTime = true;
     public float speed;
 
     private void Start()
@@ -22,9 +22,9 @@ public class SubBasicAttack : MonoBehaviour
 
     private void Update()
     {
-
+  
         if (Battle_Situation_Trigger.monster != null)
-        {
+        {           
             if (isCoolTime)
             {
                 StartCoroutine(Attack());
