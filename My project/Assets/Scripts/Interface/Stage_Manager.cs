@@ -14,7 +14,7 @@ public class Stage_Manager : MonoBehaviour
     }
     private void Update()
     {
-        Stage_Text.text = "Stage : " + Stage;
+        Stage_Text.text = "Stage " + Stage;
     }
     
 
