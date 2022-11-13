@@ -27,5 +27,5 @@ public class Sub_CharStats : MonoBehaviour
         SubChar.Add(name, new CharStats(name, 100, 300, 10, 2, 1));
     }
 
-    
+
 }

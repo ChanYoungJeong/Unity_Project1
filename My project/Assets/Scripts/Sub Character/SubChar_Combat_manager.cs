@@ -12,7 +12,7 @@ public class SubChar_Combat_manager : MonoBehaviour
 
     bool isAttack = true;      //Basic Attack Trigger
 
-    public float maxHealth;   
+    public float maxHealth;
     public float curHealth;
     public float maxMP; //최대 마나
     public float curMP;
@@ -46,7 +46,7 @@ public class SubChar_Combat_manager : MonoBehaviour
     {
 
     }
-    
+
 
     public void SetSubCharStat()
     {
@@ -67,27 +67,28 @@ public class SubChar_Combat_manager : MonoBehaviour
         }
     }
 
-    public  void SetSkillStat()
+    public void SetSkillStat()
     {
         bool isFind = false;
-        string key ="";
+        string key = "";
 
-        if (this.name == "Rogue") { 
+        if (this.name == "Rogue")
+        {
             isFind = subCharSkillList.Sub_Char_SkilList.ContainsKey("Kunai");
             key = "Kunai";
         }
-        else if(this.name == "MagicCaster")
+        else if (this.name == "MagicCaster")
         {
             isFind = subCharSkillList.Sub_Char_SkilList.ContainsKey("SuperFireBall");
             key = "SuperFireBall";
         }
 
-         else if (this.this_name == "Priest")
+        else if (this.this_name == "Priest")
         {
             isFind = subCharSkillList.Sub_Char_SkilList.ContainsKey("Shield");
             key = "Shield";
         }
-       
+
         if (isFind)
         {
             subSkillStat = subCharSkillList.Sub_Char_SkilList[key];

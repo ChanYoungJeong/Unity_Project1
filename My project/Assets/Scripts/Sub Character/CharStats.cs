@@ -12,7 +12,7 @@ public class CharStats : MonoBehaviour
     public string this_name;
     public float atkSpeed;
     public int lv;
-    
+
 
     public CharStats(string _name, float _maxHealth, float _maxMP, float _attack, float _atkSpped, int _lv)
     {

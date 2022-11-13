@@ -34,12 +34,14 @@ public class SPUM_Prefabs : MonoBehaviour
             _nameToHashPair.Add(clip.name, hash);
         }
     }
+
     private void Awake() {
         InitAnimPair();
     }
     private void Start() {
         UnitTypeChanged.AddListener(InitAnimPair);
     }
+
     // 이름으로 애니메이션 실행
     public void PlayAnimation(string name){
         foreach (var animationName in _nameToHashPair)

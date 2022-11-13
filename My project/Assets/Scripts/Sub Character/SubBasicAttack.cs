@@ -6,6 +6,7 @@ public class SubBasicAttack : MonoBehaviour
 {
     public GameObject basicAttackPrefab;
     public static GameObject basicAttack;
+    PlayerScript playerScript;
 
     int x;
     Transform playerTrans;
@@ -17,14 +18,15 @@ public class SubBasicAttack : MonoBehaviour
     private void Start()
     {
         playerTrans = GameObject.Find("Player").GetComponent<Transform>();
-        SubStat = this.transform.parent.GetComponent<SubChar_Combat_manager>(); 
+        SubStat = this.transform.parent.GetComponent<SubChar_Combat_manager>();
+        playerScript = GameObject.Find("Player").GetComponent<PlayerScript>();
     }
 
     private void Update()
     {
-  
+
         if (Battle_Situation_Trigger.monster != null)
-        {           
+        {
             if (isCoolTime)
             {
                 StartCoroutine(Attack());
@@ -46,7 +48,7 @@ public class SubBasicAttack : MonoBehaviour
 
         }
 
-        else if(this.name == "FireBall") 
+        else if (this.name == "FireBall")
         {
             yield return new WaitForSeconds(SubStat.atkSpeed);
             BasicAttack();
@@ -75,7 +77,10 @@ public class SubBasicAttack : MonoBehaviour
     }
     public void PriestHeal()
     {
-        transform.position = new Vector3(-3.78f, 0, 0);
-        basicAttack = Instantiate(basicAttackPrefab, playerTrans.transform.position, Quaternion.identity);
+        if (playerScript.nowHp < playerScript.maxHp)
+        {
+            transform.position = new Vector3(playerTrans.position.x, playerTrans.position.y + 1, 0);
+            basicAttack = Instantiate(basicAttackPrefab, transform.position, Quaternion.identity);
+        }
     }
 }
