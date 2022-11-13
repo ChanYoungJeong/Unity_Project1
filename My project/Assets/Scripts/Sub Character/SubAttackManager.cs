@@ -24,7 +24,6 @@ public class SubAttackManager : MonoBehaviour
         else if (this.name == "Heal(Clone)")
         {
             subStat = GameObject.Find("Priest");
-            playerStat = GameObject.Find("Player").GetComponent<PlayerScript>();
         }
 
         subDmg = subStat.GetComponent<SubChar_Combat_manager>().attackDmg;
@@ -39,32 +38,30 @@ public class SubAttackManager : MonoBehaviour
         }
     }
 
-    public void OnTriggerStay2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.gameObject == Battle_Situation_Trigger.monster)
         {
             subDmg = subStat.GetComponent<SubChar_Combat_manager>().attackDmg;
 
             monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
             monster.nowHp -= subDmg;
-            Debug.Log("Sub character basic attack result : " + monster.nowHp);
-            //Destroy(SubBasicAttack.basicAttack);
             Destroy(this.gameObject);
         }
-
-        else if (collision.tag == "Player")
+        else if (collision.name == "Heal(Clone)")
         {
-            if (this.name == "Heal(Clone)")
-            {
-                Debug.Log("healing");
+            subDmg = subStat.GetComponent<SubChar_Combat_manager>().attackDmg;
+            playerStat = GameObject.Find("Player").GetComponent<PlayerScript>();
 
-                playerStat.nowHp += subDmg * 0.7f;
-                if (playerStat.nowHp >= playerStat.maxHp)
-                {
-                    playerStat.nowHp = playerStat.maxHp;  // 옵션 추가 가능하게 % 사용.
-                }
-                Destroy(SubBasicAttack.basicAttack);
+            playerStat.nowHp += subDmg * 0.7f;
+
+            if (playerStat.nowHp >= playerStat.maxHp)
+            {
+                playerStat.nowHp = playerStat.maxHp;  // 옵션 추가 가능하게 % 사용.
             }
+            Destroy(SubBasicAttack.basicAttack, 0.5f);
+
         }
     }
 }

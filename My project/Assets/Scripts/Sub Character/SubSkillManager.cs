@@ -33,7 +33,6 @@ public class SubSkillManager : MonoBehaviour
         {
             monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
             monster.nowHp -= kunaiDmg;
-            Debug.Log("Sub character skill attack result : " + monster.nowHp);
             Destroy(SubSkillAttack.kunai);
         }
     }
