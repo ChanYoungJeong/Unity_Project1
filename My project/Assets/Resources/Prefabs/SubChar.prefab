@@ -4042,7 +4042,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6128476293987881166}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.76, y: -1.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5830,7 +5830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7047877525678692448, guid: f6913f195f7de42dbb13e0c81e1e07f6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.0276
       objectReference: {fileID: 0}
     - target: {fileID: 7047877525678692448, guid: f6913f195f7de42dbb13e0c81e1e07f6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5879,6 +5879,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7047877525678692448, guid: f6913f195f7de42dbb13e0c81e1e07f6, type: 3}
   m_PrefabInstance: {fileID: 6128476294721097882}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3802076011119069435 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7047877525678692449, guid: f6913f195f7de42dbb13e0c81e1e07f6, type: 3}
+  m_PrefabInstance: {fileID: 6128476294721097882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4329964514477233596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28ac21711b0ec40a0812d33a586eb7ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4329964514477233596 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7573831300888823078, guid: f6913f195f7de42dbb13e0c81e1e07f6, type: 3}
@@ -5910,6 +5921,21 @@ MonoBehaviour:
   skilldefense: 0
   skillLv: 0
   skillcooldown: 0
+--- !u!114 &705467412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4329964514477233596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ba1227b45894e71b2bccaabc54001c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefabs: {fileID: 3802076011119069435}
+  _charMS: 15
+  _goalPos: {x: 0, y: 0, z: 0}
 --- !u!1001 &6128476294727991978
 PrefabInstance:
   m_ObjectHideFlags: 0
