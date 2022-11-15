@@ -7,6 +7,7 @@ public class SubAttackManager : MonoBehaviour
     PlayerScript playerStat;
     public Monster_Script monster;
     GameObject subStat;
+    public GameObject fireBallAfter;
 
     float subDmg;
 
@@ -47,7 +48,14 @@ public class SubAttackManager : MonoBehaviour
 
             monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
             monster.nowHp -= subDmg;
+
+            if(this.name == "FireBall(Clone)")
+            {
+                GameObject fire = Instantiate(fireBallAfter, monster.transform);
+                Destroy(fire, 0.45f);
+            }
             Destroy(this.gameObject);
+
         }
         else if (collision.name == "Heal(Clone)")
         {

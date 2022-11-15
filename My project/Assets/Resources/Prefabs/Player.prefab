@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 214604647}
   m_Layer: 0
   m_Name: Fountain Of Blood
-  m_TagString: Untagged
+  m_TagString: skill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 538154446}
   m_Layer: 0
   m_Name: Double Slash
-  m_TagString: Untagged
+  m_TagString: skill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 1274880096}
   m_Layer: 0
   m_Name: Fire Slash
-  m_TagString: Untagged
+  m_TagString: skill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 2109872033}
   m_Layer: 0
   m_Name: Mega Slash
-  m_TagString: Untagged
+  m_TagString: skill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 2314681825701584317}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -292,7 +292,7 @@ Transform:
   m_GameObject: {fileID: 2314681825701584322}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2314681824776550323}
@@ -344,7 +344,8 @@ MonoBehaviour:
   lv: 1
   playerMaxExp: 30
   playerNowExp: 0
-  critical: 1
+  criticalRate: 1
+  criticalDamage: 0
 --- !u!1 &2314681825762801545
 GameObject:
   m_ObjectHideFlags: 0
