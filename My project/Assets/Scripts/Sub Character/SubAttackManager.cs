@@ -62,6 +62,7 @@ public class SubAttackManager : MonoBehaviour
             subDmg = subStat.GetComponent<SubChar_Combat_manager>().attackDmg;
             playerStat = GameObject.Find("Player").GetComponent<PlayerScript>();
 
+
             playerStat.nowHp += subDmg * 0.7f;
 
             if (playerStat.nowHp >= playerStat.maxHp)
