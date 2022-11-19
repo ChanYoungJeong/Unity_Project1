@@ -63,9 +63,9 @@ public class SubSkillAttack : MonoBehaviour
     {
         if (Battle_Situation_Trigger.monster != null)
         {
+            subAnimator.SetTrigger("SkillNormal");
             kunai = Instantiate(subSkillPrefab, this.transform.position, Quaternion.identity);
             kunai.GetComponent<Rigidbody2D>().AddForce(Vector3.right * 20, ForceMode2D.Impulse);
-            subAnimator.SetTrigger("SkillNormal");
         }
     }
 

@@ -11,6 +11,8 @@ public class SubAttackManager : MonoBehaviour
 
     float subDmg;
 
+    Monster_Combat monsterCombat;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -45,6 +47,8 @@ public class SubAttackManager : MonoBehaviour
         if (collision.gameObject == Battle_Situation_Trigger.monster)
         {
             subDmg = subStat.GetComponent<SubChar_Combat_manager>().attackDmg;
+            monsterCombat = Battle_Situation_Trigger.monster.GetComponent<Monster_Combat>();
+
 
             monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
             monster.nowHp -= subDmg;
@@ -52,7 +56,13 @@ public class SubAttackManager : MonoBehaviour
             if(this.name == "FireBall(Clone)")
             {
                 GameObject fire = Instantiate(fireBallAfter, monster.transform);
+                monsterCombat.ApplyDamage(subDmg, Color.white);
+
                 Destroy(fire, 0.45f);
+            }
+            else if(this.name == "dager(Clone)")
+            {
+                monsterCombat.ApplyDamage(subDmg, Color.green);
             }
             Destroy(this.gameObject);
 
