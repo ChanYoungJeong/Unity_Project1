@@ -13,6 +13,7 @@ public class Battle_Situation_Trigger : MonoBehaviour
     public bool Battle;
     bool coroutineCheck = false;
 
+
     private void Start()
     {
         player = GameObject.Find("Player");
@@ -52,6 +53,8 @@ public class Battle_Situation_Trigger : MonoBehaviour
         {
             atSpot = true;
             player.GetComponent<PlayerScript>().PlayerAttackMotion();
+
+
         }
     }
 
@@ -61,6 +64,7 @@ public class Battle_Situation_Trigger : MonoBehaviour
         {
             atSpot = false;
             player.GetComponent<PlayerScript>().PlayerIdleMotion();
+
         }
     }
 
