@@ -12,6 +12,8 @@ public class SubSkillAttack : MonoBehaviour
     public GameObject subSkillPrefab;
     public static GameObject kunai;
 
+    public Animator subAnimator;
+
     private void Start()
     {
         SubCharSkillList = transform.parent.GetComponentInParent<Sub_Char_SkillList>();
@@ -63,6 +65,7 @@ public class SubSkillAttack : MonoBehaviour
         {
             kunai = Instantiate(subSkillPrefab, this.transform.position, Quaternion.identity);
             kunai.GetComponent<Rigidbody2D>().AddForce(Vector3.right * 20, ForceMode2D.Impulse);
+            subAnimator.SetTrigger("SkillAttack");
         }
     }
 
