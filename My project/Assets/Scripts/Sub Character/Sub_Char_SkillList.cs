@@ -21,10 +21,10 @@ public class Sub_Char_SkillList : MonoBehaviour
         Sub_Char_SkilList.Add(name, new Sub_Char_Skill(0, name, 20, 0, 0, 5, 1)); //Sub1 Attacker //도적스킬
 
         name = "SuperFireBall";
-        Sub_Char_SkilList.Add(name, new Sub_Char_Skill(0, name, 20, 0, 0, 5, 1)); //Sub1 Attacker //도적스킬
+        Sub_Char_SkilList.Add(name, new Sub_Char_Skill(0, name, 20, 0, 0, 7, 1)); //Sub1 Attacker //도적스킬
 
         name = "Shield"; // Preist Shield Skill
-        Sub_Char_SkilList.Add(name, new Sub_Char_Skill(0, name, 20, 0, 0, 5, 1));
+        Sub_Char_SkilList.Add(name, new Sub_Char_Skill(0, name, 20, 0, 0, 10, 1));
         //쉴드 미구현s
     }
 

@@ -73,7 +73,15 @@ public class SubBasicAttack : MonoBehaviour
         {
             basicAttack = Instantiate(basicAttackPrefab, this.transform.position, Quaternion.identity);
             basicAttack.GetComponent<Rigidbody2D>().AddForce(Vector3.right * speed, ForceMode2D.Impulse);
-            subAnimator.SetTrigger("BasicAttack");
+            if(this.name == "Dager")
+            {
+                subAnimator.SetTrigger("AttackNormal");
+            }
+            else if(this.name == "FireBall")
+            {
+                subAnimator.SetTrigger("AttackMagic");
+
+            }
             //몬스터 중심 향해 날라는거 구현하기
         }
     }
@@ -83,7 +91,10 @@ public class SubBasicAttack : MonoBehaviour
         {
             transform.position = new Vector3(playerTrans.position.x, playerTrans.position.y + 1, 0);
             basicAttack = Instantiate(basicAttackPrefab, transform.position, Quaternion.identity);
-            subAnimator.SetTrigger("BasicAttack");
+            if(this.name == "Heal")
+            {
+                subAnimator.SetTrigger("Debuff");
+            }
         }
     }
 }
