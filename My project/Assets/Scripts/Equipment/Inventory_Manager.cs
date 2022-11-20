@@ -71,6 +71,7 @@ public class Inventory_Manager : MonoBehaviour
                 Debug.Log("is Change Equipped");
                 Debug.Log(EM.Equipments[selectedItem.type].name);
             }
+            equipInfoUI.status.text = curSlot.itemStatus();
         }
         else
         {
@@ -103,8 +104,9 @@ public class Inventory_Manager : MonoBehaviour
             equipInfoUI.gameObject.SetActive(true);
             if (selectedItem.type == "Weapon")
             {
-                equipInfoUI.ViewItem(GetImage(selectedItem.name), selectedItem.name, selectedItem.grade, curSlot.itemStatus(),
-                                     "Attack", "Critical Rate", selectedItem.stat1.ToString(), selectedItem.stat2.ToString());
+                equipInfoUI.ViewItem(GetImage(selectedItem.name), selectedItem.name, selectedItem.grade, 
+                                curSlot.itemStatus(),"Attack", "Critical Rate", selectedItem.stat1.ToString(),
+                                     selectedItem.stat2.ToString(), selectedItem.upgrade.ToString());
             }
         }
         else
