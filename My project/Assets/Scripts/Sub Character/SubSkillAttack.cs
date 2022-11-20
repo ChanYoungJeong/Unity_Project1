@@ -15,6 +15,8 @@ public class SubSkillAttack : MonoBehaviour
     public static GameObject kunai;
     public static GameObject Lightning;
 
+    public Animator subAnimator;
+
     private void Start()
     {
         SubCharSkillList = transform.parent.GetComponentInParent<Sub_Char_SkillList>();
@@ -71,6 +73,7 @@ public class SubSkillAttack : MonoBehaviour
     {
         if (Battle_Situation_Trigger.monster != null)
         {
+            subAnimator.SetTrigger("SkillNormal");
             kunai = Instantiate(subSkillPrefab, this.transform.position, Quaternion.identity);
             kunai.GetComponent<Rigidbody2D>().AddForce(Vector3.right * 20, ForceMode2D.Impulse);
         }

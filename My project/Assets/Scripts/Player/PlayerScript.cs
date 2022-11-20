@@ -7,7 +7,8 @@ public class PlayerScript : MonoBehaviour
 {
     public GameObject playerIdleMotion;
     public GameObject playerAttackMotion;
-    public Monster_Script monster;
+    Monster_Script monster;
+    Monster_Combat monsterCombat;
 
     public float maxHp;
     public float nowHp;
@@ -57,7 +58,8 @@ public class PlayerScript : MonoBehaviour
         if(Battle_Situation_Trigger.monster != null)
         {
             monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
-            monster.nowHp -= atkDmg * criticalRate;
+            monsterCombat = Battle_Situation_Trigger.monster.GetComponent<Monster_Combat>();
+            monsterCombat.ApplyDamage(atkDmg * criticalRate, Color.red);
             
             if (monster.nowHp <= 0)
             {

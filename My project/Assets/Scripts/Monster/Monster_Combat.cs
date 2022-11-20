@@ -6,7 +6,8 @@ public class Monster_Combat : MonoBehaviour
 {
     Monster_Script Monster_Stat;
     PlayerScript Player_Stat;
-    GameObject Monster_Parent;
+    public Transform DamagePrinter;
+    public GameObject DamageText;
 
     bool check = false;
     // Start is called before the first frame update
@@ -39,4 +40,15 @@ public class Monster_Combat : MonoBehaviour
         Player_Stat.nowHp -= Monster_Stat.atkDmg;
         Debug.Log("Monster Attack, Player Hp = " + Player_Stat.nowHp);
     }
+
+    public void ApplyDamage(float damage, Color color)
+    {
+        Monster_Stat.nowHp -= damage;
+        GameObject hudText = Instantiate(DamageText);
+        hudText.transform.position = DamagePrinter.position;
+        hudText.GetComponent<DamageText>().damage = damage;
+        hudText.GetComponent<DamageText>().damageColor = color;
+
+    }
+
 }

@@ -304,6 +304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e53bf1413eb9cd5419fad2238c9175ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DamagePrinter: {fileID: 3357124150653086877}
+  DamageText: {fileID: 2167125368239396214, guid: f460e3831bfade14a90ba3e108869590, type: 3}
 --- !u!114 &8612973221486136816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,6 +321,42 @@ MonoBehaviour:
   hpSlider: {fileID: 5079738099125391744}
   hpCanvas: {fileID: 8654570946580744857}
   monsterStat: {fileID: 3648560239560735670}
+--- !u!1 &2001366047354952428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3357124150653086877}
+  m_Layer: 5
+  m_Name: DamagePrinter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3357124150653086877
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001366047354952428}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2718890106460333742}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 32.6}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2804508757999355504
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,6 +389,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5161887129709681150}
+  - {fileID: 3357124150653086877}
   m_Father: {fileID: 2958153724836412908}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

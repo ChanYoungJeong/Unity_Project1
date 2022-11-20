@@ -5,6 +5,7 @@ using UnityEngine;
 public class SubSkillManager : MonoBehaviour
 {
     public Monster_Script monster;
+    Monster_Combat monsterCombat;
 
     float kunaiDmg;
     float LightningDmg;
@@ -32,21 +33,26 @@ public class SubSkillManager : MonoBehaviour
         if (collision.gameObject == Battle_Situation_Trigger.monster)
         {
 
-            if (this.name == "Kunai(Clone)")
+            monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
+            monsterCombat = Battle_Situation_Trigger.monster.GetComponent<Monster_Combat>();
+
+            monster.nowHp -= kunaiDmg;
+
+            if(this.name == "Kunai(Clone)")
             {
-                Debug.LogError(kunaiDmg);
-                monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
-                monster.nowHp -= kunaiDmg;
+                monsterCombat.ApplyDamage(kunaiDmg, Color.yellow);
                 Destroy(SubSkillAttack.kunai);
             }
-
-           if (this.name == "Lightning(Clone)")
+           
+            
+            
+            if (this.name == "Lightning(Clone)")
             {
-                monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
-                monster.nowHp -= LightningDmg;
+                monsterCombat.ApplyDamage(LightningDmg, Color.blue);
                 Destroy(SubSkillAttack.Lightning,0.5f);
                 Debug.LogError(monster.nowHp);
             }
+
         }
     }
 
