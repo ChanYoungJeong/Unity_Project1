@@ -13,11 +13,11 @@ public class EquipInfo : MonoBehaviour
     public Text stat2Name;
     public Text stat1Val;
     public Text stat2Val;
-
+    public Text upgradeRate;
 
     public void ViewItem(Sprite _image, string _itemName, string _rank, 
                         string _status, string _stat1Name, string _stat2Name,
-                        string _stat1Val, string _stat2Val)
+                        string _stat1Val, string _stat2Val, string _upgradeRate)
 
     {
         itemImage.sprite = _image;
@@ -28,6 +28,14 @@ public class EquipInfo : MonoBehaviour
         stat2Name.text = _stat2Name;
         stat1Val.text = _stat1Val;
         stat2Val.text = _stat2Val;
+        upgradeRate.text = "+" + _upgradeRate;
+    }
+
+    public void changeStatView(Equipment item)
+    {
+        stat1Val.text = item.stat1.ToString();
+        stat2Val.text = item.stat2.ToString();
+        upgradeRate.text = "+" + item.upgrade.ToString();
     }
 
 }
