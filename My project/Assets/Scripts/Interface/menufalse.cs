@@ -5,43 +5,44 @@ using UnityEngine.UI;
 
 public class menufalse : MonoBehaviour
 {
-    public GameObject gameObject1;
-    public GameObject gameObject2;
-    public GameObject gameObject3;
+    public GameObject inventoryui;
+    public GameObject equipment;
+    public GameObject shop;
     public GameObject gameObject4;
 
-    GameObject[] gameObjectsArr;
-
-    public void onoff()
+    
+    public void ShopOnoff()
     {
-        if (gameObject3.activeSelf == true)
+        if (shop.activeSelf == true)
         {
-            gameObject1.SetActive(false);
-            gameObject2.SetActive(false);
+            shop.SetActive(false);
+            inventoryui.SetActive(false);
+            equipment.SetActive(false);
         }
-        else if (gameObject1.activeSelf == true && gameObject2.activeSelf == true)
+        
+        else if(shop.activeSelf == false)
         {
-            gameObject3.SetActive(false);
+            shop.SetActive(true);
+            inventoryui.SetActive(false);
+            equipment.SetActive(false);
+            
+        }
+        
+    }
+    public void EquipmentOnoff()
+    {
+        if (inventoryui.activeSelf == true && equipment.activeSelf == true)
+        {
+            inventoryui.SetActive(false);
+            equipment.SetActive(false);
+            shop.SetActive(false);
+        }
+        else if (equipment.activeSelf == false && inventoryui.activeSelf == false)
+        {
+            inventoryui.SetActive(true);
+            equipment.SetActive(true);
+            shop.SetActive(false);
         }
     }
 
-    private void allOff()
-    {
-        gameObject1.SetActive(false);
-        gameObject2.SetActive(false);
-        gameObject3.SetActive(false);
-        gameObject4.SetActive(false);
-    }
-
-    void gameObject2OnOff()
-    {
-        allOff();
-        gameObject2.SetActive(true);
-
-        //for(gameObjectsArr[1] ~ [n]){
-        //if(gameObjectArr[i].activeself == true)
-        //gameObjectArr[i].SetActive(false);
-        //}
-        //gameObject2.SetActive(true);
-    }
 }
