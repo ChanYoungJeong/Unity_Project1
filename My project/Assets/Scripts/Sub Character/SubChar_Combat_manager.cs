@@ -79,8 +79,8 @@ public class SubChar_Combat_manager : MonoBehaviour
         }
         else if (this.name == "MagicCaster")
         {
-            isFind = subCharSkillList.Sub_Char_SkilList.ContainsKey("SuperFireBall");
-            key = "SuperFireBall";
+            isFind = subCharSkillList.Sub_Char_SkilList.ContainsKey("Lightning");
+            key = "Lightning";
         }
 
         else if (this.this_name == "Priest")
