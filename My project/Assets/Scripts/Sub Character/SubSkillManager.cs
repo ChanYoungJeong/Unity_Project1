@@ -7,15 +7,15 @@ public class SubSkillManager : MonoBehaviour
     public Monster_Script monster;
     Monster_Combat monsterCombat;
 
-    public GameObject rogue;
     float kunaiDmg;
-
+    float LightningDmg;
 
     public bool isDestroy = false;
     // Start is called before the first frame update
     private void Start()
     {
         kunaiDmg = GameObject.Find("Rogue").GetComponent<SubChar_Combat_manager>().skillDamage;
+        LightningDmg = GameObject.Find("MagicCaster").GetComponent<SubChar_Combat_manager>().skillDamage;
     }
 
     public void Update()
@@ -26,12 +26,13 @@ public class SubSkillManager : MonoBehaviour
         }
     }
 
-    public void OnTriggerStay2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         //monster = Battle_Situation_Trigger.monster_group.transform.GetChild(0).GetComponent<Monster_Script>();
 
         if (collision.gameObject == Battle_Situation_Trigger.monster)
         {
+
             monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
             monsterCombat = Battle_Situation_Trigger.monster.GetComponent<Monster_Combat>();
 
@@ -40,9 +41,18 @@ public class SubSkillManager : MonoBehaviour
             if(this.name == "Kunai(Clone)")
             {
                 monsterCombat.ApplyDamage(kunaiDmg, Color.yellow);
-
+                Destroy(SubSkillAttack.kunai);
             }
-            Destroy(SubSkillAttack.kunai);
+           
+            
+            
+            if (this.name == "Lightning(Clone)")
+            {
+                monsterCombat.ApplyDamage(LightningDmg, Color.blue);
+                Destroy(SubSkillAttack.Lightning,0.5f);
+                Debug.LogError(monster.nowHp);
+            }
+
         }
     }
 
