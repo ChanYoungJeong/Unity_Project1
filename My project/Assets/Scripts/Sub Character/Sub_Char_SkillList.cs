@@ -17,15 +17,16 @@ public class Sub_Char_SkillList : MonoBehaviour
 
         string name;
 
-        name = "Kunai"; //µµÀû ½ºÅ³
-        Sub_Char_SkilList.Add(name, new Sub_Char_Skill(0, name, 20, 0, 0, 5, 1)); //Sub1 Attacker //µµÀû½ºÅ³
+        name = "Kunai"; //ë„ì  ìŠ¤í‚¬
+        Sub_Char_SkilList.Add(name, new Sub_Char_Skill(0, name, 20, 0, 0, 5, 1)); //Sub1 Attacker //ë„ì ìŠ¤í‚¬
 
-        name = "SuperFireBall";
-        Sub_Char_SkilList.Add(name, new Sub_Char_Skill(0, name, 20, 0, 0, 7, 1)); //Sub1 Attacker //µµÀû½ºÅ³
+
+        name = "Lightning";
+        Sub_Char_SkilList.Add(name, new Sub_Char_Skill(0, name, 10, 0, 0, 5, 1)); //Sub1 Attacker //ë§¤ì§ìºìŠ¤í„° ìŠ¤í‚¬
 
         name = "Shield"; // Preist Shield Skill
         Sub_Char_SkilList.Add(name, new Sub_Char_Skill(0, name, 20, 0, 0, 10, 1));
-        //½¯µå ¹Ì±¸Çös
+        //ì‰´ë“œ ë¯¸êµ¬í˜„s
     }
 
 }
