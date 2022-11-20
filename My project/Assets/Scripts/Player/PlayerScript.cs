@@ -21,7 +21,8 @@ public class PlayerScript : MonoBehaviour
     public int playerNowExp;
     public int criticalRate;
     public int criticalDamage;
-    
+
+    public Animator playerAnimator;
 
     private void Start()
     {
@@ -29,18 +30,21 @@ public class PlayerScript : MonoBehaviour
     }
     public void PlayerIdleMotion()
     {
-        playerIdleMotion.SetActive(true);
-        playerAttackMotion.SetActive(false);
+        /*playerIdleMotion.SetActive(true);
+        playerAttackMotion.SetActive(false);*/
+        playerAnimator.SetTrigger("Idle");
 
         StopCoroutine(PlayerBasicAttack());
     }
 
     public void PlayerAttackMotion()
     {
-        playerIdleMotion.SetActive(false);
-        playerAttackMotion.SetActive(true);
+        /*playerIdleMotion.SetActive(false);
+        playerAttackMotion.SetActive(true);*/
 
         StartCoroutine(PlayerBasicAttack());
+
+
     }
 
     IEnumerator PlayerBasicAttack()
@@ -48,7 +52,7 @@ public class PlayerScript : MonoBehaviour
         while (Battle_Situation_Trigger.on_Battle)
         {
             yield return new WaitForSeconds(atkSpeed);
-        
+
             _PlayerAttack();
         }
     }
@@ -59,8 +63,9 @@ public class PlayerScript : MonoBehaviour
         {
             monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
             monsterCombat = Battle_Situation_Trigger.monster.GetComponent<Monster_Combat>();
+            playerAnimator.SetTrigger("AttackNormal");
             monsterCombat.ApplyDamage(atkDmg * criticalRate, Color.red);
-            
+
             if (monster.nowHp <= 0)
             {
                 monster.nowHp = 0;
