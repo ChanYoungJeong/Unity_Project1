@@ -14,7 +14,7 @@ public class Monster_Manager : MonoBehaviour
     {
         playerScript = GameObject.Find("Player").GetComponent<PlayerScript>();
         Monster_Stat = GetComponent<Monster_Script>();
-        Get_Monster_Stat(Stage_Manager.Stage);
+        Get_Monster_Stat(Game_System.Stage);
         anim = GetComponentInChildren<Animator>();
         anim.SetBool("is_Dead", false);
         
@@ -41,27 +41,27 @@ public class Monster_Manager : MonoBehaviour
 
     void SetMonsterStatus()
     {
-        Monster_Stat.maxHp = Get_Monster_HP(Stage_Manager.Stage);
-        Monster_Stat.nowHp = Get_Monster_HP(Stage_Manager.Stage);
-        Monster_Stat.atkDmg = Get_Monster_ATK(Stage_Manager.Stage);
+        Monster_Stat.maxHp = Get_Monster_HP(Game_System.Stage);
+        Monster_Stat.nowHp = Get_Monster_HP(Game_System.Stage);
+        Monster_Stat.atkDmg = Get_Monster_ATK(Game_System.Stage);
         Monster_Stat.atkSpeed = 7;
-        Monster_Stat.Golds = Get_Monster_Gold(Stage_Manager.Stage);
-        Monster_Stat.Exp = Get_Monster_Exp(Stage_Manager.Stage);
+        Monster_Stat.Golds = Get_Monster_Gold(Game_System.Stage);
+        Monster_Stat.Exp = Get_Monster_Exp(Game_System.Stage);
     }
 
     void SetBossMonsterStatus()
     {
-        Monster_Stat.maxHp = (int)(Get_Monster_HP(Stage_Manager.Stage - 1) * 2.2);
-        Monster_Stat.nowHp = (int)(Get_Monster_HP(Stage_Manager.Stage - 1) * 2.2);
-        Monster_Stat.atkDmg = (int)(Get_Monster_ATK(Stage_Manager.Stage - 1) * 2.2);
+        Monster_Stat.maxHp = (int)(Get_Monster_HP(Game_System.Stage - 1) * 2.2);
+        Monster_Stat.nowHp = (int)(Get_Monster_HP(Game_System.Stage - 1) * 2.2);
+        Monster_Stat.atkDmg = (int)(Get_Monster_ATK(Game_System.Stage - 1) * 2.2);
         Monster_Stat.atkSpeed = 2;
-        Monster_Stat.Golds = (int)(Get_Monster_Gold(Stage_Manager.Stage - 1) * 2.2);
-        Monster_Stat.Exp = (int)(Get_Monster_Exp(Stage_Manager.Stage - 1) * 2.2);
+        Monster_Stat.Golds = (int)(Get_Monster_Gold(Game_System.Stage - 1) * 2.2);
+        Monster_Stat.Exp = (int)(Get_Monster_Exp(Game_System.Stage - 1) * 2.2);
     }
 
     void Get_Monster_Stat(int Stage)
     {
-        int Boss_Stage = Stage % Stage_Manager.Boss_Stage;
+        int Boss_Stage = Stage % Game_System.Boss_Stage;
 
         if (Boss_Stage > 0)
         {
@@ -78,25 +78,25 @@ public class Monster_Manager : MonoBehaviour
 
     public int Get_Monster_HP(int Stage)
     {
-        int HP = 100 * ((Stage / Stage_Manager.Boss_Stage) + 1);
+        int HP = 100 * ((Stage / Game_System.Boss_Stage) + 1);
         return HP;
     }
 
     public int Get_Monster_ATK(int Stage)
     {
-        int ATK = 2 * ((Stage / Stage_Manager.Boss_Stage) + 1);
+        int ATK = 2 * ((Stage / Game_System.Boss_Stage) + 1);
         return ATK;
     }
     
     public int Get_Monster_Gold(int Stage)
     {
-        int Gold = 10 * ((Stage / Stage_Manager.Boss_Stage) + 1);
+        int Gold = 10 * ((Stage / Game_System.Boss_Stage) + 1);
         return Gold;
     }
     
     public int Get_Monster_Exp(int Stage)
     {
-        int Exp = 5 * ((Stage / Stage_Manager.Boss_Stage) + 1);
+        int Exp = 5 * ((Stage / Game_System.Boss_Stage) + 1);
         return Exp;
     }
 
