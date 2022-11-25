@@ -6,21 +6,26 @@ using UnityEngine.Networking;
 using System.Data;
 using Mono.Data.Sqlite;
 
-public class Data_Base_Manager
+public class Data_Base_Manager : MonoBehaviour
 {
+
+    private void Awake()
+    {
+        DBCreate();
+    }
     void DBCreate()
     {
         string filepath = string.Empty;     //File Path
         if (Application.platform == RuntimePlatform.Android) //If Platform is Android
         {
-            filepath = Application.persistentDataPath + "/[filename].db"; //Set Path for Android
+            filepath = Application.persistentDataPath + "/Equipment Data.db"; //Set Path for Android
 
             if (!File.Exists(filepath)) //if there is no file
             {
                 //Copy Files
                 //Wait until file is complety copied (using UnityWebRequest)
                 //If done copying, move files
-                UnityWebRequest unityWebRequest = UnityWebRequest.Get("jar:file://" + Application.dataPath + "!/assets/[filename].db");
+                UnityWebRequest unityWebRequest = UnityWebRequest.Get("jar:file://" + Application.dataPath + "!/assets/Equipment Data.db");
                 unityWebRequest.downloadedBytes.ToString();
                 while (!unityWebRequest.SendWebRequest().isDone) { }
                 File.WriteAllBytes(filepath, unityWebRequest.downloadHandler.data);
@@ -28,28 +33,28 @@ public class Data_Base_Manager
         }
         else
         {
-            filepath = Application.dataPath + "/test.db";       //Set the path
+            filepath = Application.dataPath + "/Equipment Data.db";       //Set the path
             if (!File.Exists(filepath))
             {
-                File.Copy(Application.streamingAssetsPath + "/test.db", filepath); //Copy the file due to path
+                File.Copy(Application.streamingAssetsPath + "/Equipment Data.db", filepath); //Copy the file due to path
             }
-            Debug.Log($"{File.Exists(filepath)}" + "is done creating");
+            //Debug.Log($"{File.Exists(filepath)} " + "is done creating");
         }
 
     }
 
-
     public string GetDBFilePath()   //return the path due to platform
     {
         string str = string.Empty;
+
         if (Application.platform == RuntimePlatform.Android)
         {
-            str = "URI=file" + Application.persistentDataPath + "/Equipment Data.db";
+            str = "URI=file:" + Application.persistentDataPath + "/Equipment Data.db";
         }
         else
         {
-            str = "URI=file" + Application.dataPath + "/Equipment Data.db";
-        }        
+            str = "URI=file:" + Application.dataPath + "/Equipment Data.db";
+        }
         return str;
     }
 
@@ -77,6 +82,7 @@ public class Data_Base_Manager
     public void DatabaseInsert(string query) //Useage : Modify, Insert, Delete
     {
         IDbConnection dbConnection = new SqliteConnection(GetDBFilePath());
+        Debug.Log(dbConnection);
         dbConnection.Open();                        //Open DB
         IDbCommand dbCommand = dbConnection.CreateCommand();
         dbCommand.CommandText = query;              //Write Query
@@ -86,5 +92,30 @@ public class Data_Base_Manager
         dbCommand = null;
         dbConnection.Close();
         dbConnection = null;
+    }
+
+    string Validation;
+    public string CheckID(string query)
+    {
+        
+        IDbConnection dbConnection = new SqliteConnection(GetDBFilePath());
+        dbConnection.Open();                                        //Open DB
+        IDbCommand dbCommand = dbConnection.CreateCommand();
+        dbCommand.CommandText = query;                              //Write Query
+        IDataReader dataReader = dbCommand.ExecuteReader();
+
+        while (dataReader.Read())                    //Read Records
+        {
+            Validation = dataReader.GetString(0);
+        }
+
+        dataReader.Dispose();           //Close DB opposite order
+        dataReader = null;
+        dbCommand.Dispose();
+        dbCommand = null;
+        dbConnection.Close();
+        dbConnection = null;
+
+        return Validation;
     }
 }
