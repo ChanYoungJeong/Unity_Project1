@@ -14,14 +14,27 @@ public class SignIn_Manager : MonoBehaviour
     public InputField Password;
     string InputID;
     string GetID;
+    public GameObject SignINPanel;
+
+    public void ActiveSignIn()
+    {
+        SignINPanel.SetActive(true);
+    }
+
+    public void CloseSIgnIn()
+    {
+        SignINPanel.SetActive(false);
+        ID_Check = false;
+    }
+
 
     //Table : Users (UserID(Text), Password(Text)
-
+    //Table : System {UserID(Text/FK), Stage(INTEGER), GOLD(INTEGER)}
     public void CheckUserID()
     {
         InputID = UserID.text;
 
-        GetID = DBMS.CheckID("Select UserID FROM Users where UserID = \'" + InputID + "\'");
+        GetID = DBMS.GetString("Select UserID FROM Users where UserID = \'" + InputID + "\'");
         if(InputID == GetID)
         {
             Debug.Log("User ID already exists");
@@ -37,16 +50,21 @@ public class SignIn_Manager : MonoBehaviour
     {
         Debug.Log(InputID + ", " + Password.text);
 
-        if (ID_Check)
+        if (ID_Check && InputID == UserID.text)
         {
             DBMS.DatabaseInsert("INSERT INTO Users VALUES(\'"
                                 + InputID + "\',\'"
                                 + Password.text + "\')");
             Debug.Log("Account has created sucessfully");
+            DBMS.DatabaseInsert("INSERT INTO System VALUES(\'"
+            + InputID + "\'"
+            + ",1, 0)");
+            CloseSIgnIn();
         }
         else
         {
             Debug.Log("Something goes wrong");
+            ID_Check = false;
         }
     }
 

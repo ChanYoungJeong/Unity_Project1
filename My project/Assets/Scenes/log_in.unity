@@ -382,7 +382,7 @@ Transform:
   m_Children:
   - {fileID: 1966912722}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &147865799
 MonoBehaviour:
@@ -1311,8 +1311,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1468983655}
-        m_TargetAssemblyTypeName: LogIN_Panel_Manager, Assembly-CSharp
+      - m_Target: {fileID: 1468983654}
+        m_TargetAssemblyTypeName: SignIn_Manager, Assembly-CSharp
         m_MethodName: CloseSIgnIn
         m_Mode: 1
         m_Arguments:
@@ -1445,8 +1445,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1468983655}
-        m_TargetAssemblyTypeName: LogIN_Panel_Manager, Assembly-CSharp
+      - m_Target: {fileID: 1468983654}
+        m_TargetAssemblyTypeName: SignIn_Manager, Assembly-CSharp
         m_MethodName: ActiveSignIn
         m_Mode: 1
         m_Arguments:
@@ -1890,7 +1890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1218451758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2038,9 +2038,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1900932073}
-        m_TargetAssemblyTypeName: Changescene, Assembly-CSharp
-        m_MethodName: SceneChange
+      - m_Target: {fileID: 1468983657}
+        m_TargetAssemblyTypeName: LogIN_Panel_Manager, Assembly-CSharp
+        m_MethodName: LogIN
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2340,9 +2340,9 @@ GameObject:
   - component: {fileID: 1468983653}
   - component: {fileID: 1468983652}
   - component: {fileID: 1468983651}
-  - component: {fileID: 1468983655}
   - component: {fileID: 1468983654}
   - component: {fileID: 1468983656}
+  - component: {fileID: 1468983657}
   m_Layer: 5
   m_Name: log_in setting
   m_TagString: Untagged
@@ -2449,18 +2449,6 @@ MonoBehaviour:
   DBMS: {fileID: 1468983656}
   UserID: {fileID: 160613895}
   Password: {fileID: 475626178}
---- !u!114 &1468983655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1468983649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a9d6f4fe8650524ab3ee434d60a1f56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   SignINPanel: {fileID: 1218451757}
 --- !u!114 &1468983656
 MonoBehaviour:
@@ -2474,6 +2462,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51e3bd058060f6a429d6731f497d0bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1468983657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468983649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a9d6f4fe8650524ab3ee434d60a1f56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DBMS: {fileID: 1468983656}
+  LoadInfo: {fileID: 1747579125}
+  InputID: {fileID: 27942251}
+  InputPassword: {fileID: 2122154551}
 --- !u!1 &1480809800
 GameObject:
   m_ObjectHideFlags: 0
@@ -3021,7 +3025,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1900932072
+--- !u!1 &1747579125
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3029,42 +3033,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1900932074}
-  - component: {fileID: 1900932073}
+  - component: {fileID: 1747579126}
+  - component: {fileID: 1747579127}
   m_Layer: 0
-  m_Name: changescene
+  m_Name: Loading_Information
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1900932073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1900932072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caeab07864273490392ac306d26c4968, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1900932074
+--- !u!4 &1747579126
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1900932072}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1198, y: 0.0173, z: 90}
-  m_LocalScale: {x: 0, y: 2.0634706, z: 1}
+  m_GameObject: {fileID: 1747579125}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.055839, y: 1.3061826, z: 452.71506}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1747579127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747579125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 020e90b0701506e49aee4254406156dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Load_Stage: 0
+  Load_Gold: 0
 --- !u!1 &1926606973
 GameObject:
   m_ObjectHideFlags: 0

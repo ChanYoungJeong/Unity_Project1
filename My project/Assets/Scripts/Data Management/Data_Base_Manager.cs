@@ -95,7 +95,7 @@ public class Data_Base_Manager : MonoBehaviour
     }
 
     string Validation;
-    public string CheckID(string query)
+    public string GetString(string query)
     {
         
         IDbConnection dbConnection = new SqliteConnection(GetDBFilePath());
@@ -117,5 +117,30 @@ public class Data_Base_Manager : MonoBehaviour
         dbConnection = null;
 
         return Validation;
+    }
+
+    int Value;
+    public int GetInt(string query)
+    {
+
+        IDbConnection dbConnection = new SqliteConnection(GetDBFilePath());
+        dbConnection.Open();                                        //Open DB
+        IDbCommand dbCommand = dbConnection.CreateCommand();
+        dbCommand.CommandText = query;                              //Write Query
+        IDataReader dataReader = dbCommand.ExecuteReader();
+
+        while (dataReader.Read())                    //Read Records
+        {
+            Value = dataReader.GetInt32(0);
+        }
+
+        dataReader.Dispose();           //Close DB opposite order
+        dataReader = null;
+        dbCommand.Dispose();
+        dbCommand = null;
+        dbConnection.Close();
+        dbConnection = null;
+
+        return Value;
     }
 }
