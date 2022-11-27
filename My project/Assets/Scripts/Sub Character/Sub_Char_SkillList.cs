@@ -22,7 +22,7 @@ public class Sub_Char_SkillList : MonoBehaviour
 
 
         name = "Lightning";
-        Sub_Char_SkilList.Add(name, new Sub_Char_Skill(0, name, 10, 0, 0, 5, 1)); //Sub1 Attacker //매직캐스터 스킬
+        Sub_Char_SkilList.Add(name, new Sub_Char_Skill(0, name, 10, 0, 0, 3, 1)); //Sub1 Attacker //매직캐스터 스킬
 
         name = "Shield"; // Preist Shield Skill
         Sub_Char_SkilList.Add(name, new Sub_Char_Skill(0, name, 20, 0, 0, 10, 1));
