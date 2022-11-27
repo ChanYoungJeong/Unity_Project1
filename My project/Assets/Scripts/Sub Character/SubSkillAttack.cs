@@ -83,7 +83,7 @@ public class SubSkillAttack : MonoBehaviour
         if (Battle_Situation_Trigger.monster != null)
         {
             monsterTrans = Battle_Situation_Trigger.monster.transform;
-            Lightning = Instantiate(subSkillPrefab, monsterTrans.position, Quaternion.identity);
+            Lightning = Instantiate(subSkillPrefab, new Vector3(monsterTrans.transform.position.x, monsterTrans.transform.position.y+1.4f), Quaternion.identity);
         }
     }
 
