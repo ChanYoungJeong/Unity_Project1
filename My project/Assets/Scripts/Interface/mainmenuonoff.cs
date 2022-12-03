@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class mainmenuonoff : MonoBehaviour
 {
-    public GameObject MainOnOff;
+    public GameObject SettingPanel;
 
-    public void MainOnOffSetActive()
+    public void SettingPanelSetActive()
     {
-        MainOnOff.SetActive(!MainOnOff.active);
+        if (SettingPanel.activeSelf == false)
+        {
+            SettingPanel.SetActive(true);
+        }
+        else
+        {
+            SettingPanel.SetActive(false);
+        }
     }
-   
+
 }
