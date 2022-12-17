@@ -89,6 +89,12 @@ public class SubChar_Combat_manager : MonoBehaviour
             key = "Shield";
         }
 
+        else if (this.this_name == "Archer")
+        {
+            isFind = subCharSkillList.Sub_Char_SkilList.ContainsKey("WindArrow");
+            key = "WindArrow";
+        }
+
         if (isFind)
         {
             subSkillStat = subCharSkillList.Sub_Char_SkilList[key];

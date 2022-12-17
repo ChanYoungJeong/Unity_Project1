@@ -65,6 +65,13 @@ public class SubBasicAttack : MonoBehaviour
 
         }
 
+        else if(this.name == "arrow")
+        {
+            yield return new WaitForSeconds(SubStat.atkSpeed);
+            BasicAttack();
+            isCoolTime = true;
+        }
+
     }
 
     public void BasicAttack()
@@ -75,17 +82,23 @@ public class SubBasicAttack : MonoBehaviour
             if(this.name == "Dager")
             {
                 subAnimator.SetTrigger("AttackNormal");
+                CreatePrefab();
             }
             else if(this.name == "FireBall")
             {
                 subAnimator.SetTrigger("AttackMagic");
-
+                CreatePrefab();
             }
-            basicAttack = Instantiate(basicAttackPrefab, this.transform.position, Quaternion.identity);
-            basicAttack.GetComponent<Rigidbody2D>().AddForce(Vector3.right * speed, ForceMode2D.Impulse);
+            else if(this.name == "arrow")
+            {
+                subAnimator.SetTrigger("AttackBow");
+                Invoke("CreatePrefab", 0.7f);
+            }
+            
             //몬스터 중심 향해 날라는거 구현하기
         }
     }
+
     public void PriestHeal()
     {
         if (playerScript.nowHp < playerScript.maxHp)
@@ -99,4 +112,11 @@ public class SubBasicAttack : MonoBehaviour
             basicAttack = Instantiate(basicAttackPrefab, transform.position, Quaternion.identity);
         }
     }
+
+    public void CreatePrefab()
+    {
+        basicAttack = Instantiate(basicAttackPrefab, this.transform.position, Quaternion.identity);
+        basicAttack.GetComponent<Rigidbody2D>().AddForce(Vector3.right * speed, ForceMode2D.Impulse);
+    }
+
 }

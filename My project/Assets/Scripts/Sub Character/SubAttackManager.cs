@@ -28,6 +28,11 @@ public class SubAttackManager : MonoBehaviour
         {
             subStat = GameObject.Find("Priest");
         }
+        else if(this.name == "arrow(Clone)")
+        {
+            subStat = GameObject.Find("Archer");
+
+        }
 
         subDmg = subStat.GetComponent<SubChar_Combat_manager>().attackDmg;
 
@@ -63,6 +68,11 @@ public class SubAttackManager : MonoBehaviour
             else if(this.name == "dager(Clone)")
             {
                 monsterCombat.ApplyDamage(subDmg, Color.green);
+            }
+            else if(this.name == "arrow(Clone)")
+            {
+                monsterCombat.ApplyDamage(subDmg, Color.black);
+
             }
             Destroy(this.gameObject);
 
