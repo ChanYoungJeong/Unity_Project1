@@ -13,8 +13,8 @@ public class ButtonScript : MonoBehaviour
 
 
     // Start is called before the first frame update
-    int hp_scoreButton;
-    int atk_scoreButton;
+    public int hp_scoreButton;
+    public int atk_scoreButton;
     int up_hpgold;
     int up_hpgold1;
     int up_hpgold2;
@@ -38,8 +38,6 @@ public class ButtonScript : MonoBehaviour
 
     private void Awake()
     {
-        hp_scoreButton = 0;
-        atk_scoreButton = 0;
         //up_hp = 5;
         up_hp1 = 0;
         up_hp2 = 5;
@@ -54,9 +52,12 @@ public class ButtonScript : MonoBehaviour
         player_atk = playerScript.atkDmg;
         up_atkgold = up_atkgold1 + up_atkgold2;
         up_hpgold = up_hpgold1 + up_hpgold2;
-
        
         
+    }
+    private void Start()
+    {
+        CalculateAttack(atk_scoreButton);
     }
 
     // Update is called once per frame
@@ -99,13 +100,11 @@ public class ButtonScript : MonoBehaviour
         }
     }
     public void atk_upgradeButton()
-    {
-        
+    {       
         Debug.Log("now_gold : " + Game_System.Gold);
         Debug.Log("up_gold : " + up_atkgold);
             if (Game_System.Gold > up_atkgold)
             {
-
                 up_atk = up_atk1 + up_atk2;
                 playerScript.atkDmg += up_atk;
                 up_atk1 = up_atk2;
@@ -128,6 +127,30 @@ public class ButtonScript : MonoBehaviour
                 Debug.Log("next up_gold : " + up_atkgold);
                 //atkbutton.text = atk_scoreButton.ToString();
         }
+    }
 
+    public void CalculateAttack(int N)
+    {
+        int x, y;
+        int x1 = up_atk1;
+        int x2 = up_atk2;
+        int y1 = up_atkgold1;
+        int y2 = up_atkgold2;
+        for(int i = 0; i < N; i++)
+        {
+            x = x1 + x2;
+            x2 = x1;
+            x1 = x;
+
+            y = y1 + y2;
+            y2 = y1;
+            y1 = y;
+        }
+        up_atk1 = x1;
+        up_atk2 = x2;
+        up_atkgold1 = y1;
+        up_atkgold2 = y2;
+        playerScript.atkDmg += x1 + x2;
+        up_atkgold = y1 + y2;
     }
 }

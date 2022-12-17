@@ -46,6 +46,26 @@ public class Equipment_Gacha : MonoBehaviour
         }
     }
 
+    public void Armor_Gacha()
+    {
+        float rand = Random.Range(0, 100);
+        if (Inventory_Manager.Inventory.Count < 18)
+        {
+            Debug.Log(Inventory_Manager.Inventory.Count);
+            Get_Equipment("SELECT * FROM Armor WHERE GRADE = \"" + GetByProbability(rand) + "\" ORDER BY RANDOM() LIMIT 1");
+
+            DatabaseInsert("INSERT INTO Inventory VALUES(\'"
+                            + Inventory_Manager.Inventory[Inventory_Manager.Inventory.Count - 1].name + "\',\'"
+                            + Inventory_Manager.Inventory[Inventory_Manager.Inventory.Count - 1].type + "\',"
+                            + (Inventory_Manager.Inventory.Count - 1) + ","
+                            + "\'UNEQUIPED\')");
+        }
+        else
+        {
+            Debug.Log("Inventory is full");
+        }
+    }
+
     void DBCreate()
     {
         string filepath = string.Empty;     //File Path
