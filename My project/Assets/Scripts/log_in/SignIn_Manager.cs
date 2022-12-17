@@ -58,7 +58,7 @@ public class SignIn_Manager : MonoBehaviour
             Debug.Log("Account has created sucessfully");
             DBMS.DatabaseInsert("INSERT INTO System VALUES(\'"
             + InputID + "\'"
-            + ",1, 0)");
+            + ",1, 0, 0, 0)");
             CloseSIgnIn();
         }
         else
