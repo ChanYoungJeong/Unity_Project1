@@ -56,6 +56,21 @@ namespace UISkillBtnExam
                 isFind = SkillList.skilList.ContainsKey("Double Slash");
                 key = "Double Slash"; 
             }
+            else if(this.name == "Fire Slash Btn")
+            {
+                isFind = SkillList.skilList.ContainsKey("Fire Slash");
+                key = "Fire Slash";
+            }
+            else if (this.name == "Fountain Of Blood Btn")
+            {
+                isFind = SkillList.skilList.ContainsKey("Fountain Of Blood");
+                key = "Fountain Of Blood";
+            }
+            else if (this.name == "MegaSlash Btn")
+            {
+                isFind = SkillList.skilList.ContainsKey("Mega Slash");
+                key = "Mega Slash";
+            }
 
             if (isFind == true)
             {
