@@ -4436,8 +4436,6 @@ GameObject:
   - component: {fileID: 879035528}
   - component: {fileID: 879035527}
   - component: {fileID: 879035526}
-  - component: {fileID: 521205206}
-  - component: {fileID: 7978643094936172076}
   m_Layer: 5
   m_Name: 'Button :: Inventory'
   m_TagString: Untagged
@@ -4548,7 +4546,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1724634978633874423}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: menufalse, Assembly-CSharp
         m_MethodName: EquipmentOnoff
         m_Mode: 1
@@ -4560,32 +4558,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &521205206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 879035524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 915aecdc2f5cf3641ab21de1144a1f4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainOnOff: {fileID: 879035524}
---- !u!114 &7978643094936172076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 879035524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 915aecdc2f5cf3641ab21de1144a1f4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainOnOff: {fileID: 879035524}
 --- !u!1 &896685748
 GameObject:
   m_ObjectHideFlags: 0
@@ -4967,8 +4939,6 @@ GameObject:
   - component: {fileID: 971142900}
   - component: {fileID: 971142899}
   - component: {fileID: 971142898}
-  - component: {fileID: 2057218128}
-  - component: {fileID: 2473723221563312579}
   m_Layer: 5
   m_Name: 'Button :: Shop'
   m_TagString: Untagged
@@ -5079,7 +5049,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1724634978633874423}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: menufalse, Assembly-CSharp
         m_MethodName: ShopOnoff
         m_Mode: 1
@@ -5091,32 +5061,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2057218128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 971142896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 915aecdc2f5cf3641ab21de1144a1f4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainOnOff: {fileID: 971142896}
---- !u!114 &2473723221563312579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 971142896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 915aecdc2f5cf3641ab21de1144a1f4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainOnOff: {fileID: 971142896}
 --- !u!1 &987514845
 GameObject:
   m_ObjectHideFlags: 0
@@ -7346,7 +7290,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7858554978842594273}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Equipment_Upgrade, Assembly-CSharp
         m_MethodName: UpgradeItem
         m_Mode: 1
@@ -8117,8 +8061,6 @@ GameObject:
   - component: {fileID: 1747568343}
   - component: {fileID: 1747568342}
   - component: {fileID: 1747568341}
-  - component: {fileID: 251455435}
-  - component: {fileID: 2389329228382100138}
   m_Layer: 5
   m_Name: 'Button :: Equipment'
   m_TagString: Untagged
@@ -8229,7 +8171,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4998905204628457757}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: mainmenuonoff, Assembly-CSharp
         m_MethodName: MainOnOffSetActive
         m_Mode: 1
@@ -8253,32 +8195,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &251455435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1747568339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 915aecdc2f5cf3641ab21de1144a1f4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainOnOff: {fileID: 1747568339}
---- !u!114 &2389329228382100138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1747568339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 915aecdc2f5cf3641ab21de1144a1f4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainOnOff: {fileID: 1747568339}
 --- !u!1 &1750407756
 GameObject:
   m_ObjectHideFlags: 0
@@ -12880,8 +12796,6 @@ GameObject:
   - component: {fileID: 3698177618450378803}
   - component: {fileID: 3698177618450378813}
   - component: {fileID: 3698177618450378812}
-  - component: {fileID: 402637044}
-  - component: {fileID: 4998905204628457757}
   m_Layer: 5
   m_Name: 'Panel :: STATUP'
   m_TagString: Untagged
@@ -12949,32 +12863,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &402637044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3698177618450378802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 915aecdc2f5cf3641ab21de1144a1f4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainOnOff: {fileID: 3698177618450378802}
---- !u!114 &4998905204628457757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3698177618450378802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 915aecdc2f5cf3641ab21de1144a1f4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainOnOff: {fileID: 3698177618450378802}
 --- !u!1 &3698177618606606065
 GameObject:
   m_ObjectHideFlags: 0
@@ -13147,8 +13035,6 @@ GameObject:
   - component: {fileID: 3698177618753567118}
   - component: {fileID: 3698177618753567117}
   - component: {fileID: 3698177618753567119}
-  - component: {fileID: 1237998181}
-  - component: {fileID: 6529939521965539172}
   m_Layer: 5
   m_Name: 'Panel :: Shop'
   m_TagString: Untagged
@@ -13269,32 +13155,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1237998181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3698177618753567107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 915aecdc2f5cf3641ab21de1144a1f4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainOnOff: {fileID: 3698177618753567107}
---- !u!114 &6529939521965539172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3698177618753567107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 915aecdc2f5cf3641ab21de1144a1f4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainOnOff: {fileID: 3698177618753567107}
 --- !u!1 &3750777801968568526
 GameObject:
   m_ObjectHideFlags: 0
@@ -16035,10 +15895,6 @@ GameObject:
   - component: {fileID: 5040972952226509133}
   - component: {fileID: 5040972952226509129}
   - component: {fileID: 4742608009374679866}
-  - component: {fileID: 1653199504}
-  - component: {fileID: 1653199511}
-  - component: {fileID: 1724634978633874423}
-  - component: {fileID: 7858554978842594273}
   m_Layer: 5
   m_Name: 'Canvas :: inven'
   m_TagString: Untagged
@@ -16163,64 +16019,6 @@ MonoBehaviour:
   EM: {fileID: 988178713}
   DBManager: {fileID: 0}
   equipInfoUI: {fileID: 5563830303002464459}
---- !u!114 &1653199504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5040972952226509132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84664cc6b56a544998ec80b654102638, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryui: {fileID: 5040972952574129856}
-  equipment: {fileID: 5604049594268261906}
-  shop: {fileID: 3698177618753567107}
-  gameObject4: {fileID: 0}
---- !u!114 &1653199511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5040972952226509132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2ba387d0893c5547a6150a255a81b3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eqiupInfo: {fileID: 5563830303002464459}
---- !u!114 &1724634978633874423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5040972952226509132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84664cc6b56a544998ec80b654102638, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryui: {fileID: 5040972952574129856}
-  equipment: {fileID: 5604049594268261906}
-  shop: {fileID: 3698177618753567107}
-  gameObject4: {fileID: 0}
---- !u!114 &7858554978842594273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5040972952226509132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2ba387d0893c5547a6150a255a81b3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eqiupInfo: {fileID: 5563830303002464459}
 --- !u!1 &5040972952407442317
 GameObject:
   m_ObjectHideFlags: 0
@@ -16571,8 +16369,6 @@ GameObject:
   - component: {fileID: 5040972952574129868}
   - component: {fileID: 5040972952574129871}
   - component: {fileID: 5040972952574129870}
-  - component: {fileID: 1603028413}
-  - component: {fileID: 565351949733935957}
   m_Layer: 5
   m_Name: InventoryUI
   m_TagString: Untagged
@@ -16655,32 +16451,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 10, y: 10}
   m_UseGraphicAlpha: 1
---- !u!114 &1603028413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5040972952574129856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 915aecdc2f5cf3641ab21de1144a1f4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainOnOff: {fileID: 5040972952574129856}
---- !u!114 &565351949733935957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5040972952574129856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 915aecdc2f5cf3641ab21de1144a1f4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainOnOff: {fileID: 5040972952574129856}
 --- !u!1 &5040972952595996863
 GameObject:
   m_ObjectHideFlags: 0
@@ -19277,6 +19047,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player_Object: {fileID: 0}
+  hp_scoreButton: 0
+  atk_scoreButton: 0
 --- !u!1 &5178699432597252657
 GameObject:
   m_ObjectHideFlags: 0
@@ -19535,7 +19307,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2389329228382100138}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: mainmenuonoff, Assembly-CSharp
         m_MethodName: MainOnOffSetActive
         m_Mode: 1
@@ -19547,7 +19319,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 7978643094936172076}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: mainmenuonoff, Assembly-CSharp
         m_MethodName: MainOnOffSetActive
         m_Mode: 1
@@ -19559,7 +19331,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 2473723221563312579}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: mainmenuonoff, Assembly-CSharp
         m_MethodName: MainOnOffSetActive
         m_Mode: 1
@@ -19867,8 +19639,6 @@ GameObject:
   - component: {fileID: 4862021104920729644}
   - component: {fileID: 5303423799421091230}
   - component: {fileID: 5563830303002464459}
-  - component: {fileID: 853737532}
-  - component: {fileID: 5511409292299905697}
   m_Layer: 0
   m_Name: Equipment Information UI
   m_TagString: Untagged
@@ -19961,32 +19731,6 @@ MonoBehaviour:
   stat1Val: {fileID: 2320656619475850096}
   stat2Val: {fileID: 2320656619208016352}
   upgradeRate: {fileID: 723080432}
---- !u!114 &853737532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5604049594268261906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 915aecdc2f5cf3641ab21de1144a1f4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainOnOff: {fileID: 5604049594268261906}
---- !u!114 &5511409292299905697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5604049594268261906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 915aecdc2f5cf3641ab21de1144a1f4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainOnOff: {fileID: 5604049594268261906}
 --- !u!1 &5981868911056111240
 GameObject:
   m_ObjectHideFlags: 0
@@ -20109,7 +19853,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1237998181}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: mainmenuonoff, Assembly-CSharp
         m_MethodName: MainOnOffSetActive
         m_Mode: 1
@@ -20121,7 +19865,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 251455435}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: mainmenuonoff, Assembly-CSharp
         m_MethodName: MainOnOffSetActive
         m_Mode: 1
@@ -20133,7 +19877,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 521205206}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: mainmenuonoff, Assembly-CSharp
         m_MethodName: MainOnOffSetActive
         m_Mode: 1
@@ -20145,7 +19889,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 2057218128}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: mainmenuonoff, Assembly-CSharp
         m_MethodName: MainOnOffSetActive
         m_Mode: 1
@@ -22605,7 +22349,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1653199511}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Equipment_Upgrade, Assembly-CSharp
         m_MethodName: UpgradeItem
         m_Mode: 1
