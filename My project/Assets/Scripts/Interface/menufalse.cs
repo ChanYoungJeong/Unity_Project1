@@ -8,9 +8,16 @@ public class menufalse : MonoBehaviour
     public GameObject inventoryui;
     public GameObject equipment;
     public GameObject shop;
-    public GameObject gameObject4;
+    public GameObject heroui;
+    public GameObject gameobject5;
 
-    
+    public GameObject shopbt;
+    public GameObject eqibt;
+    public GameObject herobt;
+
+    public GameObject mainmenubt;
+
+
     public void ShopOnoff()
     {
         if (shop.activeSelf == true)
@@ -18,6 +25,9 @@ public class menufalse : MonoBehaviour
             shop.SetActive(false);
             inventoryui.SetActive(false);
             equipment.SetActive(false);
+            heroui.SetActive(false);
+
+            shopbt.SetActive(false);
         }
         
         else if(shop.activeSelf == false)
@@ -25,24 +35,53 @@ public class menufalse : MonoBehaviour
             shop.SetActive(true);
             inventoryui.SetActive(false);
             equipment.SetActive(false);
-            
+            heroui.SetActive(false);
         }
         
     }
     public void EquipmentOnoff()
     {
-        if (inventoryui.activeSelf == true && equipment.activeSelf == true)
+        if (inventoryui.activeSelf == true)
         {
             inventoryui.SetActive(false);
             equipment.SetActive(false);
             shop.SetActive(false);
+            heroui.SetActive(false);
+
+            eqibt.SetActive(false);
         }
-        else if (equipment.activeSelf == false && inventoryui.activeSelf == false)
+        else if (inventoryui.activeSelf == false)
         {
             inventoryui.SetActive(true);
             equipment.SetActive(true);
             shop.SetActive(false);
+            heroui.SetActive(false);
         }
     }
+    public void Herouionoff()
+    {
+        if (heroui.activeSelf == false)
+        {
+            inventoryui.SetActive(false);
+            equipment.SetActive(false);
+            shop.SetActive(false);
+            heroui.SetActive(true);
+            gameobject5.SetActive(true);
+        }
+        else if (heroui.activeSelf == true)
+        {
+            inventoryui.SetActive(false);
+            equipment.SetActive(false);
+            shop.SetActive(false);
 
+            heroui.SetActive(false);
+            gameobject5.SetActive(false);
+            herobt.SetActive(false);
+
+        }
+    }
+    public void MainOnOffSetActive()
+    {
+        mainmenubt.SetActive(!mainmenubt.active);
+    }
 }
