@@ -31,7 +31,10 @@ public class SubAttackManager : MonoBehaviour
         else if(this.name == "arrow(Clone)")
         {
             subStat = GameObject.Find("Archer");
-
+        }
+        else if (this.name == "bottle(Clone)")
+        {
+            subStat = GameObject.Find("Alchemist");
         }
 
         subDmg = subStat.GetComponent<SubChar_Combat_manager>().attackDmg;
@@ -72,7 +75,10 @@ public class SubAttackManager : MonoBehaviour
             else if(this.name == "arrow(Clone)")
             {
                 monsterCombat.ApplyDamage(subDmg, Color.black);
-
+            }
+            else if (this.name == "bottle(Clone)")
+            {
+                monsterCombat.ApplyDamage(subDmg, Color.red);
             }
             Destroy(this.gameObject);
 
