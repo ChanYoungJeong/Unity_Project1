@@ -86,64 +86,25 @@ public class menufalse : MonoBehaviour
     }
     public void MainOnOffSetActive()
     {
+        //mainmenubt.SetActive(!mainmenubt.active);
         mainmenubt.SetActive(true);
+
 
         if (herobt.activeSelf == false)
         {
-            
             herobt.SetActive(true);
-            inventoryui.SetActive(false);
-            equipment.SetActive(false);
-            shop.SetActive(false);
-            heroui.SetActive(false);
-            gameobject5.SetActive(false);
-        }
-        else
-        {
-            herobt.SetActive(false);
-            inventoryui.SetActive(false);
-            equipment.SetActive(false);
-            shop.SetActive(false);
-            heroui.SetActive(false);
-            gameobject5.SetActive(false);
         }
 
         if (shopbt.activeSelf == false)
         {
+            Debug.LogError("asdksdafjhaskdf");
             shopbt.SetActive(true);
-            inventoryui.SetActive(false);
-            equipment.SetActive(false);
-            shop.SetActive(false);
-            heroui.SetActive(false);
-            gameobject5.SetActive(false);
-        }
-        else
-        {
-            shopbt.SetActive(false);
-            inventoryui.SetActive(false);
-            equipment.SetActive(false);
-            shop.SetActive(false);
-            heroui.SetActive(false);
-            gameobject5.SetActive(false);
         }
 
         if (eqibt.activeSelf == false)
         {
             eqibt.SetActive(true);
-            inventoryui.SetActive(false);
-            equipment.SetActive(false);
-            shop.SetActive(false);
-            heroui.SetActive(false);
-            gameobject5.SetActive(false);
         }
-        else
-        {
-            eqibt.SetActive(false);
-            inventoryui.SetActive(false);
-            equipment.SetActive(false);
-            shop.SetActive(false);
-            heroui.SetActive(false);
-            gameobject5.SetActive(false);
-        }
+
     }
 }
