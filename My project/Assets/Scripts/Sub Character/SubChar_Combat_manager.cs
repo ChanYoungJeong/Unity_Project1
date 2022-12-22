@@ -95,6 +95,12 @@ public class SubChar_Combat_manager : MonoBehaviour
             key = "WindArrow";
         }
 
+        else if (this.this_name == "Alchemist")
+        {
+            isFind = subCharSkillList.Sub_Char_SkilList.ContainsKey("AcidCloud");
+            key = "AcidCloud";
+        }
+
         if (isFind)
         {
             subSkillStat = subCharSkillList.Sub_Char_SkilList[key];

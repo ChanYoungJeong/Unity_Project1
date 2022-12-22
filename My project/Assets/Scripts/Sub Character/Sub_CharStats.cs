@@ -29,6 +29,9 @@ public class Sub_CharStats : MonoBehaviour
         name = "Archer";
         SubChar.Add(name, new CharStats(name, 100, 200, 15, 3, 1));
 
+        name = "Alchemist";
+        SubChar.Add(name, new CharStats(name, 100, 150, 30, 4, 1));
+
     }
 
 

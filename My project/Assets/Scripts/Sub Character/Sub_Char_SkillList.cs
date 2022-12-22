@@ -31,6 +31,10 @@ public class Sub_Char_SkillList : MonoBehaviour
         name = "WindArrow";
         Sub_Char_SkilList.Add(name, new Sub_Char_Skill(3, name, 20, 0, 0, 10, 1));
         //화살 미구현
+
+        name = "AcidCloud"; //방어력 깎기 or "ToxicCloud" 지속 독 데미지
+        Sub_Char_SkilList.Add(name, new Sub_Char_Skill(4, name, 10, 0, 0, 10, 1));
+        //방깎 미구현
     }
 
 }
