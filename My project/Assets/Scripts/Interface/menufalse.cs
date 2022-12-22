@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,7 @@ public class menufalse : MonoBehaviour
     public GameObject equipment;
     public GameObject shop;
     public GameObject heroui;
-    public GameObject gameobject5;
+    public GameObject mainch;
 
     public GameObject shopbt;
     public GameObject eqibt;
@@ -17,6 +18,7 @@ public class menufalse : MonoBehaviour
 
     public GameObject mainmenubt;
     
+
 
     public void ShopOnoff()
     {
@@ -26,7 +28,7 @@ public class menufalse : MonoBehaviour
             inventoryui.SetActive(false);
             equipment.SetActive(false);
             heroui.SetActive(false);
-            gameobject5.SetActive(false);
+            mainch.SetActive(false);
             shopbt.SetActive(false);
         }
         
@@ -36,7 +38,7 @@ public class menufalse : MonoBehaviour
             inventoryui.SetActive(false);
             equipment.SetActive(false);
             heroui.SetActive(false);
-            gameobject5.SetActive(false);
+            mainch.SetActive(false);
         }
         
     }
@@ -48,7 +50,7 @@ public class menufalse : MonoBehaviour
             equipment.SetActive(false);
             shop.SetActive(false);
             heroui.SetActive(false);
-            gameobject5.SetActive(false);
+            mainch.SetActive(false);
 
             eqibt.SetActive(false);
         }
@@ -58,7 +60,7 @@ public class menufalse : MonoBehaviour
             equipment.SetActive(true);
             shop.SetActive(false);
             heroui.SetActive(false);
-            gameobject5.SetActive(false);
+            mainch.SetActive(false);
         }
     }
     public void Herouionoff()
@@ -70,7 +72,7 @@ public class menufalse : MonoBehaviour
             shop.SetActive(false);
 
             heroui.SetActive(true);
-            gameobject5.SetActive(true);
+            mainch.SetActive(true);
         }
         else if (heroui.activeSelf == true)
         {
@@ -79,13 +81,34 @@ public class menufalse : MonoBehaviour
             shop.SetActive(false);
 
             heroui.SetActive(false);
-            gameobject5.SetActive(false);
+            mainch.SetActive(false);
             herobt.SetActive(false);
 
         }
     }
     public void MainOnOffSetActive()
     {
-        mainmenubt.SetActive(!mainmenubt.active);
+        //mainmenubt.SetActive(!mainmenubt.active);
+        if(mainmenubt.activeSelf == false)
+        {
+
+            Debug.LogError("±èº´¿ì");
+            mainmenubt.SetActive(true);
+            if (herobt.activeSelf == false)
+            {
+               
+                heroui.SetActive(true);
+            }
+            if (shopbt.activeSelf == false)
+            {
+                shop.SetActive(true);
+            }
+            if (inventoryui.activeSelf == false)
+            {
+                eqibt.SetActive(true);
+            }
+        }
+        
+        
     }
 }

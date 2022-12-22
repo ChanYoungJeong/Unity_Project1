@@ -1265,7 +1265,7 @@ MonoBehaviour:
   equipment: {fileID: 522579954}
   shop: {fileID: 299325900}
   heroui: {fileID: 1357459264}
-  gameobject5: {fileID: 1001045882}
+  mainch: {fileID: 1001045882}
   shopbt: {fileID: 676334248}
   eqibt: {fileID: 261117240}
   herobt: {fileID: 319063230}
@@ -1323,7 +1323,7 @@ MonoBehaviour:
   equipment: {fileID: 522579954}
   shop: {fileID: 299325900}
   heroui: {fileID: 1357459264}
-  gameobject5: {fileID: 1001045882}
+  mainch: {fileID: 1001045882}
   shopbt: {fileID: 1782740763}
   eqibt: {fileID: 261117240}
   herobt: {fileID: 319063230}
@@ -2296,11 +2296,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1681368579, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -765
+      value: -760
       objectReference: {fileID: 0}
     - target: {fileID: 1681368579, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -347.33
+      value: -334.39
       objectReference: {fileID: 0}
     - target: {fileID: 1681368581, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
       propertyPath: Player_Object
@@ -3192,15 +3192,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5178699433510274685, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5178699433510274685, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1195410696}
+    - target: {fileID: 5178699433510274685, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1922880126}
     - target: {fileID: 5178699433510274685, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MainOnOffSetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178699433510274685, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178699433510274685, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178699433510274685, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: menufalse, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178699433510274685, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: mainmenuonoff, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178699433510274685, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: menufalse, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178699433510274685, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178699433510274685, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5604049594268261906, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
       propertyPath: m_IsActive
@@ -3251,7 +3283,7 @@ MonoBehaviour:
   equipment: {fileID: 522579954}
   shop: {fileID: 299325900}
   heroui: {fileID: 1357459264}
-  gameobject5: {fileID: 1001045882}
+  mainch: {fileID: 1357459264}
   shopbt: {fileID: 676334248}
   eqibt: {fileID: 261117240}
   herobt: {fileID: 319063230}
