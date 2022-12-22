@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SubSkillAttack : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class SubSkillAttack : MonoBehaviour
 
     public Animator subAnimator;
 
+
+    Slider cooldownBar;
+
     private void Start()
     {
         SubCharSkillList = transform.parent.GetComponentInParent<Sub_Char_SkillList>();
@@ -26,14 +30,22 @@ public class SubSkillAttack : MonoBehaviour
 
     private void Update()
     {
+
         if (Battle_Situation_Trigger.monster != null)
         {
+
             if (isCoolTime)
             {
                 StartCoroutine(SkillAttack());
                 StopCoroutine(SkillAttack());
             }
         }
+        if(this.name == "Kunai")
+        {
+            cooldownBar.value += Time.deltaTime * 1 / SubCharSkill.cooldown;
+        }
+
+
     }
 
     public void SetSubSkill()
@@ -47,6 +59,11 @@ public class SubSkillAttack : MonoBehaviour
         {
             Debug.Log("스킬을 찾지 못했습니다");
         }
+
+        if(this.name == "Kunai")
+        {
+            cooldownBar = GameObject.Find("KunaiSlider").GetComponent<Slider>();
+        }
     }
 
     IEnumerator SkillAttack()
@@ -56,6 +73,10 @@ public class SubSkillAttack : MonoBehaviour
         {
             yield return new WaitForSeconds(SubCharSkill.cooldown);
             RogueKunai();
+            if (cooldownBar.value >= 1)
+            {
+                cooldownBar.value = 0;
+            }
 
         }
 
@@ -83,7 +104,7 @@ public class SubSkillAttack : MonoBehaviour
         if (Battle_Situation_Trigger.monster != null)
         {
             monsterTrans = Battle_Situation_Trigger.monster.transform;
-            Lightning = Instantiate(subSkillPrefab, new Vector3(monsterTrans.transform.position.x, monsterTrans.transform.position.y+1.4f), Quaternion.identity);
+            Lightning = Instantiate(subSkillPrefab, new Vector3(monsterTrans.transform.position.x, monsterTrans.transform.position.y + 1.4f), Quaternion.identity);
         }
     }
 
