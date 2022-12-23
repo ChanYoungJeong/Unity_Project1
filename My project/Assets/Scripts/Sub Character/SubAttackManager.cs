@@ -36,6 +36,10 @@ public class SubAttackManager : MonoBehaviour
         {
             subStat = GameObject.Find("Alchemist");
         }
+        else if (this.name == "IceFang(Clone)")
+        {
+            subStat = GameObject.Find("IceMagican");
+        }
 
         subDmg = subStat.GetComponent<SubChar_Combat_manager>().attackDmg;
 
@@ -79,6 +83,10 @@ public class SubAttackManager : MonoBehaviour
             else if (this.name == "bottle(Clone)")
             {
                 monsterCombat.ApplyDamage(subDmg, Color.red);
+            }
+            else if (this.name == "IceFang(Clone)")
+            {
+                monsterCombat.ApplyDamage(subDmg, Color.blue);
             }
             Destroy(this.gameObject);
 

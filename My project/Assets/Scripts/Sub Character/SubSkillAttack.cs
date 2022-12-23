@@ -30,7 +30,6 @@ public class SubSkillAttack : MonoBehaviour
 
     private void Update()
     {
-
         if (Battle_Situation_Trigger.monster != null)
         {
 
@@ -42,10 +41,8 @@ public class SubSkillAttack : MonoBehaviour
         }
         if(this.name == "Kunai")
         {
-            cooldownBar.value += Time.deltaTime * 1 / SubCharSkill.cooldown;
+            //cooldownBar.value += Time.deltaTime * 1 / SubCharSkill.cooldown;
         }
-
-
     }
 
     public void SetSubSkill()
@@ -62,7 +59,7 @@ public class SubSkillAttack : MonoBehaviour
 
         if(this.name == "Kunai")
         {
-            cooldownBar = GameObject.Find("KunaiSlider").GetComponent<Slider>();
+            //cooldownBar = GameObject.Find("KunaiSlider").GetComponent<Slider>();
         }
     }
 
@@ -77,7 +74,6 @@ public class SubSkillAttack : MonoBehaviour
             {
                 cooldownBar.value = 0;
             }
-
         }
 
         else if (this.name == "Lightning")
@@ -107,6 +103,5 @@ public class SubSkillAttack : MonoBehaviour
             Lightning = Instantiate(subSkillPrefab, new Vector3(monsterTrans.transform.position.x, monsterTrans.transform.position.y + 1.4f), Quaternion.identity);
         }
     }
-
 
 }
