@@ -16,6 +16,7 @@ public class menufalse : MonoBehaviour
     public GameObject herobt;
 
     public GameObject mainmenubt;
+    public GameObject Btalloff;
 
 
     public void ShopOnoff()
@@ -27,7 +28,7 @@ public class menufalse : MonoBehaviour
             equipment.SetActive(false);
             heroui.SetActive(false);
             gameobject5.SetActive(false);
-            shopbt.SetActive(false);
+            //shopbt.SetActive(false);
         }
 
         else if (shop.activeSelf == false)
@@ -50,7 +51,7 @@ public class menufalse : MonoBehaviour
             heroui.SetActive(false);
             gameobject5.SetActive(false);
 
-            eqibt.SetActive(false);
+           // eqibt.SetActive(false);
         }
         else if (inventoryui.activeSelf == false)
         {
@@ -80,15 +81,34 @@ public class menufalse : MonoBehaviour
 
             heroui.SetActive(false);
             gameobject5.SetActive(false);
-            herobt.SetActive(false);
+           // herobt.SetActive(false);
 
         }
     }
     public void MainOnOffSetActive()
     {
+        if (eqibt.activeSelf == true)
+        {
+            eqibt.SetActive(false);
+            shopbt.SetActive(false);
+            herobt.SetActive(false);
+            Btalloff.SetActive(false);
+            inventoryui.SetActive(false);
+            equipment.SetActive(false);
+            shop.SetActive(false);
+            heroui.SetActive(false);
+            gameobject5.SetActive(false);
+        }
+        else
+        {
+            eqibt.SetActive(true);
+            shopbt.SetActive(true);
+            herobt.SetActive(true);
+            Btalloff.SetActive(true);
+        }
         //mainmenubt.SetActive(!mainmenubt.active);
-        mainmenubt.SetActive(true);
-
+        /*mainmenubt.SetActive(true);
+        
 
         if (herobt.activeSelf == false)
         {
@@ -112,7 +132,7 @@ public class menufalse : MonoBehaviour
 
         if (shopbt.activeSelf == false)
         {
-            
+
             shopbt.SetActive(true);
             inventoryui.SetActive(false);
             equipment.SetActive(false);
@@ -147,7 +167,19 @@ public class menufalse : MonoBehaviour
             shop.SetActive(false);
             heroui.SetActive(false);
             gameobject5.SetActive(false);
-        }
+        }*/
 
+    }
+    public void ButtonAllOff()
+    {
+        Btalloff.SetActive(false);
+        herobt.SetActive(false);
+        eqibt.SetActive(false);
+        shopbt.SetActive(false);
+        inventoryui.SetActive(false);
+        equipment.SetActive(false);
+        shop.SetActive(false);
+        heroui.SetActive(false);
+        gameobject5.SetActive(false);
     }
 }
