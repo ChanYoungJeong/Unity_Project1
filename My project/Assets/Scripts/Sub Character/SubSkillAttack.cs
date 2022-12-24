@@ -19,7 +19,7 @@ public class SubSkillAttack : MonoBehaviour
     public Animator subAnimator;
 
 
-    Slider cooldownBar;
+    //Slider cooldownBar;
 
     private void Start()
     {
@@ -70,10 +70,10 @@ public class SubSkillAttack : MonoBehaviour
         {
             yield return new WaitForSeconds(SubCharSkill.cooldown);
             RogueKunai();
-            if (cooldownBar.value >= 1)
+            /*if (cooldownBar.value >= 1)
             {
                 cooldownBar.value = 0;
-            }
+            }*/
         }
 
         else if (this.name == "Lightning")
