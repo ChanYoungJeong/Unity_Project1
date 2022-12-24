@@ -40,14 +40,14 @@ public class SubSkillManager : MonoBehaviour
 
             if(this.name == "Kunai(Clone)")
             {
-                monsterCombat.ApplyDamage(kunaiDmg, Color.yellow);
+                monsterCombat.ApplyDamage(kunaiDmg, Color.yellow, 0, 0);
                 Destroy(SubSkillAttack.kunai);
             }
 
             if (this.name == "Ligntning(Clone)")
             {
                 SubSkillAttack.Lightning.transform.position = new Vector3(monster.transform.position.x, monster.transform.position.y+1.4f);
-                monsterCombat.ApplyDamage(LightningDmg, Color.blue);
+                monsterCombat.ApplyDamage(LightningDmg, Color.blue, 0, 0);
                 Destroy(SubSkillAttack.Lightning, 0.4f);
             }
 

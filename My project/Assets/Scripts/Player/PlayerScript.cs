@@ -7,6 +7,8 @@ public class PlayerScript : MonoBehaviour
 {
     public GameObject playerIdleMotion;
     public GameObject playerAttackMotion;
+    public Transform TextPrinter;
+    public GameObject PlayerText;
     Monster_Script monster;
     Monster_Combat monsterCombat;
 
@@ -19,14 +21,14 @@ public class PlayerScript : MonoBehaviour
     public int lv;
     public int playerMaxExp;
     public int playerNowExp;
-    public int criticalRate;
-    public int criticalDamage;
+    public float criticalRate;
+    public float criticalDamage;
 
     public Animator playerAnimator;
 
     private void Start()
     {
-        
+        SetStat();
     }
     public void PlayerIdleMotion()
     {
@@ -64,7 +66,7 @@ public class PlayerScript : MonoBehaviour
             monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
             monsterCombat = Battle_Situation_Trigger.monster.GetComponent<Monster_Combat>();
             playerAnimator.SetTrigger("AttackNormal");
-            monsterCombat.ApplyDamage(atkDmg * criticalRate, Color.red);
+            monsterCombat.ApplyDamage(atkDmg, Color.red, criticalRate, criticalDamage);
 
             if (monster.nowHp <= 0)
             {
@@ -77,9 +79,7 @@ public class PlayerScript : MonoBehaviour
         }
 
     }
-
-    
-
+  
     public void GetExp()
     {
         playerNowExp += monster.Exp;
@@ -96,7 +96,8 @@ public class PlayerScript : MonoBehaviour
     public void LvUp()
     {
         lv++;
-        Debug.Log("Player LV : " + lv);
+        DisplayText(lv + " Level UP", Color.yellow);
+        SetStat();
     }
 
     public void SetExp()
@@ -104,4 +105,24 @@ public class PlayerScript : MonoBehaviour
         playerMaxExp = playerMaxExp + lv * lv * 5;
     }
 
+    void SetStat()
+    {
+        float LvUp_Atk = 1f;
+        float LvUp_Hp = 2f;
+        float LvUp_CriticalRate = 0.1f;
+
+        atkDmg += (LvUp_Atk * lv);
+        maxHp += (LvUp_Hp * lv);
+        nowHp += (LvUp_Hp * lv);
+        criticalRate += (LvUp_CriticalRate * lv);
+
+    }
+
+    void DisplayText(string text, Color color)
+    {
+        GameObject hudText = Instantiate(PlayerText);
+        hudText.transform.position = TextPrinter.position;
+        hudText.GetComponent<PlayerText>()._Text = text;
+        hudText.GetComponent<PlayerText>().textColor = color;
+    }
 }
