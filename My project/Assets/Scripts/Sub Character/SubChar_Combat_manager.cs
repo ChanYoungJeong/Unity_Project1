@@ -105,12 +105,11 @@ public class SubChar_Combat_manager : MonoBehaviour
         {
             subSkillStat = subCharSkillList.Sub_Char_SkilList[key];
 
-            skillDamage = subSkillStat.damage;
             skilldefense = subSkillStat.defense;
             skillhealing = subSkillStat.healing;
             skillcooldown = subSkillStat.cooldown;
             skillLv = subSkillStat.SubSkillLevel;
-
+            skillDamage = subSkillStat.damage * skillLv;
         }
     }
 

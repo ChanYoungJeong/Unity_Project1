@@ -36,7 +36,7 @@ public class SubSkillManager : MonoBehaviour
             monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
             monsterCombat = Battle_Situation_Trigger.monster.GetComponent<Monster_Combat>();
 
-            monster.nowHp -= kunaiDmg;
+            monster.nowHp -= kunaiDmg ;
 
             if(this.name == "Kunai(Clone)")
             {
