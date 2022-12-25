@@ -18,6 +18,8 @@ public class SubSkillAttack : MonoBehaviour
 
     public Animator subAnimator;
 
+    public List<GameObject> create;
+
 
     //Slider cooldownBar;
 
@@ -82,7 +84,11 @@ public class SubSkillAttack : MonoBehaviour
             MagicCasterLightning();
         }
         //else if(this.name == "신관 스킬"){}
-
+        else if (this.name == "BlizzardStorm")
+        {
+            yield return new WaitForSeconds(SubCharSkill.cooldown);
+            IceMagicanBlizzardStorm();
+        }
         isCoolTime = true;
     }
 
@@ -103,5 +109,15 @@ public class SubSkillAttack : MonoBehaviour
             Lightning = Instantiate(subSkillPrefab, new Vector3(monsterTrans.transform.position.x, monsterTrans.transform.position.y + 1.4f), Quaternion.identity);
         }
     }
+
+    public void IceMagicanBlizzardStorm()
+    {
+        if (Battle_Situation_Trigger.monster != null)
+        {
+            //for(int i = 0; i < 5;)
+        }
+    }
+
+
 
 }
