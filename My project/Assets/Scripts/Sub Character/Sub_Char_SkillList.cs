@@ -36,7 +36,7 @@ public class Sub_Char_SkillList : MonoBehaviour
         //방깎 미구현
 
         name = "BlizzardStorm"; // 범위형 공격 or 전체공격
-        Sub_Char_SkilList.Add(name, new Sub_Char_Skill(4, name, 8, 0, 0, 10, 1));
+        Sub_Char_SkilList.Add(name, new Sub_Char_Skill(4, name, 8, 0, 0, 12, 1));
         
     }
 
