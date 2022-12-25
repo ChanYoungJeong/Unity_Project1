@@ -40,7 +40,7 @@ public class SubCharSetting : MonoBehaviour
     {
         if(RoguePanel.activeSelf == false)
         {
-            SettingPanel.SetActive(false);
+            //SettingPanel.SetActive(false);
             RoguePanel.SetActive(true);
         }
         else
@@ -79,7 +79,7 @@ public class SubCharSetting : MonoBehaviour
     {
         if (MagicCasterPanel.activeSelf == false)
         {
-            SettingPanel.SetActive(false);
+            //SettingPanel.SetActive(false);
             MagicCasterPanel.SetActive(true);
         }
         else
@@ -114,7 +114,7 @@ public class SubCharSetting : MonoBehaviour
     {
         if (PriestPanel.activeSelf == false)
         {
-            SettingPanel.SetActive(false);
+            //SettingPanel.SetActive(false);
             PriestPanel.SetActive(true);
         }
         else
