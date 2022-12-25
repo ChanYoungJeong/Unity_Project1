@@ -14,11 +14,21 @@ public class menufalse : MonoBehaviour
     public GameObject shopbt;
     public GameObject eqibt;
     public GameObject herobt;
-
     public GameObject mainmenubt;
     public GameObject Btnalloff;
 
-    
+    /*public void Start()
+    {
+        eqibt.SetActive(false);
+        shopbt.SetActive(false);
+        herobt.SetActive(false);
+        Btnalloff.SetActive(false);
+        inventoryui.SetActive(false);
+        equipment.SetActive(false);
+        shop.SetActive(false);
+        heroui.SetActive(false);
+        gameobject5.SetActive(false);
+    }*/
     public void ShopOnoff()
     {
         if (shop.activeSelf == true)
@@ -87,9 +97,6 @@ public class menufalse : MonoBehaviour
     }
     public void MainOnOffSetActive()
     {
-        equipment.SetActive(true);
-        inventoryui.SetActive(true);
-
         if (eqibt.activeSelf == true)
         {
             eqibt.SetActive(false);
@@ -108,6 +115,9 @@ public class menufalse : MonoBehaviour
             shopbt.SetActive(true);
             herobt.SetActive(true);
             Btnalloff.SetActive(true);
+
+            equipment.SetActive(true);
+            inventoryui.SetActive(true);
         }
         
     }
@@ -126,6 +136,10 @@ public class menufalse : MonoBehaviour
 
     public void ClickStaticon()
     {
+        inventoryui.SetActive(false);
+        equipment.SetActive(false);
+        shop.SetActive(false);
+
         if (heroui.activeSelf==false) {
             shopbt.SetActive(true);
             herobt.SetActive(true);
@@ -151,6 +165,10 @@ public class menufalse : MonoBehaviour
 
     public void ClickShopIcon()
     {
+        inventoryui.SetActive(false);
+        equipment.SetActive(false);
+        heroui.SetActive(false);
+        gameobject5.SetActive(false);
         if (shop.activeSelf == false)
         {
             shopbt.SetActive(true);
