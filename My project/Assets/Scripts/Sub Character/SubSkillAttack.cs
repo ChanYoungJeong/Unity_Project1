@@ -15,6 +15,7 @@ public class SubSkillAttack : MonoBehaviour
     public GameObject subSkillPrefab;
     public static GameObject kunai;
     public static GameObject Lightning;
+    public static GameObject blizzardStorm;
 
     public Animator subAnimator;
 
@@ -41,7 +42,7 @@ public class SubSkillAttack : MonoBehaviour
                 StopCoroutine(SkillAttack());
             }
         }
-        if(this.name == "Kunai")
+        if (this.name == "Kunai")
         {
             //cooldownBar.value += Time.deltaTime * 1 / SubCharSkill.cooldown;
         }
@@ -59,7 +60,7 @@ public class SubSkillAttack : MonoBehaviour
             Debug.Log("스킬을 찾지 못했습니다");
         }
 
-        if(this.name == "Kunai")
+        if (this.name == "Kunai")
         {
             //cooldownBar = GameObject.Find("KunaiSlider").GetComponent<Slider>();
         }
@@ -105,6 +106,7 @@ public class SubSkillAttack : MonoBehaviour
     {
         if (Battle_Situation_Trigger.monster != null)
         {
+            subAnimator.SetTrigger("SkillMagic");
             monsterTrans = Battle_Situation_Trigger.monster.transform;
             Lightning = Instantiate(subSkillPrefab, new Vector3(monsterTrans.transform.position.x, monsterTrans.transform.position.y + 1.4f), Quaternion.identity);
         }
@@ -114,7 +116,14 @@ public class SubSkillAttack : MonoBehaviour
     {
         if (Battle_Situation_Trigger.monster != null)
         {
-            //for(int i = 0; i < 5;)
+            subAnimator.SetTrigger("SkillMagic");
+
+            for (int i = 0; i < create.Count; i++)
+            {
+                blizzardStorm = Instantiate(subSkillPrefab, create[i].transform.position, create[i].transform.rotation);
+                blizzardStorm.GetComponent<Rigidbody2D>().AddForce(Vector3.down * 5, ForceMode2D.Impulse);
+            }
+
         }
     }
 
