@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class SubCharSetting : MonoBehaviour
 {
+    public PlayerScript Player_Object;
+    public int player_LEVEL;
+    int Roguecount=0;
+
     public GameObject SettingPanel;
     public GameObject RoguePanel;
     public GameObject MagicCasterPanel;
@@ -24,29 +30,34 @@ public class SubCharSetting : MonoBehaviour
 
     public void SettingPanelSetActive()
     {
-        if(SettingPanel.activeSelf == false)
-        {
-            SettingPanel.SetActive(true);
-        }
-        else
-        {
-            SettingPanel.SetActive(false);
-        }
+            if (SettingPanel.activeSelf == false)
+            {
+                SettingPanel.SetActive(true);
+            }
+            else
+            {
+                SettingPanel.SetActive(false);
+            }
     }
 
     //Rogue
 
     public void RogueStatWindowPanel()
     {
-        if(RoguePanel.activeSelf == false)
+        
+        player_LEVEL = Player_Object.lv;
+
+        if (player_LEVEL == 2 && Game_System.Gold >= 100)
         {
-            //SettingPanel.SetActive(false);
-            RoguePanel.SetActive(true);
+            if (Roguecount == 0)
+            {
+                Game_System.Gold -= 100;
+                Debug.Log("sibal" +Game_System.Gold);
+                RoguePanel.SetActive(true);
+                Roguecount++;
+            }
         }
-        else
-        {
-            RoguePanel.SetActive(false);
-        }
+        
     }
 
     public void RogueSetActive()
