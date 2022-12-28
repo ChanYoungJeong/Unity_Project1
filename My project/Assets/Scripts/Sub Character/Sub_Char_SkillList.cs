@@ -27,8 +27,8 @@ public class Sub_Char_SkillList : MonoBehaviour
         Sub_Char_SkilList.Add(name, new Sub_Char_Skill(2, name, 20, 0, 0, 10, 1));
         //쉴드 미구현
 
-        name = "WindArrow";
-        Sub_Char_SkilList.Add(name, new Sub_Char_Skill(3, name, 20, 0, 0, 10, 1));
+        name = "MegaArrow";
+        Sub_Char_SkilList.Add(name, new Sub_Char_Skill(3, name, 20, 0, 0, 3, 1));
         //화살 미구현
 
         name = "AcidCloud"; //방어력 깎기 or "ToxicCloud" 지속 독 데미지
@@ -36,7 +36,7 @@ public class Sub_Char_SkillList : MonoBehaviour
         //방깎 미구현
 
         name = "BlizzardStorm"; // 범위형 공격 or 전체공격
-        Sub_Char_SkilList.Add(name, new Sub_Char_Skill(4, name, 8, 0, 0, 12, 1));
+        Sub_Char_SkilList.Add(name, new Sub_Char_Skill(4, name, 8, 0, 0, 10, 1));
         
     }
 
