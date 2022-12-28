@@ -1,9 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class SubCharSetting : MonoBehaviour
 {
+    public PlayerScript Player_Object;
+    public int player_LEVEL;
+    int Roguecount=0;
+    int Magiccount = 0;
+    int Pirstcount = 0;
+
     public GameObject SettingPanel;
     public GameObject RoguePanel;
     public GameObject MagicCasterPanel;
@@ -24,29 +32,34 @@ public class SubCharSetting : MonoBehaviour
 
     public void SettingPanelSetActive()
     {
-        if(SettingPanel.activeSelf == false)
-        {
-            SettingPanel.SetActive(true);
-        }
-        else
-        {
-            SettingPanel.SetActive(false);
-        }
+            if (SettingPanel.activeSelf == false)
+            {
+                SettingPanel.SetActive(true);
+            }
+            else
+            {
+                SettingPanel.SetActive(false);
+            }
     }
 
     //Rogue
 
     public void RogueStatWindowPanel()
     {
-        if(RoguePanel.activeSelf == false)
+        
+        player_LEVEL = Player_Object.lv;
+
+        if (player_LEVEL == 2 && Game_System.Gold >= 100)
         {
-            SettingPanel.SetActive(false);
-            RoguePanel.SetActive(true);
+            if (Roguecount == 0)
+            {
+                Game_System.Gold -= 100;
+                Debug.Log("sibal" +Game_System.Gold);
+                RoguePanel.SetActive(true);
+                Roguecount++;
+            }
         }
-        else
-        {
-            RoguePanel.SetActive(false);
-        }
+        
     }
 
     public void RogueSetActive()
@@ -77,14 +90,16 @@ public class SubCharSetting : MonoBehaviour
 
     public void MagicCasterStatWindowPanel()
     {
-        if (MagicCasterPanel.activeSelf == false)
+        player_LEVEL = Player_Object.lv;
+
+        if (player_LEVEL == 4 && Game_System.Gold >= 500)
         {
-            SettingPanel.SetActive(false);
-            MagicCasterPanel.SetActive(true);
-        }
-        else
-        {
-            MagicCasterPanel.SetActive(false);
+            if (Magiccount == 0)
+            {
+                Game_System.Gold -= 500;
+                MagicCasterPanel.SetActive(true);
+                Magiccount++;
+            }
         }
     }
     public void MagicCasterSetActive()
@@ -112,14 +127,16 @@ public class SubCharSetting : MonoBehaviour
     //Priest
     public void PriestStatWindowPanel()
     {
-        if (PriestPanel.activeSelf == false)
+        player_LEVEL = Player_Object.lv;
+
+        if (player_LEVEL == 10 && Game_System.Gold >= 2000)
         {
-            SettingPanel.SetActive(false);
-            PriestPanel.SetActive(true);
-        }
-        else
-        {
-            PriestPanel.SetActive(false);
+            if (Pirstcount == 0)
+            {
+                Game_System.Gold -= 2000;
+                PriestPanel.SetActive(true);
+                Pirstcount++;
+            }
         }
     }
 

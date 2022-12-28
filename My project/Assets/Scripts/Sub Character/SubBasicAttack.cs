@@ -74,11 +74,18 @@ public class SubBasicAttack : MonoBehaviour
 
         else if (this.name == "bottle")
         {
-            Debug.LogError(SubStat.atkSpeed);
             yield return new WaitForSeconds(SubStat.atkSpeed);
             BasicAttack();
             isCoolTime = true;
         }
+
+        else if (this.name == "IceFang")
+        {
+            yield return new WaitForSeconds(SubStat.atkSpeed);
+            BasicAttack();
+            isCoolTime = true;
+        }
+
 
     }
 
@@ -107,6 +114,11 @@ public class SubBasicAttack : MonoBehaviour
                 subAnimator.SetTrigger("AttackNormal");
                 CreatePrefab();
             }
+            else if (this.name == "IceFang")
+            {
+                subAnimator.SetTrigger("AttackMagic");
+                CreatePrefab();
+            }
             //몬스터 중심 향해 날라는거 구현하기
         }
     }
@@ -129,7 +141,6 @@ public class SubBasicAttack : MonoBehaviour
     {
         basicAttack = Instantiate(basicAttackPrefab, this.transform.position, Quaternion.identity);
         basicAttack.GetComponent<Rigidbody2D>().AddForce(Vector3.right * speed, ForceMode2D.Impulse);
-        Debug.Log(basicAttack);
     }
 
 }

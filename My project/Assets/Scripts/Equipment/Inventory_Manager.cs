@@ -108,6 +108,12 @@ public class Inventory_Manager : MonoBehaviour
                                 curSlot.itemStatus(),"Attack", "Critical Rate", selectedItem.stat1.ToString(),
                                      selectedItem.stat2.ToString(), selectedItem.upgrade.ToString());
             }
+            if (selectedItem.type == "Helmet" || selectedItem.type == "Boots" || selectedItem.type == "Armor")
+            {
+                equipInfoUI.ViewItem(GetImage(selectedItem.name), selectedItem.name, selectedItem.grade,
+                curSlot.itemStatus(), "Hp", "Armor", selectedItem.stat1.ToString(),
+                     selectedItem.stat2.ToString(), selectedItem.upgrade.ToString());
+            }
         }
         else
         {

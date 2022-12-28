@@ -36,6 +36,10 @@ public class SubAttackManager : MonoBehaviour
         {
             subStat = GameObject.Find("Alchemist");
         }
+        else if (this.name == "IceFang(Clone)")
+        {
+            subStat = GameObject.Find("IceMagican");
+        }
 
         subDmg = subStat.GetComponent<SubChar_Combat_manager>().attackDmg;
 
@@ -64,21 +68,25 @@ public class SubAttackManager : MonoBehaviour
             if(this.name == "FireBall(Clone)")
             {
                 GameObject fire = Instantiate(fireBallAfter, monster.transform);
-                monsterCombat.ApplyDamage(subDmg, Color.white);
+                monsterCombat.ApplyDamage(subDmg, Color.white, 0, 0);
 
                 Destroy(fire, 0.45f);
             }
             else if(this.name == "dager(Clone)")
             {
-                monsterCombat.ApplyDamage(subDmg, Color.green);
+                monsterCombat.ApplyDamage(subDmg, Color.green, 0, 0);
             }
             else if(this.name == "arrow(Clone)")
             {
-                monsterCombat.ApplyDamage(subDmg, Color.black);
+                monsterCombat.ApplyDamage(subDmg, Color.black, 0, 0);
             }
             else if (this.name == "bottle(Clone)")
             {
-                monsterCombat.ApplyDamage(subDmg, Color.red);
+                monsterCombat.ApplyDamage(subDmg, Color.red, 0, 0);
+            }
+            else if (this.name == "IceFang(Clone)")
+            {
+                monsterCombat.ApplyDamage(subDmg, Color.blue, 0, 0);
             }
             Destroy(this.gameObject);
 

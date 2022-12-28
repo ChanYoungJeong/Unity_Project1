@@ -9,6 +9,7 @@ public class SubSkillManager : MonoBehaviour
 
     float kunaiDmg;
     float LightningDmg;
+    float BlizzardStormDmg;
 
     public bool isDestroy = false;
     // Start is called before the first frame update
@@ -16,6 +17,7 @@ public class SubSkillManager : MonoBehaviour
     {
         kunaiDmg = GameObject.Find("Rogue").GetComponent<SubChar_Combat_manager>().skillDamage;
         LightningDmg = GameObject.Find("MagicCaster").GetComponent<SubChar_Combat_manager>().skillDamage;
+        BlizzardStormDmg = GameObject.Find("IceMagican").GetComponent<SubChar_Combat_manager>().skillDamage;
     }
 
     public void Update()
@@ -36,19 +38,30 @@ public class SubSkillManager : MonoBehaviour
             monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
             monsterCombat = Battle_Situation_Trigger.monster.GetComponent<Monster_Combat>();
 
-            monster.nowHp -= kunaiDmg;
 
             if(this.name == "Kunai(Clone)")
             {
-                monsterCombat.ApplyDamage(kunaiDmg, Color.yellow);
+                monster.nowHp -= kunaiDmg;
+                monsterCombat.ApplyDamage(kunaiDmg, Color.yellow, 0, 0);
                 Destroy(SubSkillAttack.kunai);
             }
 
-            if (this.name == "Ligntning(Clone)")
+            else if (this.name == "Ligntning(Clone)")
             {
                 SubSkillAttack.Lightning.transform.position = new Vector3(monster.transform.position.x, monster.transform.position.y+1.4f);
-                monsterCombat.ApplyDamage(LightningDmg, Color.blue);
-                Destroy(SubSkillAttack.Lightning, 0.4f);
+               
+                monster.nowHp -= LightningDmg;
+
+                monsterCombat.ApplyDamage(LightningDmg, Color.magenta, 0, 0);
+                Destroy(SubSkillAttack.Lightning, 0.35f);
+            }
+
+            else if (this.name == "Snow(Clone)")
+            {
+                monster.nowHp -= BlizzardStormDmg;
+
+                monsterCombat.ApplyDamage(BlizzardStormDmg, Color.blue, 0, 0);
+                Destroy(SubSkillAttack.blizzardStorm);
             }
 
         }

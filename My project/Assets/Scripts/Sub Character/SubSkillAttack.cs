@@ -15,11 +15,14 @@ public class SubSkillAttack : MonoBehaviour
     public GameObject subSkillPrefab;
     public static GameObject kunai;
     public static GameObject Lightning;
+    public static GameObject blizzardStorm;
 
     public Animator subAnimator;
 
+    public List<GameObject> create;
 
-    Slider cooldownBar;
+
+    //Slider cooldownBar;
 
     private void Start()
     {
@@ -30,7 +33,6 @@ public class SubSkillAttack : MonoBehaviour
 
     private void Update()
     {
-
         if (Battle_Situation_Trigger.monster != null)
         {
 
@@ -40,12 +42,10 @@ public class SubSkillAttack : MonoBehaviour
                 StopCoroutine(SkillAttack());
             }
         }
-        if(this.name == "Kunai")
+        if (this.name == "Kunai")
         {
-            cooldownBar.value += Time.deltaTime * 1 / SubCharSkill.cooldown;
+            //cooldownBar.value += Time.deltaTime * 1 / SubCharSkill.cooldown;
         }
-
-
     }
 
     public void SetSubSkill()
@@ -60,9 +60,9 @@ public class SubSkillAttack : MonoBehaviour
             Debug.Log("스킬을 찾지 못했습니다");
         }
 
-        if(this.name == "Kunai")
+        if (this.name == "Kunai")
         {
-            cooldownBar = GameObject.Find("KunaiSlider").GetComponent<Slider>();
+            //cooldownBar = GameObject.Find("KunaiSlider").GetComponent<Slider>();
         }
     }
 
@@ -73,11 +73,10 @@ public class SubSkillAttack : MonoBehaviour
         {
             yield return new WaitForSeconds(SubCharSkill.cooldown);
             RogueKunai();
-            if (cooldownBar.value >= 1)
+            /*if (cooldownBar.value >= 1)
             {
                 cooldownBar.value = 0;
-            }
-
+            }*/
         }
 
         else if (this.name == "Lightning")
@@ -86,7 +85,11 @@ public class SubSkillAttack : MonoBehaviour
             MagicCasterLightning();
         }
         //else if(this.name == "신관 스킬"){}
-
+        else if (this.name == "BlizzardStorm")
+        {
+            yield return new WaitForSeconds(SubCharSkill.cooldown);
+            IceMagicanBlizzardStorm();
+        }
         isCoolTime = true;
     }
 
@@ -103,10 +106,27 @@ public class SubSkillAttack : MonoBehaviour
     {
         if (Battle_Situation_Trigger.monster != null)
         {
+            subAnimator.SetTrigger("SkillMagic");
             monsterTrans = Battle_Situation_Trigger.monster.transform;
             Lightning = Instantiate(subSkillPrefab, new Vector3(monsterTrans.transform.position.x, monsterTrans.transform.position.y + 1.4f), Quaternion.identity);
         }
     }
+
+    public void IceMagicanBlizzardStorm()
+    {
+        if (Battle_Situation_Trigger.monster != null)
+        {
+            subAnimator.SetTrigger("SkillMagic");
+
+            for (int i = 0; i < create.Count; i++)
+            {
+                blizzardStorm = Instantiate(subSkillPrefab, create[i].transform.position, create[i].transform.rotation);
+                blizzardStorm.GetComponent<Rigidbody2D>().AddForce(Vector3.down * 5, ForceMode2D.Impulse);
+            }
+
+        }
+    }
+
 
 
 }

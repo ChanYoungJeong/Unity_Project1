@@ -19,7 +19,6 @@ public class Sub_CharStats : MonoBehaviour
         name = "Rogue";
         SubChar.Add(name, new CharStats(name, 200, 100, 15, 2.5f, 1));
 
-
         name = "MagicCaster";
         SubChar.Add(name, new CharStats(name, 100, 500, 20, 3.5f, 1));
 
@@ -31,6 +30,9 @@ public class Sub_CharStats : MonoBehaviour
 
         name = "Alchemist";
         SubChar.Add(name, new CharStats(name, 100, 150, 30, 4, 1));
+
+        name = "IceMagican";
+        SubChar.Add(name, new CharStats(name, 100, 150, 25, 10, 1));
 
     }
 
