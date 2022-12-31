@@ -7,16 +7,16 @@ public class SubStatWindow : MonoBehaviour
 {
     public Text lv;
     public Text attack;
-    public Text atkSpeed;
+    public Text skillDamage;
 
     private int RogueAttackGold = 1000;
-    private int RogueAtkSpeedGold = 1000;
+    private int RogueskillDamageGold = 1000;
 
     private int MagicCasterAttackGold = 1500;
-    private int MagicCasterAtkSpeedGold = 1500;
+    private int MagicCasterskillDamageGold = 1500;
 
     private int PriestAttackGold = 2000;
-    private int PriestAtkSpeedGold = 2000;
+    private int PriestskillDamageGold = 2000;
 
     SubChar_Combat_manager subStat;
 
@@ -35,7 +35,7 @@ public class SubStatWindow : MonoBehaviour
 
             lv.text = "Lv " + subStat.lv.ToString();
             attack.text = "Attack " + subStat.attackDmg.ToString();
-            atkSpeed.text = "AtkSpeed " + subStat.atkSpeed.ToString();
+            skillDamage.text = "skillDamage " + subStat.skillDamage.ToString();
         }
 
         else if (this.name.Contains("MagicCaster"))
@@ -45,7 +45,7 @@ public class SubStatWindow : MonoBehaviour
            
             lv.text = "Lv " + subStat.lv.ToString();
             attack.text = "Attack " + subStat.attackDmg.ToString();
-            atkSpeed.text = "AtkSpeed " + subStat.atkSpeed.ToString();
+            skillDamage.text = "skillDamage " + subStat.skillDamage.ToString();
         }
 
         else if (this.name.Contains("Priest"))
@@ -55,7 +55,7 @@ public class SubStatWindow : MonoBehaviour
            
             lv.text = "LV " + subStat.lv.ToString();
             attack.text = "Attack " + subStat.attackDmg.ToString();
-            atkSpeed.text = "AtkSpeed " + subStat.atkSpeed.ToString();
+            skillDamage.text = "skillDamage " + subStat.skillDamage.ToString();
         }
     }
 
@@ -72,14 +72,14 @@ public class SubStatWindow : MonoBehaviour
         }
     }
 
-    public void RogueAtkSpeedUpgrade()
+    public void RogueskillDamageUpgrade()
     {
-        if (Game_System.Gold >= RogueAtkSpeedGold)
+        if (Game_System.Gold >= RogueskillDamageGold)
         {
-            Game_System.Gold -= RogueAtkSpeedGold;
+            Game_System.Gold -= RogueskillDamageGold;
 
-            subStat.atkSpeed += 2;
-            atkSpeed.text = "AtkSpeed " + subStat.atkSpeed.ToString();
+            subStat.skillDamage += 2;
+            skillDamage.text = "skillDamage " + subStat.skillDamage.ToString();
 
         }
     }
@@ -97,14 +97,14 @@ public class SubStatWindow : MonoBehaviour
         }
     }
 
-    public void MagicCasterAtkSpeedUpgrade()
+    public void MagicCasterskillDamageUpgrade()
     {
-        if (Game_System.Gold >= MagicCasterAtkSpeedGold)
+        if (Game_System.Gold >= MagicCasterskillDamageGold)
         {
-            Game_System.Gold -= MagicCasterAtkSpeedGold;
+            Game_System.Gold -= MagicCasterskillDamageGold;
 
-            subStat.atkSpeed += 1;
-            atkSpeed.text = "AtkSpeed " + subStat.atkSpeed.ToString();
+            subStat.skillDamage += 1;
+            skillDamage.text = "skillDamage " + subStat.skillDamage.ToString();
 
         }
     }
@@ -122,14 +122,14 @@ public class SubStatWindow : MonoBehaviour
         }
     }
 
-    public void PriestAtkSpeedUpgrade()
+    public void PriestskillDamageUpgrade()
     {
-        if (Game_System.Gold >= PriestAtkSpeedGold)
+        if (Game_System.Gold >= PriestskillDamageGold)
         {
-            Game_System.Gold -= PriestAtkSpeedGold;
+            Game_System.Gold -= PriestskillDamageGold;
 
-            subStat.atkSpeed += 0.5f;
-            atkSpeed.text = "AtkSpeed " + subStat.atkSpeed.ToString();
+            subStat.skillDamage += 0.5f;
+            skillDamage.text = "skillDamage " + subStat.skillDamage.ToString();
 
         }
     }
