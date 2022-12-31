@@ -35,7 +35,7 @@ public class SubSkillManager : MonoBehaviour
     {
         //monster = Battle_Situation_Trigger.monster_group.transform.GetChild(0).GetComponent<Monster_Script>();
 
-        if (collision.gameObject == Battle_Situation_Trigger.monster)
+        if (collision.gameObject == Battle_Situation_Trigger.monster_group)
         {
             monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
             monsterCombat = Battle_Situation_Trigger.monster.GetComponent<Monster_Combat>();
@@ -55,20 +55,27 @@ public class SubSkillManager : MonoBehaviour
                 monsterCombat.ApplyDamage(LightningDmg, Color.magenta, 0, 0);
                 Destroy(SubSkillAttack.Lightning, 0.35f);
             }
-            else if (this.name == "Snow(Clone)")
-            {
-                golbalMonster = GameObject.Find("Monster1(Clone)").GetComponent<Monster_Script>();
-                golbalMonster.nowHp -= BlizzardStormDmg;
-
-                monsterCombat.ApplyDamage(BlizzardStormDmg, Color.blue, 0, 0);
-                Destroy(SubSkillAttack.blizzardStorm);
-            }
             else if (this.name == "MegaArrow(Clone)")
             {
                 golbalMonster = GameObject.Find("Monster1(Clone)").GetComponent<Monster_Script>();
                 golbalMonster.nowHp -= MegaArrowDmg;
 
                 monsterCombat.ApplyDamage(MegaArrowDmg, Color.blue, 0, 0);
+            }
+        }
+
+        if(collision.GetComponent<Monster_Script>())
+        {
+            Monster_Script _monster = collision.GetComponent<Monster_Script>();
+            Monster_Combat _monsterCombat = collision.GetComponent<Monster_Combat>();
+            if (this.name == "Snow(Clone)")
+            {
+                //golbalMonster = GameObject.Find("Monster1(Clone)").GetComponent<Monster_Script>();
+                _monster.nowHp -= BlizzardStormDmg;
+
+
+                _monsterCombat.ApplyDamage(BlizzardStormDmg, Color.blue, 0, 0);
+                Destroy(SubSkillAttack.blizzardStorm);
             }
         }
     }
