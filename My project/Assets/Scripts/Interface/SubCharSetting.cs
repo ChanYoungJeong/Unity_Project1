@@ -11,15 +11,21 @@ public class SubCharSetting : MonoBehaviour
     int Roguecount=0;
     int Magiccount = 0;
     int Pirstcount = 0;
+    int Archercount = 0;
+    int Alchemistcount = 0;
 
     public GameObject SettingPanel;
     public GameObject RoguePanel;
     public GameObject MagicCasterPanel;
     public GameObject PriestPanel;
+    public GameObject ArcherPanel;
+    public GameObject AlchemistPanel;
 
     public GameObject Rogue;
     public GameObject MagicCaster;
     public GameObject Priest;
+    public GameObject Archer;
+    public GameObject Alchemist;
 
 
     private void Start()
@@ -28,6 +34,8 @@ public class SubCharSetting : MonoBehaviour
         RoguePanel.SetActive(false);
         MagicCasterPanel.SetActive(false);
         PriestPanel.SetActive(false);
+        ArcherPanel.SetActive(false);
+        AlchemistPanel.SetActive(false);
     }
 
     public void SettingPanelSetActive()
@@ -160,5 +168,79 @@ public class SubCharSetting : MonoBehaviour
         }
     }
 
+
+    //Archer
+    public void ArcherStatWindowPanel()
+    {
+        player_LEVEL = Player_Object.lv;
+
+        if (player_LEVEL == 2 && Game_System.Gold >= 10)
+        {
+            if (Archercount == 0)
+            {
+                Game_System.Gold -= 10;
+                ArcherPanel.SetActive(true);
+                Archercount++;
+            }
+        }
+    }
+
+    public void ArcherSetActive()
+    {
+        if (Archer.activeSelf == false)
+        {
+            Archer.SetActive(true);
+        }
+        else
+        {
+            Archer.SetActive(false);
+        }
+    }
+    public void BackArcherSetting()
+    {
+        if (ArcherPanel.activeSelf == true)
+        {
+            ArcherPanel.SetActive(false);
+            SettingPanel.SetActive(true);
+        }
+    }
+
+
+
+    //Alchemist
+    public void AlchemistStatWindowPanel()
+    {
+        player_LEVEL = Player_Object.lv;
+
+        if (player_LEVEL == 2 && Game_System.Gold >= 10)
+        {
+            if (Alchemistcount == 0)
+            {
+                Game_System.Gold -= 10;
+                AlchemistPanel.SetActive(true);
+                Alchemistcount++;
+            }
+        }
+    }
+
+    public void AlchemistSetActive()
+    {
+        if (Alchemist.activeSelf == false)
+        {
+            Alchemist.SetActive(true);
+        }
+        else
+        {
+            Alchemist.SetActive(false);
+        }
+    }
+    public void BackAlchemistSetting()
+    {
+        if (AlchemistPanel.activeSelf == true)
+        {
+            AlchemistPanel.SetActive(false);
+            SettingPanel.SetActive(true);
+        }
+    }
 
 }

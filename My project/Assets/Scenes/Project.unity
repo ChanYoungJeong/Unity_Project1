@@ -332,6 +332,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &568612375 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8791656053451113973, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+  m_PrefabInstance: {fileID: 1140806525701245570}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &581868209
 GameObject:
   m_ObjectHideFlags: 0
@@ -1232,6 +1243,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1246901785, guid: 235fd5752deb5f642a9a6aa1f1423b64, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246901785, guid: 235fd5752deb5f642a9a6aa1f1423b64, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4329964513983623933, guid: 235fd5752deb5f642a9a6aa1f1423b64, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6128476293987881160, guid: 235fd5752deb5f642a9a6aa1f1423b64, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1461,11 +1484,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1693405045 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8491196130007414981, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+  m_PrefabInstance: {fileID: 1140806525701245570}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &1715342396 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 7558211624009668522, guid: 8baf5c78646e46f4b830fc8e0faeccf8, type: 3}
   m_PrefabInstance: {fileID: 7558211624483503515}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1893479020 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8491196129878666594, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+  m_PrefabInstance: {fileID: 1140806525701245570}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1900369843 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8250695546877854789, guid: a27c95e78f3097647bffd0ed194d7879, type: 3}
@@ -1585,6 +1630,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2092096397 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 70273718, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+  m_PrefabInstance: {fileID: 1140806525701245570}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2116286060 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 538154446, guid: 129f1b5fe10ef424da0ff2abc5981855, type: 3}
@@ -1603,6 +1659,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 69966049, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: skillDamage
+      value: 
+      objectReference: {fileID: 2092096397}
+    - target: {fileID: 70273718, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_Text
+      value: 'Skill Damage: 00'
+      objectReference: {fileID: 0}
+    - target: {fileID: 94843639, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_Text
+      value: "\uC2A4\uD0AC \uAC15\uD654"
+      objectReference: {fileID: 0}
+    - target: {fileID: 384324184, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RogueskillDamageUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 847167588, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: skillDamage
+      value: 
+      objectReference: {fileID: 1893479020}
     - target: {fileID: 988178713, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
       propertyPath: player
       value: 
@@ -1627,6 +1703,34 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1715342396}
+    - target: {fileID: 1775858917, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RogueStatWindowPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2085647142, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: skillDamage
+      value: 
+      objectReference: {fileID: 1693405045}
+    - target: {fileID: 29115516525584354, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 29115516525584354, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131394260261192412, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133031105617002557, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133031105617002557, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1140806525931053662, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
       propertyPath: Player_Object
       value: 
@@ -1651,6 +1755,18 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1715342396}
+    - target: {fileID: 3828856315450441675, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248620638177653453, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 82.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248620638177653453, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -243.32
+      objectReference: {fileID: 0}
     - target: {fileID: 4742608007913036513, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
       propertyPath: m_Name
       value: UI.1 1
@@ -1711,6 +1827,94 @@ PrefabInstance:
       propertyPath: Player_Object
       value: 
       objectReference: {fileID: 1994892382}
+    - target: {fileID: 8491196129560144690, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MagicCasterskillDamageUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491196129560144692, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_Name
+      value: 'Button :: SkillDamageUpgrade'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491196129655869937, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_Text
+      value: "\uC2A4\uD0AC \uAC15\uD654"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491196129878666594, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_Text
+      value: 'Skill Damage: 00'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491196129878666595, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_Name
+      value: 'Text :: SkillDamage'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491196130007414981, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_Text
+      value: 'Skill Damage: 00'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491196130007414982, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_Name
+      value: 'Text :: SkillDamage'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491196130222024229, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_Text
+      value: "\uC2A4\uD0AC \uAC15\uD654"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491196130222024231, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_Name
+      value: Text :SkillDamageUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491196130644503303, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PriestskillDamageUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491196130644503305, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_Name
+      value: 'Button :: SkillDamageUpgrade'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791656052737597915, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_Name
+      value: 'Button :: SkillDamageUpgrade'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791656052980676841, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_Name
+      value: Button ::SkillDamageUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791656053019834004, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_Name
+      value: Text ::SkillDamageUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791656053019834006, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_Text
+      value: "\uC2A4\uD0AC \uAC15\uD654"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791656053424441265, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791656053424441265, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791656053451113978, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_Name
+      value: 'Text :: SkillDamage'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791656053495363692, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: skillDamage
+      value: 
+      objectReference: {fileID: 568612375}
+    - target: {fileID: 8791656054586568436, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_Name
+      value: Text ::SkillDamage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791656054586568438, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_Text
+      value: "\uC2A4\uD0AC \uAC15\uD654"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791656054628237149, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
+      propertyPath: m_Name
+      value: Text ::SkillDamage
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51ef76145c48a094b8b89c47ca3147c7, type: 3}
 --- !u!114 &5751689848437222325 stripped
