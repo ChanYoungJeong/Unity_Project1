@@ -23,7 +23,7 @@ public class Monster_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Monster_Stat.nowHp <= 0 && check_animation == false)
+        if (Monster_Stat.nowHp <= 0) //&& check_animation == false
         {
             StartCoroutine(Dead_Animation());
             Monster_Die();
