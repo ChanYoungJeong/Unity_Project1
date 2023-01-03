@@ -21,6 +21,7 @@ public class SubSkillManager : MonoBehaviour
         LightningDmg = GameObject.Find("MagicCaster").GetComponent<SubChar_Combat_manager>().skillDamage;
         BlizzardStormDmg = GameObject.Find("IceMagican").GetComponent<SubChar_Combat_manager>().skillDamage;
         MegaArrowDmg = GameObject.Find("Archer").GetComponent<SubChar_Combat_manager>().skillDamage;
+
     }
 
     public void Update()
@@ -55,13 +56,7 @@ public class SubSkillManager : MonoBehaviour
                 monsterCombat.ApplyDamage(LightningDmg, Color.magenta, 0, 0);
                 Destroy(SubSkillAttack.Lightning, 0.35f);
             }
-            else if (this.name == "MegaArrow(Clone)")
-            {
-                golbalMonster = GameObject.Find("Monster1(Clone)").GetComponent<Monster_Script>();
-                golbalMonster.nowHp -= MegaArrowDmg;
-
-                monsterCombat.ApplyDamage(MegaArrowDmg, Color.blue, 0, 0);
-            }
+            
         }
 
         if(collision.GetComponent<Monster_Script>())
@@ -70,12 +65,19 @@ public class SubSkillManager : MonoBehaviour
             Monster_Combat _monsterCombat = collision.GetComponent<Monster_Combat>();
             if (this.name == "Snow(Clone)")
             {
-                //golbalMonster = GameObject.Find("Monster1(Clone)").GetComponent<Monster_Script>();
                 _monster.nowHp -= BlizzardStormDmg;
 
 
                 _monsterCombat.ApplyDamage(BlizzardStormDmg, Color.blue, 0, 0);
                 Destroy(SubSkillAttack.blizzardStorm);
+            }
+
+            if (this.name == "MegaArrow(Clone)")
+            {
+                _monster.nowHp -= MegaArrowDmg;
+
+                _monsterCombat.ApplyDamage(MegaArrowDmg, Color.blue, 0, 0);
+                Destroy(SubSkillAttack.MegaArrow, 3f);
             }
         }
     }
