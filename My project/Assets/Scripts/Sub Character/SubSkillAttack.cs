@@ -21,7 +21,7 @@ public class SubSkillAttack : MonoBehaviour
     public Animator subAnimator;
 
     public List<GameObject> create;
-
+    public float angle;
 
     //Slider cooldownBar;
 
@@ -69,6 +69,10 @@ public class SubSkillAttack : MonoBehaviour
 
     IEnumerator SkillAttack()
     {
+
+         angle = Mathf.Atan2(Battle_Situation_Trigger.monster.transform.position.y - this.transform.position.y,
+                                                Battle_Situation_Trigger.monster.transform.position.x - this.transform.position.x) * Mathf.Rad2Deg;
+
         isCoolTime = false;
         if (this.name == "Kunai")
         {
@@ -79,7 +83,6 @@ public class SubSkillAttack : MonoBehaviour
                 cooldownBar.value = 0;
             }*/
         }
-
         else if (this.name == "Lightning")
         {
             yield return new WaitForSeconds(SubCharSkill.cooldown);
@@ -103,9 +106,11 @@ public class SubSkillAttack : MonoBehaviour
     {
         if (Battle_Situation_Trigger.monster != null)
         {
+            
+
             subAnimator.SetTrigger("SkillNormal");
-            kunai = Instantiate(subSkillPrefab, this.transform.position, Quaternion.identity);
-            kunai.GetComponent<Rigidbody2D>().AddForce(Vector3.right * 20, ForceMode2D.Impulse);
+            kunai = Instantiate(subSkillPrefab, this.transform.position, Quaternion.Euler(0, 0, angle));
+            kunai.GetComponent<Rigidbody2D>().AddForce(kunai.transform.right * 20, ForceMode2D.Impulse);
         }
     }
     public void MagicCasterLightning()        //마법사 스킬
@@ -121,9 +126,14 @@ public class SubSkillAttack : MonoBehaviour
     public void ArcherMegaArrow()           // 궁수 스킬
     {
         subAnimator.SetTrigger("SkillBow");
-        MegaArrow = Instantiate(subSkillPrefab, this.transform.position, Quaternion.identity);
-        MegaArrow.GetComponent<Rigidbody2D>().AddForce(Vector3.right * 20, ForceMode2D.Impulse);
+        Invoke("CreateMegaArrow", 0.7f);
 
+    }
+
+    public void CreateMegaArrow()
+    {
+        MegaArrow = Instantiate(subSkillPrefab, this.transform.position, Quaternion.Euler(0, 0, angle));
+        MegaArrow.GetComponent<Rigidbody2D>().AddForce(MegaArrow.transform.right * 20, ForceMode2D.Impulse);
     }
 
     public void IceMagicanBlizzardStorm()       // 얼음 마법사 스킬

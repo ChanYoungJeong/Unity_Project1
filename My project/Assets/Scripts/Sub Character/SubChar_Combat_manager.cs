@@ -91,8 +91,8 @@ public class SubChar_Combat_manager : MonoBehaviour
 
         else if (this.this_name == "Archer")
         {
-            isFind = subCharSkillList.Sub_Char_SkilList.ContainsKey("WindArrow");
-            key = "WindArrow";
+            isFind = subCharSkillList.Sub_Char_SkilList.ContainsKey("MegaArrow");
+            key = "MegaArrow";
         }
 
         else if (this.this_name == "Alchemist")

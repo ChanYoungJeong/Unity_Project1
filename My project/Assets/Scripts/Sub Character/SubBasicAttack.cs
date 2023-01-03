@@ -16,6 +16,7 @@ public class SubBasicAttack : MonoBehaviour
     public float speed;
 
     public Animator subAnimator;
+
     private void Start()
     {
         playerTrans = GameObject.Find("Player").GetComponent<Transform>();
@@ -139,8 +140,11 @@ public class SubBasicAttack : MonoBehaviour
 
     public void CreatePrefab()
     {
-        basicAttack = Instantiate(basicAttackPrefab, this.transform.position, Quaternion.identity);
-        basicAttack.GetComponent<Rigidbody2D>().AddForce(Vector3.right * speed, ForceMode2D.Impulse);
+        float angle = Mathf.Atan2(Battle_Situation_Trigger.monster.transform.position.y - this.transform.position.y,
+                                                Battle_Situation_Trigger.monster.transform.position.x - this.transform.position.x) * Mathf.Rad2Deg;
+
+        basicAttack = Instantiate(basicAttackPrefab, this.transform.position, Quaternion.Euler(0, 0, angle));
+        basicAttack.GetComponent<Rigidbody2D>().AddForce(basicAttack.transform.right * speed, ForceMode2D.Impulse);
     }
 
 }
