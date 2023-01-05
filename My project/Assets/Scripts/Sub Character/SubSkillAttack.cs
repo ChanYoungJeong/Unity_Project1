@@ -21,9 +21,9 @@ public class SubSkillAttack : MonoBehaviour
     public Animator subAnimator;
 
     public List<GameObject> create;
-    public float angle;
+    float angle;
 
-    //Slider cooldownBar;
+    public Slider cooldownBar;
 
     private void Start()
     {
@@ -45,7 +45,22 @@ public class SubSkillAttack : MonoBehaviour
         }
         if (this.name == "Kunai")
         {
-            //cooldownBar.value += Time.deltaTime * 1 / SubCharSkill.cooldown;
+            cooldownBar.value += Time.deltaTime * 1 / SubCharSkill.cooldown;
+        }
+        else if (this.name == "Lightning")
+        {
+            cooldownBar.value += Time.deltaTime * 1 / SubCharSkill.cooldown;
+
+        }
+        else if (this.name == "MegaArrow")
+        {
+            cooldownBar.value += Time.deltaTime * 1 / SubCharSkill.cooldown;
+
+        }
+        else if (this.name == "BlizzardStorm")
+        {
+            cooldownBar.value += Time.deltaTime * 1 / SubCharSkill.cooldown;
+
         }
     }
 
@@ -61,27 +76,20 @@ public class SubSkillAttack : MonoBehaviour
             Debug.Log("스킬을 찾지 못했습니다");
         }
 
-        if (this.name == "Kunai")
-        {
-            //cooldownBar = GameObject.Find("KunaiSlider").GetComponent<Slider>();
-        }
     }
 
     IEnumerator SkillAttack()
     {
 
-         angle = Mathf.Atan2(Battle_Situation_Trigger.monster.transform.position.y - this.transform.position.y,
-                                                Battle_Situation_Trigger.monster.transform.position.x - this.transform.position.x) * Mathf.Rad2Deg;
+        angle = Mathf.Atan2(Battle_Situation_Trigger.monster.transform.position.y - this.transform.position.y,
+                                               Battle_Situation_Trigger.monster.transform.position.x - this.transform.position.x) * Mathf.Rad2Deg;
 
         isCoolTime = false;
         if (this.name == "Kunai")
         {
             yield return new WaitForSeconds(SubCharSkill.cooldown);
             RogueKunai();
-            /*if (cooldownBar.value >= 1)
-            {
-                cooldownBar.value = 0;
-            }*/
+
         }
         else if (this.name == "Lightning")
         {
@@ -99,6 +107,15 @@ public class SubSkillAttack : MonoBehaviour
             yield return new WaitForSeconds(SubCharSkill.cooldown);
             IceMagicanBlizzardStorm();
         }
+
+
+
+
+        if (cooldownBar.value >= 1)
+        {
+            cooldownBar.value = 0;
+        }
+
         isCoolTime = true;
     }
 
@@ -106,7 +123,7 @@ public class SubSkillAttack : MonoBehaviour
     {
         if (Battle_Situation_Trigger.monster != null)
         {
-            
+
 
             subAnimator.SetTrigger("SkillNormal");
             kunai = Instantiate(subSkillPrefab, this.transform.position, Quaternion.Euler(0, 0, angle));
