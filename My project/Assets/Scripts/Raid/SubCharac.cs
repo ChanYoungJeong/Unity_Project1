@@ -22,22 +22,18 @@ public class SubCharac : MonoBehaviour, IDragHandler,IBeginDragHandler, IEndDrag
     public void OnBeginDrag(PointerEventData eventData)
     {
         transform.SetParent(SubCanvas.transform);
-        Debug.Log(eventData.pointerDrag);
     }
 
     public void OnDrag(PointerEventData eventData)
 	{
-        //rectTransform.position = eventData.position;  //드래그 중 마우스를 따라다니게 하기.
-        //subcharimage = this.GetComponent<image>().sprite;
         Vector3 vec = Camera.main.WorldToScreenPoint(rectTransform.position);
         vec.x += eventData.delta.x;
         vec.y += eventData.delta.y;
         rectTransform.position = Camera.main.ScreenToWorldPoint(vec);
+        
     }
     public void OnEndDrag(PointerEventData eventData)
     {
         transform.position = eventData.position;
     }
-    
-
 }
