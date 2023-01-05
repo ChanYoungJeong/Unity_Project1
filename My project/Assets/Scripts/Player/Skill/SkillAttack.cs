@@ -6,7 +6,7 @@ public class SkillAttack : MonoBehaviour
 {
     SkilList skilList;
     Monster_Script monster;
-    Monster_Manager monsterManager;
+    //Monster_Manager monsterManager;
     Skills skill;
     public GameObject skillPrefab;
 
@@ -48,7 +48,8 @@ public class SkillAttack : MonoBehaviour
             }
             else
             {
-                monsterManager.Monster_Die();
+                Battle_Situation_Trigger.monster.GetComponent<Monster_Manager>().Monster_Die();
+                //monsterManager.Monster_Die();
             }
         }
         isCoolTime = false;
