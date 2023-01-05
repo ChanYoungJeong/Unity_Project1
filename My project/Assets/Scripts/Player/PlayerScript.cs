@@ -5,8 +5,6 @@ using System;
 
 public class PlayerScript : MonoBehaviour
 {
-    public GameObject playerIdleMotion;
-    public GameObject playerAttackMotion;
     public Transform TextPrinter;
     public GameObject PlayerText;
     Monster_Script monster;
@@ -32,21 +30,13 @@ public class PlayerScript : MonoBehaviour
     }
     public void PlayerIdleMotion()
     {
-        /*playerIdleMotion.SetActive(true);
-        playerAttackMotion.SetActive(false);*/
         playerAnimator.SetTrigger("Idle");
-
         StopCoroutine(PlayerBasicAttack());
     }
 
     public void PlayerAttackMotion()
     {
-        /*playerIdleMotion.SetActive(false);
-        playerAttackMotion.SetActive(true);*/
-
         StartCoroutine(PlayerBasicAttack());
-
-
     }
 
     IEnumerator PlayerBasicAttack()
@@ -77,7 +67,6 @@ public class PlayerScript : MonoBehaviour
             {
             }
         }
-
     }
   
     public void GetExp()

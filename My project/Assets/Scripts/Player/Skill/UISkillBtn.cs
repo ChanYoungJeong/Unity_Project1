@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 namespace UISkillBtnExam
 {
@@ -10,8 +9,8 @@ namespace UISkillBtnExam
         SkilList SkillList;
 
         public Button btn;
-        public float coolTime = 10f;
-        public TMP_Text textCoolTime;
+        float coolTime;
+        public Text textCoolTime;
 
         private Coroutine coolTimeRoutine;
 
@@ -51,22 +50,22 @@ namespace UISkillBtnExam
             bool isFind = false;
             string key = " ";
 
-            if (this.name == "Double Slash Btn")
+            if (this.name == "Button :: Double Slash")
             {
                 isFind = SkillList.skilList.ContainsKey("Double Slash");
                 key = "Double Slash"; 
             }
-            else if(this.name == "Fire Slash Btn")
+            else if(this.name == "Button :: Fire Slash")
             {
                 isFind = SkillList.skilList.ContainsKey("Fire Slash");
                 key = "Fire Slash";
             }
-            else if (this.name == "Fountain Of Blood Btn")
+            else if (this.name == "Button :: Fountain Of Blood")
             {
                 isFind = SkillList.skilList.ContainsKey("Fountain Of Blood");
                 key = "Fountain Of Blood";
             }
-            else if (this.name == "MegaSlash Btn")
+            else if (this.name == "Button :: MegaSlash")
             {
                 isFind = SkillList.skilList.ContainsKey("Mega Slash");
                 key = "Mega Slash";
