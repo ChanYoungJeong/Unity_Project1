@@ -16,19 +16,15 @@ public class SubSlot : MonoBehaviour, IDropHandler
     private void Awake()
     {
         rect = GetComponent<RectTransform>();
-        
         //setTrasform.position = vec;
-
-
     }
-
     public void OnDrop(PointerEventData eventData)
     {
         if (eventData.pointerDrag != null)
         {
             eventData.pointerDrag.transform.SetParent(transform);
             eventData.pointerDrag.GetComponent<RectTransform>().position = rect.position;
-            //this.GetComponent<Image>().sprite = eventData.pointerDrag.GetComponent<SubCharac>().CharImage.sprite;
+            this.GetComponent<Image>().sprite = eventData.pointerDrag.GetComponent<SubCharac>().CharImage.sprite;
             SlotCharAtkDmg = eventData.pointerDrag.GetComponent<SubCharac>().AtkDmg;
             createObject = Instantiate(eventData.pointerDrag.GetComponent<SubCharac>().thisObject, transform.position, transform.rotation);
             createObject.transform.SetParent(this.gameObject.transform);
