@@ -9,4 +9,8 @@ public void SceneChange()
     {
         SceneManager.LoadScene("Raid");
     }
+    public void SceneChange2()
+    {
+        SceneManager.LoadScene("Project");
+    }
 }
