@@ -12,10 +12,14 @@ public class Monster_HpBar : MonoBehaviour
     float maxHp;
     float curHp;
 
+    // Start is called before the first frame update
     void Awake()
     {
         monsterStat = this.GetComponent<Monster_Script>();
+
     }
+
+    // Update is called once per frame
     void Update()
     {
         maxHp = monsterStat.maxHp;
