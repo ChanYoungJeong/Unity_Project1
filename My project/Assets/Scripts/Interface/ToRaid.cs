@@ -5,12 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class ToRaid : MonoBehaviour
 {
-public void SceneChange()
+    public void SceneChangeRaid()
     {
         SceneManager.LoadScene("Raid");
     }
-    public void SceneChange2()
+    public void SceneChangePriject()
     {
         SceneManager.LoadScene("Project");
+    }
+    public void SceneChangeTowerDefense()
+    {
+        SceneManager.LoadScene("TowerDefense");
+
     }
 }
