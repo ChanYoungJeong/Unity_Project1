@@ -8,7 +8,6 @@ public class SubSlot : MonoBehaviour, IDropHandler
 {
     public Image SlotImage;
     private RectTransform rect;
-    //private Transform setTrasform;
     public float SlotCharAtkDmg;
     GameObject createObject;
     Vector3 vec = new Vector3(14.97f, -4.47f);
@@ -16,7 +15,6 @@ public class SubSlot : MonoBehaviour, IDropHandler
     private void Awake()
     {
         rect = GetComponent<RectTransform>();
-        //setTrasform.position = vec;
     }
     public void OnDrop(PointerEventData eventData)
     {
