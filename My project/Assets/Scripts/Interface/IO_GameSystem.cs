@@ -10,13 +10,9 @@ public class IO_GameSystem : MonoBehaviour
     Amazon_CognitoSync DBMS;
     public ButtonScript PlayerUpgrade;
     public GameObject QuitObject;
-    public GameObject SubChars;
+    public SubCharSetting SubChars;
     public PlayerScript Player;
-    public GameObject RoguePanel;
-    public GameObject MagicCasterPanel;
-    public GameObject PriestPanel;
-    public GameObject ArcherPanel;
-    public GameObject AlchemistPanel;
+    public GameObject SubCharGroup;
 
 
     private void Awake()
@@ -41,16 +37,18 @@ public class IO_GameSystem : MonoBehaviour
             Player.lv = GetInfo.Player_LV;
             Player.playerNowExp = GetInfo.Player_EXP;
 
-            SubChars.transform.GetChild(0).gameObject.SetActive(GetInfo.Rogue_Active);
-            RoguePanel.SetActive(GetInfo.Rogue_Active);
-            SubChars.transform.GetChild(1).gameObject.SetActive(GetInfo.MagicCaster_Active);
-            MagicCasterPanel.SetActive(GetInfo.MagicCaster_Active);
-            SubChars.transform.GetChild(2).gameObject.SetActive(GetInfo.Priest_Active);
-            PriestPanel.SetActive(GetInfo.Priest_Active);
-            SubChars.transform.GetChild(3).gameObject.SetActive(GetInfo.Archer_Active);
-            ArcherPanel.SetActive(GetInfo.Archer_Active);
-            SubChars.transform.GetChild(4).gameObject.SetActive(GetInfo.Alchemist_Active);
-            AlchemistPanel.SetActive(GetInfo.Alchemist_Active);
+
+            SubChars.Roguecount = GetInfo.Rogue_Active;          
+            SubChars.Magiccount = GetInfo.MagicCaster_Active;
+            SubChars.Priestcount = GetInfo.Priest_Active;
+            SubChars.Archercount = GetInfo.Archer_Active;
+            SubChars.Alchemistcount = GetInfo.Alchemist_Active;
+
+            SubCharGroup.transform.GetChild(0).gameObject.SetActive(GetInfo.Rogue_Active);
+            SubCharGroup.transform.GetChild(1).gameObject.SetActive(GetInfo.MagicCaster_Active);
+            SubCharGroup.transform.GetChild(2).gameObject.SetActive(GetInfo.Priest_Active);
+            SubCharGroup.transform.GetChild(3).gameObject.SetActive(GetInfo.Archer_Active);
+            SubCharGroup.transform.GetChild(4).gameObject.SetActive(GetInfo.Alchemist_Active);
         }
     }
 
@@ -60,11 +58,7 @@ public class IO_GameSystem : MonoBehaviour
         {
             DBMS.UpdateData(GetInfo.UserAccount, Game_System.Gold, Game_System.Stage,
                 PlayerUpgrade.atk_scoreButton, PlayerUpgrade.hp_scoreButton, Player.lv, Player.playerNowExp,
-                SubChars.transform.GetChild(0).gameObject.activeSelf,
-                SubChars.transform.GetChild(1).gameObject.activeSelf,
-                SubChars.transform.GetChild(2).gameObject.activeSelf,
-                SubChars.transform.GetChild(3).gameObject.activeSelf,
-                SubChars.transform.GetChild(4).gameObject.activeSelf);
+                SubChars.Roguecount, SubChars.Magiccount, SubChars.Priestcount, SubChars.Archercount, SubChars.Alchemistcount); 
         }
     }
 

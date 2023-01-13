@@ -12,7 +12,10 @@ public class Monster_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        playerScript = GameObject.Find("Player").GetComponent<PlayerScript>();
+        if (GameObject.Find("Player") != null)
+        {
+            playerScript = GameObject.Find("Player").GetComponent<PlayerScript>();
+        }
         Monster_Stat = GetComponent<Monster_Script>();
         Get_Monster_Stat(Game_System.Stage);
         anim = GetComponentInChildren<Animator>();

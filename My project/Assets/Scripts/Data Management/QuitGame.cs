@@ -17,8 +17,11 @@ public class QuitGame : MonoBehaviour
     private void Awake()
     {
         Debug.Log("Quit System ON");
-        GetInfo = GameObject.Find("Loading_Information").GetComponent<System_Info>();
-        DBMS = GameObject.Find("Server_Manager").GetComponent<Amazon_CognitoSync>();
+        //GetInfo = GameObject.Find("Loading_Information").GetComponent<System_Info>();
+        if (GameObject.Find("Server_Manager"))
+        {
+            DBMS = GameObject.Find("Server_Manager").GetComponent<Amazon_CognitoSync>();
+        }
         isApplicationQuit = false;
 
         InitializeApplicationQuit();
@@ -35,7 +38,7 @@ public class QuitGame : MonoBehaviour
 
     private void Update()
     {
-        isApplicationQuit = DBMS.isUpdated;
+        //isApplicationQuit = DBMS.isUpdated;
     }
 
     private bool ApplicationQuit()
