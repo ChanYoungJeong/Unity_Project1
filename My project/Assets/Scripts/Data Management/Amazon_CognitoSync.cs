@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Amazon;
@@ -15,13 +17,20 @@ public class Amazon_CognitoSync : MonoBehaviour
     public InputField InputID;
     public InputField InputPassword;
 
+    public InputField createID;
+    public InputField createPassword;
+
     public GameObject LoadInfo;
     System_Info SystemInfo;
     bool isdone;
+
+    bool hasID;
+
     public bool isUpdated;
 
     private void Awake()
     {
+        hasID = true;
         isdone = false;
         isUpdated = false;
         UnityInitializer.AttachToGameObject(this.gameObject);
@@ -34,15 +43,10 @@ public class Amazon_CognitoSync : MonoBehaviour
 
     private void Update()
     {
-        if(isdone == true)
+        if (isdone == true)
         {
             SceneChange(isdone);
             isdone = false;
-        }
-
-        if(Input.GetKeyDown("up"))
-        {
-            UpdateData("admin", 190, 4, 1, 0);
         }
     }
 
@@ -69,9 +73,25 @@ public class Amazon_CognitoSync : MonoBehaviour
         public int PlayerAttackRate { get; set; }
         [DynamoDBProperty]
         public int PlayerHpRate { get; set; }
+        [DynamoDBProperty]
+        public int PlayerLV { get; set; }
+        [DynamoDBProperty]
+        public int PlayerEXP { get; set; }
+        [DynamoDBProperty]
+        public bool RogueActive { get; set; }
+        [DynamoDBProperty]
+        public bool MagicCasterActive { get; set; }
+        [DynamoDBProperty]
+        public bool PriestActive { get; set; }
+        [DynamoDBProperty]
+        public bool ArcherActive { get; set; }
+        [DynamoDBProperty]
+        public bool AlchemistActive { get; set; }
+
     }
 
-    public void UpdateData(string _id, int _Gold, int _Stage, int _PlayerAttackRate, int _PlayerHpRate) //캐릭터 정보를 DB에 올리기
+    public void UpdateData(string _id, int _Gold, int _Stage, int _PlayerAttackRate, int _PlayerHpRate, int _PlayerLV, int _PlayerEXP,
+                            bool _rogueAct, bool _MCAct, bool _PriestAct, bool _ArcherAct, bool _AlchemistAct) //캐릭터 정보를 DB에 올리기
     {
         System s1 = null;
         context.LoadAsync<System>(_id, (result) =>
@@ -84,13 +104,20 @@ public class Amazon_CognitoSync : MonoBehaviour
                 s1.Gold = _Gold;
                 s1.PlayerAttackRate = _PlayerAttackRate;
                 s1.PlayerHpRate = _PlayerHpRate;
+                s1.PlayerLV = _PlayerLV;
+                s1.PlayerEXP = _PlayerEXP;
+                s1.RogueActive = _rogueAct;
+                s1.MagicCasterActive = _MCAct;
+                s1.PriestActive = _PriestAct;
+                s1.ArcherActive = _ArcherAct;
+                s1.AlchemistActive = _AlchemistAct;
                 context.SaveAsync<System>(s1, (result) =>
                 {
-                    if(result.Exception == null)
+                    if (result.Exception == null)
                     {
                         Debug.Log("Success!");
                     }
-                });              
+                });
             }
             else
             {
@@ -103,22 +130,80 @@ public class Amazon_CognitoSync : MonoBehaviour
     public void LogIN() //DB에서 캐릭터 정보 받고 로그인
     {
         Users c;
-        context.LoadAsync<Users>(InputID.text , (AmazonDynamoDBResult<Users> result) =>
+        context.LoadAsync<Users>(InputID.text, (AmazonDynamoDBResult<Users> result) =>
+       {
+            // id가 abcd인 캐릭터 정보를 DB에서 받아옴
+            if (result.Exception != null)
+           {
+               Debug.LogException(result.Exception);
+               return;
+           }
+           c = result.Result;
+           if (c.password == InputPassword.text) //찾은 캐릭터 정보 중 아이템 정보 출력
+            {
+               CheckAccountInfo(c);
+           }
+       }, null);
+    }
+
+    public void SignIn()
+    {
+        StartCoroutine(loadingDelay());
+    }
+
+    IEnumerator loadingDelay()
+    {
+        while (hasID == true)
+        {
+            yield return new WaitForSeconds(1.0f);
+            Debug.Log("Checking if ID exist");
+        }
+        if (hasID == false)
+        {
+            Users newUser = new Users
+            {
+                userID = createID.text,
+                password = createPassword.text
+            };
+            context.SaveAsync(newUser, (result) =>
+            {
+                if (result.Exception == null)
+                {
+                    CreateNewAccountTable(newUser.userID);
+                    Debug.Log("Account has created Successfully");
+                    hasID = true;
+                    StopCoroutine(loadingDelay());
+                }
+            });
+        }
+        else
+        {
+            Debug.Log("ID already Exist");
+        }
+    }
+
+    public void CheckID()
+    {
+        context.LoadAsync<Users>(createID.text, (AmazonDynamoDBResult<Users> result) =>
         {
             // id가 abcd인 캐릭터 정보를 DB에서 받아옴
             if (result.Exception != null)
             {
+                
                 Debug.LogException(result.Exception);
+                hasID = true;
+                Debug.Log("There is same ID : " + createID.text);
                 return;
             }
-            c = result.Result;
-            if(c.password == InputPassword.text) //찾은 캐릭터 정보 중 아이템 정보 출력
+            else
             {
-                CheckAccountInfo(c);
+                hasID = false;
+                Debug.Log("There is no sameID : " + createID.text);
             }
         }, null);
-
     }
+
+    
 
     public void SceneChange(bool _isdone)
     {
@@ -147,19 +232,38 @@ public class Amazon_CognitoSync : MonoBehaviour
             int _Gold = s.Gold;
             int _AtkR = s.PlayerAttackRate;
             int _HPR = s.PlayerHpRate;
-            SetLoading(ID, _stage, _Gold, _AtkR, _HPR);
+            SystemInfo.SetLoading(ID, _stage, _Gold, _AtkR, _HPR, s.PlayerLV, s.PlayerEXP,
+                                  s.RogueActive, s.MagicCasterActive, s.PriestActive, s.ArcherActive, s.AlchemistActive);
             isdone = true;
         }, null);
 
     }
 
-    void SetLoading(string ID, int Stage, int Gold, int PlayerAttack, int PlayerHp)
+    void CreateNewAccountTable(string _UserID)
     {
-        SystemInfo.UserAccount = ID;
-        SystemInfo.Load_Stage = Stage;
-        SystemInfo.Load_Gold = Gold;
-        SystemInfo.Player_Attack_Rate = PlayerAttack;
-        SystemInfo.Player_Hp_Rate = PlayerHp;
+        System newUserSystem = new System
+        {
+            UserID = _UserID,
+            Gold = 0,
+            Stage = 1,
+            PlayerAttackRate = 1,
+            PlayerHpRate = 0,
+            PlayerLV = 1,
+            PlayerEXP = 0,
+            RogueActive = false,
+            MagicCasterActive = false,
+            PriestActive = false,
+            ArcherActive = false,
+            AlchemistActive = false
+        };
+
+        context.SaveAsync(newUserSystem, (result) =>
+        {
+            if (result.Exception == null)
+                Debug.Log("System for " + _UserID + "has created");
+        });
     }
+
+
 }
 

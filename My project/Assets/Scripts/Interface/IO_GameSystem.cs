@@ -9,11 +9,19 @@ public class IO_GameSystem : MonoBehaviour
     [SerializeField]
     Amazon_CognitoSync DBMS;
     public ButtonScript PlayerUpgrade;
-    bool checkClosed;
+    public GameObject QuitObject;
+    public GameObject SubChars;
+    public PlayerScript Player;
+    public GameObject RoguePanel;
+    public GameObject MagicCasterPanel;
+    public GameObject PriestPanel;
+    public GameObject ArcherPanel;
+    public GameObject AlchemistPanel;
+
 
     private void Awake()
     {
-        checkClosed = false;
+        
         if (GameObject.Find("Loading_Information") == null)
         {
             Game_System.Stage = 1;
@@ -30,6 +38,33 @@ public class IO_GameSystem : MonoBehaviour
             Game_System.Gold = GetInfo.Load_Gold;
             PlayerUpgrade.atk_scoreButton = GetInfo.Player_Attack_Rate;
             PlayerUpgrade.hp_scoreButton = GetInfo.Player_Hp_Rate;
+            Player.lv = GetInfo.Player_LV;
+            Player.playerNowExp = GetInfo.Player_EXP;
+
+            SubChars.transform.GetChild(0).gameObject.SetActive(GetInfo.Rogue_Active);
+            RoguePanel.SetActive(GetInfo.Rogue_Active);
+            SubChars.transform.GetChild(1).gameObject.SetActive(GetInfo.MagicCaster_Active);
+            MagicCasterPanel.SetActive(GetInfo.MagicCaster_Active);
+            SubChars.transform.GetChild(2).gameObject.SetActive(GetInfo.Priest_Active);
+            PriestPanel.SetActive(GetInfo.Priest_Active);
+            SubChars.transform.GetChild(3).gameObject.SetActive(GetInfo.Archer_Active);
+            ArcherPanel.SetActive(GetInfo.Archer_Active);
+            SubChars.transform.GetChild(4).gameObject.SetActive(GetInfo.Alchemist_Active);
+            AlchemistPanel.SetActive(GetInfo.Alchemist_Active);
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown("up") && DBMS != null)
+        {
+            DBMS.UpdateData(GetInfo.UserAccount, Game_System.Gold, Game_System.Stage,
+                PlayerUpgrade.atk_scoreButton, PlayerUpgrade.hp_scoreButton, Player.lv, Player.playerNowExp,
+                SubChars.transform.GetChild(0).gameObject.activeSelf,
+                SubChars.transform.GetChild(1).gameObject.activeSelf,
+                SubChars.transform.GetChild(2).gameObject.activeSelf,
+                SubChars.transform.GetChild(3).gameObject.activeSelf,
+                SubChars.transform.GetChild(4).gameObject.activeSelf);
         }
     }
 
@@ -42,28 +77,9 @@ public class IO_GameSystem : MonoBehaviour
         }
         else
         {
-            Debug.Log("1");
-            DBMS.UpdateData(GetInfo.UserAccount, Game_System.Gold, Game_System.Stage,
-                          PlayerUpgrade.atk_scoreButton, PlayerUpgrade.hp_scoreButton);
-            Debug.Log("2");
-            delayQuit();
-            Debug.Log("3");
+            
         }
     }
 
-    void delayQuit()
-    {
-        int _i = 0;
-        float eTime = 0;
-        while (_i < 5)
-        {
-            eTime += Time.deltaTime;
-            if(eTime > 1)
-            {
-                _i++;
-                eTime = 0;
-                Debug.Log("1sec passed : " + _i);
-            }
-        }
-    }
+
 }

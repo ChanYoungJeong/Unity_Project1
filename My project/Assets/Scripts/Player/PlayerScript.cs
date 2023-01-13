@@ -27,6 +27,7 @@ public class PlayerScript : MonoBehaviour
     private void Start()
     {
         SetStat();
+        SetExp();
     }
     public void PlayerIdleMotion()
     {
@@ -104,7 +105,6 @@ public class PlayerScript : MonoBehaviour
         maxHp += (LvUp_Hp * lv);
         nowHp += (LvUp_Hp * lv);
         criticalRate += (LvUp_CriticalRate * lv);
-
     }
 
     void DisplayText(string text, Color color)
