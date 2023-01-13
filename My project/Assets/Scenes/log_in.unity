@@ -656,7 +656,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InputID: {fileID: 27942251}
   InputPassword: {fileID: 2122154551}
+  createID: {fileID: 160613895}
+  createPassword: {fileID: 475626178}
   LoadInfo: {fileID: 1747579125}
+  isUpdated: 0
 --- !u!4 &344218889
 Transform:
   m_ObjectHideFlags: 0
@@ -756,9 +759,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SignIn_Manager, Assembly-CSharp
-        m_MethodName: CreateAccount
+      - m_Target: {fileID: 344218888}
+        m_TargetAssemblyTypeName: Amazon_CognitoSync, Assembly-CSharp
+        m_MethodName: SignIn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1358,9 +1361,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SignIn_Manager, Assembly-CSharp
-        m_MethodName: CloseSIgnIn
+      - m_Target: {fileID: 1468983654}
+        m_TargetAssemblyTypeName: SignIn_Panel_Manager, Assembly-CSharp
+        m_MethodName: CloseSignIn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1492,9 +1495,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SignIn_Manager, Assembly-CSharp
-        m_MethodName: ActiveSignIn
+      - m_Target: {fileID: 1468983654}
+        m_TargetAssemblyTypeName: SignIn_Panel_Manager, Assembly-CSharp
+        m_MethodName: OpenSignIN
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1790,9 +1793,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SignIn_Manager, Assembly-CSharp
-        m_MethodName: CheckUserID
+      - m_Target: {fileID: 344218888}
+        m_TargetAssemblyTypeName: Amazon_CognitoSync, Assembly-CSharp
+        m_MethodName: CheckID
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1937,7 +1940,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1218451758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2387,6 +2390,7 @@ GameObject:
   - component: {fileID: 1468983653}
   - component: {fileID: 1468983652}
   - component: {fileID: 1468983651}
+  - component: {fileID: 1468983654}
   m_Layer: 5
   m_Name: log_in setting
   m_TagString: Untagged
@@ -2478,6 +2482,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1468983654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468983649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0b8cede03926934783ccc63a8337414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SignINPanel: {fileID: 1218451757}
 --- !u!1 &1480809800
 GameObject:
   m_ObjectHideFlags: 0

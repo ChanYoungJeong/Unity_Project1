@@ -64,6 +64,7 @@ public class SubCharSetting : MonoBehaviour
                 Game_System.Gold -= 100;
                 Debug.Log("sibal" +Game_System.Gold);
                 RoguePanel.SetActive(true);
+                Rogue.SetActive(true);
                 Roguecount++;
             }
         }
