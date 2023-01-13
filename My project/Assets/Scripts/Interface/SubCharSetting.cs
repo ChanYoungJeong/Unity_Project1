@@ -8,11 +8,11 @@ public class SubCharSetting : MonoBehaviour
 {
     public PlayerScript Player_Object;
     public int player_LEVEL;
-    int Roguecount=0;
-    int Magiccount = 0;
-    int Pirstcount = 0;
-    int Archercount = 0;
-    int Alchemistcount = 0;
+    public bool Roguecount = false;
+    public bool Magiccount = false;
+    public bool Priestcount = false;
+    public bool Archercount = false;
+    public bool Alchemistcount = false;
 
     public GameObject SettingPanel;
     public GameObject RoguePanel;
@@ -31,11 +31,13 @@ public class SubCharSetting : MonoBehaviour
     private void Start()
     {
         SettingPanel.SetActive(false);
+        
         RoguePanel.SetActive(false);
         MagicCasterPanel.SetActive(false);
         PriestPanel.SetActive(false);
         ArcherPanel.SetActive(false);
         AlchemistPanel.SetActive(false);
+        
     }
 
     public void SettingPanelSetActive()
@@ -43,7 +45,13 @@ public class SubCharSetting : MonoBehaviour
             if (SettingPanel.activeSelf == false)
             {
                 SettingPanel.SetActive(true);
-            }
+                Debug.Log(Roguecount);
+                RoguePanel.SetActive(Roguecount);
+                MagicCasterPanel.SetActive(Magiccount);
+                PriestPanel.SetActive(Priestcount);
+                ArcherPanel.SetActive(Archercount);
+                AlchemistPanel.SetActive(Alchemistcount);
+        }
             else
             {
                 SettingPanel.SetActive(false);
@@ -59,13 +67,13 @@ public class SubCharSetting : MonoBehaviour
 
         if (player_LEVEL == 2 && Game_System.Gold >= 100)
         {
-            if (Roguecount == 0)
+            if (Roguecount == false)
             {
                 Game_System.Gold -= 100;
                 Debug.Log("sibal" +Game_System.Gold);
                 RoguePanel.SetActive(true);
                 Rogue.SetActive(true);
-                Roguecount++;
+                Roguecount = true;
             }
         }
         
@@ -103,11 +111,11 @@ public class SubCharSetting : MonoBehaviour
 
         if (player_LEVEL == 4 && Game_System.Gold >= 500)
         {
-            if (Magiccount == 0)
+            if (Magiccount == false)
             {
                 Game_System.Gold -= 500;
                 MagicCasterPanel.SetActive(true);
-                Magiccount++;
+                Magiccount = true;
             }
         }
     }
@@ -140,11 +148,11 @@ public class SubCharSetting : MonoBehaviour
 
         if (player_LEVEL == 10 && Game_System.Gold >= 2000)
         {
-            if (Pirstcount == 0)
+            if (Priestcount == false)
             {
                 Game_System.Gold -= 2000;
                 PriestPanel.SetActive(true);
-                Pirstcount++;
+                Priestcount = true;
             }
         }
     }
@@ -177,11 +185,11 @@ public class SubCharSetting : MonoBehaviour
 
         if (player_LEVEL == 2 && Game_System.Gold >= 10)
         {
-            if (Archercount == 0)
+            if (Archercount == false)
             {
                 Game_System.Gold -= 10;
                 ArcherPanel.SetActive(true);
-                Archercount++;
+                Archercount = true;
             }
         }
     }
@@ -215,11 +223,11 @@ public class SubCharSetting : MonoBehaviour
 
         if (player_LEVEL == 2 && Game_System.Gold >= 10)
         {
-            if (Alchemistcount == 0)
+            if (Alchemistcount == false)
             {
                 Game_System.Gold -= 10;
                 AlchemistPanel.SetActive(true);
-                Alchemistcount++;
+                Alchemistcount = true;
             }
         }
     }

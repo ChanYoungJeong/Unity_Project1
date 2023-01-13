@@ -72,7 +72,11 @@ public class PlayerScript : MonoBehaviour
   
     public void GetExp()
     {
-        playerNowExp += monster.Exp;
+        if (Battle_Situation_Trigger.monster != null)
+        {
+            monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
+        }
+         playerNowExp += monster.Exp;
 
         if(playerMaxExp <= playerNowExp)
         {

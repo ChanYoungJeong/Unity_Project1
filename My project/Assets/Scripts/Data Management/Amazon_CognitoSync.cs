@@ -125,6 +125,7 @@ public class Amazon_CognitoSync : MonoBehaviour
             }
             isUpdated = true;
         });
+        
     }
 
     public void LogIN() //DB에서 캐릭터 정보 받고 로그인
@@ -144,6 +145,7 @@ public class Amazon_CognitoSync : MonoBehaviour
                CheckAccountInfo(c);
            }
        }, null);
+       
     }
 
     public void SignIn()

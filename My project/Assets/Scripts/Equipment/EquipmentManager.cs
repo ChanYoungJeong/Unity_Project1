@@ -17,7 +17,7 @@ public class EquipmentManager : MonoBehaviour
         eSlots = eSlotHolder.GetComponentsInChildren<Image>();
         numSlots = eSlots.Length;
         Equipments = new Dictionary<string, Equipment>();
-       
+        Debug.Log(gameObject.name);
         //Equipments["Weapon"].stat1;
 
     }

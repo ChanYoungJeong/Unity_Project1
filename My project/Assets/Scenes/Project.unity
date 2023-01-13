@@ -1826,9 +1826,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2054688481}
-        m_TargetAssemblyTypeName: menufalse, Assembly-CSharp
-        m_MethodName: ClickStaticon
+      - m_Target: {fileID: 1140806526850390760}
+        m_TargetAssemblyTypeName: SubCharSetting, Assembly-CSharp
+        m_MethodName: SettingPanelSetActive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4517,13 +4517,9 @@ MonoBehaviour:
   DBMS: {fileID: 0}
   PlayerUpgrade: {fileID: 4613636604969676782}
   QuitObject: {fileID: 1179556094}
-  SubChars: {fileID: 2045298306}
+  SubChars: {fileID: 1140806526850390760}
   Player: {fileID: 1994892384}
-  RoguePanel: {fileID: 1140806525769831010}
-  MagicCasterPanel: {fileID: 1140806526434195879}
-  PriestPanel: {fileID: 1140806525462252256}
-  ArcherPanel: {fileID: 8491196128843150064}
-  AlchemistPanel: {fileID: 8491196129438612133}
+  SubCharGroup: {fileID: 2914000240649792765}
 --- !u!114 &1900369847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4580,11 +4576,6 @@ Transform:
 --- !u!1 &2037038301 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4329964514479736716, guid: 235fd5752deb5f642a9a6aa1f1423b64, type: 3}
-  m_PrefabInstance: {fileID: 2914000240649792764}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2045298306 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9042141183662977746, guid: 235fd5752deb5f642a9a6aa1f1423b64, type: 3}
   m_PrefabInstance: {fileID: 2914000240649792764}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &2054688481
@@ -12018,6 +12009,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player_Object: {fileID: 1994892384}
   player_LEVEL: 0
+  Roguecount: 0
+  Magiccount: 0
+  Priestcount: 0
+  Archercount: 0
+  Alchemistcount: 0
   SettingPanel: {fileID: 30857467637541706}
   RoguePanel: {fileID: 1140806525769831010}
   MagicCasterPanel: {fileID: 1140806526434195879}
@@ -13489,6 +13485,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 235fd5752deb5f642a9a6aa1f1423b64, type: 3}
+--- !u!1 &2914000240649792765 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9042141183662977746, guid: 235fd5752deb5f642a9a6aa1f1423b64, type: 3}
+  m_PrefabInstance: {fileID: 2914000240649792764}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2954891926060004693
 GameObject:
   m_ObjectHideFlags: 0
