@@ -15,6 +15,4 @@ public class Monster_Script : MonoBehaviour
     public int Golds;
     public int Exp;
 
-
-    
 }
