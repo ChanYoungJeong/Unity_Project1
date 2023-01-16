@@ -12,6 +12,7 @@ public class ToRaid : MonoBehaviour
     public void SceneChangePriject()
     {
         SceneManager.LoadScene("Project");
+        Time.timeScale = 1;
     }
     public void SceneChangeTowerDefense()
     {
