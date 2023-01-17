@@ -36,13 +36,15 @@ public class SubSkillAttack : MonoBehaviour
     {
         if (Battle_Situation_Trigger.monster != null)
         {
-
             if (isCoolTime)
             {
                 StartCoroutine(SkillAttack());
                 StopCoroutine(SkillAttack());
             }
         }
+
+
+
         if (this.name == "Kunai")
         {
             cooldownBar.value += Time.deltaTime * 1 / SubCharSkill.cooldown;
@@ -51,6 +53,12 @@ public class SubSkillAttack : MonoBehaviour
         {
             cooldownBar.value += Time.deltaTime * 1 / SubCharSkill.cooldown;
 
+
+            if (Lightning != null && Battle_Situation_Trigger.monster != null)
+            {
+                Lightning.transform.position = new Vector2(Battle_Situation_Trigger.monster.transform.position.x,
+                                                            Battle_Situation_Trigger.monster.transform.position.y + 1.4f);
+            }
         }
         else if (this.name == "MegaArrow")
         {
@@ -62,6 +70,8 @@ public class SubSkillAttack : MonoBehaviour
             cooldownBar.value += Time.deltaTime * 1 / SubCharSkill.cooldown;
 
         }
+
+        
     }
 
     public void SetSubSkill()
