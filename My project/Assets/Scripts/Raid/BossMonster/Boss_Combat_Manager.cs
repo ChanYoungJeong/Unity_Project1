@@ -2,45 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster_Combat : MonoBehaviour
+public class Boss_Combat_Manager : MonoBehaviour
 {
-    Monster_Script Monster_Stat;
-    PlayerScript Player_Stat;
+    BossMonster_Script BossHP;
 
     public Transform DamagePrinter;
     public GameObject DamageText;
     public GameObject CriticalDamageText;
-
-    bool check = false;
-    // Start is called before the first frame update
+    public bool on = true;
+   
     void Start()
     {
-        Player_Stat = GameObject.Find("Player").GetComponent<PlayerScript>();
-        Monster_Stat = this.GetComponent<Monster_Script>();
+        
     }
-
-    // Update is called once per frame
     void Update()
     {
-        if (Battle_Situation_Trigger.on_Battle)
-        {
-            if (Player_Stat && !check)
-            {
-                check = true;
-                StartCoroutine(Attack());
-            }
-        }
-        else
-        {
-            StopCoroutine(Attack());
-        }
+
     }
 
-    IEnumerator Attack()
+    // startBtn 클릭시 게임 실행
+    void StartGame()
     {
-        yield return new WaitForSeconds(Monster_Stat.atkSpeed);       
-        Player_Stat.nowHp -= Monster_Stat.atkDmg;
-        Debug.Log("Monster Attack, Player Hp = " + Player_Stat.nowHp);
+        if (on == true)
+        {
+            
+        }
+
+        else if (on == false)
+        {
+
+        }
     }
 
     public void ApplyDamage(float damage, Color color, float ciritcalRate, float criticalDamage)
@@ -48,7 +39,7 @@ public class Monster_Combat : MonoBehaviour
 
         if (Random.Range(0, 100) < ciritcalRate)
         {
-            Monster_Stat.nowHp -= Mathf.RoundToInt(damage * criticalDamage);
+            BossHP.nowHp -= Mathf.RoundToInt(damage * criticalDamage);
             GameObject hudText = Instantiate(CriticalDamageText);
             hudText.transform.position = DamagePrinter.position;
             hudText.GetComponent<DamageText>().damage = Mathf.RoundToInt(damage * criticalDamage);
@@ -56,7 +47,7 @@ public class Monster_Combat : MonoBehaviour
         }
         else
         {
-            Monster_Stat.nowHp -= damage;
+            BossHP.nowHp -= damage;
             GameObject hudText = Instantiate(DamageText);
             hudText.transform.position = DamagePrinter.position;
             hudText.GetComponent<DamageText>().damage = damage;

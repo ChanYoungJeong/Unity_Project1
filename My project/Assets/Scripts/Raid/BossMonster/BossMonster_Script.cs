@@ -26,7 +26,6 @@ public class BossMonster_Script : MonoBehaviour
     public void SetBossStat()
     {
         bool isFind = BList.BossStats.ContainsKey(this.name);
-        Debug.Log(isFind);
         if (isFind)
         {
             BStat = BList.BossStats[this.name];
