@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class BossList : MonoBehaviour
 {
-    public Dictionary<string,BossStat>BossStats = new Dictionary<string,BossStat>();
+    public Dictionary<string, BossStat> BossStats;
+
+     void Awake()
+    {
+     BossStats = new Dictionary<string,BossStat>();
+        Generate();
+    }
+     
+
 
     void Start()
     {
-        Generate();
+        
     }
     void Generate()
     {

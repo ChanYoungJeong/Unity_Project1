@@ -14,7 +14,6 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         canvasGroup = GetComponent<CanvasGroup>();
     }
 
-
     public void OnBeginDrag(PointerEventData eventData)
     {
         // 드래그 직전 소속되어 있던 부모 트랜스폼 정보 저장

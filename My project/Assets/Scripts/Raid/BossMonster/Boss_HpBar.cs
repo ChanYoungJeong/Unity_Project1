@@ -6,20 +6,24 @@ using UnityEngine.UI;
 public class Boss_HpBar : MonoBehaviour
 {
     public Slider hpSlider;
-    BossStat BossStats;
+    public BossStat BossStats;
+    [SerializeField]
     float maxHP;
+    [SerializeField]
     float nowHP;
-
+  
     void Awake()
     {
         BossStats = this.GetComponent<BossStat>();
     }
     void Update()
     {
-        maxHP = BossStats.maxHp;
-        nowHP = BossStats.nowHp;
-
-        hpSlider.value = (float)nowHP / (float)maxHP;
+        if (BossStats != null)
+        {
+            maxHP = BossStats.maxHp;
+            nowHP = BossStats.nowHp;
+            HandleHp();
+        }
     }
     private void HandleHp()
     {
