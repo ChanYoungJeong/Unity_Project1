@@ -115,6 +115,7 @@ public class SubChar_Combat_manager : MonoBehaviour
             skillcooldown = subSkillStat.cooldown;
             skillLv = subSkillStat.SubSkillLevel;
             skillDamage = subSkillStat.damage * skillLv;
+            
         }
     }
 

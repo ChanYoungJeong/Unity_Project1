@@ -15,6 +15,11 @@ public class SubCharSetting : MonoBehaviour
     public bool Alchemistcount = false;
 
     public GameObject SettingPanel;
+
+    public GameObject HeroPanel; //  hong write
+    public GameObject controlbt;
+    
+
     public GameObject RoguePanel;
     public GameObject MagicCasterPanel;
     public GameObject PriestPanel;
@@ -45,16 +50,22 @@ public class SubCharSetting : MonoBehaviour
             if (SettingPanel.activeSelf == false)
             {
                 SettingPanel.SetActive(true);
+
+                HeroPanel.SetActive(true); //  hong write
+                controlbt.SetActive(true);
+
                 Debug.Log(Roguecount);
                 RoguePanel.SetActive(Roguecount);
                 MagicCasterPanel.SetActive(Magiccount);
                 PriestPanel.SetActive(Priestcount);
                 ArcherPanel.SetActive(Archercount);
                 AlchemistPanel.SetActive(Alchemistcount);
-        }
+            }
             else
             {
                 SettingPanel.SetActive(false);
+                HeroPanel.SetActive(false);//  hong write
+                controlbt.SetActive(false);
             }
     }
 
