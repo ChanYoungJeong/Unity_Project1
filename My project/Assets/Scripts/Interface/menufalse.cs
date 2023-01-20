@@ -5,30 +5,46 @@ using UnityEngine.UI;
 
 public class menufalse : MonoBehaviour
 {
+    
     public GameObject inventoryui;
     public GameObject equipment;
     public GameObject shop;
     public GameObject heroui;
     public GameObject gameobject5;
 
-    public GameObject shopbt;
-    public GameObject eqibt;
-    public GameObject herobt;
-    public GameObject mainmenubt;
-    public GameObject Btnalloff;
+    public GameObject ContropButtonUi;
 
-    /*public void Start()
+    public GameObject mainmenubt;
+
+
+    /*public bool Roguecount = false;
+    public bool Magiccount = false;
+    public bool Priestcount = false;
+    public bool Archercount = false;
+    public bool Alchemistcount = false;*/
+
+
+    public GameObject RoguePanel;
+    public GameObject MagicCasterPanel;
+    public GameObject PriestPanel;
+    public GameObject ArcherPanel;
+    public GameObject AlchemistPanel;
+
+    public void Start()
     {
-        eqibt.SetActive(false);
-        shopbt.SetActive(false);
-        herobt.SetActive(false);
-        Btnalloff.SetActive(false);
+        ContropButtonUi.SetActive(false);
+        
         inventoryui.SetActive(false);
         equipment.SetActive(false);
         shop.SetActive(false);
         heroui.SetActive(false);
         gameobject5.SetActive(false);
-    }*/
+        ContropButtonUi.SetActive(false);
+    }
+    public void Update()
+    {
+
+    }
     public void ShopOnoff()
     {
         if (shop.activeSelf == true)
@@ -61,7 +77,7 @@ public class menufalse : MonoBehaviour
             heroui.SetActive(false);
             gameobject5.SetActive(false);
 
-           // eqibt.SetActive(false);
+            // eqibt.SetActive(false);
         }
         else if (inventoryui.activeSelf == false)
         {
@@ -89,20 +105,17 @@ public class menufalse : MonoBehaviour
             equipment.SetActive(false);
             shop.SetActive(false);
 
-           //heroui.SetActive(false);
-           // gameobject5.SetActive(false);
-           // herobt.SetActive(false);
+            //heroui.SetActive(false);
+            // gameobject5.SetActive(false);
+            // herobt.SetActive(false);
 
         }
     }
     public void MainOnOffSetActive()
     {
-        if (eqibt.activeSelf == true)
+        if (ContropButtonUi.activeSelf == true)
         {
-            eqibt.SetActive(false);
-            shopbt.SetActive(false);
-            herobt.SetActive(false);
-            Btnalloff.SetActive(false);
+            ContropButtonUi.SetActive(false);
             inventoryui.SetActive(false);
             equipment.SetActive(false);
             shop.SetActive(false);
@@ -111,22 +124,15 @@ public class menufalse : MonoBehaviour
         }
         else
         {
-            eqibt.SetActive(true);
-            shopbt.SetActive(true);
-            herobt.SetActive(true);
-            Btnalloff.SetActive(true);
-
+            ContropButtonUi.SetActive(true);
             equipment.SetActive(true);
             inventoryui.SetActive(true);
         }
-        
+
     }
     public void ButtonAllOff()
     {
-        Btnalloff.SetActive(false);
-        herobt.SetActive(false);
-        eqibt.SetActive(false);
-        shopbt.SetActive(false);
+        ContropButtonUi.SetActive(false);
         inventoryui.SetActive(false);
         equipment.SetActive(false);
         shop.SetActive(false);
@@ -136,58 +142,45 @@ public class menufalse : MonoBehaviour
 
     public void ClickStaticon()
     {
-        inventoryui.SetActive(false);
-        equipment.SetActive(false);
-        shop.SetActive(false);
-
-        if (heroui.activeSelf==false) {
-            shopbt.SetActive(true);
-            herobt.SetActive(true);
-            eqibt.SetActive(true);
-            Btnalloff.SetActive(true);
-
-            heroui.SetActive(true);
+        /*if (gameobject5.activeSelf == false)
+        {
             gameobject5.SetActive(true);
-            shop.SetActive(false);
+            heroui.SetActive(true);
+            Debug.Log("oh"+Roguecount);
+            RoguePanel.SetActive(Roguecount);
+            MagicCasterPanel.SetActive(Magiccount);
+            PriestPanel.SetActive(Priestcount);
+            ArcherPanel.SetActive(Archercount);
+            AlchemistPanel.SetActive(Alchemistcount);
         }
         else
         {
-            shopbt.SetActive(false);
-            herobt.SetActive(false);
-            eqibt.SetActive(false);
-            Btnalloff.SetActive(false);
-
-            heroui.SetActive(false);
             gameobject5.SetActive(false);
-
-        }
+            heroui.SetActive(false);
+        }*/
     }
 
     public void ClickShopIcon()
     {
         inventoryui.SetActive(false);
         equipment.SetActive(false);
-        heroui.SetActive(false);
-        gameobject5.SetActive(false);
+        /*heroui.SetActive(false);
+        gameobject5.SetActive(false);*/
+
         if (shop.activeSelf == false)
         {
-            shopbt.SetActive(true);
-            herobt.SetActive(true);
-            eqibt.SetActive(true);
-            Btnalloff.SetActive(true);
-
+            ContropButtonUi.SetActive(true);
             shop.SetActive(true);
+
             heroui.SetActive(false);
             gameobject5.SetActive(false);
         }
         else
         {
-            shopbt.SetActive(false);
-            herobt.SetActive(false);
-            eqibt.SetActive(false);
-            Btnalloff.SetActive(false);
-
+            ContropButtonUi.SetActive(false);
             shop.SetActive(false);
         }
     }
 }
+
+    
