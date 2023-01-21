@@ -76,7 +76,7 @@ public class SubCharSetting : MonoBehaviour
         
         player_LEVEL = Player_Object.lv;
 
-        if (player_LEVEL == 2 && Game_System.Gold >= 100)
+        if (player_LEVEL >= 2 && Game_System.Gold >= 100)
         {
             if (Roguecount == false)
             {
@@ -120,7 +120,7 @@ public class SubCharSetting : MonoBehaviour
     {
         player_LEVEL = Player_Object.lv;
 
-        if (player_LEVEL == 4 && Game_System.Gold >= 500)
+        if (player_LEVEL >= 4 && Game_System.Gold >= 500)
         {
             if (Magiccount == false)
             {
@@ -157,7 +157,7 @@ public class SubCharSetting : MonoBehaviour
     {
         player_LEVEL = Player_Object.lv;
 
-        if (player_LEVEL == 10 && Game_System.Gold >= 2000)
+        if (player_LEVEL >= 10 && Game_System.Gold >= 2000)
         {
             if (Priestcount == false)
             {
@@ -194,7 +194,7 @@ public class SubCharSetting : MonoBehaviour
     {
         player_LEVEL = Player_Object.lv;
 
-        if (player_LEVEL == 2 && Game_System.Gold >= 10)
+        if (player_LEVEL >= 2 && Game_System.Gold >= 10)
         {
             if (Archercount == false)
             {
@@ -232,7 +232,7 @@ public class SubCharSetting : MonoBehaviour
     {
         player_LEVEL = Player_Object.lv;
 
-        if (player_LEVEL == 2 && Game_System.Gold >= 10)
+        if (player_LEVEL >= 2 && Game_System.Gold >= 10)
         {
             if (Alchemistcount == false)
             {
