@@ -19,8 +19,7 @@ public class Monster_Manager : MonoBehaviour
         Monster_Stat = GetComponent<Monster_Script>();
         Get_Monster_Stat(Game_System.Stage);
         anim = GetComponentInChildren<Animator>();
-        anim.SetBool("is_Dead", false);
-        
+        anim.SetBool("is_Dead", false);        
     }
 
     // Update is called once per frame

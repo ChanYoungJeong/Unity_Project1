@@ -42,13 +42,17 @@ public class SubSkillManager : MonoBehaviour
             monsterCombat = Battle_Situation_Trigger.monster.GetComponent<Monster_Combat>();
 
             if (this.name == "Kunai(Clone)")
-            {
-                monsterCombat.ApplyDamage(kunaiDmg, Color.yellow, 0, 0);
+
+            {                
+                monster.nowHp -= kunaiDmg;
+                monsterCombat.ApplyDamage(kunaiDmg, Color.yellow, 0, 0);        
                 Destroy(SubSkillAttack.kunai);
             }
             else if (this.name == "Ligntning(Clone)")
             {
                 SubSkillAttack.Lightning.transform.position = new Vector3(monster.transform.position.x, monster.transform.position.y + 1.4f);
+
+                monster.nowHp -= LightningDmg;
                 monsterCombat.ApplyDamage(LightningDmg, Color.magenta, 0, 0);
                 Destroy(SubSkillAttack.Lightning, 0.8f);
             }
