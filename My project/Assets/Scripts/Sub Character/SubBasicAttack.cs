@@ -93,8 +93,7 @@ public class SubBasicAttack : MonoBehaviour
     public void BasicAttack()
     {
         if (Battle_Situation_Trigger.monster != null)
-        {
-            
+        {           
             if(this.name == "Dager")
             {
                 subAnimator.SetTrigger("AttackNormal");

@@ -34,9 +34,7 @@ public class Amazon_CognitoSync : MonoBehaviour
         isdone = false;
         isUpdated = false;
         UnityInitializer.AttachToGameObject(this.gameObject);
-        credentials = new CognitoAWSCredentials("ap-northeast-2:1913bb15-47e3-43c0-8f00-e35cfe123455", RegionEndpoint.APNortheast2);
-        DBclient = new AmazonDynamoDBClient(credentials, RegionEndpoint.APNortheast2);
-        context = new DynamoDBContext(DBclient);
+        CreateClilent();
         //
         SystemInfo = LoadInfo.GetComponent<System_Info>();
     }
@@ -48,6 +46,20 @@ public class Amazon_CognitoSync : MonoBehaviour
             SceneChange(isdone);
             isdone = false;
         }
+    }
+
+    void CreateClilent()
+    {
+        credentials = new CognitoAWSCredentials("ap-northeast-2:1913bb15-47e3-43c0-8f00-e35cfe123455", RegionEndpoint.APNortheast2);
+        DBclient = new AmazonDynamoDBClient(credentials, RegionEndpoint.APNortheast2);
+        context = new DynamoDBContext(DBclient);
+    }
+
+    void DisposeClient()
+    {
+        context.Dispose();
+        DBclient.Dispose();
+        credentials.Dispose();
     }
 
     [DynamoDBTable("Users")]
@@ -237,6 +249,7 @@ public class Amazon_CognitoSync : MonoBehaviour
             SystemInfo.SetLoading(ID, _stage, _Gold, _AtkR, _HPR, s.PlayerLV, s.PlayerEXP,
                                   s.RogueActive, s.MagicCasterActive, s.PriestActive, s.ArcherActive, s.AlchemistActive);
             isdone = true;
+            DisposeClient();
         }, null);
 
     }

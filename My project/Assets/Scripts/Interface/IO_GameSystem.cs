@@ -75,5 +75,12 @@ public class IO_GameSystem : MonoBehaviour
         }
     }
 
+    public void ProtectCurrentData()
+    {
+        GetInfo.SetLoading(GetInfo.UserAccount, Game_System.Stage, Game_System.Gold, PlayerUpgrade.atk_scoreButton,
+            PlayerUpgrade.hp_scoreButton, Player.lv, Player.playerNowExp,
+            SubChars.Roguecount, SubChars.Magiccount, SubChars.Priestcount, SubChars.Archercount, SubChars.Alchemistcount);
+        Debug.Log("Data has saved successfully");
+    }
 
 }
