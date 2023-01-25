@@ -8,6 +8,8 @@ public class SubBasicAttack : MonoBehaviour
     public static GameObject basicAttack;
     PlayerScript playerScript;
 
+    Boss_Combat_Manager BossBtn;
+
     int x;
     Transform playerTrans;
     SubChar_Combat_manager SubStat;
@@ -27,7 +29,7 @@ public class SubBasicAttack : MonoBehaviour
     private void Update()
     {
 
-        if (Battle_Situation_Trigger.monster != null)
+        if (Battle_Situation_Trigger.monster != null || CreateBoss.sibal != null)
         {
             if (isCoolTime)
             {
@@ -44,6 +46,7 @@ public class SubBasicAttack : MonoBehaviour
 
         if (this.name == "Dager")
         {
+            Debug.Log(SubStat.atkSpeed);
             yield return new WaitForSeconds(SubStat.atkSpeed);
             BasicAttack();
             isCoolTime = true;
@@ -92,7 +95,7 @@ public class SubBasicAttack : MonoBehaviour
 
     public void BasicAttack()
     {
-        if (Battle_Situation_Trigger.monster != null)
+        if (Battle_Situation_Trigger.monster != null || CreateBoss.sibal != null)
         {
             
             if(this.name == "Dager")
