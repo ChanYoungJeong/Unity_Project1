@@ -174,10 +174,7 @@ public class menufalse : MonoBehaviour
 
             
         }
-        else if(shop.activeSelf == false&&ContropButtonUi.activeSelf==true)
-        {
-            shop.SetActive(true);
-        }
+        
         else
         {
             ContropButtonUi.SetActive(false);
