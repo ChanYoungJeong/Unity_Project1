@@ -24,11 +24,24 @@ public class PlayerScript : MonoBehaviour
 
     public Animator playerAnimator;
 
+
+    public CharacterController characterController;
+
+    private void InputControlVector()
+    {
+        if (characterController)
+        {
+            //characterController.Move(inputDirection);
+        }
+    }
+
     private void Start()
     {
         SetStat();
         SetExp();
     }
+
+
     public void PlayerIdleMotion()
     {
         playerAnimator.SetTrigger("Idle");
