@@ -6,70 +6,56 @@ public class Joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     [SerializeField]
     private RectTransform lever;
     private RectTransform rectTransform;
-    // 추가
+
     [SerializeField, Range(10f, 150f)]
     private float leverRange;
 
-    private Vector2 inputVector;    // 추가
-    private bool isInput;    // 추가
+    private Vector2 inputVector;
+    private Vector3 input = Vector3.zero;
+
+    public float Horizontal { get { return input.x; } }
+    public float Vertical { get { return input.y; } }
 
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
     }
 
-    void Update()
-    {
-        if (isInput)
-        {
-            InputControlVector();
-        }
-    }
-
     public void OnBeginDrag(PointerEventData eventData)
     {
-        var inputDir = eventData.position - rectTransform.anchoredPosition;
-        //추가
-        var clampedDir = inputDir.magnitude < leverRange ?
-            inputDir : inputDir.normalized * leverRange;
-
-        // lever.anchoredPosition = inputDir;
-        lever.anchoredPosition = clampedDir;    // 변경
-
-        ControlJoystickLever(eventData);  // 추가
-        isInput = true;    // 추가
-
+        ControlJoystickLever(eventData);  
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        var inputDir = eventData.position - rectTransform.anchoredPosition;
-        // 추가
-        var clampedDir = inputDir.magnitude < leverRange ? inputDir : inputDir.normalized * leverRange;
-
-        lever.anchoredPosition = clampedDir;    // 변경
-
-        ControlJoystickLever(eventData);    // 추가
-        isInput = false;    // 추가
+        ControlJoystickLever(eventData);
+    }
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        lever.anchoredPosition = Vector2.zero;
+        input = Vector2.zero;
     }
 
     public void ControlJoystickLever(PointerEventData eventData)
     {
         var inputDir = eventData.position - rectTransform.anchoredPosition;
-        var clampedDir = inputDir.magnitude < leverRange ? inputDir
-            : inputDir.normalized * leverRange;
+        var clampedDir = inputDir.magnitude < leverRange ? inputDir : inputDir.normalized * leverRange;
+
         lever.anchoredPosition = clampedDir;
         inputVector = clampedDir / leverRange;
+
+        InputControlVector(inputVector.magnitude, inputVector.normalized);
     }
 
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        lever.anchoredPosition = Vector2.zero;
-    }
 
-    private void InputControlVector()
+    private void InputControlVector(float magnitude, Vector2 normalised)
     {
-        //Debug.Log(inputDirection.x + " / " + inputDirection.y);
-        // 캐릭터에게 입력벡터를 전달
+        if(magnitude > 0)
+        {
+            if(magnitude < 1)
+            {
+                input = normalised;
+            }
+        }
     }
 }
