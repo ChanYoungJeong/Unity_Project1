@@ -19,7 +19,8 @@ public class Monster_Manager : MonoBehaviour
         Monster_Stat = GetComponent<Monster_Script>();
         Get_Monster_Stat(Game_System.Stage);
         anim = GetComponentInChildren<Animator>();
-        anim.SetBool("isdead", false);        
+        anim.SetBool("is_Dead", false);
+        
     }
 
     // Update is called once per frame
@@ -105,7 +106,7 @@ public class Monster_Manager : MonoBehaviour
     IEnumerator Dead_Animation()
     {
         check_animation = true;
-        anim.SetBool("isdead", true);
+        anim.SetBool("is_Dead", true);
         yield return new WaitForSeconds(1.0f);
     }
 
