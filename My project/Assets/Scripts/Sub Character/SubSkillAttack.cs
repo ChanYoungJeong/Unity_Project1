@@ -53,6 +53,7 @@ public class SubSkillAttack : MonoBehaviour
         {
             cooldownBar.value += Time.deltaTime * 1 / SubCharSkill.cooldown;
 
+
             if (Lightning != null && Battle_Situation_Trigger.monster != null)
             {
                 Lightning.transform.position = new Vector2(Battle_Situation_Trigger.monster.transform.position.x,
@@ -144,10 +145,8 @@ public class SubSkillAttack : MonoBehaviour
         if (Battle_Situation_Trigger.monster != null)
         {
             subAnimator.SetTrigger("SkillMagic");
-           
-            LightningCreate();
-            Invoke("LightningCreate", 0.4f);
-            Invoke("LightningCreate", 0.8f);
+            monsterTrans = Battle_Situation_Trigger.monster.transform;
+            Lightning = Instantiate(subSkillPrefab, new Vector3(monsterTrans.transform.position.x, monsterTrans.transform.position.y + 1.4f), Quaternion.identity);
         }
     }
 
@@ -186,9 +185,4 @@ public class SubSkillAttack : MonoBehaviour
         }
     }
 
-    public void LightningCreate()
-    {
-        monsterTrans = Battle_Situation_Trigger.monster.transform;
-        Lightning = Instantiate(subSkillPrefab, new Vector3(monsterTrans.transform.position.x, monsterTrans.transform.position.y + 1.4f), Quaternion.identity);
-    }
 }

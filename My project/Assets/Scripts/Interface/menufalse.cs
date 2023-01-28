@@ -10,7 +10,7 @@ public class menufalse : MonoBehaviour
     public GameObject equipment;
     public GameObject shop;
     public GameObject heroui;
-    public GameObject subchar;
+    public GameObject gameobject5;
 
     public GameObject ContropButtonUi;
 
@@ -38,7 +38,7 @@ public class menufalse : MonoBehaviour
         equipment.SetActive(false);
         shop.SetActive(false);
         heroui.SetActive(false);
-        subchar.SetActive(false);
+        gameobject5.SetActive(false);
         ContropButtonUi.SetActive(false);
     }
     public void Update()
@@ -53,7 +53,7 @@ public class menufalse : MonoBehaviour
             inventoryui.SetActive(false);
             equipment.SetActive(false);
             heroui.SetActive(false);
-            subchar.SetActive(false);
+            gameobject5.SetActive(false);
             //shopbt.SetActive(false);
         }
 
@@ -63,7 +63,7 @@ public class menufalse : MonoBehaviour
             inventoryui.SetActive(false);
             equipment.SetActive(false);
             heroui.SetActive(false);
-            subchar.SetActive(false);
+            gameobject5.SetActive(false);
         }
 
     }
@@ -75,7 +75,7 @@ public class menufalse : MonoBehaviour
             //equipment.SetActive(false);
             shop.SetActive(false);
             heroui.SetActive(false);
-            subchar.SetActive(false);
+            gameobject5.SetActive(false);
 
             // eqibt.SetActive(false);
         }
@@ -85,7 +85,7 @@ public class menufalse : MonoBehaviour
             equipment.SetActive(true);
             shop.SetActive(false);
             heroui.SetActive(false);
-            subchar.SetActive(false);
+            gameobject5.SetActive(false);
         }
     }
     public void Herouionoff()
@@ -97,7 +97,7 @@ public class menufalse : MonoBehaviour
             shop.SetActive(false);
 
             heroui.SetActive(true);
-            subchar.SetActive(true);
+            gameobject5.SetActive(true);
         }
         else if (heroui.activeSelf == true)
         {
@@ -120,7 +120,7 @@ public class menufalse : MonoBehaviour
             equipment.SetActive(false);
             shop.SetActive(false);
             heroui.SetActive(false);
-            subchar.SetActive(false);
+            gameobject5.SetActive(false);
         }
         else
         {
@@ -137,7 +137,7 @@ public class menufalse : MonoBehaviour
         equipment.SetActive(false);
         shop.SetActive(false);
         heroui.SetActive(false);
-        subchar.SetActive(false);
+        gameobject5.SetActive(false);
     }
 
     public void ClickStaticon()
@@ -164,17 +164,17 @@ public class menufalse : MonoBehaviour
     {
         inventoryui.SetActive(false);
         equipment.SetActive(false);
-        heroui.SetActive(false);
-        subchar.SetActive(false);
-       
+        /*heroui.SetActive(false);
+        gameobject5.SetActive(false);*/
+
         if (shop.activeSelf == false)
         {
             ContropButtonUi.SetActive(true);
             shop.SetActive(true);
 
-            
+            heroui.SetActive(false);
+            gameobject5.SetActive(false);
         }
-        
         else
         {
             ContropButtonUi.SetActive(false);
