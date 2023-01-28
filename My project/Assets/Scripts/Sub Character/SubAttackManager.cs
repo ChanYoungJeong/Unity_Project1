@@ -6,12 +6,16 @@ public class SubAttackManager : MonoBehaviour
 {
     PlayerScript playerStat;
     public Monster_Script monster;
+    public BossMonster_Script bossMonster;
     GameObject subStat;
     public GameObject fireBallAfter;
 
     float subDmg;
+    float subBossDmg;
 
     Monster_Combat monsterCombat;
+    Boss_Combat_Manager bossMonsterCombat;
+    
 
     // Start is called before the first frame update
     private void Start()
