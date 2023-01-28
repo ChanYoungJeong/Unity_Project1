@@ -9,30 +9,18 @@ public class Boss_Combat_Manager : MonoBehaviour
     public Transform DamagePrinter;
     public GameObject DamageText;
     public GameObject CriticalDamageText;
-    public bool on = true;
+
+    public static bool startbtnonclick = false;
    
     void Start()
     {
-        
+        startbtnonclick = false;
     }
     void Update()
     {
 
     }
-
     // startBtn 클릭시 게임 실행
-    void StartGame()
-    {
-        if (on == true)
-        {
-            
-        }
-
-        else if (on == false)
-        {
-
-        }
-    }
 
     public void ApplyDamage(float damage, Color color, float ciritcalRate, float criticalDamage)
     {
@@ -40,6 +28,7 @@ public class Boss_Combat_Manager : MonoBehaviour
         if (Random.Range(0, 100) < ciritcalRate)
         {
             BossHP.nowHp -= Mathf.RoundToInt(damage * criticalDamage);
+            Debug.Log(BossHP.nowHp);
             GameObject hudText = Instantiate(CriticalDamageText);
             hudText.transform.position = DamagePrinter.position;
             hudText.GetComponent<DamageText>().damage = Mathf.RoundToInt(damage * criticalDamage);

@@ -46,8 +46,9 @@ public class SubAttackManager : MonoBehaviour
     }
 
     public void Update()
-    {
-        if (Battle_Situation_Trigger.monster_group == null)
+
+    {      
+        if (Battle_Situation_Trigger.monster_group == null && CreateBoss.Bss == null)
         {
             Destroy(this.gameObject);
         }
@@ -105,6 +106,38 @@ public class SubAttackManager : MonoBehaviour
             }
             Destroy(SubBasicAttack.basicAttack, 0.5f);
 
+        }
+        else if(collision.gameObject == CreateBoss.Bss)
+        {
+            subBossDmg = subStat.GetComponent<SubChar_Combat_manager>().attackDmg;
+            bossMonsterCombat = collision.GetComponent<Boss_Combat_Manager>();
+            bossMonster = collision.GetComponent<BossMonster_Script>();
+            bossMonster.nowHp -= subBossDmg;
+
+            if (this.name == "FireBall(Clone)")
+            {
+                GameObject fire = Instantiate(fireBallAfter, monster.transform);
+                bossMonsterCombat.ApplyDamage(subDmg, Color.white, 0, 0);
+
+                Destroy(fire, 0.45f);
+            }
+            else if (this.name == "dager(Clone)")
+            {
+                bossMonsterCombat.ApplyDamage(subDmg, Color.green, 0, 0);
+            }
+            else if (this.name == "arrow(Clone)")
+            {
+                bossMonsterCombat.ApplyDamage(subDmg, Color.black, 0, 0);
+            }
+            else if (this.name == "bottle(Clone)")
+            {
+                bossMonsterCombat.ApplyDamage(subDmg, Color.red, 0, 0);
+            }
+            else if (this.name == "IceFang(Clone)")
+            {
+                bossMonsterCombat.ApplyDamage(subDmg, Color.blue, 0, 0);
+            }
+            Destroy(this.gameObject);
         }
     }
 }
