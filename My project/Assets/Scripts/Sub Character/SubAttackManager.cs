@@ -6,17 +6,12 @@ public class SubAttackManager : MonoBehaviour
 {
     PlayerScript playerStat;
     public Monster_Script monster;
-    public BossMonster_Script bossMonster;
-
     GameObject subStat;
     public GameObject fireBallAfter;
-    
+
     float subDmg;
-    float subBossDmg;
 
     Monster_Combat monsterCombat;
-    Boss_Combat_Manager bossMonsterCombat;
-
 
     // Start is called before the first frame update
     private void Start()
@@ -47,12 +42,13 @@ public class SubAttackManager : MonoBehaviour
         }
 
         subDmg = subStat.GetComponent<SubChar_Combat_manager>().attackDmg;
-        subBossDmg = subDmg;
+
     }
 
     public void Update()
-    {
-        if (Battle_Situation_Trigger.monster_group == null || Boss_Combat_Manager.startbtnonclick)
+
+    {      
+        if (Battle_Situation_Trigger.monster_group == null && CreateBoss.Bss == null)
         {
             Destroy(this.gameObject);
         }
@@ -65,6 +61,8 @@ public class SubAttackManager : MonoBehaviour
         {
             subDmg = subStat.GetComponent<SubChar_Combat_manager>().attackDmg;
             monsterCombat = Battle_Situation_Trigger.monster.GetComponent<Monster_Combat>();
+
+
             monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
             monster.nowHp -= subDmg;
 
@@ -109,11 +107,11 @@ public class SubAttackManager : MonoBehaviour
             Destroy(SubBasicAttack.basicAttack, 0.5f);
 
         }
-        else if(collision.gameObject == gameObject.GetComponent<BossMonster_Script>())
+        else if(collision.gameObject == CreateBoss.Bss)
         {
             subBossDmg = subStat.GetComponent<SubChar_Combat_manager>().attackDmg;
-            bossMonsterCombat = GameObject.Find("AB").GetComponent<Boss_Combat_Manager>();
-            bossMonster = GameObject.Find("AB").GetComponent<BossMonster_Script>();
+            bossMonsterCombat = collision.GetComponent<Boss_Combat_Manager>();
+            bossMonster = collision.GetComponent<BossMonster_Script>();
             bossMonster.nowHp -= subBossDmg;
 
             if (this.name == "FireBall(Clone)")
