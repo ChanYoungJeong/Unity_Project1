@@ -6,17 +6,12 @@ public class SubAttackManager : MonoBehaviour
 {
     PlayerScript playerStat;
     public Monster_Script monster;
-    public BossMonster_Script bossMonster;
-
     GameObject subStat;
     public GameObject fireBallAfter;
-    
+
     float subDmg;
-    float subBossDmg;
 
     Monster_Combat monsterCombat;
-    Boss_Combat_Manager bossMonsterCombat;
-
 
     // Start is called before the first frame update
     private void Start()
@@ -47,12 +42,12 @@ public class SubAttackManager : MonoBehaviour
         }
 
         subDmg = subStat.GetComponent<SubChar_Combat_manager>().attackDmg;
-        subBossDmg = subDmg;
+
     }
 
     public void Update()
     {
-        if (Battle_Situation_Trigger.monster_group == null || Boss_Combat_Manager.startbtnonclick)
+        if (Battle_Situation_Trigger.monster_group == null)
         {
             Destroy(this.gameObject);
         }
@@ -65,6 +60,8 @@ public class SubAttackManager : MonoBehaviour
         {
             subDmg = subStat.GetComponent<SubChar_Combat_manager>().attackDmg;
             monsterCombat = Battle_Situation_Trigger.monster.GetComponent<Monster_Combat>();
+
+
             monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
             monster.nowHp -= subDmg;
 
@@ -108,38 +105,6 @@ public class SubAttackManager : MonoBehaviour
             }
             Destroy(SubBasicAttack.basicAttack, 0.5f);
 
-        }
-        else if(collision.gameObject == gameObject.GetComponent<BossMonster_Script>())
-        {
-            subBossDmg = subStat.GetComponent<SubChar_Combat_manager>().attackDmg;
-            bossMonsterCombat = GameObject.Find("AB").GetComponent<Boss_Combat_Manager>();
-            bossMonster = GameObject.Find("AB").GetComponent<BossMonster_Script>();
-            bossMonster.nowHp -= subBossDmg;
-
-            if (this.name == "FireBall(Clone)")
-            {
-                GameObject fire = Instantiate(fireBallAfter, monster.transform);
-                bossMonsterCombat.ApplyDamage(subDmg, Color.white, 0, 0);
-
-                Destroy(fire, 0.45f);
-            }
-            else if (this.name == "dager(Clone)")
-            {
-                bossMonsterCombat.ApplyDamage(subDmg, Color.green, 0, 0);
-            }
-            else if (this.name == "arrow(Clone)")
-            {
-                bossMonsterCombat.ApplyDamage(subDmg, Color.black, 0, 0);
-            }
-            else if (this.name == "bottle(Clone)")
-            {
-                bossMonsterCombat.ApplyDamage(subDmg, Color.red, 0, 0);
-            }
-            else if (this.name == "IceFang(Clone)")
-            {
-                bossMonsterCombat.ApplyDamage(subDmg, Color.blue, 0, 0);
-            }
-            Destroy(this.gameObject);
         }
     }
 }
