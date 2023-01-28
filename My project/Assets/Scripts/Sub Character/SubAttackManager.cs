@@ -47,7 +47,7 @@ public class SubAttackManager : MonoBehaviour
         }
 
         subDmg = subStat.GetComponent<SubChar_Combat_manager>().attackDmg;
-
+        subBossDmg = subDmg;
     }
 
     public void Update()

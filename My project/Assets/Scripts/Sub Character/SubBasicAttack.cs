@@ -29,7 +29,7 @@ public class SubBasicAttack : MonoBehaviour
     private void Update()
     {
 
-        if (Battle_Situation_Trigger.monster != null || CreateBoss.sibal != null)
+        if (Battle_Situation_Trigger.monster != null || CreateBoss.Bss != null)
         {
             if (isCoolTime)
             {
@@ -95,7 +95,7 @@ public class SubBasicAttack : MonoBehaviour
 
     public void BasicAttack()
     {
-        if (Battle_Situation_Trigger.monster != null || CreateBoss.sibal != null)
+        if (Battle_Situation_Trigger.monster != null || CreateBoss.Bss != null)
         {
             
             if(this.name == "Dager")
@@ -143,8 +143,8 @@ public class SubBasicAttack : MonoBehaviour
 
     public void CreatePrefab()
     {
-        float angle = Mathf.Atan2(Battle_Situation_Trigger.monster.transform.position.y - this.transform.position.y,
-                                                Battle_Situation_Trigger.monster.transform.position.x - this.transform.position.x) * Mathf.Rad2Deg;
+            float angle = Mathf.Atan2(Battle_Situation_Trigger.monster.transform.position.y - this.transform.position.y,
+                                  Battle_Situation_Trigger.monster.transform.position.x - this.transform.position.x) * Mathf.Rad2Deg;
 
         basicAttack = Instantiate(basicAttackPrefab, this.transform.position, Quaternion.Euler(0, 0, angle));
         basicAttack.GetComponent<Rigidbody2D>().AddForce(basicAttack.transform.right * speed, ForceMode2D.Impulse);

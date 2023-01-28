@@ -5,8 +5,8 @@ using UnityEngine;
 public class CreateBoss : MonoBehaviour
 {
 
-    public static GameObject sibal;
-    public GameObject ssibal;
+    public static GameObject Bss;
+    public GameObject BBss;
     
     void Start()
     {
@@ -20,6 +20,6 @@ public class CreateBoss : MonoBehaviour
 
     public void CreateBossMonsterA()
     {
-        sibal = Instantiate(ssibal,transform.position,Quaternion.identity);
+        Bss = Instantiate(BBss,transform.position,Quaternion.identity);
     }
 }

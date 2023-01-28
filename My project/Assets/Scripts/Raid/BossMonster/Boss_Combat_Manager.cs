@@ -15,6 +15,7 @@ public class Boss_Combat_Manager : MonoBehaviour
     void Start()
     {
         startbtnonclick = false;
+        GameObject.Find("AB");
     }
     void Update()
     {
