@@ -29,6 +29,7 @@ public class Monster_Manager : MonoBehaviour
         {
             StartCoroutine(Dead_Animation());
             Monster_Die();
+            
         }
     }
 
