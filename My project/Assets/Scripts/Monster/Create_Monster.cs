@@ -12,6 +12,7 @@ public class Create_Monster : MonoBehaviour
     GameObject group;
     private Rigidbody2D group_Rigid;
 
+    Animator Ani;
     //Monster1
     public GameObject monster1_Prefab;
     int monster1_count;

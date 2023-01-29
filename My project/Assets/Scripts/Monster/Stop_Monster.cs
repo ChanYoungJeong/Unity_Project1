@@ -21,11 +21,6 @@ public class Stop_Monster : MonoBehaviour
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
-        if (monster_Script != null)
-        {
-           monster_Script = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
-            
-        }
     }
 
     // Update is called once per frame
@@ -34,12 +29,12 @@ public class Stop_Monster : MonoBehaviour
         if (Battle_Situation_Trigger.atSpot)
         {
             rigid.velocity = Vector2.zero;
-            monster_Stop = true;
+            //monster_Stop = true;
         }
         else
         {
             Move_Left();
-            monster_Stop = false;
+            //monster_Stop = false;
         }
     }
 
