@@ -32,6 +32,8 @@ public class Monster_Manager : MonoBehaviour
             StartCoroutine(Dead_Animation());
             Monster_Die();
             
+           
+            
         }
     }
 
@@ -41,7 +43,7 @@ public class Monster_Manager : MonoBehaviour
         playerScript.GetExp();
         Debug.Log(this.transform.position);
         DeadPrefab = Instantiate(MonsterDieAnimation, this.transform.position, this.transform.rotation);
-        Destroy(this.gameObject);       
+        Destroy(this.gameObject);
         Game_System.Gold += Monster_Stat.Golds;
         ShowPlayerStat(); 
     }
