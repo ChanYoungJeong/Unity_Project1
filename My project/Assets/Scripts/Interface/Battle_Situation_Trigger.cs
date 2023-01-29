@@ -52,8 +52,6 @@ public class Battle_Situation_Trigger : MonoBehaviour
         {
             atSpot = true;
             player.GetComponent<PlayerScript>().PlayerAttackMotion();
-
-
         }
     }
 
@@ -63,7 +61,6 @@ public class Battle_Situation_Trigger : MonoBehaviour
         {
             atSpot = false;
             player.GetComponent<PlayerScript>().PlayerIdleMotion();
-
         }
     }
 
