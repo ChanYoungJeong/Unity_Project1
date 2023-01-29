@@ -5,6 +5,7 @@ using TMPro;
 
 public class DamageText : MonoBehaviour
 {
+    Monster_Combat deadscript;
     public float printSpeed;     //Speed of Dagmae Text
     public float colorSpeed;    //Speed of Vanishing
     public float destroyTime;
@@ -13,13 +14,15 @@ public class DamageText : MonoBehaviour
     public float damage;
     public Color damageColor;
 
-
+    
     // Start is called before the first frame update
     void Start()
     {
+        deadscript =this.GetComponent<Monster_Combat>();
         text = GetComponent<TextMeshPro>();
         text.text = damage.ToString();
         Invoke("DestroyObject", destroyTime);
+        
     }
 
     // Update is called once per frame
