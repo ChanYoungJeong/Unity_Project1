@@ -23,10 +23,7 @@ public class PlayerScript : MonoBehaviour
     public float criticalDamage;
 
     public Animator playerAnimator;
-
-
     public CharacterController characterController;
-
     private void InputControlVector()
     {
         if (characterController)
@@ -41,6 +38,13 @@ public class PlayerScript : MonoBehaviour
         SetExp();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            playerAnimator.SetTrigger("AttackNormal");
+        }
+    }
 
     public void PlayerIdleMotion()
     {
@@ -130,5 +134,13 @@ public class PlayerScript : MonoBehaviour
         hudText.transform.position = TextPrinter.position;
         hudText.GetComponent<PlayerText>()._Text = text;
         hudText.GetComponent<PlayerText>().textColor = color;
+    }
+
+
+    public void BasicAttackMotion()
+    {
+        playerAnimator.SetTrigger("AttackNormal");
+
+        
     }
 }
