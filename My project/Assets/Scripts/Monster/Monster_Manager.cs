@@ -7,6 +7,8 @@ public class Monster_Manager : MonoBehaviour
     Monster_Script Monster_Stat;
     Animator anim;
     PlayerScript playerScript;
+    public GameObject MonsterDieAnimation;
+    GameObject DeadPrefab;
 
     bool check_animation = false;
     // Start is called before the first frame update
@@ -29,6 +31,9 @@ public class Monster_Manager : MonoBehaviour
         {
             StartCoroutine(Dead_Animation());
             Monster_Die();
+            
+           
+            
         }
     }
 
@@ -36,6 +41,8 @@ public class Monster_Manager : MonoBehaviour
     public void Monster_Die()
     {
         playerScript.GetExp();
+        Debug.Log(this.transform.position);
+        DeadPrefab = Instantiate(MonsterDieAnimation, this.transform.position, this.transform.rotation);
         Destroy(this.gameObject);
         Game_System.Gold += Monster_Stat.Golds;
         ShowPlayerStat(); 

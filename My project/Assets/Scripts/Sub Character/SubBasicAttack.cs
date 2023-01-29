@@ -30,7 +30,7 @@ public class SubBasicAttack : MonoBehaviour
         if (Battle_Situation_Trigger.monster != null)
         {
             if (isCoolTime)
-            {
+            {              
                 StartCoroutine(Attack());
             }
         }
@@ -41,7 +41,6 @@ public class SubBasicAttack : MonoBehaviour
     {
         isCoolTime = false;
         StopCoroutine(Attack());
-
         if (this.name == "Dager")
         {
             yield return new WaitForSeconds(SubStat.atkSpeed);
@@ -92,8 +91,10 @@ public class SubBasicAttack : MonoBehaviour
 
     public void BasicAttack()
     {
-        if (Battle_Situation_Trigger.monster != null)
-        {           
+
+        if (Battle_Situation_Trigger.monster != null || CreateBoss.Bss != null)
+        {         
+
             if(this.name == "Dager")
             {
                 subAnimator.SetTrigger("AttackNormal");
@@ -139,11 +140,24 @@ public class SubBasicAttack : MonoBehaviour
 
     public void CreatePrefab()
     {
-        float angle = Mathf.Atan2(Battle_Situation_Trigger.monster.transform.position.y - this.transform.position.y,
-                                                Battle_Situation_Trigger.monster.transform.position.x - this.transform.position.x) * Mathf.Rad2Deg;
 
+        float angle = 0;
+        if (Battle_Situation_Trigger.monster != null)
+        {
+            angle = Mathf.Atan2(Battle_Situation_Trigger.monster.transform.position.y - this.transform.position.y,
+                                      Battle_Situation_Trigger.monster.transform.position.x - this.transform.position.x) * Mathf.Rad2Deg;
+        }
+        else if(CreateBoss.Bss != null)
+        {
+            angle = Mathf.Atan2(CreateBoss.Bss.transform.position.y - this.transform.position.y,
+                                      CreateBoss.Bss.transform.position.x - this.transform.position.x) * Mathf.Rad2Deg;
+        }
+
+
+        
         basicAttack = Instantiate(basicAttackPrefab, this.transform.position, Quaternion.Euler(0, 0, angle));
         basicAttack.GetComponent<Rigidbody2D>().AddForce(basicAttack.transform.right * speed, ForceMode2D.Impulse);
+        Debug.Log(basicAttack.name);
     }
 
 }

@@ -70,7 +70,7 @@ public class SubSkillAttack : MonoBehaviour
 
         }
 
-        
+
     }
 
     public void SetSubSkill()
@@ -186,9 +186,11 @@ public class SubSkillAttack : MonoBehaviour
         }
     }
 
+
     public void LightningCreate()
     {
         monsterTrans = Battle_Situation_Trigger.monster.transform;
         Lightning = Instantiate(subSkillPrefab, new Vector3(monsterTrans.transform.position.x, monsterTrans.transform.position.y + 1.4f), Quaternion.identity);
     }
+
 }
