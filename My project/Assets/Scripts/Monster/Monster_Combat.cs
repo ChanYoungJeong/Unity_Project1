@@ -6,6 +6,7 @@ public class Monster_Combat : MonoBehaviour
 {
     Monster_Script Monster_Stat;
     PlayerScript Player_Stat;
+    Animator anim;
 
     public Transform DamagePrinter;
     public GameObject DamageText;
@@ -13,6 +14,11 @@ public class Monster_Combat : MonoBehaviour
 
     bool check = false;
     // Start is called before the first frame update
+    void Awake()
+    {
+        anim = GetComponentInChildren<Animator>();
+        anim.SetBool("isattack", false);
+    }
     void Start()
     {
         Player_Stat = GameObject.Find("Player").GetComponent<PlayerScript>();
@@ -38,7 +44,8 @@ public class Monster_Combat : MonoBehaviour
 
     IEnumerator Attack()
     {
-        yield return new WaitForSeconds(Monster_Stat.atkSpeed);       
+        yield return new WaitForSeconds(Monster_Stat.atkSpeed);
+        anim.SetBool("isattack", true);
         Player_Stat.nowHp -= Monster_Stat.atkDmg;
         Debug.Log("Monster Attack, Player Hp = " + Player_Stat.nowHp);
     }
