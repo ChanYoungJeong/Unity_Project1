@@ -53,7 +53,7 @@ public class Monster_Manager : MonoBehaviour
         Monster_Stat.maxHp = Get_Monster_HP(Game_System.Stage);
         Monster_Stat.nowHp = Get_Monster_HP(Game_System.Stage);
         Monster_Stat.atkDmg = Get_Monster_ATK(Game_System.Stage);
-        Monster_Stat.atkSpeed = 7;
+        Monster_Stat.atkSpeed = 1;
         Monster_Stat.Golds = Get_Monster_Gold(Game_System.Stage);
         Monster_Stat.Exp = Get_Monster_Exp(Game_System.Stage);
     }
