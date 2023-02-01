@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6829261153421987602}
   m_Layer: 0
   m_Name: EnemyA
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,5 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3fc3f1eb8a147e4eb128effebe6837a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHp: 0
+  nowHp: 0
+  dmg: 0
   speed: 2
   target: {fileID: 2314681825701584319, guid: 129f1b5fe10ef424da0ff2abc5981855, type: 3}
