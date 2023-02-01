@@ -550,6 +550,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2314681824978881677}
   pool: {fileID: 1139150264}
+  enemy:
+  - {fileID: 6829261153421987602, guid: 68b38fdb98739b84f820a2dcce30a863, type: 3}
+  - {fileID: 4756105112466643489, guid: 305bb34774827ce4cbbabb110c5dfff0, type: 3}
 --- !u!4 &286476159
 Transform:
   m_ObjectHideFlags: 0
@@ -1216,6 +1219,23 @@ Transform:
   m_Father: {fileID: 144955202}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1498302889 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7532102518435651372, guid: 106a5eaad7afbca47b7dcb7d121efc08, type: 3}
+  m_PrefabInstance: {fileID: 7532102517298694647}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1498302893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498302889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67cffb5632eb8d845a299c2b9432c238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1682868336
 GameObject:
   m_ObjectHideFlags: 0
@@ -1385,6 +1405,11 @@ Transform:
   m_Father: {fileID: 144955202}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2053585246 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7532102517744395064, guid: 106a5eaad7afbca47b7dcb7d121efc08, type: 3}
+  m_PrefabInstance: {fileID: 7532102517298694647}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2077792497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,6 +1574,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5230932676629841274, guid: 106a5eaad7afbca47b7dcb7d121efc08, type: 3}
+      propertyPath: Trail
+      value: 
+      objectReference: {fileID: 2053585246}
     - target: {fileID: 7532102517492147108, guid: 106a5eaad7afbca47b7dcb7d121efc08, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

@@ -24,6 +24,7 @@ public class PlayerScript : MonoBehaviour
 
     public Animator playerAnimator;
     public CharacterController characterController;
+    public GameObject square;
     private void InputControlVector()
     {
         if (characterController)
@@ -36,13 +37,15 @@ public class PlayerScript : MonoBehaviour
     {
         SetStat();
         SetExp();
+
+        square.SetActive(false);
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            playerAnimator.SetTrigger("AttackNormal");
+            BasicAttackMotion();
         }
     }
 
@@ -139,8 +142,13 @@ public class PlayerScript : MonoBehaviour
 
     public void BasicAttackMotion()
     {
+        square.SetActive(true);
         playerAnimator.SetTrigger("AttackNormal");
+        Invoke("TrailSetActive", 0.5f);
+    }
 
-        
+    void TrailSetActive()
+    {
+        square.SetActive(false);
     }
 }

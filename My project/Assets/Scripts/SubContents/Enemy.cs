@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public int monsterTpye;
+    public float maxHp;
+    public float nowHp;
+    public float dmg;
     public float speed;
     public Rigidbody2D target;
 
@@ -39,5 +43,24 @@ public class Enemy : MonoBehaviour
     private void OnEnable()
     {
         target = ContentsManager.instans.player.GetComponent<Rigidbody2D>();
+        SetStat();
+    }
+
+    void SetStat()
+    {
+        monsterTpye = this.name == "EnemyA(Clone)" ? 0 : 1;
+
+        if (monsterTpye == 0)
+        {
+            maxHp = 10f;
+            nowHp = 10f;
+            dmg = 1f;
+        }
+        else
+        {
+            maxHp = 15f;
+            nowHp = 15f;
+            dmg = 1f;
+        }
     }
 }

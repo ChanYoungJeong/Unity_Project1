@@ -8,6 +8,7 @@ public class ContentsManager : MonoBehaviour
 
     public PlayerScript player;
     public PoolManager pool;
+    public Enemy[] enemy;
 
     private void Awake()
     {
