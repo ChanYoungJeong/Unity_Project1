@@ -5,22 +5,29 @@ using UnityEngine;
 public class Boss_Combat_Manager : MonoBehaviour
 {
     BossMonster_Script BossHP;
-
+   
     public Transform DamagePrinter;
     public GameObject DamageText;
     public GameObject CriticalDamageText;
 
     public static bool startbtnonclick = false;
    
+   
     void Start()
     {
+        BossHP = gameObject.GetComponent<BossMonster_Script>();
         startbtnonclick = false;
     }
     void Update()
     {
 
     }
+
     // startBtn 클릭시 게임 실행
+    public void gameStart()
+    {
+
+    }
 
     public void ApplyDamage(float damage, Color color, float ciritcalRate, float criticalDamage)
     {

@@ -22,7 +22,7 @@ public class BossList : MonoBehaviour
     {
         string name;
 
-        name = "A";
+        name = "AB(Clone)";
         BossStats.Add(name, new BossStat(0, name, 5000));
     }
 }
