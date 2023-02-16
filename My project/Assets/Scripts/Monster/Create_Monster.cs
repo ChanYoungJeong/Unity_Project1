@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Create_Monster : MonoBehaviour
 {
 
-    
+
     //Monster Group
     public GameObject monster_Group;
     GameObject group;
@@ -18,8 +18,9 @@ public class Create_Monster : MonoBehaviour
     int monster1_count;
     public bool monster1_Created = false;
 
+    float time = 0;
     //Stage Information
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,8 @@ public class Create_Monster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!group)
+        
+        if (!group)
         {
             monster1_Created = false;
         }
@@ -44,6 +46,7 @@ public class Create_Monster : MonoBehaviour
             }
 
         }
+        time += Time.deltaTime;
     }
 
     void Summon_Monster()
@@ -60,14 +63,21 @@ public class Create_Monster : MonoBehaviour
     {
         if (monster1_count > 0)
         {
-            GameObject Monster1 = Instantiate(monster1_Prefab, transform.position, transform.rotation);
-            Monster1.transform.SetParent(group.transform, true);
-            group.GetComponent<Monster_Group_Manager>().checkCoroutine = false;
+            Invoke("MakeMonster", 0f);
+            Invoke("MakeMonster", 0.3f);
+            Invoke("MakeMonster", 0.6f);
 
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(2.0f);
             monster1_count--;
             StartCoroutine(Create_Monster1());
         }
     }
-    
+
+    void MakeMonster()
+    {
+        GameObject Monster1 = Instantiate(monster1_Prefab, transform.position, transform.rotation);
+        Monster1.transform.SetParent(group.transform, true);
+        group.GetComponent<Monster_Group_Manager>().checkCoroutine = false;
+    }
+
 }
