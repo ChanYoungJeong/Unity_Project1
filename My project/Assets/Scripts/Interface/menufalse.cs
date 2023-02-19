@@ -15,7 +15,7 @@ public class menufalse : MonoBehaviour
     public GameObject ContropButtonUi;
 
     public GameObject mainmenubt;
-
+    public GameObject setting;
 
     /*public bool Roguecount = false;
     public bool Magiccount = false;
@@ -180,6 +180,19 @@ public class menufalse : MonoBehaviour
             ContropButtonUi.SetActive(false);
             shop.SetActive(false);
         }
+    }
+
+    public void ClickSetting()
+    {
+        if(setting.activeSelf == false)
+        {
+            setting.SetActive(true);
+        }
+        else
+        {
+            setting.SetActive(false);
+        }
+
     }
 }
 
