@@ -26,11 +26,10 @@ public class SubBasicAttack : MonoBehaviour
 
     private void Update()
     {
-
-        if (Battle_Situation_Trigger.monster != null)
+        if (Battle_Situation_Trigger.monster != null || CreateBoss.Bss != null)
         {
             if (isCoolTime)
-            {              
+            {
                 StartCoroutine(Attack());
             }
         }
@@ -39,6 +38,7 @@ public class SubBasicAttack : MonoBehaviour
 
     public IEnumerator Attack()
     {
+
         isCoolTime = false;
         StopCoroutine(Attack());
         if (this.name == "Dager")
@@ -91,9 +91,8 @@ public class SubBasicAttack : MonoBehaviour
 
     public void BasicAttack()
     {
-
         if (Battle_Situation_Trigger.monster != null || CreateBoss.Bss != null)
-        {         
+        {
 
             if(this.name == "Dager")
             {
@@ -120,7 +119,6 @@ public class SubBasicAttack : MonoBehaviour
                 subAnimator.SetTrigger("AttackMagic");
                 CreatePrefab();
             }
-            //몬스터 중심 향해 날라는거 구현하기
         }
     }
 
@@ -140,7 +138,6 @@ public class SubBasicAttack : MonoBehaviour
 
     public void CreatePrefab()
     {
-
         float angle = 0;
         if (Battle_Situation_Trigger.monster != null)
         {
@@ -149,6 +146,7 @@ public class SubBasicAttack : MonoBehaviour
         }
         else if(CreateBoss.Bss != null)
         {
+
             angle = Mathf.Atan2(CreateBoss.Bss.transform.position.y - this.transform.position.y,
                                       CreateBoss.Bss.transform.position.x - this.transform.position.x) * Mathf.Rad2Deg;
         }
@@ -157,7 +155,6 @@ public class SubBasicAttack : MonoBehaviour
         
         basicAttack = Instantiate(basicAttackPrefab, this.transform.position, Quaternion.Euler(0, 0, angle));
         basicAttack.GetComponent<Rigidbody2D>().AddForce(basicAttack.transform.right * speed, ForceMode2D.Impulse);
-        Debug.Log(basicAttack.name);
     }
 
 }

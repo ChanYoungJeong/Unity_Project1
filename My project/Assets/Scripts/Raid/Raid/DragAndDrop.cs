@@ -7,6 +7,8 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     private RectTransform rect;         //ui 위치 제어를 위한
     private CanvasGroup canvasGroup;    //ui가 알파값과 상호작용 제어를 위한 캔버스 그룹
 
+    public GameObject SubChar;
+
     private void Awake()
     {
         canvas = FindObjectOfType<Canvas>().transform;
@@ -34,7 +36,6 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         // 현재 스크린상의 마우스 위치를 UI 위치로 설정
         rect.position = eventData.position;
-        Debug.Log("이동중");
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -47,6 +48,7 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             // 마지막에 소속되있었던 previousParent의 자식으로 설정하고, 해당 위치로 이동
             transform.SetParent(previousParent);
             rect.position = previousParent.GetComponent<RectTransform>().position;
+            SubChar.transform.position = previousParent.GetComponent<RectTransform>().position;
         }
 
         canvasGroup.alpha = 1.0f;

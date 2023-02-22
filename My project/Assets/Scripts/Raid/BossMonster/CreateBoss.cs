@@ -13,13 +13,8 @@ public class CreateBoss : MonoBehaviour
         CreateBossMonsterA();
     }
 
-    void Update()
-    {
-        
-    }
-
     public void CreateBossMonsterA()
     {
-        Bss = Instantiate(BBss,transform.position,Quaternion.identity);
+        Bss = Instantiate(BBss, transform.position,Quaternion.identity);
     }
 }
