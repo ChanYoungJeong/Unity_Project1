@@ -8,21 +8,16 @@ public class BossList : MonoBehaviour
 
      void Awake()
     {
-     BossStats = new Dictionary<string,BossStat>();
+        BossStats = new Dictionary<string,BossStat>();
         Generate();
     }
      
-
-
-    void Start()
-    {
-        
-    }
     void Generate()
     {
         string name;
 
         name = "AB(Clone)";
         BossStats.Add(name, new BossStat(0, name, 5000));
+
     }
 }

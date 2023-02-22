@@ -25,6 +25,7 @@ public class PlayerScript : MonoBehaviour
     public Animator playerAnimator;
     public CharacterController characterController;
     public GameObject square;
+    public BossMonster_Script bossMonster; //
     private void InputControlVector()
     {
         if (characterController)
@@ -71,8 +72,8 @@ public class PlayerScript : MonoBehaviour
     }
 
     public void _PlayerAttack()
-    {      
-        if(Battle_Situation_Trigger.monster != null)
+    {
+        if (Battle_Situation_Trigger.monster != null)
         {
             monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
             monsterCombat = Battle_Situation_Trigger.monster.GetComponent<Monster_Combat>();
@@ -87,6 +88,10 @@ public class PlayerScript : MonoBehaviour
             else
             {
             }
+        }
+        else if(CreateBoss.Bss != null)
+        {
+            
         }
     }
   

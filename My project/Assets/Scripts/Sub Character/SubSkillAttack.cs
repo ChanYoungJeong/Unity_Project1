@@ -21,9 +21,9 @@ public class SubSkillAttack : MonoBehaviour
     public Animator subAnimator;
 
     public List<GameObject> create;
-    float angle;
 
     public Slider cooldownBar;
+    float angle = 0;
 
     private void Start()
     {
@@ -34,7 +34,7 @@ public class SubSkillAttack : MonoBehaviour
 
     private void Update()
     {
-        if (Battle_Situation_Trigger.monster != null)
+        if (Battle_Situation_Trigger.monster != null || CreateBoss.Bss != null)
         {
             if (isCoolTime)
             {
@@ -90,8 +90,18 @@ public class SubSkillAttack : MonoBehaviour
     IEnumerator SkillAttack()
     {
 
-        angle = Mathf.Atan2(Battle_Situation_Trigger.monster.transform.position.y - this.transform.position.y,
-                                               Battle_Situation_Trigger.monster.transform.position.x - this.transform.position.x) * Mathf.Rad2Deg;
+        angle = 0;
+        if (Battle_Situation_Trigger.monster != null)
+        {
+            angle = Mathf.Atan2(Battle_Situation_Trigger.monster.transform.position.y - this.transform.position.y,
+                                      Battle_Situation_Trigger.monster.transform.position.x - this.transform.position.x) * Mathf.Rad2Deg;
+        }
+        else if (CreateBoss.Bss != null)
+        {
+
+            angle = Mathf.Atan2(CreateBoss.Bss.transform.position.y - this.transform.position.y,
+                                      CreateBoss.Bss.transform.position.x - this.transform.position.x) * Mathf.Rad2Deg;
+        }
 
         isCoolTime = false;
         if (this.name == "Kunai")
@@ -118,8 +128,6 @@ public class SubSkillAttack : MonoBehaviour
         }
 
 
-
-
         if (cooldownBar.value >= 1)
         {
             cooldownBar.value = 0;
@@ -130,7 +138,7 @@ public class SubSkillAttack : MonoBehaviour
 
     public void RogueKunai()          // 도적 스킬
     {
-        if (Battle_Situation_Trigger.monster != null)
+        if (Battle_Situation_Trigger.monster != null || CreateBoss.Bss != null)
         {
 
 
@@ -141,7 +149,7 @@ public class SubSkillAttack : MonoBehaviour
     }
     public void MagicCasterLightning()        //마법사 스킬
     {
-        if (Battle_Situation_Trigger.monster != null)
+        if (Battle_Situation_Trigger.monster != null || CreateBoss.Bss != null)
         {
             subAnimator.SetTrigger("SkillMagic");
            
@@ -166,7 +174,7 @@ public class SubSkillAttack : MonoBehaviour
 
     public void IceMagicanBlizzardStorm()       // 얼음 마법사 스킬
     {
-        if (Battle_Situation_Trigger.monster != null)
+        if (Battle_Situation_Trigger.monster != null || CreateBoss.Bss != null)
         {
             subAnimator.SetTrigger("SkillMagic");
 
@@ -189,7 +197,14 @@ public class SubSkillAttack : MonoBehaviour
 
     public void LightningCreate()
     {
-        monsterTrans = Battle_Situation_Trigger.monster.transform;
+        if(Battle_Situation_Trigger.monster != null)
+        {
+            monsterTrans = Battle_Situation_Trigger.monster.transform;
+        }
+        else if(CreateBoss.Bss != null)
+        {
+            monsterTrans = CreateBoss.Bss.transform;
+        }
         Lightning = Instantiate(subSkillPrefab, new Vector3(monsterTrans.transform.position.x, monsterTrans.transform.position.y + 1.4f), Quaternion.identity);
     }
 

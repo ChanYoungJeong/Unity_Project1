@@ -16,6 +16,6 @@ public class BossStat : MonoBehaviour
         id = _id;
         this_name = _name;
         maxHp = _maxHP;
-        nowHp = maxHp;
+        nowHp = _maxHP;
     }
 }

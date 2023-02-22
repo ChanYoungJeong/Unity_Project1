@@ -9,12 +9,12 @@ public class BossMonster_Script : MonoBehaviour
 
     public float maxHp;
     public float nowHp;
-    public string _name;
 
     void Start()
     {
         BStat = GameObject.Find("SetBossMonster").GetComponent<BossStat>();
         BList = GameObject.Find("SetBossMonster").GetComponent<BossList>();
+
         SetBossStat();
     }
 
@@ -32,7 +32,7 @@ public class BossMonster_Script : MonoBehaviour
 
             maxHp = BStat.maxHp;
             nowHp = BStat.maxHp;
-            _name = BStat.name;
+
         }
     }
 }
