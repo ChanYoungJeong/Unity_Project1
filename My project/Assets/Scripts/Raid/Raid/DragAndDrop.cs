@@ -7,18 +7,24 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     private RectTransform rect;         //ui 위치 제어를 위한
     private CanvasGroup canvasGroup;    //ui가 알파값과 상호작용 제어를 위한 캔버스 그룹
 
-    public GameObject SubChar;
+    public Transform SubChar;
 
     private void Awake()
     {
         canvas = FindObjectOfType<Canvas>().transform;
         rect = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+
     }
 
+    private void Update()
+    {
+
+    }
     public void OnBeginDrag(PointerEventData eventData)
     {
         // 드래그 직전 소속되어 있던 부모 트랜스폼 정보 저장
+        this.gameObject.SetActive(true);
 
         previousParent = transform.parent;
 
@@ -48,8 +54,10 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             // 마지막에 소속되있었던 previousParent의 자식으로 설정하고, 해당 위치로 이동
             transform.SetParent(previousParent);
             rect.position = previousParent.GetComponent<RectTransform>().position;
-            SubChar.transform.position = previousParent.GetComponent<RectTransform>().position;
         }
+
+        SubChar.transform.position = new Vector3(rect.position.x, rect.position.y - 0.8f, rect.position.z);
+        this.gameObject.SetActive(false);
 
         canvasGroup.alpha = 1.0f;
         canvasGroup.blocksRaycasts = true;
