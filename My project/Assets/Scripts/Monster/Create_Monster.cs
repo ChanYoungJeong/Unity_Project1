@@ -75,8 +75,14 @@ public class Create_Monster : MonoBehaviour
 
     void MakeMonster()
     {
+
         GameObject Monster1 = Instantiate(monster1_Prefab, transform.position, transform.rotation);
         Monster1.transform.SetParent(group.transform, true);
+        if (Game_System.Stage >= 2 && Game_System.Stage<20)
+        {
+            Monster1.GetComponentInChildren<Animator>().runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(
+                Resources.Load("Ani\\Idle_0", typeof(RuntimeAnimatorController)));
+        }
         group.GetComponent<Monster_Group_Manager>().checkCoroutine = false;
     }
 
