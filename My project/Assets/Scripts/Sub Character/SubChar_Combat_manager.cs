@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class SubChar_Combat_manager : MonoBehaviour
 {
@@ -44,7 +45,14 @@ public class SubChar_Combat_manager : MonoBehaviour
 
     private void Update()
     {
-
+        if(CreateBoss.Bss.transform.position.x - this.transform.position.x > 0)
+        {
+            this.transform.localScale = new Vector3(1.5f, 1.5f, 1);
+        }
+        else
+        {
+            this.transform.localScale = new Vector3(-1.5f, 1.5f, 1);
+        }
     }
 
 
