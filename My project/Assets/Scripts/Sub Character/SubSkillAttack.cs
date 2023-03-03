@@ -24,6 +24,8 @@ public class SubSkillAttack : MonoBehaviour
 
     public Slider cooldownBar;
     float angle = 0;
+    public float getAngle = 0;
+    public bool subContent = false;
 
     private void Start()
     {
@@ -73,6 +75,12 @@ public class SubSkillAttack : MonoBehaviour
 
     }
 
+    public void UseSkill()
+    {
+         StartCoroutine(SkillAttack());
+         StopCoroutine(SkillAttack());
+    }
+
     public void SetSubSkill()
     {
         bool isFind = SubCharSkillList.Sub_Char_SkilList.ContainsKey(this.name);
@@ -89,7 +97,6 @@ public class SubSkillAttack : MonoBehaviour
 
     IEnumerator SkillAttack()
     {
-
         angle = 0;
         if (Battle_Situation_Trigger.monster != null)
         {
@@ -102,6 +109,8 @@ public class SubSkillAttack : MonoBehaviour
             angle = Mathf.Atan2(CreateBoss.Bss.transform.position.y - this.transform.position.y,
                                       CreateBoss.Bss.transform.position.x - this.transform.position.x) * Mathf.Rad2Deg;
         }
+
+
 
         isCoolTime = false;
         if (this.name == "Kunai")
@@ -140,8 +149,6 @@ public class SubSkillAttack : MonoBehaviour
     {
         if (Battle_Situation_Trigger.monster != null || CreateBoss.Bss != null)
         {
-
-
             subAnimator.SetTrigger("SkillNormal");
             kunai = Instantiate(subSkillPrefab, this.transform.position, Quaternion.Euler(0, 0, angle));
             kunai.GetComponent<Rigidbody2D>().AddForce(kunai.transform.right * 20, ForceMode2D.Impulse);

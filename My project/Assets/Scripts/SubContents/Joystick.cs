@@ -13,6 +13,7 @@ public class Joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     private Vector2 inputVector;
     private Vector3 input = Vector3.zero;
 
+
     public float Horizontal { get { return input.x; } }
     public float Vertical { get { return input.y; } }
 
