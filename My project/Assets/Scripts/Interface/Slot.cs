@@ -7,6 +7,7 @@ public class Slot : MonoBehaviour
 {
     public bool hasItem = false;
     public Sprite itemImage;
+    public string itemName;
     public Equipment curItem;
     public Sprite defaultImage;
     public Color defaultColor;
