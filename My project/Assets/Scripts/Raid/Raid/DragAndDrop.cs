@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
 public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler 
 {
     private Transform canvas;        //ui가 소속되어 있는 최상단 캔버스 트랜스폼
@@ -8,13 +10,16 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     private CanvasGroup canvasGroup;    //ui가 알파값과 상호작용 제어를 위한 캔버스 그룹
 
     public Transform SubChar;
+    Sprite subSprite;
+    Transform saveSubChar;
 
     private void Awake()
     {
         canvas = FindObjectOfType<Canvas>().transform;
         rect = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
-
+        subSprite = this.GetComponent<Image>().sprite;
+        saveSubChar = SubChar;
     }
 
     private void Update()
@@ -24,8 +29,9 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public void OnBeginDrag(PointerEventData eventData)
     {
         // 드래그 직전 소속되어 있던 부모 트랜스폼 정보 저장
-        this.gameObject.SetActive(true);
-
+        //this.gameObject.SetActive(true);
+        this.GetComponent<Image>().sprite = subSprite;
+        SubChar = saveSubChar;
         previousParent = transform.parent;
 
         //현재 드래그중인 ui가 화면의 최상단에 출력되도록 하기 위해
@@ -57,7 +63,8 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         }
 
         SubChar.transform.position = new Vector3(rect.position.x, rect.position.y - 0.8f, rect.position.z);
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
+        this.GetComponent<Image>().sprite = null;
 
         canvasGroup.alpha = 1.0f;
         canvasGroup.blocksRaycasts = true;
