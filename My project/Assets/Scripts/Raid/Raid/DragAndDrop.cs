@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler 
+public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     private Transform canvas;        //ui가 소속되어 있는 최상단 캔버스 트랜스폼
     private Transform previousParent; // 해당 오브젝트가 직전에 소속되어 있었던 부모
@@ -10,7 +10,7 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     private CanvasGroup canvasGroup;    //ui가 알파값과 상호작용 제어를 위한 캔버스 그룹
 
     public Transform SubChar;
-    Sprite subSprite;
+    Sprite startSprite;
     Transform saveSubChar;
 
     private void Awake()
@@ -18,20 +18,17 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         canvas = FindObjectOfType<Canvas>().transform;
         rect = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
-        subSprite = this.GetComponent<Image>().sprite;
+        startSprite = GetComponent<Image>().sprite;
         saveSubChar = SubChar;
-    }
-
-    private void Update()
-    {
+        SubChar.gameObject.SetActive(false);
 
     }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
+        Debug.Log("시작 : "+rect.position);
+
         // 드래그 직전 소속되어 있던 부모 트랜스폼 정보 저장
-        //this.gameObject.SetActive(true);
-        this.GetComponent<Image>().sprite = subSprite;
-        SubChar = saveSubChar;
         previousParent = transform.parent;
 
         //현재 드래그중인 ui가 화면의 최상단에 출력되도록 하기 위해
@@ -44,7 +41,7 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         canvasGroup.blocksRaycasts = false;
     }
 
-    public void OnDrag(PointerEventData eventData) 
+    public void OnDrag(PointerEventData eventData)
     {
         // 현재 스크린상의 마우스 위치를 UI 위치로 설정
         rect.position = eventData.position;
@@ -55,19 +52,39 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         //드래그 시작하면 부모가 캔버스로 설정되기 때문에
         //드래그를 종료할 때 부모가 캔버스이면 엉뚱한 곳에 드롭을 했기에 직전에 소속되 있던 슬롯으로 이동
 
-        if(transform.parent == canvas)
+        if (transform.parent == canvas)
         {
+            Debug.Log("배치 실패%%%%%");
             // 마지막에 소속되있었던 previousParent의 자식으로 설정하고, 해당 위치로 이동
             transform.SetParent(previousParent);
             rect.position = previousParent.GetComponent<RectTransform>().position;
+            Debug.Log("끝 : " + rect.position);
+            //GetComponent<Image>().sprite = startSprite;
+
+        }
+        else
+        {
+            if (transform.parent.name.Contains("Slot"))
+            {
+                Debug.Log("배치 종료@@@@@");
+                GetComponent<Image>().sprite = startSprite;
+                rect.position = previousParent.GetComponent<RectTransform>().position;
+                SubChar.gameObject.SetActive(false);
+            }
+            else
+            {
+                Debug.Log("배치 완료#####");
+                SubChar.gameObject.SetActive(true);
+                SubChar.transform.position = new Vector3(rect.position.x, rect.position.y - 0.8f, rect.position.z);
+
+            }
         }
 
-        SubChar.transform.position = new Vector3(rect.position.x, rect.position.y - 0.8f, rect.position.z);
-        //this.gameObject.SetActive(false);
-        this.GetComponent<Image>().sprite = null;
 
-        canvasGroup.alpha = 1.0f;
+        canvasGroup.alpha = 0f;
         canvasGroup.blocksRaycasts = true;
     }
+
+
 
 }
