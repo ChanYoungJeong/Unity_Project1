@@ -45,13 +45,18 @@ public class SubChar_Combat_manager : MonoBehaviour
 
     private void Update()
     {
-        if(CreateBoss.Bss.transform.position.x - this.transform.position.x > 0)
+        if (CreateBoss.Bss != null)
         {
-            this.transform.localScale = new Vector3(1.5f, 1.5f, 1);
-        }
-        else
-        {
-            this.transform.localScale = new Vector3(-1.5f, 1.5f, 1);
+
+
+            if (CreateBoss.Bss.transform.position.x - this.transform.position.x > 0)
+            {
+                this.transform.localScale = new Vector3(1.5f, 1.5f, 1);
+            }
+            else
+            {
+                this.transform.localScale = new Vector3(-1.5f, 1.5f, 1);
+            }
         }
     }
 
@@ -123,7 +128,7 @@ public class SubChar_Combat_manager : MonoBehaviour
             skillcooldown = subSkillStat.cooldown;
             skillLv = subSkillStat.SubSkillLevel;
             skillDamage = subSkillStat.damage * skillLv;
-            
+
         }
     }
 

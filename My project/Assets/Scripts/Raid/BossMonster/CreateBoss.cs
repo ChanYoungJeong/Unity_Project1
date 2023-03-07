@@ -10,7 +10,7 @@ public class CreateBoss : MonoBehaviour
     
     void Start()
     {
-        CreateBossMonsterA();
+        
     }
 
     public void CreateBossMonsterA()
