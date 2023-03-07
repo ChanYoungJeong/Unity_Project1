@@ -11,7 +11,9 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public Transform SubChar;
     Sprite startSprite;
-    Transform saveSubChar;
+    Vector3 mousePos;
+    Vector3 point;
+    
 
     private void Awake()
     {
@@ -19,14 +21,12 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         rect = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         startSprite = GetComponent<Image>().sprite;
-        saveSubChar = SubChar;
         SubChar.gameObject.SetActive(false);
 
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("시작 : "+rect.position);
 
         // 드래그 직전 소속되어 있던 부모 트랜스폼 정보 저장
         previousParent = transform.parent;
@@ -43,45 +43,52 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnDrag(PointerEventData eventData)
     {
+        mousePos = Input.mousePosition;
+        point = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, mousePos.z + 100));
         // 현재 스크린상의 마우스 위치를 UI 위치로 설정
-        rect.position = eventData.position;
+        transform.position = point;
+        transform.SetAsLastSibling();
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         //드래그 시작하면 부모가 캔버스로 설정되기 때문에
         //드래그를 종료할 때 부모가 캔버스이면 엉뚱한 곳에 드롭을 했기에 직전에 소속되 있던 슬롯으로 이동
-
         if (transform.parent == canvas)
         {
-            Debug.Log("배치 실패%%%%%");
             // 마지막에 소속되있었던 previousParent의 자식으로 설정하고, 해당 위치로 이동
             transform.SetParent(previousParent);
-            rect.position = previousParent.GetComponent<RectTransform>().position;
-            Debug.Log("끝 : " + rect.position);
-            //GetComponent<Image>().sprite = startSprite;
+            //rect.position = previousParent.GetComponent<RectTransform>().position;
+            rect.position = transform.parent.position;
+            canvasGroup.alpha = 1f;
+
+            Debug.Log(transform.parent.name);
+            Debug.Log(transform.parent.childCount);
+
+            if (transform.parent.name.Contains("Shelf") && transform.parent.childCount != 0)
+            {
+                canvasGroup.alpha = 0f;
+            }
 
         }
         else
         {
             if (transform.parent.name.Contains("Slot"))
             {
-                Debug.Log("배치 종료@@@@@");
                 GetComponent<Image>().sprite = startSprite;
                 rect.position = previousParent.GetComponent<RectTransform>().position;
                 SubChar.gameObject.SetActive(false);
+                canvasGroup.alpha = 1f;
+
             }
             else
             {
-                Debug.Log("배치 완료#####");
                 SubChar.gameObject.SetActive(true);
                 SubChar.transform.position = new Vector3(rect.position.x, rect.position.y - 0.8f, rect.position.z);
+                canvasGroup.alpha = 0f;
 
             }
         }
-
-
-        canvasGroup.alpha = 0f;
         canvasGroup.blocksRaycasts = true;
     }
 
