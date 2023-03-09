@@ -23,7 +23,6 @@ public class ArcherDestroy : MonoBehaviour
         int speed = 20;
         float angle = 0;
         //ArcherAsder.transform.position=new Vector3(0,0,angle);
-        //  ġ  
 
 
         /*angle = Mathf.Atan2(Battle_Situation_Trigger.monster.transform.position.y - this.transform.position.y,
@@ -32,14 +31,14 @@ public class ArcherDestroy : MonoBehaviour
         if (asder.y == 180)
         {
             ArcherAsder = Instantiate(archerskill, transform.position, Quaternion.Euler(0, 0, 0));
-            ArcherAsder.GetComponent<Rigidbody2D>().AddForce(ArcherAsder.transform.right * -speed, ForceMode2D.Impulse);
+            ArcherAsder.GetComponent<Rigidbody2D>().AddForce(-(ArcherAsder.transform.right) * -speed, ForceMode2D.Impulse);
         }
         else
         {
             ArcherAsder = Instantiate(archerskill, transform.position, Quaternion.Euler(0, 180, 0));
-            ArcherAsder.GetComponent<Rigidbody2D>().AddForce(ArcherAsder.transform.right * -speed, ForceMode2D.Impulse);
+            ArcherAsder.GetComponent<Rigidbody2D>().AddForce(-(ArcherAsder.transform.right) * -speed, ForceMode2D.Impulse);
+        
         }
-
 
 
         Destroy(ArcherAsder, 2.0f); //      ʰ       ڵ 
