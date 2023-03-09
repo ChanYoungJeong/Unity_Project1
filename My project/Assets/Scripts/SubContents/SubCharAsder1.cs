@@ -6,7 +6,7 @@ public class SubCharAsder1 : MonoBehaviour
 {
     private Joystick joystick;
     public GameObject archer;
-    float y;
+    public float y;
     
 
     private void Awake()
