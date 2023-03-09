@@ -5,28 +5,26 @@ using UnityEngine.UI;
 
 public class Boss_HpBar : MonoBehaviour
 {
-    public Slider hpSlider;
-    public BossStat BossStats;
-    [SerializeField]
+    Slider hpSlider;
+    BossMonster_Script bossScript;
     float maxHP;
-    [SerializeField]
     float nowHP;
   
     void Awake()
     {
-        BossStats = this.GetComponent<BossStat>();
+        bossScript = GetComponent<BossMonster_Script>();
+        hpSlider = GameObject.Find("BossHpBar").GetComponent<Slider>();
     }
     void Update()
     {
-        if (BossStats != null)
-        {
-            maxHP = BossStats.maxHp;
-            nowHP = BossStats.nowHp;
-            HandleHp();
-        }
+        maxHP = bossScript.maxHp;
+        nowHP = bossScript.nowHp;
+        HandleHp();
     }
     private void HandleHp()
     {
         hpSlider.value = Mathf.Lerp(hpSlider.value, (float)nowHP / (float)maxHP, Time.deltaTime * 10);
+
+        Debug.Log(hpSlider.value);
     }
 }

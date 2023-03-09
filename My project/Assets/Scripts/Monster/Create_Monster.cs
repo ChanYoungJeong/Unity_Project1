@@ -17,6 +17,7 @@ public class Create_Monster : MonoBehaviour
     public GameObject monster1_Prefab;
     int monster1_count;
     public bool monster1_Created = false;
+    public Transform[] spawnArray;
 
     float time = 0;
     //Stage Information
@@ -75,8 +76,8 @@ public class Create_Monster : MonoBehaviour
 
     void MakeMonster()
     {
-
-        GameObject Monster1 = Instantiate(monster1_Prefab, transform.position, transform.rotation);
+        int range = Random.Range(0, 8);
+        GameObject Monster1 = Instantiate(monster1_Prefab, spawnArray[range].position, transform.rotation);
         Monster1.transform.SetParent(group.transform, true);
         if (Game_System.Stage >= 2 && Game_System.Stage<20)
         {
