@@ -28,12 +28,15 @@ public class SlotUi : MonoBehaviour, IPointerEnterHandler, IDropHandler, IPointe
         //pointerDrag는 현재 드래그 하고 있는 대상
         if (eventData.pointerDrag != null)
         {
-            Debug.Log(transform.childCount);
             // 드래그하고 있는 대상의 부모를 현재 오브젝트로 설정하고 위치를 오브젝트 위치와 동일하게 설정
             if (transform.childCount == 0)
             {
                 eventData.pointerDrag.transform.SetParent(transform);
                 eventData.pointerDrag.GetComponent<RectTransform>().position = rect.position;
+            }
+            else
+            {
+
             }
 
         }
