@@ -11,6 +11,7 @@ public class Inventory_Manager : MonoBehaviour
     public static int selectedSlot;
     public Slot[] slots;
     public Slot curSlot;
+    public Slot preSlot;
     int numSlots;
     public Transform slotHolder;
     public EquipmentManager EM;
@@ -29,7 +30,29 @@ public class Inventory_Manager : MonoBehaviour
         for(int i = 0; i < slots.Length; i++)
         {
             slots[i].slotNumber = i;
+            Inventory.Add(null);
         }
+    }
+
+    //Add item to inventory list and show in slot
+    public void AddToInventory(Equipment item)
+    {
+        for(int i = 0; i < Inventory.Count; i++)
+        {
+            if(Inventory[i] == null)
+            {
+                Inventory[i] = item;
+                AddToSlot(i, item);
+                break;
+            }
+        }
+    }
+
+    //Add item into slot and change the image
+    public void AddToSlot(int index, Equipment item)
+    {
+        slots[index].SetItem(item.name);
+        slots[index].curItem = item;
     }
 
     private Sprite GetImage(string itemName)
@@ -37,6 +60,7 @@ public class Inventory_Manager : MonoBehaviour
         Sprite image = Resources.Load<Sprite>("Image/Equipment/" + itemName);      
         return image;
     }
+
 
     public void EquipItem()
     {
@@ -91,48 +115,39 @@ public class Inventory_Manager : MonoBehaviour
         }
     }
 
-    public void selectItem()
+    public void SelectItem()
     {
         GameObject _slot = EventSystem.current.currentSelectedGameObject;
         curSlot = _slot.GetComponent<Slot>();
-        Debug.Log("Slot" + curSlot.name + "is selected");
 
         if(curSlot.curItem != null)
-        {
+        { 
+            //Change the previous selected slot's color to default
+            if(preSlot != null)
+            {
+                preSlot.ChangeToDefaultColor();
+            }
+            //Change the slected slot's color
             selectedItem = curSlot.curItem;
-            Debug.Log(selectedItem.type);
-            equipInfoUI.gameObject.SetActive(true);
-            if (selectedItem.type == "Weapon")
-            {
-                equipInfoUI.ViewItem(GetImage(selectedItem.name), selectedItem.name, selectedItem.grade, 
-                                curSlot.itemStatus(),"Attack", "Critical Rate", selectedItem.stat1.ToString(),
-                                     selectedItem.stat2.ToString(), selectedItem.upgrade.ToString());
-            }
-            if (selectedItem.type == "Helmet" || selectedItem.type == "Boots" || selectedItem.type == "Armor")
-            {
-                equipInfoUI.ViewItem(GetImage(selectedItem.name), selectedItem.name, selectedItem.grade,
-                curSlot.itemStatus(), "Hp", "Armor", selectedItem.stat1.ToString(),
-                     selectedItem.stat2.ToString(), selectedItem.upgrade.ToString());
-            }
+            curSlot.GetComponent<Image>().color = Color.red;
+            //View Item info
+            equipInfoUI.ViewItem(GetImage(curSlot.curItem.name), curSlot.curItem, curSlot.itemStatus());
+ 
         }
-        else
-        {
-            if (equipInfoUI.gameObject.activeSelf)
-            {
-                equipInfoUI.gameObject.SetActive(false);
-            }
-        }
+        preSlot = curSlot;
     }
 
-    public void DeleteItem()
+    public void ThrowItem()
     {
-        if (!slots[selectedSlot].isEquiped)
+        if (!slots[selectedSlot].isEquiped && curSlot.curItem != null)
         {
-            Debug.Log(Inventory[selectedSlot].name + "has removed");
-            Inventory.RemoveAt(selectedSlot);
-            slots[selectedSlot].ResetSlot();
-            AlignSlot(selectedSlot);
-            //DBManager.DatabaseInsert("DELETE * FROM INVENTORY WHERE CODE = " + selectedItem.code);
+            Inventory.RemoveAt(curSlot.slotNumber);
+            curSlot.ResetSlot();
+            AlignSlot(curSlot.slotNumber);
+            if(curSlot.curItem == null)
+            {
+                curSlot.ChangeToDefaultColor();
+            }
         }
         else
         {
@@ -145,12 +160,12 @@ public class Inventory_Manager : MonoBehaviour
     private void AlignSlot(int deletedSlot)
     {
         Equipment temp = null;
-        while(deletedSlot + 1 < numSlots && slots[deletedSlot + 1] != null && slots[deletedSlot + 1].hasItem)
+        while(deletedSlot + 1 < numSlots && slots[deletedSlot + 1].curItem != null)
         {
             temp = slots[deletedSlot + 1].curItem;
             slots[deletedSlot].curItem = temp;
             slots[deletedSlot].SetItem(temp.name);
-            slots[deletedSlot + 1].ResetSlot();
+            slots[deletedSlot + 1].ResetSlot();       
             deletedSlot++;
         }
     }

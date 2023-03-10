@@ -34,13 +34,10 @@ public class Slot : MonoBehaviour
         }
     }
 
-    public void SetItem(string itemName)
+    public void SetItem(string _itemName)
     {
-        if (!hasItem)
-        {
-            transform.GetChild(0).GetComponentInChildren<Image>().sprite = GetImage(itemName);
-            hasItem = true;
-        }
+        transform.GetChild(0).GetComponentInChildren<Image>().sprite = GetImage(_itemName);
+        itemName = _itemName;
     }
 
     private Sprite GetImage(string itemName)
@@ -51,7 +48,7 @@ public class Slot : MonoBehaviour
 
     public void ResetSlot()                
     {
-        transform.GetChild(0).GetComponent<Image>().sprite = defaultImage;   //Change Slot effect to un equiped
+        ChangeToDefaultImage();                      //Change Slot effect to un equiped
         curItem = null;                                                      //Reset Slot
         hasItem = false;
     }
@@ -78,5 +75,15 @@ public class Slot : MonoBehaviour
         {
             return "UnEquiped";
         }
+    }
+
+    public void ChangeToDefaultImage()
+    {
+        transform.GetChild(0).GetComponent<Image>().sprite = defaultImage;
+    }
+
+    public void ChangeToDefaultColor()
+    {
+        transform.GetComponent<Image>().color = defaultColor;
     }
 }

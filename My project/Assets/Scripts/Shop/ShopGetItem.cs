@@ -9,6 +9,7 @@ public class ShopGetItem : MonoBehaviour
     public Slot[] slots;
     public Transform slotHolder;
     public ItemManager ItemMan;
+    public Inventory_Manager Inven;
 
     Color defaultColor;
     
@@ -57,6 +58,8 @@ public class ShopGetItem : MonoBehaviour
                 //Got Item
                 ChangeSlotColor(randomNum, Color.red);
                 PickedItem[randomNum] = true;
+                Equipment Item = ItemMan.GenerateItem(slots[randomNum].itemName);
+                Inven.AddToInventory(Item);
                 break;
             }
             else
