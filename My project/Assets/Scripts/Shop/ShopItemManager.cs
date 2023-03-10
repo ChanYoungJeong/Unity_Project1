@@ -10,8 +10,10 @@ public class ShopItemManager : MonoBehaviour
     private int RandomNum;
     private List<bool> NumberList = new List<bool>();
     private int[] ResetNumber;
+    private ShopGetItem getItemManager;
     private void Awake()
     {
+        getItemManager = GetComponent<ShopGetItem>();
         slots = slotHolder.GetComponentsInChildren<Slot>();
         GenerateSlot();
         RandomNum = Random.Range(0, slots.Length);
@@ -59,12 +61,19 @@ public class ShopItemManager : MonoBehaviour
     }
 
     public void ReloadItem()
-    {
-        for(int i = 0; i < slots.Length; i++)
+    {       
+        if (!getItemManager.doRot)
         {
-            NumberList[ResetNumber[i]] = true;
+            getItemManager.leftSlot = slots.Length;
+            getItemManager.rotSpeed = 0.1f;
+            getItemManager.ResetVisitedSlot();
+            getItemManager.ResetAllSlotColor();
+            for (int i = 0; i < slots.Length; i++)
+            {
+                NumberList[ResetNumber[i]] = true;
+            }
+            GenerateItem();
         }
-        GenerateItem();
     }
 
 }

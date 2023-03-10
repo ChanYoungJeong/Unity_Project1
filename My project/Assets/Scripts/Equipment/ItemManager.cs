@@ -21,6 +21,10 @@ public class ItemManager : MonoBehaviour
         loadObjects = Resources.LoadAll<Sprite>("Image/Equipment/");
     }
 
+    public void GenerateItem(string ItemName)
+    {
+
+    }
 
 
 }
