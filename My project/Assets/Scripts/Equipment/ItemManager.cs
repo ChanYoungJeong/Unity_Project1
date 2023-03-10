@@ -21,6 +21,9 @@ public class ItemManager : MonoBehaviour
         loadObjects = Resources.LoadAll<Sprite>("Image/Equipment/");
     }
 
-
-
+    public Equipment GenerateItem(string ItemName)
+    {
+        Equipment item = new Equipment(1, ItemName, "Normal", 1, 1, "Weapon");
+        return item;
+    }
 }
