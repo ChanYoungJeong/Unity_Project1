@@ -26,6 +26,7 @@ public class PlayerScript : MonoBehaviour
     public CharacterController characterController;
     public GameObject square;
     public BossMonster_Script bossMonster; //
+    public bool isAttack = false;
     private void InputControlVector()
     {
         if (characterController)
@@ -44,9 +45,10 @@ public class PlayerScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(Battle_Situation_Trigger.on_Battle && !isAttack)
         {
-            BasicAttackMotion();
+            isAttack = true;
+            StartCoroutine(PlayerBasicAttack());
         }
     }
 
@@ -66,9 +68,10 @@ public class PlayerScript : MonoBehaviour
         while (Battle_Situation_Trigger.on_Battle)
         {
             yield return new WaitForSeconds(atkSpeed);
-
             _PlayerAttack();
         }
+        PlayerIdleMotion();
+        isAttack = false;
     }
 
     public void _PlayerAttack()

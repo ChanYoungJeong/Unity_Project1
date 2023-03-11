@@ -7,6 +7,7 @@ public class Stop_Monster : MonoBehaviour
     private Rigidbody2D rigid;
     public bool monster_Stop = false;
     public float speed = 3.0f;
+    public bool atSpot = false;
     private Rigidbody2D monster1_Rigid;
 
 
@@ -26,7 +27,7 @@ public class Stop_Monster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Battle_Situation_Trigger.atSpot)
+        if (atSpot)
         {
             rigid.velocity = Vector2.zero;
             //monster_Stop = true;

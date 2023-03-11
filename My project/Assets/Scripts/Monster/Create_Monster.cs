@@ -15,7 +15,7 @@ public class Create_Monster : MonoBehaviour
     Animator Ani;
     //Monster1
     public GameObject monster1_Prefab;
-    int monster1_count;
+    public int monster1_count;
     public bool monster1_Created = false;
     public Transform[] spawnArray;
 
@@ -31,22 +31,18 @@ public class Create_Monster : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
-        if (!group)
+    {      
+        if (!Battle_Situation_Trigger.on_Battle)
         {
             monster1_Created = false;
-        }
-
-        if (monster1_Prefab != null)
-        {
-            if (!monster1_Created)
-            {
-                monster1_Created = true;
-                Summon_Monster();
-            }
 
         }
+       if (!monster1_Created)
+       {
+           monster1_Created = true;
+           Summon_Monster();
+       }
+
         time += Time.deltaTime;
     }
 
@@ -56,21 +52,20 @@ public class Create_Monster : MonoBehaviour
         {
             group = Instantiate(monster_Group, transform.position, transform.rotation);
             monster1_count = group.GetComponent<Monster_Group_Manager>().numberOfMonster;
+            StartCoroutine(Create_Monster1());
         }
-        StartCoroutine(Create_Monster1());
+        
     }
 
-    IEnumerator Create_Monster1()
+    public IEnumerator Create_Monster1()
     {
-        if (monster1_count > 0)
+        while (monster1_count > 0 && monster1_Created)
         {
             Invoke("MakeMonster", 0f);
             Invoke("MakeMonster", 0.3f);
             Invoke("MakeMonster", 0.6f);
-
             yield return new WaitForSeconds(2.0f);
             monster1_count--;
-            StartCoroutine(Create_Monster1());
         }
     }
 

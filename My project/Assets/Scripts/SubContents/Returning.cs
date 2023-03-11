@@ -6,22 +6,21 @@ using UnityEngine;
 public class Returning : MonoBehaviour
 {
     Battle_Situation_Trigger BST;
-    Create_Monster create_Monster;
+    public Create_Monster create_Monster;
 
     public void ReturnButton()
     {
-        if (Battle_Situation_Trigger.monster != null)
+        Debug.Log(Battle_Situation_Trigger.monster.name);
+        Debug.Log(Battle_Situation_Trigger.monster);
+        if (Battle_Situation_Trigger.monster_group != null)
         {
-            BST.Battle = false;
             int count = GameObject.Find("Monster_Group(Clone)").transform.childCount;
-
-            //Destroy(Battle_Situation_Trigger.monster_group);
-            //Destroy(GameObject.Find("Monster_Group(Clone)").transform.GetChild);
-            for (int i = 0; i <= count; i++)
-            {
-                Destroy(GameObject.Find("Monster_Group(Clone)").transform.GetChild(i).gameObject);
-            }
-
+            Destroy(GameObject.Find("Monster_Group(Clone)").gameObject);
+            create_Monster.monster1_count = 0;
+            Game_System.Stage = 1;
+        }
+        else
+        {
             Game_System.Stage = 1;
         }
     }
