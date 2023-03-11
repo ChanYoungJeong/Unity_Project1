@@ -9,7 +9,7 @@ public class Slot : MonoBehaviour
     public Sprite itemImage;
     public string itemName;
     public Equipment curItem;
-    public Sprite defaultImage;
+    public Sprite defaultImage; 
     public Color defaultColor;
     public int slotNumber;
     public bool isEquiped;

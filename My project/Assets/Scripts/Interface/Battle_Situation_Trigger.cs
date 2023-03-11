@@ -10,7 +10,6 @@ public class Battle_Situation_Trigger : MonoBehaviour
 
     public static bool on_Battle = false;
     public static bool atSpot = false;
-    public bool Battle;
     bool coroutineCheck = false;
 
 
@@ -21,27 +20,22 @@ public class Battle_Situation_Trigger : MonoBehaviour
 
     private void Update()
     {
-        Battle = on_Battle;
         if (GameObject.Find("Monster_Group(Clone)"))
         {
+            on_Battle = true;
             monster_group = GameObject.Find("Monster_Group(Clone)");
             if (monster_group.transform.childCount != 0)
             {
                 monster = monster_group.transform.GetChild(0).gameObject;
-                //on_Battle = true;
-                if (coroutineCheck== false)
-                {
-                    coroutineCheck = true;
-                    //player.GetComponent<PlayerScript>().PlayerAttackMotion();
-                }
             }
             else
             {
-                //on_Battle = false;
                 monster = null;
-                //player.GetComponent<PlayerScript>().PlayerIdleMotion();
-                coroutineCheck = false;
             }
+        }
+        else
+        {
+            on_Battle = false;
         }
     }
 
@@ -50,20 +44,9 @@ public class Battle_Situation_Trigger : MonoBehaviour
     {
         if(collision.transform.tag == "Monster")
         {
-            on_Battle = true;
-            atSpot = true;
-            player.GetComponent<PlayerScript>().PlayerAttackMotion();
+            collision.GetComponent<Stop_Monster>().atSpot = true;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.transform.tag == "Monster")
-        {
-            on_Battle = false;
-            atSpot = false;
-            player.GetComponent<PlayerScript>().PlayerIdleMotion();
-        }
-    }
 
 }

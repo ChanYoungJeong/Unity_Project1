@@ -11,7 +11,6 @@ public class SubSkillManager : MonoBehaviour
     GameObject subStat;
 
 
-
     float kunaiDmg;
     float LightningDmg;
     float BlizzardStormDmg;
@@ -32,11 +31,10 @@ public class SubSkillManager : MonoBehaviour
 
     public void Update()
     {
-        if (Battle_Situation_Trigger.monster == null || CreateBoss.Bss == null)
+        if (Battle_Situation_Trigger.monster_group == null && CreateBoss.Bss == null)
         {
             Destroy(this.gameObject);
         }
-
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

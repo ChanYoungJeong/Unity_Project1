@@ -50,8 +50,7 @@ public class SubAttackManager : MonoBehaviour
     }
 
     public void Update()
-
-    {      
+    {    
         if (Battle_Situation_Trigger.monster_group == null && CreateBoss.Bss == null)
         {
             Destroy(this.gameObject);

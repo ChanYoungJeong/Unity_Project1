@@ -30,10 +30,12 @@ public class Monster_Manager : MonoBehaviour
         if (Monster_Stat.nowHp <= 0) //&& check_animation == false
         {
             StartCoroutine(Dead_Animation());
-            Monster_Die();
-            
-           
-            
+            Monster_Die();          
+        }
+        //Insurance of error
+        if(!this.transform.parent)
+        {
+            Destroy(gameObject);
         }
     }
 
