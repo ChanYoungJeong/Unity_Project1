@@ -1162,7 +1162,6 @@ GameObject:
   - component: {fileID: 1281696096}
   - component: {fileID: 1281696095}
   - component: {fileID: 1281696100}
-  - component: {fileID: 1281696099}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1254,19 +1253,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1281696099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1281696094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2891230c0ad11da44886e2ff0e83ce71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Setact: []
 --- !u!114 &1281696100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1818,6 +1804,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7532102517492147108, guid: 106a5eaad7afbca47b7dcb7d121efc08, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7532102518439990201, guid: 106a5eaad7afbca47b7dcb7d121efc08, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7532102518606809582, guid: 106a5eaad7afbca47b7dcb7d121efc08, type: 3}
