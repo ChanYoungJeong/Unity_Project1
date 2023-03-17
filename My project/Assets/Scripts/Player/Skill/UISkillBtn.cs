@@ -70,6 +70,11 @@ namespace UISkillBtnExam
                 isFind = SkillList.skilList.ContainsKey("Mega Slash");
                 key = "Mega Slash";
             }
+            else if(this.name == "Button :: Barrier")
+            {
+                isFind = SkillList.skilList.ContainsKey("Barrier");
+                key = "Barrier";
+            }
 
             if (isFind == true)
             {
