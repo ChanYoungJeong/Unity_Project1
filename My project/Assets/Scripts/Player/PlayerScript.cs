@@ -12,6 +12,7 @@ public class PlayerScript : MonoBehaviour
 
     public float maxHp;
     public float nowHp;
+    public float shield;
     public bool attacked;
     public float atkDmg;
     public float atkSpeed;
