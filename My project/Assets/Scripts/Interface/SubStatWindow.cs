@@ -59,7 +59,7 @@ public class SubStatWindow : MonoBehaviour
         }
     }
 
-    public void RogueAttackUpgrade()
+    /*public void RogueAttackUpgrade()
     {
 
         if (Game_System.Gold >= RogueAttackGold)
@@ -70,16 +70,29 @@ public class SubStatWindow : MonoBehaviour
             attack.text = "attack " + subStat.attackDmg.ToString();
 
         }
-    }
+    }*/
 
-    public void RogueskillDamageUpgrade()
+    public void RogueLevelUpgrade()
     {
+        int Level;
+
         if (Game_System.Gold >= RogueskillDamageGold)
         {
             Game_System.Gold -= RogueskillDamageGold;
 
-            subStat.skillDamage += 2;
+            Level = subStat.lv;
+            subStat.lv ++;
+           
+            if (subStat.lv != Level)
+            {
+                Debug.Log("½Ã¹ß");
+                subStat.skillDamage += 2;
+                subStat.attackDmg += 2;
+            }
+            //subStat.skillDamage += 2;
             skillDamage.text = "skillDamage " + subStat.skillDamage.ToString();
+            attack.text = "attack " + subStat.attackDmg.ToString();
+            lv.text = "Lv " + subStat.lv.ToString();
 
         }
     }
