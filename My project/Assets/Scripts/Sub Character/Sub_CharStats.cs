@@ -33,5 +33,8 @@ public class Sub_CharStats : MonoBehaviour
 
         name = "IceMagican";
         SubChar.Add(name, new CharStats(name, 100, 150, 25, 10, 1));
+
+        name = "Assassin";
+        SubChar.Add(name, new CharStats(name, 100, 150, 25, 10, 1));
     }
 }
