@@ -85,7 +85,6 @@ public class SubStatWindow : MonoBehaviour
            
             if (subStat.lv != Level)
             {
-                Debug.Log("½Ã¹ß");
                 subStat.skillDamage += 2;
                 subStat.attackDmg += 2;
             }
