@@ -10,7 +10,6 @@ public class SkillAttack : MonoBehaviour
     Skills skill;
     public GameObject skillPrefab;
 
-    private float timer;
     public bool isCoolTime = true;
 
     private void Start()
