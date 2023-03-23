@@ -62,9 +62,8 @@ public class Create_Monster : MonoBehaviour
         while (monster1_count > 0 && monster1_Created)
         {
             Invoke("MakeMonster", 0f);
-            Invoke("MakeMonster", 0.3f);
             Invoke("MakeMonster", 0.6f);
-            yield return new WaitForSeconds(2.0f);
+            yield return new WaitForSeconds(2.5f);
             monster1_count--;
         }
     }
