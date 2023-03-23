@@ -2310,22 +2310,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7573831300888823078, guid: 9f459461da73d4f6a9931c09938e8cb1, type: 3}
   m_PrefabInstance: {fileID: 2914000240264995111}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &791711204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4713928192628581377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f55566b92bb99e74b8efb4b18b242ff0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 6361173400297364754}
-  assassinWeapon:
-  - {fileID: 2852369037516754317}
-  - {fileID: 7413750878382702655}
 --- !u!114 &791711203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2352,6 +2336,22 @@ MonoBehaviour:
   skilldefense: 0
   skillLv: 0
   skillcooldown: 0
+--- !u!114 &791711204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4713928192628581377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f55566b92bb99e74b8efb4b18b242ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 6361173400297364754}
+  assassinWeapon:
+  - {fileID: 2852369037516754317}
+  - {fileID: 7413750878382702655}
 --- !u!95 &6361173400297364754 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 8086202439210286133, guid: 9f459461da73d4f6a9931c09938e8cb1, type: 3}
@@ -2367,18 +2367,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5661716201665470744, guid: 9f459461da73d4f6a9931c09938e8cb1, type: 3}
   m_PrefabInstance: {fileID: 2914000240264995111}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &791711201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7413750878382702655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfbff56311a58fb4297a9cd02c4a18b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &791711200
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2405,6 +2393,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6390847, y: 1.6489327}
   m_EdgeRadius: 0
+--- !u!114 &791711201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7413750878382702655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbff56311a58fb4297a9cd02c4a18b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6128476294727991978
 PrefabInstance:
   m_ObjectHideFlags: 0

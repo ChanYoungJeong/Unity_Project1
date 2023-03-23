@@ -33,7 +33,7 @@ public class Sub_MeleeAttack : MonoBehaviour
         if (this.name == "Knife")
         {
             // Vector3 teleportPosition = 몬스터의 뒤로 이동 시키기;
-            transform.position = ;
+            //transform.position = ;
             yield return new WaitForSeconds(subStats.atkSpeed);
 
             transform.position = oriPosition;
