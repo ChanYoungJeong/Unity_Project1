@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if(timer > 1f)
+        if(timer > 1f && ContentsManager.startContent)
         {
             timer = 0f;
             Spawn();
