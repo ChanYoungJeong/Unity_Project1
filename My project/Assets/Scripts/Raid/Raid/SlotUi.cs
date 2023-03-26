@@ -36,6 +36,14 @@ public class SlotUi : MonoBehaviour, IPointerEnterHandler, IDropHandler, IPointe
             }
             else
             {
+                eventData.pointerDrag.GetComponent<DragAndDrop>();
+                /*
+                transform.GetChild(0).parent = eventData.pointerDrag.GetComponent<DragAndDrop>().previousParent;
+                transform.GetChild(0).GetComponent<RectTransform>().position = eventData.pointerDrag.GetComponent<DragAndDrop>().previousRect.position;
+
+                eventData.pointerDrag.transform.SetParent(transform);
+                eventData.pointerDrag.GetComponent<RectTransform>().position = rect.position;
+                */
 
             }
 

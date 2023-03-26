@@ -24,7 +24,5 @@ public class Boss_HpBar : MonoBehaviour
     private void HandleHp()
     {
         hpSlider.value = Mathf.Lerp(hpSlider.value, (float)nowHP / (float)maxHP, Time.deltaTime * 10);
-
-        Debug.Log(hpSlider.value);
     }
 }
