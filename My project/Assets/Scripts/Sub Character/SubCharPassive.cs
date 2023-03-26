@@ -5,11 +5,10 @@ using UnityEngine;
 
 public class SubCharPassive : MonoBehaviour
 {
-    public GameObject subSkillPrefab;
     public static GameObject RogueDark;
 
     SubChar_Combat_manager charSetting;
-    public GameObject[] skill;
+    //public GameObject[] skill;
 
     Animator Subanimator;
 
@@ -17,7 +16,6 @@ public class SubCharPassive : MonoBehaviour
     {
         charSetting = GameObject.Find("Rogue").GetComponent<SubChar_Combat_manager>();
         Subanimator=charSetting.GetComponent<Animator>();
-        Debug.Log(charSetting);
     }
     private void Update()
     {
@@ -26,8 +24,6 @@ public class SubCharPassive : MonoBehaviour
 
     public void GeneratePassive()
     {
-        //Debug.Log(charSetting.name);
-        //Debug.Log(charSetting.lv);
         if (charSetting.lv >= 30)
         {
             GetPassive(1, charSetting.name);
@@ -45,25 +41,37 @@ public class SubCharPassive : MonoBehaviour
         {
             if (index == 1)
             {
-                ChangePrefab();
+                ChangePrefab1();
             }
             else if (index == 2)
             {
-
+                ChangePrefab2();
             }
         }
     }
-    public void ChangePrefab()
+    public void ChangePrefab1()
     {
-        Debug.Log(skill[0].name);
-        //subCharattack.GetComponent<SubSkillAttack>().subSkillPrefab = Resources.Load<GameObject>("Ani/FountainOfBlood");
-        if (skill[0].name == "DarkCloud")
+        //Äí³ªÀÌ¸¦ ¸Ó ½ã´õº¼Æ®·Î ¹Ù²Û´Ù.
+        GameObject rogueskill;
+        rogueskill=charSetting.GetComponentInChildren<SubSkillAttack>().subSkillPrefab = Resources.Load<GameObject>("Ani/DarkCloud");
+        //rogueskill = Instantiate(rogueskill, this.transform.position, Quaternion.identity);
+        //rogueskill.GetComponent<Rigidbody2D>().velocity = Vector2.right;
+        
+
+
+        /*if (skill[0].name == "DarkCloud")
         {
             StartCoroutine("RogueSkill");
             StopCoroutine("RogueSkill");
-        }
+        }*/
     }
-    IEnumerator RogueSkill() {
+
+    public void ChangePrefab2() 
+    { 
+
+    }
+
+    /*IEnumerator RogueSkill() {
         yield return new WaitForSeconds(2f);
         RoguePassive();
      }
@@ -80,6 +88,5 @@ public class SubCharPassive : MonoBehaviour
     {
         RogueDark = Instantiate(skill[0], this.transform.position, Quaternion.identity);
         RogueDark.GetComponent<Rigidbody2D>().velocity = Vector2.right;
-
-    }
+    }*/
 }
