@@ -45,8 +45,6 @@ public class SubSkillAttack : MonoBehaviour
             }
         }
 
-
-
         if (this.name == "Kunai")
         {
             cooldownBar.value += Time.deltaTime * 1 / SubCharSkill.cooldown;
@@ -69,10 +67,7 @@ public class SubSkillAttack : MonoBehaviour
         else if (this.name == "BlizzardStorm")
         {
             cooldownBar.value += Time.deltaTime * 1 / SubCharSkill.cooldown;
-
         }
-
-
     }
 
     public void UseSkill()
@@ -94,7 +89,6 @@ public class SubSkillAttack : MonoBehaviour
         }
 
     }
-
     IEnumerator SkillAttack()
     {
         angle = 0;
@@ -216,3 +210,5 @@ public class SubSkillAttack : MonoBehaviour
     }
 
 }
+
+
