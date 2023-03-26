@@ -5,27 +5,27 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int monsterTpye;
-    public float maxHp;
-    public float nowHp;
-    public float dmg;
-    public float speed;
-    public Rigidbody2D target;
+    public float speed = 1.0f;
+    private Rigidbody2D target;
+    private Monster_Script stat;
 
     bool isLive = true;
+    bool canAttack = true;
 
     Rigidbody2D rigid;
-    SpriteRenderer spriter;
+    public SpriteRenderer spriter;
 
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
-        spriter = GetComponent<SpriteRenderer>();
+        //spriter = transform.GetComponent<SpriteRenderer>();
+        stat = GetComponent<Monster_Script>();
     }
 
     private void FixedUpdate()
     {
-        if (!isLive)
-            return;
+        if (stat.nowHp < 0)
+            Destroy(gameObject);
 
         Vector2 dirVec = target.position - rigid.position;
         Vector2 nextVec = dirVec.normalized * speed * Time.fixedDeltaTime;
@@ -35,8 +35,7 @@ public class Enemy : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (!isLive)
-            return;
+
         spriter.flipX = target.position.x < rigid.position.x;
     }
 
@@ -48,19 +47,10 @@ public class Enemy : MonoBehaviour
 
     void SetStat()
     {
-        monsterTpye = this.name == "EnemyA(Clone)" ? 0 : 1;
-
-        if (monsterTpye == 0)
-        {
-            maxHp = 10f;
-            nowHp = 10f;
-            dmg = 1f;
-        }
-        else
-        {
-            maxHp = 15f;
-            nowHp = 15f;
-            dmg = 1f;
-        }
+        stat.maxHp = 40;
+        stat.nowHp = 40;
+        stat.atkDmg = 1;
+        stat.atkSpeed = 1.2f;
     }
+
 }

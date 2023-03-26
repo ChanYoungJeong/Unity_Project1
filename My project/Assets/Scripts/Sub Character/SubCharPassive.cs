@@ -26,8 +26,8 @@ public class SubCharPassive : MonoBehaviour
 
     public void GeneratePassive()
     {
-        Debug.Log(charSetting.name);
-        Debug.Log(charSetting.lv);
+        //Debug.Log(charSetting.name);
+        //Debug.Log(charSetting.lv);
         if (charSetting.lv >= 30)
         {
             GetPassive(1, charSetting.name);
