@@ -46,7 +46,7 @@ public class SubSkillManager : MonoBehaviour
             monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
             monsterCombat = Battle_Situation_Trigger.monster.GetComponent<Monster_Combat>();
 
-            if (this.name == "Kunai(Clone)")
+            if (this.name == "Kunai(Clone)" || this.name == "DarkCloud")
 
             {                
                 monster.nowHp -= kunaiDmg;
@@ -87,7 +87,7 @@ public class SubSkillManager : MonoBehaviour
             bossMonster = collision.GetComponent<BossMonster_Script>();
             bossMonster.nowHp -= subBossDmg;
 
-            if (this.name == "Kunai(Clone)")
+            if (this.name == "Kunai(Clone)" || this.name == "DarkCloud")
 
             {
                 monster.nowHp -= kunaiDmg;

@@ -80,5 +80,4 @@ public class Create_Monster : MonoBehaviour
         }
         group.GetComponent<Monster_Group_Manager>().checkCoroutine = false;
     }
-
 }
