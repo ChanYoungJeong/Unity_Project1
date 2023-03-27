@@ -45,7 +45,7 @@ public class SubSkillAttack : MonoBehaviour
             }
         }
 
-        if (this.name == "Kunai")
+        if (this.name == "Kunai"||subSkillPrefab.name=="DarkCloud")
         {
             cooldownBar.value += Time.deltaTime * 1 / SubCharSkill.cooldown;
         }
@@ -107,7 +107,7 @@ public class SubSkillAttack : MonoBehaviour
 
 
         isCoolTime = false;
-        if (this.name == "Kunai")
+        if (this.name == "Kunai" || subSkillPrefab.name == "DarkCloud")
         {
             yield return new WaitForSeconds(SubCharSkill.cooldown);
             RogueKunai();
