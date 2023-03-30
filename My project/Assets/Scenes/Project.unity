@@ -8091,6 +8091,7 @@ GameObject:
   - component: {fileID: 1324415012}
   - component: {fileID: 1324415011}
   - component: {fileID: 1324415013}
+  - component: {fileID: 1324415014}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -8166,6 +8167,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eqiupInfo: {fileID: 4819492973196270153}
+--- !u!114 &1324415014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324415009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjects: []
 --- !u!1 &1338078376
 GameObject:
   m_ObjectHideFlags: 0
@@ -16339,9 +16353,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 246014407}
-        m_TargetAssemblyTypeName: menufalse, Assembly-CSharp
-        m_MethodName: EquipmentOnoff
+      - m_Target: {fileID: 1324415009}
+        m_TargetAssemblyTypeName: UiOnOff, Assembly-CSharp
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21785,6 +21799,7 @@ GameObject:
   - component: {fileID: 4361284953938719500}
   - component: {fileID: 4361284953938719503}
   - component: {fileID: 4361284953938719501}
+  - component: {fileID: 4361284953938719504}
   m_Layer: 5
   m_Name: 'Panel :: Shop'
   m_TagString: Untagged
@@ -21906,6 +21921,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4361284953938719504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4361284953938719489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjects:
+  - {fileID: 0}
+  - {fileID: 2199922985170082635}
 --- !u!1 &4377469239314844511
 GameObject:
   m_ObjectHideFlags: 0
@@ -25937,9 +25967,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 246014407}
-        m_TargetAssemblyTypeName: menufalse, Assembly-CSharp
-        m_MethodName: ShopOnoff
+      - m_Target: {fileID: 1324415014}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4361284953938719504}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: OnANDOff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
