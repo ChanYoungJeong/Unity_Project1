@@ -35,7 +35,6 @@ public class SubCharSetting : MonoBehaviour
 
     private void Start()
     {
-        SettingPanel.SetActive(false);
         
         RoguePanel.SetActive(false);
         MagicCasterPanel.SetActive(false);
