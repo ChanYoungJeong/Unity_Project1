@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Dager : MonoBehaviour
 {
-    private RogueStat rogueStat;
+    private SubCharacterStat subStat;
     Monster_Combat monsterCombat;
 
 
     private void Awake()
     {
-        rogueStat = GameObject.Find("Rogue").GetComponent<RogueStat>();
+        subStat = GameObject.Find("Rogue").GetComponent<SubCharacterStat>();
     }
 
     private void Update()
@@ -24,11 +24,11 @@ public class Dager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject == Battle_Situation_Trigger.monster || collision.gameObject == CreateBoss.Bss)
+        if(collision.transform.GetComponent<Monster_Script>() || collision.transform.GetComponent<BossMonster_Script>())
         {
             monsterCombat = Battle_Situation_Trigger.monster.GetComponent<Monster_Combat>();
 
-            monsterCombat.ApplyDamage(rogueStat.atkDamage, Color.green, 0, 0);
+            monsterCombat.ApplyDamage(subStat.atkDamege, Color.green, 0, 0);
             Destroy(this.gameObject);
         }
     }
