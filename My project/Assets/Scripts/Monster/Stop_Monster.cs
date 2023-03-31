@@ -18,6 +18,7 @@ public class Stop_Monster : MonoBehaviour
 
     private void Awake()
     {
+        Move_Left();
     }
     void Start()
     {
@@ -25,18 +26,15 @@ public class Stop_Monster : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (atSpot)
+        //Debug.Log(collision.transform.name);
+        if (collision.transform.GetComponent<Battle_Situation_Trigger>())
         {
             rigid.velocity = Vector2.zero;
-            //monster_Stop = true;
         }
-        else
-        {
-            Move_Left();
-            //monster_Stop = false;
-        }
+
     }
 
     private void Move_Left()

@@ -53,7 +53,6 @@ public class ShopItemManager : MonoBehaviour
             }
             NumberList[RandomNum] = false;
             //NumberList.RemoveAt(RandomNum);
-            Debug.Log(slots.Length);
             slots[i].transform.GetChild(0).GetComponentInChildren<Image>().sprite = ItemManager.loadObjects[RandomNum];
             slots[i].itemName = ItemManager.loadObjects[RandomNum].name;
             ResetNumber[i] = RandomNum;

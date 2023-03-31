@@ -10,11 +10,7 @@ public class Monster_Group_Manager : MonoBehaviour
 
     public Create_Monster CreaterMonster;
 
-    void Awake()
-    {
-        numberOfMonster = SetNumberOfMonster(Game_System.Stage);  //Set Number of Monster
-        CreaterMonster = GetComponent<Create_Monster>();
-    }
+
 
     // Update is called once per frame
     void Update()
@@ -28,24 +24,7 @@ public class Monster_Group_Manager : MonoBehaviour
     IEnumerator GoToNextState()             
     {
         yield return new WaitForSeconds(2.0f);
-        numberOfMonster = SetNumberOfMonster(Game_System.Stage + 1);
         Game_System.Stage++;                  //Go to next stage
-        Destroy(gameObject);                    //Destory object
     }
 
-    int SetNumberOfMonster(int stage)
-    {
-        int number;
-
-        if((stage % Game_System.Boss_Stage) > 0)
-        {
-            number = 3;             //Set the number of Normal Monster
-        }
-        else
-        {
-            number = 1;             //Set the number of Boss Monster
-        }
-
-        return number;
-    }
 }

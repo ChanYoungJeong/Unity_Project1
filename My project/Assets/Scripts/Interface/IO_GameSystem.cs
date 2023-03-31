@@ -20,7 +20,7 @@ public class IO_GameSystem : MonoBehaviour
         
         if (GameObject.Find("Loading_Information") == null)
         {
-            Game_System.Stage = 1;
+            Game_System.Stage = 0;
             Game_System.Gold = 12345678;
             PlayerUpgrade.atk_scoreButton = 0;
             PlayerUpgrade.hp_scoreButton = 0;
@@ -36,7 +36,6 @@ public class IO_GameSystem : MonoBehaviour
             PlayerUpgrade.hp_scoreButton = GetInfo.Player_Hp_Rate;
             Player.lv = GetInfo.Player_LV;
             Player.playerNowExp = GetInfo.Player_EXP;
-
 
             SubChars.Roguecount = GetInfo.Rogue_Active;          
             SubChars.Magiccount = GetInfo.MagicCaster_Active;
