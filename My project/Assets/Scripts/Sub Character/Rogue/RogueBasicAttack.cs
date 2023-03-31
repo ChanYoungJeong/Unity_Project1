@@ -6,7 +6,7 @@ public class RogueBasicAttack : MonoBehaviour
 {
     private GameObject daggerPrefab;
     private Animator animator;
-    private RogueStat rogueStat;
+    private SubCharacterStat subStat;
 
 
     [SerializeField] private float speed = 20f;
@@ -16,7 +16,7 @@ public class RogueBasicAttack : MonoBehaviour
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
-        rogueStat = GetComponent<RogueStat>();
+        subStat = GetComponent<SubCharacterStat>();
 
     }
 
@@ -38,7 +38,7 @@ public class RogueBasicAttack : MonoBehaviour
     IEnumerator Attack()
     {
         isAttack = false;
-        yield return new WaitForSeconds(rogueStat.atkSpeed);
+        yield return new WaitForSeconds(subStat.atkSpeed);
         isAttack = true;
 
         animator.SetTrigger("AttackNormal");

@@ -12,7 +12,6 @@ public class SubCharManager : MonoBehaviour
         instans = this;
     }
 
-
     public void GetTargetPosition(Transform transObj)
     {
         if (Battle_Situation_Trigger.monster != null)
@@ -22,7 +21,6 @@ public class SubCharManager : MonoBehaviour
         }
         else if (CreateBoss.Bss != null)
         {
-
             angle = Mathf.Atan2(CreateBoss.Bss.transform.position.y - transObj.position.y,
                                       CreateBoss.Bss.transform.position.x - transObj.position.x) * Mathf.Rad2Deg;
         }
