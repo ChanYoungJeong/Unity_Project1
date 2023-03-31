@@ -6,24 +6,22 @@ public class Battle_Situation_Trigger : MonoBehaviour
 {
     public static GameObject monster;
     public static GameObject monster_group;
-    GameObject player;
 
     public static bool on_Battle = false;
-    public static bool atSpot = false;
-    bool coroutineCheck = false;
+    public CreateMonster_Manager CMM;
 
 
     private void Start()
     {
-        player = GameObject.Find("Player");
+
     }
 
     private void Update()
     {
-        if (GameObject.Find("Monster_Group(Clone)"))
+        if (CMM.group)
         {
             on_Battle = true;
-            monster_group = GameObject.Find("Monster_Group(Clone)");
+            monster_group = CMM.group;
             if (monster_group.transform.childCount != 0)
             {
                 monster = monster_group.transform.GetChild(0).gameObject;
@@ -38,15 +36,4 @@ public class Battle_Situation_Trigger : MonoBehaviour
             on_Battle = false;
         }
     }
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.transform.tag == "Monster")
-        {
-            collision.GetComponent<Stop_Monster>().atSpot = true;
-        }
-    }
-
-
 }
