@@ -4,25 +4,37 @@ using UnityEngine;
 
 public class ObjectOnOff : MonoBehaviour
 {
-    public GameObject[] gameObjects;
+    public GameObject[] OnObjects;
+    public GameObject[] Offobjects;
+    public GameObject[] AllObjects;
     public void On()
     {
-        this.gameObject.SetActive(true);
-    }
-    public void Off()
-    {
-        this.gameObject.SetActive(false);
+        for(int i=0; i<OnObjects.Length; i++)
+        {
+            OnObjects[i].gameObject.SetActive(true);
+        }
     }
 
-    public void OnANDOff()
+    public void Off()
     {
-        if (this.gameObject.activeSelf==false)
+        for (int i = 0; i < Offobjects.Length; i++)
         {
-            On();
+            Offobjects[i].gameObject.SetActive(false);
         }
-        else
+    }
+
+    public void OnOff()
+    {
+        for (int i = 0; i < AllObjects.Length; i++)
         {
-            Off();
+            if (AllObjects[i].activeSelf == true)
+            {
+                AllObjects[i].gameObject.SetActive(false);
+            }
+            else
+            {
+                AllObjects[i].gameObject.SetActive(true);
+            }
         }
     }
 }
