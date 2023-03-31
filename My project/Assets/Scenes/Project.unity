@@ -957,31 +957,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 155898982, guid: 69ee51c36f135b549ada05bb9e55f926, type: 3}
   m_PrefabInstance: {fileID: 153396692}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &246014407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8567223831321649035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84664cc6b56a544998ec80b654102638, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryui: {fileID: 5341787357028203586}
-  equipment: {fileID: 4760691936025040016}
-  shop: {fileID: 4361284953938719489}
-  heroui: {fileID: 1478535314}
-  subchar: {fileID: 2075694245}
-  ContropButtonUi: {fileID: 1140806526031986258}
-  mainmenubt: {fileID: 5191131737790041337}
-  setting: {fileID: 633784304}
-  RoguePanel: {fileID: 0}
-  MagicCasterPanel: {fileID: 0}
-  PriestPanel: {fileID: 0}
-  ArcherPanel: {fileID: 0}
-  AlchemistPanel: {fileID: 0}
 --- !u!114 &246014408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1670,9 +1645,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 246014407}
-        m_TargetAssemblyTypeName: menufalse, Assembly-CSharp
-        m_MethodName: Herouionoff
+      - m_Target: {fileID: 2075694247}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2075694247}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: Off
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7331,9 +7318,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 246014407}
-        m_TargetAssemblyTypeName: menufalse, Assembly-CSharp
-        m_MethodName: ButtonAllOff
+      - m_Target: {fileID: 1140806526031986260}
+        m_TargetAssemblyTypeName: AllObjectOff, Assembly-CSharp
+        m_MethodName: Off
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7553,7 +7540,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 246014407}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: menufalse, Assembly-CSharp
         m_MethodName: ClickSetting
         m_Mode: 1
@@ -8116,6 +8103,7 @@ GameObject:
   - component: {fileID: 1324415012}
   - component: {fileID: 1324415011}
   - component: {fileID: 1324415013}
+  - component: {fileID: 1324415014}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -8191,6 +8179,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eqiupInfo: {fileID: 4819492973196270153}
+--- !u!114 &1324415014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324415009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnObjects:
+  - {fileID: 5341787357028203586}
+  - {fileID: 4760691936025040016}
+  Offobjects:
+  - {fileID: 4361284953938719489}
+  - {fileID: 30857467637541706}
+  - {fileID: 508537051}
+  AllObjects:
+  - {fileID: 5341787357028203586}
+  - {fileID: 4760691936025040016}
 --- !u!1 &1338078376
 GameObject:
   m_ObjectHideFlags: 0
@@ -11339,6 +11349,7 @@ MonoBehaviour:
   - {fileID: 1137724502}
   - {fileID: 1360491274}
   monster_Group: {fileID: 8323481700098097601, guid: cf6e8d4644fb414469c2c419e2432032, type: 3}
+  group: {fileID: 0}
   monsterCapacity: 9
   bossMonsterCapacity: 3
   stageDelay: 2.5
@@ -11390,6 +11401,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e06456a36b24f548af2b9606bf39408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1900369851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900369843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7a13592b2d539459a2c112825d64f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objects:
+  - {fileID: 4361284953938719489}
+  - {fileID: 5341787357028203586}
+  - {fileID: 4760691936025040016}
+  - {fileID: 30857467637541706}
+  - {fileID: 508537051}
 --- !u!1 &1901221650
 GameObject:
   m_ObjectHideFlags: 0
@@ -12248,6 +12277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2075694246}
+  - component: {fileID: 2075694247}
   m_Layer: 5
   m_Name: SubChar
   m_TagString: Untagged
@@ -12276,6 +12306,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2075694247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075694245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnObjects:
+  - {fileID: 30857467637541706}
+  - {fileID: 508537051}
+  Offobjects:
+  - {fileID: 5341787357028203586}
+  - {fileID: 4760691936025040016}
+  - {fileID: 4361284953938719489}
+  AllObjects:
+  - {fileID: 30857467637541706}
+  - {fileID: 508537051}
 --- !u!1 &2081680755
 GameObject:
   m_ObjectHideFlags: 0
@@ -16403,9 +16455,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 246014407}
-        m_TargetAssemblyTypeName: menufalse, Assembly-CSharp
-        m_MethodName: EquipmentOnoff
+      - m_Target: {fileID: 1324415014}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1324415014}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: Off
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17625,6 +17689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1140806526031986259}
   - component: {fileID: 1140806526031986256}
+  - component: {fileID: 1140806526031986260}
   m_Layer: 5
   m_Name: ControlButtonsUI
   m_TagString: Untagged
@@ -17656,6 +17721,25 @@ RectTransform:
   m_AnchoredPosition: {x: -48, y: -560}
   m_SizeDelta: {x: 89.68506, y: 829.17993}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1140806526031986260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140806526031986258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7a13592b2d539459a2c112825d64f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objects:
+  - {fileID: 4361284953938719489}
+  - {fileID: 5341787357028203586}
+  - {fileID: 4760691936025040016}
+  - {fileID: 508537051}
+  - {fileID: 30857467637541706}
+  - {fileID: 1140806526031986258}
 --- !u!1 &1140806526073028193
 GameObject:
   m_ObjectHideFlags: 0
@@ -20324,6 +20408,7 @@ GameObject:
   - component: {fileID: 6000368999427264855}
   - component: {fileID: 6000368999427264856}
   - component: {fileID: 6000368999427264857}
+  - component: {fileID: 6000368999427264858}
   m_Layer: 5
   m_Name: Shop
   m_TagString: Untagged
@@ -22117,7 +22202,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 246014407}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: menufalse, Assembly-CSharp
         m_MethodName: ClickShopIcon
         m_Mode: 1
@@ -22685,7 +22770,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 246014407}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: menufalse, Assembly-CSharp
         m_MethodName: MainOnOffSetActive
         m_Mode: 1
@@ -23312,7 +23397,6 @@ GameObject:
   - component: {fileID: 5341787357028203587}
   - component: {fileID: 5341787357028203598}
   - component: {fileID: 5341787357028203597}
-  - component: {fileID: 6890455568610280011}
   m_Layer: 0
   m_Name: InventoryUI
   m_TagString: Untagged
@@ -26001,9 +26085,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 246014407}
-        m_TargetAssemblyTypeName: menufalse, Assembly-CSharp
-        m_MethodName: ShopOnoff
+      - m_Target: {fileID: 6000368999427264858}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6000368999427264858}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: Off
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26243,6 +26339,27 @@ MonoBehaviour:
   rotSpeed: 0.1
   doRot: 0
   leftSlot: 0
+--- !u!114 &6000368999427264858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443425604269371158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnObjects:
+  - {fileID: 4361284953938719489}
+  Offobjects:
+  - {fileID: 5341787357028203586}
+  - {fileID: 4760691936025040016}
+  - {fileID: 30857467637541706}
+  - {fileID: 508537051}
+  AllObjects:
+  - {fileID: 4361284953938719489}
 --- !u!1001 &6005318459158681048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26654,22 +26771,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6890455568610280011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5341787357028203586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bca89c572589dd44a9e93af5b34c6911, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  invenpotion: {fileID: 6947029463846993860}
-  inveneqi: {fileID: 6890455570127193748}
-  potionbtn: {fileID: 6947029463714671580}
-  eqibt: {fileID: 6947029464268272978}
 --- !u!222 &6890455570127193744
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27080,7 +27181,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6890455568610280011}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KindofInven, Assembly-CSharp
         m_MethodName: potionopen
         m_Mode: 1
@@ -29267,7 +29368,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6890455568610280011}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KindofInven, Assembly-CSharp
         m_MethodName: eqiopen
         m_Mode: 1
@@ -41197,7 +41298,6 @@ GameObject:
   - component: {fileID: 246014410}
   - component: {fileID: 246014409}
   - component: {fileID: 246014408}
-  - component: {fileID: 246014407}
   - component: {fileID: 8567223831321649036}
   m_Layer: 5
   m_Name: 'Canvas :: Main'
