@@ -70,6 +70,7 @@ public class Monster_Combat : MonoBehaviour
         }
     }
 
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         if(ContentsManager.startContent)
@@ -81,6 +82,7 @@ public class Monster_Combat : MonoBehaviour
                 StartCoroutine(contentAttack());
             }
         }
+        
     }
 
     IEnumerator contentAttack()
@@ -88,5 +90,10 @@ public class Monster_Combat : MonoBehaviour
         yield return new WaitForSeconds(Monster_Stat.atkSpeed);
 
         contentCheck = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
     }
 }

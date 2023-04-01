@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class Stat
+public class Stat : MonoBehaviour
 {
-    [SerializeField]
-    private int baseStat;
+    [Header("∫∏¡∂øµøı Ω∫≈»")]
+    public float sub_maxHp;
+    public float sub_nowHp;
+    public float sub_atkDamege;
+    public float sub_criticalRate;
+    public float sub_atkSpeed;
+    public int sub_lv;
 
-    public int GetStat()
-    {
-        return baseStat;
-    }
+    [Header("≈ıªÁ√º(«¡∏Æ∆È) Ω∫≈»")]
+    public float prefab_AtkDamege;
+
+    
 }
