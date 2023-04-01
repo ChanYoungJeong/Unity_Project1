@@ -14,7 +14,8 @@ public class CreateMonster_Manager : MonoBehaviour
     int bossMonsterCapacity = 3;
     [SerializeField]
     float stageDelay = 2.5f;
-
+    [SerializeField]
+    int stageScale = 0;
     void Update()
     {
         //If there are no group, create Monster Group
@@ -25,19 +26,19 @@ public class CreateMonster_Manager : MonoBehaviour
         }
     }
 
-
     void createMonsterGroup()
     {
         group = Instantiate(monster_Group, transform.position, transform.rotation);
         Create_Monster groupCM;
         groupCM = group.GetComponent<Create_Monster>();
         groupCM.spawnArray = spawnArray;
+        groupCM.scale = SetStageStatScale();
         groupCM.monsterCapacity = SetNumberOfMonster(Game_System.Stage + 1);
     }
 
     int SetNumberOfMonster(int stage)
     {
-        if ((stage % Game_System.Boss_Stage) > 0)
+        if (!Game_System.bossStage)
         {
             return monsterCapacity;         //Set the number of Normal Monster
         }
@@ -45,5 +46,14 @@ public class CreateMonster_Manager : MonoBehaviour
         {
             return bossMonsterCapacity;     //Set the number of Boss Monster
         }
+    }
+
+    int SetStageStatScale()
+    {
+        if (Game_System.bossStage)
+        {
+            stageScale++;        
+        }
+        return stageScale;
     }
 }

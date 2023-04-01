@@ -34,6 +34,8 @@ public class SkillAttack : MonoBehaviour
         }
     }
 
+
+
     IEnumerator Skill()
     {
 
@@ -47,7 +49,7 @@ public class SkillAttack : MonoBehaviour
             }
             else
             {
-                Battle_Situation_Trigger.monster.GetComponent<Monster_Manager>().Monster_Die();
+                //Battle_Situation_Trigger.monster.GetComponent<Monster_Manager>().Monster_Die();
                 //monsterManager.Monster_Die();
             }
         }

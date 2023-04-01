@@ -27,7 +27,6 @@ public class Sub_BasicAttack : MonoBehaviour
             StartCoroutine(Attack());
         }
     }
-
     IEnumerator Attack()
     {
         isAttack = false;

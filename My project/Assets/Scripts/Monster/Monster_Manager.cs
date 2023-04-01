@@ -5,122 +5,68 @@ using UnityEngine;
 public class Monster_Manager : MonoBehaviour
 {
     Monster_Script Monster_Stat;
-    Animator anim;
-    PlayerScript playerScript;
-    public GameObject MonsterDieAnimation;
-    GameObject DeadPrefab;
+    public int scale = 1;
 
-    bool check_animation = false;
     // Start is called before the first frame update
     void Awake()
     {
-        if (GameObject.Find("Player") != null)
-        {
-            playerScript = GameObject.Find("Player").GetComponent<PlayerScript>();
-        }
         Monster_Stat = GetComponent<Monster_Script>();
-        Get_Monster_Stat(Game_System.Stage);
-        anim = GetComponentInChildren<Animator>();
-        anim.SetBool("isdead", false);        
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        if (Monster_Stat.nowHp <= 0) //&& check_animation == false
+        if (Game_System.bossStage)
         {
-            StartCoroutine(Dead_Animation());
-            Monster_Die();          
+            SetBossMonsterStatus(scale);
         }
-        //Insurance of error
-        if(!this.transform.parent)
+        else
         {
-            Destroy(gameObject);
+            SetMonsterStatus(scale);
         }
     }
-
-
-    public void Monster_Die()
+    public void SetMonsterStatus(int scale)
     {
-        playerScript.GetExp();
-        DeadPrefab = Instantiate(MonsterDieAnimation, this.transform.position, this.transform.rotation);
-        Destroy(this.gameObject);
-        Game_System.Gold += Monster_Stat.Golds;
-        ShowPlayerStat(); 
-    }
-
-    void SetMonsterStatus()
-    {
-        Monster_Stat.maxHp = Get_Monster_HP(Game_System.Stage);
-        Monster_Stat.nowHp = Get_Monster_HP(Game_System.Stage);
-        Monster_Stat.atkDmg = Get_Monster_ATK(Game_System.Stage);
+        Monster_Stat.maxHp = Get_Monster_HP(scale);
+        Monster_Stat.nowHp = Get_Monster_HP(scale);
+        Monster_Stat.atkDmg = Get_Monster_ATK(scale);
         Monster_Stat.atkSpeed = 1;
-        Monster_Stat.Golds = Get_Monster_Gold(Game_System.Stage);
-        Monster_Stat.Exp = Get_Monster_Exp(Game_System.Stage);
+        Monster_Stat.Golds = Get_Monster_Gold(scale);
+        Monster_Stat.Exp = Get_Monster_Exp(scale);
     }
 
-    void SetBossMonsterStatus()
+    public void SetBossMonsterStatus(int scale)
     {
-        Monster_Stat.maxHp = (int)(Get_Monster_HP(Game_System.Stage - 1) * 2.2);
-        Monster_Stat.nowHp = (int)(Get_Monster_HP(Game_System.Stage - 1) * 2.2);
-        Monster_Stat.atkDmg = (int)(Get_Monster_ATK(Game_System.Stage - 1) * 2.2);
+        Monster_Stat.maxHp = (int)(Get_Monster_HP(scale) * 2.2);
+        Monster_Stat.nowHp = (int)(Get_Monster_HP(scale) * 2.2);
+        Monster_Stat.atkDmg = (int)(Get_Monster_ATK(scale) * 2.2);
         Monster_Stat.atkSpeed = 2;
-        Monster_Stat.Golds = (int)(Get_Monster_Gold(Game_System.Stage - 1) * 2.2);
-        Monster_Stat.Exp = (int)(Get_Monster_Exp(Game_System.Stage - 1) * 2.2);
+        Monster_Stat.Golds = (int)(Get_Monster_Gold(scale) * 2.2);
+        Monster_Stat.Exp = (int)(Get_Monster_Exp(scale) * 2.2);
     }
 
-    void Get_Monster_Stat(int Stage)
+    public int Get_Monster_HP(int scale)
     {
-        int Boss_Stage = Stage % Game_System.Boss_Stage;
-
-        if (Boss_Stage > 0)
-        {
-            Monster_Stat.monsterType = "Normal";
-            SetMonsterStatus();
-        }
-        else {
-            Monster_Stat.monsterType = "Boss";
-            SpriteRenderer color = GetComponent<SpriteRenderer>();
-            color.color = Color.blue;
-            SetBossMonsterStatus();
-        } 
-    }
-
-    public int Get_Monster_HP(int Stage)
-    {
-        int HP = 100 * ((Stage / Game_System.Boss_Stage) + 1);
+        int HP = 100 * ((scale) + 1);
         return HP;
     }
 
-    public int Get_Monster_ATK(int Stage)
+    public int Get_Monster_ATK(int scale)
     {
-        int ATK = 2 * ((Stage / Game_System.Boss_Stage) + 1);
+        int ATK = 2 * ((scale) + 1);
         return ATK;
     }
     
-    public int Get_Monster_Gold(int Stage)
+    public int Get_Monster_Gold(int scale)
     {
-        int Gold = 10 * ((Stage / Game_System.Boss_Stage) + 1);
+        int Gold = 10 * ((scale) + 1);
         return Gold;
     }
     
-    public int Get_Monster_Exp(int Stage)
+    public int Get_Monster_Exp(int scale)
     {
-        int Exp = 5 * ((Stage / Game_System.Boss_Stage) + 1);
+        int Exp = 5 * ((scale) + 1);
         return Exp;
     }
 
-    IEnumerator Dead_Animation()
-    {
-        check_animation = true;
-        anim.SetBool("isdead", true);
-        yield return new WaitForSeconds(1.0f);
-    }
 
-
-    void ShowPlayerStat()
-    {
-        Debug.Log("EXP: "+playerScript.playerNowExp);
-        Debug.Log("Lv: "+playerScript.lv);
-    }
 }
