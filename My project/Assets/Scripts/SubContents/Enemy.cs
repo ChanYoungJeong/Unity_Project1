@@ -24,9 +24,6 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (stat.nowHp < 0)
-            Destroy(gameObject);
-
         Vector2 dirVec = target.position - rigid.position;
         Vector2 nextVec = dirVec.normalized * speed * Time.fixedDeltaTime;
         rigid.MovePosition(rigid.position + nextVec);

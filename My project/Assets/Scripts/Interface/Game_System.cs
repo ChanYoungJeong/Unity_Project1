@@ -12,12 +12,10 @@ public class Game_System : MonoBehaviour
 
     public static int Stage = 0;
     public static float StageDelay = 2.5f;
-    public static int Boss_Stage = 5;
+    public static bool bossStage;
+    [SerializeField]
+    int bossStageRotation = 5;
     public Text Stage_Text;
-
-    private void Awake()
-    {
-    }
 
     // Update is called once per frame
     void Update()
@@ -27,8 +25,15 @@ public class Game_System : MonoBehaviour
         displyGold.text = Gold.ToString() + "G";
         Stage_Text.text = "Stage " + Stage;
 
+        if((Stage + 1) % bossStageRotation == 0)
+        {
+            bossStage = true;
+        }
+        else
+        {
+            bossStage = false;
+        }
     }
-
 
 }
 

@@ -48,7 +48,6 @@ public class Monster_Combat : MonoBehaviour
         yield return new WaitForSeconds(Monster_Stat.atkSpeed);
         anim.SetBool("isattack", true);
         Player_Stat.nowHp -= Monster_Stat.atkDmg;
-        Debug.Log("Monster Attack, Player Hp = " + Player_Stat.nowHp);
     }
 
     public void ApplyDamage(float damage, Color color, float ciritcalRate, float criticalDamage)

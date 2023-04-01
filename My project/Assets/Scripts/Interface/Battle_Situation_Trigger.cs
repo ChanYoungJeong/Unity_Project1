@@ -11,11 +11,6 @@ public class Battle_Situation_Trigger : MonoBehaviour
     public CreateMonster_Manager CMM;
 
 
-    private void Start()
-    {
-
-    }
-
     private void Update()
     {
         if (CMM.group)

@@ -9,15 +9,14 @@ public class MonsterAnimationController : MonoBehaviour
     {
         if (Game_System.Stage >= 2 && Game_System.Stage < 20)
         {
-            GetComponentInChildren<Animator>().runtimeAnimatorController = 
-            (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate
-            (Resources.Load("Ani\\Idle_0", typeof(RuntimeAnimatorController)));
+            ChangeAnimation();
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    void ChangeAnimation()
     {
-        
+        GetComponentInChildren<Animator>().runtimeAnimatorController =
+        (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate
+        (Resources.Load("Ani\\Idle_0", typeof(RuntimeAnimatorController)));
     }
 }
