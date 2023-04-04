@@ -7,13 +7,13 @@ public class Stat : MonoBehaviour
     [Header("º¸Á¶¿µ¿õ ½ºÅÈ")]
     public float sub_maxHp;
     public float sub_nowHp;
-    public float sub_atkDamege;
+    public float sub_atkDamage;
     public float sub_criticalRate;
     public float sub_atkSpeed;
     public int sub_lv;
-
-    [Header("Åõ»çÃ¼(ÇÁ¸®Æé) ½ºÅÈ")]
-    public float prefab_AtkDamege;
+    [Header("º¸Á¶¿µ¿õ ½ºÅ³ ½ºÅÈ")]
+    public float sub_skillCooldown;
+    public float sub_skillDamage => sub_atkDamage * 3f;
 
     
 }

@@ -116,7 +116,6 @@ GameObject:
   - component: {fileID: 3583841258291861666}
   - component: {fileID: -5870814338931481434}
   - component: {fileID: -8136172375280816674}
-  - component: {fileID: -7103514183548083779}
   - component: {fileID: 4377687569652047589}
   m_Layer: 0
   m_Name: Re_FireBall
@@ -178,25 +177,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &-7103514183548083779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 738715645996028120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc0bc98ca0eb85f4fb47b17f7ca8a1c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sub_maxHp: 0
-  sub_nowHp: 0
-  sub_atkDamege: 0
-  sub_criticalRate: 0
-  sub_atkSpeed: 0
-  sub_lv: 0
-  prefab_AtkDamege: 0
 --- !u!114 &4377687569652047589
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class PrefabOnTrigger : MonoBehaviour
 {
-    Stat stat;
     Monster_Combat monsterCombat;
-    Boss_Combat_Manager bossMonsterCombat;
-
-
-    private void Awake()
-    {
-        stat = GetComponent<Stat>();
-    }
+    public float damage;
 
     private void Update()
     {
@@ -27,7 +20,7 @@ public class PrefabOnTrigger : MonoBehaviour
         if (collision.transform.GetComponent<Monster_Script>())
         {
             monsterCombat = Battle_Situation_Trigger.monster.GetComponent<Monster_Combat>();
-            monsterCombat.ApplyDamage(stat.prefab_AtkDamege, Color.green, 0, 0);
+            monsterCombat.ApplyDamage(damage, Color.green, 0, 0);
 
             Destroy(this.gameObject);
         }

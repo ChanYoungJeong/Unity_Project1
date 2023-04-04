@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4822481580290938561}
   - component: {fileID: -2218608801115129279}
   - component: {fileID: -5894108272904359445}
-  - component: {fileID: -7170767771386143020}
   - component: {fileID: -3505471334547483922}
   m_Layer: 0
   m_Name: Re_arrow
@@ -135,25 +134,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4, y: 0.5}
   m_EdgeRadius: 0
---- !u!114 &-7170767771386143020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 392801476148453369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc0bc98ca0eb85f4fb47b17f7ca8a1c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sub_maxHp: 0
-  sub_nowHp: 0
-  sub_atkDamege: 0
-  sub_criticalRate: 0
-  sub_atkSpeed: 0
-  sub_lv: 0
-  prefab_AtkDamege: 0
 --- !u!114 &-3505471334547483922
 MonoBehaviour:
   m_ObjectHideFlags: 0
