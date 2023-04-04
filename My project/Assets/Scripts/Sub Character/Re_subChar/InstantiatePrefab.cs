@@ -1,55 +1,62 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class InstantiatePrefab : MonoBehaviour
 {
     [SerializeField] private float speed = 20;
-    [Tooltip("사용할 에니메이터의 트리거 이름을 적으시오")]
+    [Tooltip("사용할 애니메이터 트리거 이름을 입력하세요.")]
     [SerializeField] private string animatorName;
+    [SerializeField] private string askillAnimatorName;
+    [SerializeField] private GameObject prefab;
+    [SerializeField] private GameObject skillPrefab;
 
-    Animator animator;
-    Stat stat;
-
+    private Animator animator;
+    private Stat stat;
     private float angle;
+    private float lastAttackTime;
+    private float lastSkillAttackTime;
 
     private void Start()
     {
         animator = GetComponentInChildren<Animator>();
         stat = GetComponent<Stat>();
+        lastAttackTime = Time.time;
+        lastSkillAttackTime = Time.time;
     }
 
     private void Update()
     {
+        if (!Battle_Situation_Trigger.monster && !CreateBoss.Bss) return;
+
         GetTargetPosition(transform);
+
+        if (Time.time > lastAttackTime + stat.sub_atkSpeed)
+        {
+            lastAttackTime = Time.time;
+            CreatePrefab(prefab, stat.sub_atkDamage, animatorName);
+        }
+
+        if (Time.time > lastSkillAttackTime + stat.sub_skillCooldown)
+        {
+            lastSkillAttackTime = Time.time;
+            CreatePrefab(skillPrefab, stat.sub_skillDamage, askillAnimatorName);
+        }
     }
 
-    public void CreatePrefab(GameObject prefab)
+    public void CreatePrefab(GameObject prefab, float damage, string aimName)
     {
-        if (Battle_Situation_Trigger.monster || CreateBoss.Bss)
-        {
-            animator.SetTrigger(animatorName);
+        animator.SetTrigger(aimName);
 
-            GameObject PrefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle));
-            PrefabClone.GetComponent<Rigidbody2D>().AddForce(PrefabClone.transform.right * speed, ForceMode2D.Impulse);
+        GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle));
+        prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
+        prefabClone.GetComponent<PrefabOnTrigger>().damage = damage;
 
-            PrefabClone.GetComponent<Stat>().prefab_AtkDamege = stat.sub_atkDamege;
-        }
     }
 
     public void GetTargetPosition(Transform transObj)
     {
-
-        if (Battle_Situation_Trigger.monster)
-        {
-            angle = Mathf.Atan2(Battle_Situation_Trigger.monster.transform.position.y - transObj.position.y,
-                                      Battle_Situation_Trigger.monster.transform.position.x - transObj.position.x) * Mathf.Rad2Deg;
-        }
-        else if (CreateBoss.Bss)
-        {
-            angle = Mathf.Atan2(CreateBoss.Bss.transform.position.y - transObj.position.y,
-                                      CreateBoss.Bss.transform.position.x - transObj.position.x) * Mathf.Rad2Deg;
-        }
+        Transform target = Battle_Situation_Trigger.monster ? Battle_Situation_Trigger.monster.transform : CreateBoss.Bss.transform;
+        angle = Mathf.Atan2(target.position.y - transObj.position.y, target.position.x - transObj.position.x) * Mathf.Rad2Deg;
     }
 }

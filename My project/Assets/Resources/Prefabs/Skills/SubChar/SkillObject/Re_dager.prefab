@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 1726430968732564686}
   - component: {fileID: -3394349572945445863}
   - component: {fileID: -4434437990185676618}
-  - component: {fileID: 5184707383490700800}
   - component: {fileID: 3092657352595406302}
   m_Layer: 0
   m_Name: Re_dager
@@ -157,25 +156,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &5184707383490700800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3107797298255059210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc0bc98ca0eb85f4fb47b17f7ca8a1c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sub_maxHp: 0
-  sub_nowHp: 0
-  sub_atkDamege: 0
-  sub_criticalRate: 0
-  sub_atkSpeed: 0
-  sub_lv: 0
-  prefab_AtkDamege: 0
 --- !u!114 &3092657352595406302
 MonoBehaviour:
   m_ObjectHideFlags: 0
