@@ -119,7 +119,7 @@ public class SubCharSetting : MonoBehaviour
     {
         player_LEVEL = Player_Object.lv;
 
-        if (player_LEVEL >= 4 && Game_System.Gold >= 500)
+        if (player_LEVEL >= 2 && Game_System.Gold >= 500)
         {
             if (Magiccount == false)
             {
