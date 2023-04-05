@@ -347,6 +347,7 @@ GameObject:
   - component: {fileID: 3988115038534915625}
   - component: {fileID: 6112344514727789774}
   - component: {fileID: 4972604773768060620}
+  - component: {fileID: -484093472414945625}
   m_Layer: 0
   m_Name: Re_MegaArrow
   m_TagString: Untagged
@@ -398,7 +399,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 3.7, y: 0.5}
-  m_EdgeRadius: 4
+  m_EdgeRadius: 0
 --- !u!50 &4972604773768060620
 Rigidbody2D:
   serializedVersion: 4
@@ -420,3 +421,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-484093472414945625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8130810599518239819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac4c91d7e348df4c8b9682f6d9d8805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiHit: 1
+  damageColor: {r: 0.01886791, g: 0.01886791, b: 0.01886791, a: 1}
+  damage: 0
