@@ -9,7 +9,9 @@ public class SubStatWindow : MonoBehaviour
     public Text attack;
     public Text skillDamage;
 
-    private int RogueAttackGold = 1000;
+    public int Gold;
+
+    /*private int RogueAttackGold = 1000;
     private int RogueskillDamageGold = 1000;
 
     private int MagicCasterAttackGold = 1500;
@@ -17,7 +19,7 @@ public class SubStatWindow : MonoBehaviour
 
     private int PriestAttackGold = 2000;
     private int PriestskillDamageGold = 2000;
-
+*/
     SubChar_Combat_manager subStat;
 
     private void Start()
@@ -57,22 +59,32 @@ public class SubStatWindow : MonoBehaviour
             attack.text = "Attack " + subStat.attackDmg.ToString();
             skillDamage.text = "skillDamage " + subStat.skillDamage.ToString();
         }
+        
     }
 
-    /*public void RogueAttackUpgrade()
+    public void SubCharAttackUpgrade()
     {
-
-        if (Game_System.Gold >= RogueAttackGold)
+        int Level;
+        if (Game_System.Gold >= Gold)
         {
-            Game_System.Gold -= RogueAttackGold;
+            Debug.Log("ÇöÀç °ñµå: "+Game_System.Gold);
+            Game_System.Gold -= Gold;
+            Debug.Log("ÀÌÈÄ °ñµå: " + Game_System.Gold);
+            Level = subStat.lv;
+            subStat.lv++;
 
-            subStat.attackDmg += 2;
+            if(subStat.lv !=Level)
+            {
+                subStat.skillDamage += 2;
+                subStat.attackDmg += 2;
+            }
+            skillDamage.text = "skillDamage " + subStat.skillDamage.ToString();
             attack.text = "attack " + subStat.attackDmg.ToString();
-
+            lv.text = "Lv " + subStat.lv.ToString();
         }
-    }*/
+    }
 
-    public void RogueLevelUpgrade()
+    /*public void RogueLevelUpgrade()
     {
         int Level;
 
@@ -144,5 +156,5 @@ public class SubStatWindow : MonoBehaviour
             skillDamage.text = "skillDamage " + subStat.skillDamage.ToString();
 
         }
-    }
+    }*/
 }
