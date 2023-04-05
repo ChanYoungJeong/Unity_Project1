@@ -788,11 +788,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbe89caca4def1548b8068403fee240c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Type: Basic
   speed: 20
   animatorName: AttackBow
-  askillAnimatorName: SkillBow
   prefab: {fileID: 392801476148453369, guid: 2c86b36e09a7b06449dee84c7440648e, type: 3}
-  skillPrefab: {fileID: 8130810599518239819, guid: 272fd1d94139f7c4ca399b4fa3e1f125, type: 3}
+  delayAnim: 0.7
+  cooldown: 3
 --- !u!114 &900327021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -849,6 +850,29 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1078147888 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5975196360047558722, guid: 171705672c773bc4292e5cea610d61bf, type: 3}
+  m_PrefabInstance: {fileID: 5975196358799058976}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1078147894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078147888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe89caca4def1548b8068403fee240c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: Skill
+  speed: 20
+  animatorName: SkillNormal
+  prefab: {fileID: 663929564521697501, guid: 871ad03208becfb4280c35bb44ca1d94, type: 3}
+  delayAnim: 0
+  cooldown: 12
 --- !u!1 &1250791398
 GameObject:
   m_ObjectHideFlags: 0
@@ -4638,6 +4662,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Rogue '
       objectReference: {fileID: 0}
+    - target: {fileID: 5975196360047558725, guid: 171705672c773bc4292e5cea610d61bf, type: 3}
+      propertyPath: Type
+      value: Basic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975196360047558725, guid: 171705672c773bc4292e5cea610d61bf, type: 3}
+      propertyPath: cooldown
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5975196360047558727, guid: 171705672c773bc4292e5cea610d61bf, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5064,6 +5096,7 @@ GameObject:
   - component: {fileID: 900327020}
   - component: {fileID: 900327021}
   - component: {fileID: 7573831300112299574}
+  - component: {fileID: 7573831300112299575}
   m_Layer: 5
   m_Name: Archer
   m_TagString: Untagged
@@ -5084,6 +5117,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barObj: {fileID: 1826032704}
+--- !u!114 &7573831300112299575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7573831300112299573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe89caca4def1548b8068403fee240c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: Skill
+  speed: 20
+  animatorName: AttackBow
+  prefab: {fileID: 8130810599518239819, guid: 272fd1d94139f7c4ca399b4fa3e1f125, type: 3}
+  delayAnim: 0.7
+  cooldown: 5
 --- !u!1 &7641525737731114014
 GameObject:
   m_ObjectHideFlags: 0

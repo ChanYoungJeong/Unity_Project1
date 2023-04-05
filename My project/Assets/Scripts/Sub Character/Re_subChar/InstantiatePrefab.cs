@@ -4,25 +4,40 @@ using UnityEngine;
 
 public class InstantiatePrefab : MonoBehaviour
 {
+    [Tooltip("기본공격이면 Type : Basic / 스킬이면 Type : Skill")]
+    [SerializeField] private string Type;
     [SerializeField] private float speed = 20;
     [Tooltip("사용할 애니메이터 트리거 이름을 입력하세요.")]
     [SerializeField] private string animatorName;
-    [SerializeField] private string askillAnimatorName;
+    //[SerializeField] private string askillAnimatorName;
     [SerializeField] private GameObject prefab;
-    [SerializeField] private GameObject skillPrefab;
+    //[SerializeField] private GameObject skillPrefab;
+    [SerializeField] private float delayAnim;
 
     private Animator animator;
     private Stat stat;
     private float angle;
     private float lastAttackTime;
-    private float lastSkillAttackTime;
+    // private float lastSkillAttackTime;
+    public float prefabDamage;
+    public float cooldown;
 
     private void Start()
     {
         animator = GetComponentInChildren<Animator>();
         stat = GetComponent<Stat>();
         lastAttackTime = Time.time;
-        lastSkillAttackTime = Time.time;
+        //cooldown값을 if문을 참조해서 받아올 것
+        if(Type == "Basic")
+        {
+            cooldown = stat.sub_atkSpeed;
+            prefabDamage = stat.sub_atkDamage;
+        }
+        else if(Type == "Skill")
+        {
+            cooldown = stat.sub_skillCooldown;
+            prefabDamage = stat.sub_skillDamage;
+        }
     }
 
     private void Update()
@@ -31,27 +46,26 @@ public class InstantiatePrefab : MonoBehaviour
 
         GetTargetPosition(transform);
 
-        if (Time.time > lastAttackTime + stat.sub_atkSpeed)
+        if (Time.time > lastAttackTime + cooldown)
         {
             lastAttackTime = Time.time;
-            CreatePrefab(prefab, stat.sub_atkDamage, animatorName);
-        }
-
-        if (Time.time > lastSkillAttackTime + stat.sub_skillCooldown)
-        {
-            lastSkillAttackTime = Time.time;
-            CreatePrefab(skillPrefab, stat.sub_skillDamage, askillAnimatorName);
+            animator.SetTrigger(animatorName);
+            Invoke("CreatePrefabWithDelay", delayAnim);
         }
     }
 
-    public void CreatePrefab(GameObject prefab, float damage, string aimName)
+    private void CreatePrefabWithDelay()
     {
-        animator.SetTrigger(aimName);
+        CreatePrefab(prefab, prefabDamage);
+    }
 
-        GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle));
-        prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
-        prefabClone.GetComponent<PrefabOnTrigger>().damage = damage;
+    public void CreatePrefab(GameObject prefab, float damage)
+    {
 
+            GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle));
+            prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
+        if (prefabClone.GetComponent<PrefabOnTrigger>())
+            prefabClone.GetComponent<PrefabOnTrigger>().damage = damage;
     }
 
     public void GetTargetPosition(Transform transObj)
