@@ -13,7 +13,7 @@ public class Stat : MonoBehaviour
     public int sub_lv;
     [Header("º¸Á¶¿µ¿õ ½ºÅ³ ½ºÅÈ")]
     public float sub_skillCooldown;
-    public float sub_skillDamage => sub_atkDamage * 3f;
+    public float sub_skillDamage;
 
     
 }
