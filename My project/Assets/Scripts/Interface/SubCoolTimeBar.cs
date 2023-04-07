@@ -9,7 +9,7 @@ public class SubCoolTimeBar : MonoBehaviour
     private Stat stat;
 
     private float fillSpeed = 1f; //채워지는 속도 조절용 변수
-    private float currentValue = 0f; //현재 값
+    public float currentValue = 0f; //현재 값
 
     private void Awake()
     {
@@ -25,12 +25,6 @@ public class SubCoolTimeBar : MonoBehaviour
     private void Update()
     {
         currentValue += Time.deltaTime/stat.sub_skillCooldown;
-
-        if (currentValue > barObj.maxValue)
-        {
-            currentValue = 0f;
-        }
-
         barObj.value = currentValue;
     }
 }
