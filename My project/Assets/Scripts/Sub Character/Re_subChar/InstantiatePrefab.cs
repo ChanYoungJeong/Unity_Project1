@@ -9,12 +9,11 @@ public class InstantiatePrefab : MonoBehaviour
     [SerializeField] private float speed = 20;
     [Tooltip("사용할 애니메이터 트리거 이름을 입력하세요.")]
     [SerializeField] private string animatorName;
-    //[SerializeField] private string askillAnimatorName;
     [SerializeField] private GameObject prefab;
-    //[SerializeField] private GameObject skillPrefab;
     [SerializeField] private float delayAnim;
 
     private Animator animator;
+    private AnimatorClipInfo[] animationInfo;
     private Stat stat;
     private float angle;
     private float lastAttackTime;
@@ -22,9 +21,13 @@ public class InstantiatePrefab : MonoBehaviour
     public float prefabDamage;
     public float cooldown;
 
+    CharCombatManager CCM;
+    bool coolDownCheck;
+
     private void Start()
     {
         animator = GetComponentInChildren<Animator>();
+        CCM = GetComponent<CharCombatManager>();
         stat = GetComponent<Stat>();
         lastAttackTime = Time.time;
         //cooldown값을 if문을 참조해서 받아올 것
@@ -48,8 +51,9 @@ public class InstantiatePrefab : MonoBehaviour
 
         if (Time.time > lastAttackTime + cooldown)
         {
-            lastAttackTime = Time.time;
+            lastAttackTime = Time.time;   
             animator.SetTrigger(animatorName);
+            Debug.Log(animatorName + " " + animator.GetBool("SkillBow"));
             Invoke("CreatePrefabWithDelay", delayAnim);
         }
     }
