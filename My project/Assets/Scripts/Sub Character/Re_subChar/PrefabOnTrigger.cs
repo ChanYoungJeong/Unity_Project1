@@ -48,7 +48,6 @@ public class PrefabOnTrigger : MonoBehaviour
                 hitted = true;
                 monsterCombat = collision.transform.GetComponent<Monster_Combat>();
                 monsterCombat.ApplyDamage(damage, damageColor, 0, 0);
-                Debug.Log(monsterCombat);
                 Destroy(this.gameObject);
             }
                 

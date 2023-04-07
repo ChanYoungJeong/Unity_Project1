@@ -793,6 +793,7 @@ MonoBehaviour:
   animatorName: AttackBow
   prefab: {fileID: 392801476148453369, guid: 2c86b36e09a7b06449dee84c7440648e, type: 3}
   delayAnim: 0.7
+  prefabDamage: 0
   cooldown: 3
 --- !u!114 &900327021
 MonoBehaviour:
@@ -813,6 +814,7 @@ MonoBehaviour:
   sub_atkSpeed: 2
   sub_lv: 1
   sub_skillCooldown: 5
+  sub_skillDamage: 0
 --- !u!1 &1009875185
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,6 +874,7 @@ MonoBehaviour:
   animatorName: SkillNormal
   prefab: {fileID: 663929564521697501, guid: 871ad03208becfb4280c35bb44ca1d94, type: 3}
   delayAnim: 0
+  prefabDamage: 0
   cooldown: 12
 --- !u!1 &1250791398
 GameObject:
@@ -5134,6 +5137,7 @@ MonoBehaviour:
   animatorName: AttackBow
   prefab: {fileID: 8130810599518239819, guid: 272fd1d94139f7c4ca399b4fa3e1f125, type: 3}
   delayAnim: 0.7
+  prefabDamage: 0
   cooldown: 5
 --- !u!1 &7641525737731114014
 GameObject:

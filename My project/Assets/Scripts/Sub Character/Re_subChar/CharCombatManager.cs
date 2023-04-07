@@ -4,20 +4,73 @@ using UnityEngine;
 
 public class CharCombatManager : MonoBehaviour
 {
-    public bool isBasicAttack;
-    public bool isSkillAttack;
-    public float timer;
-    Stat CharStat;
     // Start is called before the first frame update
+
+    Stat stat;
+    [SerializeField]
+    float attackSpeed;
+    [SerializeField]
+    float skillCollDown;
+    [SerializeField]
+    string BasicAttackAnimationName;
+    [SerializeField]
+    string SkillAttackAnimationName;
+
+    private SubCoolTimeBar coolTimeBar;
+    private Animator animator;
+    bool canAttack;
+    bool canSkill;
+
     void Awake()
     {
-        CharStat = GetComponent<Stat>();
+        stat = GetComponent<Stat>();
+        animator = GetComponentInChildren<Animator>();
+        coolTimeBar = GetComponent<SubCoolTimeBar>();
+        canAttack = true;
+        canSkill = false;
+        attackSpeed = stat.sub_atkSpeed;
+        skillCollDown = stat.sub_skillCooldown;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        if (coolTimeBar.currentValue >= 1)
+        {
+            canSkill = true;
+        }
 
+        if (canAttack)
+        {
+            if (canSkill)
+            {
+                Skill();
+                return;
+            }
+            else
+            {
+                StartCoroutine(Attack());
+            }
+        }
+    }
+
+    IEnumerator Attack()
+    {
+        //StopCoroutine(Attack());
+        canAttack = false;
+        animator.SetTrigger(BasicAttackAnimationName);
+
+        yield return new WaitForSeconds(attackSpeed);
+        canAttack = true;
+
+    }
+
+    void Skill()
+    {
+        //StopCoroutine(Skill());
+        canSkill = false;
+        animator.SetTrigger(SkillAttackAnimationName);
+        coolTimeBar.currentValue = 0;
     }
 }
