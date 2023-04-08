@@ -12,6 +12,8 @@ public class SubCharPassive : MonoBehaviour
 
     Animator Subanimator;
 
+    public int changePassiveLv;
+
     private void Start()
     {
         charSetting = GameObject.Find("Rogue").GetComponent<SubChar_Combat_manager>();
@@ -51,19 +53,8 @@ public class SubCharPassive : MonoBehaviour
     }
     public void ChangePrefab1()
     {
-        //Äí³ªÀÌ¸¦ ¸Ó ½ã´õº¼Æ®·Î ¹Ù²Û´Ù.
         GameObject rogueskill;
         rogueskill=charSetting.GetComponentInChildren<SubSkillAttack>().subSkillPrefab = Resources.Load<GameObject>("Ani/DarkCloud");
-        //rogueskill = Instantiate(rogueskill, this.transform.position, Quaternion.identity);
-        //rogueskill.GetComponent<Rigidbody2D>().velocity = Vector2.right;
-        
-
-
-        /*if (skill[0].name == "DarkCloud")
-        {
-            StartCoroutine("RogueSkill");
-            StopCoroutine("RogueSkill");
-        }*/
     }
 
     public void ChangePrefab2() 
@@ -71,22 +62,4 @@ public class SubCharPassive : MonoBehaviour
 
     }
 
-    /*IEnumerator RogueSkill() {
-        yield return new WaitForSeconds(2f);
-        RoguePassive();
-     }
-
-    public void RoguePassive()
-    {
-        if(Battle_Situation_Trigger.monster != null || CreateBoss.Bss != null)
-        {
-            Subanimator.SetTrigger("RoguePassive");
-            Invoke("RogueCreateDark", 0.4f);
-        }
-    }
-    public void RogueCreateDark()
-    {
-        RogueDark = Instantiate(skill[0], this.transform.position, Quaternion.identity);
-        RogueDark.GetComponent<Rigidbody2D>().velocity = Vector2.right;
-    }*/
 }
