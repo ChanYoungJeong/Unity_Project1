@@ -10,12 +10,10 @@ public class InstantiatePrefab : MonoBehaviour
     private Stat stat;
     private float angle;
     // private float lastSkillAttackTime;
-    public float prefabDamage;
 
     private void Start()
     {
         stat = GetComponentInParent<Stat>();
-        prefabDamage = stat.sub_atkDamage;
     }
 
     private void Update()
@@ -27,10 +25,10 @@ public class InstantiatePrefab : MonoBehaviour
 
     public void CreatePrefab(GameObject prefab)
     {
-            GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle));
-            prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
+        GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle));
+        prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
         if (prefabClone.GetComponent<PrefabOnTrigger>())
-            prefabClone.GetComponent<PrefabOnTrigger>().damage = prefabDamage;
+            prefabClone.GetComponent<PrefabOnTrigger>().damage = stat.sub_atkDamage;
     }
 
     public void GetTargetPosition(Transform transObj)
