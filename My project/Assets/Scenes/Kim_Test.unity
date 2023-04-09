@@ -1264,6 +1264,11 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &2109553640 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5975196359644541592, guid: 171705672c773bc4292e5cea610d61bf, type: 3}
+  m_PrefabInstance: {fileID: 5975196358799058976}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &19436875443170029
 Transform:
   m_ObjectHideFlags: 0
@@ -4679,6 +4684,10 @@ PrefabInstance:
       propertyPath: cooldown
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5975196360047558726, guid: 171705672c773bc4292e5cea610d61bf, type: 3}
+      propertyPath: _anim
+      value: 
+      objectReference: {fileID: 2109553640}
     - target: {fileID: 5975196360047558727, guid: 171705672c773bc4292e5cea610d61bf, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
