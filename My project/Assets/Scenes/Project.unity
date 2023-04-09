@@ -356,11 +356,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 32169673}
   m_CullTransparentMesh: 1
---- !u!1 &68411114 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 886978934656933472, guid: 235fd5752deb5f642a9a6aa1f1423b64, type: 3}
-  m_PrefabInstance: {fileID: 2914000240649792764}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &105261662
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,50 +914,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161446691}
   m_CullTransparentMesh: 1
---- !u!114 &246014407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8567223831321649035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84664cc6b56a544998ec80b654102638, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &246014408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8567223831321649035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07f94af5d8c792f42b39e6763c9eac95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player_Object: {fileID: 1994892384}
-  player_LEVEL: 0
-  Roguecount: 0
-  Magiccount: 0
-  Priestcount: 0
-  Archercount: 0
-  Alchemistcount: 0
-  SettingPanel: {fileID: 2075694245}
-  HeroPanel: {fileID: 1478535314}
-  controlbt: {fileID: 1140806526031986258}
-  RoguePanel: {fileID: 1140806525769831010}
-  MagicCasterPanel: {fileID: 1140806526434195879}
-  PriestPanel: {fileID: 1140806525462252256}
-  ArcherPanel: {fileID: 8491196128843150064}
-  AlchemistPanel: {fileID: 8491196129438612133}
-  Rogue: {fileID: 1214484736}
-  MagicCaster: {fileID: 709292765}
-  Priest: {fileID: 2037038301}
-  Archer: {fileID: 990815758}
-  Alchemist: {fileID: 68411114}
 --- !u!114 &246014409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4077,11 +4028,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690528187}
   m_CullTransparentMesh: 1
---- !u!1 &709292765 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5561383006969947385, guid: 235fd5752deb5f642a9a6aa1f1423b64, type: 3}
-  m_PrefabInstance: {fileID: 2914000240649792764}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &713308961
 GameObject:
   m_ObjectHideFlags: 0
@@ -6091,11 +6037,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954987254}
   m_CullTransparentMesh: 1
---- !u!1 &990815758 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 886978934356435078, guid: 235fd5752deb5f642a9a6aa1f1423b64, type: 3}
-  m_PrefabInstance: {fileID: 2914000240649792764}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1006012435
 GameObject:
   m_ObjectHideFlags: 0
@@ -11869,11 +11810,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2018549284}
   m_CullTransparentMesh: 1
---- !u!1 &2037038301 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4329964514479736716, guid: 235fd5752deb5f642a9a6aa1f1423b64, type: 3}
-  m_PrefabInstance: {fileID: 2914000240649792764}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2056638254
 GameObject:
   m_ObjectHideFlags: 0
@@ -16377,10 +16313,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 165555992a4c23a4f92e005ed1b82256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player_Object: {fileID: 0}
   lv: {fileID: 8051375106237027101}
   attack: {fileID: 8051375105308522315}
   skillDamage: {fileID: 8051375106707839466}
   Gold: 0
+  player_LEVEL: 0
+  PlayerLevel: 0
+  BuyGold: 0
+  NeedLevel: 0
+  SubchPanel: {fileID: 0}
+  SubChar: {fileID: 0}
+  SubchCount: 0
 --- !u!114 &1140806525462252263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16851,7 +16795,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 246014408}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SubCharSetting, Assembly-CSharp
         m_MethodName: PriestStatWindowPanel
         m_Mode: 1
@@ -16863,7 +16807,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 246014408}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SubCharSetting, Assembly-CSharp
         m_MethodName: PriestSetActive
         m_Mode: 1
@@ -17098,7 +17042,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 246014408}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SubCharSetting, Assembly-CSharp
         m_MethodName: MagicCasterStatWindowPanel
         m_Mode: 1
@@ -17236,10 +17180,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 165555992a4c23a4f92e005ed1b82256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player_Object: {fileID: 0}
   lv: {fileID: 1140806525561656392}
   attack: {fileID: 1140806525715068530}
   skillDamage: {fileID: 8791656054271780832}
   Gold: 10
+  player_LEVEL: 0
+  PlayerLevel: 0
+  BuyGold: 0
+  NeedLevel: 0
+  SubchPanel: {fileID: 0}
+  SubChar: {fileID: 0}
+  SubchCount: 0
 --- !u!224 &1140806525769831014
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17899,7 +17851,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 246014408}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SubCharSetting, Assembly-CSharp
         m_MethodName: RogueStatWindowPanel
         m_Mode: 1
@@ -18495,10 +18447,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 165555992a4c23a4f92e005ed1b82256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player_Object: {fileID: 0}
   lv: {fileID: 8051375106022266921}
   attack: {fileID: 8051375106151362855}
   skillDamage: {fileID: 8051375107105082445}
   Gold: 20
+  player_LEVEL: 0
+  PlayerLevel: 0
+  BuyGold: 0
+  NeedLevel: 0
+  SubchPanel: {fileID: 0}
+  SubChar: {fileID: 0}
+  SubchCount: 0
 --- !u!114 &1140806526434195877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39566,7 +39526,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 246014408}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SubCharSetting, Assembly-CSharp
         m_MethodName: ArcherSetActive
         m_Mode: 1
@@ -39668,10 +39628,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 165555992a4c23a4f92e005ed1b82256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player_Object: {fileID: 0}
   lv: {fileID: 6947029464603699441}
   attack: {fileID: 6947029464336663448}
   skillDamage: {fileID: 6947029464143720829}
   Gold: 0
+  player_LEVEL: 0
+  PlayerLevel: 0
+  BuyGold: 0
+  NeedLevel: 0
+  SubchPanel: {fileID: 0}
+  SubChar: {fileID: 0}
+  SubchCount: 0
 --- !u!224 &8491196128843150063
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40007,10 +39975,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 165555992a4c23a4f92e005ed1b82256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player_Object: {fileID: 0}
   lv: {fileID: 6947029463852558625}
   attack: {fileID: 6947029465294828524}
   skillDamage: {fileID: 6947029464986389460}
   Gold: 0
+  player_LEVEL: 0
+  PlayerLevel: 0
+  BuyGold: 0
+  NeedLevel: 0
+  SubchPanel: {fileID: 0}
+  SubChar: {fileID: 0}
+  SubchCount: 0
 --- !u!224 &8491196129438612132
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40138,7 +40114,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 246014408}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SubCharSetting, Assembly-CSharp
         m_MethodName: AlchemistSetActive
         m_Mode: 1
@@ -40533,9 +40509,7 @@ GameObject:
   - component: {fileID: 246014411}
   - component: {fileID: 246014410}
   - component: {fileID: 246014409}
-  - component: {fileID: 246014408}
   - component: {fileID: 8567223831321649036}
-  - component: {fileID: 246014407}
   m_Layer: 5
   m_Name: 'Canvas :: Main'
   m_TagString: Untagged
