@@ -5,7 +5,7 @@ using UnityEngine;
 public class Monster_Combat : MonoBehaviour
 {
     Monster_Script Monster_Stat;
-    PlayerScript Player_Stat;
+    Stat Player_Stat;
     Animator anim;
 
     public Transform DamagePrinter;
@@ -22,7 +22,7 @@ public class Monster_Combat : MonoBehaviour
     }
     void Start()
     {
-        Player_Stat = GameObject.Find("Player").GetComponent<PlayerScript>();
+        Player_Stat = GameObject.Find("Player").GetComponent<Stat>();
         Monster_Stat = this.GetComponent<Monster_Script>();
     }
 
@@ -47,7 +47,7 @@ public class Monster_Combat : MonoBehaviour
     {
         yield return new WaitForSeconds(Monster_Stat.atkSpeed);
         anim.SetBool("isattack", true);
-        Player_Stat.nowHp -= Monster_Stat.atkDmg;
+        Player_Stat.player_noxHp -= Monster_Stat.atkDmg;
     }
 
     public void ApplyDamage(float damage, Color color, float ciritcalRate, float criticalDamage)
@@ -77,7 +77,7 @@ public class Monster_Combat : MonoBehaviour
         {
             if (collision.transform.GetComponent<PlayerScript>() && contentCheck)
             {
-                collision.transform.GetComponent<PlayerScript>().nowHp -= Monster_Stat.atkDmg;
+                collision.transform.GetComponent<Stat>().player_noxHp -= Monster_Stat.atkDmg;
                 contentCheck = false;
                 StartCoroutine(contentAttack());
             }

@@ -22,15 +22,13 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Battle_Situation_Trigger.on_Battle && !isAttack)
         {
-            isAttack = !isAttack;
             playerAnimator.SetTrigger("AttackNormal");
         }
-        else if (!isAttack)
+        else
         {
             playerAnimator.SetTrigger("Idle");
         }
     }
-
 
     void PlayerBasicAttack()
     {

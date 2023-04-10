@@ -8,8 +8,8 @@ public class SubCoolTimeBar : MonoBehaviour
     public Slider barObj;
     private Stat stat;
 
-    private float fillSpeed = 1f; //채워지는 속도 조절용 변수
-    public float currentValue = 0f; //현재 값
+    public float currentValue;
+
 
     private void Awake()
     {
@@ -24,7 +24,15 @@ public class SubCoolTimeBar : MonoBehaviour
 
     private void Update()
     {
-        currentValue += Time.deltaTime/stat.sub_skillCooldown;
-        barObj.value = currentValue;
+        if(currentValue >= 1)
+        {
+
+            currentValue = 0;
+        }
+        else
+        {
+            currentValue += Time.deltaTime / stat.sub_skillCooldown;
+            barObj.value = currentValue;
+        }
     }
 }

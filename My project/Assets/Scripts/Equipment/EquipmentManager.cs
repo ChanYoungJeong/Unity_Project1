@@ -9,7 +9,7 @@ public class EquipmentManager : MonoBehaviour
     public Image[] eSlots;
     int numSlots;
     public Transform eSlotHolder;
-    public PlayerScript player;
+    public Stat player;
 
 
     void Awake()
@@ -35,8 +35,8 @@ public class EquipmentManager : MonoBehaviour
     {
         if(item.type == "Weapon")
         {
-            player.atkDmg += item.stat1;
-            player.criticalDamage += item.stat2;
+            player.player_atkDamage += item.stat1;
+            //player.criticalDamage += item.stat2;
         }
     }
 
@@ -44,8 +44,8 @@ public class EquipmentManager : MonoBehaviour
     {
         if (item.type == "Weapon")
         {
-            player.atkDmg -= item.stat1;
-            player.criticalDamage -= item.stat2;
+            player.player_atkDamage -= item.stat1;
+            //player.criticalDamage -= item.stat2;
         }
     }
 
