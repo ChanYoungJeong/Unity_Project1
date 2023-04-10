@@ -72,7 +72,6 @@ public class PlayerScript : MonoBehaviour
             _PlayerAttack();
         }
         PlayerIdleMotion();
-        isAttack = false;
     }
 
     public void _PlayerAttack()
