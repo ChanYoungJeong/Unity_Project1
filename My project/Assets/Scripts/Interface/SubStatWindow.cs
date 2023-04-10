@@ -5,59 +5,39 @@ using UnityEngine.UI;
 
 public class SubStatWindow : MonoBehaviour
 {
+    public PlayerScript Player_Object;
     public Text lv;
     public Text attack;
     public Text skillDamage;
-
     public int Gold;
-
-    /*private int RogueAttackGold = 1000;
-    private int RogueskillDamageGold = 1000;
-
-    private int MagicCasterAttackGold = 1500;
-    private int MagicCasterskillDamageGold = 1500;
-
-    private int PriestAttackGold = 2000;
-    private int PriestskillDamageGold = 2000;
-*/
-    SubChar_Combat_manager subStat;
+    public int UpgreadeAtkStat;
+    //new write
+    public int BuyGold;
+    public int NeedLevel;
+    public GameObject SubchPanel;
+    bool  SubchCount= false;
+    public SubChar_Combat_manager subStat;
 
     private void Start()
     {
-        this.name.Contains("Rogue");
+        SubchPanel.SetActive(false);
+    }
 
-        this.name.Contains("MagicCaster");
-
-        this.name.Contains("Priest");
-
-        if (this.name.Contains("Rogue"))
+    public void SubCharBuy() //ë™ê·¸ë¼ë¯¸ ë²„íŠ¼
+    {
+        if (Player_Object.lv >= NeedLevel && Game_System.Gold >= BuyGold)
         {
-            subStat = GameObject.Find("Rogue").GetComponent<SubChar_Combat_manager>();
+            if (SubchCount == false)
+            {
+                Game_System.Gold -= BuyGold;
+                SubchPanel.SetActive(true);
+                SubchCount=true;
 
 
-            lv.text = "Lv " + subStat.lv.ToString();
-            attack.text = "Attack " + subStat.attackDmg.ToString();
-            skillDamage.text = "skillDamage " + subStat.skillDamage.ToString();
-        }
-
-        else if (this.name.Contains("MagicCaster"))
-        {
-            subStat = GameObject.Find("MagicCaster").GetComponent<SubChar_Combat_manager>();
-
-           
-            lv.text = "Lv " + subStat.lv.ToString();
-            attack.text = "Attack " + subStat.attackDmg.ToString();
-            skillDamage.text = "skillDamage " + subStat.skillDamage.ToString();
-        }
-
-        else if (this.name.Contains("Priest"))
-        {
-            subStat = GameObject.Find("Priest").GetComponent<SubChar_Combat_manager>();
-
-           
-            lv.text = "LV " + subStat.lv.ToString();
-            attack.text = "Attack " + subStat.attackDmg.ToString();
-            skillDamage.text = "skillDamage " + subStat.skillDamage.ToString();
+                skillDamage.text = "skillDamage " + subStat.skillDamage.ToString();
+                attack.text = "attack " + subStat.attackDmg.ToString();
+                lv.text = "Lv " + subStat.lv.ToString();
+            }
         }
         
     }
@@ -65,96 +45,32 @@ public class SubStatWindow : MonoBehaviour
     public void SubCharAttackUpgrade()
     {
         int Level;
+
         if (Game_System.Gold >= Gold)
         {
-            Debug.Log("ÇöÀç °ñµå: "+Game_System.Gold);
             Game_System.Gold -= Gold;
-            Debug.Log("ÀÌÈÄ °ñµå: " + Game_System.Gold);
-            Level = subStat.lv;
             subStat.lv++;
+            subStat.skillDamage += UpgreadeAtkStat;
+            subStat.attackDmg += UpgreadeAtkStat;
 
-            if(subStat.lv !=Level)
-            {
-                subStat.skillDamage += 2;
-                subStat.attackDmg += 2;
-            }
             skillDamage.text = "skillDamage " + subStat.skillDamage.ToString();
             attack.text = "attack " + subStat.attackDmg.ToString();
             lv.text = "Lv " + subStat.lv.ToString();
         }
     }
 
-    /*public void RogueLevelUpgrade()
-    {
-        int Level;
+    // public void SubcharSetActive()
+    // {
+    //     if(SubCharName.activeSelf == false)
+    //     {
+    //         SubCharName.SetActive(true);
+    //         SubCharName.GetComponentInChildren<SubBasicAttack>().isCoolTime = true;
+    //         SubCharName.GetComponentInChildren<SubSkillAttack>().isCoolTime = true;
+    //     }
+    //     else
+    //     {
+    //         SubCharName.SetActive(false);
+    //     }
+    // }
 
-        if (Game_System.Gold >= RogueskillDamageGold)
-        {
-            Game_System.Gold -= RogueskillDamageGold;
-
-            Level = subStat.lv;
-            subStat.lv ++;
-           
-            if (subStat.lv != Level)
-            {
-                subStat.skillDamage += 2;
-                subStat.attackDmg += 2;
-            }
-            //subStat.skillDamage += 2;
-            skillDamage.text = "skillDamage " + subStat.skillDamage.ToString();
-            attack.text = "attack " + subStat.attackDmg.ToString();
-            lv.text = "Lv " + subStat.lv.ToString();
-
-        }
-    }
-
-    public void MagicCasterAttackUpgrade()
-    {
-
-        if (Game_System.Gold >= MagicCasterAttackGold)
-        {
-            Game_System.Gold -= MagicCasterAttackGold;
-
-            subStat.attackDmg += 3;
-            attack.text = "attack " + subStat.attackDmg.ToString();
-
-        }
-    }
-
-    public void MagicCasterskillDamageUpgrade()
-    {
-        if (Game_System.Gold >= MagicCasterskillDamageGold)
-        {
-            Game_System.Gold -= MagicCasterskillDamageGold;
-
-            subStat.skillDamage += 1;
-            skillDamage.text = "skillDamage " + subStat.skillDamage.ToString();
-
-        }
-    }
-
-    public void PriestAttackUpgrade()
-    {
-
-        if (Game_System.Gold >= PriestAttackGold)
-        {
-            Game_System.Gold -= PriestAttackGold;
-
-            subStat.attackDmg += 2;
-            attack.text = "attack " + subStat.attackDmg.ToString();
-
-        }
-    }
-
-    public void PriestskillDamageUpgrade()
-    {
-        if (Game_System.Gold >= PriestskillDamageGold)
-        {
-            Game_System.Gold -= PriestskillDamageGold;
-
-            subStat.skillDamage += 0.5f;
-            skillDamage.text = "skillDamage " + subStat.skillDamage.ToString();
-
-        }
-    }*/
 }

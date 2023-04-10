@@ -788,13 +788,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbe89caca4def1548b8068403fee240c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: Basic
   speed: 20
-  animatorName: AttackBow
   prefab: {fileID: 392801476148453369, guid: 2c86b36e09a7b06449dee84c7440648e, type: 3}
-  delayAnim: 0.7
-  prefabDamage: 0
-  cooldown: 3
 --- !u!114 &900327021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -857,7 +852,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5975196360047558722, guid: 171705672c773bc4292e5cea610d61bf, type: 3}
   m_PrefabInstance: {fileID: 5975196358799058976}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1078147894
+--- !u!114 &1078147889
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -866,16 +861,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1078147888}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbe89caca4def1548b8068403fee240c, type: 3}
+  m_Script: {fileID: 11500000, guid: e1bef431883443646bd2d64230bd1d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: Skill
   speed: 20
-  animatorName: SkillNormal
   prefab: {fileID: 663929564521697501, guid: 871ad03208becfb4280c35bb44ca1d94, type: 3}
-  delayAnim: 0
-  prefabDamage: 0
-  cooldown: 12
 --- !u!1 &1250791398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,7 +1056,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 242, y: 0}
+  m_AnchoredPosition: {x: 148, y: 13}
   m_SizeDelta: {x: 80, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1826032704
@@ -1274,6 +1264,11 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &2109553640 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5975196359644541592, guid: 171705672c773bc4292e5cea610d61bf, type: 3}
+  m_PrefabInstance: {fileID: 5975196358799058976}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &19436875443170029
 Transform:
   m_ObjectHideFlags: 0
@@ -2545,6 +2540,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6977727786644939602, guid: c2a9e69534d8d05448d576e73d16fbe4, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: beec2505d51ff104a80878128dde4fe0, type: 2}
     - target: {fileID: 8789213677986781761, guid: c2a9e69534d8d05448d576e73d16fbe4, type: 3}
       propertyPath: m_Name
       value: Alchemist
@@ -3223,6 +3222,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6752826774517274449, guid: cfd10fbfa54066e4bab1b15fab4e665f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a4242250f2445c04caf105c937f0308a, type: 2}
     - target: {fileID: 7306898631707156625, guid: cfd10fbfa54066e4bab1b15fab4e665f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4272,6 +4275,10 @@ PrefabInstance:
       propertyPath: sub_skillCooldown
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5724861817564576062, guid: bff257aafc82fa14e8b9d4b5404cb1ab, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 42516347e6e98fe45967fdb913e89836, type: 2}
     - target: {fileID: 6223581385292120109, guid: bff257aafc82fa14e8b9d4b5404cb1ab, type: 3}
       propertyPath: m_Name
       value: Priest
@@ -4653,13 +4660,17 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5975196359644541592, guid: 171705672c773bc4292e5cea610d61bf, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 83fc26feeee520f40b696ad1e7573f94, type: 2}
     - target: {fileID: 5975196359742853505, guid: 171705672c773bc4292e5cea610d61bf, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 385
+      value: 152
       objectReference: {fileID: 0}
     - target: {fileID: 5975196359742853505, guid: 171705672c773bc4292e5cea610d61bf, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -105
+      value: -59
       objectReference: {fileID: 0}
     - target: {fileID: 5975196360047558722, guid: 171705672c773bc4292e5cea610d61bf, type: 3}
       propertyPath: m_Name
@@ -4673,6 +4684,10 @@ PrefabInstance:
       propertyPath: cooldown
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5975196360047558726, guid: 171705672c773bc4292e5cea610d61bf, type: 3}
+      propertyPath: _anim
+      value: 
+      objectReference: {fileID: 2109553640}
     - target: {fileID: 5975196360047558727, guid: 171705672c773bc4292e5cea610d61bf, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4739,11 +4754,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5975196360047558727, guid: 171705672c773bc4292e5cea610d61bf, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -8.78
+      value: -5.52
       objectReference: {fileID: 0}
     - target: {fileID: 5975196360047558727, guid: 171705672c773bc4292e5cea610d61bf, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -4.02
+      value: -3.94
       objectReference: {fileID: 0}
     - target: {fileID: 5975196360047558727, guid: 171705672c773bc4292e5cea610d61bf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4761,6 +4776,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 821531230}
+    - target: {fileID: 9077351242210415057, guid: 171705672c773bc4292e5cea610d61bf, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 171705672c773bc4292e5cea610d61bf, type: 3}
 --- !u!4 &6150038144482454420
@@ -5120,6 +5139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barObj: {fileID: 1826032704}
+  currentValue: 0
 --- !u!114 &7573831300112299575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5129,16 +5149,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7573831300112299573}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbe89caca4def1548b8068403fee240c, type: 3}
+  m_Script: {fileID: 11500000, guid: e1bef431883443646bd2d64230bd1d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: Skill
   speed: 20
-  animatorName: AttackBow
   prefab: {fileID: 8130810599518239819, guid: 272fd1d94139f7c4ca399b4fa3e1f125, type: 3}
-  delayAnim: 0.7
-  prefabDamage: 0
-  cooldown: 5
 --- !u!1 &7641525737731114014
 GameObject:
   m_ObjectHideFlags: 0
@@ -5290,7 +5305,7 @@ Animator:
   m_GameObject: {fileID: 9092683278308478829}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ab937231d0600440fb0d8757568d78d7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 83fc26feeee520f40b696ad1e7573f94, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5489,6 +5504,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 748623726662516462, guid: 15ef4925e7a7e904ea5d0c0589713b2c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2a87a2b145c9e2645874d9d32d648942, type: 2}
     - target: {fileID: 1391599529728788477, guid: 15ef4925e7a7e904ea5d0c0589713b2c, type: 3}
       propertyPath: m_Name
       value: IceMagican

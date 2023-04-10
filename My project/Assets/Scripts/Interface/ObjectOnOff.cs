@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObjectOnOff : MonoBehaviour
 {
+    public GameObject[] followobjects;
     public GameObject[] OnObjects;
     public GameObject[] Offobjects;
     public GameObject[] AllObjects;
@@ -34,6 +35,22 @@ public class ObjectOnOff : MonoBehaviour
             else
             {
                 AllObjects[i].gameObject.SetActive(true);
+            }
+        }
+        Off();
+    }
+
+    public void follow()
+    {
+        if(AllObjects[0].activeSelf==true){
+            for(int i= 0; i<followobjects.Length; i++ ){
+                followobjects[i].SetActive(true);
+            }
+        }
+        else
+        {
+            for(int i= 0; i<followobjects.Length; i++ ){
+                followobjects[i].SetActive(false);
             }
         }
     }
