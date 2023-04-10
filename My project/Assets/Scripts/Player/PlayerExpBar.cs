@@ -7,21 +7,21 @@ public class PlayerExpBar : MonoBehaviour
 {
     public Slider expSlider;
     [SerializeField]
-    PlayerScript playerStat;
+    Stat playerStat;
     float maxExp;
     float curExp;
 
     // Start is called before the first frame update
     void Awake()
     {
-        playerStat = this.GetComponent<PlayerScript>();
+        playerStat = GetComponent<Stat>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        maxExp = playerStat.playerMaxExp;
-        curExp = playerStat.playerNowExp;
+        maxExp = playerStat.player_maxExp;
+        curExp = playerStat.player_nowExp;
         expSlider.value = Mathf.Lerp(expSlider.value, curExp / maxExp, Time.deltaTime * 5f);
     }
 }
