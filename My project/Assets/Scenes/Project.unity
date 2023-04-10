@@ -3363,7 +3363,7 @@ RectTransform:
   - {fileID: 1407032460}
   - {fileID: 1823741130}
   - {fileID: 2104856808}
-  m_Father: {fileID: 1478535317}
+  m_Father: {fileID: 767080742}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
@@ -5454,7 +5454,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 841052678}
+  - {fileID: 508537050}
   m_Father: {fileID: 246014412}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5497,14 +5497,16 @@ MonoBehaviour:
   - {fileID: 1134196777}
   - {fileID: 1834254502}
   OnObjects:
-  - {fileID: 841052677}
+  - {fileID: 508537051}
   - {fileID: 5341787357028203586}
   Offobjects:
-  - {fileID: 4760691936025040016}
+  - {fileID: 4361284953938719489}
   - {fileID: 30857467637541706}
-  - {fileID: 0}
-  - {fileID: 0}
-  AllObjects: []
+  - {fileID: 4760691936025040016}
+  - {fileID: 841052677}
+  AllObjects:
+  - {fileID: 508537051}
+  - {fileID: 5341787357028203586}
 --- !u!114 &767080745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6179,7 +6181,7 @@ RectTransform:
   - {fileID: 355750711}
   - {fileID: 1654629184}
   - {fileID: 1699150964}
-  m_Father: {fileID: 767080742}
+  m_Father: {fileID: 1478535317}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
@@ -9179,7 +9181,7 @@ RectTransform:
   m_Children:
   - {fileID: 4195057910899811857}
   m_Father: {fileID: 1140806526031986259}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11121,6 +11123,7 @@ MonoBehaviour:
   - {fileID: 4361284953938719489}
   - {fileID: 30857467637541706}
   - {fileID: 508537051}
+  - {fileID: 841052677}
   AllObjects:
   - {fileID: 5341787357028203586}
   - {fileID: 4760691936025040016}
@@ -12507,7 +12510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1478535315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12550,7 +12553,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 508537050}
+  - {fileID: 841052678}
   m_Father: {fileID: 246014412}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15069,7 +15072,7 @@ RectTransform:
   m_Children:
   - {fileID: 1180260888}
   m_Father: {fileID: 1140806526031986259}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -15120,25 +15123,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 767080744}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 767080744}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: Off
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -15668,6 +15671,7 @@ MonoBehaviour:
   - {fileID: 4760691936025040016}
   - {fileID: 30857467637541706}
   - {fileID: 508537051}
+  - {fileID: 841052677}
 --- !u!1 &1901221650
 GameObject:
   m_ObjectHideFlags: 0
@@ -17313,14 +17317,15 @@ MonoBehaviour:
   - {fileID: 1834254502}
   OnObjects:
   - {fileID: 30857467637541706}
-  - {fileID: 508537051}
+  - {fileID: 841052677}
   Offobjects:
   - {fileID: 5341787357028203586}
   - {fileID: 4760691936025040016}
   - {fileID: 4361284953938719489}
+  - {fileID: 508537051}
   AllObjects:
   - {fileID: 30857467637541706}
-  - {fileID: 508537051}
+  - {fileID: 841052677}
 --- !u!1 &2081680755
 GameObject:
   m_ObjectHideFlags: 0
@@ -22846,8 +22851,8 @@ RectTransform:
   - {fileID: 596548086889984548}
   - {fileID: 307349517}
   - {fileID: 1140806525497626119}
-  - {fileID: 1134196776}
   - {fileID: 1834254503}
+  - {fileID: 1134196776}
   m_Father: {fileID: 246014412}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -31572,6 +31577,7 @@ MonoBehaviour:
   - {fileID: 4760691936025040016}
   - {fileID: 30857467637541706}
   - {fileID: 508537051}
+  - {fileID: 841052677}
   AllObjects:
   - {fileID: 4361284953938719489}
 --- !u!1001 &6005318459158681048
