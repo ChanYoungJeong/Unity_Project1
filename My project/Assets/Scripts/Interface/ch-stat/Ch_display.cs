@@ -6,16 +6,16 @@ using UnityEngine.UI;
 
 public class Ch_display : MonoBehaviour
 {
-    public PlayerScript Player_Object;
+    public Stat Player_Object;
     public Text text1;
     public Text text2;
     public float pl_atk;
-    public int pl_level;
+    public float pl_level;
 
     public void update_stat()
     {
-        pl_atk = Player_Object.atkDmg;
-        pl_level = Player_Object.lv;
+        pl_atk = Player_Object.player_atkDamage;
+        pl_level = Player_Object.player_lv;
     }
 
     public void update_statText()

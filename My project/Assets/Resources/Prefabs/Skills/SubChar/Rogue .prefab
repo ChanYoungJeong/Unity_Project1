@@ -3053,6 +3053,8 @@ GameObject:
   - component: {fileID: 5975196359644541594}
   - component: {fileID: 5975196359644541593}
   - component: {fileID: 5975196359644541592}
+  - component: {fileID: 2109553643}
+  - component: {fileID: 2109553644}
   m_Layer: 0
   m_Name: UnitRoot
   m_TagString: Untagged
@@ -3098,7 +3100,7 @@ Animator:
   m_GameObject: {fileID: 5975196359644541591}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ab937231d0600440fb0d8757568d78d7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 83fc26feeee520f40b696ad1e7573f94, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3108,6 +3110,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2109553643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5975196359644541591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1bef431883443646bd2d64230bd1d44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  prefab: {fileID: 663929564521697501, guid: 871ad03208becfb4280c35bb44ca1d94, type: 3}
+  animatorName: AttackNomal
+--- !u!114 &2109553644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5975196359644541591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe89caca4def1548b8068403fee240c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  prefab: {fileID: 3107797298255059210, guid: 9c2dfab6794ad5240a0dc14c118c3399, type: 3}
+  animatorName: SkillNormal
 --- !u!1 &5975196359647930515
 GameObject:
   m_ObjectHideFlags: 0
@@ -3244,7 +3276,7 @@ RectTransform:
   m_GameObject: {fileID: 5975196359742853504}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5975196359888754429}
@@ -3254,8 +3286,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 390, y: -100}
-  m_SizeDelta: {x: 80, y: 25}
+  m_AnchoredPosition: {x: 115.7, y: -48.3}
+  m_SizeDelta: {x: 80, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5975196359742853507
 MonoBehaviour:
@@ -4025,7 +4057,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5975196360047558727}
   - component: {fileID: 5975196360047558726}
-  - component: {fileID: 5975196360047558725}
   - component: {fileID: 5975196360047558723}
   - component: {fileID: 1375055314640476782}
   m_Layer: 5
@@ -4079,23 +4110,6 @@ MonoBehaviour:
   UnitTypeChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5975196360047558725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5975196360047558722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbe89caca4def1548b8068403fee240c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 20
-  animatorName: AttackNormal
-  askillAnimatorName: SkillNormal
-  prefab: {fileID: 3107797298255059210, guid: 9c2dfab6794ad5240a0dc14c118c3399, type: 3}
-  skillPrefab: {fileID: 663929564521697501, guid: 871ad03208becfb4280c35bb44ca1d94, type: 3}
 --- !u!114 &5975196360047558723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4114,7 +4128,17 @@ MonoBehaviour:
   sub_criticalRate: 0
   sub_atkSpeed: 1
   sub_lv: 1
-  sub_skillCooldown: 3
+  sub_skillCooldown: 5
+  sub_skillDamage: 0
+  player_maxHp: 0
+  player_noxHp: 0
+  player_maxExp: 0
+  player_nowExp: 0
+  player_shield: 0
+  player_atkDamage: 0
+  player_atkSpeed: 0
+  player_criticalRate: 0
+  player_lv: 0
 --- !u!114 &1375055314640476782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4127,7 +4151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0249ce6aab70af40b530e4230c8ccd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transformSubchar: {fileID: 5975196360047558727}
+  barObj: {fileID: 5975196359742853507}
+  currentValue: 0
 --- !u!1 &5975196360146680290
 GameObject:
   m_ObjectHideFlags: 0

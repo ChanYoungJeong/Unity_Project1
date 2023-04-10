@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class SkilList : MonoBehaviour
 {
-    PlayerScript playerScript;
+    Stat playerScript;
     public Dictionary<string, Skills> skilList = new Dictionary<string, Skills>();
 
 
     private void Start()
     {
-        playerScript = gameObject.GetComponentInParent<PlayerScript>();
+        playerScript = gameObject.GetComponentInParent<Stat>();
         create();
     }
 
     public void create()
     {
         string name;
-        float playerAttackDamage = playerScript.atkDmg * playerScript.criticalRate;
+        float playerAttackDamage = playerScript.player_atkDamage * playerScript.player_criticalRate;
 
         name = "Double Slash";
         skilList.Add(name, new Skills(0, name, playerAttackDamage, 0.25f, 27.0f, 2, 1));

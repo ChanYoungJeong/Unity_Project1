@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ButtonScript : MonoBehaviour
 {
-    PlayerScript playerScript;
+    Stat playerStat;
 
     public GameObject Player_Object;
     //public Text buttonText;
@@ -47,13 +47,13 @@ public class ButtonScript : MonoBehaviour
         up_atkgold2 = 120;
         up_atk1 = 0;
         up_atk2 = 3;
-        playerScript = Player_Object.GetComponent<PlayerScript>();
-        player_hp = playerScript.maxHp;
-        player_atk = playerScript.atkDmg;
+        playerStat = Player_Object.GetComponent<Stat>();
+        player_hp = playerStat.player_maxHp;
+        player_atk = playerStat.player_atkDamage;
         up_atkgold = up_atkgold1 + up_atkgold2;
         up_hpgold = up_hpgold1 + up_hpgold2;
-       
-        
+
+
     }
     private void Start()
     {
@@ -68,64 +68,64 @@ public class ButtonScript : MonoBehaviour
 
     public void hp_upgradeButton()
     {
-            if (Game_System.Gold > up_hpgold)
-            {
+        if (Game_System.Gold > up_hpgold)
+        {
             Debug.Log("체력 강화 시작");
 
-                //player_hp += up_hp;
-                //up_hp += 5;
-                up_hp = up_hp1 + up_hp2;
-                playerScript.maxHp += up_hp;
-                playerScript.nowHp += up_hp;
-                up_hp1 = up_hp2;
-                up_hp2 = up_hp;
+            //player_hp += up_hp;
+            //up_hp += 5;
+            up_hp = up_hp1 + up_hp2;
+            playerStat.player_maxHp += up_hp;
+            playerStat.player_noxHp += up_hp;
+            up_hp1 = up_hp2;
+            up_hp2 = up_hp;
 
-                hp_scoreButton += 1;
-                Debug.Log("hp_upcount:" + hp_scoreButton);
+            hp_scoreButton += 1;
+            Debug.Log("hp_upcount:" + hp_scoreButton);
 
             //my_gold -= up_gold;
             //up_gold += 5000;
 
-                Game_System.Gold -= up_hpgold;
-                up_hpgold1 = up_hpgold2;
-                up_hpgold2 = up_hpgold;
+            Game_System.Gold -= up_hpgold;
+            up_hpgold1 = up_hpgold2;
+            up_hpgold2 = up_hpgold;
 
-                up_hpgold = up_hpgold1 + up_hpgold2;
+            up_hpgold = up_hpgold1 + up_hpgold2;
 
 
-                Debug.Log("my_gold : " + Game_System.Gold);
-                Debug.Log("player_hp : " + player_hp);
-                Debug.Log("next up_gold : " + up_hpgold);
-                //buttonText.text = hp_scoreButton.ToString();
+            Debug.Log("my_gold : " + Game_System.Gold);
+            Debug.Log("player_hp : " + player_hp);
+            Debug.Log("next up_gold : " + up_hpgold);
+            //buttonText.text = hp_scoreButton.ToString();
         }
     }
     public void atk_upgradeButton()
-    {       
+    {
         Debug.Log("now_gold : " + Game_System.Gold);
         Debug.Log("up_gold : " + up_atkgold);
-            if (Game_System.Gold > up_atkgold)
-            {
-                up_atk = up_atk1 + up_atk2;
-                playerScript.atkDmg += up_atk;
-                up_atk1 = up_atk2;
-                up_atk2 = up_atk;
+        if (Game_System.Gold > up_atkgold)
+        {
+            up_atk = up_atk1 + up_atk2;
+            playerStat.player_atkDamage += up_atk;
+            up_atk1 = up_atk2;
+            up_atk2 = up_atk;
 
-                atk_scoreButton += 1;
-                Debug.Log("atk_scorebutton:" + atk_scoreButton);
-
-
-                //up_gold = up_gold1 + up_gold2;
-                Game_System.Gold -= up_atkgold;
-                up_atkgold1 = up_atkgold2;
-                up_atkgold2 = up_atkgold;
-                up_atkgold = up_atkgold1 + up_atkgold2;
+            atk_scoreButton += 1;
+            Debug.Log("atk_scorebutton:" + atk_scoreButton);
 
 
+            //up_gold = up_gold1 + up_gold2;
+            Game_System.Gold -= up_atkgold;
+            up_atkgold1 = up_atkgold2;
+            up_atkgold2 = up_atkgold;
+            up_atkgold = up_atkgold1 + up_atkgold2;
 
-                Debug.Log("my_gold : " + Game_System.Gold);
-                Debug.Log("player_atk : " + player_atk);
-                Debug.Log("next up_gold : " + up_atkgold);
-                //atkbutton.text = atk_scoreButton.ToString();
+
+
+            Debug.Log("my_gold : " + Game_System.Gold);
+            Debug.Log("player_atk : " + player_atk);
+            Debug.Log("next up_gold : " + up_atkgold);
+            //atkbutton.text = atk_scoreButton.ToString();
         }
     }
 
@@ -136,7 +136,7 @@ public class ButtonScript : MonoBehaviour
         int x2 = up_atk2;
         int y1 = up_atkgold1;
         int y2 = up_atkgold2;
-        for(int i = 0; i < N; i++)
+        for (int i = 0; i < N; i++)
         {
             x = x1 + x2;
             x2 = x1;
@@ -150,7 +150,7 @@ public class ButtonScript : MonoBehaviour
         up_atk2 = x2;
         up_atkgold1 = y1;
         up_atkgold2 = y2;
-        playerScript.atkDmg += x1 + x2;
+        playerStat.player_atkDamage += x1 + x2;
         up_atkgold = y1 + y2;
     }
 }
