@@ -14,6 +14,20 @@ public class Stat : MonoBehaviour
     [Header("º¸Á¶¿µ¿õ ½ºÅ³ ½ºÅÈ")]
     public float sub_skillCooldown;
     public float sub_skillDamage;
+    [Header("¸ÞÀÎ¿µ¿õ ½ºÅÈ")]
+    public float player_maxHp;
+    public float player_noxHp;
+    public float player_maxExp;
+    public float player_nowExp;
+    public float player_shield;
+    public float player_atkDamage;
+    public float player_atkSpeed;
+    public float player_criticalRate;
+    public float player_lv;
 
-    
+
+
+
+
+
 }
