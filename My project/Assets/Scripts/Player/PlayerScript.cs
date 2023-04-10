@@ -7,124 +7,40 @@ public class PlayerScript : MonoBehaviour
 {
     public Transform TextPrinter;
     public GameObject PlayerText;
-    Monster_Script monster;
-    Monster_Combat monsterCombat;
-
-    public float maxHp;
-    public float nowHp;
-    public float shield;
-    public bool attacked;
-    public float atkDmg;
-    public float atkSpeed;
-
-    public int lv;
-    public int playerMaxExp;
-    public int playerNowExp;
-    public float criticalRate;
-    public float criticalDamage;
-
-    public Animator playerAnimator;
-    public CharacterController characterController;
-    public GameObject square;
     public BossMonster_Script bossMonster; //
-    public bool isAttack = false;
-    private void InputControlVector()
+    private Monster_Script monster;
+
+    Stat stat;
+
+    private void Awake()
     {
-        if (characterController)
-        {
-            //characterController.Move(inputDirection);
-        }
+        stat = GetComponent<Stat>();
     }
-
-    private void Start()
-    {
-        SetStat();
-        SetExp();
-
-        square.SetActive(false);
-    }
-
-    private void Update()
-    {
-        if(Battle_Situation_Trigger.on_Battle && !isAttack)
-        {
-            isAttack = true;
-            StartCoroutine(PlayerBasicAttack());
-        }
-    }
-
-    public void PlayerIdleMotion()
-    {
-        playerAnimator.SetTrigger("Idle");
-        StopCoroutine(PlayerBasicAttack());
-    }
-
-    public void PlayerAttackMotion()
-    {
-        StartCoroutine(PlayerBasicAttack());
-    }
-
-    IEnumerator PlayerBasicAttack()
-    {
-        while (Battle_Situation_Trigger.on_Battle)
-        {
-            yield return new WaitForSeconds(atkSpeed);
-            _PlayerAttack();
-        }
-        PlayerIdleMotion();
-    }
-
-    public void _PlayerAttack()
-    {
-        if (Battle_Situation_Trigger.monster != null)
-        {
-            monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
-            monsterCombat = Battle_Situation_Trigger.monster.GetComponent<Monster_Combat>();
-            playerAnimator.SetTrigger("AttackNormal");
-            monsterCombat.ApplyDamage(atkDmg, Color.red, criticalRate, criticalDamage);
-
-            if (monster.nowHp <= 0)
-            {
-                monster.nowHp = 0;
-                StopCoroutine(PlayerBasicAttack());
-            }
-            else
-            {
-            }
-        }
-        else if(CreateBoss.Bss != null)
-        {
-            
-        }
-    }
-  
     public void GetExp()
     {
         if (Battle_Situation_Trigger.monster != null)
         {
             monster = Battle_Situation_Trigger.monster.GetComponent<Monster_Script>();
         }
-         playerNowExp += monster.Exp;
+         stat.player_nowExp += monster.Exp;
 
-        if(playerMaxExp <= playerNowExp)
+        if(stat.player_maxExp <= stat.player_nowExp)
         {
             LvUp();
-            playerNowExp -= playerMaxExp;
-
-            SetExp();
+            stat.player_nowExp -= stat.player_maxExp;
         }
     }
-
     public void LvUp()
     {
-        lv++;
-        DisplayText(lv + " Level UP", Color.yellow);
+        stat.player_lv++;
+        DisplayText(stat.player_lv + " Level UP", Color.yellow);
         SetStat();
+        SetExp();
     }
 
     public void SetExp()
     {
-        playerMaxExp = playerMaxExp + lv * lv * 5;
+        stat.player_maxExp = stat.player_maxExp + stat.player_lv * stat.player_lv* 5;
     }
 
     void SetStat()
@@ -133,10 +49,10 @@ public class PlayerScript : MonoBehaviour
         float LvUp_Hp = 2f;
         float LvUp_CriticalRate = 0.1f;
 
-        atkDmg += (LvUp_Atk * lv);
-        maxHp += (LvUp_Hp * lv);
-        nowHp += (LvUp_Hp * lv);
-        criticalRate += (LvUp_CriticalRate * lv);
+        stat.player_atkDamage += (LvUp_Atk * stat.player_lv);
+        stat.player_maxHp += (LvUp_Hp * stat.player_lv);
+        stat.player_noxHp += (LvUp_Hp * stat.player_lv);
+        stat.player_criticalRate += (LvUp_CriticalRate * stat.player_lv);
     }
 
     void DisplayText(string text, Color color)
@@ -147,16 +63,4 @@ public class PlayerScript : MonoBehaviour
         hudText.GetComponent<PlayerText>().textColor = color;
     }
 
-
-    public void BasicAttackMotion()
-    {
-        square.SetActive(true);
-        playerAnimator.SetTrigger("AttackNormal");
-        Invoke("TrailSetActive", 0.5f);
-    }
-
-    void TrailSetActive()
-    {
-        square.SetActive(false);
-    }
 }

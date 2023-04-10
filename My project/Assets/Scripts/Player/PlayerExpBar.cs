@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class PlayerExpBar : MonoBehaviour
 {
     public Slider expSlider;
-    [SerializeField]
     Stat playerStat;
     float maxExp;
     float curExp;
@@ -15,6 +14,12 @@ public class PlayerExpBar : MonoBehaviour
     void Awake()
     {
         playerStat = GetComponent<Stat>();
+    }
+
+    private void Start()
+    {
+        expSlider.transform.position = new Vector3(transform.position.x, transform.position.y - 1f, 0);
+
     }
 
     // Update is called once per frame

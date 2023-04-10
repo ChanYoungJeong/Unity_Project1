@@ -6,21 +6,40 @@ public class InstantiatePrefab : MonoBehaviour
 {
     [SerializeField] private float speed = 20;
     [SerializeField] private GameObject prefab;
+    [SerializeField] private string animatorName;
+    private Animator animator;
+
 
     private Stat stat;
     private float angle;
+    private float time;
     // private float lastSkillAttackTime;
 
     private void Start()
     {
         stat = GetComponentInParent<Stat>();
+        animator = GetComponent<Animator>();
     }
+
 
     private void Update()
     {
+        time += Time.deltaTime;
+
         if (!Battle_Situation_Trigger.monster && !CreateBoss.Bss) return;
 
         GetTargetPosition(transform);
+
+        if(time >= stat.sub_atkSpeed)
+        {
+            time = 0;
+
+            animator.SetTrigger(animatorName);
+        }
+        else
+        {
+            animator.SetTrigger("Idle");
+        }
     }
 
     public void CreatePrefab(GameObject prefab)

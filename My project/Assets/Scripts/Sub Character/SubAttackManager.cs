@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SubAttackManager : MonoBehaviour
 {
-    PlayerScript playerStat;
+    Stat playerStat;
     public Monster_Script monster;
     public BossMonster_Script bossMonster;
     GameObject subStat;
@@ -98,14 +98,14 @@ public class SubAttackManager : MonoBehaviour
         else if (collision.name == "Heal(Clone)")
         {
             subDmg = subStat.GetComponent<SubChar_Combat_manager>().attackDmg;
-            playerStat = GameObject.Find("Player").GetComponent<PlayerScript>();
+            playerStat = GameObject.Find("Player").GetComponent<Stat>();
 
 
-            playerStat.nowHp += subDmg * 0.7f;
+            playerStat.player_noxHp += subDmg * 0.7f;
 
-            if (playerStat.nowHp >= playerStat.maxHp)
+            if (playerStat.player_noxHp >= playerStat.player_maxHp)
             {
-                playerStat.nowHp = playerStat.maxHp;  // 옵션 추가 가능하게 % 사용.
+                playerStat.player_noxHp = playerStat.player_maxHp;  // 옵션 추가 가능하게 % 사용.
             }
             Destroy(SubBasicAttack.basicAttack, 0.5f);
 
