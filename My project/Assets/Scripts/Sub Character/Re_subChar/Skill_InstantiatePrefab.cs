@@ -30,16 +30,6 @@ public class Skill_InstantiatePrefab : MonoBehaviour
         if (!Battle_Situation_Trigger.monster && !CreateBoss.Bss) return;
 
         GetTargetPosition(transform);
-
-        if (time >= stat.sub_skillCooldown)
-        {
-            time = 0;
-            animator.SetTrigger(animatorName);
-        }
-        else
-        {
-            animator.SetTrigger("Idle");
-        }
     }
 
     public void CreateSkillPrefab(GameObject prefab)
@@ -47,7 +37,7 @@ public class Skill_InstantiatePrefab : MonoBehaviour
         GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle));
         prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
         if (prefabClone.GetComponent<PrefabOnTrigger>())
-            prefabClone.GetComponent<PrefabOnTrigger>().damage = stat.sub_skillDamage;
+            prefabClone.GetComponent<PrefabOnTrigger>().damage = stat.skillDamage;
     }
 
     public void GetTargetPosition(Transform transObj)

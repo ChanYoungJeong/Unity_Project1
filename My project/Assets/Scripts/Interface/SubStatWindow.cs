@@ -25,7 +25,7 @@ public class SubStatWindow : MonoBehaviour
 
     public void SubCharBuy() //동그라미 버튼
     {
-        if (Player_Object.player_lv >= NeedLevel && Game_System.Gold >= BuyGold)
+        if (Player_Object.lv >= NeedLevel && Game_System.Gold >= BuyGold)
         {
             if (SubchCount == false)
             {

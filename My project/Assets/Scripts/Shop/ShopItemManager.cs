@@ -16,7 +16,7 @@ public class ShopItemManager : MonoBehaviour
         getItemManager = GetComponent<ShopGetItem>();
         slots = slotHolder.GetComponentsInChildren<Slot>();
         GenerateSlot();
-        RandomNum = Random.Range(0, slots.Length);
+        RandomNum = Random.Range(0, ItemManager.loadObjects.Length);
         ResetNumber = new int[slots.Length];
     }
 
@@ -49,10 +49,9 @@ public class ShopItemManager : MonoBehaviour
         {
             while(NumberList[RandomNum] == false)
             {
-                RandomNum = Random.Range(0, slots.Length);
+                RandomNum = Random.Range(0, ItemManager.loadObjects.Length);
             }
             NumberList[RandomNum] = false;
-            //NumberList.RemoveAt(RandomNum);
             slots[i].transform.GetChild(0).GetComponentInChildren<Image>().sprite = ItemManager.loadObjects[RandomNum];
             slots[i].itemName = ItemManager.loadObjects[RandomNum].name;
             ResetNumber[i] = RandomNum;
@@ -60,7 +59,7 @@ public class ShopItemManager : MonoBehaviour
     }
 
     public void ReloadItem()
-    {       
+    {
         if (!getItemManager.doRot)
         {
             getItemManager.leftSlot = slots.Length;

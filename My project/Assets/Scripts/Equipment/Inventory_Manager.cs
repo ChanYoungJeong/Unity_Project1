@@ -61,60 +61,6 @@ public class Inventory_Manager : MonoBehaviour
         return image;
     }
 
-
-    public void EquipItem()
-    {
-        if (selectedItem != null)
-        {
-            if (!EM.Equipments.ContainsKey(selectedItem.type) && !curSlot.isEquiped)  //If item is not equiped;
-            {
-                EM.Equipments.Add(selectedItem.type, selectedItem);
-                curSlot.ChangeToEquiped();
-                EM.changeEquipImage(GetImage(selectedItem.name));
-                EM.setPlayerStat(selectedItem);
-                Debug.Log("is Equiped");
-                Debug.Log(EM.Equipments[selectedItem.type].name);
-            }
-            else if (EM.Equipments.ContainsKey(selectedItem.type) && curSlot.isEquiped)        //Unequip item
-            {
-                EM.resetPlayerStat(EM.Equipments[selectedItem.type]);
-                UnequipItem(selectedItem);
-                curSlot.ChangeToUnequiped();
-                Debug.Log("is UnEquiped");
-                Debug.Log(EM.Equipments[selectedItem.type].name);
-            }
-            else if(EM.Equipments.ContainsKey(selectedItem.type) && !curSlot.isEquiped)       //Change Item
-            {
-                EM.resetPlayerStat(EM.Equipments[selectedItem.type]);
-                EM.setPlayerStat(selectedItem);
-
-                ResetEquipedSlot(selectedItem.type);
-                curSlot.ChangeToEquiped();
-                EM.Equipments[selectedItem.type] = selectedItem;
-                EM.changeEquipImage(GetImage(selectedItem.name));
-                Debug.Log("is Change Equipped");
-                Debug.Log(EM.Equipments[selectedItem.type].name);
-            }
-            equipInfoUI.status.text = curSlot.itemStatus();
-        }
-        else
-        {
-            Debug.Log("There is no item selected");
-        }
-    }
-
-    public void UnequipItem(Equipment item)
-    {
-        EM.Equipments.Remove(item.type);                        //Remove item from Dictionary
-        for (int i = 0; i < EM.eSlots.Length; i++)              //Change image of Equpiment to default
-        {
-            if (EM.eSlots[i].name == selectedItem.type)
-            {
-                EM.eSlots[i].sprite = null;
-            }
-        }
-    }
-
     public void SelectItem()
     {
         GameObject _slot = EventSystem.current.currentSelectedGameObject;
@@ -132,29 +78,9 @@ public class Inventory_Manager : MonoBehaviour
             curSlot.GetComponent<Image>().color = Color.red;
             //View Item info
             equipInfoUI.ViewItem(GetImage(curSlot.curItem.name), curSlot.curItem, curSlot.itemStatus());
- 
-        }
-        preSlot = curSlot;
+            preSlot = curSlot;
+        }     
     }
-
-    public void ThrowItem()
-    {
-        if (!slots[selectedSlot].isEquiped && curSlot.curItem != null)
-        {
-            Inventory.RemoveAt(curSlot.slotNumber);
-            curSlot.ResetSlot();
-            AlignSlot(curSlot.slotNumber);
-            if(curSlot.curItem == null)
-            {
-                curSlot.ChangeToDefaultColor();
-            }
-        }
-        else
-        {
-            Debug.Log("This item is Equpiped");
-        }
-    }
-
 
 
     private void AlignSlot(int deletedSlot)
@@ -169,18 +95,4 @@ public class Inventory_Manager : MonoBehaviour
             deletedSlot++;
         }
     }
-
-    private void ResetEquipedSlot(string type)
-    {
-        for(int i = 0; i < slots.Length; i++)
-        {
-            if(slots[i].curItem.type == type && slots[i].isEquiped)
-            {
-                slots[i].ChangeToUnequiped();
-                return;
-            }
-        }
-    }
-
-
 }

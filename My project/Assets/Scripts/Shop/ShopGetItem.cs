@@ -58,7 +58,7 @@ public class ShopGetItem : MonoBehaviour
                 //Got Item
                 ChangeSlotColor(randomNum, Color.red);
                 PickedItem[randomNum] = true;
-                Equipment Item = ItemMan.GenerateItem(slots[randomNum].itemName);
+                Equipment Item = ItemManager.ItemLists[slots[randomNum].itemName];
                 Inven.AddToInventory(Item);
                 break;
             }
@@ -90,12 +90,6 @@ public class ShopGetItem : MonoBehaviour
         {
             ChangeSlotColor(i, defaultColor);
         }
-    }
-
-    void ItemGet(int slotNum)
-    {
-        //getItemIndex = slotNum;
-        ItemMan.GenerateItem(slots[slotNum].itemName);
     }
 
     public void ResetVisitedSlot()

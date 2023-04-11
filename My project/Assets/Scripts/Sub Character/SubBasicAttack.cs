@@ -124,9 +124,8 @@ public class SubBasicAttack : MonoBehaviour
 
     public void PriestHeal()
     {
-        if (playerScript.player_noxHp < playerScript.player_maxHp)
-        {
-            
+        if (playerScript.nowHp < playerScript.maxHp)
+        {         
             if(this.name == "Heal")
             {
                 subAnimator.SetTrigger("Debuff");

@@ -6,33 +6,19 @@ public class PlayerAttack : MonoBehaviour
 {
     Stat stat;
     Monster_Combat monsterCombat;
-    Animator playerAnimator;
 
     public Color color;
-
-    private bool isAttack = false;
 
     private void Awake()
     {
         stat = GetComponentInParent<Stat>();
-        playerAnimator = GetComponent<Animator>();
     }
 
-    private void Update()
-    {
-        if (Battle_Situation_Trigger.on_Battle && !isAttack)
-        {
-            playerAnimator.SetTrigger("AttackNormal");
-        }
-        else
-        {
-            playerAnimator.SetTrigger("Idle");
-        }
-    }
+
 
     void PlayerBasicAttack()
     {
         monsterCombat = Battle_Situation_Trigger.monster.GetComponent<Monster_Combat>();
-        monsterCombat.ApplyDamage(stat.player_atkDamage, color, stat.player_criticalRate, 0);
+        monsterCombat.ApplyDamage(stat.atkDamage, color, stat.criticalRate, 1.2f);
     }
 }

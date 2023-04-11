@@ -24,8 +24,8 @@ public class PlayerHpBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        maxHp = playerStat.player_maxHp;
-        curHp = playerStat.player_noxHp;
+        maxHp = playerStat.maxHp;
+        curHp = playerStat.nowHp;
         hpSlider.value = Mathf.Lerp(hpSlider.value, curHp / maxHp, Time.deltaTime * 5f);
     }
 }

@@ -25,18 +25,20 @@ public class CharCombatManager : MonoBehaviour
     {
         stat = GetComponent<Stat>();
         animator = GetComponentInChildren<Animator>();
+        
         coolTimeBar = GetComponent<SubCoolTimeBar>();
         canAttack = true;
         canSkill = false;
-        attackSpeed = stat.sub_atkSpeed;
-        skillCollDown = stat.sub_skillCooldown;
+        attackSpeed = stat.atkSpeed;
+        skillCollDown = stat.skillCooldown;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (coolTimeBar.currentValue >= 1)
+
+        if (GetComponent<SubCoolTimeBar>() && coolTimeBar.currentValue >= 1)
         {
             canSkill = true;
         }

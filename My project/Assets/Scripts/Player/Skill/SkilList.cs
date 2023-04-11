@@ -17,7 +17,7 @@ public class SkilList : MonoBehaviour
     public void create()
     {
         string name;
-        float playerAttackDamage = playerScript.player_atkDamage * playerScript.player_criticalRate;
+        float playerAttackDamage = playerScript.atkDamage * playerScript.criticalRate;
 
         name = "Double Slash";
         skilList.Add(name, new Skills(0, name, playerAttackDamage, 0.25f, 27.0f, 2, 1));

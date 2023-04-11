@@ -14,8 +14,8 @@ public class Ch_display : MonoBehaviour
 
     public void update_stat()
     {
-        pl_atk = Player_Object.player_atkDamage;
-        pl_level = Player_Object.player_lv;
+        pl_atk = Player_Object.atkDamage;
+        pl_level = Player_Object.lv;
     }
 
     public void update_statText()

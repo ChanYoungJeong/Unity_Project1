@@ -101,11 +101,11 @@ public class SubAttackManager : MonoBehaviour
             playerStat = GameObject.Find("Player").GetComponent<Stat>();
 
 
-            playerStat.player_noxHp += subDmg * 0.7f;
+            playerStat.nowHp += subDmg * 0.7f;
 
-            if (playerStat.player_noxHp >= playerStat.player_maxHp)
+            if (playerStat.nowHp >= playerStat.maxHp)
             {
-                playerStat.player_noxHp = playerStat.player_maxHp;  // 옵션 추가 가능하게 % 사용.
+                playerStat.nowHp = playerStat.maxHp;  // 옵션 추가 가능하게 % 사용.
             }
             Destroy(SubBasicAttack.basicAttack, 0.5f);
 

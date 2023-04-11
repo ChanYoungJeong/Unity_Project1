@@ -35,7 +35,7 @@ public class EquipmentManager : MonoBehaviour
     {
         if(item.type == "Weapon")
         {
-            player.player_atkDamage += item.stat1;
+            player.atkDamage += item.stat1;
             //player.criticalDamage += item.stat2;
         }
     }
@@ -44,7 +44,7 @@ public class EquipmentManager : MonoBehaviour
     {
         if (item.type == "Weapon")
         {
-            player.player_atkDamage -= item.stat1;
+            player.atkDamage -= item.stat1;
             //player.criticalDamage -= item.stat2;
         }
     }

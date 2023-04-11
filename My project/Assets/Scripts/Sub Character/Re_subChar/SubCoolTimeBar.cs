@@ -8,7 +8,7 @@ public class SubCoolTimeBar : MonoBehaviour
     public Slider barObj;
     private Stat stat;
 
-    public float currentValue;
+    public float currentValue = 0f;
 
 
     private void Awake()
@@ -24,15 +24,7 @@ public class SubCoolTimeBar : MonoBehaviour
 
     private void Update()
     {
-        if(currentValue >= 1)
-        {
-
-            currentValue = 0;
-        }
-        else
-        {
-            currentValue += Time.deltaTime / stat.sub_skillCooldown;
-            barObj.value = currentValue;
-        }
+         currentValue += Time.deltaTime / stat.skillCooldown;
+         barObj.value = currentValue;
     }
 }
