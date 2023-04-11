@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8307730188885569584}
   - component: {fileID: -2567439294408729008}
   - component: {fileID: 1330371701121562877}
-  - component: {fileID: 6117774864503418772}
+  - component: {fileID: 1481069494689533006}
   m_Layer: 0
   m_Name: Re_Heal
   m_TagString: Untagged
@@ -72,7 +72,7 @@ CircleCollider2D:
   m_Offset: {x: -0.100000024, y: -1.1043025}
   serializedVersion: 2
   m_Radius: 0.8956975
---- !u!114 &6117774864503418772
+--- !u!114 &1481069494689533006
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81,9 +81,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1170153678830110873}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ac4c91d7e348df4c8b9682f6d9d8805, type: 3}
+  m_Script: {fileID: 11500000, guid: 4211fcb3c6859c6488a4705458d092da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healAmount: 0
+  destroyTime: 0.7
 --- !u!1 &6327668252933792611
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,7 +17,6 @@ public class EquipInfo : MonoBehaviour
 
 
     public void ViewItem(Sprite _image, Equipment item, string _status)
-
     {
         itemImage.sprite = _image;
         itemName.text = item.name;

@@ -48,8 +48,8 @@ public class ButtonScript : MonoBehaviour
         up_atk1 = 0;
         up_atk2 = 3;
         playerStat = Player_Object.GetComponent<Stat>();
-        player_hp = playerStat.player_maxHp;
-        player_atk = playerStat.player_atkDamage;
+        player_hp = playerStat.maxHp;
+        player_atk = playerStat.atkDamage;
         up_atkgold = up_atkgold1 + up_atkgold2;
         up_hpgold = up_hpgold1 + up_hpgold2;
 
@@ -75,8 +75,8 @@ public class ButtonScript : MonoBehaviour
             //player_hp += up_hp;
             //up_hp += 5;
             up_hp = up_hp1 + up_hp2;
-            playerStat.player_maxHp += up_hp;
-            playerStat.player_noxHp += up_hp;
+            playerStat.maxHp += up_hp;
+            playerStat.nowHp += up_hp;
             up_hp1 = up_hp2;
             up_hp2 = up_hp;
 
@@ -106,7 +106,7 @@ public class ButtonScript : MonoBehaviour
         if (Game_System.Gold > up_atkgold)
         {
             up_atk = up_atk1 + up_atk2;
-            playerStat.player_atkDamage += up_atk;
+            playerStat.atkDamage += up_atk;
             up_atk1 = up_atk2;
             up_atk2 = up_atk;
 
@@ -150,7 +150,7 @@ public class ButtonScript : MonoBehaviour
         up_atk2 = x2;
         up_atkgold1 = y1;
         up_atkgold2 = y2;
-        playerStat.player_atkDamage += x1 + x2;
+        playerStat.atkDamage += x1 + x2;
         up_atkgold = y1 + y2;
     }
 }
