@@ -16,7 +16,7 @@ public class SubStatWindow : MonoBehaviour
     public int NeedLevel;
     public GameObject SubchPanel;
     bool  SubchCount= false;
-    public SubChar_Combat_manager subStat;
+    public Stat subStat;
 
     private void Start()
     {
@@ -35,7 +35,7 @@ public class SubStatWindow : MonoBehaviour
 
 
                 skillDamage.text = "skillDamage " + subStat.skillDamage.ToString();
-                attack.text = "attack " + subStat.attackDmg.ToString();
+                attack.text = "attack " + subStat.atkDamage.ToString();
                 lv.text = "Lv " + subStat.lv.ToString();
             }
         }
@@ -51,10 +51,10 @@ public class SubStatWindow : MonoBehaviour
             Game_System.Gold -= Gold;
             subStat.lv++;
             subStat.skillDamage += UpgreadeAtkStat;
-            subStat.attackDmg += UpgreadeAtkStat;
+            subStat.atkDamage += UpgreadeAtkStat;
 
             skillDamage.text = "skillDamage " + subStat.skillDamage.ToString();
-            attack.text = "attack " + subStat.attackDmg.ToString();
+            attack.text = "attack " + subStat.atkDamage.ToString();
             lv.text = "Lv " + subStat.lv.ToString();
         }
     }
