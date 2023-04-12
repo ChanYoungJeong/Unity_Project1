@@ -4333,17 +4333,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 609776052}
   m_CullTransparentMesh: 1
---- !u!114 &632142507 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6128476294869394877, guid: 235fd5752deb5f642a9a6aa1f1423b64, type: 3}
-  m_PrefabInstance: {fileID: 2914000240649792764}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6a4f85de866eb847b8bdbb5abb8f5c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &633784304
 GameObject:
   m_ObjectHideFlags: 0
@@ -5099,17 +5088,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713308961}
   m_CullTransparentMesh: 1
---- !u!114 &713820314 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6128476294943387911, guid: 235fd5752deb5f642a9a6aa1f1423b64, type: 3}
-  m_PrefabInstance: {fileID: 2914000240649792764}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6a4f85de866eb847b8bdbb5abb8f5c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &725579290
 GameObject:
   m_ObjectHideFlags: 0
@@ -10241,17 +10219,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1214484742 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6128476294924910172, guid: 235fd5752deb5f642a9a6aa1f1423b64, type: 3}
-  m_PrefabInstance: {fileID: 2914000240649792764}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1214484736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6a4f85de866eb847b8bdbb5abb8f5c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1216849489 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7558211624009668532, guid: 8baf5c78646e46f4b830fc8e0faeccf8, type: 3}
@@ -17302,9 +17269,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2075694246}
   - component: {fileID: 2075694247}
-  - component: {fileID: 2075694250}
-  - component: {fileID: 2075694249}
-  - component: {fileID: 2075694248}
   m_Layer: 5
   m_Name: SubChar
   m_TagString: Untagged
@@ -17330,7 +17294,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 42}
+  m_AnchoredPosition: {x: 1511, y: 42}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2075694247
@@ -17362,72 +17326,6 @@ MonoBehaviour:
   AllObjects:
   - {fileID: 30857467637541706}
   - {fileID: 841052677}
---- !u!114 &2075694248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075694245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 165555992a4c23a4f92e005ed1b82256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player_Object: {fileID: 1994892384}
-  lv: {fileID: 8051375106237027101}
-  attack: {fileID: 8051375105308522315}
-  skillDamage: {fileID: 8051375106707839466}
-  UpgradeGold: 500
-  UpgradeAtkStat: 10
-  BuyGold: 500
-  NeedLevel: 3
-  SubchPanel: {fileID: 1140806525462252256}
-  subStat: {fileID: 632142507}
---- !u!114 &2075694249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075694245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 165555992a4c23a4f92e005ed1b82256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player_Object: {fileID: 1994892384}
-  lv: {fileID: 8051375106022266921}
-  attack: {fileID: 8051375106151362855}
-  skillDamage: {fileID: 8051375107105082445}
-  UpgradeGold: 150
-  UpgradeAtkStat: 6
-  BuyGold: 300
-  NeedLevel: 2
-  SubchPanel: {fileID: 1140806526434195879}
-  subStat: {fileID: 713820314}
---- !u!114 &2075694250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075694245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 165555992a4c23a4f92e005ed1b82256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player_Object: {fileID: 1994892384}
-  lv: {fileID: 1140806525561656392}
-  attack: {fileID: 1140806525715068530}
-  skillDamage: {fileID: 8791656054271780832}
-  UpgradeGold: 100
-  UpgradeAtkStat: 4
-  BuyGold: 100
-  NeedLevel: 2
-  SubchPanel: {fileID: 1140806525769831010}
-  subStat: {fileID: 1214484742}
 --- !u!1 &2081680755
 GameObject:
   m_ObjectHideFlags: 0
@@ -20734,7 +20632,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2075694250}
+      - m_Target: {fileID: 1140806525769831011}
         m_TargetAssemblyTypeName: SubStatWindow, Assembly-CSharp
         m_MethodName: SubCharAttackUpgrade
         m_Mode: 1
@@ -21538,6 +21436,7 @@ GameObject:
   - component: {fileID: 1140806525462252257}
   - component: {fileID: 1140806525462252260}
   - component: {fileID: 1140806525462252263}
+  - component: {fileID: 1140806525462252262}
   m_Layer: 5
   m_Name: 'Panel :: PriestStatWindow'
   m_TagString: Untagged
@@ -21579,6 +21478,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140806525462252256}
   m_CullTransparentMesh: 1
+--- !u!114 &1140806525462252262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140806525462252256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 165555992a4c23a4f92e005ed1b82256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player_Object: {fileID: 0}
+  lv: {fileID: 8051375106237027101}
+  attack: {fileID: 8051375105308522315}
+  skillDamage: {fileID: 8051375106707839466}
+  Gold: 0
+  UpgreadeAtkStat: 0
+  BuyGold: 0
+  NeedLevel: 0
+  SubchPanel: {fileID: 0}
+  subStat: {fileID: 0}
 --- !u!114 &1140806525462252263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22049,9 +21970,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2075694248}
-        m_TargetAssemblyTypeName: SubStatWindow, Assembly-CSharp
-        m_MethodName: SubCharBuy
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SubCharSetting, Assembly-CSharp
+        m_MethodName: PriestStatWindowPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SubCharSetting, Assembly-CSharp
+        m_MethodName: PriestSetActive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22284,9 +22217,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2075694249}
-        m_TargetAssemblyTypeName: SubStatWindow, Assembly-CSharp
-        m_MethodName: SubCharBuy
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SubCharSetting, Assembly-CSharp
+        m_MethodName: MagicCasterStatWindowPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22402,6 +22335,7 @@ GameObject:
   - component: {fileID: 1140806525769831014}
   - component: {fileID: 1140806525769831009}
   - component: {fileID: 1140806525769831008}
+  - component: {fileID: 1140806525769831011}
   m_Layer: 5
   m_Name: 'Panel :: RogueStatWindow'
   m_TagString: Untagged
@@ -22409,6 +22343,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1140806525769831011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140806525769831010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 165555992a4c23a4f92e005ed1b82256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player_Object: {fileID: 0}
+  lv: {fileID: 1140806525561656392}
+  attack: {fileID: 1140806525715068530}
+  skillDamage: {fileID: 8791656054271780832}
+  Gold: 10
+  UpgreadeAtkStat: 0
+  BuyGold: 0
+  NeedLevel: 0
+  SubchPanel: {fileID: 0}
+  subStat: {fileID: 0}
 --- !u!224 &1140806525769831014
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23070,9 +23026,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2075694250}
-        m_TargetAssemblyTypeName: SubStatWindow, Assembly-CSharp
-        m_MethodName: SubCharBuy
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SubCharSetting, Assembly-CSharp
+        m_MethodName: RogueStatWindowPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23654,6 +23610,28 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1140806526434195876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140806526434195879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 165555992a4c23a4f92e005ed1b82256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player_Object: {fileID: 0}
+  lv: {fileID: 8051375106022266921}
+  attack: {fileID: 8051375106151362855}
+  skillDamage: {fileID: 8051375107105082445}
+  Gold: 20
+  UpgreadeAtkStat: 0
+  BuyGold: 0
+  NeedLevel: 0
+  SubchPanel: {fileID: 0}
+  subStat: {fileID: 0}
 --- !u!114 &1140806526434195877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23695,6 +23673,7 @@ GameObject:
   - component: {fileID: 1140806526434195883}
   - component: {fileID: 1140806526434195882}
   - component: {fileID: 1140806526434195877}
+  - component: {fileID: 1140806526434195876}
   m_Layer: 5
   m_Name: 'Panel :: MagicCasterStatWindow'
   m_TagString: Untagged
@@ -42616,7 +42595,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2075694248}
+      - m_Target: {fileID: 1140806525462252262}
         m_TargetAssemblyTypeName: SubStatWindow, Assembly-CSharp
         m_MethodName: SubCharAttackUpgrade
         m_Mode: 1
@@ -42884,7 +42863,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2075694249}
+      - m_Target: {fileID: 1140806526434195876}
         m_TargetAssemblyTypeName: SubStatWindow, Assembly-CSharp
         m_MethodName: SubCharAttackUpgrade
         m_Mode: 1
@@ -44828,8 +44807,8 @@ MonoBehaviour:
   lv: {fileID: 6947029464603699441}
   attack: {fileID: 6947029464336663448}
   skillDamage: {fileID: 6947029464143720829}
-  UpgradeGold: 0
-  UpgradeAtkStat: 0
+  Gold: 0
+  UpgreadeAtkStat: 0
   BuyGold: 0
   NeedLevel: 0
   SubchPanel: {fileID: 0}
@@ -45173,8 +45152,8 @@ MonoBehaviour:
   lv: {fileID: 6947029463852558625}
   attack: {fileID: 6947029465294828524}
   skillDamage: {fileID: 6947029464986389460}
-  UpgradeGold: 0
-  UpgradeAtkStat: 0
+  Gold: 0
+  UpgreadeAtkStat: 0
   BuyGold: 0
   NeedLevel: 0
   SubchPanel: {fileID: 0}
