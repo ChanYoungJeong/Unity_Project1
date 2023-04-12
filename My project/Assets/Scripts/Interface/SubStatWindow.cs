@@ -9,8 +9,8 @@ public class SubStatWindow : MonoBehaviour
     public Text lv;
     public Text attack;
     public Text skillDamage;
-    public int Gold;
-    public int UpgreadeAtkStat;
+    public int UpgradeGold;
+    public int UpgradeAtkStat;
     //new write
     public int BuyGold;
     public int NeedLevel;
@@ -46,12 +46,12 @@ public class SubStatWindow : MonoBehaviour
     {
         int Level;
 
-        if (Game_System.Gold >= Gold)
+        if (Game_System.Gold >= UpgradeGold)
         {
-            Game_System.Gold -= Gold;
+            Game_System.Gold -= UpgradeGold;
             subStat.lv++;
-            subStat.skillDamage += UpgreadeAtkStat;
-            subStat.attackDmg += UpgreadeAtkStat;
+            subStat.skillDamage += UpgradeAtkStat;
+            subStat.attackDmg += UpgradeAtkStat;
 
             skillDamage.text = "skillDamage " + subStat.skillDamage.ToString();
             attack.text = "attack " + subStat.attackDmg.ToString();
