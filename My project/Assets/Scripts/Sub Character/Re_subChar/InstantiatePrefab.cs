@@ -7,6 +7,7 @@ public class InstantiatePrefab : MonoBehaviour
     [SerializeField] private float speed = 20;
     [SerializeField] private GameObject prefab;
 
+
     private Stat stat;
     private float angle;
     // private float lastSkillAttackTime;
@@ -15,6 +16,7 @@ public class InstantiatePrefab : MonoBehaviour
     {
         stat = GetComponentInParent<Stat>();
     }
+
 
     private void Update()
     {
@@ -28,7 +30,7 @@ public class InstantiatePrefab : MonoBehaviour
         GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle));
         prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
         if (prefabClone.GetComponent<PrefabOnTrigger>())
-            prefabClone.GetComponent<PrefabOnTrigger>().damage = stat.sub_atkDamage;
+            prefabClone.GetComponent<PrefabOnTrigger>().damage = stat.atkDamage;
     }
 
     public void GetTargetPosition(Transform transObj)

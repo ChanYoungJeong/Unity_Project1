@@ -6,7 +6,7 @@ public class SubBasicAttack : MonoBehaviour
 {
     public GameObject basicAttackPrefab;
     public static GameObject basicAttack;
-    PlayerScript playerScript;
+    Stat playerScript;
 
     int x;
     Transform playerTrans;
@@ -21,7 +21,7 @@ public class SubBasicAttack : MonoBehaviour
     {
         playerTrans = GameObject.Find("Player").GetComponent<Transform>();
         SubStat = this.transform.parent.GetComponent<SubChar_Combat_manager>();
-        playerScript = GameObject.Find("Player").GetComponent<PlayerScript>();
+        playerScript = GameObject.Find("Player").GetComponent<Stat>();
     }
 
     private void Update()
@@ -125,8 +125,7 @@ public class SubBasicAttack : MonoBehaviour
     public void PriestHeal()
     {
         if (playerScript.nowHp < playerScript.maxHp)
-        {
-            
+        {         
             if(this.name == "Heal")
             {
                 subAnimator.SetTrigger("Debuff");

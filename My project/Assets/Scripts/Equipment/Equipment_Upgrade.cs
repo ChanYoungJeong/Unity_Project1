@@ -74,7 +74,5 @@ public class Equipment_Upgrade : MonoBehaviour
         int upgradeVal2 = (Item.upgrade / 2) + 1;
         Item.stat1 += upgardeVal1;
         Item.stat2 += upgradeVal2;
-
-
     }
 }

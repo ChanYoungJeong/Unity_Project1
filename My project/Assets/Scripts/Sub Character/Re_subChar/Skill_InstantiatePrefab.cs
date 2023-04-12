@@ -6,19 +6,29 @@ public class Skill_InstantiatePrefab : MonoBehaviour
 {
     [SerializeField] private float speed = 20;
     [SerializeField] private GameObject prefab;
+    [SerializeField] private string animatorName;
+
+    private Animator animator;
+
+
 
     private Stat stat;
     private float angle;
+    private float time;
     // private float lastSkillAttackTime;
 
     private void Start()
     {
         stat = GetComponentInParent<Stat>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
+        time += Time.deltaTime;
+
         if (!Battle_Situation_Trigger.monster && !CreateBoss.Bss) return;
+
         GetTargetPosition(transform);
     }
 
@@ -27,7 +37,7 @@ public class Skill_InstantiatePrefab : MonoBehaviour
         GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle));
         prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
         if (prefabClone.GetComponent<PrefabOnTrigger>())
-            prefabClone.GetComponent<PrefabOnTrigger>().damage = stat.sub_skillDamage;
+            prefabClone.GetComponent<PrefabOnTrigger>().damage = stat.skillDamage;
     }
 
     public void GetTargetPosition(Transform transObj)

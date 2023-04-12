@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SubStatWindow : MonoBehaviour
 {
-    public PlayerScript Player_Object;
+    public Stat Player_Object;
     public Text lv;
     public Text attack;
     public Text skillDamage;

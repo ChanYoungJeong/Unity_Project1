@@ -16,11 +16,16 @@ public class PlayerHpBar : MonoBehaviour
         playerStat = GetComponent<Stat>();
     }
 
+    private void Start()
+    {
+        hpSlider.transform.position = new Vector3(transform.position.x, transform.position.y + 2.5f, 0);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        maxHp = playerStat.player_maxHp;
-        curHp = playerStat.player_noxHp;
+        maxHp = playerStat.maxHp;
+        curHp = playerStat.nowHp;
         hpSlider.value = Mathf.Lerp(hpSlider.value, curHp / maxHp, Time.deltaTime * 5f);
     }
 }

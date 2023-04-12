@@ -16,14 +16,14 @@ public class Monster_Script : MonoBehaviour
     public int Exp;
 
     public GameObject MonsterDieAnimation;
-    PlayerScript playerScript;
+    Stat PlayerStat;
+    PlayerExpBar playerExp;
 
     private void Awake()
     {
-        if (GameObject.Find("Player") != null)
-        {
-            playerScript = GameObject.Find("Player").GetComponent<PlayerScript>();
-        }
+        GameObject Player = GameObject.Find("Player");
+        PlayerStat = Player.GetComponent<Stat>();
+        playerExp = Player.GetComponent<PlayerExpBar>();
     }
 
     private void Update()
@@ -31,20 +31,20 @@ public class Monster_Script : MonoBehaviour
         if (nowHp <= 0)
         {
             Monster_Die();
-            playerScript.GetExp();
+            playerExp.GetExp(Exp);
             Game_System.Gold += Golds;
         }
     }
     public void Monster_Die()
-    {      
-        Instantiate(MonsterDieAnimation, this.transform.position, this.transform.rotation);
-        Destroy(this.gameObject);     
+    {
+       Instantiate(MonsterDieAnimation, this.transform.position, this.transform.rotation);
+        Destroy(this.gameObject);
         //ShowPlayerStat();
     }
 
     void ShowPlayerStat()
     {
-        Debug.Log("EXP: " + playerScript.playerNowExp);
-        Debug.Log("Lv: " + playerScript.lv);
+        Debug.Log("EXP: " + PlayerStat.nowExp);
+        Debug.Log("Lv: " + PlayerStat.lv);
     }
 }
