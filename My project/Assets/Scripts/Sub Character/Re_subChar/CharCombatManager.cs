@@ -38,6 +38,8 @@ public class CharCombatManager : MonoBehaviour
     void Update()
     {
 
+        if (!Battle_Situation_Trigger.monster) return;
+
         if (GetComponent<SubCoolTimeBar>() && coolTimeBar.currentValue >= 1)
         {
             canSkill = true;

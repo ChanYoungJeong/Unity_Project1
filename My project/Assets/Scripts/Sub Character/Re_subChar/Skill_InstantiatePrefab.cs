@@ -6,9 +6,7 @@ public class Skill_InstantiatePrefab : MonoBehaviour
 {
     [SerializeField] private float speed = 20;
     [SerializeField] private GameObject prefab;
-    [SerializeField] private string animatorName;
 
-    private Animator animator;
 
 
 
@@ -20,7 +18,6 @@ public class Skill_InstantiatePrefab : MonoBehaviour
     private void Start()
     {
         stat = GetComponentInParent<Stat>();
-        animator = GetComponent<Animator>();
     }
 
     private void Update()

@@ -18,6 +18,8 @@ public class PlayerAttack : MonoBehaviour
 
     void PlayerBasicAttack()
     {
+        if (!Battle_Situation_Trigger.monster) return;
+
         monsterCombat = Battle_Situation_Trigger.monster.GetComponent<Monster_Combat>();
         monsterCombat.ApplyDamage(stat.atkDamage, color, stat.criticalRate, 1.2f);
     }
