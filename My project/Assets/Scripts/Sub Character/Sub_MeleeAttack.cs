@@ -5,7 +5,7 @@ using UnityEngine;
 public class Sub_MeleeAttack : MonoBehaviour
 {
     public Animator anim;
-    SubChar_Combat_manager subStats;
+    Stat subStats;
     private Vector3 oriPosition; // 현재위치
     public float telePosition;
     public bool isCoolTime = true;
@@ -14,7 +14,7 @@ public class Sub_MeleeAttack : MonoBehaviour
 
     private void Start()
     {   //몬스터 위치 받아오기 -> 몬스터 뒤로 순간이동 -> 몬스터 몇초동안 공격 -> 원래 자리로 복귀(몬스터가 일찍 죽으면 바로 복귀)
-        subStats = GetComponent<SubChar_Combat_manager>();
+        subStats = GetComponent<Stat>();
     }
     public void Update()
     {
