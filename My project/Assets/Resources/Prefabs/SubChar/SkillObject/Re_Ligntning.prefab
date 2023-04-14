@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 732059971880588053}
   - component: {fileID: 794376254866439645}
   - component: {fileID: 8489421369871691605}
-  - component: {fileID: 8175360514843427764}
+  - component: {fileID: -7627037306609832220}
   m_Layer: 0
-  m_Name: Ligntning
+  m_Name: Re_Ligntning
   m_TagString: skill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +123,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0.037565455, y: 0}
   m_Size: {x: 1.41, y: 4.79}
   m_Direction: 0
---- !u!114 &8175360514843427764
+--- !u!114 &-7627037306609832220
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,9 +132,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2382134098334535517}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55584d2802d74ac4b9d183f5b4871f7c, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ac4c91d7e348df4c8b9682f6d9d8805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monster: {fileID: 3648560239560735670, guid: 6e8f14adf1888ff4e9e7108b920b0c22, type: 3}
-  bossMonster: {fileID: 5802820225246375820, guid: 87ab58b7f591c1541ab3e3fb8b0d6bbc, type: 3}
-  isDestroy: 0
+  multiHit: 0
+  damageColor: {r: 0, g: 0.8141694, b: 1, a: 0}
+  destroytime: 2
+  damage: 0
