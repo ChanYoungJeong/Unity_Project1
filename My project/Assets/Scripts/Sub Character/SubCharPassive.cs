@@ -7,7 +7,7 @@ public class SubCharPassive : MonoBehaviour
 {
     public static GameObject RogueDark;
 
-    SubChar_Combat_manager charSetting;
+    Stat charSetting;
     //public GameObject[] skill;
 
     Animator Subanimator;
@@ -16,7 +16,7 @@ public class SubCharPassive : MonoBehaviour
 
     private void Start()
     {
-        charSetting = GameObject.Find("Rogue").GetComponent<SubChar_Combat_manager>();
+        charSetting = GameObject.Find("Rogue").GetComponent<Stat>();
         Subanimator=charSetting.GetComponent<Animator>();
     }
     private void Update()
@@ -54,7 +54,7 @@ public class SubCharPassive : MonoBehaviour
     public void ChangePrefab1()
     {
         GameObject rogueskill;
-        rogueskill=charSetting.GetComponentInChildren<SubSkillAttack>().subSkillPrefab = Resources.Load<GameObject>("Ani/DarkCloud");
+        //rogueskill=charSetting.GetComponentInChildren<SubSkillAttack>().subSkillPrefab = Resources.Load<GameObject>("Ani/DarkCloud");
     }
 
     public void ChangePrefab2() 
