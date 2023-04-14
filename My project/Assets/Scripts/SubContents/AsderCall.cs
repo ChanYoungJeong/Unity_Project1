@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SubCharAsder1 : MonoBehaviour
+public class AsderCall : MonoBehaviour
 {
     private Joystick joystick;
-    public GameObject archer;
+    public GameObject SubAsder;
     public float y;
-    
+
 
     private void Awake()
     {
@@ -18,7 +18,7 @@ public class SubCharAsder1 : MonoBehaviour
     }
     private void Update()
     {
-        
+
         if (Input.GetKeyDown(KeyCode.K))
         {
 
@@ -26,21 +26,15 @@ public class SubCharAsder1 : MonoBehaviour
             {
                 if (joystick.Horizontal > 0)
                 {
-                    y =180;
+                    y = 180;
                 }
                 else
                 {
                     y = 0;
                 }
-
-
-                GameObject archerAsder = Instantiate(archer, transform.position + Vector3.right * 1.0f, Quaternion.identity);
+                GameObject archerAsder = Instantiate(SubAsder, transform.position + Vector3.right * 1.0f, Quaternion.identity);
                 archerAsder.transform.rotation = Quaternion.Euler(0, y, 0);
-
-                //archerAsder.transform.localScale = new Vector3()
             }
-
         }
-
     }
 }
