@@ -555,6 +555,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1267953853 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6029925377377490714, guid: cfd10fbfa54066e4bab1b15fab4e665f, type: 3}
+  m_PrefabInstance: {fileID: 8028865879477317526}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1267953855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267953853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66eb4dcbe4bbd73409c9dd97c3daaab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetObject: {fileID: 0}
+  x: 0
+  y: 0
 --- !u!114 &1270831415 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 992650561, guid: a27c95e78f3097647bffd0ed194d7879, type: 3}
@@ -1147,9 +1167,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 466093469090742658, guid: cfd10fbfa54066e4bab1b15fab4e665f, type: 3}
+      propertyPath: SkillAttackAnimationName
+      value: SkillMagic
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244103723988498653, guid: cfd10fbfa54066e4bab1b15fab4e665f, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 2382134098334535517, guid: a2a59238ab175a548ad1e1c2f5199cf7, type: 3}
     - target: {fileID: 3278948642393043762, guid: cfd10fbfa54066e4bab1b15fab4e665f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3278948642468037187, guid: cfd10fbfa54066e4bab1b15fab4e665f, type: 3}
+      propertyPath: atkSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3278948642468037187, guid: cfd10fbfa54066e4bab1b15fab4e665f, type: 3}
+      propertyPath: skillCooldown
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4943418685712330306, guid: cfd10fbfa54066e4bab1b15fab4e665f, type: 3}
       propertyPath: m_Name

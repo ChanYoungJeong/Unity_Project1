@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class InstantiateToTarget : MonoBehaviour
 {
     [SerializeField]
     Transform TargetObject;
+    Transform target;
 
     Vector3 TargetPosition;
     [SerializeField]
@@ -17,14 +19,23 @@ public class InstantiateToTarget : MonoBehaviour
     private Stat stat;
     void Start()
     {
-        getTarget();
         stat = GetComponentInParent<Stat>();
+
+
+        if (!TargetObject) return;
+        getTarget();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!Battle_Situation_Trigger.monster) return;
 
+        if (!TargetObject)
+        {
+            target = Battle_Situation_Trigger.monster ?
+            Battle_Situation_Trigger.monster.transform : CreateBoss.Bss.transform;
+        }
     }
 
     void getTarget()
@@ -50,5 +61,10 @@ public class InstantiateToTarget : MonoBehaviour
     void setDamage()
     {
 
+    }
+
+    void Ligntning(GameObject prefab)
+    {
+        GameObject prefabClone = Instantiate(prefab, target.position, Quaternion.identity);
     }
 }

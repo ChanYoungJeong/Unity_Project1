@@ -9,6 +9,8 @@ public class PrefabOnTrigger : MonoBehaviour
     [SerializeField]
     //Color 또한 변수로 나둬서, 캐릭터 스텟에서 받아오거나 직접 설정해서 데미지 색상을 바꿈
     Color damageColor;
+    
+    [SerializeField] float destroytime;
     Monster_Combat monsterCombat;
     public float damage;
     private bool hitted = false;
@@ -48,9 +50,13 @@ public class PrefabOnTrigger : MonoBehaviour
                 hitted = true;
                 monsterCombat = collision.transform.GetComponent<Monster_Combat>();
                 monsterCombat.ApplyDamage(damage, damageColor, 0, 0);
-                Destroy(this.gameObject);
+                Destroy(this.gameObject, destroytime);
             }
-                
         }
+    }
+
+    void AnimationEnd()
+    {
+        Destroy(gameObject);
     }
 }
