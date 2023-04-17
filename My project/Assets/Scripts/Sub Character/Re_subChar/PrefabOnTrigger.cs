@@ -53,6 +53,13 @@ public class PrefabOnTrigger : MonoBehaviour
                 Destroy(this.gameObject, destroytime);
             }
         }
+
+        if (collision.transform.GetComponent<BossScript>())
+        {
+            monsterCombat = collision.transform.GetComponent<Monster_Combat>();
+            monsterCombat.ApplyDamage(damage, damageColor, 0, 0);
+            Destroy(this.gameObject, destroytime);
+        }
     }
 
     void AnimationEnd()

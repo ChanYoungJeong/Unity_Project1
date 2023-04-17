@@ -7,7 +7,7 @@ public class ToRaid : MonoBehaviour
 {
     public void SceneChangeRaid()
     {
-        SceneManager.LoadScene("New Raid");
+        SceneManager.LoadScene("Re_Raid");
     }
     public void SceneChangePriject()
     {
