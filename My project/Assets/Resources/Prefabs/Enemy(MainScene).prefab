@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: -9093825260425995023}
   - component: {fileID: 8612973221486136816}
   - component: {fileID: 3087164625551760321}
+  - component: {fileID: 8521616841948585425}
   m_Layer: 0
   m_Name: Enemy(MainScene)
   m_TagString: Monster
@@ -283,7 +284,6 @@ MonoBehaviour:
   atkSpeed: 1
   Golds: 10
   Exp: 10
-  MonsterDieAnimation: {fileID: 8049821130837150683, guid: 0f7e6cefdc203cb4da4de31ca5a7bfc3, type: 3}
 --- !u!114 &9091718101220298701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548a0e6c35f3c964495232e71d5b909c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterDieAnimation: {fileID: 8049821130837150683, guid: 0f7e6cefdc203cb4da4de31ca5a7bfc3, type: 3}
+  scale: 1
 --- !u!114 &-9093825260425995023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,6 +339,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee8146f2665e8f41a2284a682e10725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8521616841948585425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969604836136404861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25af3d7e69782874ea13c12b01b48b9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MonsterDieAnimation: {fileID: 1969604836136404861}
 --- !u!1 &2001366047354952428
 GameObject:
   m_ObjectHideFlags: 0
