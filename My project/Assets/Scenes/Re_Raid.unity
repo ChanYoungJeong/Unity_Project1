@@ -1029,29 +1029,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
---- !u!114 &1962261068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1962261062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc0bc98ca0eb85f4fb47b17f7ca8a1c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHp: 300
-  nowHp: 300
-  atkDamage: 999999
-  criticalRate: 100
-  atkSpeed: 1
-  lv: 999999999
-  skillCooldown: 1
-  skillDamage: 999999
-  maxExp: 0
-  nowExp: 0
-  shield: 0
 --- !u!114 &1962261069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1064,6 +1041,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd19f7f4306d9924498bf022a9e53b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1962261072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962261062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f099e21d1b98994cba5ad7b08e33b09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterType: 
+  maxHp: 150
+  nowHp: 150
+  atkDmg: 9999999
+  atkSpeed: 1
+  Golds: 0
+  Exp: 0
 --- !u!1001 &2021830118
 PrefabInstance:
   m_ObjectHideFlags: 0
