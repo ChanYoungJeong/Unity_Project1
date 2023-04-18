@@ -57,6 +57,7 @@ public class Monster_Combat : MonoBehaviour
 
     public void ApplyDamage(float damage, Color color, float ciritcalRate, float criticalDamage)
     {
+
         if (Random.Range(0, 100) < ciritcalRate)
         {
             Monster_Stat.nowHp -= Mathf.RoundToInt(damage * criticalDamage);
