@@ -13,8 +13,6 @@ public class CreateMonster_Manager : MonoBehaviour
     [SerializeField]
     int bossMonsterCapacity = 3;
     [SerializeField]
-    float stageDelay = 2.5f;
-    [SerializeField]
     int stageScale = 0;
     void Update()
     {
