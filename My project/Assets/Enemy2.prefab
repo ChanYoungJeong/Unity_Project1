@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: -9093825260425995023}
   - component: {fileID: 8612973221486136816}
   - component: {fileID: 5658847305314122215}
+  - component: {fileID: 5547144487153704696}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: Monster
@@ -210,7 +211,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -264,7 +265,6 @@ MonoBehaviour:
   atkSpeed: 1
   Golds: 10
   Exp: 10
-  MonsterDieAnimation: {fileID: 8049821130837150683, guid: 0f7e6cefdc203cb4da4de31ca5a7bfc3, type: 3}
 --- !u!114 &-9093825260425995023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,6 +310,19 @@ MonoBehaviour:
   monsterTpye: 1
   speed: 2
   spriter: {fileID: 7932895842161468248}
+--- !u!114 &5547144487153704696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969604836136404861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25af3d7e69782874ea13c12b01b48b9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MonsterDieAnimation: {fileID: 8049821130837150683, guid: 0f7e6cefdc203cb4da4de31ca5a7bfc3, type: 3}
 --- !u!1 &2001366047354952428
 GameObject:
   m_ObjectHideFlags: 0

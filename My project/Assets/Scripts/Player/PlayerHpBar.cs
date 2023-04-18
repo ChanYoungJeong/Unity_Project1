@@ -13,12 +13,12 @@ public class PlayerHpBar : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        playerStat = GetComponent<Stat>();
+            playerStat = GetComponent<Stat>();
+
     }
 
     private void Start()
     {
-        hpSlider.transform.position = new Vector3(transform.position.x, transform.position.y + 2.5f, 0);
     }
 
     // Update is called once per frame

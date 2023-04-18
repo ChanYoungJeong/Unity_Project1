@@ -8,9 +8,7 @@ public class Enemy : MonoBehaviour
     public float speed = 1.0f;
     private Rigidbody2D target;
     private Monster_Script stat;
-
-    bool isLive = true;
-    bool canAttack = true;
+    bool contentCheck = true;
 
     Rigidbody2D rigid;
     public SpriteRenderer spriter;
@@ -18,7 +16,6 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
-        //spriter = transform.GetComponent<SpriteRenderer>();
         stat = GetComponent<Monster_Script>();
     }
 
@@ -32,22 +29,31 @@ public class Enemy : MonoBehaviour
 
     private void LateUpdate()
     {
-
         spriter.flipX = target.position.x < rigid.position.x;
     }
 
     private void OnEnable()
     {
-        target = ContentsManager.instans.player.GetComponent<Rigidbody2D>();
-        SetStat();
+        target = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>();
     }
 
-    void SetStat()
+
+
+
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        stat.maxHp = 40;
-        stat.nowHp = 40;
-        stat.atkDmg = 1;
-        stat.atkSpeed = 1.2f;
+            if (collision.gameObject.GetComponent<PlayerScript>() && contentCheck)
+            {
+                collision.gameObject.GetComponent<Stat>().nowHp -= stat.atkDmg;
+                contentCheck = false;
+                StartCoroutine(contentAttack());
+          }
     }
 
+    IEnumerator contentAttack()
+    {
+        yield return new WaitForSeconds(stat.atkSpeed);
+
+        contentCheck = true;
+    }
 }

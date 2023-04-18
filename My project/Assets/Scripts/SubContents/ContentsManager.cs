@@ -1,25 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ContentsManager : MonoBehaviour
 {
-    public static ContentsManager instans;
-    public static bool startContent;
+    public bool startContent;
+    public Stat PlayerStat;
+    [Header("Timer Setting")]
+    public Text timeText;
+    public float time;
 
-    public PlayerScript player;
-    public PoolManager pool;
-    public Enemy[] enemy;
-
-
+ 
     private void Awake()
     {
-        instans = this;
+        timeText.text = Mathf.Ceil(time).ToString();
         startContent = false;
     }
 
     public void StartContent()
     {
         startContent = true;
+    }
+
+    public void Update()
+    {
+        if (startContent && time > 0)
+        {
+            time -= Time.deltaTime;
+            timeText.text = string.Format("{0:N2}", time);
+        }
+        if(time <= 0 || PlayerStat.nowHp <= 0)
+        {
+            startContent = false;
+            Time.timeScale = 0f;
+        }
     }
 }

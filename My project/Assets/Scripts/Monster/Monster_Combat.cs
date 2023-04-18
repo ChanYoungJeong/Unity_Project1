@@ -14,7 +14,7 @@ public class Monster_Combat : MonoBehaviour
     public GameObject CriticalDamageText;
 
     bool check = false;
-    bool contentCheck = true;
+ 
     // Start is called before the first frame update
     void Awake()
     {
@@ -23,8 +23,11 @@ public class Monster_Combat : MonoBehaviour
     }
     void Start()
     {
-        GameObject Player = GameObject.Find("Player");
-        Player_Stat = Player.GetComponent<Stat>();
+        if (GameObject.Find("Player"))
+        {
+            GameObject Player = GameObject.Find("Player");
+            Player_Stat = Player.GetComponent<Stat>();
+        }
         Monster_Stat = this.GetComponent<Monster_Script>();
     }
 
@@ -73,29 +76,5 @@ public class Monster_Combat : MonoBehaviour
     }
 
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if(ContentsManager.startContent)
-        {
-            if (collision.transform.GetComponent<PlayerScript>() && contentCheck)
-            {
-                collision.transform.GetComponent<Stat>().nowHp -= Monster_Stat.atkDmg;
-                contentCheck = false;
-                StartCoroutine(contentAttack());
-            }
-        }
-        
-    }
 
-    IEnumerator contentAttack()
-    {
-        yield return new WaitForSeconds(Monster_Stat.atkSpeed);
-
-        contentCheck = true;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-    }
 }
