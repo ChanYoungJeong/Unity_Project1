@@ -6,7 +6,9 @@ public class JoystickMove : MonoBehaviour
 {
     public float speed;
     private Joystick joystick;
-    public GameObject effect;
+    Animator Anim;
+    Vector3 scale;
+    //public GameObject effect;
 
     private void Awake()
     {
@@ -14,22 +16,29 @@ public class JoystickMove : MonoBehaviour
         {
             joystick = GameObject.FindObjectOfType<Joystick>();
         }
+        Anim = GetComponentInChildren<Animator>();
+        scale = transform.localScale;
     }
 
     private void Update()
     {
         if (joystick.Horizontal != 0 || joystick.Vertical != 0)
         {
+            Anim.SetBool("Run", true);
             if (joystick.Horizontal > 0)
             {
-                transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                transform.localScale = new Vector3(scale.x, scale.y, scale.z);
             }
             else
             {
-                transform.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
+                transform.localScale = new Vector3(-scale.x, scale.y, scale.z);
             }
 
             MoveControl();
+        }
+        else
+        {
+            Anim.SetBool("Run", false);
         }
 /*        ////////////////////////////////////////////////////여기부터
         float dirX = Input.GetAxis("Horizontal");

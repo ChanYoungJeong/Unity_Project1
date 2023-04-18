@@ -20,8 +20,6 @@ public class PlayerExpBar : MonoBehaviour
 
     private void Start()
     {
-        expSlider.transform.position = new Vector3(transform.position.x, transform.position.y - 1f, 0);
-
     }
 
     // Update is called once per frame

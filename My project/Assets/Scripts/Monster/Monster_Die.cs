@@ -11,9 +11,12 @@ public class Monster_Die : MonoBehaviour
 
     private void Awake()
     {
-        GameObject Player = GameObject.Find("Player");
-        PlayerStat = Player.GetComponent<Stat>();
-        playerExp = Player.GetComponent<PlayerExpBar>();
+        if (GameObject.FindWithTag("Player"))
+        {
+            GameObject Player = GameObject.FindWithTag("Player");
+            PlayerStat = Player.GetComponent<Stat>();
+            playerExp = Player.GetComponent<PlayerExpBar>();
+        }
         monster_Script = GetComponent<Monster_Script>();
     }
 
