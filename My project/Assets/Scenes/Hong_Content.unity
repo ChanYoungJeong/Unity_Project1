@@ -684,9 +684,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac7c675a05d8b94a8327fd2e16126ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AsderBead: {fileID: 0}
+  PlayerTrans: {fileID: 5230932678622522759}
   SubAsder: {fileID: 2771992191188612296}
   y: 0
+  BeadCount: 0
 --- !u!4 &305442566
 Transform:
   m_ObjectHideFlags: 0
@@ -1213,7 +1214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03523949faf90a47b732b4f164a50ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asdercount: 0
+  AsderCount: {fileID: 305442565}
 --- !u!61 &733497807
 BoxCollider2D:
   m_ObjectHideFlags: 0
