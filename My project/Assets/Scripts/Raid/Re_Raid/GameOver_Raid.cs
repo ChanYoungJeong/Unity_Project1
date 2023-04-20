@@ -6,16 +6,17 @@ public class GameOver_Raid : MonoBehaviour
 {
     public GameObject endLine;
     Animator animator;
+    MoveLeftScript MoveLeftScript;
 
     private void Awake()
     {
+        MoveLeftScript = GetComponentInParent<MoveLeftScript>();
         animator = GetComponent<Animator>();
         animator.speed = 0.5f;
     }
 
-    void SropRaid()
+    void StopRaid()
     {
-        Debug.Log("Á¤Áö");
         Time.timeScale = 0;
     }
 
