@@ -7,8 +7,8 @@ public class CameraShake : MonoBehaviour
 public Camera mainCamera;
  Vector3 cameraPos;
 
- [SerializeField] float shakeRange = 0.05f;
- [SerializeField] float duration = 0.5f;
+ [SerializeField] [Range(0.01f, 0.5f)] float shakeRange = 0.05f;
+ [SerializeField] [Range(0.1f,5f)] float duration = 0.5f;
 
 
 public void Shake(){
@@ -24,6 +24,7 @@ void Shaking(){
     cameraPos.x += cameraPosX;
     cameraPos.y += cameraPosY;
     mainCamera.transform.position = cameraPos;
+    
 }
 void StopShake(){
     CancelInvoke("Shaking");
