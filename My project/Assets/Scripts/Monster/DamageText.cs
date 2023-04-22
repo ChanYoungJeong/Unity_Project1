@@ -13,7 +13,15 @@ public class DamageText : MonoBehaviour
     public float damage;
     public Color damageColor;
 
-    
+    private void Awake()
+    {
+        if(GameObject.FindWithTag("GameManager"))
+        {
+            this.transform.SetParent(GameObject.FindWithTag("GameManager").GetComponent<Game_System>().DamageTextHolder);
+            
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
