@@ -14,7 +14,6 @@ public class GetAsderBead : MonoBehaviour
     //AsderCount에서 BeadCount를 올리는 과정은 if문을 써도 되지만
     //눌러서 소환하는거 if문 쓰면 죽인다
 
-
     //Asder소환하는거는 동적으로 작동하게 해라
     //힌트 : Asder갯수 올리는거랑 소환하는거랑 스크립트 분리해라
     //     : Asder갯수 올리는 스크립트에는 오른쪽에 있는 각 에스더의 갯수랑, 존재여부만 관리하는 Manager 한개만 있으면됨
