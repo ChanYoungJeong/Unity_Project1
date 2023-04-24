@@ -52,7 +52,7 @@ public class PlayerObj : MonoBehaviour
     }
     void Update()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y, transform.localPosition.y * 0.01f);
+        transform.position = new Vector3(transform.position.x,transform.position.y,transform.localPosition.y * 0.01f);
         switch(_currentState)
         {
             case PlayerState.idle:

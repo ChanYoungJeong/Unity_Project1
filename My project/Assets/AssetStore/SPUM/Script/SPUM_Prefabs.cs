@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.Events;
-
 public class SPUM_Prefabs : MonoBehaviour
 {
     public float _version;
@@ -34,16 +33,17 @@ public class SPUM_Prefabs : MonoBehaviour
             _nameToHashPair.Add(clip.name, hash);
         }
     }
-
     private void Awake() {
         InitAnimPair();
     }
     private void Start() {
         UnitTypeChanged.AddListener(InitAnimPair);
     }
-
     // 이름으로 애니메이션 실행
     public void PlayAnimation(string name){
+
+        Debug.Log(name);
+        
         foreach (var animationName in _nameToHashPair)
         {
             if(animationName.Key.ToLower().Contains(name.ToLower()) ){
