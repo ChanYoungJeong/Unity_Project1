@@ -14,6 +14,8 @@ public class PrefabOnTrigger : MonoBehaviour
     Monster_Combat monsterCombat;
     public float damage;
     private bool hitted = false;
+
+    public GameObject Impact;
     private void Awake()
     {
         hitted = false;
@@ -52,6 +54,14 @@ public class PrefabOnTrigger : MonoBehaviour
                 monsterCombat.ApplyDamage(damage, damageColor, 0, 0);
                 Destroy(this.gameObject, destroytime);
             }
+
+            if (Impact != null)
+            {
+                Debug.Log("here");
+                GameObject impact = Instantiate(Impact, this.transform.position, this.transform.rotation);
+                Destroy(impact, 1);
+            }
+
         }
 
         if (collision.transform.GetComponent<BossScript>())
@@ -60,6 +70,9 @@ public class PrefabOnTrigger : MonoBehaviour
             monsterCombat.ApplyDamage(damage, damageColor, 0, 0);
             Destroy(this.gameObject, destroytime);
         }
+
+
+
     }
 
     void AnimationEnd()

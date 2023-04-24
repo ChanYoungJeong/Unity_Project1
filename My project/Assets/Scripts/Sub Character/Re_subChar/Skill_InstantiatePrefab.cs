@@ -32,6 +32,7 @@ public class Skill_InstantiatePrefab : MonoBehaviour
     public void CreateSkillPrefab(GameObject prefab)
     {
         GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle));
+        prefabClone.transform.eulerAngles = new Vector3(0, 0, angle);
         prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
         if (prefabClone.GetComponent<PrefabOnTrigger>())
             prefabClone.GetComponent<PrefabOnTrigger>().damage = stat.skillDamage;
