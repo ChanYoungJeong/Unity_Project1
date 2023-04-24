@@ -22,8 +22,8 @@ public class IO_GameSystem : MonoBehaviour
         {
             Game_System.Stage = 0;
             Game_System.Gold = 12345678;
-            PlayerUpgrade.atk_scoreButton = 0;
-            PlayerUpgrade.hp_scoreButton = 0;
+            //PlayerUpgrade.atk_scoreButton = 0;
+            //PlayerUpgrade.hp_scoreButton = 0;
         }
         // else
         // {

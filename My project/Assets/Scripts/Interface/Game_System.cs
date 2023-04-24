@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class Game_System : MonoBehaviour
 {
-
     public static int Gold;
     public int _Gold;   //To Visualize Gold Amount
     public Text displyGold;
+
+    public static int Diamond;
+    public Text displayDiamond;
 
     public static int Stage = 0;
     public static float StageDelay = 2.5f;
@@ -17,13 +19,16 @@ public class Game_System : MonoBehaviour
     int bossStageRotation = 5;
     public Text Stage_Text;
 
+    public Transform DamageTextHolder;
+
     // Update is called once per frame
     void Update()
     {
         _Gold = Gold;
-        displyGold.text = "Gold : " + _Gold;
         displyGold.text = Gold.ToString() + "G";
         Stage_Text.text = "Stage " + Stage;
+
+        displayDiamond.text = Diamond.ToString();
 
         if((Stage + 1) % bossStageRotation == 0)
         {

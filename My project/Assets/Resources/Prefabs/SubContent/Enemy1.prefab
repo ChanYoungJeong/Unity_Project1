@@ -43,7 +43,7 @@ Animator:
   m_GameObject: {fileID: 715876774569330655}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 76149cc73eb251040bbc42852ee439fb, type: 2}
+  m_Controller: {fileID: 9100000, guid: 08f3adc5496fcb146bd9839fa1b459f5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -94,7 +94,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7008412969330441016, guid: 5cdfcef2d5ef97347a8d7935407f81ab, type: 3}
+  m_Sprite: {fileID: -7008412969330441016, guid: ce3326307819d6e4497038e63e070108, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -121,9 +121,10 @@ GameObject:
   - component: {fileID: -9093825260425995023}
   - component: {fileID: 8612973221486136816}
   - component: {fileID: 5658847305314122215}
-  - component: {fileID: 5547144487153704696}
+  - component: {fileID: -2702009654039328067}
+  - component: {fileID: -8864496090719661549}
   m_Layer: 0
-  m_Name: Enemy2
+  m_Name: Enemy1
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -307,10 +308,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3fc3f1eb8a147e4eb128effebe6837a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterTpye: 1
+  monsterTpye: 0
   speed: 2
   spriter: {fileID: 7932895842161468248}
---- !u!114 &5547144487153704696
+--- !u!114 &-2702009654039328067
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -323,6 +324,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterDieAnimation: {fileID: 8049821130837150683, guid: 0f7e6cefdc203cb4da4de31ca5a7bfc3, type: 3}
+  DropBead: {fileID: -8864496090719661549}
+--- !u!114 &-8864496090719661549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969604836136404861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e452b4e8d7fe3db4fa3306f3b5bf53fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bead: {fileID: 1301131912594922601, guid: 20db3fa767afb974dadb5be9a6ab1aa8, type: 3}
+  dropRate: 50
 --- !u!1 &2001366047354952428
 GameObject:
   m_ObjectHideFlags: 0
