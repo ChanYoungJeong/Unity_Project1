@@ -49,6 +49,7 @@ public class CharCombatManager : MonoBehaviour
         {
             if (canSkill)
             {
+                
                 Skill();
                 return;
             }
@@ -74,6 +75,7 @@ public class CharCombatManager : MonoBehaviour
     {
         //StopCoroutine(Skill());
         canSkill = false;
+        animator.ResetTrigger(BasicAttackAnimationName);
         animator.SetTrigger(SkillAttackAnimationName);
         coolTimeBar.currentValue = 0;
     }

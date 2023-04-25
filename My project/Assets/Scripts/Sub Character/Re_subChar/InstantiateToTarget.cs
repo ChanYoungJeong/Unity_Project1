@@ -7,7 +7,7 @@ public class InstantiateToTarget : MonoBehaviour
 {
     [SerializeField]
     Transform TargetObject;
-    Transform target;
+    bool hasSelectedTarget;
 
     Vector3 TargetPosition;
     [SerializeField]
@@ -17,13 +17,15 @@ public class InstantiateToTarget : MonoBehaviour
 
     GameObject prefabObject;
     private Stat stat;
+
+    private float angle;
     void Start()
     {
         stat = GetComponentInParent<Stat>();
 
 
-        if (!TargetObject) return;
-        getTarget();
+        if (TargetObject)
+        setTarget();
     }
 
     // Update is called once per frame
@@ -31,19 +33,21 @@ public class InstantiateToTarget : MonoBehaviour
     {
         if (!Battle_Situation_Trigger.monster) return;
 
-        if (!TargetObject)
+        if (!hasSelectedTarget)
         {
-            target = Battle_Situation_Trigger.monster ?
+            TargetObject = Battle_Situation_Trigger.monster ?
             Battle_Situation_Trigger.monster.transform : CreateBoss.Bss.transform;
+            TargetPosition = TargetObject.position;
         }
     }
 
-    void getTarget()
+    void setTarget()
     {
         TargetPosition = new Vector3(TargetObject.position.x + x, TargetObject.position.y + y, 0);
+        hasSelectedTarget = true;
     }
 
-    void createPrefab(GameObject prefab)
+    void createPrefabByTarget(GameObject prefab)
     {
         prefabObject = Instantiate(prefab, TargetPosition , Quaternion.identity);
         setHeal();
@@ -60,11 +64,7 @@ public class InstantiateToTarget : MonoBehaviour
     //추후에 Heal말고 다른 데미지 스크립트 사용시 사용할것
     void setDamage()
     {
-
-    }
-
-    void Ligntning(GameObject prefab)
-    {
-        GameObject prefabClone = Instantiate(prefab, target.position, Quaternion.identity);
+        if (prefabObject.GetComponent<PrefabOnTrigger>())
+            prefabObject.GetComponent<PrefabOnTrigger>().damage = stat.skillDamage;
     }
 }
