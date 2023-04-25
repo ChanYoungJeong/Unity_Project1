@@ -57,7 +57,6 @@ public class PrefabOnTrigger : MonoBehaviour
 
             if (Impact != null)
             {
-                Debug.Log("here");
                 GameObject impact = Instantiate(Impact, this.transform.position, this.transform.rotation);
                 Destroy(impact, 1);
             }

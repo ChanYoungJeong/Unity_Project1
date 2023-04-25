@@ -7,7 +7,7 @@ public class Skill_InstantiatePrefab : MonoBehaviour
     [SerializeField] private float speed = 20;
     [SerializeField] private GameObject prefab;
 
-
+    public Transform startTransform;
 
 
     private Stat stat;
@@ -17,6 +17,11 @@ public class Skill_InstantiatePrefab : MonoBehaviour
 
     private void Start()
     {
+        if (!startTransform)
+            startTransform = this.transform;
+        else
+            Debug.Log(startTransform.position);
+
         stat = GetComponentInParent<Stat>();
     }
 
@@ -26,12 +31,12 @@ public class Skill_InstantiatePrefab : MonoBehaviour
 
         if (!Battle_Situation_Trigger.monster && !BossScript.boss) return;
 
-        GetTargetPosition(transform);
+        GetTargetPosition(startTransform);
     }
 
     public void CreateSkillPrefab(GameObject prefab)
     {
-        GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle));
+        GameObject prefabClone = Instantiate(prefab, startTransform.position, Quaternion.Euler(0, 0, angle));
         prefabClone.transform.eulerAngles = new Vector3(0, 0, angle);
         prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
         if (prefabClone.GetComponent<PrefabOnTrigger>())
