@@ -9,7 +9,7 @@ public class PrefabOnTrigger : MonoBehaviour
     [SerializeField]
     //Color 또한 변수로 나둬서, 캐릭터 스텟에서 받아오거나 직접 설정해서 데미지 색상을 바꿈
     Color damageColor;
-    
+
     [SerializeField] float destroytime;
     Monster_Combat monsterCombat;
     public float damage;
@@ -18,6 +18,7 @@ public class PrefabOnTrigger : MonoBehaviour
     public GameObject Impact;
     private void Awake()
     {
+        setParentHolder(this.transform);
         hitted = false;
     }
 
@@ -46,7 +47,7 @@ public class PrefabOnTrigger : MonoBehaviour
                 Destroy(this.gameObject, 3f);
             }
             //하나만 때릴경우
-            if(!multiHit && !hitted)
+            if (!multiHit && !hitted)
             {
                 //타겟만 적용
                 hitted = true;
@@ -58,6 +59,7 @@ public class PrefabOnTrigger : MonoBehaviour
             if (Impact != null)
             {
                 GameObject impact = Instantiate(Impact, this.transform.position, this.transform.rotation);
+                setParentHolder(impact.transform);
                 Destroy(impact, 1);
             }
 
@@ -77,5 +79,13 @@ public class PrefabOnTrigger : MonoBehaviour
     void AnimationEnd()
     {
         Destroy(gameObject);
+    }
+
+    void setParentHolder(Transform transform)
+    {
+        if (GameObject.FindWithTag("GameManager"))
+        {
+            transform.SetParent(GameObject.FindWithTag("GameManager").transform.Find("ProjectileHolder"));
+        }
     }
 }
