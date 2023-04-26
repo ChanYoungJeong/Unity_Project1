@@ -5,10 +5,13 @@ using UnityEngine;
 public class GameOver_Raid : MonoBehaviour
 {
     public GameObject endLine;
+    public GameObject overBtn;
     Animator animator;
 
     private void Awake()
     {
+        overBtn.SetActive(false);
+
         animator = GetComponent<Animator>();
         animator.speed = 0.5f;
     }
@@ -17,6 +20,8 @@ public class GameOver_Raid : MonoBehaviour
     {
         Debug.Log("Á¤Áö");
         Time.timeScale = 0;
+
+        overBtn.SetActive(true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -11,4 +11,16 @@ public class MoveLeftScript: MonoBehaviour
         // 왼쪽으로 이동하는 로직
         transform.Translate(Vector3.left * speed * Time.deltaTime);
     }
+
+
+
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "EndLine")
+        {
+            speed = 0;
+        }
+    }
 }
