@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Stat : MonoBehaviour
 {
+    [Header("¡æ¡∑")]
+    public string type;
     [Header("Ω∫≈»")]
     public float maxHp;
     public float nowHp;
