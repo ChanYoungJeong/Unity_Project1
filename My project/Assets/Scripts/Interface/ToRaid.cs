@@ -9,8 +9,9 @@ public class ToRaid : MonoBehaviour
     {
         SceneManager.LoadScene("Re_Raid");
     }
-    public void SceneChangePriject()
+    public void SceneChangeProject()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Project");
         Time.timeScale = 1;
     }

@@ -5,18 +5,19 @@ using UnityEngine.UI;
 
 public class Boss_HpBar : MonoBehaviour
 {
-    Slider hpSlider;
-    BossMonster_Script bossScript;
+    public Slider hpSlider;
+    Monster_Script bossScript;
     float maxHP;
     float nowHP;
-  
+
     void Awake()
     {
-        bossScript = GetComponent<BossMonster_Script>();
-        hpSlider = GameObject.Find("BossHpBar").GetComponent<Slider>();
+        bossScript = GetComponent<Monster_Script>();
     }
     void Update()
     {
+        hpSlider.transform.position = new Vector3(transform.position.x, transform.position.y + 9.2f, transform.position.z); ;
+
         maxHP = bossScript.maxHp;
         nowHP = bossScript.nowHp;
         HandleHp();
