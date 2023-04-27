@@ -71,9 +71,6 @@ public class PrefabOnTrigger : MonoBehaviour
             monsterCombat.ApplyDamage(damage, damageColor, 0, 0);
             Destroy(this.gameObject, destroytime);
         }
-
-
-
     }
 
     void AnimationEnd()

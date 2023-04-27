@@ -5,11 +5,13 @@ using static UnityEngine.GraphicsBuffer;
 
 public class InstantiateToTarget : MonoBehaviour
 {
+    [Header("타겟이 정적일 시 넣기/아닐시 빈칸으로")]
     [SerializeField]
     Transform TargetObject;
     bool hasSelectedTarget;
 
     Vector3 TargetPosition;
+    [Header("타겟을 기준으로 x,y 축 조정값")]
     [SerializeField]
     float x;
     [SerializeField]
@@ -37,7 +39,7 @@ public class InstantiateToTarget : MonoBehaviour
         {
             TargetObject = Battle_Situation_Trigger.monster ?
             Battle_Situation_Trigger.monster.transform : CreateBoss.Bss.transform;
-            TargetPosition = TargetObject.position;
+            TargetPosition = new Vector3(TargetObject.position.x + x, TargetObject.position.y + y, 0);
         }
     }
 
