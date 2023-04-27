@@ -48,21 +48,8 @@ public class GetAsderBead : MonoBehaviour
         
         if (collision.gameObject.name == "Player(SubContent)")
         {
-            //이부분 바꿔라
-            //AsderCount.BeadCount++
-            
-            if(BeadType == "Archer")
-            {
-                heroSummon.AsderCount[0]++;
-            }
-            else if (BeadType == "Rogue")
-            {
-                heroSummon.AsderCount[1]++;
-            }
-            else if (BeadType == "Wizzard")
-            {
-                heroSummon.AsderCount[2]++;
-            }
+            //여기서부터 다시만들어
+           
 
 
             //
