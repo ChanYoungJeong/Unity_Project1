@@ -8,8 +8,6 @@ public class Stop_Monster : MonoBehaviour
     public bool monster_Stop = false;
     public float speed = 3.0f;
     public bool atSpot = false;
-    private Rigidbody2D monster1_Rigid;
-
 
     public PlayerScript playerScript;
     public Monster_Script monster_Script;
@@ -37,9 +35,17 @@ public class Stop_Monster : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Block")
+        {
+            rigid.velocity = Vector2.zero;
+        }
+    }
+
     private void Move_Left()
     {
-        monster1_Rigid = GetComponent<Rigidbody2D>();
-        monster1_Rigid.velocity = transform.right * -1 * speed;
+        rigid = GetComponent<Rigidbody2D>();
+        rigid.velocity = transform.right * -1 * speed;
     }
 }

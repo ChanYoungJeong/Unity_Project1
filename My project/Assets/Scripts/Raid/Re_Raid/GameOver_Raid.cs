@@ -27,8 +27,9 @@ public class GameOver_Raid : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.gameObject == endLine)
+        if (collision.gameObject.tag == "Block")
         {
+            Debug.Log("공격 실행");
             animator.SetTrigger("Boss_SkillNormal");
         }
     }
