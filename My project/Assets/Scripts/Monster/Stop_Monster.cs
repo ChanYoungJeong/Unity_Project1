@@ -12,6 +12,8 @@ public class Stop_Monster : MonoBehaviour
     public PlayerScript playerScript;
     public Monster_Script monster_Script;
 
+
+    bool isDie = false;
     //Battle_Situation_Trigger
 
     private void Awake()
@@ -21,6 +23,15 @@ public class Stop_Monster : MonoBehaviour
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        if(monster_Script.nowHp <= 0 && !isDie)
+        {
+            rigid.velocity = Vector2.zero;
+            isDie = true;
+        }
     }
 
     // Update is called once per frame
