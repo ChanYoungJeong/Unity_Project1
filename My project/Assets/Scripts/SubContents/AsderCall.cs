@@ -7,61 +7,27 @@ using static UnityEditor.ShaderData;
 
 public class AsderCall : MonoBehaviour
 {
-    public Button AsderButton;
-    GetAsderBead Getasderbead;
+    //GetAsderBead Getasderbead;
     public Transform PlayerTrans;
-    private Joystick joystick;
-    public GameObject SubAsder;
+    public GameObject subHeroPrefab;
+    public HeroSummon BeadCount;
+    public int subHeroNum;
 
     public float y;
-    public int BeadCount;
-    public float DestroyCount;
-   
-    
+    public float DestroyTime;
+
     private void Awake()
     {
-        if (GameObject.Find("joystickBG"))
-        {
-            joystick = GameObject.FindObjectOfType<Joystick>();
-        }
+        BeadCount = GameObject.Find("GameManager").GetComponent<HeroSummon>();
     }
-    private void Update()
+    public void CallAsder(int N)
     {
-        OnOffAsderButton();
-    }
 
-    public void OnOffAsderButton()
-    {
-        if (BeadCount > 0)
-        {
-            AsderButton.interactable = true;
-        }
-        else
-            AsderButton.interactable = false;
-    }
-    public void CallAsder()
-    {
-        if (BeadCount > 0)
-        {
+        GameObject subHeroClone = Instantiate(subHeroPrefab, PlayerTrans.position + Vector3.right * 1.0f, Quaternion.identity);
+        subHeroClone.transform.rotation = Quaternion.Euler(0, y, 0);
 
-            /*if (joystick.Horizontal != 0 || joystick.Vertical != 0)
-            {
-                if (joystick.Horizontal > 0)
-                {
-                    y = 180;
-                }
-                else
-                {
-                    y = 0;
-                }
-            }*/
+        Destroy(subHeroClone, DestroyTime);
+        BeadCount.AsderCount[subHeroNum]--;
 
-            GameObject Asder = Instantiate(SubAsder, PlayerTrans.position + Vector3.right * 1.0f, Quaternion.identity);
-            Asder.transform.rotation = Quaternion.Euler(0, y, 0);
-
-            Destroy(Asder,DestroyCount);
-        }
-       
-        BeadCount--;
     }
 }
