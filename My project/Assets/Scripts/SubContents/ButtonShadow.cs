@@ -18,6 +18,7 @@ public class ButtonShadow : MonoBehaviour
     
     private void Awake()
     {
+        //얘는 동적할당이 아닌데 왜 FInd를 쓰는거임 끌어다 써야지
         SubCount = GameObject.Find("GameManager").GetComponent<HeroSummon>();
         SubButtons = ButtonHolder.GetComponentsInChildren<Button>(); //찬영
     }

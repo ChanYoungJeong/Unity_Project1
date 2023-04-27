@@ -48,7 +48,8 @@ public class GetAsderBead : MonoBehaviour
         
         if (collision.gameObject.name == "Player(SubContent)")
         {
-            //여기서부터 다시만들어
+            //여기서부터 다시만들어 내 생각에는 이제 if로 구분하는것도 필요없다.
+            //힌트 : 찾을때만 쓸것
            
 
 
