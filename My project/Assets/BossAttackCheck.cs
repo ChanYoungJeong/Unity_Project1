@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class BossAttackCheck : MonoBehaviour
 {
-    public Animator bossAnimator;
+    public Animator[] subHeroAnimator; // ¼öÁ¤ÇÏ±â
 
-    private Animator animator;
+    private Animator bossAnimator;
 
     bool isDie = false;
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        bossAnimator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -29,8 +29,11 @@ public class BossAttackCheck : MonoBehaviour
         {
             if (bossAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1f)
             {
-                Debug.Log("Á×À½");
-                animator.SetTrigger("Die");
+                for(int i = 0; i<subHeroAnimator.Length; i++)
+                {
+                    Debug.Log("Á×À½");
+                    subHeroAnimator[i].SetTrigger("Die");
+                }
 
                 isDie = true;
             }

@@ -19,7 +19,7 @@ public class GameOver_Raid : MonoBehaviour
     void SropRaid()
     {
         Debug.Log("Á¤Áö");
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
 
         overBtn.SetActive(true);
     }
