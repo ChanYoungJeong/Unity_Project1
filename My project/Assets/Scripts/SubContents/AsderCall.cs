@@ -61,8 +61,8 @@ public class AsderCall : MonoBehaviour
             thisButton.interactable = false;
     }
 
-    //int N 왜있는거임?
-    public void CallAsder(int N)
+    
+    public void CallAsder()
     {
         Debug.Log("here");
         GameObject subHeroClone = Instantiate(subCharPrefab, Player.position + Vector3.right * 1.0f, Quaternion.identity);
