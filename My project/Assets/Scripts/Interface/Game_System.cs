@@ -40,6 +40,14 @@ public class Game_System : MonoBehaviour
         }
     }
 
+    public static void setParentHolder(Transform transform)
+    {
+        if (GameObject.FindWithTag("GameManager"))
+        {
+            transform.SetParent(GameObject.FindWithTag("GameManager").transform.Find("ProjectileHolder"));
+        }
+    }
+
 }
 
 

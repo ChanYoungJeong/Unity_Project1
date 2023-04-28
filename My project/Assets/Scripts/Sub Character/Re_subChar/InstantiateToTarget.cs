@@ -49,7 +49,7 @@ public class InstantiateToTarget : MonoBehaviour
         hasSelectedTarget = true;
     }
 
-    void createPrefabByTarget(GameObject prefab)
+    void createPrefabToTarget(GameObject prefab)
     {
         prefabObject = Instantiate(prefab, TargetPosition , Quaternion.identity);
         setHeal();

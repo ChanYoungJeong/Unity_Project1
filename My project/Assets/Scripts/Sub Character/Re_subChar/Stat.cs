@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Stat : MonoBehaviour
 {
+    public bool multishot;
+
     [Header("¡æ¡∑")]
     public string type;
     [Header("Ω∫≈»")]

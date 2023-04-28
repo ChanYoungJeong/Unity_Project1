@@ -10,7 +10,7 @@ public class Stop_Monster : MonoBehaviour
     public bool atSpot = false;
 
     public PlayerScript playerScript;
-    public Monster_Script monster_Script;
+    Monster_Script monster_Script;
 
 
     bool isDie = false;
@@ -18,6 +18,7 @@ public class Stop_Monster : MonoBehaviour
 
     private void Awake()
     {
+        monster_Script = GetComponent<Monster_Script>();
         Move_Left();
     }
     void Start()
