@@ -10,6 +10,7 @@ public class Heal : MonoBehaviour
 
     private void Awake()
     {
+        Game_System.setParentHolder(transform);
         Destroy(gameObject, destroyTime);
     }
 

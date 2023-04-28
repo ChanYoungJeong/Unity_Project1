@@ -33779,9 +33779,9 @@ GameObject:
   - component: {fileID: 1377933143726588698}
   - component: {fileID: 4581834009448269770}
   - component: {fileID: 5495647268805624608}
-  - component: {fileID: 6669217325347118882}
   - component: {fileID: 5667047928509378904}
   - component: {fileID: 6090409909314968369}
+  - component: {fileID: 7836888372891610640}
   m_Layer: 0
   m_Name: Meteor_Projectile
   m_TagString: Untagged
@@ -38607,23 +38607,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &6669217325347118882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4284709529545050040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ac4c91d7e348df4c8b9682f6d9d8805, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  multiHit: 1
-  damageColor: {r: 1, g: 0.7056854, b: 0, a: 1}
-  destroytime: 0
-  damage: 0
-  Impact: {fileID: 5886408812601856235, guid: 2dffb2d72ef468248897f6002873b773, type: 3}
 --- !u!50 &5667047928509378904
 Rigidbody2D:
   serializedVersion: 4
@@ -38661,6 +38644,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 3}
   m_Direction: 0
+--- !u!114 &7836888372891610640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4284709529545050040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 509f5fedea53e8f429211256e48e4e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Impact: {fileID: 5886408812601856235, guid: 2dffb2d72ef468248897f6002873b773, type: 3}
 --- !u!1 &5294086139465989326
 GameObject:
   m_ObjectHideFlags: 0

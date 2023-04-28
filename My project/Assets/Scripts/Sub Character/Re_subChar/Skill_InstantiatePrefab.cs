@@ -41,6 +41,8 @@ public class Skill_InstantiatePrefab : MonoBehaviour
         prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
         if (prefabClone.GetComponent<PrefabOnTrigger>())
             prefabClone.GetComponent<PrefabOnTrigger>().damage = stat.skillDamage;
+        if (prefabClone.GetComponent<PointerOnTrigger>())
+            prefabClone.GetComponent<PointerOnTrigger>().damage = stat.skillDamage;
     }
 
     public void GetTargetPosition(Transform transObj)
