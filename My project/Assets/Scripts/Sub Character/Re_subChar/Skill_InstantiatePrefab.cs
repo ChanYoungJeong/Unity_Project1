@@ -19,8 +19,6 @@ public class Skill_InstantiatePrefab : MonoBehaviour
     {
         if (!startTransform)
             startTransform = this.transform;
-        else
-            Debug.Log(startTransform.position);
 
         stat = GetComponentInParent<Stat>();
     }
