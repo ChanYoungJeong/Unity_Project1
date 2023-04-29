@@ -58,7 +58,7 @@ public class PrefabOnTrigger : MonoBehaviour
 
             if (Impact != null)
             {
-                GameObject impact = Instantiate(Impact, this.transform.position, this.transform.rotation);
+                GameObject impact = Instantiate(Impact, collision.transform.position, collision.transform.rotation);
                 Game_System.setParentHolder(impact.transform);
                 Destroy(impact, 1);
             }

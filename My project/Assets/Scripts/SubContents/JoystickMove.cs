@@ -27,11 +27,11 @@ public class JoystickMove : MonoBehaviour
             Anim.SetBool("Run", true);
             if (joystick.Horizontal > 0)
             {
-                transform.localScale = new Vector3(scale.x, scale.y, scale.z);
+                transform.localScale = new Vector3(-scale.x, scale.y, scale.z);
             }
             else
             {
-                transform.localScale = new Vector3(-scale.x, scale.y, scale.z);
+                transform.localScale = new Vector3(scale.x, scale.y, scale.z);
             }
 
             MoveControl();

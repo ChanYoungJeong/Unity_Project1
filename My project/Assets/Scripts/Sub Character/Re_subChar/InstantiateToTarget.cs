@@ -5,6 +5,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class InstantiateToTarget : MonoBehaviour
 {
+    public bool isSkill;
     [Header("타겟이 정적일 시 넣기/아닐시 빈칸으로")]
     [SerializeField]
     Transform TargetObject;
@@ -31,14 +32,20 @@ public class InstantiateToTarget : MonoBehaviour
     }
 
     // Update is called once per frame
+    // 플레이어 서브컨텐츠 Update문 바꿔야함
+    // 귀찮아서 일단 Anmation에 세팅해놨음
     void Update()
     {
-        if (!Battle_Situation_Trigger.monster) return;
+        //if (!Battle_Situation_Trigger.monster) return;
 
         if (!hasSelectedTarget)
         {
             TargetObject = Battle_Situation_Trigger.monster ?
             Battle_Situation_Trigger.monster.transform : CreateBoss.Bss.transform;
+            TargetPosition = new Vector3(TargetObject.position.x + x, TargetObject.position.y + y, 0);
+        }
+        else
+        {
             TargetPosition = new Vector3(TargetObject.position.x + x, TargetObject.position.y + y, 0);
         }
     }
@@ -52,6 +59,12 @@ public class InstantiateToTarget : MonoBehaviour
     void createPrefabToTarget(GameObject prefab)
     {
         prefabObject = Instantiate(prefab, TargetPosition , Quaternion.identity);
+        //나중에 위치 바꿔야할듯
+        if (Mathf.Abs(TargetObject.localScale.x) < Mathf.Abs(prefabObject.transform.localScale.x))
+        {
+            prefabObject.transform.localScale = new Vector3(-TargetObject.localScale.x, TargetObject.localScale.y, TargetObject.localScale.z);   
+        }
+        
         setHeal();
         setDamage();
     }
@@ -66,7 +79,12 @@ public class InstantiateToTarget : MonoBehaviour
     //추후에 Heal말고 다른 데미지 스크립트 사용시 사용할것
     void setDamage()
     {
+        float dmg;
+        if (isSkill)
+            dmg = stat.skillDamage;
+        else
+            dmg = stat.atkDamage;
         if (prefabObject.GetComponent<PrefabOnTrigger>())
-            prefabObject.GetComponent<PrefabOnTrigger>().damage = stat.skillDamage;
+            prefabObject.GetComponent<PrefabOnTrigger>().damage = dmg;
     }
 }

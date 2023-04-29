@@ -26,7 +26,7 @@ public class SubCon_AttackScript : MonoBehaviour
 
     public void ActiveAttack()
     {
-        Anim.SetBool("AttackNormal", true);
+        Anim.SetTrigger("AttackNormal");
     }
 
     public void DeActiveAttack()
