@@ -34,7 +34,8 @@ public class InstantiatePrefab : MonoBehaviour
 
     public void GetTargetPosition(Transform transObj)
     {
-        Transform target = Battle_Situation_Trigger.monster ? Battle_Situation_Trigger.monster.transform : BossScript.boss.transform;
+        Transform target = Battle_Situation_Trigger.monster ? 
+            Battle_Situation_Trigger.monster.transform : BossScript.boss.transform;
         angle = Mathf.Atan2(target.position.y - transObj.position.y, target.position.x - transObj.position.x) * Mathf.Rad2Deg;
     }
 }
