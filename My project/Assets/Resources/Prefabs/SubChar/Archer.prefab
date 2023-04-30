@@ -1118,7 +1118,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 116.3, y: 2.2}
+  m_AnchoredPosition: {x: 145.9, y: 1.4}
   m_SizeDelta: {x: 80, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1406773151558716453
@@ -3785,7 +3785,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   prefab: {fileID: 392801476148453369, guid: 2c86b36e09a7b06449dee84c7440648e, type: 3}
-  animatorName: AttackBow
 --- !u!114 &7465169568929908464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3800,7 +3799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   prefab: {fileID: 8130810599518239819, guid: 272fd1d94139f7c4ca399b4fa3e1f125, type: 3}
-  animatorName: SkillBow
+  startTransform: {fileID: 0}
 --- !u!1 &8192708024766004853
 GameObject:
   m_ObjectHideFlags: 0
@@ -4207,14 +4206,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc0bc98ca0eb85f4fb47b17f7ca8a1c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  multishot: 0
+  type: 
   maxHp: 100
   nowHp: 100
   atkDamage: 20
   criticalRate: 0
   atkSpeed: 1
-  lv: 0
+  lv: 1
   skillCooldown: 11
-  skillDamage: 60
+  skillDamage: 29
   maxExp: 0
   nowExp: 0
   shield: 0
