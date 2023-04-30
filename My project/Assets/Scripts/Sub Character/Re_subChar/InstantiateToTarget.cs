@@ -41,7 +41,7 @@ public class InstantiateToTarget : MonoBehaviour
         if (!hasSelectedTarget)
         {
             TargetObject = Battle_Situation_Trigger.monster ?
-            Battle_Situation_Trigger.monster.transform : CreateBoss.Bss.transform;
+            Battle_Situation_Trigger.monster.transform : BossScript.boss.transform;
             TargetPosition = new Vector3(TargetObject.position.x + x, TargetObject.position.y + y, 0);
         }
         else
