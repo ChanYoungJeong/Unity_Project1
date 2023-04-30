@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 1257612920849246608}
   - component: {fileID: 748623726662516462}
   - component: {fileID: 2053830853726461891}
-  - component: {fileID: 2053830853726461892}
+  - component: {fileID: 1102112886}
   m_Layer: 0
   m_Name: UnitRoot
   m_TagString: Untagged
@@ -166,20 +166,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   prefab: {fileID: 6279566264091817118, guid: 72b9998e4899e1c4ebc1873f20f588f0, type: 3}
---- !u!114 &2053830853726461892
+--- !u!114 &1102112886
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 323098443399462565}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1bef431883443646bd2d64230bd1d44, type: 3}
+  m_Script: {fileID: 11500000, guid: 66eb4dcbe4bbd73409c9dd97c3daaab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  prefab: {fileID: 0}
+  isSkill: 0
+  TargetObject: {fileID: 0}
+  x: 0
+  y: -0.5
 --- !u!1 &825588853523232517
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,7 +346,7 @@ GameObject:
   - component: {fileID: 843501834759956123}
   - component: {fileID: 843501834759956124}
   m_Layer: 5
-  m_Name: IceMagican
+  m_Name: ElectricMagican
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -406,14 +408,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc0bc98ca0eb85f4fb47b17f7ca8a1c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  multishot: 0
+  type: 
   maxHp: 100
   nowHp: 100
   atkDamage: 30
   criticalRate: 0
   atkSpeed: 2.5
   lv: 1
-  skillCooldown: 10
-  skillDamage: 10
+  skillCooldown: 5
+  skillDamage: 39
   maxExp: 0
   nowExp: 0
   shield: 0
@@ -4298,7 +4302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 182, y: 111}
+  m_AnchoredPosition: {x: 75.2, y: -7.3}
   m_SizeDelta: {x: 80, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8814761728350404590

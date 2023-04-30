@@ -82,6 +82,7 @@ GameObject:
   - component: {fileID: 62795489}
   - component: {fileID: 62795488}
   - component: {fileID: 62795487}
+  - component: {fileID: 1979223370}
   m_Layer: 5
   m_Name: Canvas::Player
   m_TagString: Untagged
@@ -145,11 +146,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -173,6 +174,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1979223370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62795485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23184193b5ca7a34f9885c7a5348f993, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3005295253290942559}
+  hp: {fileID: 1114317610}
+  exp: {fileID: 2049227186}
 --- !u!1 &158131007
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,7 +453,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3, y: 32}
+  m_AnchoredPosition: {x: -12.3, y: 40.7}
   m_SizeDelta: {x: 50, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1114317611
@@ -657,7 +673,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.6, y: -15.7}
+  m_AnchoredPosition: {x: -9.9, y: -17.4}
   m_SizeDelta: {x: 60, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2049227187
@@ -1772,9 +1788,9 @@ GameObject:
   - component: {fileID: 3005295253290942546}
   - component: {fileID: 3005295254180805564}
   - component: {fileID: 3005295254180805563}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1835,6 +1851,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc0bc98ca0eb85f4fb47b17f7ca8a1c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  multishot: 0
+  type: 
   maxHp: 100
   nowHp: 100
   atkDamage: 20
@@ -4710,6 +4728,7 @@ GameObject:
   - component: {fileID: 7721319714985138932}
   - component: {fileID: 8086202440483081610}
   - component: {fileID: 3005295252574162217}
+  - component: {fileID: 1501354081}
   m_Layer: 0
   m_Name: UnitRoot
   m_TagString: Untagged
@@ -4755,7 +4774,7 @@ Animator:
   m_GameObject: {fileID: 9092683278507281857}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ab937231d0600440fb0d8757568d78d7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 65a6a0c340273c8478177c99cbd820b9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4778,3 +4797,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {r: 0.913885, g: 1, b: 0, a: 1}
+--- !u!114 &1501354081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9092683278507281857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66eb4dcbe4bbd73409c9dd97c3daaab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSkill: 0
+  TargetObject: {fileID: 3005295253290942559}
+  x: 0.7
+  y: 0.6
