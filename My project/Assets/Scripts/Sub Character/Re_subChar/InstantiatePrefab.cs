@@ -7,6 +7,11 @@ public class InstantiatePrefab : MonoBehaviour
     [SerializeField] private float speed = 20;
     [SerializeField] private GameObject prefab;
 
+    [Header("¸ÖÆ¼¼¦ ¿É¼Ç")]
+    [SerializeField] private bool multipleShots;
+    [SerializeField] private int NumberOfShots;
+    [SerializeField] private float firingCycle;
+
 
     private Stat stat;
     private float angle;
@@ -27,6 +32,21 @@ public class InstantiatePrefab : MonoBehaviour
 
     public void CreatePrefab(GameObject prefab)
     {
+        if (multipleShots)
+        {
+            for(int i = 0; i<NumberOfShots; i++)
+            {
+                Invoke("Create", firingCycle);
+            }
+        }
+        else
+        {
+            Create(prefab);
+        }
+    }
+
+    void Create(GameObject obj)
+    {
         GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle));
         prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
         if (prefabClone.GetComponent<PrefabOnTrigger>())
@@ -35,7 +55,7 @@ public class InstantiatePrefab : MonoBehaviour
 
     public void GetTargetPosition(Transform transObj)
     {
-        Transform target = Battle_Situation_Trigger.monster.transform ? 
+        Transform target = Battle_Situation_Trigger.monster.transform ?
             Battle_Situation_Trigger.monster.transform : BossScript.boss.transform;
         angle = Mathf.Atan2(target.position.y - transObj.position.y, target.position.x - transObj.position.x) * Mathf.Rad2Deg;
     }
