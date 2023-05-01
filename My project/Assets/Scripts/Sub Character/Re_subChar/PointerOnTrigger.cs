@@ -25,11 +25,13 @@ public class PointerOnTrigger : MonoBehaviour
                 GameObject impact = Instantiate(Impact, this.transform.position, this.transform.rotation);
                 impact.GetComponent<PrefabOnTrigger>().damage = damage;
                 Game_System.setParentHolder(impact.transform);
+                Destroy(this.gameObject);
                 Destroy(impact, 1);   //파이클 시스템의 Stop Action 설정을 Destroy로 변경하면 이펙트가 끝날 시 자동으로 파괴됩니다
+                
             }
         }
-        Destroy(collision.gameObject);
-        Destroy(gameObject);
+        //Destroy(collision.gameObject);
+        //Destroy(gameObject);
     }
 }
 
