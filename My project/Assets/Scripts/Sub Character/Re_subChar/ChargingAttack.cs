@@ -22,7 +22,8 @@ public class ChargingAttack : MonoBehaviour
 
     private void Update()
     {
-        if (!Battle_Situation_Trigger.monster || !BossScript.boss) return;
+        if (!Battle_Situation_Trigger.monster && !BossScript.boss) return;
+
         GetTargetPosition(transform);
     }
 
