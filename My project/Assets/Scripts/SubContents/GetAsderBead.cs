@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class GetAsderBead : MonoBehaviour
 {
-    public AsderCall AsderCount;
     public HeroSummon heroSummon;
 
     //이게 프리펩으로 소환되는거라 AsderCount를 public으로 끌어서 받아올 수 가 없다
@@ -28,7 +27,7 @@ public class GetAsderBead : MonoBehaviour
 
     public void Awake()
     {
-        heroSummon = GameObject.Find("GameManager").GetComponent<HeroSummon>();
+        //heroSummon = GameObject.Find("GameManager").GetComponent<HeroSummon>();
         //파인드 쓰지 않는 방법 찾기
         setSubcharType(BeadType);
     }
@@ -45,21 +44,28 @@ public class GetAsderBead : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+
         if (collision.gameObject.name == "Player(SubContent)")
         {
             //여기만 다시만들어 내 생각에는 이제 if로 구분하는것도 필요없다.
             //힌트 : 찾을때만 쓸것
-           
 
+            for (int i = 0; i < heroSummon.HeroList.Length; i++)
+            {
+                if (heroSummon.HeroList[i].name == BeadType)
+                {
+                    Debug.Log(heroSummon.HeroImageList[i].name);
+                    heroSummon.AsderCount[i]++;
 
-            //
+                    Debug.Log(heroSummon.AsderCount[i]);
+                }
+            }
 
             Destroy(this.gameObject);
         }
 
     }
-   
+
     void ChangeBeadColor(Color color)
     {
         Debug.Log(color);

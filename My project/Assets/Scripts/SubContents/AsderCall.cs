@@ -19,21 +19,18 @@ public class AsderCall : MonoBehaviour
     private Transform Player;
     [SerializeField]
     private GameObject subCharPrefab;
-    public string Type;
-    HeroSummon heroSummon;
-    public int beadCount;
-    Button thisButton;
 
+    public string Type;
+    public int beadCount;
+    public HeroSummon heroSummon;
     public float y;
     public float DestroyTime;
+
+    Button thisButton;
 
 
     private void Awake()
     {
-        //BeadCount = GameObject.Find("GameManager").GetComponent<HeroSummon>();
-
-        //Find굳이 안써도됨
-        heroSummon = GameObject.Find("GameManager").GetComponent<HeroSummon>();
         Player = GameObject.FindWithTag("Player").transform;
         thisButton = GetComponent<Button>();
 
@@ -55,10 +52,13 @@ public class AsderCall : MonoBehaviour
     private void Update()
     {
         //이 AsderCall의 beadCount에 따라 버튼 누르는 여부 설정
+        
         if (beadCount > 0)
             thisButton.interactable = true;
         else
             thisButton.interactable = false;
+
+        SetAsderCount(this.name);
     }
 
     
@@ -70,5 +70,18 @@ public class AsderCall : MonoBehaviour
 
         Destroy(subHeroClone, DestroyTime);
         beadCount--;
+    }
+
+    void SetAsderCount(string name)
+    {
+        for(int i = 0; i< heroSummon.HeroList.Length; i++)
+        {
+            if (name == heroSummon.HeroList[i].name && heroSummon.AsderCount[i] != 0)
+            {
+                beadCount = heroSummon.AsderCount[i];
+
+                Debug.Log(beadCount);
+            }
+        }
     }
 }

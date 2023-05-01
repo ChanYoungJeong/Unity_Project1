@@ -14,19 +14,19 @@ public class ButtonShadow : MonoBehaviour
     [SerializeField]
     private Button[] SubButtons;
     //찬영
-    HeroSummon SubCount;
-    
+    HeroSummon heroSummon;
+
     private void Awake()
     {
-        //얘는 동적할당이 아닌데 왜 FInd를 쓰는거임 끌어다 써야지
-        SubCount = GameObject.Find("GameManager").GetComponent<HeroSummon>();
+        //얘는 동적할당이 아닌데 왜 FInd를 쓰는거임 끌어다 써야지 // 해결
+        heroSummon = GetComponent<HeroSummon>();
         SubButtons = ButtonHolder.GetComponentsInChildren<Button>(); //찬영
     }
 
     private void Update()
     {
         //이렇게 만들라고 씹쎄꺄
-        if (SubCount.AsderCount[0] > 0)
+        if (heroSummon.AsderCount[0] > 0)
         {
             OnAsderButton();
         }
@@ -47,20 +47,6 @@ public class ButtonShadow : MonoBehaviour
 
     public void OnAsderButton()
     {
-        //이따구로 만들지 말라고
-        /*
-        for(int i=0; i< SubButtons.Length;i++)
-        {
-            if (SubCount.AsderCount[i] > 0)
-            {
-                SubButtons[i].interactable = true;
-            }
-            else 
-            {
-                SubButtons[i].interactable = false;
-            }
-        }
-        */
         for(int i = 0; i < SubButtons.Length; i++)
         {
             SubButtons[i].interactable = true;

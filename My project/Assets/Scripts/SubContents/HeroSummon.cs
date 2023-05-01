@@ -15,14 +15,5 @@ public class HeroSummon : MonoBehaviour
     public GameObject[] HeroList;
     //히어로 이미지를 담기위한 리스트
     public Sprite[] HeroImageList;
-    private void Awake()
-    {
-        //전혀 필요없음
-        /*
-        for(int t=0; t<AsderCount.Length; t++)
-        {
-            AsderCount[t] = 0;
-        }
-        */
-    }
+
 }
