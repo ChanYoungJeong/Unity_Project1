@@ -27,7 +27,7 @@ public class Skill_InstantiatePrefab : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        if (!Battle_Situation_Trigger.monster && !BossScript.boss) return;
+        if (!Battle_Situation_Trigger.monster || !BossScript.boss) return;
 
         GetTargetPosition(startTransform);
     }
