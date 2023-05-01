@@ -9,7 +9,7 @@ public class InstantiateToTarget : MonoBehaviour
     [Header("타겟이 정적일 시 넣기/아닐시 빈칸으로")]
     [SerializeField]
     Transform TargetObject;
-    bool hasSelectedTarget;
+    bool hasSelectedTarget = false;
 
     Vector3 TargetPosition;
     [Header("타겟을 기준으로 x,y 축 조정값")]
@@ -36,11 +36,11 @@ public class InstantiateToTarget : MonoBehaviour
     // 귀찮아서 일단 Anmation에 세팅해놨음
     void Update()
     {
-        //if (!Battle_Situation_Trigger.monster) return;
+        if (!Battle_Situation_Trigger.monster || !BossScript.boss) return;
 
         if (!hasSelectedTarget)
         {
-            TargetObject = Battle_Situation_Trigger.monster ?
+            TargetObject = Battle_Situation_Trigger.monster.transform ?
             Battle_Situation_Trigger.monster.transform : BossScript.boss.transform;
             TargetPosition = new Vector3(TargetObject.position.x + x, TargetObject.position.y + y, 0);
         }
