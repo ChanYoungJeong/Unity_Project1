@@ -41,30 +41,12 @@ public class Skill_InstantiatePrefab : MonoBehaviour
             prefabClone.GetComponent<PrefabOnTrigger>().damage = stat.skillDamage;
         if (prefabClone.GetComponent<PointerOnTrigger>())
             prefabClone.GetComponent<PointerOnTrigger>().damage = stat.skillDamage;
-
-
-        Destroy(prefabClone, 5f);
     }
 
     public void GetTargetPosition(Transform transObj)
     {
-        Transform target = TargetTrans();
+        Transform target = Battle_Situation_Trigger.monster ? Battle_Situation_Trigger.monster.transform : BossScript.boss.transform;
         angle = Mathf.Atan2(target.position.y - transObj.position.y, target.position.x - transObj.position.x) * Mathf.Rad2Deg;
-    }
-
-    public Transform TargetTrans()
-    {
-        Transform transform = this.transform;
-        if (Battle_Situation_Trigger.monster)
-        {
-            transform = Battle_Situation_Trigger.monster.transform;
-        }
-        else if (BossScript.boss)
-        {
-            transform = BossScript.boss.transform;
-        }
-
-        return transform;
     }
 
 }

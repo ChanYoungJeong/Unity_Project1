@@ -8,7 +8,6 @@ public class Stat : MonoBehaviour
 
     [Header("¡æ¡∑")]
     public string type;
-    public int id;
     [Header("Ω∫≈»")]
     public float maxHp;
     public float nowHp;
