@@ -36,7 +36,7 @@ public class InstantiateToTarget : MonoBehaviour
     // ±ÍÂú¾Æ¼­ ÀÏ´Ü Anmation¿¡ ¼¼ÆÃÇØ³ùÀ½
     void Update()
     {
-        if (!Battle_Situation_Trigger.monster || !BossScript.boss) return;
+        //if (!Battle_Situation_Trigger.monster || !BossScript.boss) return;
 
         if (!hasSelectedTarget)
         {
