@@ -29,7 +29,9 @@ public class InstantiatePrefab : MonoBehaviour
     {
         if (stat.multishot)
         {
-
+            Debug.Log("¸ÖÆ¼¼¦");
+            Create(prefab);
+            Invoke("Create", 0.3f);
         }
         else
         {
