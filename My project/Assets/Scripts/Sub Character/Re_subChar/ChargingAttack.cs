@@ -44,15 +44,31 @@ public class ChargingAttack : MonoBehaviour
         projectileClone.GetComponent<Rigidbody2D>().AddForce(projectileClone.transform.right * speed, ForceMode2D.Impulse);
         if (projectileClone.GetComponent<PrefabOnTrigger>())
             projectileClone.GetComponent<PrefabOnTrigger>().damage = stat.atkDamage;
+
+        Destroy(projectileClone, 5f);
     }
 
 
     public void GetTargetPosition(Transform transObj)
     {
-        Transform target = Battle_Situation_Trigger.monster.transform ? 
-            Battle_Situation_Trigger.monster.transform : BossScript.boss.transform;
+        Transform target = TargetTrans();
         
         angle = Mathf.Atan2(target.position.y - transObj.position.y, target.position.x - transObj.position.x) * Mathf.Rad2Deg;
+    }
+
+    public Transform TargetTrans()
+    {
+        Transform transform = this.transform;
+        if (Battle_Situation_Trigger.monster)
+        {
+            transform = Battle_Situation_Trigger.monster.transform;
+        }
+        else if (BossScript.boss)
+        {
+            transform = BossScript.boss.transform;
+        }
+
+        return transform;
     }
 
 }
