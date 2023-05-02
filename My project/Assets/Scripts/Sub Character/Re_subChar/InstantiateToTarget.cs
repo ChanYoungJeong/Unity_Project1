@@ -36,13 +36,11 @@ public class InstantiateToTarget : MonoBehaviour
     // ±ÍÂú¾Æ¼­ ÀÏ´Ü Anmation¿¡ ¼¼ÆÃÇØ³ùÀ½
     void Update()
     {
-        if (!Battle_Situation_Trigger.monster && !BossScript.boss) return;
+        if (!Battle_Situation_Trigger.monster || !BossScript.boss) return;
 
         if (!hasSelectedTarget)
         {
-            TargetObject = Battle_Situation_Trigger.monster.transform ? Battle_Situation_Trigger.monster.transform : BossScript.boss.transform;
-            Debug.Log(TargetObject);
-            
+            TargetObject = TargetTrans();
             TargetPosition = new Vector3(TargetObject.position.x + x, TargetObject.position.y + y, 0);
         }
         else
@@ -68,6 +66,9 @@ public class InstantiateToTarget : MonoBehaviour
         
         setHeal();
         setDamage();
+
+
+        Destroy(prefabObject, 5f);
     }
 
     //ÈúÀÌ ÀÖÀ»°æ¿ì´Â Èú ÇÏ±â
@@ -87,5 +88,20 @@ public class InstantiateToTarget : MonoBehaviour
             dmg = stat.atkDamage;
         if (prefabObject.GetComponent<PrefabOnTrigger>())
             prefabObject.GetComponent<PrefabOnTrigger>().damage = dmg;
+    }
+
+    public Transform TargetTrans()
+    {
+        Transform transform = this.transform;
+        if (Battle_Situation_Trigger.monster)
+        {
+            transform = Battle_Situation_Trigger.monster.transform;
+        }
+        else if (BossScript.boss)
+        {
+            transform = BossScript.boss.transform;
+        }
+
+        return transform;
     }
 }
