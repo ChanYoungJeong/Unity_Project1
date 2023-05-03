@@ -20,6 +20,8 @@ public class PrefabOnTrigger : MonoBehaviour
     {
         Game_System.setParentHolder(this.transform);
         hitted = false;
+
+
     }
 
     private void Update()

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4999903097468146441}
   - component: {fileID: 4684269382418660604}
   - component: {fileID: 520700997169972153}
-  - component: {fileID: 7698717577517241829}
   - component: {fileID: -3949715711597366386}
   - component: {fileID: -8713002700112329440}
+  - component: {fileID: 3423742240948795688}
   m_Layer: 0
   m_Name: Rogue_Skill_Projectile_Spinning_Blade
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 861652130097960095}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7305091868335648391}
@@ -4830,20 +4830,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &7698717577517241829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 861652130097960095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 509f5fedea53e8f429211256e48e4e03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Impact: {fileID: 6483769974948923224, guid: c56ff77922b224047ac5febe17f45c20, type: 3}
-  damage: 0
 --- !u!50 &-3949715711597366386
 Rigidbody2D:
   serializedVersion: 4
@@ -4881,6 +4867,23 @@ CircleCollider2D:
   m_Offset: {x: 0.4, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &3423742240948795688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861652130097960095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac4c91d7e348df4c8b9682f6d9d8805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiHit: 0
+  damageColor: {r: 0.541028, g: 0, b: 1, a: 0}
+  destroytime: 0
+  damage: 0
+  Impact: {fileID: 6483769974948923224, guid: c56ff77922b224047ac5febe17f45c20, type: 3}
 --- !u!1 &2142973866524768951
 GameObject:
   m_ObjectHideFlags: 0
