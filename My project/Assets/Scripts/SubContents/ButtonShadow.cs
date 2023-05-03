@@ -12,17 +12,17 @@ public class ButtonShadow : MonoBehaviour
     //public Button[] SubButton;
     public Transform ButtonHolder;
     [SerializeField]
-    private Button[] SubButtons;
+    public Button[] SubButtons;
     //찬영
     HeroSummon heroSummon;
 
     private void Awake()
     {
-        //얘는 동적할당이 아닌데 왜 FInd를 쓰는거임 끌어다 써야지 // 해결
         heroSummon = GetComponent<HeroSummon>();
-        SubButtons = ButtonHolder.GetComponentsInChildren<Button>(); //찬영
+        SubButtons = ButtonHolder.GetComponentsInChildren<Button>();
     }
 
+    /*
     private void Update()
     {
         //이렇게 만들라고 씹쎄꺄
@@ -52,4 +52,5 @@ public class ButtonShadow : MonoBehaviour
             SubButtons[i].interactable = true;
         }
     }
+    */
 }

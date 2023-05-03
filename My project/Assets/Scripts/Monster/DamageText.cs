@@ -17,7 +17,7 @@ public class DamageText : MonoBehaviour
     {
         if(GameObject.FindWithTag("GameManager"))
         {
-            this.transform.SetParent(GameObject.FindWithTag("GameManager").GetComponent<Game_System>().DamageTextHolder);
+            this.transform.SetParent(GameObject.FindWithTag("GameManager").transform.Find("DamageTextHolder"));
             
         }
     }

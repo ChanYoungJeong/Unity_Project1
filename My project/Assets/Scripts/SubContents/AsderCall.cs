@@ -19,6 +19,7 @@ public class AsderCall : MonoBehaviour
     private Transform Player;
     [SerializeField]
     private GameObject subCharPrefab;
+    public Text BeadCountText;
 
     public string Type;
     public int beadCount;
@@ -52,13 +53,12 @@ public class AsderCall : MonoBehaviour
     private void Update()
     {
         //이 AsderCall의 beadCount에 따라 버튼 누르는 여부 설정
-        
         if (beadCount > 0)
             thisButton.interactable = true;
         else
             thisButton.interactable = false;
 
-        SetAsderCount(this.name);
+        BeadCountText.text = beadCount.ToString();
     }
 
     
@@ -72,6 +72,8 @@ public class AsderCall : MonoBehaviour
         beadCount--;
     }
 
+    //삭제요망
+    /*
     void SetAsderCount(string name)
     {
         for(int i = 0; i< heroSummon.HeroList.Length; i++)
@@ -84,4 +86,5 @@ public class AsderCall : MonoBehaviour
             }
         }
     }
+    */
 }
