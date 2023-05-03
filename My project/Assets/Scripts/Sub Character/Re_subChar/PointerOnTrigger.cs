@@ -29,7 +29,7 @@ public class PointerOnTrigger : MonoBehaviour
                 impact.GetComponent<PrefabOnTrigger>().damage = damage;
                 Game_System.setParentHolder(impact.transform);
                 Destroy(this.gameObject);
-                Destroy(impact, 1);   //파이클 시스템의 Stop Action 설정을 Destroy로 변경하면 이펙트가 끝날 시 자동으로 파괴됩니다
+                Destroy(impact, 1);   
                 Destroy(collision.gameObject); //일부러 넣어 놓은 겁니다. 빨간 점 없엘라고
             }
         }

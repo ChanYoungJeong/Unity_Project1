@@ -30,7 +30,7 @@ public class ChargingAttack : MonoBehaviour
     void CreateCharging(GameObject chargingPrefab)
     {
         GameObject chargingClone = Instantiate(chargingPrefab, transform.position, Quaternion.identity);
-
+        Debug.Log(chargingClone);
         chargingClone.transform.position += new Vector3(x, 0, 0);
 
         Destroy(chargingClone, destroyTime);
