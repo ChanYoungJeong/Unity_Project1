@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GetAsderBead : MonoBehaviour
 {
     public HeroSummon heroSummon;
-
+    ButtonShadow BS;
     //이게 프리펩으로 소환되는거라 AsderCount를 public으로 끌어서 받아올 수 가 없다
     //BeadType을 비교해서 AsderCall을 올리는 걸로 해라
 
@@ -29,6 +29,7 @@ public class GetAsderBead : MonoBehaviour
     {
         //heroSummon = GameObject.Find("GameManager").GetComponent<HeroSummon>();
         //파인드 쓰지 않는 방법 찾기
+        BS = GameObject.FindWithTag("GameManager").GetComponent<ButtonShadow>();
         setSubcharType(BeadType);
     }
 
@@ -47,20 +48,17 @@ public class GetAsderBead : MonoBehaviour
 
         if (collision.gameObject.name == "Player(SubContent)")
         {
-            //여기만 다시만들어 내 생각에는 이제 if로 구분하는것도 필요없다.
-            //힌트 : 찾을때만 쓸것
-
-            for (int i = 0; i < heroSummon.HeroList.Length; i++)
+            //BeadCount 가 각각 AsderCall에 의해 결정되는데 왜 HeroSummon을?
+            //HeroSummon을 이용할거면 최소한 AsderCall의 BeadCount를 연결시켜야함
+            for(int i = 0; i < BS.SubButtons.Length; i++)
             {
-                if (heroSummon.HeroList[i].name == BeadType)
+                AsderCall AC = BS.SubButtons[i].GetComponent<AsderCall>();
+                if (AC.Type == BeadType)
                 {
-                    Debug.Log(heroSummon.HeroImageList[i].name);
-                    heroSummon.AsderCount[i]++;
-
-                    Debug.Log(heroSummon.AsderCount[i]);
+                    AC.beadCount++;
+                    break;
                 }
             }
-
             Destroy(this.gameObject);
         }
 
