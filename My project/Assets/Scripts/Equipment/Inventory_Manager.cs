@@ -77,6 +77,7 @@ public class Inventory_Manager : MonoBehaviour
             selectedItem = curSlot.curItem;
             curSlot.GetComponent<Image>().color = Color.red;
             //View Item info
+            equipInfoUI.gameObject.SetActive(true);
             equipInfoUI.ViewItem(GetImage(curSlot.curItem.name), curSlot.curItem, curSlot.itemStatus());
             preSlot = curSlot;
         }     

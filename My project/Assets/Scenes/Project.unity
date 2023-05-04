@@ -7872,7 +7872,7 @@ PrefabInstance:
     - target: {fileID: 2397417011784111636, guid: ac3263c98d37e7845ad12af458d49a8b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1843369955}
+      objectReference: {fileID: 0}
     - target: {fileID: 2397417011784111636, guid: ac3263c98d37e7845ad12af458d49a8b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -8989,7 +8989,8 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2579907917871990572, guid: ac3263c98d37e7845ad12af458d49a8b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ac3263c98d37e7845ad12af458d49a8b, type: 3}
 --- !u!224 &919704242 stripped
 RectTransform:
@@ -17535,20 +17536,6 @@ MonoBehaviour:
   - {fileID: 1560101582}
   - {fileID: 4210448585854460316}
   AllObjects:
-  - {fileID: 781010841}
---- !u!114 &1843369955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 781010841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d7a13592b2d539459a2c112825d64f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Objects:
   - {fileID: 781010841}
 --- !u!1 &1856915983
 GameObject:
@@ -30110,7 +30097,7 @@ GameObject:
   - component: {fileID: 4142606599174769134}
   - component: {fileID: 4323309765845352808}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text_SpecialItemName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30940,7 +30927,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Legend Knight Sward
+  m_Text: Special Item Name
 --- !u!114 &4323352367278487814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35331,6 +35318,7 @@ MonoBehaviour:
   slots: []
   slotHolder: {fileID: 1883713680}
   specialSlot: {fileID: 4323453682971054067}
+  speicalItemName: {fileID: 4323309765845352808}
 --- !u!114 &6000368999427264857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35343,16 +35331,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de82cac0b6985894b958973eb6cdc375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots: []
+  activeRullet: 0
   slotHolder: {fileID: 1883713680}
+  slots: []
   ItemMan: {fileID: 1900369849}
   Inven: {fileID: 1843369949}
+  specialSlot: {fileID: 4323453682971054067}
+  buyButton: {fileID: 4318980142751675466}
   rotSpeed: 0.1
   doRot: 0
   leftSlot: 0
-  specialSlot: {fileID: 4323453682971054067}
-  buyButton: {fileID: 0}
-  pickUpRate: 0
+  pickUpRate: 10
 --- !u!114 &6000368999427264858
 MonoBehaviour:
   m_ObjectHideFlags: 0
