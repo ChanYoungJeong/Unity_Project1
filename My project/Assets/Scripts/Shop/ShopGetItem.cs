@@ -12,6 +12,7 @@ public class ShopGetItem : MonoBehaviour
     public Inventory_Manager Inven;
 
     Color defaultColor;
+    float defaultColorAlpha;
     
     public float rotSpeed = 0.1f;
     int randomNum;
@@ -22,6 +23,7 @@ public class ShopGetItem : MonoBehaviour
 
     private void Awake()
     {
+        defaultColorAlpha = 0.5f;
         slots = slotHolder.GetComponentsInChildren<Slot>();
         defaultColor = slots[0].GetComponent<Image>().color;
         PickedItem = new bool[slots.Length];
@@ -49,14 +51,14 @@ public class ShopGetItem : MonoBehaviour
             }
 
             //Spinning the rulet
-            ChangeSlotColor(randomNum, Color.black);
+            ChangeSlotColor(randomNum, 1.0f);
             yield return new WaitForSeconds(rotSpeed);
             //Decrease the speed of rulet
             rotSpeed *= 1.2f;
             if (rotSpeed > 1)
             {
                 //Got Item
-                ChangeSlotColor(randomNum, Color.red);
+                ChangeSlotColor(randomNum, 1.0f);
                 PickedItem[randomNum] = true;
                 Equipment Item = ItemManager.ItemLists[slots[randomNum].itemName];
                 Inven.AddToInventory(Item);
@@ -65,10 +67,10 @@ public class ShopGetItem : MonoBehaviour
             else
             {
                 //While spinning, return the previous slot to default color
-                ChangeSlotColor(randomNum, defaultColor);
+                ChangeSlotColor(randomNum, defaultColorAlpha);
             }
         }
-        doRot = false;
+        
 
         //When there are less slots left, initial speed becomes slower
         randomNum = Random.Range(0, slots.Length);
@@ -76,19 +78,24 @@ public class ShopGetItem : MonoBehaviour
         float n = (float)0.6 - slope;
         leftSlot--;
         rotSpeed = slope * leftSlot + n;
+
+        doRot = false;
     }
 
 
-    void ChangeSlotColor(int index, Color color)
+    //투명도 조절
+    void ChangeSlotColor(int index, float alpha)
     {
-        slots[index].GetComponent<Image>().color = color;
+        Color col = slots[index].transform.GetChild(0).GetComponent<Image>().color;
+        col.a = alpha;
+        slots[index].transform.GetChild(0).GetComponent<Image>().color = col;
     }
 
     public void ResetAllSlotColor()
     {
         for(int i = 0; i < slots.Length; i++)
         {
-            ChangeSlotColor(i, defaultColor);
+            ChangeSlotColor(i, defaultColorAlpha);
         }
     }
 

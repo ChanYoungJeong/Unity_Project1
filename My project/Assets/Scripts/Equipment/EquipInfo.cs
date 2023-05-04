@@ -2,23 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class EquipInfo : MonoBehaviour
 {
-    public Image itemImage;
-    public Text itemName;
-    public Text rank;
-    public Text status;
-    public Text stat1Name;
-    public Text stat2Name;
-    public Text stat1Val;
-    public Text stat2Val;
-    public Text upgradeRate;
 
+    //public Image itemImage;
+    public TextMeshProUGUI itemName;
+    public TextMeshProUGUI rank;
+    public TextMeshProUGUI status;
+    public TextMeshProUGUI stat1Name;
+    public TextMeshProUGUI stat2Name;
+    public TextMeshProUGUI stat1Val;
+    public TextMeshProUGUI stat2Val;
+    public TextMeshProUGUI upgradeRate;
+
+    private void Awake()
+    {
+        offPanel();
+    }
 
     public void ViewItem(Sprite _image, Equipment item, string _status)
     {
-        itemImage.sprite = _image;
+        //itemImage.sprite = _image;
         itemName.text = item.name;
         rank.text = item.grade;
         status.text = _status;
@@ -54,4 +60,8 @@ public class EquipInfo : MonoBehaviour
         upgradeRate.text = "+" + item.upgrade.ToString();
     }
 
+    public void offPanel()
+    {
+        this.gameObject.SetActive(false);
+    }
 }

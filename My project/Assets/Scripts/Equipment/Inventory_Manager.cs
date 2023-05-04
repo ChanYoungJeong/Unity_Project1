@@ -82,7 +82,6 @@ public class Inventory_Manager : MonoBehaviour
         }     
     }
 
-
     private void AlignSlot(int deletedSlot)
     {
         Equipment temp = null;
@@ -95,4 +94,6 @@ public class Inventory_Manager : MonoBehaviour
             deletedSlot++;
         }
     }
+
+
 }
