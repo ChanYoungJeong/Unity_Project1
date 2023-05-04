@@ -9,14 +9,19 @@ public class InstantiatePrefab : MonoBehaviour
 
 
     private Stat stat;
-    private float angle;
+    private float[] angle;
     // private float lastSkillAttackTime;
 
-    private void Start()
+    private int max;
+
+    private void Awake()
     {
         stat = GetComponentInParent<Stat>();
-    }
 
+        max = (stat.numberOfProjectiles == 0) ? 1 : stat.numberOfProjectiles;
+        angle = new float[max];
+
+    }
 
     private void Update()
     {
@@ -27,45 +32,75 @@ public class InstantiatePrefab : MonoBehaviour
 
     public void CreatePrefab(GameObject prefab)
     {
-        if (stat.multishot)
-        {
-            Debug.Log("¸ÖÆ¼¼¦");
-            Create(prefab);
-            Invoke("Create", 0.3f);
-        }
-        else
-        {
-            Create(prefab);
-        }
-    }
+        GameObject[] prefabClone;
 
-    void Create(GameObject prefab)
-    {
-        GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle));
-        prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
-        if (prefabClone.GetComponent<PrefabOnTrigger>())
-            prefabClone.GetComponent<PrefabOnTrigger>().damage = stat.atkDamage;
+        prefabClone = new GameObject[max];
 
-        Destroy(prefabClone, 5f);
+        prefabClone[0] = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle[0]));
+        prefabClone[0].GetComponent<Rigidbody2D>().AddForce(prefabClone[0].transform.right * speed, ForceMode2D.Impulse);
+        if (prefabClone[0].GetComponent<PrefabOnTrigger>())
+            prefabClone[0].GetComponent<PrefabOnTrigger>().damage = stat.atkDamage;
+
+        if (max != 1)
+        {
+            for (int i = 0; i < max; i++)
+            {
+                prefabClone[i] = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle[i]));
+                prefabClone[i].GetComponent<Rigidbody2D>().AddForce(prefabClone[i].transform.right * speed, ForceMode2D.Impulse);
+                if (prefabClone[i].GetComponent<PrefabOnTrigger>())
+                    prefabClone[i].GetComponent<PrefabOnTrigger>().damage = stat.atkDamage;
+
+                Destroy(prefabClone[i], 5f);
+            }
+        }
+
+        Destroy(prefabClone[0], 5f);
     }
 
 
     public void GetTargetPosition(Transform transObj)
     {
-        Transform target = TargetTrans();
-        angle = Mathf.Atan2(target.position.y - transObj.position.y, target.position.x - transObj.position.x) * Mathf.Rad2Deg;
+        Transform[] target;
+        target = new Transform[max];
+
+        target = TargetTrans();
+
+        angle[0] = Mathf.Atan2(target[0].position.y - transObj.position.y, target[0].position.x - transObj.position.x) * Mathf.Rad2Deg;
+
+        if(max != 1)
+        {
+            for (int i = 0; i < max; i++)
+            {
+                angle[i] = Mathf.Atan2(target[i].position.y - transObj.position.y, target[i].position.x - transObj.position.x) * Mathf.Rad2Deg;
+            }
+        }
     }
 
-    public Transform TargetTrans()
+    public Transform[] TargetTrans()
     {
-        Transform transform = this.transform;
+        Transform[] transform;
+        transform = new Transform[max];
+
+        int monsterCount = Battle_Situation_Trigger.monster_group.transform.childCount;
         if (Battle_Situation_Trigger.monster)
         {
-            transform = Battle_Situation_Trigger.monster.transform;
+            if (max == 1)
+            {
+                transform[0] = Battle_Situation_Trigger.monster_group.transform.GetChild(0).gameObject.transform;
+
+            }
+            else
+            {
+                for (int i = 0; i < max; i++)
+                {
+                    transform[i] =
+                        Battle_Situation_Trigger.monster_group.transform.GetChild(Random.Range(0, monsterCount - 1)).gameObject.transform;
+                }
+            }
         }
-        else if (BossScript.boss)
+        else
         {
-            transform = BossScript.boss.transform;
+            transform[0] = BossScript.boss.transform;
         }
 
         return transform;
