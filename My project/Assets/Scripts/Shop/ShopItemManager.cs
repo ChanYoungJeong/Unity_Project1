@@ -22,6 +22,7 @@ public class ShopItemManager : MonoBehaviour
 
     private void Start()
     {
+        getItemManager.ResetAllSlotColor();
         GenerateGachaList();
         GenerateItem();
     }
@@ -31,8 +32,7 @@ public class ShopItemManager : MonoBehaviour
         for(int i = 0; i < ItemManager.loadObjects.Length; i++)
         {
             NumberList.Add(true);
-        }
-        
+        }    
     }
 
     private void GenerateSlot()
