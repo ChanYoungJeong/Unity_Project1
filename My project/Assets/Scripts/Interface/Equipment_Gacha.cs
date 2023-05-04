@@ -140,7 +140,7 @@ public class Equipment_Gacha : MonoBehaviour
 
                 Inventory_Manager.Inventory.Add(Item);      //Insert into Inventory
                 invenManager.slots[Inventory_Manager.Inventory.Count - 1].curItem = Item;
-                invenManager.slots[Inventory_Manager.Inventory.Count - 1].SetItem(Item.name);
+                //invenManager.slots[Inventory_Manager.Inventory.Count - 1].SetItem(Item.name);
                 isBBOKI = false;
                 
             }            
@@ -161,7 +161,7 @@ public class Equipment_Gacha : MonoBehaviour
 
             Inventory_Manager.Inventory.Add(Item);      //Insert into Inventory
             invenManager.slots[Inventory_Manager.Inventory.Count - 1].curItem = Item;
-            invenManager.slots[Inventory_Manager.Inventory.Count - 1].SetItem(Item.name);
+            //invenManager.slots[Inventory_Manager.Inventory.Count - 1].SetItem(Item.name);
         }
 
         dataReader.Dispose();           //Close DB opposite order

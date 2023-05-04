@@ -7,6 +7,9 @@ public class ShopItemManager : MonoBehaviour
 {
     public Slot[] slots;
     public Transform slotHolder;
+
+    public Slot specialSlot;
+
     private int RandomNum;
     private List<bool> NumberList = new List<bool>();
     private int[] ResetNumber;
@@ -23,11 +26,13 @@ public class ShopItemManager : MonoBehaviour
     private void Start()
     {
         getItemManager.ResetAllSlotColor();
-        GenerateGachaList();
+        GenerateCheckList();
         GenerateItem();
+        GenerateSpeicalItem();
     }
 
-    private void GenerateGachaList()
+    //Array to Check if that slot is picked
+    private void GenerateCheckList()
     {
         for(int i = 0; i < ItemManager.loadObjects.Length; i++)
         {
@@ -35,6 +40,7 @@ public class ShopItemManager : MonoBehaviour
         }    
     }
 
+    //Set Slot Number
     private void GenerateSlot()
     {
         for (int i = 0; i < slots.Length; i++)
@@ -43,6 +49,7 @@ public class ShopItemManager : MonoBehaviour
         }
     }
 
+    //Set Basic Item Lists (left Panel)
     public void GenerateItem()
     {
         for (int i = 0; i < slots.Length; i++)
@@ -52,8 +59,7 @@ public class ShopItemManager : MonoBehaviour
                 RandomNum = Random.Range(0, ItemManager.loadObjects.Length);
             }
             NumberList[RandomNum] = false;
-            slots[i].transform.GetChild(0).GetComponentInChildren<Image>().sprite = ItemManager.loadObjects[RandomNum];
-            slots[i].itemName = ItemManager.loadObjects[RandomNum].name;
+            slots[i].SetItem(ItemManager.loadObjects[RandomNum].name, ItemManager.loadObjects[RandomNum]);
             ResetNumber[i] = RandomNum;
         }
     }
@@ -71,7 +77,14 @@ public class ShopItemManager : MonoBehaviour
                 NumberList[ResetNumber[i]] = true;
             }
             GenerateItem();
+            GenerateSpeicalItem();
         }
     }
 
+    //For Speical Items
+    void GenerateSpeicalItem()
+    {
+        int rand = Random.Range(0, ItemManager.specialLoadObjects.Length);
+        specialSlot.SetItem(ItemManager.specialLoadObjects[rand].name, ItemManager.specialLoadObjects[rand]);
+    }
 }

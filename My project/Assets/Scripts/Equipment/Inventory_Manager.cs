@@ -35,23 +35,23 @@ public class Inventory_Manager : MonoBehaviour
     }
 
     //Add item to inventory list and show in slot
-    public void AddToInventory(Equipment item)
+    public void AddToInventory(Equipment item, Sprite img)
     {
         for(int i = 0; i < Inventory.Count; i++)
         {
             if(Inventory[i] == null)
             {
                 Inventory[i] = item;
-                AddToSlot(i, item);
+                AddToSlot(i, item, img);
                 break;
             }
         }
     }
 
     //Add item into slot and change the image
-    public void AddToSlot(int index, Equipment item)
+    public void AddToSlot(int index, Equipment item, Sprite img)
     {
-        slots[index].SetItem(item.name);
+        slots[index].SetItem(item.name, img);
         slots[index].curItem = item;
     }
 
@@ -84,12 +84,12 @@ public class Inventory_Manager : MonoBehaviour
 
     private void AlignSlot(int deletedSlot)
     {
-        Equipment temp = null;
+        Slot temp = null;
         while(deletedSlot + 1 < numSlots && slots[deletedSlot + 1].curItem != null)
         {
-            temp = slots[deletedSlot + 1].curItem;
-            slots[deletedSlot].curItem = temp;
-            slots[deletedSlot].SetItem(temp.name);
+            temp = slots[deletedSlot + 1];
+            slots[deletedSlot].curItem = temp.curItem;
+            slots[deletedSlot].SetItem(temp.itemName, temp.itemImage);
             slots[deletedSlot + 1].ResetSlot();       
             deletedSlot++;
         }

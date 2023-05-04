@@ -34,9 +34,10 @@ public class Slot : MonoBehaviour
         }
     }
 
-    public void SetItem(string _itemName)
+    public void SetItem(string _itemName, Sprite img)
     {
-        transform.GetChild(0).GetComponentInChildren<Image>().sprite = GetImage(_itemName);
+        transform.GetChild(0).GetComponentInChildren<Image>().sprite = img;
+        itemImage = img;
         itemName = _itemName;
     }
 
