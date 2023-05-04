@@ -43,7 +43,7 @@ public class ChargingAttack : MonoBehaviour
         GameObject projectileClone = Instantiate(projectile, transform.position, Quaternion.Euler(0, 0, angle));
         projectileClone.GetComponent<Rigidbody2D>().AddForce(projectileClone.transform.right * speed, ForceMode2D.Impulse);
         if (projectileClone.GetComponent<PrefabOnTrigger>())
-            projectileClone.GetComponent<PrefabOnTrigger>().damage = stat.atkDamage;
+            projectileClone.GetComponent<PrefabOnTrigger>().damage = stat.skillDamage;
 
         Destroy(projectileClone, 5f);
     }
