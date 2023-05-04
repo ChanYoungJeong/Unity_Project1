@@ -20,6 +20,10 @@ public class ShopGetItem : MonoBehaviour
     public bool doRot = false;
     public int leftSlot;
 
+    public Slot specialSlot;
+    public Button buyButton;
+    [SerializeField]
+    float pickUpRate;
 
     private void Awake()
     {
@@ -33,9 +37,18 @@ public class ShopGetItem : MonoBehaviour
 
     public void startRulet()
     {
-        if (doRot == false && leftSlot > 0)
+        if (doRot == false)
         {
-            StartCoroutine(GachaAnim());
+            if (leftSlot > 0)
+                StartCoroutine(GachaAnim());
+            else
+            {
+                buyButton.interactable = false;
+                Color col = buyButton.GetComponent<Image>().color;
+                col.a = 0.5f;
+                buyButton.GetComponent<Image>().color = col;
+                GetSpecialItem();
+            }
         }
     }
 
@@ -61,7 +74,7 @@ public class ShopGetItem : MonoBehaviour
                 ChangeSlotColor(randomNum, 1.0f);
                 PickedItem[randomNum] = true;
                 Equipment Item = ItemManager.ItemLists[slots[randomNum].itemName];
-                Inven.AddToInventory(Item);
+                Inven.AddToInventory(Item, slots[randomNum].itemImage);
                 break;
             }
             else
@@ -105,5 +118,11 @@ public class ShopGetItem : MonoBehaviour
         {
             PickedItem[i] = false;
         }
+    }
+
+    void GetSpecialItem()
+    {
+        Equipment Item = ItemManager.ItemLists[specialSlot.itemName];
+        Inven.AddToInventory(Item, specialSlot.itemImage);
     }
 }
