@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Stat : MonoBehaviour
 {
+    [Header("다중공격 옵션")]
     public bool multishot;
+    public int numberOfProjectiles;
 
     [Header("종족")]
     public string type;
@@ -23,10 +25,5 @@ public class Stat : MonoBehaviour
     public float maxExp;
     public float nowExp;
     public float shield;
-
-
-
-
-
 
 }
