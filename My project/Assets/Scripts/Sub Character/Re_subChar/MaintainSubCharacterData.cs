@@ -75,20 +75,20 @@ public class MaintainSubCharacterData : MonoBehaviour
         {
             for(int j = 0; j<Char.Length; j++)
             {
-                if (id[i] == Char[i].id)
+                if (id[i] == Char[j].id)
                 {
-                    multishot[i] = Char[i].multishot;
-                    type[i] = Char[i].type;
-                    maxHp[i] = Char[i].maxHp;
-                    nowHp[i] = Char[i].nowHp;
-                    atkDamage[i] = Char[i].atkDamage;
-                    criticalRate[i] = Char[i].criticalRate;
-                    atkSpeed[i] = Char[i].atkSpeed;
-                    skillCooldown[i] = Char[i].skillCooldown;
-                    skillDamage[i] = Char[i].skillDamage;
-                    maxExp[i] = Char[i].maxExp;
-                    nowExp[i] = Char[i].nowExp;
-                    shield[i] = Char[i].shield;
+                    multishot[i] = Char[j].multishot;
+                    type[i] = Char[j].type;
+                    maxHp[i] = Char[j].maxHp;
+                    nowHp[i] = Char[j].nowHp;
+                    atkDamage[i] = Char[j].atkDamage;
+                    criticalRate[i] = Char[j].criticalRate;
+                    atkSpeed[i] = Char[j].atkSpeed;
+                    skillCooldown[i] = Char[j].skillCooldown;
+                    skillDamage[i] = Char[j].skillDamage;
+                    maxExp[i] = Char[j].maxExp;
+                    nowExp[i] = Char[j].nowExp;
+                    shield[i] = Char[j].shield;
                 }
             }
         }
