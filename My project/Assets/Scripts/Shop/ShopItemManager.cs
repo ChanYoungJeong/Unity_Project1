@@ -9,6 +9,7 @@ public class ShopItemManager : MonoBehaviour
     public Transform slotHolder;
 
     public Slot specialSlot;
+    public Text speicalItemName;
 
     private int RandomNum;
     private List<bool> NumberList = new List<bool>();
@@ -60,6 +61,7 @@ public class ShopItemManager : MonoBehaviour
             }
             NumberList[RandomNum] = false;
             slots[i].SetItem(ItemManager.loadObjects[RandomNum].name, ItemManager.loadObjects[RandomNum]);
+            slots[i].GetComponentInChildren<Text>().text = ItemManager.loadObjects[RandomNum].name;
             ResetNumber[i] = RandomNum;
         }
     }
@@ -72,6 +74,7 @@ public class ShopItemManager : MonoBehaviour
             getItemManager.rotSpeed = 0.1f;
             getItemManager.ResetVisitedSlot();
             getItemManager.ResetAllSlotColor();
+            getItemManager.ActiveBuyButton();
             for (int i = 0; i < slots.Length; i++)
             {
                 NumberList[ResetNumber[i]] = true;
@@ -86,5 +89,6 @@ public class ShopItemManager : MonoBehaviour
     {
         int rand = Random.Range(0, ItemManager.specialLoadObjects.Length);
         specialSlot.SetItem(ItemManager.specialLoadObjects[rand].name, ItemManager.specialLoadObjects[rand]);
+        speicalItemName.text = ItemManager.specialLoadObjects[rand].name;
     }
 }
