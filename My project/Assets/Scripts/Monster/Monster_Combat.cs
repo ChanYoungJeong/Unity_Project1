@@ -14,7 +14,7 @@ public class Monster_Combat : MonoBehaviour
     public GameObject CriticalDamageText;
 
     bool check = false;
- 
+    float y;
     // Start is called before the first frame update
     void Awake()
     {
@@ -57,11 +57,13 @@ public class Monster_Combat : MonoBehaviour
 
     public void ApplyDamage(float damage, Color color, float ciritcalRate, float criticalDamage)
     {
+        if (y == 0)
+            StartCoroutine(sety(1.0f));
         if (Random.Range(0, 100) < ciritcalRate)
         {
             Monster_Stat.nowHp -= Mathf.RoundToInt(damage * criticalDamage);
             GameObject hudText = Instantiate(CriticalDamageText);
-            hudText.transform.position = DamagePrinter.position;
+            hudText.transform.position = DamagePrinter.position + new Vector3(0, y, 0);
             hudText.GetComponent<DamageText>().damage = Mathf.RoundToInt(damage * criticalDamage);
             hudText.GetComponent<DamageText>().damageColor = color;
         }
@@ -69,12 +71,17 @@ public class Monster_Combat : MonoBehaviour
         {
             Monster_Stat.nowHp -= damage;
             GameObject hudText = Instantiate(DamageText);
-            hudText.transform.position = DamagePrinter.position;
+            hudText.transform.position = DamagePrinter.position + new Vector3(0, y, 0);
             hudText.GetComponent<DamageText>().damage = damage;
             hudText.GetComponent<DamageText>().damageColor = color;
         }
+        y += 0.5f;
     }
 
-
+    IEnumerator sety(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        y = 0;
+    }
 
 }
