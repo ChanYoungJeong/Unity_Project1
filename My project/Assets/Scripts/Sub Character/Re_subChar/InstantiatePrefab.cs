@@ -32,29 +32,20 @@ public class InstantiatePrefab : MonoBehaviour
 
     public void CreatePrefab(GameObject prefab)
     {
-        GameObject[] prefabClone;
-
-        prefabClone = new GameObject[max];
-
-        prefabClone[0] = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle[0]));
-        prefabClone[0].GetComponent<Rigidbody2D>().AddForce(prefabClone[0].transform.right * speed, ForceMode2D.Impulse);
-        if (prefabClone[0].GetComponent<PrefabOnTrigger>())
-            prefabClone[0].GetComponent<PrefabOnTrigger>().damage = stat.atkDamage;
-
-        if (max != 1)
+        for (int i = 0; i < max; i++)
         {
-            for (int i = 0; i < max; i++)
+            GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle[i]));
+            prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
+            if (prefabClone.GetComponent<PrefabOnTrigger>())
+                prefabClone.GetComponent<PrefabOnTrigger>().damage = stat.atkDamage;
+
+            if(gameObject.transform.parent.name == "Rogue")
             {
-                prefabClone[i] = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle[i]));
-                prefabClone[i].GetComponent<Rigidbody2D>().AddForce(prefabClone[i].transform.right * speed, ForceMode2D.Impulse);
-                if (prefabClone[i].GetComponent<PrefabOnTrigger>())
-                    prefabClone[i].GetComponent<PrefabOnTrigger>().damage = stat.atkDamage;
-
-                Destroy(prefabClone[i], 5f);
+                Debug.Log(prefabClone);
             }
-        }
 
-        Destroy(prefabClone[0], 5f);
+            Destroy(prefabClone, 5f);
+        }
     }
 
 
@@ -67,7 +58,7 @@ public class InstantiatePrefab : MonoBehaviour
 
         angle[0] = Mathf.Atan2(target[0].position.y - transObj.position.y, target[0].position.x - transObj.position.x) * Mathf.Rad2Deg;
 
-        if(max != 1)
+        if (max != 1)
         {
             for (int i = 0; i < max; i++)
             {

@@ -30,15 +30,13 @@ public class ChargingAttack : MonoBehaviour
     void CreateCharging(GameObject chargingPrefab)
     {
         GameObject chargingClone = Instantiate(chargingPrefab, transform.position, Quaternion.identity);
-        Debug.Log(chargingClone);
         chargingClone.transform.position += new Vector3(x, 0, 0);
 
         Destroy(chargingClone, destroyTime);
-
-        Invoke("CreatePrefab", destroyTime);
+        Invoke("CreateSkillPrefab", destroyTime);
     }
 
-    public void CreatePrefab()
+    void CreateSkillPrefab()
     {
         GameObject projectileClone = Instantiate(projectile, transform.position, Quaternion.Euler(0, 0, angle));
         projectileClone.GetComponent<Rigidbody2D>().AddForce(projectileClone.transform.right * speed, ForceMode2D.Impulse);
