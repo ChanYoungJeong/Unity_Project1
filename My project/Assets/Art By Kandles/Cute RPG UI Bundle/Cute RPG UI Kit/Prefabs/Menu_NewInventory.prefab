@@ -4186,8 +4186,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2579907917871990574}
   - component: {fileID: 2579907917871990575}
-  - component: {fileID: 7207402118061683525}
-  - component: {fileID: 7207402118061683524}
   m_Layer: 5
   m_Name: Menu_NewInventory
   m_TagString: Untagged
@@ -4235,40 +4233,6 @@ MonoBehaviour:
   EM: {fileID: 0}
   DBManager: {fileID: 0}
   equipInfoUI: {fileID: 3390194009000928751}
---- !u!114 &7207402118061683525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2366315325671472828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2ba387d0893c5547a6150a255a81b3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eqiupInfo: {fileID: 3390194009000928751}
---- !u!114 &7207402118061683524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2366315325671472828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects:
-  - {fileID: 0}
-  Offobjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  AllObjects:
-  - {fileID: 0}
 --- !u!1 &2366329158812121436
 GameObject:
   m_ObjectHideFlags: 0
