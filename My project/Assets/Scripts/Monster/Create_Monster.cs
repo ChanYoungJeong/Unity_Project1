@@ -14,6 +14,7 @@ public class Create_Monster : MonoBehaviour
     [SerializeField]
     float summonDelay = 0.5f;
     public int scale;
+    public GameObject Monster;
 
 
     // Start is called before the first frame update
@@ -43,7 +44,7 @@ public class Create_Monster : MonoBehaviour
     void generateMonster()
     {
         int range = Random.Range(0, 8);
-        GameObject Monster = Instantiate(monster_Prefab, spawnArray[range].position, transform.rotation);
+         Monster = Instantiate(monster_Prefab, spawnArray[range].position, transform.rotation);
         setMonsterStat(Monster);
         Monster.transform.SetParent(this.transform, true);    
     }

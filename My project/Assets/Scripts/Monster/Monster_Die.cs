@@ -9,7 +9,7 @@ public class Monster_Die : MonoBehaviour
     PlayerExpBar playerExp;
     Monster_Script monster_Script;
     public DropBead DropBead;
-
+    Create_Monster createmonster;
 
 
     private void Awake()
@@ -21,6 +21,7 @@ public class Monster_Die : MonoBehaviour
             playerExp = Player.GetComponentInParent<PlayerExpBar>();
         }
         monster_Script = GetComponentInParent<Monster_Script>();
+        
     }
 
     private void Update()
@@ -41,9 +42,11 @@ public class Monster_Die : MonoBehaviour
         anim.SetTrigger("Death");
         //Instantiate(MonsterDieAnimation, this.transform.position, this.transform.rotation);
         //ShowPlayerStat();
+        
     }
     public void MonsterDie()
     {
-        Destroy(this.gameObject);
+        Debug.Log(Battle_Situation_Trigger.monster);
+        Destroy(Battle_Situation_Trigger.monster);
     }
 }
