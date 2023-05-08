@@ -15,9 +15,9 @@ public class ToRaid : MonoBehaviour
         SceneManager.LoadScene("Project");
         Time.timeScale = 1;
     }
-    public void SceneChangeTowerDefense()
+    public void SceneChangeSurvival()
     {
-        SceneManager.LoadScene("TowerDefense");
+        SceneManager.LoadScene("SubContents 1");
 
     }
 }
