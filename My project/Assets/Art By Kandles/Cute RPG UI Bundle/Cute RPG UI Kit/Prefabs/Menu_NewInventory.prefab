@@ -2566,7 +2566,6 @@ GameObject:
   - component: {fileID: 2580126529816065290}
   - component: {fileID: 2577571693615903124}
   - component: {fileID: 2397275645754814468}
-  - component: {fileID: 3794912912998807503}
   m_Layer: 5
   m_Name: Panel_Store Selection
   m_TagString: Untagged
@@ -2643,19 +2642,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3794912912998807503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2365528118656857846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39995b5ce6495a04d8a6073647d18587, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HeroStat: {fileID: 4014611179265169518}
 --- !u!1 &2365619261788393926
 GameObject:
   m_ObjectHideFlags: 0
@@ -4227,8 +4213,6 @@ GameObject:
   - component: {fileID: 2579907917871990574}
   - component: {fileID: 2579907917871990575}
   - component: {fileID: 1306216354931796142}
-  - component: {fileID: 1306216354931796141}
-  - component: {fileID: 1306216354931796140}
   m_Layer: 5
   m_Name: Menu_NewInventory
   m_TagString: Untagged
@@ -4290,41 +4274,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryPanel: {fileID: 2365108610433570984}
   ItemInfoUI: {fileID: 2365528118656857846}
---- !u!114 &1306216354931796141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2366315325671472828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects:
-  - {fileID: 0}
-  Offobjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  AllObjects:
-  - {fileID: 0}
---- !u!114 &1306216354931796140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2366315325671472828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d7a13592b2d539459a2c112825d64f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Objects:
-  - {fileID: 0}
 --- !u!1 &2366329158812121436
 GameObject:
   m_ObjectHideFlags: 0
@@ -8534,7 +8483,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3794912912998807503}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: StatOnOff, Assembly-CSharp
         m_MethodName: OnOff
         m_Mode: 1
