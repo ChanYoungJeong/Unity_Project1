@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Monster_Die : MonoBehaviour
 {
-    public GameObject MonsterDieAnimation;
+    Animator anim;
+    //public GameObject MonsterDieAnimation;
     PlayerExpBar playerExp;
     Monster_Script monster_Script;
     public DropBead DropBead;
@@ -13,12 +14,13 @@ public class Monster_Die : MonoBehaviour
 
     private void Awake()
     {
+        anim = GetComponent<Animator>();
         if (GameObject.FindWithTag("Player"))
         {
             GameObject Player = GameObject.FindWithTag("Player");
-            playerExp = Player.GetComponent<PlayerExpBar>();
+            playerExp = Player.GetComponentInParent<PlayerExpBar>();
         }
-        monster_Script = GetComponent<Monster_Script>();
+        monster_Script = GetComponentInParent<Monster_Script>();
     }
 
     private void Update()
@@ -28,16 +30,20 @@ public class Monster_Die : MonoBehaviour
             if (DropBead)
                 DropBead.dropBead();
 
-            MonsterDie();
+            MonsterDieAnimation();
+
             playerExp.GetExp(monster_Script.Exp);
             Game_System.Gold += monster_Script.Golds;
         }
     }
+    public void MonsterDieAnimation()
+    {
+        anim.SetTrigger("Death");
+        //Instantiate(MonsterDieAnimation, this.transform.position, this.transform.rotation);
+        //ShowPlayerStat();
+    }
     public void MonsterDie()
     {
-
-        Instantiate(MonsterDieAnimation, this.transform.position, this.transform.rotation);
         Destroy(this.gameObject);
-        //ShowPlayerStat();
     }
 }
