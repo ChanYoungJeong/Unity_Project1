@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class MonsterAnimationController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int CurrentStage;
     void Awake()
     {
-        if (Game_System.Stage >= 2 && Game_System.Stage < 20)
+        if (Game_System.Stage%CurrentStage ==0)
         {
             ChangeAnimation();
         }
@@ -17,6 +17,6 @@ public class MonsterAnimationController : MonoBehaviour
     {
         GetComponentInChildren<Animator>().runtimeAnimatorController =
         (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate
-        (Resources.Load("Ani\\Idle_0", typeof(RuntimeAnimatorController)));
+        (Resources.Load("Ani\\HorseNewController", typeof(RuntimeAnimatorController)));
     }
 }

@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class Stop_Monster : MonoBehaviour
     public bool monster_Stop = false;
     public float speed = 3.0f;
     public bool atSpot = false;
+
+    public bool stop=false; 
 
     public PlayerScript playerScript;
     Monster_Script monster_Script;
@@ -42,6 +45,7 @@ public class Stop_Monster : MonoBehaviour
         //Debug.Log(collision.transform.name);
         if (collision.transform.GetComponent<Battle_Situation_Trigger>())
         {
+            stop = true;
             rigid.velocity = Vector2.zero;
         }
 

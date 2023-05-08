@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8049821130837150680}
   - component: {fileID: 521297955361919884}
   m_Layer: 0
-  m_Name: pakgeedead
+  m_Name: MonsterDie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6991849013916550155, guid: b9517addf15136e47a89337d912454b0, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_Size: {x: 1.5, y: 1.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &8049821130837150680
@@ -96,7 +96,7 @@ Animator:
   m_GameObject: {fileID: 8049821130837150683}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 520efb3f1facf9043bb5b08cf8a4b026, type: 2}
+  m_Controller: {fileID: 9100000, guid: b46e0a101c8e64549850291b8e93e902, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
