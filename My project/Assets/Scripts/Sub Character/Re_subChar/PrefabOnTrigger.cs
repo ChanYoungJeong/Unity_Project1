@@ -38,7 +38,7 @@ public class PrefabOnTrigger : MonoBehaviour
         //로 처리할시 다른 곳에서 트리거를 사용시 충돌체에게 적용이 안됨
         //또한 날라가는 도중 몬스터가 죽을시 데미지가 안들어감
         //그렇기 때문에 충돌하는 몬스터를 바로 감소시킬 필요가 있음
-        if (collision.transform.GetComponent<Monster_Script>())
+        if (collision.transform.GetComponent<Monster_Script>() || collision.transform.GetComponent<BossScript>())
         {
             //여러명 때릴 경우
             if (multiHit)
@@ -67,12 +67,12 @@ public class PrefabOnTrigger : MonoBehaviour
 
         }
 
-        if (collision.transform.GetComponent<BossScript>())
+        /*f (collision.transform.GetComponent<BossScript>())
         {
             monsterCombat = collision.transform.GetComponent<Monster_Combat>();
             monsterCombat.ApplyDamage(damage, damageColor, 0, 0);
             Destroy(this.gameObject, destroytime);
-        }
+        }*/
     }
 
     void AnimationEnd()

@@ -57,6 +57,7 @@ public class Monster_Combat : MonoBehaviour
 
     public void ApplyDamage(float damage, Color color, float ciritcalRate, float criticalDamage)
     {
+
         if (y == 0)
             StartCoroutine(sety(1.0f));
         if (Random.Range(0, 100) < ciritcalRate)

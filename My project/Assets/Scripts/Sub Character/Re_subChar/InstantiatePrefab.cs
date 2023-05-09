@@ -34,15 +34,12 @@ public class InstantiatePrefab : MonoBehaviour
     {
         for (int i = 0; i < max; i++)
         {
+            Debug.Log(angle[i]);
             GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle[i]));
             prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
             if (prefabClone.GetComponent<PrefabOnTrigger>())
                 prefabClone.GetComponent<PrefabOnTrigger>().damage = stat.atkDamage;
 
-            if(gameObject.transform.parent.name == "Rogue")
-            {
-                Debug.Log(prefabClone);
-            }
 
             Destroy(prefabClone, 5f);
         }
