@@ -352,7 +352,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25af3d7e69782874ea13c12b01b48b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MonsterDieAnimation: {fileID: 0}
   DropBead: {fileID: 0}
+  destroytime: 0
 --- !u!1 &2001366047354952428
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,7 +429,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 3.4599648, y: -4.48}
+  m_AnchoredPosition: {x: 11.679986, y: -4.48}
   m_SizeDelta: {x: 80.9315, y: 112.4438}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8654570946580744857
@@ -577,7 +579,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.029472802
+  m_Value: 0.7653886
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
