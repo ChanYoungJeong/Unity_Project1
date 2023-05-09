@@ -24,6 +24,9 @@ public class ReceivedData : MonoBehaviour
                 if (Char[i].id == data.Char[j].id)
                 {
                     Char[i].multishot = data.Char[j].multishot;
+                    Char[i].numberOfProjectiles = data.Char[j].numberOfProjectiles;
+                    Char[i].singleshot = data.Char[j].singleshot;
+                    Char[i].numberOfSingleProjectiles = data.Char[j].numberOfSingleProjectiles;
                     Char[i].type = data.Char[j].type;
                     Char[i].maxHp = data.Char[j].maxHp;
                     Char[i].nowHp = data.Char[j].nowHp;

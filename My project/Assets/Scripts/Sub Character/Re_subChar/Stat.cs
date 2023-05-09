@@ -8,6 +8,10 @@ public class Stat : MonoBehaviour
     public bool multishot;
     public int numberOfProjectiles;
 
+    [Header("단일공격 옵션")]
+    public bool singleshot;
+    public int numberOfSingleProjectiles;
+
     [Header("종족")]
     public string type;
     public int id;

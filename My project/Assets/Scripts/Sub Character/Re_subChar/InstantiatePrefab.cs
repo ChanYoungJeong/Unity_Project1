@@ -6,6 +6,7 @@ public class InstantiatePrefab : MonoBehaviour
 {
     [SerializeField] private float speed = 20;
     [SerializeField] private GameObject prefab;
+    public float attackDelay;
 
 
     private Stat stat;
@@ -13,7 +14,7 @@ public class InstantiatePrefab : MonoBehaviour
     // private float lastSkillAttackTime;
 
     private int max;
-
+    private int count;
     private void Awake()
     {
         stat = GetComponentInParent<Stat>();
@@ -32,16 +33,51 @@ public class InstantiatePrefab : MonoBehaviour
 
     public void CreatePrefab(GameObject prefab)
     {
-        for (int i = 0; i < max; i++)
+        if (stat.singleshot)
         {
-            GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle[i])) as GameObject;
-            prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
-            if (prefabClone.GetComponent<PrefabOnTrigger>())
-                prefabClone.GetComponent<PrefabOnTrigger>().damage = stat.atkDamage;
-
-
-            Destroy(prefabClone, 5f);
+            count = stat.numberOfSingleProjectiles;
+            StartCoroutine(SingleAttack(prefab));
         }
+        else if (stat.multishot)
+        {
+            for (int i = 0; i < stat.numberOfProjectiles; i++)
+            {
+                GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle[i])) as GameObject;
+                prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
+                if (prefabClone.GetComponent<PrefabOnTrigger>())
+                    prefabClone.GetComponent<PrefabOnTrigger>().damage = stat.atkDamage;
+
+                Destroy(prefabClone, 5f);
+            }
+        }
+        else
+        {
+            InstantiatePrefabClone(prefab);
+        }
+    }
+
+    void InstantiatePrefabClone(GameObject prefab)
+    {
+        GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle[0])) as GameObject;
+        prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
+        if (prefabClone.GetComponent<PrefabOnTrigger>())
+            prefabClone.GetComponent<PrefabOnTrigger>().damage = stat.atkDamage;
+
+
+        Destroy(prefabClone, 5f);
+    }
+
+    IEnumerator SingleAttack(GameObject prefab)
+    {
+        InstantiatePrefabClone(prefab);
+        count--;
+
+        yield return new WaitForSeconds(attackDelay);
+
+        InstantiatePrefabClone(prefab);
+        count--;
+
+        if (count == 0) yield break;
     }
 
 
@@ -49,9 +85,7 @@ public class InstantiatePrefab : MonoBehaviour
     {
         Transform[] target;
         target = new Transform[max];
-        Debug.Log(target[0]);
         target = TargetTrans();
-        Debug.Log(target[0]);
 
         angle[0] = Mathf.Atan2(target[0].position.y - transObj.position.y, target[0].position.x - transObj.position.x) * Mathf.Rad2Deg;
 
@@ -66,15 +100,12 @@ public class InstantiatePrefab : MonoBehaviour
 
     public Transform[] TargetTrans()
     {
-        Debug.Log("여기?");
         Transform[] transform;
         transform = new Transform[max];
-        Debug.Log("여기는?");
 
         int monsterCount = Battle_Situation_Trigger.monster ?
             Battle_Situation_Trigger.monster_group.transform.childCount : 1;
 
-        Debug.Log(monsterCount);
 
         if (Battle_Situation_Trigger.monster)
         {
@@ -82,7 +113,6 @@ public class InstantiatePrefab : MonoBehaviour
             {
                 transform[0] = Battle_Situation_Trigger.monster ? 
                     Battle_Situation_Trigger.monster_group.transform.GetChild(0).gameObject.transform : BossScript.boss.transform;
-                Debug.Log(transform[0]);
             }
             else
             {
@@ -98,7 +128,6 @@ public class InstantiatePrefab : MonoBehaviour
             transform[0] = BossScript.boss.transform;
         }
 
-        Debug.Log(transform[0]);
         return transform;
     }
 }
