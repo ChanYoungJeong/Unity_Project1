@@ -8,7 +8,8 @@ public class Monster_Die : MonoBehaviour
     PlayerExpBar playerExp;
     Monster_Script monster_Script;
     public DropBead DropBead;
-
+    Create_Monster createmonster;
+    public float destroytime;
 
 
     private void Awake()
@@ -23,21 +24,28 @@ public class Monster_Die : MonoBehaviour
 
     private void Update()
     {
+
         if (monster_Script.nowHp <= 0)
         {
             if (DropBead)
                 DropBead.dropBead();
 
             MonsterDie();
+
             playerExp.GetExp(monster_Script.Exp);
             Game_System.Gold += monster_Script.Golds;
+
+
         }
     }
+    
     public void MonsterDie()
     {
+        GameObject gameObjectClone = Instantiate(MonsterDieAnimation, this.transform.position, this.transform.rotation);
 
-        Instantiate(MonsterDieAnimation, this.transform.position, this.transform.rotation);
+        Destroy(gameObjectClone, destroytime);
         Destroy(this.gameObject);
-        //ShowPlayerStat();
+
+
     }
 }

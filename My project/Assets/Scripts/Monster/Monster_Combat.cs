@@ -12,14 +12,13 @@ public class Monster_Combat : MonoBehaviour
     public Transform DamagePrinter;
     public GameObject DamageText;
     public GameObject CriticalDamageText;
-
-    bool check = false;
+    Stop_Monster stopmoster;
     float y;
     // Start is called before the first frame update
     void Awake()
     {
+        stopmoster= GetComponent<Stop_Monster>();
         anim = GetComponentInChildren<Animator>();
-        anim.SetBool("isattack", false);
     }
     void Start()
     {
@@ -36,9 +35,8 @@ public class Monster_Combat : MonoBehaviour
     {
         if (Battle_Situation_Trigger.on_Battle)
         {
-            if (Player_Stat && !check)
+            if (Player_Stat && stopmoster.stop)
             {
-                check = true;
                 StartCoroutine(Attack());
             }
         }
@@ -46,12 +44,16 @@ public class Monster_Combat : MonoBehaviour
         {
             StopCoroutine(Attack());
         }
+        if (!stopmoster.stop)
+        {
+            anim.SetTrigger("Run");
+        }
     }
 
     IEnumerator Attack()
     {
         yield return new WaitForSeconds(Monster_Stat.atkSpeed);
-        anim.SetBool("isattack", true);
+        anim.SetTrigger("Attack");
         Player_Stat.nowHp -= Monster_Stat.atkDmg;
     }
 
