@@ -5610,7 +5610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1406773150100235784, guid: e8fa0b7250421f14c9266570c7c12b1c, type: 3}
       propertyPath: numberOfProjectiles
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1406773151719043218, guid: e8fa0b7250421f14c9266570c7c12b1c, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5711,6 +5711,18 @@ PrefabInstance:
     - target: {fileID: 4399156422543379957, guid: e8fa0b7250421f14c9266570c7c12b1c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7465169568929908464, guid: e8fa0b7250421f14c9266570c7c12b1c, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 8472405013153994461, guid: 09a2359080ba9884fa5beebe86ffdb4b, type: 3}
+    - target: {fileID: 7465169568929908465, guid: e8fa0b7250421f14c9266570c7c12b1c, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 8472405013153994461, guid: b00fa851304ea434eb4f8646ba4b3985, type: 3}
+    - target: {fileID: 7465169568929908465, guid: e8fa0b7250421f14c9266570c7c12b1c, type: 3}
+      propertyPath: attackDelay
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 8835635629431486032, guid: e8fa0b7250421f14c9266570c7c12b1c, type: 3}
       propertyPath: m_Name
@@ -13153,6 +13165,9 @@ MonoBehaviour:
   - {fileID: 1427977945}
   - {fileID: 2124737461}
   multishot: 
+  numberOfProjectiles: 
+  singleshot: 
+  numberOfSingleProjectiles: 
   type: []
   id: 
   maxHp: []
@@ -18319,7 +18334,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1216579059284573549, guid: c2a9e69534d8d05448d576e73d16fbe4, type: 3}
       propertyPath: multishot
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216579059284573549, guid: c2a9e69534d8d05448d576e73d16fbe4, type: 3}
+      propertyPath: singleshot
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216579059284573549, guid: c2a9e69534d8d05448d576e73d16fbe4, type: 3}
+      propertyPath: numberOfSingleProjectiles
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2694326839448191777, guid: c2a9e69534d8d05448d576e73d16fbe4, type: 3}
       propertyPath: prefab
@@ -18329,6 +18352,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2694326839448191806, guid: c2a9e69534d8d05448d576e73d16fbe4, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 1739268893360019139, guid: 36bfab851e2c61b419d1effd244dbee4, type: 3}
     - target: {fileID: 5501876666732430707, guid: c2a9e69534d8d05448d576e73d16fbe4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
