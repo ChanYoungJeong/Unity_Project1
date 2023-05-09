@@ -46,7 +46,7 @@ public class Monster_Combat : MonoBehaviour
         }
         if (!stopmoster.stop)
         {
-            anim.SetTrigger("Run");
+            //anim.SetTrigger("Run");
         }
     }
 

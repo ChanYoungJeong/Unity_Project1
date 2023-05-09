@@ -34,8 +34,7 @@ public class InstantiatePrefab : MonoBehaviour
     {
         for (int i = 0; i < max; i++)
         {
-            Debug.Log(angle[i]);
-            GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle[i]));
+            GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle[i])) as GameObject;
             prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
             if (prefabClone.GetComponent<PrefabOnTrigger>())
                 prefabClone.GetComponent<PrefabOnTrigger>().damage = stat.atkDamage;
@@ -50,8 +49,9 @@ public class InstantiatePrefab : MonoBehaviour
     {
         Transform[] target;
         target = new Transform[max];
-
+        Debug.Log(target[0]);
         target = TargetTrans();
+        Debug.Log(target[0]);
 
         angle[0] = Mathf.Atan2(target[0].position.y - transObj.position.y, target[0].position.x - transObj.position.x) * Mathf.Rad2Deg;
 
@@ -66,16 +66,23 @@ public class InstantiatePrefab : MonoBehaviour
 
     public Transform[] TargetTrans()
     {
+        Debug.Log("여기?");
         Transform[] transform;
         transform = new Transform[max];
+        Debug.Log("여기는?");
 
-        int monsterCount = Battle_Situation_Trigger.monster_group.transform.childCount;
+        int monsterCount = Battle_Situation_Trigger.monster ?
+            Battle_Situation_Trigger.monster_group.transform.childCount : 1;
+
+        Debug.Log(monsterCount);
+
         if (Battle_Situation_Trigger.monster)
         {
             if (max == 1)
             {
-                transform[0] = Battle_Situation_Trigger.monster_group.transform.GetChild(0).gameObject.transform;
-
+                transform[0] = Battle_Situation_Trigger.monster ? 
+                    Battle_Situation_Trigger.monster_group.transform.GetChild(0).gameObject.transform : BossScript.boss.transform;
+                Debug.Log(transform[0]);
             }
             else
             {
@@ -91,6 +98,7 @@ public class InstantiatePrefab : MonoBehaviour
             transform[0] = BossScript.boss.transform;
         }
 
+        Debug.Log(transform[0]);
         return transform;
     }
 }
