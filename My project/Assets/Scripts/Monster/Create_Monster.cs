@@ -15,6 +15,7 @@ public class Create_Monster : MonoBehaviour
     float summonDelay = 0.5f;
     public int scale;
     public GameObject Monster;
+    public int CurrentStage;
 
 
     // Start is called before the first frame update
@@ -29,6 +30,16 @@ public class Create_Monster : MonoBehaviour
         {
             Destroy(gameObject, Game_System.StageDelay);
         }
+
+        if (Game_System.Stage % CurrentStage == 0)
+        {
+            ChamgePrefabs();
+        }
+    }
+
+    public void ChamgePrefabs()
+    {
+        monster_Prefab = Resources.Load("Prefabs\\Enemy2") as GameObject;
     }
 
     IEnumerator SummonMonsterWithDelay()
