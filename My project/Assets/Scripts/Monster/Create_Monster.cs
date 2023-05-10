@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.U2D.Animation;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,9 +17,9 @@ public class Create_Monster : MonoBehaviour
     public int scale;
     public GameObject Monster;
     public int CurrentStage;
-    //public int maxCurrentStage;
-    
-    
+    int count=1;
+    string Resourcename;
+
 
 
     // Start is called before the first frame update
@@ -26,26 +27,23 @@ public class Create_Monster : MonoBehaviour
     {
         StartCoroutine(SummonMonsterWithDelay());
     }
-
+    void Awake()
+    {
+        Resourcename = "Prefabs\\Enemy" + count;
+    }
     private void Update()
     {
-        
         if(this.transform.childCount == 0)
         {
             Destroy(gameObject, Game_System.StageDelay);
         }
 
-        /* if (Game_System.Stage % CurrentStage == 0)
-         {
-
-             ChamgePrefabs();
-         }*/
         CheckStage();
     }
 
-    public void ChamgePrefabs()
+    public void ChangePrefabs()
     {
-        monster_Prefab = Resources.Load("Prefabs\\Enemy2") as GameObject;
+        monster_Prefab = Resources.Load(Resourcename) as GameObject;
     }
 
     IEnumerator SummonMonsterWithDelay()
@@ -78,7 +76,9 @@ public class Create_Monster : MonoBehaviour
         if (CurrentStage < Game_System.Stage) 
         {
             CurrentStage += CurrentStage;
-            ChamgePrefabs();
+            count++;
+            Resourcename= "Prefabs\\Enemy" + count;
+            ChangePrefabs();
         }   
     }
 
