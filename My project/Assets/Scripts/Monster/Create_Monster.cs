@@ -16,6 +16,9 @@ public class Create_Monster : MonoBehaviour
     public int scale;
     public GameObject Monster;
     public int CurrentStage;
+    //public int maxCurrentStage;
+    
+    
 
 
     // Start is called before the first frame update
@@ -26,15 +29,18 @@ public class Create_Monster : MonoBehaviour
 
     private void Update()
     {
+        
         if(this.transform.childCount == 0)
         {
             Destroy(gameObject, Game_System.StageDelay);
         }
 
-        if (Game_System.Stage % CurrentStage == 0)
-        {
-            ChamgePrefabs();
-        }
+        /* if (Game_System.Stage % CurrentStage == 0)
+         {
+
+             ChamgePrefabs();
+         }*/
+        CheckStage();
     }
 
     public void ChamgePrefabs()
@@ -66,4 +72,14 @@ public class Create_Monster : MonoBehaviour
         MM = monster.GetComponent<Monster_Manager>();
         MM.scale = scale;
     }
+
+    void CheckStage()
+    {
+        if (CurrentStage < Game_System.Stage) 
+        {
+            CurrentStage += CurrentStage;
+            ChamgePrefabs();
+        }   
+    }
+
 }
