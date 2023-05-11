@@ -71,6 +71,7 @@ public class InstantiatePrefab : MonoBehaviour
     {
         InstantiatePrefabClone(prefab);
         count--;
+        if (count == 0) yield break;
 
         yield return new WaitForSeconds(attackDelay);
 
