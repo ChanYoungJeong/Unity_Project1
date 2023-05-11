@@ -69,16 +69,15 @@ public class InstantiatePrefab : MonoBehaviour
 
     IEnumerator SingleAttack(GameObject prefab)
     {
-        InstantiatePrefabClone(prefab);
-        count--;
-        if (count == 0) yield break;
+        while(count > 0)
+        {
+            InstantiatePrefabClone(prefab);
+            count--;
 
-        yield return new WaitForSeconds(attackDelay);
+            if (count == 0) yield break;
 
-        InstantiatePrefabClone(prefab);
-        count--;
-
-        if (count == 0) yield break;
+            yield return new WaitForSeconds(attackDelay);
+        }
     }
 
 
