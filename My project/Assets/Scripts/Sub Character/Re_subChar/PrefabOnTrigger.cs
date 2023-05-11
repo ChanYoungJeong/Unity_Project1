@@ -47,6 +47,12 @@ public class PrefabOnTrigger : MonoBehaviour
                 monsterCombat = collision.transform.GetComponent<Monster_Combat>();
                 monsterCombat.ApplyDamage(damage, damageColor, 0, 0);
                 Destroy(this.gameObject, 3f);
+                if (Impact != null)
+                {
+                    GameObject impact = Instantiate(Impact, collision.transform.position, collision.transform.rotation);
+                    Game_System.setParentHolder(impact.transform);
+                    Destroy(impact, 1);
+                }
             }
             //하나만 때릴경우
             if (!multiHit && !hitted)
@@ -56,23 +62,14 @@ public class PrefabOnTrigger : MonoBehaviour
                 monsterCombat = collision.transform.GetComponent<Monster_Combat>();
                 monsterCombat.ApplyDamage(damage, damageColor, 0, 0);
                 Destroy(this.gameObject, destroytime);
+                if (Impact != null)
+                {
+                    GameObject impact = Instantiate(Impact, collision.transform.position, collision.transform.rotation);
+                    Game_System.setParentHolder(impact.transform);
+                    Destroy(impact, 1);
+                }
             }
-
-            if (Impact != null)
-            {
-                GameObject impact = Instantiate(Impact, collision.transform.position, collision.transform.rotation);
-                Game_System.setParentHolder(impact.transform);
-                Destroy(impact, 1);
-            }
-
         }
-
-        /*f (collision.transform.GetComponent<BossScript>())
-        {
-            monsterCombat = collision.transform.GetComponent<Monster_Combat>();
-            monsterCombat.ApplyDamage(damage, damageColor, 0, 0);
-            Destroy(this.gameObject, destroytime);
-        }*/
     }
 
     void AnimationEnd()
