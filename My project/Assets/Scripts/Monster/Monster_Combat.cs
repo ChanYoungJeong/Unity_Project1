@@ -14,6 +14,8 @@ public class Monster_Combat : MonoBehaviour
     public GameObject CriticalDamageText;
     Stop_Monster stopmoster;
     float y;
+    bool check = false;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -35,8 +37,10 @@ public class Monster_Combat : MonoBehaviour
     {
         if (Battle_Situation_Trigger.on_Battle)
         {
+            if(Player_Stat&& !check)
             if (Player_Stat && stopmoster.stop)
             {
+                check = true;
                 StartCoroutine(Attack());
             }
         }
@@ -44,10 +48,7 @@ public class Monster_Combat : MonoBehaviour
         {
             StopCoroutine(Attack());
         }
-        if (!stopmoster.stop)
-        {
-            //anim.SetTrigger("Run");
-        }
+        
     }
 
     IEnumerator Attack()
