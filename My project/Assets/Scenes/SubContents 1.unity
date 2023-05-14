@@ -1557,7 +1557,7 @@ MonoBehaviour:
   Player: {fileID: 5230932678622522759}
   subCharPrefab: {fileID: 2433803750153903085, guid: 0df71d8f5610eeb40a83baf73e092964, type: 3}
   BeadCountText: {fileID: 412504837}
-  Type: Archer
+  Type: Wizzard
   beadCount: 0
   heroSummon: {fileID: 286476160}
   y: 0
@@ -2218,6 +2218,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   multishot: 0
   numberOfProjectiles: 0
+  singleshot: 0
+  numberOfSingleProjectiles: 0
   type: 
   id: 0
   maxHp: 100
@@ -3511,7 +3513,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1967615293818691814}
   m_Direction: 0
   m_Value: 1
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3885,7 +3887,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1967615294551595561}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
