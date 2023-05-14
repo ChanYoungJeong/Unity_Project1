@@ -46,7 +46,6 @@ public class InstantiatePrefab : MonoBehaviour
                 prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
                 if (prefabClone.GetComponent<PrefabOnTrigger>())
                     prefabClone.GetComponent<PrefabOnTrigger>().damage = stat.atkDamage;
-
                 Destroy(prefabClone, 5f);
             }
         }

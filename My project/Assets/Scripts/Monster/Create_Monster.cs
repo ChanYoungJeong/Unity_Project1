@@ -38,7 +38,7 @@ public class Create_Monster : MonoBehaviour
             Destroy(gameObject, Game_System.StageDelay);
         }
 
-        CheckStage();
+        
     }
 
     public void ChangePrefabs()
@@ -50,6 +50,7 @@ public class Create_Monster : MonoBehaviour
     {
         for (int i = 0; i < monsterCapacity; i++)
         {
+            CheckStage();
             generateMonster();
             yield return new WaitForSeconds(summonDelay);       
         }   
