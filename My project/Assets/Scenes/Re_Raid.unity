@@ -1163,6 +1163,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &887139489 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8086202440483081610, guid: 129f1b5fe10ef424da0ff2abc5981855, type: 3}
+  m_PrefabInstance: {fileID: 410929546}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &929673477 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3005295253290942559, guid: 129f1b5fe10ef424da0ff2abc5981855, type: 3}
@@ -1910,7 +1915,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.102354564, y: 0.47349557}
+  m_Offset: {x: -0.005247727, y: 0.47349557}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1921,7 +1926,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1887667, y: 0.33420295}
+  m_Size: {x: 0.40397128, y: 0.33420295}
   m_EdgeRadius: 0
 --- !u!114 &1778638825
 MonoBehaviour:
@@ -1936,12 +1941,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subHeroAnimator:
-  - {fileID: 1625490488}
+  - {fileID: 887139489}
+  - {fileID: 640447554}
   - {fileID: 1545415859}
+  - {fileID: 720436210}
+  - {fileID: 1625490488}
   - {fileID: 57396353}
   - {fileID: 1805101307}
-  - {fileID: 720436210}
-  - {fileID: 640447554}
 --- !u!95 &1805101307 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 748623726662516462, guid: 15ef4925e7a7e904ea5d0c0589713b2c, type: 3}
@@ -2441,7 +2447,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.016114473, y: -0.04046619}
+  m_Offset: {x: 0.0054060146, y: -0.04046619}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2452,7 +2458,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.43336874, y: 0.79517853}
+  m_Size: {x: 0.39032775, y: 0.79517853}
   m_EdgeRadius: 0
 --- !u!1001 &4210395098634241307
 PrefabInstance:
