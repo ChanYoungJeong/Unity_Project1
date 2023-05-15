@@ -27,16 +27,13 @@ public class BossAttackCheck : MonoBehaviour
     {
         if (bossAnimator.GetCurrentAnimatorStateInfo(0).IsName("Boss_SkillNormal"))
         {
-            if (bossAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1f)
+            for (int i = 0; i < subHeroAnimator.Length; i++)
             {
-                for(int i = 0; i<subHeroAnimator.Length; i++)
-                {
-                    Debug.Log("Á×À½");
-                    subHeroAnimator[i].SetTrigger("Die");
-                }
-
-                isDie = true;
+                Debug.Log("Á×À½");
+                subHeroAnimator[i].SetTrigger("Die");
             }
+
+            isDie = true;
         }
     }
 }
