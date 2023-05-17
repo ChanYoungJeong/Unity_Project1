@@ -7,8 +7,8 @@ using UnityEngine.Audio;
 public class Setting : MonoBehaviour
 {
     public GameObject SettingPanel;
-    public Scrollbar musicBar;
-    public Scrollbar soundBar;
+    public Slider musicBar;
+    public Slider soundBar;
     float musicValue = 0.5f;
     float soundValue = 0.5f;
 
