@@ -21,11 +21,12 @@ public class InstantiateToTarget : MonoBehaviour
     GameObject prefabObject;
     private Stat stat;
 
+    public AudioClip[] audioClip;
+
     private float angle;
     void Start()
     {
         stat = GetComponentInParent<Stat>();
-
 
         if (TargetObject)
         setTarget();
@@ -59,6 +60,9 @@ public class InstantiateToTarget : MonoBehaviour
     {
         prefabObject = Instantiate(prefab, TargetPosition , Quaternion.identity);
         //나중에 위치 바꿔야할듯
+        AudioSource.PlayClipAtPoint(audioClip[Random.Range(0, audioClip.Length - 1)], transform.position);
+
+
         if (Mathf.Abs(TargetObject.localScale.x) < Mathf.Abs(prefabObject.transform.localScale.x))
         {
             prefabObject.transform.localScale = new Vector3(-TargetObject.localScale.x, TargetObject.localScale.y, TargetObject.localScale.z);   

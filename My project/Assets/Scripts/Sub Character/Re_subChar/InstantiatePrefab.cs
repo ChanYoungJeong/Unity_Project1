@@ -15,6 +15,11 @@ public class InstantiatePrefab : MonoBehaviour
 
     private int max;
     private int count;
+
+
+    public AudioClip[] audioClip;
+
+
     private void Awake()
     {
         stat = GetComponentInParent<Stat>();
