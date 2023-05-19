@@ -47,6 +47,8 @@ public class InstantiatePrefab : MonoBehaviour
         {
             for (int i = 0; i < stat.numberOfProjectiles; i++)
             {
+                AudioSource.PlayClipAtPoint(audioClip[Random.Range(0, audioClip.Length - 1)], transform.position);
+
                 GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle[i])) as GameObject;
                 prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
                 if (prefabClone.GetComponent<PrefabOnTrigger>())
@@ -62,6 +64,8 @@ public class InstantiatePrefab : MonoBehaviour
 
     void InstantiatePrefabClone(GameObject prefab)
     {
+        AudioSource.PlayClipAtPoint(audioClip[Random.Range(0, audioClip.Length - 1)], transform.position);
+
         GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle[0])) as GameObject;
         prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
         if (prefabClone.GetComponent<PrefabOnTrigger>())
