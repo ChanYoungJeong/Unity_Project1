@@ -37,25 +37,27 @@ public class Monster_Combat : MonoBehaviour
     {
         if (Battle_Situation_Trigger.on_Battle)
         {
-            if(Player_Stat&& !check)
-            if (Player_Stat && stopmoster.stop)
+            //if(Player_Stat&& !check)
+            if (Player_Stat && stopmoster.stop&&!check)
             {
                 check = true;
                 StartCoroutine(Attack());
+                StopCoroutine(Attack());
             }
         }
         else
         {
             StopCoroutine(Attack());
         }
-        
     }
 
     IEnumerator Attack()
     {
+        anim.SetTrigger("Stop");
         yield return new WaitForSeconds(Monster_Stat.atkSpeed);
         anim.SetTrigger("Attack");
         Player_Stat.nowHp -= Monster_Stat.atkDmg;
+        check= false;
     }
 
     public void ApplyDamage(float damage, Color color, float ciritcalRate, float criticalDamage)
