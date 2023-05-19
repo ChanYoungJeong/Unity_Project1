@@ -27,10 +27,7 @@ public class Create_Monster : MonoBehaviour
     {
         StartCoroutine(SummonMonsterWithDelay());
     }
-    void Awake()
-    {
-        Resourcename = "Prefabs\\Enemy" + count;
-    }
+    
     private void Update()
     {
         if(this.transform.childCount == 0)
@@ -59,6 +56,7 @@ public class Create_Monster : MonoBehaviour
 
     void generateMonster()
     {
+        Debug.Log(Resourcename);
         int range = Random.Range(0, 8);
          Monster = Instantiate(monster_Prefab, spawnArray[range].position, transform.rotation);
         setMonsterStat(Monster);
@@ -78,7 +76,7 @@ public class Create_Monster : MonoBehaviour
         {
             CurrentStage += CurrentStage;
             count++;
-            Resourcename= "Prefabs\\Enemy" + count;
+            Resourcename= "Prefabs\\Monster\\Enemy" + count;
             ChangePrefabs();
         }   
     }
