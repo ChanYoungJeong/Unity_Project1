@@ -38,40 +38,25 @@ public class InstantiatePrefab : MonoBehaviour
 
     public void CreatePrefab(GameObject prefab)
     {
-        if (stat.singleshot)
-        {
+        if (stat.singleshot) {
             count = stat.numberOfSingleProjectiles;
             StartCoroutine(SingleAttack(prefab));
         }
-        else if (stat.multishot)
-        {
+        else if (stat.multishot) {
             for (int i = 0; i < stat.numberOfProjectiles; i++)
-            {
-                AudioSource.PlayClipAtPoint(audioClip[Random.Range(0, audioClip.Length - 1)], transform.position);
-
-                GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle[i])) as GameObject;
-                prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
-                if (prefabClone.GetComponent<PrefabOnTrigger>())
-                    prefabClone.GetComponent<PrefabOnTrigger>().damage = stat.atkDamage;
-                Destroy(prefabClone, 5f);
-            }
+                InstantiatePrefabClone(prefab, i);
         }
         else
-        {
-            InstantiatePrefabClone(prefab);
-        }
+            InstantiatePrefabClone(prefab, 0);
     }
 
-    void InstantiatePrefabClone(GameObject prefab)
+    void InstantiatePrefabClone(GameObject prefab, int index)
     {
         AudioSource.PlayClipAtPoint(audioClip[Random.Range(0, audioClip.Length - 1)], transform.position);
-
-        GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle[0])) as GameObject;
+        GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle[index])) as GameObject;
         prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
         if (prefabClone.GetComponent<PrefabOnTrigger>())
             prefabClone.GetComponent<PrefabOnTrigger>().damage = stat.atkDamage;
-
-
         Destroy(prefabClone, 5f);
     }
 
@@ -79,7 +64,7 @@ public class InstantiatePrefab : MonoBehaviour
     {
         while(count > 0)
         {
-            InstantiatePrefabClone(prefab);
+            InstantiatePrefabClone(prefab, 0);
             count--;
 
             if (count == 0) yield break;
