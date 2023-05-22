@@ -3252,7 +3252,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1715342396}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 10
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -3260,7 +3260,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 32767
   m_TargetDisplay: 0
 --- !u!224 &246014412
 RectTransform:
@@ -9441,6 +9441,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1715342396}
+    - target: {fileID: 1852720453145451301, guid: e8fa0b7250421f14c9266570c7c12b1c, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4399156422543379957, guid: e8fa0b7250421f14c9266570c7c12b1c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -14275,6 +14279,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1715342396}
+    - target: {fileID: 7110936437929036435, guid: 15ef4925e7a7e904ea5d0c0589713b2c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110936437929036435, guid: 15ef4925e7a7e904ea5d0c0589713b2c, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8814761727488791192, guid: 15ef4925e7a7e904ea5d0c0589713b2c, type: 3}
       propertyPath: id
       value: 5
@@ -16178,6 +16190,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1715342396}
+    - target: {fileID: 417421780, guid: a27c95e78f3097647bffd0ed194d7879, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1179556096, guid: a27c95e78f3097647bffd0ed194d7879, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -16186,6 +16202,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1715342396}
+    - target: {fileID: 1551575331, guid: a27c95e78f3097647bffd0ed194d7879, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 979685948821303946, guid: a27c95e78f3097647bffd0ed194d7879, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -18385,7 +18405,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1715342396}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 50
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -19071,7 +19091,7 @@ GameObject:
   - component: {fileID: 1213267376}
   - component: {fileID: 1213267375}
   - component: {fileID: 1213267374}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: UpgardeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20460,6 +20480,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1939355865}
     m_Modifications:
+    - target: {fileID: 137193606, guid: cfd10fbfa54066e4bab1b15fab4e665f, type: 3}
+      propertyPath: audioClip.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 137193606, guid: cfd10fbfa54066e4bab1b15fab4e665f, type: 3}
+      propertyPath: audioClip.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: a1989c67f92bae7489b5b1927fa0bd57, type: 3}
+    - target: {fileID: 137193606, guid: cfd10fbfa54066e4bab1b15fab4e665f, type: 3}
+      propertyPath: audioClip.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: c28549dd0f9a0284e809e2931ea5fe21, type: 3}
     - target: {fileID: 1244103723988498650, guid: cfd10fbfa54066e4bab1b15fab4e665f, type: 3}
       propertyPath: audioClip.Array.size
       value: 2
@@ -20584,6 +20616,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1715342396}
+    - target: {fileID: 8028865880406260040, guid: cfd10fbfa54066e4bab1b15fab4e665f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8028865880406260040, guid: cfd10fbfa54066e4bab1b15fab4e665f, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfd10fbfa54066e4bab1b15fab4e665f, type: 3}
 --- !u!1 &1335821884
@@ -23310,6 +23350,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1715342396}
+    - target: {fileID: 6578519597165966992, guid: c2a9e69534d8d05448d576e73d16fbe4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6578519597165966992, guid: c2a9e69534d8d05448d576e73d16fbe4, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6578519597911477173, guid: c2a9e69534d8d05448d576e73d16fbe4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -23568,7 +23616,7 @@ GameObject:
   - component: {fileID: 1489267499}
   - component: {fileID: 1489267501}
   - component: {fileID: 1489267500}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27310,6 +27358,102 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 490b4398f09e1cf4685fb9eaf8e58fcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &1715342398
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216849489}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a7bfdcb767a52e1449edb578774235df, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1715822651
 GameObject:
   m_ObjectHideFlags: 0
@@ -28086,6 +28230,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1715342396}
+    - target: {fileID: 8499553746264873311, guid: 311ff0fad98f42d45b7dc226f837bb8d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499553746264873311, guid: 311ff0fad98f42d45b7dc226f837bb8d, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8499553746816491960, guid: 311ff0fad98f42d45b7dc226f837bb8d, type: 3}
       propertyPath: m_Name
       value: Priest
@@ -30680,6 +30832,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1715342396}
+    - target: {fileID: 8931939698621123141, guid: 171705672c773bc4292e5cea610d61bf, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2109553643, guid: 171705672c773bc4292e5cea610d61bf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 171705672c773bc4292e5cea610d61bf, type: 3}
@@ -39945,7 +40101,7 @@ GameObject:
   - component: {fileID: 1140806525045415533}
   - component: {fileID: 1140806525045415539}
   - component: {fileID: 1140806525045415538}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Upgrade Rate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44569,7 +44725,7 @@ GameObject:
   - component: {fileID: 1140806527086853263}
   - component: {fileID: 1140806527086853262}
   - component: {fileID: 1140806527086853257}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: UpgardeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54736,7 +54892,7 @@ GameObject:
   - component: {fileID: 3449851441819191558}
   - component: {fileID: 3449851441819191556}
   - component: {fileID: 3449851441819191557}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Rank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54812,7 +54968,7 @@ GameObject:
   - component: {fileID: 3449851441855820419}
   - component: {fileID: 3449851441855820417}
   - component: {fileID: 3449851441855820418}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Item Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54892,7 +55048,7 @@ GameObject:
   - component: {fileID: 3449851442001254899}
   - component: {fileID: 3449851442001254897}
   - component: {fileID: 3449851442001254898}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Stat 1 value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54910,7 +55066,7 @@ GameObject:
   - component: {fileID: 3449851442186371135}
   - component: {fileID: 3449851442186371133}
   - component: {fileID: 3449851442186371134}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Name of Stat 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55016,7 +55172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3449851442643758690}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Item Information Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55096,7 +55252,7 @@ GameObject:
   - component: {fileID: 3449851442714307348}
   - component: {fileID: 3449851442714307346}
   - component: {fileID: 3449851442714307347}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Name of Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55176,7 +55332,7 @@ GameObject:
   - component: {fileID: 3449851442806082403}
   - component: {fileID: 3449851442806082401}
   - component: {fileID: 3449851442806082402}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Stat 2 value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55256,7 +55412,7 @@ GameObject:
   - component: {fileID: 3449851442899122485}
   - component: {fileID: 3449851442899122483}
   - component: {fileID: 3449851442899122484}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Name of Stat 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55336,7 +55492,7 @@ GameObject:
   - component: {fileID: 3449851443015454861}
   - component: {fileID: 3449851443015454859}
   - component: {fileID: 3449851443015454860}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Status(equiped/unequiped)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59431,7 +59587,7 @@ GameObject:
   - component: {fileID: 7677703340473780733}
   - component: {fileID: 9049733546027921428}
   - component: {fileID: 4914371151748801822}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: 'Button :: Shop'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59476,7 +59632,7 @@ GameObject:
   - component: {fileID: 5065844404607416092}
   - component: {fileID: 4819492973196270153}
   - component: {fileID: 5525260415822353071}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Equipment Information UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60834,7 +60990,7 @@ GameObject:
   - component: {fileID: 5341787357028203587}
   - component: {fileID: 5341787357028203598}
   - component: {fileID: 5341787357028203597}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: InventoryUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63705,6 +63861,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1715342396}
+    - target: {fileID: 62795489, guid: 129f1b5fe10ef424da0ff2abc5981855, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 790483241, guid: 129f1b5fe10ef424da0ff2abc5981855, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -74430,7 +74590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7558211624009668521, guid: 8baf5c78646e46f4b830fc8e0faeccf8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -12.37
       objectReference: {fileID: 0}
     - target: {fileID: 7558211624009668521, guid: 8baf5c78646e46f4b830fc8e0faeccf8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -80769,7 +80929,7 @@ GameObject:
   - component: {fileID: 507012978907450259}
   - component: {fileID: 2364588647089834035}
   - component: {fileID: 7927396417917072151}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: 'Sprite :: Shop'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82759,7 +82919,7 @@ GameObject:
   - component: {fileID: 8051375106826647894}
   - component: {fileID: 8051375106826647892}
   - component: {fileID: 8051375106826647893}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

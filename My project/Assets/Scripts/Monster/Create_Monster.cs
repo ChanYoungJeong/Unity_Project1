@@ -77,6 +77,13 @@ public class Create_Monster : MonoBehaviour
             CurrentStage += CurrentStage;
             count++;
             Resourcename= "Prefabs\\Monster\\Enemy" + count;
+
+            if(Resourcename == null)
+            {
+                count = 0;
+                Resourcename = "Prefabs\\Monster\\Enemy" + count;
+            }
+
             ChangePrefabs();
         }   
     }
