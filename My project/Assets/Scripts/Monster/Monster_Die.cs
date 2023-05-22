@@ -43,6 +43,7 @@ public class Monster_Die : MonoBehaviour
     {
         GameObject gameObjectClone = Instantiate(MonsterDieAnimation, this.transform.position, this.transform.rotation);
 
+
         Destroy(gameObjectClone, destroytime);
         Destroy(this.gameObject);
 

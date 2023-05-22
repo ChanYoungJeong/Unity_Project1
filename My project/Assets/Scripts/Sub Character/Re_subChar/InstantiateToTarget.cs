@@ -60,6 +60,7 @@ public class InstantiateToTarget : MonoBehaviour
     {
         prefabObject = Instantiate(prefab, TargetPosition , Quaternion.identity);
         //나중에 위치 바꿔야할듯
+
         AudioSource.PlayClipAtPoint(audioClip[Random.Range(0, audioClip.Length - 1)], transform.position);
 
 
