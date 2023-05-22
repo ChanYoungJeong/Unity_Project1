@@ -22703,8 +22703,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 688392875
+  m_SortingLayer: -1
   m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: bcaff4a2648cc40408cf0976f93ee262, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -31551,6 +31551,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1939355865}
+  - component: {fileID: 1939355866}
   m_Layer: 0
   m_Name: Sub Characters
   m_TagString: Untagged
@@ -31579,6 +31580,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &1939355866
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939355864}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &1949363357
 GameObject:
   m_ObjectHideFlags: 0
@@ -32195,6 +32207,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc0bc98ca0eb85f4fb47b17f7ca8a1c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!210 &1994892401
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994892382}
+  m_Enabled: 1
+  m_SortingLayerID: 688392875
+  m_SortingLayer: -1
+  m_SortingOrder: -1
 --- !u!1 &1996066331
 GameObject:
   m_ObjectHideFlags: 0
@@ -84449,6 +84472,7 @@ GameObject:
   - component: {fileID: 246014409}
   - component: {fileID: 8567223831321649036}
   - component: {fileID: 8567223831321649037}
+  - component: {fileID: 8567223831321649038}
   m_Layer: 5
   m_Name: 'Canvas :: Main'
   m_TagString: Untagged
@@ -84490,6 +84514,17 @@ MonoBehaviour:
   InventoryUI: {fileID: 1324415009}
   SubCharUI: {fileID: 2075694245}
   HeroStatUI: {fileID: 1478535314}
+--- !u!210 &8567223831321649038
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8567223831321649035}
+  m_Enabled: 1
+  m_SortingLayerID: -2040342543
+  m_SortingLayer: 4
+  m_SortingOrder: 0
 --- !u!114 &8791656054271780832
 MonoBehaviour:
   m_ObjectHideFlags: 0

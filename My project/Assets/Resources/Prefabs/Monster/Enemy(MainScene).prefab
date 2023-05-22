@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 8612973221486136816}
   - component: {fileID: 3087164625551760321}
   - component: {fileID: 8521616841948585425}
+  - component: {fileID: -1740034220993128976}
   m_Layer: 0
   m_Name: Enemy(MainScene)
   m_TagString: Monster
@@ -355,6 +356,17 @@ MonoBehaviour:
   MonsterDieAnimation: {fileID: 0}
   DropBead: {fileID: 0}
   destroytime: 0
+--- !u!210 &-1740034220993128976
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969604836136404861}
+  m_Enabled: 1
+  m_SortingLayerID: 688392875
+  m_SortingLayer: -1
+  m_SortingOrder: -1
 --- !u!1 &2001366047354952428
 GameObject:
   m_ObjectHideFlags: 0
