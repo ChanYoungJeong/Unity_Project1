@@ -48,10 +48,9 @@ public class Create_Monster : MonoBehaviour
     IEnumerator SummonMonsterWithDelay()
     {
 
-        CheckStage();
-
         for (int i = 0; i < monsterCapacity; i++)
         {
+            CheckStage();
             generateMonster();
             yield return new WaitForSeconds(summonDelay);       
         }   
