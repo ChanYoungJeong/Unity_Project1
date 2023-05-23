@@ -3274,15 +3274,15 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 631103466421871489}
   - {fileID: 1324415010}
   - {fileID: 753606182}
   - {fileID: 1829598612}
   - {fileID: 1222094210}
+  - {fileID: 631103466421871489}
   - {fileID: 1609618929}
-  - {fileID: 1001168230}
   - {fileID: 460837087}
   - {fileID: 6000368999427264854}
+  - {fileID: 1001168230}
   - {fileID: 779975633}
   - {fileID: 2075694246}
   - {fileID: 767080742}
@@ -6836,7 +6836,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &460837087
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6851,7 +6851,7 @@ RectTransform:
   m_Children:
   - {fileID: 1149823118}
   m_Father: {fileID: 246014412}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6919,7 +6919,7 @@ MonoBehaviour:
   OnObjects:
   - {fileID: 1560101582}
   Offobjects:
-  - {fileID: 1560101582}
+  - {fileID: 853813209022880275}
   - {fileID: 2018730686}
   - {fileID: 4210448585854460316}
   AllObjects:
@@ -11145,7 +11145,7 @@ RectTransform:
   - {fileID: 1878529305}
   - {fileID: 977090400}
   m_Father: {fileID: 246014412}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -15280,7 +15280,7 @@ RectTransform:
   m_Children:
   - {fileID: 2579907918093342111}
   m_Father: {fileID: 246014412}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -17428,7 +17428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5106484821159355281, guid: 22b468c89385d1d4283eeb4d77ccde81, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5106484821159355282, guid: 22b468c89385d1d4283eeb4d77ccde81, type: 3}
       propertyPath: m_Pivot.x
@@ -19389,7 +19389,7 @@ RectTransform:
   - {fileID: 222104816}
   - {fileID: 1880633273}
   m_Father: {fileID: 246014412}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -20366,11 +20366,11 @@ RectTransform:
   - {fileID: 5341787357028203587}
   - {fileID: 4731902745237274917}
   m_Father: {fileID: 246014412}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3819, y: 94}
+  m_AnchoredPosition: {x: -2059, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1324415011
@@ -23831,6 +23831,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1726698296}
+        m_TargetAssemblyTypeName: EquipInfo, Assembly-CSharp
+        m_MethodName: offPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1496906500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23885,7 +23897,8 @@ MonoBehaviour:
   OnObjects: []
   Offobjects:
   - {fileID: 1595582348}
-  AllObjects: []
+  AllObjects:
+  - {fileID: 1726698294}
 --- !u!1 &1507689792
 GameObject:
   m_ObjectHideFlags: 0
@@ -24057,18 +24070,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1595582352}
-        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
-        m_MethodName: OnOff
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1726698296}
         m_TargetAssemblyTypeName: EquipInfo, Assembly-CSharp
         m_MethodName: offPanel
@@ -25088,7 +25089,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1609618927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25131,7 +25132,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609618926}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -29194,7 +29195,7 @@ RectTransform:
   m_Children:
   - {fileID: 1140806525286281196}
   m_Father: {fileID: 246014412}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -36735,11 +36736,11 @@ RectTransform:
   m_Children:
   - {fileID: 631510076807420515}
   m_Father: {fileID: 246014412}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 29, y: -0.0000076294}
+  m_AnchoredPosition: {x: 29, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &631136879510743721
@@ -60182,7 +60183,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -63597,7 +63598,7 @@ RectTransform:
   m_Children:
   - {fileID: 4140400506517714794}
   m_Father: {fileID: 246014412}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
