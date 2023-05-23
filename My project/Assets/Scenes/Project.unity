@@ -696,7 +696,6 @@ GameObject:
   - component: {fileID: 86097567}
   - component: {fileID: 86097566}
   - component: {fileID: 86097565}
-  - component: {fileID: 86097569}
   - component: {fileID: 86097570}
   m_Layer: 5
   m_Name: Button_Item 20
@@ -790,7 +789,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1766783830}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
@@ -817,6 +816,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1595582352}
         m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
         m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595582352}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -864,24 +875,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86097562}
   m_CullTransparentMesh: 1
---- !u!114 &86097569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 86097562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects: []
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects:
-  - {fileID: 1726698294}
 --- !u!82 &86097570
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3820,7 +3813,6 @@ GameObject:
   - component: {fileID: 246375711}
   - component: {fileID: 246375710}
   - component: {fileID: 246375709}
-  - component: {fileID: 246375713}
   - component: {fileID: 246375714}
   m_Layer: 5
   m_Name: Button_Item 11
@@ -3914,7 +3906,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1766783830}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
@@ -3941,6 +3933,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1595582352}
         m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
         m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595582352}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3988,24 +3992,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246375706}
   m_CullTransparentMesh: 1
---- !u!114 &246375713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 246375706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects: []
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects:
-  - {fileID: 1726698294}
 --- !u!82 &246375714
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4726,7 +4712,6 @@ GameObject:
   - component: {fileID: 343745053}
   - component: {fileID: 343745052}
   - component: {fileID: 343745051}
-  - component: {fileID: 343745055}
   - component: {fileID: 343745056}
   m_Layer: 5
   m_Name: Button_Item 04
@@ -4820,7 +4805,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1766783830}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
@@ -4847,6 +4832,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1595582352}
         m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
         m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595582352}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4894,24 +4891,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 343745048}
   m_CullTransparentMesh: 1
---- !u!114 &343745055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 343745048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects: []
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects:
-  - {fileID: 1726698294}
 --- !u!82 &343745056
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5021,7 +5000,6 @@ GameObject:
   - component: {fileID: 344240281}
   - component: {fileID: 344240280}
   - component: {fileID: 344240279}
-  - component: {fileID: 344240283}
   - component: {fileID: 344240284}
   m_Layer: 5
   m_Name: Button_Item 12
@@ -5115,7 +5093,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1766783830}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
@@ -5142,6 +5120,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1595582352}
         m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
         m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595582352}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5189,24 +5179,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 344240276}
   m_CullTransparentMesh: 1
---- !u!114 &344240283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 344240276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects: []
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects:
-  - {fileID: 1726698294}
 --- !u!82 &344240284
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5564,7 +5536,6 @@ GameObject:
   - component: {fileID: 373146668}
   - component: {fileID: 373146667}
   - component: {fileID: 373146666}
-  - component: {fileID: 373146670}
   - component: {fileID: 373146671}
   m_Layer: 5
   m_Name: Button_Item 08
@@ -5658,7 +5629,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1766783830}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
@@ -5685,6 +5656,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1595582352}
         m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
         m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595582352}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5732,24 +5715,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373146663}
   m_CullTransparentMesh: 1
---- !u!114 &373146670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 373146663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects: []
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects:
-  - {fileID: 1726698294}
 --- !u!82 &373146671
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6497,7 +6462,6 @@ GameObject:
   - component: {fileID: 432348468}
   - component: {fileID: 432348467}
   - component: {fileID: 432348466}
-  - component: {fileID: 432348470}
   - component: {fileID: 432348471}
   m_Layer: 5
   m_Name: Button_Item 06
@@ -6591,7 +6555,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1766783830}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
@@ -6618,6 +6582,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1595582352}
         m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
         m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595582352}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6665,24 +6641,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 432348463}
   m_CullTransparentMesh: 1
---- !u!114 &432348470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 432348463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects: []
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects:
-  - {fileID: 1726698294}
 --- !u!82 &432348471
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6792,7 +6750,6 @@ GameObject:
   - component: {fileID: 432863081}
   - component: {fileID: 432863080}
   - component: {fileID: 432863079}
-  - component: {fileID: 432863083}
   - component: {fileID: 432863084}
   m_Layer: 5
   m_Name: Button_Item 09
@@ -6886,7 +6843,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1766783830}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
@@ -6913,6 +6870,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1595582352}
         m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
         m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595582352}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6960,24 +6929,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 432863076}
   m_CullTransparentMesh: 1
---- !u!114 &432863083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 432863076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects: []
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects:
-  - {fileID: 1726698294}
 --- !u!82 &432863084
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7087,7 +7038,6 @@ GameObject:
   - component: {fileID: 437152809}
   - component: {fileID: 437152808}
   - component: {fileID: 437152807}
-  - component: {fileID: 437152811}
   - component: {fileID: 437152812}
   m_Layer: 5
   m_Name: Button_Item 22
@@ -7181,7 +7131,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1766783830}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
@@ -7208,6 +7158,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1595582352}
         m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
         m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595582352}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7255,24 +7217,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 437152804}
   m_CullTransparentMesh: 1
---- !u!114 &437152811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 437152804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects: []
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects:
-  - {fileID: 1726698294}
 --- !u!82 &437152812
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7466,7 +7410,6 @@ GameObject:
   - component: {fileID: 458193469}
   - component: {fileID: 458193468}
   - component: {fileID: 458193467}
-  - component: {fileID: 458193471}
   - component: {fileID: 458193472}
   m_Layer: 5
   m_Name: Button_Item 03
@@ -7560,7 +7503,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1766783830}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
@@ -7587,6 +7530,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1595582352}
         m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
         m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595582352}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7634,24 +7589,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458193464}
   m_CullTransparentMesh: 1
---- !u!114 &458193471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 458193464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects: []
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects:
-  - {fileID: 1726698294}
 --- !u!82 &458193472
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8312,7 +8249,6 @@ GameObject:
   - component: {fileID: 521159110}
   - component: {fileID: 521159109}
   - component: {fileID: 521159108}
-  - component: {fileID: 521159112}
   - component: {fileID: 521159113}
   m_Layer: 5
   m_Name: Button_Item 02
@@ -8406,7 +8342,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1766783830}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
@@ -8433,6 +8369,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1595582352}
         m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
         m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595582352}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8480,24 +8428,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 521159105}
   m_CullTransparentMesh: 1
---- !u!114 &521159112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 521159105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects: []
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects:
-  - {fileID: 1726698294}
 --- !u!82 &521159113
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13824,7 +13754,6 @@ GameObject:
   - component: {fileID: 980227080}
   - component: {fileID: 980227079}
   - component: {fileID: 980227078}
-  - component: {fileID: 980227082}
   - component: {fileID: 980227083}
   m_Layer: 5
   m_Name: Button_Item 13
@@ -13918,7 +13847,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1766783830}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
@@ -13945,6 +13874,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1595582352}
         m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
         m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595582352}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13992,24 +13933,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980227075}
   m_CullTransparentMesh: 1
---- !u!114 &980227082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 980227075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects: []
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects:
-  - {fileID: 1726698294}
 --- !u!82 &980227083
 AudioSource:
   m_ObjectHideFlags: 0
@@ -14498,7 +14421,6 @@ GameObject:
   - component: {fileID: 1012053475}
   - component: {fileID: 1012053474}
   - component: {fileID: 1012053473}
-  - component: {fileID: 1012053477}
   - component: {fileID: 1012053478}
   m_Layer: 5
   m_Name: Button_Item 18
@@ -14592,7 +14514,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1766783830}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
@@ -14619,6 +14541,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1595582352}
         m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
         m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595582352}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14666,24 +14600,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012053470}
   m_CullTransparentMesh: 1
---- !u!114 &1012053477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012053470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects: []
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects:
-  - {fileID: 1726698294}
 --- !u!82 &1012053478
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15708,7 +15624,6 @@ GameObject:
   - component: {fileID: 1118610799}
   - component: {fileID: 1118610798}
   - component: {fileID: 1118610797}
-  - component: {fileID: 1118610801}
   - component: {fileID: 1118610802}
   m_Layer: 5
   m_Name: Button_Item 17
@@ -15802,7 +15717,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1766783830}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
@@ -15829,6 +15744,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1595582352}
         m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
         m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595582352}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15876,24 +15803,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1118610794}
   m_CullTransparentMesh: 1
---- !u!114 &1118610801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1118610794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects: []
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects:
-  - {fileID: 1726698294}
 --- !u!82 &1118610802
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19742,7 +19651,6 @@ GameObject:
   - component: {fileID: 1442071412}
   - component: {fileID: 1442071411}
   - component: {fileID: 1442071410}
-  - component: {fileID: 1442071414}
   - component: {fileID: 1442071415}
   m_Layer: 5
   m_Name: Button_Item 07
@@ -19836,7 +19744,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1766783830}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
@@ -19863,6 +19771,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1595582352}
         m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
         m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595582352}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19910,24 +19830,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1442071407}
   m_CullTransparentMesh: 1
---- !u!114 &1442071414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1442071407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects: []
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects:
-  - {fileID: 1726698294}
 --- !u!82 &1442071415
 AudioSource:
   m_ObjectHideFlags: 0
@@ -20809,7 +20711,6 @@ GameObject:
   - component: {fileID: 1496906500}
   - component: {fileID: 1496906499}
   - component: {fileID: 1496906498}
-  - component: {fileID: 1496906502}
   - component: {fileID: 1496906503}
   m_Layer: 5
   m_Name: Button_Item 01
@@ -20989,24 +20890,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1496906495}
   m_CullTransparentMesh: 1
---- !u!114 &1496906502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1496906495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects:
-  - {fileID: 1595582348}
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects: []
 --- !u!82 &1496906503
 AudioSource:
   m_ObjectHideFlags: 0
@@ -21694,7 +21577,6 @@ GameObject:
   - component: {fileID: 1593915186}
   - component: {fileID: 1593915185}
   - component: {fileID: 1593915184}
-  - component: {fileID: 1593915188}
   - component: {fileID: 1593915189}
   m_Layer: 5
   m_Name: Button_Item 05
@@ -21788,7 +21670,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1766783830}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
@@ -21815,6 +21697,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1595582352}
         m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
         m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595582352}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21862,24 +21756,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593915181}
   m_CullTransparentMesh: 1
---- !u!114 &1593915188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1593915181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects: []
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects:
-  - {fileID: 1726698294}
 --- !u!82 &1593915189
 AudioSource:
   m_ObjectHideFlags: 0
@@ -22091,7 +21967,6 @@ GameObject:
   - component: {fileID: 1601592576}
   - component: {fileID: 1601592575}
   - component: {fileID: 1601592574}
-  - component: {fileID: 1601592578}
   - component: {fileID: 1601592579}
   m_Layer: 5
   m_Name: Button_Item 10
@@ -22185,7 +22060,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1766783830}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
@@ -22212,6 +22087,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1595582352}
         m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
         m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595582352}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22259,24 +22146,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601592571}
   m_CullTransparentMesh: 1
---- !u!114 &1601592578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1601592571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects: []
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects:
-  - {fileID: 1726698294}
 --- !u!82 &1601592579
 AudioSource:
   m_ObjectHideFlags: 0
@@ -22461,7 +22330,6 @@ GameObject:
   - component: {fileID: 1610970930}
   - component: {fileID: 1610970929}
   - component: {fileID: 1610970928}
-  - component: {fileID: 1610970932}
   - component: {fileID: 1610970933}
   m_Layer: 5
   m_Name: Button_Item 16
@@ -22555,7 +22423,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1766783830}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
@@ -22582,6 +22450,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1595582352}
         m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
         m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595582352}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22629,24 +22509,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1610970925}
   m_CullTransparentMesh: 1
---- !u!114 &1610970932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1610970925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects: []
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects:
-  - {fileID: 1726698294}
 --- !u!82 &1610970933
 AudioSource:
   m_ObjectHideFlags: 0
@@ -22756,7 +22618,6 @@ GameObject:
   - component: {fileID: 1619265281}
   - component: {fileID: 1619265280}
   - component: {fileID: 1619265279}
-  - component: {fileID: 1619265283}
   - component: {fileID: 1619265284}
   m_Layer: 5
   m_Name: Button_Item 19
@@ -22850,7 +22711,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1766783830}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
@@ -22877,6 +22738,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1595582352}
         m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
         m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595582352}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22924,24 +22797,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619265276}
   m_CullTransparentMesh: 1
---- !u!114 &1619265283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619265276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects: []
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects:
-  - {fileID: 1726698294}
 --- !u!82 &1619265284
 AudioSource:
   m_ObjectHideFlags: 0
@@ -23835,7 +23690,6 @@ GameObject:
   - component: {fileID: 1690807369}
   - component: {fileID: 1690807368}
   - component: {fileID: 1690807367}
-  - component: {fileID: 1690807371}
   - component: {fileID: 1690807372}
   m_Layer: 5
   m_Name: Button_Item 14
@@ -23929,7 +23783,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1766783830}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
@@ -23956,6 +23810,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1595582352}
         m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
         m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595582352}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24003,24 +23869,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690807364}
   m_CullTransparentMesh: 1
---- !u!114 &1690807371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1690807364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects: []
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects:
-  - {fileID: 1726698294}
 --- !u!82 &1690807372
 AudioSource:
   m_ObjectHideFlags: 0
@@ -25591,7 +25439,6 @@ GameObject:
   - component: {fileID: 1773337820}
   - component: {fileID: 1773337819}
   - component: {fileID: 1773337818}
-  - component: {fileID: 1773337822}
   - component: {fileID: 1773337823}
   m_Layer: 5
   m_Name: Button_Item 25
@@ -25685,7 +25532,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1766783830}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
@@ -25712,6 +25559,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1595582352}
         m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
         m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595582352}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25759,24 +25618,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773337815}
   m_CullTransparentMesh: 1
---- !u!114 &1773337822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1773337815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects: []
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects:
-  - {fileID: 1726698294}
 --- !u!82 &1773337823
 AudioSource:
   m_ObjectHideFlags: 0
@@ -25886,7 +25727,6 @@ GameObject:
   - component: {fileID: 1798495828}
   - component: {fileID: 1798495827}
   - component: {fileID: 1798495826}
-  - component: {fileID: 1798495830}
   - component: {fileID: 1798495831}
   m_Layer: 5
   m_Name: Button_Item 23
@@ -25980,7 +25820,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1766783830}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
@@ -26007,6 +25847,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1595582352}
         m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
         m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595582352}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26054,24 +25906,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798495823}
   m_CullTransparentMesh: 1
---- !u!114 &1798495830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798495823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects: []
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects:
-  - {fileID: 1726698294}
 --- !u!82 &1798495831
 AudioSource:
   m_ObjectHideFlags: 0
@@ -28652,7 +28486,6 @@ GameObject:
   - component: {fileID: 1979633889}
   - component: {fileID: 1979633888}
   - component: {fileID: 1979633887}
-  - component: {fileID: 1979633891}
   - component: {fileID: 1979633892}
   m_Layer: 5
   m_Name: Button_Item 21
@@ -28746,7 +28579,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1766783830}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
@@ -28773,6 +28606,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1595582352}
         m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
         m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595582352}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28820,24 +28665,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979633884}
   m_CullTransparentMesh: 1
---- !u!114 &1979633891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1979633884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects: []
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects:
-  - {fileID: 1726698294}
 --- !u!82 &1979633892
 AudioSource:
   m_ObjectHideFlags: 0
@@ -29102,7 +28929,6 @@ GameObject:
   - component: {fileID: 2031709685}
   - component: {fileID: 2031709684}
   - component: {fileID: 2031709683}
-  - component: {fileID: 2031709687}
   - component: {fileID: 2031709688}
   m_Layer: 5
   m_Name: Button_Item 15
@@ -29196,7 +29022,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1766783830}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
@@ -29223,6 +29049,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1595582352}
         m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
         m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595582352}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29270,24 +29108,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031709680}
   m_CullTransparentMesh: 1
---- !u!114 &2031709687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2031709680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects: []
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects:
-  - {fileID: 1726698294}
 --- !u!82 &2031709688
 AudioSource:
   m_ObjectHideFlags: 0
@@ -29397,7 +29217,6 @@ GameObject:
   - component: {fileID: 2032205009}
   - component: {fileID: 2032205008}
   - component: {fileID: 2032205007}
-  - component: {fileID: 2032205011}
   - component: {fileID: 2032205012}
   m_Layer: 5
   m_Name: Button_Item 24
@@ -29491,7 +29310,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1766783830}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
@@ -29518,6 +29337,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1595582352}
         m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
         m_MethodName: Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595582352}
+        m_TargetAssemblyTypeName: ObjectOnOff, Assembly-CSharp
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29565,24 +29396,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2032205004}
   m_CullTransparentMesh: 1
---- !u!114 &2032205011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2032205004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554013f0f2bef2442b61e18020c147ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followobjects: []
-  OnObjects: []
-  Offobjects:
-  - {fileID: 1595582348}
-  AllObjects:
-  - {fileID: 1726698294}
 --- !u!82 &2032205012
 AudioSource:
   m_ObjectHideFlags: 0
