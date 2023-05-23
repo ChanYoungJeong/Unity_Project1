@@ -9,13 +9,8 @@ public class AcusticControl : MonoBehaviour
 
 
     public Slider musicOption;
-    Slider music;
+    public Slider music;
 
-
-    private void Awake()
-    {
-        music = GetComponentInChildren<Slider>();
-    }
 
 
     private void Update()
@@ -23,6 +18,8 @@ public class AcusticControl : MonoBehaviour
         if(musicOption.value == 1)
         {
             mainMusic.volume = music.value/100f;
+
+            Debug.Log(mainMusic.volume);
         }
         else
         {

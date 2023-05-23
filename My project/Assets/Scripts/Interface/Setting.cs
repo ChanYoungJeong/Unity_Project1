@@ -23,7 +23,6 @@ public class Setting : MonoBehaviour
         */
     }
 
-
     public void ButtonOkay()
     {
 
@@ -31,8 +30,8 @@ public class Setting : MonoBehaviour
         musicGroup.SetFloat("BGM", musicBar.value);
         soundGroup.SetFloat("SoundEffect", soundBar.value);
         */
-        musicValue = musicBar.value;
-        soundValue = soundBar.value;
+        //musicValue = musicBar.value/100f;
+        //soundValue = soundBar.value/100f;
         SettingPanel.SetActive(false);
     }
 
@@ -42,8 +41,8 @@ public class Setting : MonoBehaviour
         musicGroup.SetFloat("BGM", musicValue);
         soundGroup.SetFloat("SoundEffect", soundValue);
         */
-        musicBar.value = musicValue;
-        soundBar.value = soundValue;
+        //musicBar.value = musicValue;
+        //soundBar.value = soundValue;
         SettingPanel.SetActive(false);
     }
 }

@@ -7,13 +7,7 @@ public class SoundControl : MonoBehaviour
 {
     public AudioSource[] soundEffect;
     public Slider soundOption;
-
-    Slider sound;
-
-    private void Awake()
-    {
-        sound = GetComponentInChildren<Slider>();
-    }
+    public Slider sound;
 
     private void Update()
     {
