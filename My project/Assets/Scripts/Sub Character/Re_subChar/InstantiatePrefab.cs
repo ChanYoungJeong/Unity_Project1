@@ -18,11 +18,13 @@ public class InstantiatePrefab : MonoBehaviour
 
 
     public AudioClip[] audioClip;
+    AudioSource audioSource;
 
 
     private void Awake()
     {
         stat = GetComponentInParent<Stat>();
+        audioSource = GetComponent<AudioSource>();
 
         max = (stat.numberOfProjectiles == 0) ? 1 : stat.numberOfProjectiles;
         angle = new float[max];
@@ -47,7 +49,9 @@ public class InstantiatePrefab : MonoBehaviour
         {
             for (int i = 0; i < stat.numberOfProjectiles; i++)
             {
-                AudioSource.PlayClipAtPoint(audioClip[Random.Range(0, audioClip.Length - 1)], transform.position);
+                //AudioSource.PlayClipAtPoint(audioClip[Random.Range(0, audioClip.Length - 1)], transform.position);
+
+                SoundEffect();
 
                 GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle[i])) as GameObject;
                 prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
@@ -64,7 +68,9 @@ public class InstantiatePrefab : MonoBehaviour
 
     void InstantiatePrefabClone(GameObject prefab)
     {
-        AudioSource.PlayClipAtPoint(audioClip[Random.Range(0, audioClip.Length - 1)], transform.position);
+        //AudioSource.PlayClipAtPoint(audioClip[Random.Range(0, audioClip.Length - 1)], transform.position);
+
+        SoundEffect();
 
         GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle[0])) as GameObject;
         prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
@@ -73,6 +79,12 @@ public class InstantiatePrefab : MonoBehaviour
 
 
         Destroy(prefabClone, 5f);
+    }
+
+    void SoundEffect()
+    {
+        audioSource.clip = audioClip[Random.Range(0, audioClip.Length - 1)];
+        audioSource.Play();
     }
 
     IEnumerator SingleAttack(GameObject prefab)

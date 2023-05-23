@@ -22,8 +22,15 @@ public class InstantiateToTarget : MonoBehaviour
     private Stat stat;
 
     public AudioClip[] audioClip;
+    AudioSource audioSource;
 
     private float angle;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void Start()
     {
         stat = GetComponentInParent<Stat>();
@@ -61,8 +68,9 @@ public class InstantiateToTarget : MonoBehaviour
         prefabObject = Instantiate(prefab, TargetPosition , Quaternion.identity);
         //나중에 위치 바꿔야할듯
 
-        AudioSource.PlayClipAtPoint(audioClip[Random.Range(0, audioClip.Length - 1)], transform.position);
+        //AudioSource.PlayClipAtPoint(audioClip[Random.Range(0, audioClip.Length - 1)], transform.position);
 
+        SoundEffect();
 
         if (Mathf.Abs(TargetObject.localScale.x) < Mathf.Abs(prefabObject.transform.localScale.x))
         {
@@ -74,6 +82,12 @@ public class InstantiateToTarget : MonoBehaviour
 
 
         Destroy(prefabObject, 5f);
+    }
+
+    void SoundEffect()
+    {
+        audioSource.clip = audioClip[Random.Range(0, audioClip.Length - 1)];
+        audioSource.Play();
     }
 
     //힐이 있을경우는 힐 하기
