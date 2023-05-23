@@ -25,6 +25,8 @@ public class Create_Monster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Resourcename = "Prefabs\\Monster\\Enemy" + count;
+
         StartCoroutine(SummonMonsterWithDelay());
     }
     
@@ -45,9 +47,11 @@ public class Create_Monster : MonoBehaviour
 
     IEnumerator SummonMonsterWithDelay()
     {
+
+        CheckStage();
+
         for (int i = 0; i < monsterCapacity; i++)
         {
-            CheckStage();
             generateMonster();
             yield return new WaitForSeconds(summonDelay);       
         }   
