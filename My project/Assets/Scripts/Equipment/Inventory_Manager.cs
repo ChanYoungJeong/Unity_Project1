@@ -18,6 +18,8 @@ public class Inventory_Manager : MonoBehaviour
     public Equipment_Gacha DBManager;
     public EquipInfo equipInfoUI;
 
+    private int itemNum;
+
     private void Awake()
     {
         slots = slotHolder.GetComponentsInChildren<Slot>();
@@ -86,13 +88,25 @@ public class Inventory_Manager : MonoBehaviour
     private void AlignSlot(int deletedSlot)
     {
         Slot temp = null;
-        while(deletedSlot + 1 < numSlots && slots[deletedSlot + 1].curItem != null)
+        while(deletedSlot < numSlots && slots[deletedSlot + 1].curItem != null)
         {
             temp = slots[deletedSlot + 1];
             slots[deletedSlot].curItem = temp.curItem;
             slots[deletedSlot].SetItem(temp.itemName, temp.itemImage);
             slots[deletedSlot + 1].ResetSlot();       
             deletedSlot++;
+        }
+    }
+
+
+
+    public void DeleteItem()
+    {
+        if(selectedItem != null)
+        {
+            equipInfoUI.gameObject.SetActive(false);
+            AlignSlot(curSlot.slotNumber);
+            //Inventory[curSlot.slotNumber].
         }
     }
 
