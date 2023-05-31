@@ -19,7 +19,6 @@ public class AcusticControl : MonoBehaviour
         {
             mainMusic.volume = music.value/100f;
 
-            Debug.Log(mainMusic.volume);
         }
         else
         {
