@@ -5,9 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class ToRaid : MonoBehaviour
 {
+    public bool boss1 = false;
+    public bool boss2 = false;
+
+
     public void SceneChangeRaid()
     {
-        SceneManager.LoadScene("Re_Raid");
+        if (boss1)
+        {
+            boss1 = false;
+            SceneManager.LoadScene("Re_Raid");
+        }
+        else if (boss2)
+        {
+            SceneManager.LoadScene("Re_Raid2");
+        }
     }
     public void SceneChangeProject()
     {
@@ -18,6 +30,17 @@ public class ToRaid : MonoBehaviour
     public void SceneChangeSurvival()
     {
         SceneManager.LoadScene("SubContents 1");
+    }
 
+    public void SelectBoss1_Raid()
+    {
+        boss2 = false;
+        boss1 = true;
+    }
+
+    public void SelectBoss2_Raid()
+    {
+        boss1 = false;
+        boss2 = true;
     }
 }

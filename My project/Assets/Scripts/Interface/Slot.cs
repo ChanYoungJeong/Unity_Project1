@@ -50,7 +50,6 @@ public class Slot : MonoBehaviour
     public void ResetSlot()                
     {
         ChangeToDefaultImage();                                             //Change Slot effect to un equiped
-        ChangeToDefaultColor();
         ChangeToUnequiped();
         curItem = null;                                                      //Reset Slot
         hasItem = false;

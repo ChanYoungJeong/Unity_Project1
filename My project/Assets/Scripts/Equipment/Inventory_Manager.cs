@@ -18,6 +18,7 @@ public class Inventory_Manager : MonoBehaviour
     public Equipment_Gacha DBManager;
     public EquipInfo equipInfoUI;
 
+    private HashSet<int> _indexSetForUpdate = new HashSet<int>();
     private int itemNum;
 
     private void Awake()
@@ -29,7 +30,7 @@ public class Inventory_Manager : MonoBehaviour
 
     private void GenerateSlot()
     {
-        for(int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < slots.Length; i++)
         {
             slots[i].slotNumber = i;
             Inventory.Add(null);
@@ -39,9 +40,9 @@ public class Inventory_Manager : MonoBehaviour
     //Add item to inventory list and show in slot
     public void AddToInventory(Equipment item, Sprite img)
     {
-        for(int i = 0; i < Inventory.Count; i++)
+        for (int i = 0; i < Inventory.Count; i++)
         {
-            if(Inventory[i] == null)
+            if (Inventory[i] == null)
             {
                 Inventory[i] = item;
                 AddToSlot(i, item, img);
@@ -59,7 +60,7 @@ public class Inventory_Manager : MonoBehaviour
 
     private Sprite GetImage(string itemName)
     {
-        Sprite image = Resources.Load<Sprite>("Image/Equipment/" + itemName);      
+        Sprite image = Resources.Load<Sprite>("Image/Equipment/" + itemName);
         return image;
     }
 
@@ -68,10 +69,10 @@ public class Inventory_Manager : MonoBehaviour
         GameObject _slot = EventSystem.current.currentSelectedGameObject;
         curSlot = _slot.GetComponent<Slot>();
 
-        if(curSlot.curItem != null)
-        { 
+        if (curSlot.curItem != null)
+        {
             //Change the previous selected slot's color to default
-            if(preSlot != null)
+            if (preSlot != null)
             {
                 preSlot.ChangeToDefaultColor();
             }
@@ -82,33 +83,56 @@ public class Inventory_Manager : MonoBehaviour
             equipInfoUI.gameObject.SetActive(true);
             equipInfoUI.ViewItem(GetImage(curSlot.curItem.name), curSlot.curItem, curSlot.itemStatus());
             preSlot = curSlot;
-        }     
+        }
     }
 
     private void AlignSlot(int deletedSlot)
     {
         Slot temp = null;
-        while(deletedSlot < numSlots && slots[deletedSlot + 1].curItem != null)
+        while (deletedSlot < numSlots && slots[deletedSlot + 1].curItem != null)
         {
             temp = slots[deletedSlot + 1];
-            slots[deletedSlot].curItem = temp.curItem;
+            //slots[deletedSlot].curItem = temp.curItem;
+            slots[deletedSlot] = temp;
             slots[deletedSlot].SetItem(temp.itemName, temp.itemImage);
-            slots[deletedSlot + 1].ResetSlot();       
+            slots[deletedSlot + 1].ResetSlot();
+            //slots[deletedSlot + 1] = null;
             deletedSlot++;
         }
     }
 
-
-
-    public void DeleteItem()
+    public void SortAll()
     {
-        if(selectedItem != null)
+        int i = 0;
+        while (slots[i++] != null)
         {
-            equipInfoUI.gameObject.SetActive(false);
-            AlignSlot(curSlot.slotNumber);
-            //Inventory[curSlot.slotNumber].
+            int j = i;
+            Debug.Log(j);
+
+            while (true)
+            {
+                while (j++ < numSlots && slots[j] == null) ;
+                Debug.Log(j);
+                if (j == numSlots) break;
+
+                Inventory[i] = Inventory[j];
+                Inventory[j] = null;
+
+                Debug.Log(Inventory[i]);
+                i++;
+            }
         }
     }
 
-
+    public void DeleteItem()
+    {
+        if (curSlot != null)
+        {
+            equipInfoUI.gameObject.SetActive(false);
+            //AlignSlot(curSlot.slotNumber);
+            slots[curSlot.slotNumber--].ResetSlot();
+            Inventory[curSlot.slotNumber--] = null;
+            //slots[curSlot.slotNumber] = null;
+        }
+    }
 }
