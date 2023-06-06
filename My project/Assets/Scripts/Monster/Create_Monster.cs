@@ -72,12 +72,12 @@ public class Create_Monster : MonoBehaviour
     {
         count = Game_System.Stage;
 
-        Resourcename = "Prefabs\\Monster\\Enemy" + count;
+        Resourcename = "Prefabs\\Monster1\\Unit" + count;
 
         if (Resourcename == null)
         {
             count = 0;
-            Resourcename = "Prefabs\\Monster\\Enemy" + count;
+            Resourcename = "Prefabs\\Monster1\\Unit" + count;
         }
         count++;
         ChangePrefabs();
