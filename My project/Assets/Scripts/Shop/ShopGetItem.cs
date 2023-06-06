@@ -31,7 +31,7 @@ public class ShopGetItem : MonoBehaviour
 
     private void Awake()
     {
-        activeRullet = true;
+        //activeRullet = true;
         defaultColorAlpha = 0.5f;
         slots = slotHolder.GetComponentsInChildren<Slot>();
         defaultColor = slots[0].GetComponent<Image>().color;

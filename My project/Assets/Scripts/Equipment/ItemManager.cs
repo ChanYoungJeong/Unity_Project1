@@ -6,12 +6,18 @@ using UnityEngine.UI;
 public class ItemManager : MonoBehaviour
 {
     //public static Dictionary<string, Equipment> Equipments;
+    public static Sprite[] loadObjects;
+
     public static Sprite[] nomal_Armor;
     public static Sprite[] nomal_Belt;
     public static Sprite[] nomal_Boots;
     public static Sprite[] nomal_Helmet;
     public static Sprite[] nomal_Socket;
     public static Sprite[] nomal_Weapon;
+
+
+
+    public static Sprite[] specialLoadObjects;
 
     public static Sprite[] special_Armor;
     public static Sprite[] special_Belt;
@@ -32,6 +38,9 @@ public class ItemManager : MonoBehaviour
     //Load Item Assets in resource file
     public void getItemList()
     {
+
+        loadObjects = Resources.LoadAll<Sprite>("Image/Equipment/Normal");
+
         nomal_Armor = Resources.LoadAll<Sprite>("Image/Equipment/Normal/Armor");
         nomal_Belt= Resources.LoadAll<Sprite>("Image/Equipment/Normal/Belt");
         nomal_Boots= Resources.LoadAll<Sprite>("Image/Equipment/Normal/Boots");
@@ -39,7 +48,10 @@ public class ItemManager : MonoBehaviour
         nomal_Socket= Resources.LoadAll<Sprite>("Image/Equipment/Normal/Socket");
         nomal_Weapon = Resources.LoadAll<Sprite>("Image/Equipment/Normal/Weapon");
 
-        special_Armor= Resources.LoadAll<Sprite>("Image/Equipment/Special/Armor");
+
+        specialLoadObjects = Resources.LoadAll<Sprite>("Image/Equipment/Special");
+
+        special_Armor = Resources.LoadAll<Sprite>("Image/Equipment/Special/Armor");
         special_Belt= Resources.LoadAll<Sprite>("Image/Equipment/Special/Belt");
         special_Boots= Resources.LoadAll<Sprite>("Image/Equipment/Special/Boots");
         special_Helmet= Resources.LoadAll<Sprite>("Image/Equipment/Special/Helmet");
