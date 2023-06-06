@@ -10,6 +10,8 @@ public class Inventory_Manager : MonoBehaviour
     public static Equipment selectedItem;
     public static int selectedSlot;
     public Slot[] slots;
+    public Slot[] eqiopSlots;
+
     public Slot curSlot;
     public Slot preSlot;
     int numSlots;
@@ -92,30 +94,10 @@ public class Inventory_Manager : MonoBehaviour
         while (deletedSlot < numSlots && slots[deletedSlot + 1].curItem != null)
         {
             temp = slots[deletedSlot + 1];
-            //slots[deletedSlot].curItem = temp.curItem;
             slots[deletedSlot] = temp;
             slots[deletedSlot].SetItem(temp.itemName, temp.itemImage);
             slots[deletedSlot + 1].ResetSlot();
-            //slots[deletedSlot + 1] = null;
             deletedSlot++;
-        }
-    }
-
-    public void SortAll()
-    {
-        for (int i = 0; i < numSlots - 1; i++)
-        {
-            for (int j = i; j < numSlots; j++)
-            {
-                if (Inventory[i] == null && Inventory[j] != null)
-                {
-                    Inventory[i] = Inventory[j];
-                    slots[i] = slots[j];
-                    slots[i].SetItem(slots[j].itemName, slots[j].itemImage);
-
-
-                }
-            }
         }
     }
 
@@ -127,6 +109,15 @@ public class Inventory_Manager : MonoBehaviour
             equipInfoUI.gameObject.SetActive(false);
             slots[num].ResetSlot();
             Inventory[num] = null;
+        }
+    }
+
+    public void Equipment()
+    {
+        if(curSlot != null)
+        {
+            selectedItem.type
+            eqiopSlots[]
         }
     }
 }

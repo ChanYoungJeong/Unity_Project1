@@ -13,7 +13,7 @@ public class Slot : MonoBehaviour
     public Color defaultColor;
     public int slotNumber;
     public bool isEquiped;
-
+    public EquipmentManager equipmentManager;
 
     private void Awake()
     {
