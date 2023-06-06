@@ -103,23 +103,18 @@ public class Inventory_Manager : MonoBehaviour
 
     public void SortAll()
     {
-        int i = 0;
-        while (slots[i++] != null)
+        for (int i = 0; i < numSlots - 1; i++)
         {
-            int j = i;
-            Debug.Log(j);
-
-            while (true)
+            for (int j = i; j < numSlots; j++)
             {
-                while (j++ < numSlots && slots[j] == null) ;
-                Debug.Log(j);
-                if (j == numSlots) break;
+                if (Inventory[i] == null && Inventory[j] != null)
+                {
+                    Inventory[i] = Inventory[j];
+                    slots[i] = slots[j];
+                    slots[i].SetItem(slots[j].itemName, slots[j].itemImage);
 
-                Inventory[i] = Inventory[j];
-                Inventory[j] = null;
 
-                Debug.Log(Inventory[i]);
-                i++;
+                }
             }
         }
     }
