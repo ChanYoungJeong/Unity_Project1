@@ -2101,12 +2101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterType: 
-  maxHp: 0
-  nowHp: 0
-  atkDmg: 0
-  atkSpeed: 0
-  Golds: 0
-  Exp: 0
+  maxHp: 100
+  nowHp: 100
+  atkDmg: 5
+  atkSpeed: 1
+  Golds: 10
+  Exp: 10
   voice: []
 --- !u!114 &3406092782193293069
 MonoBehaviour:
@@ -2133,9 +2133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e53bf1413eb9cd5419fad2238c9175ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamagePrinter: {fileID: 0}
-  DamageText: {fileID: 0}
-  CriticalDamageText: {fileID: 0}
+  DamagePrinter: {fileID: 5235153036277613718}
+  DamageText: {fileID: 2167125368239396214, guid: f460e3831bfade14a90ba3e108869590, type: 3}
+  CriticalDamageText: {fileID: 2167125368239396214, guid: 8f99784bbda53f24f9a82b0d5d669ca5, type: 3}
 --- !u!114 &3300997246413860898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2148,9 +2148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0274787299fa46439acad35a5af7485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpSlider: {fileID: 0}
-  hpCanvas: {fileID: 0}
-  monsterStat: {fileID: 0}
+  hpSlider: {fileID: 2478048122399875119}
+  hpCanvas: {fileID: 4381171734935208912}
+  monsterStat: {fileID: 2562778686896529897}
 --- !u!114 &4655767009784224580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2163,9 +2163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25af3d7e69782874ea13c12b01b48b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterDieAnimation: {fileID: 0}
+  MonsterDieAnimation: {fileID: 4212979234131905449, guid: f0cb43a4bdf68f74d82c096dbeb3a31d, type: 3}
   DropBead: {fileID: 0}
-  destroytime: 0
+  destroytime: 1.25
 --- !u!50 &1772531326150108516
 Rigidbody2D:
   serializedVersion: 4
@@ -2186,7 +2186,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!61 &7995923147991468012
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2200,7 +2200,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.2635727}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2211,7 +2211,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.89881897}
   m_EdgeRadius: 0
 --- !u!210 &-4256625506915731389
 SortingGroup:
@@ -2221,9 +2221,9 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4212979234131905449}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 688392875
+  m_SortingLayer: -1
+  m_SortingOrder: -1
 --- !u!82 &-6572339761614699705
 AudioSource:
   m_ObjectHideFlags: 0
