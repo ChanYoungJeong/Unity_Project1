@@ -84,7 +84,10 @@ public class Slot : MonoBehaviour
 
     public void ChangeToDefaultImage()
     {
+        Debug.Log("µé¾î¿È?");
         transform.GetChild(0).GetComponent<Image>().sprite = defaultImage;
+        Debug.Log("µé¾î¿È????");
+
     }
 
     public void ChangeToDefaultColor()

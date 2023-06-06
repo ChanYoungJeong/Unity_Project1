@@ -17,27 +17,22 @@ public class Create_Monster : MonoBehaviour
     public int scale;
     public GameObject Monster;
     public int CurrentStage;
-    int count=1;
     string Resourcename;
-
+    int count;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Resourcename = "Prefabs\\Monster\\Enemy" + count;
-
         StartCoroutine(SummonMonsterWithDelay());
     }
-    
+
     private void Update()
     {
-        if(this.transform.childCount == 0)
+        if (this.transform.childCount == 0)
         {
             Destroy(gameObject, Game_System.StageDelay);
         }
-
-        
     }
 
     public void ChangePrefabs()
@@ -52,8 +47,8 @@ public class Create_Monster : MonoBehaviour
         {
             CheckStage();
             generateMonster();
-            yield return new WaitForSeconds(summonDelay);       
-        }   
+            yield return new WaitForSeconds(summonDelay);
+        }
         StopCoroutine(SummonMonsterWithDelay());
     }
 
@@ -61,9 +56,9 @@ public class Create_Monster : MonoBehaviour
     {
         //Debug.Log(Resourcename);
         int range = Random.Range(0, 8);
-         Monster = Instantiate(monster_Prefab, spawnArray[range].position, transform.rotation);
+        Monster = Instantiate(monster_Prefab, spawnArray[range].position, transform.rotation);
         setMonsterStat(Monster);
-        Monster.transform.SetParent(this.transform, true);    
+        Monster.transform.SetParent(this.transform, true);
     }
 
     void setMonsterStat(GameObject monster)
@@ -75,20 +70,18 @@ public class Create_Monster : MonoBehaviour
 
     void CheckStage()
     {
-        if (CurrentStage < Game_System.Stage) 
+        count = Game_System.Stage;
+
+        Resourcename = "Prefabs\\Monster\\Enemy" + count;
+
+        if (Resourcename == null)
         {
-            CurrentStage += CurrentStage;
-            count++;
-            Resourcename= "Prefabs\\Monster\\Enemy" + count;
+            count = 0;
+            Resourcename = "Prefabs\\Monster\\Enemy" + count;
+        }
+        count++;
+        ChangePrefabs();
 
-            if(Resourcename == null)
-            {
-                count = 0;
-                Resourcename = "Prefabs\\Monster\\Enemy" + count;
-            }
-
-            ChangePrefabs();
-        }   
     }
 
 }

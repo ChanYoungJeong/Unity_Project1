@@ -128,11 +128,10 @@ public class Inventory_Manager : MonoBehaviour
     {
         if (curSlot != null)
         {
+            int num = curSlot.slotNumber;
             equipInfoUI.gameObject.SetActive(false);
-            //AlignSlot(curSlot.slotNumber);
-            slots[curSlot.slotNumber--].ResetSlot();
-            Inventory[curSlot.slotNumber--] = null;
-            //slots[curSlot.slotNumber] = null;
+            slots[num].ResetSlot();
+            Inventory[num] = null;
         }
     }
 }
