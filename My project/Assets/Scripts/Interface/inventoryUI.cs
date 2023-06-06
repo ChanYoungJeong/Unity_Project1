@@ -11,7 +11,7 @@ public class inventoryUI : MonoBehaviour
 
     private void Awake()
     {
-        inventoryPanel.SetActive(activeInventory);
+        //inventoryPanel.SetActive(activeInventory);
     }
 
     private void Update()
