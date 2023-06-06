@@ -9,19 +9,19 @@ public class Inventory_Manager : MonoBehaviour
     public static List<Equipment> Inventory = new List<Equipment>();
     public static Equipment selectedItem;
     public static int selectedSlot;
-    public Slot[] slots;
-    public Slot[] eqiopSlots;
 
     public Slot curSlot;
     public Slot preSlot;
     int numSlots;
+
+    public Slot[] slots;
     public Transform slotHolder;
+
+    public Slot[] equipSlots;
+
     public EquipmentManager EM;
     public Equipment_Gacha DBManager;
     public EquipInfo equipInfoUI;
-
-    private HashSet<int> _indexSetForUpdate = new HashSet<int>();
-    private int itemNum;
 
     private void Awake()
     {
@@ -47,16 +47,16 @@ public class Inventory_Manager : MonoBehaviour
             if (Inventory[i] == null)
             {
                 Inventory[i] = item;
-                AddToSlot(i, item, img);
+                AddToSlot(i, item, img, item.type);
                 break;
             }
         }
     }
 
     //Add item into slot and change the image
-    public void AddToSlot(int index, Equipment item, Sprite img)
+    public void AddToSlot(int index, Equipment item, Sprite img, string type)
     {
-        slots[index].SetItem(item.name, img);
+        slots[index].SetItem(item.name, img, type);
         slots[index].curItem = item;
     }
 
@@ -94,8 +94,8 @@ public class Inventory_Manager : MonoBehaviour
         while (deletedSlot < numSlots && slots[deletedSlot + 1].curItem != null)
         {
             temp = slots[deletedSlot + 1];
-            slots[deletedSlot] = temp;
-            slots[deletedSlot].SetItem(temp.itemName, temp.itemImage);
+            slots[deletedSlot].curItem = temp.curItem;
+            slots[deletedSlot].SetItem(temp.itemName, temp.itemImage, temp.type);
             slots[deletedSlot + 1].ResetSlot();
             deletedSlot++;
         }
@@ -112,12 +112,61 @@ public class Inventory_Manager : MonoBehaviour
         }
     }
 
-    public void Equipment()
+    public void EquipmentChange()
     {
-        if(curSlot != null)
+        Slot temp = null;
+
+        if (curSlot != null)
         {
-            //selectedItem.type
-            //eqiopSlots[]
+            int num = curSlot.slotNumber;
+
+            for (int i = 0; i < equipSlots.Length; i++)
+            {
+                Debug.Log(slots[num].curItem.type);
+
+                if (slots[num].curItem.type == "Socket")
+                {
+                    //Socket
+                    if (equipSlots[i].curItem == null)
+                    {
+                        Debug.Log("1");
+                        equipSlots[i].curItem = slots[num].curItem;
+                        equipSlots[i].SetItem(slots[num].itemName, slots[num].itemImage, slots[num].type);
+                        slots[num].ResetSlot();
+                        Inventory[num] = null;
+                    }
+                    else
+                    {
+                        Debug.Log("4");
+                    }
+
+                }
+                else if(equipSlots[i].type == slots[num].curItem.type)
+                {
+                    if (equipSlots[i].curItem == null)
+                    {
+                        Debug.Log("3");
+
+                        equipSlots[i].curItem = slots[num].curItem;
+                        equipSlots[i].SetItem(slots[num].itemName, slots[num].itemImage, slots[num].type);
+                        slots[num].ResetSlot();
+                        Inventory[num] = null;
+                    }
+                    else
+                    {
+                        Debug.Log("2");
+
+                        temp = equipSlots[i];
+                        temp.curItem = equipSlots[i].curItem;
+                        equipSlots[i].curItem = slots[num].curItem;
+                        equipSlots[i].SetItem(slots[num].itemName, slots[num].itemImage, slots[num].type);
+                        slots[num] = temp;
+                        slots[num].curItem = temp.curItem;
+                        slots[num].SetItem(temp.itemName, temp.itemImage, temp.type);
+                    }
+                }
+            }
+
         }
     }
 }

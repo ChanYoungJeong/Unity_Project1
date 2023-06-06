@@ -8,14 +8,14 @@ public class EquipInfo : MonoBehaviour
 {
 
     //public Image itemImage;
-    public TextMeshProUGUI itemName;
-    public TextMeshProUGUI rank;
-    public TextMeshProUGUI status;
-    public TextMeshProUGUI stat1Name;
-    public TextMeshProUGUI stat2Name;
-    public TextMeshProUGUI stat1Val;
-    public TextMeshProUGUI stat2Val;
-    public TextMeshProUGUI upgradeRate;
+    public Text itemName;
+    public Text rank;
+    public Text status;
+    public Text stat1Name;
+    public Text stat2Name;
+    public Text stat1Val;
+    public Text stat2Val;
+    public Text upgradeRate;
 
     private void Awake()
     {

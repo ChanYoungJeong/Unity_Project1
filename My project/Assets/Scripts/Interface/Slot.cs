@@ -15,6 +15,8 @@ public class Slot : MonoBehaviour
     public bool isEquiped;
     public EquipmentManager equipmentManager;
 
+    public string type;
+
     private void Awake()
     {
         defaultImage = transform.GetChild(0).GetComponent<Image>().sprite;
@@ -34,11 +36,12 @@ public class Slot : MonoBehaviour
         }
     }
 
-    public void SetItem(string _itemName, Sprite img)
+    public void SetItem(string _itemName, Sprite img, string _type)
     {
         transform.GetChild(0).GetComponentInChildren<Image>().sprite = img;
         itemImage = img;
         itemName = _itemName;
+        type = _type;
     }
 
     private Sprite GetImage(string itemName)
