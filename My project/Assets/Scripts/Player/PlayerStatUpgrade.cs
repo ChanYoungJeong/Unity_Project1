@@ -20,9 +20,9 @@ public class PlayerStatUpgrade : MonoBehaviour
     //귀찮아서 임시로 설정
     //지금은 index로 관리하나 추후에 위에 주석 처리해놓은거 처럼 따로따로 연결해도 무관
     [Tooltip("체력/데미지/스킬데미지/크리티컬율/크리티컬 데미지 순서대로 놓아야한다")]
-    public TextMeshProUGUI[] statText;
+    public Text[] statText;
     public Transform upStatTextHolder;
-    public TextMeshProUGUI[] upStatText;
+    public Text[] upStatText;
     public int upgradeCost;
     public Text goldText;
     public int UpgradeStat;
@@ -33,8 +33,8 @@ public class PlayerStatUpgrade : MonoBehaviour
 
     public void Awake()
     {
-        statText = statTextHolder.GetComponentsInChildren<TextMeshProUGUI>();
-        upStatText = upStatTextHolder.GetComponentsInChildren<TextMeshProUGUI>();
+        statText = statTextHolder.GetComponentsInChildren<Text>();
+        upStatText = upStatTextHolder.GetComponentsInChildren<Text>();
         goldText.text = upgradeCost.ToString();
         setStatDisplay();
         setUpstatDisplay();
