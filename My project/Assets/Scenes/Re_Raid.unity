@@ -1502,8 +1502,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfbff56311a58fb4297a9cd02c4a18b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boss1: 0
-  boss2: 0
 --- !u!95 &1625490488 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6977727786644939602, guid: c2a9e69534d8d05448d576e73d16fbe4, type: 3}
@@ -1697,8 +1695,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6da1a7ee6a16bf6458dcfb12a84e8d82, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1934,19 +1932,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
-    m_FontSize: 25
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 0
+    m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
+    m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Main
+  m_Text: "\uBA54\uC778\uC73C\uB85C"
 --- !u!222 &1913743139
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2198,82 +2196,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4690465413089419183, guid: 87ab58b7f591c1541ab3e3fb8b0d6bbc, type: 3}
-      propertyPath: voice.Array.size
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690465413089419183, guid: 87ab58b7f591c1541ab3e3fb8b0d6bbc, type: 3}
-      propertyPath: voice.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 6ad52a39361c33d4a8ac88484c0eb8dd, type: 3}
-    - target: {fileID: 4690465413089419183, guid: 87ab58b7f591c1541ab3e3fb8b0d6bbc, type: 3}
-      propertyPath: voice.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: dbd6f993dd1782047896387474b36b57, type: 3}
-    - target: {fileID: 4690465413089419183, guid: 87ab58b7f591c1541ab3e3fb8b0d6bbc, type: 3}
-      propertyPath: voice.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: d95c864d1985c6a45942c750435ba7fb, type: 3}
-    - target: {fileID: 4690465413089419183, guid: 87ab58b7f591c1541ab3e3fb8b0d6bbc, type: 3}
-      propertyPath: voice.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: f26760e69030c3e4a8d049a59bb20a31, type: 3}
-    - target: {fileID: 4690465413089419183, guid: 87ab58b7f591c1541ab3e3fb8b0d6bbc, type: 3}
-      propertyPath: voice.Array.data[4]
-      value: 
-      objectReference: {fileID: 8300000, guid: e9f5f13e90a6a504d8cbb23e3101f582, type: 3}
-    - target: {fileID: 4690465413089419183, guid: 87ab58b7f591c1541ab3e3fb8b0d6bbc, type: 3}
-      propertyPath: voice.Array.data[5]
-      value: 
-      objectReference: {fileID: 8300000, guid: 02264061c6f570d4a9bb733fd67bc697, type: 3}
-    - target: {fileID: 4690465413089419183, guid: 87ab58b7f591c1541ab3e3fb8b0d6bbc, type: 3}
-      propertyPath: voice.Array.data[6]
-      value: 
-      objectReference: {fileID: 8300000, guid: 85b9ce77cce945643ba7a2b34cc69cc4, type: 3}
-    - target: {fileID: 4690465413089419183, guid: 87ab58b7f591c1541ab3e3fb8b0d6bbc, type: 3}
-      propertyPath: voice.Array.data[7]
-      value: 
-      objectReference: {fileID: 8300000, guid: 2f2e2229d7fad714b8839518beea1b99, type: 3}
-    - target: {fileID: 4690465413089419183, guid: 87ab58b7f591c1541ab3e3fb8b0d6bbc, type: 3}
-      propertyPath: voice.Array.data[8]
-      value: 
-      objectReference: {fileID: 8300000, guid: 5403a064c68d44641afa197377f1706d, type: 3}
-    - target: {fileID: 4690465413089419183, guid: 87ab58b7f591c1541ab3e3fb8b0d6bbc, type: 3}
-      propertyPath: voice.Array.data[9]
-      value: 
-      objectReference: {fileID: 8300000, guid: cf79548513a8df148bd788e74abce2ab, type: 3}
-    - target: {fileID: 4690465413089419183, guid: 87ab58b7f591c1541ab3e3fb8b0d6bbc, type: 3}
-      propertyPath: voice.Array.data[10]
-      value: 
-      objectReference: {fileID: 8300000, guid: b8efdc9d085b0af42974ef3ad1c8b336, type: 3}
-    - target: {fileID: 4690465413089419183, guid: 87ab58b7f591c1541ab3e3fb8b0d6bbc, type: 3}
-      propertyPath: voice.Array.data[11]
-      value: 
-      objectReference: {fileID: 8300000, guid: 8e3a506d9bdc0ff4488ad24e9e92416a, type: 3}
-    - target: {fileID: 4690465413089419183, guid: 87ab58b7f591c1541ab3e3fb8b0d6bbc, type: 3}
-      propertyPath: voice.Array.data[12]
-      value: 
-      objectReference: {fileID: 8300000, guid: dd56db6561883434fb4a89d903179f2d, type: 3}
-    - target: {fileID: 4690465413089419183, guid: 87ab58b7f591c1541ab3e3fb8b0d6bbc, type: 3}
-      propertyPath: voice.Array.data[13]
-      value: 
-      objectReference: {fileID: 8300000, guid: 8867f9b2db6811646854cd87a8439bd0, type: 3}
-    - target: {fileID: 4690465413089419183, guid: 87ab58b7f591c1541ab3e3fb8b0d6bbc, type: 3}
-      propertyPath: voice.Array.data[14]
-      value: 
-      objectReference: {fileID: 8300000, guid: 3619a2c4aa703b8499838df74fd7c6f8, type: 3}
-    - target: {fileID: 4690465413089419183, guid: 87ab58b7f591c1541ab3e3fb8b0d6bbc, type: 3}
-      propertyPath: voice.Array.data[15]
-      value: 
-      objectReference: {fileID: 8300000, guid: a1402c8bae47fe24a888070db8c52edf, type: 3}
-    - target: {fileID: 4690465413089419183, guid: 87ab58b7f591c1541ab3e3fb8b0d6bbc, type: 3}
-      propertyPath: voice.Array.data[16]
-      value: 
-      objectReference: {fileID: 8300000, guid: 15414e29d3df9cf4db80431412bd77c5, type: 3}
-    - target: {fileID: 4690465413089419183, guid: 87ab58b7f591c1541ab3e3fb8b0d6bbc, type: 3}
-      propertyPath: voice.Array.data[17]
-      value: 
-      objectReference: {fileID: 8300000, guid: 9e518db4267fc0f4d81bed790f2faa8f, type: 3}
     - target: {fileID: 4690465413258361366, guid: 87ab58b7f591c1541ab3e3fb8b0d6bbc, type: 3}
       propertyPath: subHeroAnimator.Array.data[0]
       value: 

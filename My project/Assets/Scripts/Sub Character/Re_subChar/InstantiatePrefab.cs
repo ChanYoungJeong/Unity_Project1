@@ -50,11 +50,10 @@ public class InstantiatePrefab : MonoBehaviour
             for (int i = 0; i < stat.numberOfProjectiles; i++)
             {
                 //AudioSource.PlayClipAtPoint(audioClip[Random.Range(0, audioClip.Length - 1)], transform.position);
-                int num = BossScript.boss? 0 : i;
 
                 SoundEffect();
 
-                GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle[num])) as GameObject;
+                GameObject prefabClone = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, angle[i])) as GameObject;
                 prefabClone.GetComponent<Rigidbody2D>().AddForce(prefabClone.transform.right * speed, ForceMode2D.Impulse);
                 if (prefabClone.GetComponent<PrefabOnTrigger>())
                     prefabClone.GetComponent<PrefabOnTrigger>().damage = stat.atkDamage;
@@ -110,7 +109,7 @@ public class InstantiatePrefab : MonoBehaviour
 
         angle[0] = Mathf.Atan2(target[0].position.y - transObj.position.y, target[0].position.x - transObj.position.x) * Mathf.Rad2Deg;
 
-        if (max != 1 && !BossScript.boss)
+        if (max != 1)
         {
             for (int i = 0; i < max; i++)
             {
