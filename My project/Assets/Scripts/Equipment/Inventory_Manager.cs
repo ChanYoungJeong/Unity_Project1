@@ -116,8 +116,8 @@ public class Inventory_Manager : MonoBehaviour
     {
         if(curSlot != null)
         {
-            selectedItem.type
-            eqiopSlots[]
+            //selectedItem.type
+            //eqiopSlots[]
         }
     }
 }
