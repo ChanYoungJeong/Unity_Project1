@@ -16,7 +16,7 @@ public class BackgroundManager : MonoBehaviour
 
     private void Update()
     {
-        sprite.sprite = Maps[Game_System.Stage % Maps.Length];
+        sprite.sprite = Maps[(Game_System.Stage / 3)];
     }
 
 }
