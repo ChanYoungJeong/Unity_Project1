@@ -38,7 +38,8 @@ public class Slot : MonoBehaviour
 
     public void SetItem(string _itemName, Sprite img, string _type)
     {
-        transform.GetChild(0).GetComponentInChildren<Image>().sprite = img;
+        
+        transform.GetChild(0).GetComponent<Image>().sprite = img;
         itemImage = img;
         itemName = _itemName;
         type = _type;
@@ -58,7 +59,7 @@ public class Slot : MonoBehaviour
         hasItem = false;
         itemName = null;
         itemImage = null;
-
+        type = null;
     }
 
     public void ChangeToEquiped()                   //Change Slot effect to Equiped

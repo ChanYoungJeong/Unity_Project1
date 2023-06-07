@@ -129,7 +129,7 @@ public class ItemManager : MonoBehaviour
         for (int j = 0; j < special_Socket.Length; j++)
         {
             string name = special_Socket[j].name;
-            ItemLists.Add(name, getItem(name, "Special", "Soket"));
+            ItemLists.Add(name, getItem(name, "Special", "Socket"));
         }
 
         for (int j = 0; j < special_Weapon.Length; j++)

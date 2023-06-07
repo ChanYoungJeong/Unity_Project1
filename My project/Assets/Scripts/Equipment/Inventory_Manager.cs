@@ -37,6 +37,12 @@ public class Inventory_Manager : MonoBehaviour
             slots[i].slotNumber = i;
             Inventory.Add(null);
         }
+
+        for(int i = 0; i< equipSlots.Length; i++)
+        {
+            equipSlots[i].slotNumber = i;
+
+        }
     }
 
     //Add item to inventory list and show in slot
@@ -114,7 +120,6 @@ public class Inventory_Manager : MonoBehaviour
 
     public void EquipmentChange()
     {
-        Slot temp = null;
 
         if (curSlot != null)
         {
@@ -122,10 +127,10 @@ public class Inventory_Manager : MonoBehaviour
 
             for (int i = 0; i < equipSlots.Length; i++)
             {
-                Debug.Log(slots[num].curItem.type);
-
-                if (slots[num].curItem.type == "Socket")
+                if (slots[num].curItem.type == "Socket" && equipSlots[i].type == "Socket")
                 {
+                    Debug.Log("0");
+
                     //Socket
                     if (equipSlots[i].curItem == null)
                     {
@@ -141,8 +146,10 @@ public class Inventory_Manager : MonoBehaviour
                     }
 
                 }
-                else if(equipSlots[i].type == slots[num].curItem.type)
+                else if(equipSlots[i].type == slots[num].curItem.type && slots[num].curItem.type != "Socket")
                 {
+                    Debug.Log("-0");
+
                     if (equipSlots[i].curItem == null)
                     {
                         Debug.Log("3");
@@ -156,11 +163,20 @@ public class Inventory_Manager : MonoBehaviour
                     {
                         Debug.Log("2");
 
-                        temp = equipSlots[i];
+                        Slot temp = new Slot();
+                        Debug.Log(equipSlots[i].itemImage);
+
+                        //temp = equipSlots[i];
                         temp.curItem = equipSlots[i].curItem;
+                        temp.itemImage = equipSlots[i].itemImage;
+                        temp.itemName = equipSlots[i].itemName;
+
+                        //3¹ø²¨ µû¿È
                         equipSlots[i].curItem = slots[num].curItem;
                         equipSlots[i].SetItem(slots[num].itemName, slots[num].itemImage, slots[num].type);
-                        slots[num] = temp;
+                        slots[num].ResetSlot(); // ¿©±â±îÁö 3¹ø
+
+                        //slots[num] = temp;
                         slots[num].curItem = temp.curItem;
                         slots[num].SetItem(temp.itemName, temp.itemImage, temp.type);
                     }
